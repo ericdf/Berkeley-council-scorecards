@@ -1,0 +1,48 @@
+{
+  "date": "2025-04-15",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-april-15-2025",
+  "fetched": "2026-04-09T07:37:48.312352",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "Adoption of CALFIRE Map and Additional Areas Designated as the City of Berkeley Fire Hazard Severity Zones",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "1. Adopt first reading of an Ordinance to designate Fire Hazard Severity Zones (FHSZ) within the Local Responsibility Area as recommended by the California Department of Forestry and Fire Protection (CALFIRE) pursuant to Government Code Section 51178, and\n2. Designate areas not identified as Very High and High Fire Hazard Severity Zones by the State Fire Marshal, as Very High, and High Fire Hazard Severity Zones following a finding supported by substantial evidence in the record that the require",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    },
+    {
+      "number": 2,
+      "section": "action",
+      "title": "Modification and Adoption of Berkeley Fire Code Local Amendments",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "1. Adopt the first reading of an Ordinance which proposes to amend certain portions of Section 19.48.020 of the Berkeley Municipal Code (\u201cAmendments to the California Fire Code\u201d);\n2. Adopt a Resolution setting forth findings as to local conditions applicable to the revised portions of Section 19.48.020 that require more stringent standards than those provided by the 2022 California Fire Code (\u201cCFC\u201d) and amending Resolution No. 70,611\u2013N.S.;\n3. In compliance with state law on adopting such codes b",
+      "financial_raw": "Staff time",
+      "financial_none": false,
+      "financial_staff_time": true,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

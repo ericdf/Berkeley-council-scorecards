@@ -1,0 +1,50 @@
+{
+  "date": "2025-12-02",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-december-2-2025",
+  "fetched": "2026-04-09T07:40:04.099625",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "Sharing the Final Report of the Mayor\u2019s Vision 2050 Task Force, Realize Vision 2050: Update to the Vision 2050 and Recommendations to Address Berkeley\u2019s Infrastructure",
+      "from_raw": "Mayor Ishii (Author)",
+      "authors": [
+        "Ishii"
+      ],
+      "cosponsors": [],
+      "commission": "",
+      "recommendation": "Invite City Council to review Realize Vision 2050: An Update to Vision 2050 and Recommendations to Address Berkeley\u2019s Infrastructure, a report completed by the Mayor\u2019s Vision 2050 Task Force in October 2025.",
+      "financial_raw": "None",
+      "financial_none": true,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    },
+    {
+      "number": 2,
+      "section": "action",
+      "title": "Discussion Regarding Potential Ballot Measures for the November 3, 2026, General Municipal Election",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Review staff recommendations, provide input and direction on project priorities, and discuss which infrastructure projects should be reflected in a community survey for potential inclusion in a bond measure.",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

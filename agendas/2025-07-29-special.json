@@ -1,0 +1,30 @@
+{
+  "date": "2025-07-29",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-july-29-2025",
+  "fetched": "2026-04-09T07:39:03.410248",
+  "consent_items": [
+    {
+      "number": 1,
+      "section": "consent",
+      "title": "Grant Award: Byrne State Crisis Intervention Program (SCIP) Cohort 2 Funding \u2013 Acceptance of Grant and Execution of Related Documents",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Adopt a Resolution authorizing the City Manager to accept the Byrne State Crisis Intervention Program (SCIP) grant award of $1,000,000 from the Board of State and Community Corrections (BSCC); execute any resultant agreements and amendments; appropriate the funding for eligible project activities consistent with the City's Gun Violence Intervention and Prevention Program (GVIPP); approve the establishment and funding allocation for a temporary Crime Analyst position (not to exceed two years); an",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 1000000,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "action_items": [],
+  "n_consent": 1,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

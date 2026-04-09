@@ -1,0 +1,30 @@
+{
+  "date": "2025-10-28",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-october-28-2025",
+  "fetched": "2026-04-09T07:39:39.274683",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "Ashby BART East Lot Transit Oriented Development Request for Proposal Framework",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "1. Review and provide feedback on the Request for Proposal (RFP) Framework and Draft Design Standards to inform a draft RFP for the Ashby BART East Lot Transit Oriented Development.\n2. Adopt a Resolution authorizing the City Manager, or designee, to expend Housing Trust Fund dollars to acquire real property at the Ashby BART East Lot in accordance with the Exchange Agreement, authorized by Ordinance 7,939-N.S.\nFiscal Implications:\nSee report",
+      "financial_raw": "",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

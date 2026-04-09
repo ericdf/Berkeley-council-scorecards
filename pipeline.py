@@ -35,6 +35,7 @@ SCORES_DIR     = os.path.join(os.path.dirname(__file__), "scores")
 AGGREGATE_PATH = os.path.join(SCORES_DIR, "aggregate.json")
 MEETINGS_PATH  = os.path.join(SCORES_DIR, "per_meeting.json")
 SNAPSHOTS_DIR  = os.path.join(SCORES_DIR, "snapshots")
+AGENDAS_DIR    = os.path.join(os.path.dirname(__file__), "agendas")
 
 # ---------------------------------------------------------------------------
 # Vote extraction
@@ -394,6 +395,97 @@ def compute_deltas(current: dict, previous: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Consent calendar scoring
+# ---------------------------------------------------------------------------
+
+def load_agenda_consent_scores() -> tuple[dict, dict]:
+    """
+    Read all agendas/*.json and compute per-member consent calendar stats.
+    Returns (member_scores, ishii_consent_meta).
+
+    member_scores keys (all ints):
+      agenda_off_mission_authored      — off-mission items where member is an author
+      agenda_off_mission_cosponsored   — off-mission items where member is a cosponsor
+      agenda_false_fiscal_authored     — false "None" fiscal items authored
+      agenda_false_fiscal_cosponsored  — false "None" fiscal items cosponsored
+      agenda_discretionary_total       — total $ from their council office budget (sum across items)
+      agenda_discretionary_items       — count of items with any discretionary contribution
+
+    ishii_consent_meta:
+      agenda_consent_meetings          — meetings with a non-empty consent calendar
+      agenda_off_mission_meetings      — meetings where ≥1 off-mission item passed through consent
+      agenda_off_mission_total         — total off-mission consent items across all meetings
+    """
+    member_scores: dict[str, dict] = defaultdict(lambda: {
+        "agenda_off_mission_authored":    0,
+        "agenda_off_mission_cosponsored": 0,
+        "agenda_false_fiscal_authored":   0,
+        "agenda_false_fiscal_cosponsored":0,
+        "agenda_discretionary_total":     0,
+        "agenda_discretionary_items":     0,
+    })
+
+    meetings_with_off_mission = 0
+    total_off_mission_items   = 0
+    total_consent_meetings    = 0
+
+    for path in sorted(glob.glob(os.path.join(AGENDAS_DIR, "*.json"))):
+        try:
+            with open(path) as f:
+                agenda = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+
+        items = agenda.get("consent_items", [])
+        if not items:
+            continue
+
+        total_consent_meetings += 1
+        meeting_off_mission = 0
+
+        for item in items:
+            authors    = item.get("authors", [])
+            cosponsors = item.get("cosponsors", [])
+            off_mission   = item.get("off_mission", False)
+            false_fiscal  = item.get("false_fiscal", False)
+            discretionary = item.get("discretionary", {})
+
+            if off_mission:
+                meeting_off_mission   += 1
+                total_off_mission_items += 1
+                for m in authors:
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_off_mission_authored"] += 1
+                for m in cosponsors:
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_off_mission_cosponsored"] += 1
+
+            if false_fiscal:
+                for m in authors:
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_false_fiscal_authored"] += 1
+                for m in cosponsors:
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_false_fiscal_cosponsored"] += 1
+
+            for m, amt in discretionary.items():
+                if m in CANONICAL_MEMBERS:
+                    member_scores[m]["agenda_discretionary_total"] += amt
+                    member_scores[m]["agenda_discretionary_items"] += 1
+
+        if meeting_off_mission > 0:
+            meetings_with_off_mission += 1
+
+    ishii_consent_meta = {
+        "agenda_consent_meetings":   total_consent_meetings,
+        "agenda_off_mission_meetings": meetings_with_off_mission,
+        "agenda_off_mission_total":  total_off_mission_items,
+    }
+
+    return dict(member_scores), ishii_consent_meta
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -436,6 +528,12 @@ def main():
     print("Computing trends...", file=sys.stderr)
     trends = compute_trends(meetings)
 
+    print("Loading consent calendar scores...", file=sys.stderr)
+    consent_scores, ishii_consent_meta = load_agenda_consent_scores()
+    n_agendas = len(glob.glob(os.path.join(AGENDAS_DIR, "*.json")))
+    print(f"  {n_agendas} agendas · {ishii_consent_meta['agenda_consent_meetings']} with consent items · "
+          f"{ishii_consent_meta['agenda_off_mission_total']} off-mission items total", file=sys.stderr)
+
     # --- Merge everything ---
     aggregate = {}
     for name in CANONICAL_MEMBERS:
@@ -444,6 +542,7 @@ def main():
         s.update(sponsor_stats.get(name, {}))
         s.update(eff_stats.get(name, {}))
         s.update(trends.get(name, {}))
+        s.update(consent_scores.get(name, {}))
         s["display_name"] = DISPLAY_NAME.get(name, name)
         s["canonical"] = name
         aggregate[name] = s
@@ -455,6 +554,8 @@ def main():
         "display_name": "Ishii",
         "canonical": "Ishii",
         "is_mayor": True,
+        **ishii_consent_meta,
+        **consent_scores.get("Ishii", {}),
     }
 
     dated = sorted([m["date"] for m in meetings if m.get("date")])
@@ -469,6 +570,8 @@ def main():
         "block_vote_events": council_vote_meta["block_vote_events"],
         "earliest_meeting": earliest_meeting,
         "latest_meeting":   latest_meeting,
+        "agendas_loaded":   n_agendas,
+        **ishii_consent_meta,
     }
 
     add_efficiency_ranks(aggregate)

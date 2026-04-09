@@ -1,0 +1,30 @@
+{
+  "date": "2024-12-10",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-december-10-2024",
+  "fetched": "2026-04-09T07:36:51.189029",
+  "consent_items": [
+    {
+      "number": 1,
+      "section": "consent",
+      "title": "Confirming the Results of the November 5, 2024, General Municipal Election",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "1. Adopt a Resolution:\na) Confirming the results of the November 5, 2024, General Municipal Election; and\nb) Declaring the passage of Measure W \u2013 Real Property Transfer Tax Amendments, Measure X \u2013 Library Relief Act of 2024, Measure Y \u2013 Parks, Trees, and Landscaping Maintenance Tax Amendments , Measure Z \u2013 Sugar Sweetened Beverage Tax Amendments, Measure AA \u2013 Article XIIIB GANN Appropriations Limit Authority, Measure BB \u2013 Rent Stabilization Ordinance Amendments and Housing Retention Measure DD \u2013",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "action_items": [],
+  "n_consent": 1,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

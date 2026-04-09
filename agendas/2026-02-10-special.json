@@ -1,0 +1,30 @@
+{
+  "date": "2026-02-10",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-february-10-2026",
+  "fetched": "2026-04-09T07:40:28.584979",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "2026 City Council Referral Prioritization Results Using Re-Weighted Range Voting (RRV)",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Review the completed Re-Weighted Range Voting (RRV) rankings for all outstanding City Council referrals and adopt a Resolution approving the list of prioritized referrals to city staff.",
+      "financial_raw": "None",
+      "financial_none": true,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

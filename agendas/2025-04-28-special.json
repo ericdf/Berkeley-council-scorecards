@@ -1,0 +1,36 @@
+{
+  "date": "2025-04-28",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-april-28-2025",
+  "fetched": "2026-04-09T07:37:56.360664",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "Resolution for an Immediate and Permanent Ceasefire in Gaza, and an End to U.S. Military Aid to Israel, and Support for Palestinian Self-Determination",
+      "from_raw": "Peace and Justice Commission",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "Peace and Justice Commission",
+      "recommendation": "1. The City of Berkeley Council adopt a resolution for a ceasefire in Gaza, and an end to U.S. military aid to Israel, and support for Palestinian self-determination.\n2. Send a copy of the resolution to President Joseph R. Biden, Secretary of State Antony Blinken, Vice President Kamala Harris, Representative Barbara Lee, Senator Alex Padilla, Senator Laphonza R. Butler, Representative Cori Bush, and Representative Rashida Tlaib.",
+      "financial_raw": "None",
+      "financial_none": true,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": true,
+      "off_mission_reasons": [
+        "from off-mission commission: Peace and Justice Commission",
+        "keyword: \\bgaza\\b",
+        "keyword: \\bisrael(?:i)?\\b",
+        "keyword: \\bpalestine?(?:ian)?\\b",
+        "keyword: \\bceasefire\\b"
+      ],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

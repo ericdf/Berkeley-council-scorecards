@@ -235,6 +235,73 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
 
 
 # ---------------------------------------------------------------------------
+# Consent calendar section (embedded in member card)
+# ---------------------------------------------------------------------------
+
+def _render_consent_section(s: dict) -> str:
+    """Return HTML for the Consent Calendar section, or '' if no agenda data."""
+    authored    = s.get("agenda_off_mission_authored",    0) or 0
+    cosponsored = s.get("agenda_off_mission_cosponsored", 0) or 0
+    false_fisc  = s.get("agenda_false_fiscal_authored",   0) or 0
+    false_cosp  = s.get("agenda_false_fiscal_cosponsored",0) or 0
+    disc_total  = s.get("agenda_discretionary_total",     0) or 0
+    disc_items  = s.get("agenda_discretionary_items",     0) or 0
+
+    # If there's nothing to show, skip the section
+    if authored + cosponsored + false_fisc + false_cosp + disc_total == 0:
+        return ""
+
+    def _clr(n, bad_threshold, warn_threshold=1):
+        if n >= bad_threshold:   return "#e74c3c"
+        if n >= warn_threshold:  return "#f39c12"
+        return "#2c3e50"
+
+    authored_html = (
+        f'<span style="font-weight:800;color:{_clr(authored,3,1)}">{authored}</span>'
+        f'<span style="font-size:10px;color:#7f8c8d"> authored</span>'
+    )
+    cospo_html = (
+        f'<span style="font-weight:800;color:{_clr(cosponsored,5,2)}">{cosponsored}</span>'
+        f'<span style="font-size:10px;color:#7f8c8d"> co-spons.</span>'
+    )
+    ff_html = (
+        f'<span style="font-weight:800;color:{_clr(false_fisc+false_cosp,3,1)}">'
+        f'{false_fisc + false_cosp}</span>'
+        f'<span style="font-size:10px;color:#7f8c8d"> false fiscal</span>'
+    )
+    disc_html = (
+        f'<span style="font-weight:800;color:#2c3e50">${disc_total:,}</span>'
+        f'<span style="font-size:10px;color:#7f8c8d"> discretionary ({disc_items} items)</span>'
+    ) if disc_total else (
+        f'<span style="font-weight:800;color:#2c3e50">$0</span>'
+        f'<span style="font-size:10px;color:#7f8c8d"> discretionary</span>'
+    )
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Consent Calendar Behavior</div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-val" style="font-size:18px">{authored_html}</div>
+        <div class="stat-lbl" style="margin-top:4px">Off-mission items<br>advanced through consent</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="font-size:18px">{cospo_html}</div>
+        <div class="stat-lbl" style="margin-top:4px">Off-mission items<br>co-sponsored</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="font-size:18px">{ff_html}</div>
+        <div class="stat-lbl" style="margin-top:4px">Items with false<br>"None" fiscal claim</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="font-size:18px">{disc_html}</div>
+        <div class="stat-lbl" style="margin-top:4px">Council office budget<br>relinquishments</div>
+      </div>
+    </div>
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
 # Render one member scorecard
 # ---------------------------------------------------------------------------
 
@@ -398,6 +465,8 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
       </div>
     </div>
   </div>
+
+  {_render_consent_section(s)}
 
   <div class="section">
     <div class="section-title">Key Findings</div>

@@ -1,0 +1,48 @@
+{
+  "date": "2025-05-20",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-may-20-2025",
+  "fetched": "2026-04-09T07:38:16.597081",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "Authorizing the Execution, Sale, and Delivery of Lease Revenue Notes for the Fire Administration and Training Project",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Conduct a public hearing and upon conclusion adopt a Resolution authorizing the issuance and sale by the Berkeley Joint Powers Financing Authority of federally taxable Lease Revenue Notes in the aggregate principal amount of not to exceed $11,000,000 to provide financing for the construction of improvements to property used for fire administration and training, and approving related documents and actions.",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 11000000,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    },
+    {
+      "number": 2,
+      "section": "action",
+      "title": "Issuance of $35,000,000 General Obligation Bonds for Measure O \u2013 Affordable Housing",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Adopt a Resolution authorizing the issuance and sale of general obligation bonds to finance acquisition and improvement of affordable housing and authorizing actions related thereto.",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

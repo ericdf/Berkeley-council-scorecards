@@ -1,0 +1,67 @@
+{
+  "date": "2025-03-25",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-march-25-2025",
+  "fetched": "2026-04-09T07:37:39.512135",
+  "consent_items": [
+    {
+      "number": 1,
+      "section": "consent",
+      "title": "Amend Memorandums of Understanding for Represented Employee Groups to Include Cesar Chavez Day as a Paid City Holiday",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Adopt a Resolution amending Memorandums of Understanding (MOUs) for represented employee groups to include Cesar Chavez Day as a paid city holiday, to be observed on the last Monday of March beginning in 2025.",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "action_items": [
+    {
+      "number": 2,
+      "section": "action",
+      "title": "Pavement Management & Infrastructure Planning Presentation",
+      "from_raw": "City Manager Contact: Terrance Davis, Public Works, (510) 981-6300",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager Contact: Terrance Davis, Public Works, (510) 981-6300",
+      "recommendation": "",
+      "financial_raw": "",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    },
+    {
+      "number": 3,
+      "section": "action",
+      "title": "2025 City Council Referral Prioritization Results Using Re-Weighted Range Voting (RRV)",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Review the completed Re-Weighted Range Voting (RRV) rankings for all outstanding City Council referrals and adopt a Resolution approving the list of prioritized referrals to city staff.",
+      "financial_raw": "No direct fiscal impacts",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 1,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2025-03-11",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-march-11-2025",
+  "fetched": "2026-04-09T07:37:22.768655",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "2025 City Council Referral Prioritization Process Using Re-Weighted Range Voting (RRV)",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "1. Review the City Council raw scores for all outstanding City Council referrals;\n2. Approve the removal of referrals that have been nominated for removal by the Council; and\n3. Direct the City Manager to run the ranking algorithm and return to Council with a final ranked list of referrals for adoption.",
+      "financial_raw": "No direct fiscal impacts",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

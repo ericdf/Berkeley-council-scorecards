@@ -1,0 +1,30 @@
+{
+  "date": "2025-06-26",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-june-26-2025",
+  "fetched": "2026-04-09T07:38:40.913342",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "Zoning Ordinance and General Plan Amendments Relating to Middle Housing",
+      "from_raw": "City Manager",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "City Manager",
+      "recommendation": "Conduct a public hearing, and upon conclusion:\n1. Adopt first reading of an ordinance amending Berkeley Municipal Code Title 23 (Zoning Ordinance) and the Zoning Map, for the purposes of encouraging development of \u201cmiddle housing\u201d in areas currently zoned R-1, R-1A, R-2, R-2A and MU-R (\u201clow-density residential districts\u201d), with an effective date of November 1, 2025; and\n2. Adopt a Resolution amending the General Plan for the same purpose.",
+      "financial_raw": "See report",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": false,
+      "off_mission_reasons": [],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}

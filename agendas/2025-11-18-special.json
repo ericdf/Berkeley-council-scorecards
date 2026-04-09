@@ -1,0 +1,33 @@
+{
+  "date": "2025-11-18",
+  "type": "special",
+  "url": "https://berkeleyca.gov/city-council-special-meeting-eagenda-november-18-2025",
+  "fetched": "2026-04-09T07:39:54.592645",
+  "consent_items": [],
+  "action_items": [
+    {
+      "number": 1,
+      "section": "action",
+      "title": "2024 Police Accountability Board (PAB) & Office of the Director of Police Accountability (ODPA) Annual Report",
+      "from_raw": "Police Accountability Board, Director of Police Accountability Contact: Hansel Aguilar, Office of Director of Police Accountability, (510) 981-4950 Adjournment I hereby request that the City Clerk of the City of Berkeley cause personal notice to be given to each member of the Berkeley City Council on the time and place of said meeting, forthwith. IN WITNESS WHEREOF, I have hereunto set my hand and caused the official seal of the City of Berkeley to be affixed on this 13 th day of November, 2025. /s/ Adena Ishii, Mayor Public Notice \u2013 this Proclamation serves as the official agenda for this meeting. ATTEST: Mark Numainville, City Clerk",
+      "authors": [],
+      "cosponsors": [],
+      "commission": "Police Accountability Board, Director of Police Accountability Contact: Hansel Aguilar, Office of Director of Police Accountability, (510) 981-4950 Adjournment I hereby request that the City Clerk of the City of Berkeley cause personal notice to be given to each member of the Berkeley City Council on the time and place of said meeting, forthwith. IN WITNESS WHEREOF, I have hereunto set my hand and caused the official seal of the City of Berkeley to be affixed on this 13 th day of November, 2025. /s/ Adena Ishii, Mayor Public Notice \u2013 this Proclamation serves as the official agenda for this meeting. ATTEST: Mark Numainville, City Clerk",
+      "recommendation": "",
+      "financial_raw": "",
+      "financial_none": false,
+      "financial_staff_time": false,
+      "dollar_total": 0,
+      "discretionary": {},
+      "off_mission": true,
+      "off_mission_reasons": [
+        "keyword: \\bpolice\\s+accountability\\s+board\\b",
+        "keyword: \\bpab\\b(?!\\s+\\w)"
+      ],
+      "false_fiscal": false
+    }
+  ],
+  "n_consent": 0,
+  "n_off_mission": 0,
+  "n_false_fiscal": 0
+}
