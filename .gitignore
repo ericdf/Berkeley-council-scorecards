@@ -1,8 +1,13 @@
 # Generated text artifacts — regenerate with: pdftotext -layout minutes/*.pdf text/
 text/
 
-# Pipeline outputs
-scores/
+# Pipeline outputs (regeneratable)
+scores/aggregate.json
+scores/per_meeting.json
+scores/pdfs/
+
+# Snapshots are NOT ignored — they are the delta baseline and cannot be reproduced
+# scores/snapshots/
 
 # Python
 __pycache__/
