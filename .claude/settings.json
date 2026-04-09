@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(source .venv/bin/activate*)",
+      "Bash(.venv/bin/python *)",
+      "Bash(source .venv/bin/activate && python *)",
+      "Bash(source .venv/bin/activate && python3 *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Bash(git commit*)",
+      "Bash(ls*)",
+      "Bash(cat *)",
+      "Read",
+      "Write",
+      "Edit",
+      "Grep",
+      "Glob"
+    ]
+  }
+}

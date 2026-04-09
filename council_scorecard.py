@@ -430,6 +430,34 @@ DOMAIN_KW = [
     r"quasi.judicial", r"preponderance",
 ]
 
+# Fiscal concern rhetoric — member CLAIMS budget restraint in speech
+# Distinct from FISCAL_KW (which measures probing fiscal impact of items).
+# High score here + large spending actions = fiscal hypocrisy signal.
+FISCAL_CONCERN_KW = [
+    # Deficit / shortfall framing
+    r"structural(ly)? deficit",
+    r"structural(ly)? (im)?balanced",
+    r"\$\s*\d[\d,.]+\s*(million|billion|M|B)\s+(budget\s+)?deficit",
+    r"budget (shortfall|gap|crisis|hole|challenge|pressure|strain)",
+    r"budgetary (challenge|pressure|strain|gap|shortfall)",
+    r"(the\s+)?city.s?\s+(budget\s+)?(deficit|shortfall|gap)\b",
+    r"we (have|are facing|face|are in) a (budget\s+)?deficit",
+    r"fiscal (cliff|crisis|emergency|pressure|strain|sustainability)",
+    r"\$\s*\d[\d,.]+\s*(million|billion|M)\s+(structural\s+)?deficit",
+    # Restraint claims
+    r"(can.t|cannot|can not|don.t|do not) afford (to\b|this\b|it\b|these\b|more\b)",
+    r"we.re (spending|borrowing) (too much|more than)",
+    r"tighten(ing)? (our )?belt",
+    r"liv(e|ing) within our means",
+    r"(un)?sustainable (spending|budget|costs?)",
+    r"(scarce|limited)\s+(resources|funds|dollars)",
+    # Tax / bond advocacy signals (concern framing used to justify new revenue)
+    r"rais(e|ing) (the\s+)?taxes? (to pay|to fund|to cover|for)",
+    r"homeowners? (are being|will be|are) (taxed|burdened|asked|hit)",
+    r"(need|propose|consider|explore).{0,30}(new|a)\s+(tax|bond|levy|assessment|parcel tax|measure)",
+    r"(put\s+)?(a\s+)?(bond|tax|levy|measure|parcel tax).{0,20}(ballot|voters|measure)",
+]
+
 FISCAL_KW = [
     r"what.s the cost", r"how much (will|does|would|is)\b",
     r"cost.benefit", r"fiscal impact", r"budget impact",
@@ -665,6 +693,8 @@ def score_member(md: MemberData) -> dict:
         "flex_hits": hit(text, SELF_FLEX_KW),
         "coll_hits": hit(text, COLLEGIALITY_KW),
         "hum_hits":  hit(text, HUMILITY_KW),
+        # fiscal concern rhetoric (distinct from fiscal discipline)
+        "fiscal_concern_hits": hit(text, FISCAL_CONCERN_KW),
     }
 
 

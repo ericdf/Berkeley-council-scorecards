@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from council_scorecard import (
     TEXT_DIR, CANONICAL_MEMBERS, DISPLAY_NAME,
     load_all, build_scoreboard, score_ishii_facilitator,
-    clean, resolve_name, WASTE_KW, CORE_KW,
+    clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW,
 )
 
 # Redefine what we need locally (council_scorecard doesn't export these as constants)
@@ -398,31 +398,43 @@ def compute_deltas(current: dict, previous: dict) -> dict:
 # Consent calendar scoring
 # ---------------------------------------------------------------------------
 
-def load_agenda_consent_scores() -> tuple[dict, dict]:
+def load_agenda_scores() -> tuple[dict, dict]:
     """
-    Read all agendas/*.json and compute per-member consent calendar stats.
-    Returns (member_scores, ishii_consent_meta).
+    Read all agendas/*.json and compute per-member scores for both calendars.
+    Returns (member_scores, ishii_meta).
 
-    member_scores keys (all ints):
-      agenda_off_mission_authored      — off-mission items where member is an author
-      agenda_off_mission_cosponsored   — off-mission items where member is a cosponsor
-      agenda_false_fiscal_authored     — false "None" fiscal items authored
-      agenda_false_fiscal_cosponsored  — false "None" fiscal items cosponsored
-      agenda_discretionary_total       — total $ from their council office budget (sum across items)
-      agenda_discretionary_items       — count of items with any discretionary contribution
+    Consent calendar keys:
+      agenda_off_mission_authored      — off-mission consent items authored
+      agenda_off_mission_cosponsored   — off-mission consent items co-sponsored
+      agenda_false_fiscal_authored     — items claiming "None" fiscal when obligations exist (authored)
+      agenda_false_fiscal_cosponsored  — same, co-sponsored
+      agenda_discretionary_total       — total $ relinquished from council office budget
+      agenda_discretionary_items       — count of discretionary spending items
 
-    ishii_consent_meta:
+    Action calendar keys (explicitly debated items; heavier signal than consent):
+      action_off_mission_authored      — off-mission items brought to action calendar by member
+      action_off_mission_cosponsored   — off-mission action items co-sponsored
+      action_budget_referral_total     — total $ in budget referrals authored on action calendar
+      action_budget_referral_items     — count of those referrals
+
+    Ishii facilitation meta:
       agenda_consent_meetings          — meetings with a non-empty consent calendar
-      agenda_off_mission_meetings      — meetings where ≥1 off-mission item passed through consent
+      agenda_off_mission_meetings      — meetings where ≥1 off-mission consent item passed unchallenged
       agenda_off_mission_total         — total off-mission consent items across all meetings
     """
     member_scores: dict[str, dict] = defaultdict(lambda: {
+        # consent
         "agenda_off_mission_authored":    0,
         "agenda_off_mission_cosponsored": 0,
         "agenda_false_fiscal_authored":   0,
         "agenda_false_fiscal_cosponsored":0,
         "agenda_discretionary_total":     0,
         "agenda_discretionary_items":     0,
+        # action calendar
+        "action_off_mission_authored":    0,
+        "action_off_mission_cosponsored": 0,
+        "action_budget_referral_total":   0,
+        "action_budget_referral_items":   0,
     })
 
     meetings_with_off_mission = 0
@@ -436,53 +448,144 @@ def load_agenda_consent_scores() -> tuple[dict, dict]:
         except (json.JSONDecodeError, OSError):
             continue
 
-        items = agenda.get("consent_items", [])
-        if not items:
-            continue
+        # --- Consent calendar ---
+        consent_items = agenda.get("consent_items", [])
+        if consent_items:
+            total_consent_meetings += 1
+            meeting_off_mission = 0
 
-        total_consent_meetings += 1
-        meeting_off_mission = 0
+            for item in consent_items:
+                authors    = item.get("authors", [])
+                cosponsors = item.get("cosponsors", [])
+                off_mission   = item.get("off_mission", False)
+                false_fiscal  = item.get("false_fiscal", False)
+                discretionary = item.get("discretionary", {})
 
-        for item in items:
+                if off_mission:
+                    meeting_off_mission   += 1
+                    total_off_mission_items += 1
+                    for m in authors:
+                        if m in CANONICAL_MEMBERS:
+                            member_scores[m]["agenda_off_mission_authored"] += 1
+                    for m in cosponsors:
+                        if m in CANONICAL_MEMBERS:
+                            member_scores[m]["agenda_off_mission_cosponsored"] += 1
+
+                if false_fiscal:
+                    for m in authors:
+                        if m in CANONICAL_MEMBERS:
+                            member_scores[m]["agenda_false_fiscal_authored"] += 1
+                    for m in cosponsors:
+                        if m in CANONICAL_MEMBERS:
+                            member_scores[m]["agenda_false_fiscal_cosponsored"] += 1
+
+                for m, amt in discretionary.items():
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_discretionary_total"] += amt
+                        member_scores[m]["agenda_discretionary_items"] += 1
+
+            if meeting_off_mission > 0:
+                meetings_with_off_mission += 1
+
+        # --- Action calendar ---
+        for item in agenda.get("action_items", []):
             authors    = item.get("authors", [])
             cosponsors = item.get("cosponsors", [])
-            off_mission   = item.get("off_mission", False)
-            false_fiscal  = item.get("false_fiscal", False)
-            discretionary = item.get("discretionary", {})
+            off_mission  = item.get("off_mission", False)
+            dollar_total = item.get("dollar_total", 0) or 0
 
             if off_mission:
-                meeting_off_mission   += 1
-                total_off_mission_items += 1
                 for m in authors:
                     if m in CANONICAL_MEMBERS:
-                        member_scores[m]["agenda_off_mission_authored"] += 1
+                        member_scores[m]["action_off_mission_authored"] += 1
                 for m in cosponsors:
                     if m in CANONICAL_MEMBERS:
-                        member_scores[m]["agenda_off_mission_cosponsored"] += 1
+                        member_scores[m]["action_off_mission_cosponsored"] += 1
 
-            if false_fiscal:
+            # Track budget referrals authored on action calendar (reveals spending priorities)
+            if dollar_total > 0 and authors:
                 for m in authors:
                     if m in CANONICAL_MEMBERS:
-                        member_scores[m]["agenda_false_fiscal_authored"] += 1
-                for m in cosponsors:
-                    if m in CANONICAL_MEMBERS:
-                        member_scores[m]["agenda_false_fiscal_cosponsored"] += 1
+                        member_scores[m]["action_budget_referral_total"] += dollar_total
+                        member_scores[m]["action_budget_referral_items"] += 1
 
-            for m, amt in discretionary.items():
-                if m in CANONICAL_MEMBERS:
-                    member_scores[m]["agenda_discretionary_total"] += amt
-                    member_scores[m]["agenda_discretionary_items"] += 1
-
-        if meeting_off_mission > 0:
-            meetings_with_off_mission += 1
-
-    ishii_consent_meta = {
-        "agenda_consent_meetings":   total_consent_meetings,
+    ishii_meta = {
+        "agenda_consent_meetings":     total_consent_meetings,
         "agenda_off_mission_meetings": meetings_with_off_mission,
-        "agenda_off_mission_total":  total_off_mission_items,
+        "agenda_off_mission_total":    total_off_mission_items,
     }
 
-    return dict(member_scores), ishii_consent_meta
+    return dict(member_scores), ishii_meta
+
+
+# ---------------------------------------------------------------------------
+# Fiscal hypocrisy detection
+# ---------------------------------------------------------------------------
+
+# Large action-calendar item titles that indicate the council approved significant spending,
+# regardless of which member authored them (City Manager items that required council vote).
+_LARGE_SPEND_TITLE_RE = re.compile(
+    r"appropriations ordinance|"
+    r"tax.and.revenue anticipation|"
+    r"lease revenue (note|bond)|"
+    r"general obligation bond|"
+    r"measure\s+[a-z]\b.*bond|"
+    r"master (lease|agreement)\b.*(\bservice|\bhousing|\bshelter)|"
+    r"contract:?\s+.{5,60}\s+(for|to provide)\b",
+    re.IGNORECASE,
+)
+
+
+def _flag_fiscal_hypocrisy(aggregate: dict) -> None:
+    """
+    For each member, compare their fiscal-concern rhetoric (FISCAL_CONCERN_KW hits
+    from transcripts) against their budget actions from agendas.
+    Adds fiscal_hypocrisy_score (0–1) and fiscal_hypocrisy_detail to each member.
+
+    Logic:
+      - concern_hits  = how many times member invoked fiscal-concern language in speeches
+      - action_spend  = total $ in budget referrals they authored on the action calendar
+      - off_action    = off-mission items they brought to the action calendar (explicit choice)
+      - A member scores high on hypocrisy if they frequently voice budget concern BUT
+        also author expensive proposals or off-mission action items.
+    """
+    for name, s in aggregate.items():
+        if name.startswith("_") or name == "Ishii":
+            continue
+        concern   = s.get("fiscal_concern_hits", 0) or 0
+        spend     = s.get("action_budget_referral_total", 0) or 0
+        off_action = s.get("action_off_mission_authored", 0) or 0
+
+        # Normalize: concern_rate = mentions per 10k words (so volume doesn't penalise big talkers)
+        words = s.get("words", 1) or 1
+        concern_rate = concern / words * 10_000
+
+        # Score: rhetoric is credible if it comes without large spending actions.
+        # We penalise when concern_rate is high AND spend/off_action are also high.
+        hypocrisy = 0.0
+        details   = []
+        waste_pct = s.get("waste_pct", 0) or 0
+
+        if concern_rate >= 0.5 and spend >= 500_000:
+            # Claimed restraint + authored large spending
+            hypocrisy = min(1.0, (concern_rate / 2.0) * (spend / 1_000_000) * 0.1)
+            details.append(f"{concern} fiscal-concern mentions in speeches")
+            details.append(f"${spend:,.0f} in budget referrals authored on action calendar")
+        elif concern_rate >= 0.5 and off_action >= 1:
+            # Claimed restraint + explicitly brought off-mission items to debate
+            hypocrisy = min(0.5, concern_rate * 0.2)
+            details.append(f"{concern} fiscal-concern mentions")
+            details.append(f"{off_action} off-mission items brought to action calendar")
+        elif concern == 0 and spend >= 250_000:
+            # Spender with no fiscal acknowledgment (not hypocritical, but notable)
+            hypocrisy = 0.0   # not scored as hypocrisy — flagged separately below
+            details.append(f"${spend:,.0f} in budget referrals authored — no fiscal-concern rhetoric detected")
+
+        s["fiscal_concern_hits"]    = concern
+        s["fiscal_concern_rate"]    = round(concern_rate, 3)
+        s["fiscal_hypocrisy_score"] = round(hypocrisy, 3)
+        if details:
+            s["fiscal_hypocrisy_detail"] = "; ".join(details)
 
 
 # ---------------------------------------------------------------------------
@@ -528,8 +631,8 @@ def main():
     print("Computing trends...", file=sys.stderr)
     trends = compute_trends(meetings)
 
-    print("Loading consent calendar scores...", file=sys.stderr)
-    consent_scores, ishii_consent_meta = load_agenda_consent_scores()
+    print("Loading agenda scores (consent + action)...", file=sys.stderr)
+    consent_scores, ishii_consent_meta = load_agenda_scores()
     n_agendas = len(glob.glob(os.path.join(AGENDAS_DIR, "*.json")))
     print(f"  {n_agendas} agendas · {ishii_consent_meta['agenda_consent_meetings']} with consent items · "
           f"{ishii_consent_meta['agenda_off_mission_total']} off-mission items total", file=sys.stderr)
@@ -575,6 +678,7 @@ def main():
     }
 
     add_efficiency_ranks(aggregate)
+    _flag_fiscal_hypocrisy(aggregate)
 
     # --- Snapshot + deltas ---
     print("Computing iteration deltas...", file=sys.stderr)

@@ -218,6 +218,18 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     if cred >= 1:
         insights.append(("warn", f"Credential-dropping detected ({cred}×) — references personal expertise to close debate rather than open it"))
 
+    # Fiscal consistency
+    hyp  = s.get("fiscal_hypocrisy_score", 0) or 0
+    conc = s.get("fiscal_concern_hits", 0) or 0
+    spend = s.get("action_budget_referral_total", 0) or 0
+    if hyp >= 0.1:
+        detail = s.get("fiscal_hypocrisy_detail", "")
+        insights.append(("bad", f"Fiscal consistency flag: {detail}"))
+    elif conc == 0 and spend >= 250_000:
+        insights.append(("warn", f"Authored ${spend:,.0f} in budget referrals on the action calendar with no fiscal concern rhetoric in speeches"))
+    elif conc >= 4 and spend == 0 and (s.get("action_off_mission_authored", 0) or 0) == 0:
+        insights.append(("good", f"Fiscal concern rhetoric matches actions — {conc} deficit references, no large spending authored"))
+
     # Abstentions
     abs_rate = s.get("vote_abstain_rate") or 0
     if abs_rate >= 0.05:
@@ -238,66 +250,95 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
 # Consent calendar section (embedded in member card)
 # ---------------------------------------------------------------------------
 
-def _render_consent_section(s: dict) -> str:
-    """Return HTML for the Consent Calendar section, or '' if no agenda data."""
-    authored    = s.get("agenda_off_mission_authored",    0) or 0
-    cosponsored = s.get("agenda_off_mission_cosponsored", 0) or 0
-    false_fisc  = s.get("agenda_false_fiscal_authored",   0) or 0
-    false_cosp  = s.get("agenda_false_fiscal_cosponsored",0) or 0
-    disc_total  = s.get("agenda_discretionary_total",     0) or 0
-    disc_items  = s.get("agenda_discretionary_items",     0) or 0
+def _render_agenda_section(s: dict) -> str:
+    """
+    Return HTML for Agenda Behavior section covering both consent and action calendars.
+    Returns '' if no agenda data is present.
+    """
+    # Consent
+    c_authored    = s.get("agenda_off_mission_authored",    0) or 0
+    c_cosponsored = s.get("agenda_off_mission_cosponsored", 0) or 0
+    false_fisc    = (s.get("agenda_false_fiscal_authored",   0) or 0) + \
+                    (s.get("agenda_false_fiscal_cosponsored",0) or 0)
+    disc_total    = s.get("agenda_discretionary_total",     0) or 0
+    disc_items    = s.get("agenda_discretionary_items",     0) or 0
 
-    # If there's nothing to show, skip the section
-    if authored + cosponsored + false_fisc + false_cosp + disc_total == 0:
+    # Action calendar
+    a_authored    = s.get("action_off_mission_authored",    0) or 0
+    a_cosponsored = s.get("action_off_mission_cosponsored", 0) or 0
+    a_spend       = s.get("action_budget_referral_total",   0) or 0
+    a_items       = s.get("action_budget_referral_items",   0) or 0
+
+    # Fiscal hypocrisy
+    hyp_score  = s.get("fiscal_hypocrisy_score", 0) or 0
+    hyp_detail = s.get("fiscal_hypocrisy_detail", "") or ""
+    concern    = s.get("fiscal_concern_hits", 0) or 0
+
+    if c_authored + c_cosponsored + false_fisc + disc_total + a_authored + a_cosponsored + a_spend == 0:
         return ""
 
-    def _clr(n, bad_threshold, warn_threshold=1):
-        if n >= bad_threshold:   return "#e74c3c"
-        if n >= warn_threshold:  return "#f39c12"
+    def _clr(n, bad, warn=1):
+        if n >= bad:  return "#e74c3c"
+        if n >= warn: return "#f39c12"
         return "#2c3e50"
 
-    authored_html = (
-        f'<span style="font-weight:800;color:{_clr(authored,3,1)}">{authored}</span>'
-        f'<span style="font-size:10px;color:#7f8c8d"> authored</span>'
+    def _stat(val, label, bad, warn=1, fmt=None):
+        color = _clr(val, bad, warn)
+        disp  = fmt(val) if fmt else str(val)
+        return (
+            f'<div class="stat-box">'
+            f'<div class="stat-val" style="font-size:18px;color:{color}">{disp}</div>'
+            f'<div class="stat-lbl" style="margin-top:4px">{label}</div>'
+            f'</div>'
+        )
+
+    consent_row = (
+        _stat(c_authored,    "Off-mission items<br>buried in consent (authored)", bad=2, warn=1) +
+        _stat(c_cosponsored, "Off-mission consent<br>items co-sponsored",         bad=4, warn=2) +
+        _stat(false_fisc,    'False &ldquo;None&rdquo; fiscal<br>claims (authored/cospon.)', bad=2, warn=1) +
+        (f'<div class="stat-box">'
+         f'<div class="stat-val" style="font-size:18px">${disc_total:,}</div>'
+         f'<div class="stat-lbl" style="margin-top:4px">Discretionary relinquishments<br>'
+         f'({disc_items} items from council budget)</div>'
+         f'</div>' if disc_total or disc_items else '')
     )
-    cospo_html = (
-        f'<span style="font-weight:800;color:{_clr(cosponsored,5,2)}">{cosponsored}</span>'
-        f'<span style="font-size:10px;color:#7f8c8d"> co-spons.</span>'
+
+    action_row = (
+        _stat(a_authored,    "Off-mission items<br>brought to action calendar", bad=2, warn=1) +
+        _stat(a_cosponsored, "Off-mission action<br>items co-sponsored",        bad=3, warn=1) +
+        (f'<div class="stat-box">'
+         f'<div class="stat-val" style="font-size:18px;color:{_clr(a_spend,1_000_000,250_000)}">'
+         f'${a_spend:,.0f}</div>'
+         f'<div class="stat-lbl" style="margin-top:4px">Budget referrals authored<br>'
+         f'on action calendar ({a_items} items)</div>'
+         f'</div>' if a_spend else '')
     )
-    ff_html = (
-        f'<span style="font-weight:800;color:{_clr(false_fisc+false_cosp,3,1)}">'
-        f'{false_fisc + false_cosp}</span>'
-        f'<span style="font-size:10px;color:#7f8c8d"> false fiscal</span>'
-    )
-    disc_html = (
-        f'<span style="font-weight:800;color:#2c3e50">${disc_total:,}</span>'
-        f'<span style="font-size:10px;color:#7f8c8d"> discretionary ({disc_items} items)</span>'
-    ) if disc_total else (
-        f'<span style="font-weight:800;color:#2c3e50">$0</span>'
-        f'<span style="font-size:10px;color:#7f8c8d"> discretionary</span>'
-    )
+
+    hyp_html = ""
+    if hyp_score >= 0.05:
+        hyp_html = (
+            f'<div style="margin-top:12px;padding:10px 12px;background:#fff5f5;'
+            f'border-left:3px solid #e74c3c;border-radius:4px;font-size:12px;line-height:1.6">'
+            f'<b style="color:#e74c3c">Fiscal Consistency Flag</b> — '
+            f'{concern} fiscal-concern speeches vs. '
+            f'{"$" + f"{a_spend:,.0f}" + " authored in budget referrals" if a_spend else str(a_authored) + " off-mission items on action calendar"}'
+            + (f'<br><span style="color:#95a5a6;font-size:10.5px">{hyp_detail}</span>' if hyp_detail else '')
+            + '</div>'
+        )
 
     return f"""
   <div class="section">
-    <div class="section-title">Consent Calendar Behavior</div>
-    <div class="stat-grid">
-      <div class="stat-box">
-        <div class="stat-val" style="font-size:18px">{authored_html}</div>
-        <div class="stat-lbl" style="margin-top:4px">Off-mission items<br>advanced through consent</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val" style="font-size:18px">{cospo_html}</div>
-        <div class="stat-lbl" style="margin-top:4px">Off-mission items<br>co-sponsored</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val" style="font-size:18px">{ff_html}</div>
-        <div class="stat-lbl" style="margin-top:4px">Items with false<br>"None" fiscal claim</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val" style="font-size:18px">{disc_html}</div>
-        <div class="stat-lbl" style="margin-top:4px">Council office budget<br>relinquishments</div>
-      </div>
+    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Consent = block votes on buried items &nbsp;·&nbsp; Action = explicitly debated (heavier signal)
     </div>
+    <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
+                letter-spacing:.8px;margin-bottom:6px">Consent Calendar</div>
+    <div class="stat-grid">{consent_row}</div>
+    <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
+                letter-spacing:.8px;margin:12px 0 6px">Action Calendar</div>
+    <div class="stat-grid">{action_row}</div>
+    {hyp_html}
   </div>"""
 
 
@@ -466,7 +507,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     </div>
   </div>
 
-  {_render_consent_section(s)}
+  {_render_agenda_section(s)}
 
   <div class="section">
     <div class="section-title">Key Findings</div>
