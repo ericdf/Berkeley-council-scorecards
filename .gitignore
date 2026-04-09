@@ -1,0 +1,15 @@
+# Generated text artifacts — regenerate with: pdftotext -layout minutes/*.pdf text/
+text/
+
+# Pipeline outputs
+scores/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# macOS
+.DS_Store
