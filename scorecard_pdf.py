@@ -64,10 +64,11 @@ def pct_bar(value: float, width: int = 260) -> str:
     )
 
 
-def trend_arrow(val) -> str:
-    if val is None: return ""
-    if val > 0.02:  return '<span style="color:#e74c3c">▲</span>'   # getting worse
-    if val < -0.02: return '<span style="color:#2ecc71">▼</span>'   # improving
+def focus_trend_arrow(core_trend_val) -> str:
+    """Arrow for Focus % trend. Positive core_trend = more on-topic = improving = green ▲."""
+    if core_trend_val is None: return ""
+    if core_trend_val >  0.02: return '<span style="color:#27ae60">▲</span>'  # more focused — good
+    if core_trend_val < -0.02: return '<span style="color:#e74c3c">▼</span>'  # less focused — bad
     return '<span style="color:#95a5a6">▬</span>'
 
 
@@ -210,7 +211,7 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     if brank == 1:
         insights.append(("good", "Highest Civic Temperament — genuine warmth, acknowledges colleagues, and demonstrates humility"))
     if rrank == 1:
-        insights.append(("bad",  "Highest Mission Drift — combination of off-mission focus, ego signals, and avoidance of fiscal accountability"))
+        insights.append(("bad",  "Lowest Clarity score — ego signals, off-mission speech, staff overreach, and fiscal avoidance compound into the council's worst behavioral profile"))
 
     # Credential dropping
     cred = s.get("cred_hits", 0) or 0
@@ -277,13 +278,12 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     bind = s.get("vote_independent") or 0
     block_pct = int(council_block_rate * 100)
 
-    # Trend
-    wt = s.get("waste_trend")
+    # Trend (focus = core_pct, positive = more on-topic = improving)
     ct = s.get("core_trend")
     trend_line = ""
-    if wt is not None:
-        direction = "improving" if wt < -0.02 else ("declining" if wt > 0.02 else "stable")
-        trend_line = f"Recent trend: <b>{direction}</b> {trend_arrow(wt)} (waste {wt:+.1%} vs all-time avg)"
+    if ct is not None:
+        direction = "improving" if ct > 0.02 else ("declining" if ct < -0.02 else "stable")
+        trend_line = f"Recent focus trend: <b>{direction}</b> {focus_trend_arrow(ct)} (meeting focus {ct:+.1%} vs all-time avg)"
 
     # Rankings
     vrank = rankings.get("voter", {}).get(s["canonical"], "—")
@@ -345,8 +345,8 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
         <div class="rank-val">#{brank}{b_badge}</div>
       </div>
       <div class="rank-item">
-        <div class="rank-title">Mission Drift</div>
-        <div class="rank-val">#{rrank} <span style="font-size:12px;color:#7f8c8d">(#1=most)</span>{r_badge}</div>
+        <div class="rank-title">Clarity</div>
+        <div class="rank-val">#{rrank} <span style="font-size:12px;color:#7f8c8d">(#1=least)</span>{r_badge}</div>
       </div>
       <div class="rank-item">
         <div class="rank-title">Efficiency</div>
@@ -434,12 +434,12 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
         dist = DISTRICT.get(n, "")
         vg, vc = letter(s.get("voter"))
         bg, bc = letter(s.get("beer"))
-        rg, rc = letter(1 - (s.get("recall", 0) or 0))   # invert so A = low risk
-        wp  = s.get("waste_pct", 0) or 0
+        rg, rc = letter(1 - (s.get("recall", 0) or 0))   # invert: A = most clear
+        cp  = s.get("core_pct", 0) or 0
         atl = s.get("avg_turn_len", 0) or 0
         refs = s.get("staff_referrals", 0) or 0
         erank = rankings.get("efficiency", {}).get(n, "—")
-        ta = trend_arrow(s.get("waste_trend"))
+        ta = focus_trend_arrow(s.get("core_trend"))
         d  = s.get("_delta", {})
         vd = delta_badge(d.get("voter"), "voter", threshold=0.015) if d else ""
         rows += f"""
@@ -448,12 +448,12 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
           <td class="col-name"><b>{dn}</b><br><span class="subdist">{dist}</span></td>
           <td class="col-grade {vc}">{vg}</td>
           <td class="col-bar">{pct_bar(s.get('voter', 0), 110)}</td>
-          <td class="col-num">{wp*100:.0f}%</td>
           <td class="col-num">{atl:.0f}w<br><span class="subdist">#{erank}</span></td>
           <td class="col-num">{refs}</td>
           <td class="col-grade {bc}">{bg}</td>
           <td class="col-grade {rc}">{rg}</td>
           <td class="col-delta">{vd if vd else '<span style="color:#ccc">—</span>'}</td>
+          <td class="col-num">{cp*100:.0f}%</td>
           <td class="col-trend">{ta}</td>
         </tr>"""
 
@@ -469,7 +469,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 <div class="about-page">
   <div class="about-header">
     <h1>About This Scorecard</h1>
-    <p class="about-sub">Berkeley City Council &nbsp;·&nbsp; Dec 2024–Mar 2026 &nbsp;·&nbsp; {n_meetings} meetings</p>
+    <p class="about-sub">Berkeley City Council &nbsp;·&nbsp; {date_range} &nbsp;·&nbsp; {n_meetings} meetings</p>
   </div>
 
   <div class="about-intro">
@@ -490,8 +490,8 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Civic Focus <span class="metric-weight">(Waste % / Core %)</span></div>
-      <div class="metric-desc">What fraction of a member's speech touches core city business (budget, infrastructure, zoning, housing, public safety, economic development) versus off-mission topics (foreign policy, police oversight resolutions disconnected from department operations, sanctuary city statements, and tax increases). Waste % is the share of turns classified as off-mission.</div>
+      <div class="metric-name">Civic Focus &amp; Focus % <span class="metric-weight">(pillar + summary column)</span></div>
+      <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Focus % is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
     </div>
 
     <div class="metric-block">
@@ -505,8 +505,8 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Mission Drift</div>
-      <div class="metric-desc">Combines off-mission speech share, ego signals, fiscal avoidance, and staff referral volume into a single risk signal. A high Mission Drift score means the member is consistently spending political capital and public time on things outside the city's core mandate. The grade is inverted on the summary table — A means low drift, F means high drift.</div>
+      <div class="metric-name">Clarity</div>
+      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines ego signals (credential-dropping, debate-closing appeals to personal authority), off-mission speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
     </div>
 
   </div>
@@ -614,24 +614,26 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
       <th>Member</th>
       <th>Overall</th>
       <th>Voter Alignment</th>
-      <th>Waste %</th>
       <th>Words/Turn</th>
       <th>Staff Refs</th>
       <th>Civic Temp.</th>
-      <th>Mission Drift</th>
-      <th>vs Last</th>
-      <th>Trend</th>
+      <th>Clarity</th>
+      <th>Change</th>
+      <th>Focus %</th>
+      <th>Focus Trend</th>
     </tr>
   </thead>
   <tbody>{rows}</tbody>
 </table>
 
 <div class="footnote">
-  <b>Voter Alignment</b> = LSI 30% + Core-topic % 35% + Inverse-waste % 35% &nbsp;·&nbsp;
+  <b>Voter Alignment</b> = LSI 30% + Focus % 35% + Inverse-off-mission % 35% &nbsp;·&nbsp;
   <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Ego &nbsp;·&nbsp;
-  <b>Mission Drift</b> inverted so A = lowest drift &nbsp;·&nbsp;
-  <b>Trend</b> ▼ improving &nbsp; ▲ worsening (waste% vs 90-day avg) &nbsp;·&nbsp;
-  <b>Staff Refs</b> = referrals to city manager/staff; each ≈ 40–80 hrs, no opportunity-cost review &nbsp;·&nbsp;
+  <b>Clarity</b> = inverse of ego + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
+  <b>Focus %</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
+  <b>Focus Trend</b> ▲ improving &nbsp; ▼ declining (recent 90-day meeting focus vs. member's all-time avg) &nbsp;·&nbsp;
+  <b>Change</b> = Voter Alignment vs. prior scorecard run &nbsp;·&nbsp;
+  <b>Staff Refs</b> ≈ 40–80 hrs each, no opportunity-cost review &nbsp;·&nbsp;
   See page 2 for full methodology &nbsp;·&nbsp; Generated {gen_date}
 </div>
 

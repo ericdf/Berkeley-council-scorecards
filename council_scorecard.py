@@ -5,7 +5,7 @@ Produces four scored dimensions per member:
   1. LSI      — Legislative Sophistication Index (revised 5-component)
   2. Character — Ego / Collegiality / Intellectual Humility
   3. Alignment — Voter alignment (core focus, low waste)
-  4. Summary   — "Civic Temperament" and "Mission Drift" composite scores
+  4. Summary   — "Civic Temperament" and "Clarity" composite scores
 
 Handles all three transcript formats:
   - >> SPEAKER: text           (older captioner format — full attribution)
