@@ -218,11 +218,29 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     if cred >= 1:
         insights.append(("warn", f"Credential-dropping detected ({cred}×) — references personal expertise to close debate rather than open it"))
 
-    # Fiscal consistency
+    # Spending vote record
+    yes_voted = s.get("spending_yes_total", 0) or 0
+    no_voted  = s.get("spending_no_total",  0) or 0
+    sv_n      = s.get("spending_votes_n",   0) or 0
+    conc_rate = s.get("fiscal_concern_rate", 0) or 0
+    if yes_voted >= 10_000_000 and conc_rate >= 0.5:
+        yes_m = yes_voted / 1_000_000
+        insights.append(("bad",
+            f"Roll-call record: voted YES on ${yes_m:.0f}M in spending items while invoking fiscal-concern language {s.get('fiscal_concern_hits',0)} times"))
+    elif no_voted > 0:
+        no_m = no_voted / 1_000_000
+        insights.append(("good",
+            f"Dissented on ${no_m:.1f}M in spending items — one of the few members to break from block spending votes"))
+    elif sv_n >= 3 and yes_voted >= 1_000_000:
+        yes_m = yes_voted / 1_000_000
+        insights.append(("warn",
+            f"Voted YES on ${yes_m:.0f}M in spending across {sv_n} tracked roll-calls (all block votes, no dissent)"))
+
+    # Fiscal consistency (rhetoric-based — lower priority than vote record)
     hyp  = s.get("fiscal_hypocrisy_score", 0) or 0
     conc = s.get("fiscal_concern_hits", 0) or 0
     spend = s.get("action_budget_referral_total", 0) or 0
-    if hyp >= 0.1:
+    if hyp >= 0.1 and yes_voted < 10_000_000:   # avoid double-flagging
         detail = s.get("fiscal_hypocrisy_detail", "")
         insights.append(("bad", f"Fiscal consistency flag: {detail}"))
     elif conc == 0 and spend >= 250_000:
@@ -230,10 +248,35 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     elif conc >= 4 and spend == 0 and (s.get("action_off_mission_authored", 0) or 0) == 0:
         insights.append(("good", f"Fiscal concern rhetoric matches actions — {conc} deficit references, no large spending authored"))
 
-    # Abstentions
-    abs_rate = s.get("vote_abstain_rate") or 0
-    if abs_rate >= 0.05:
-        insights.append(("warn", f"{abs_rate*100:.0f}% abstention rate — abstentions often function as unstated 'no' votes"))
+    # Attendance
+    fully_absent = s.get("sessions_fully_absent", 0) or 0
+    sessions_total = s.get("sessions_total", 0) or 0
+    if fully_absent >= 4:
+        insights.append(("bad", f"Fully absent from {fully_absent} of {sessions_total} sessions — never arrived, no vote cast"))
+    elif fully_absent >= 2:
+        insights.append(("warn", f"Fully absent from {fully_absent} sessions (no arrival recorded)"))
+
+    # Major fiscal vote absences
+    fv_absent = s.get("fiscal_vote_absent", 0) or 0
+    fv_total  = s.get("fiscal_vote_total",  0) or 0
+    fv_miss   = s.get("fiscal_dollars_absent", 0) or 0
+    if fv_absent >= 3:
+        insights.append(("bad", f"Missed {fv_absent} of {fv_total} binding fiscal votes — {_fmt_m(fv_miss)} in authorizations voted on without them"))
+    elif fv_absent >= 1:
+        insights.append(("warn", f"Absent for {fv_absent} of {fv_total} binding fiscal votes ({_fmt_m(fv_miss)})"))
+
+    # Annotated vote dissent / abstentions
+    ann_no      = s.get("annot_vote_no",      0) or 0
+    ann_abstain = s.get("annot_vote_abstain",  0) or 0
+    ann_cont    = s.get("annot_contested_abstain", 0) or 0
+    if ann_no >= 2:
+        insights.append(("good", f"Voted NO {ann_no} times across all tracked items — among the most willing to dissent from bloc"))
+    elif ann_no == 1:
+        insights.append(("good", "Cast 1 dissenting NO vote — rare on this council"))
+    if ann_cont >= 1:
+        insights.append(("warn", f"Abstained {ann_cont}× on contested votes (another member voted no) — chose not to take a side when it mattered"))
+    elif ann_abstain >= 3:
+        insights.append(("warn", f"Abstained {ann_abstain} times — pattern suggests disengagement or unstated disagreement"))
 
     # Efficiency
     erank = rankings.get("efficiency", {}).get(n)
@@ -343,6 +386,444 @@ def _render_agenda_section(s: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Spending vote record section
+# ---------------------------------------------------------------------------
+
+def _render_spending_votes(s: dict) -> str:
+    """
+    Section showing the member's roll-call voting record on items with dollar values.
+    Returns '' if no spending votes are recorded.
+    """
+    yes_total   = s.get("spending_yes_total",     0) or 0
+    no_total    = s.get("spending_no_total",      0) or 0
+    abs_total   = s.get("spending_abstain_total", 0) or 0
+    n_votes     = s.get("spending_votes_n",       0) or 0
+    yes_pct     = s.get("spending_yes_pct")
+    biggest     = s.get("largest_yes_item")
+
+    if n_votes == 0:
+        return ""
+
+    def _fmt_m(v: int) -> str:
+        if v >= 1_000_000:
+            return f"${v/1_000_000:.1f}M"
+        if v >= 1_000:
+            return f"${v/1_000:.0f}K"
+        return f"${v:,}"
+
+    yes_color = "#2c3e50"   # neutral — unanimous councils make 100% unremarkable
+    no_color  = "#27ae60" if no_total > 0 else "#95a5a6"
+
+    yes_box = (
+        f'<div class="stat-box">'
+        f'<div class="stat-val" style="color:{yes_color}">{_fmt_m(yes_total)}</div>'
+        f'<div class="stat-lbl">Voted <b>YES</b> on<br>({n_votes} spending votes)</div>'
+        f'</div>'
+    )
+    no_box = (
+        f'<div class="stat-box">'
+        f'<div class="stat-val" style="color:{no_color}">{_fmt_m(no_total) if no_total else "—"}</div>'
+        f'<div class="stat-lbl">Voted <b>NO</b> on<br>(dissent from block)</div>'
+        f'</div>'
+    )
+    pct_box = ""
+    if yes_pct is not None:
+        pct_color = "#7f8c8d"   # 100% YES is normal; call it out only if below 90%
+        if yes_pct < 0.90:
+            pct_color = "#27ae60"
+        pct_box = (
+            f'<div class="stat-box">'
+            f'<div class="stat-val" style="color:{pct_color}">{yes_pct*100:.0f}%</div>'
+            f'<div class="stat-lbl">YES rate on<br>spending items</div>'
+            f'</div>'
+        )
+
+    biggest_html = ""
+    if biggest:
+        bamt  = _fmt_m(biggest["dollar_total"])
+        bdate = biggest.get("date", "")
+        btitle = biggest.get("title", "")[:65]
+        biggest_html = (
+            f'<div style="margin-top:10px;padding:8px 12px;background:#f0f7ff;'
+            f'border-left:3px solid #3498db;border-radius:4px;font-size:12px;line-height:1.6">'
+            f'<b>Largest YES vote:</b> {bamt} &nbsp;·&nbsp; {bdate}<br>'
+            f'<span style="color:#555">{btitle}</span>'
+            f'</div>'
+        )
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Spending Votes — Roll-Call Record</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Dollar amounts from agenda items matched to extracted roll-calls.
+      Coverage is partial: unanimous voice votes and some formats not captured.
+    </div>
+    <div class="stat-grid">{yes_box}{no_box}{pct_box}</div>
+    {biggest_html}
+  </div>"""
+
+
+def _render_hso_section(s: dict) -> str:
+    """
+    Section showing the member's Homeless Services Orthodoxy (HSO) score.
+    Measures investment in Berkeley's prevailing homeless services apparatus —
+    $21.7M+/yr across 33 programs, Housing First mandate, low-barrier ideology —
+    vs. demanding accountability, cost-per-client scrutiny, and enforcement.
+    """
+    score      = s.get("hso_score")
+    sym_hits   = s.get("hso_sympathy_hits",  0) or 0
+    ske_hits   = s.get("hso_skeptic_hits",   0) or 0
+    net_rate   = s.get("hso_net_rate",       0.0) or 0.0
+    sym_rate   = s.get("hso_sympathy_rate",  0.0) or 0.0
+    ske_rate   = s.get("hso_skeptic_rate",   0.0) or 0.0
+    cospon     = s.get("hso_items_cosponsored", 0) or 0
+
+    if score is None:
+        return ""
+
+    # Color the score: high = status-quo aligned (red), low = reform-oriented (green)
+    if score >= 70:
+        score_color = "#c0392b"
+        label = "High Orthodoxy"
+    elif score >= 45:
+        score_color = "#e67e22"
+        label = "Moderate Orthodoxy"
+    elif score >= 20:
+        score_color = "#7f8c8d"
+        label = "Mixed"
+    else:
+        score_color = "#27ae60"
+        label = "Reform-Oriented"
+
+    bar_w = int(min(100, max(0, score)) * 2.0)
+
+    rhetoric_line = ""
+    if sym_hits + ske_hits > 0:
+        rhetoric_line = (
+            f"<div style='margin-top:6px;font-size:11px;color:#555'>"
+            f"Rhetoric: <b>{sym_hits}</b> orthodoxy-aligned signals "
+            f"(<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;"
+            f"<b>{ske_hits}</b> accountability signals "
+            f"(<em>Grants Pass, cost-per-client, metrics&hellip;</em>)"
+            f"</div>"
+        )
+    else:
+        rhetoric_line = (
+            "<div style='margin-top:6px;font-size:11px;color:#95a5a6;font-style:italic'>"
+            "No orthodoxy-specific rhetoric detected in attributed speech.</div>"
+        )
+
+    cospon_line = ""
+    if cospon > 0:
+        cospon_line = (
+            f"<div style='margin-top:4px;font-size:11px;color:#555'>"
+            f"Cosponsored/authored <b>{cospon}</b> homeless-services agenda item(s).</div>"
+        )
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Homeless Services Orthodoxy</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Berkeley spends $21.7M+/yr across 33 programs; H&amp;W up 65% vs 25% revenue growth.
+      Score measures investment in the prevailing homeless services apparatus vs.
+      accountability and reform orientation. Lower is better.
+      Based on attributed transcript speech; coverage partial.
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px">
+      <div style="font-size:28px;font-weight:bold;color:{score_color}">{score:.0f}</div>
+      <div>
+        <div style="font-size:13px;font-weight:bold;color:{score_color}">{label}</div>
+        <svg width="200" height="12" style="display:block;margin-top:4px">
+          <rect x="0" y="0" width="200" height="12" rx="4" fill="#ecf0f1"/>
+          <rect x="0" y="0" width="{bar_w}" height="12" rx="4" fill="{score_color}"/>
+        </svg>
+        <div style="font-size:10px;color:#95a5a6;margin-top:2px">0 = reform-oriented &nbsp;·&nbsp; 100 = status-quo aligned</div>
+      </div>
+    </div>
+    {rhetoric_line}
+    {cospon_line}
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
+# Procurement integrity section (from packet_scraper staff report signals)
+# ---------------------------------------------------------------------------
+
+def _render_procurement_section(s: dict) -> str:
+    score     = s.get("procurement_score")
+    waived    = s.get("procurement_waived_bid_yes",  0) or 0
+    backdated = s.get("procurement_backdated_yes",   0) or 0
+    alt_none  = s.get("procurement_alt_none_yes",    0) or 0
+    total     = s.get("procurement_flagged_yes",     0) or 0
+    items     = s.get("procurement_flagged_items",  []) or []
+
+    if score is None:
+        return ""
+
+    if score >= 70:
+        score_color, label = "#c0392b", "High Risk"
+    elif score >= 40:
+        score_color, label = "#e67e22", "Elevated"
+    elif score >= 15:
+        score_color, label = "#7f8c8d", "Moderate"
+    else:
+        score_color, label = "#27ae60", "Low"
+
+    bar_w = int(min(100, max(0, score)) * 2.0)
+
+    signal_parts = []
+    if waived:
+        signal_parts.append(f"<b>{waived}</b> waived-bid item{'s' if waived != 1 else ''}")
+    if backdated:
+        signal_parts.append(f"<b>{backdated}</b> backdated contract{'s' if backdated != 1 else ''}")
+    if alt_none:
+        signal_parts.append(f"<b>{alt_none}</b> item{'s' if alt_none != 1 else ''} with "
+                            f"&ldquo;alternatives: none&rdquo;")
+    signals_html = (
+        f"<div style='margin-top:6px;font-size:11px;color:#555'>"
+        f"Voted YES on: {', '.join(signal_parts)}.</div>"
+    ) if signal_parts else (
+        "<div style='margin-top:6px;font-size:11px;color:#95a5a6;font-style:italic'>"
+        "No red-flag procurement votes detected in covered items.</div>"
+    )
+
+    # Show up to 3 worst items
+    items_html = ""
+    if items:
+        rows = ""
+        for it in items[:3]:
+            flags = it.get("flags", [])
+            flag_str = " · ".join(
+                {"waived_bid": "waived bid", "backdated": "backdated", "alt_none": "alt=none"}.get(f, f)
+                for f in flags
+            )
+            dollar = it.get("dollar_total", 0)
+            dollar_str = f"${dollar:,.0f}" if dollar else ""
+            rows += (
+                f"<tr><td style='padding:2px 8px 2px 0;font-size:10px;color:#555'>"
+                f"{it['date']} #{it['item_number']}</td>"
+                f"<td style='font-size:10px;color:#555'>{it['title'][:55]}</td>"
+                f"<td style='font-size:10px;color:#e67e22;padding-left:6px'>{flag_str}</td>"
+                f"<td style='font-size:10px;color:#c0392b;padding-left:6px'>{dollar_str}</td></tr>"
+            )
+        items_html = f"<table style='margin-top:6px;border-collapse:collapse'>{rows}</table>"
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Procurement Integrity</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Votes on items where staff reports show waived competitive bids, retroactive contracts,
+      or &ldquo;alternative actions considered: none.&rdquo; Score based on items with cached staff reports only.
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px">
+      <div style="font-size:28px;font-weight:bold;color:{score_color}">{score:.0f}</div>
+      <div>
+        <div style="font-size:13px;font-weight:bold;color:{score_color}">{label}</div>
+        <svg width="200" height="12" style="display:block;margin-top:4px">
+          <rect x="0" y="0" width="200" height="12" rx="4" fill="#ecf0f1"/>
+          <rect x="0" y="0" width="{bar_w}" height="12" rx="4" fill="{score_color}"/>
+        </svg>
+        <div style="font-size:10px;color:#95a5a6;margin-top:2px">
+          {total} flagged vote{'s' if total != 1 else ''} &nbsp;·&nbsp;
+          0 = cleanest &nbsp;·&nbsp; 100 = most rubber-stamps
+        </div>
+      </div>
+    </div>
+    {signals_html}
+    {items_html}
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
+# Attendance section (from annotated agenda PDFs)
+# ---------------------------------------------------------------------------
+
+def _render_attendance_section(s: dict) -> str:
+    total        = s.get("sessions_total",         0) or 0
+    fully_absent = s.get("sessions_fully_absent",   0) or 0
+    late         = s.get("sessions_late",           0) or 0
+    absent_roll  = s.get("sessions_absent_at_roll", 0) or 0
+    att_rate     = s.get("attendance_rate",         1.0) or 1.0
+    punct_rate   = s.get("punctuality_rate",        1.0) or 1.0
+
+    if total == 0:
+        return ""
+
+    present = total - fully_absent
+
+    def _clr(val, bad, warn):
+        if val >= bad:  return "#e74c3c"
+        if val >= warn: return "#f39c12"
+        return "#27ae60"
+
+    absent_color = _clr(fully_absent, 4, 2)
+    late_color   = _clr(late,         8, 4)
+    roll_color   = _clr(absent_roll, 15, 8)
+
+    att_bar_w  = int(att_rate   * 240)
+    att_color  = "#27ae60" if att_rate >= 0.95 else "#f39c12" if att_rate >= 0.85 else "#e74c3c"
+    pct_bar_w  = int(punct_rate * 240)
+    pct_color  = "#27ae60" if punct_rate >= 0.80 else "#f39c12" if punct_rate >= 0.60 else "#e74c3c"
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Attendance — {total} Sessions (Annotated Agenda Record)</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+      Source: post-meeting annotated agenda PDFs — the authoritative attendance record.
+      "Fully absent" = listed absent at roll call and never arrived.
+    </div>
+    <div class="stat-grid" style="margin-bottom:12px">
+      <div class="stat-box">
+        <div class="stat-val">{present}/{total}</div>
+        <div class="stat-lbl">Sessions present<br>(attended at some point)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:{absent_color}">{fully_absent}</div>
+        <div class="stat-lbl">Sessions <b>fully absent</b><br>(never arrived)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:{late_color}">{late}</div>
+        <div class="stat-lbl">Sessions <b>late</b><br>(absent at roll, arrived later)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:{roll_color}">{absent_roll}</div>
+        <div class="stat-lbl">Sessions absent<br>at roll call</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:110px;font-size:11px;color:#555">Attendance rate</div>
+        <svg width="240" height="12"><rect width="240" height="12" rx="4" fill="#ecf0f1"/>
+          <rect width="{att_bar_w}" height="12" rx="4" fill="{att_color}"/></svg>
+        <div style="font-size:11px;font-weight:700;color:{att_color}">{att_rate*100:.0f}%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:110px;font-size:11px;color:#555">On-time rate</div>
+        <svg width="240" height="12"><rect width="240" height="12" rx="4" fill="#ecf0f1"/>
+          <rect width="{pct_bar_w}" height="12" rx="4" fill="{pct_color}"/></svg>
+        <div style="font-size:11px;font-weight:700;color:{pct_color}">{punct_rate*100:.0f}%</div>
+      </div>
+    </div>
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
+# Major fiscal votes section
+# ---------------------------------------------------------------------------
+
+def _fmt_m(v: int) -> str:
+    if v >= 1_000_000_000:
+        return f"${v/1_000_000_000:.2f}B"
+    if v >= 1_000_000:
+        return f"${v/1_000_000:.1f}M"
+    if v >= 1_000:
+        return f"${v/1_000:.0f}K"
+    return f"${v:,}"
+
+_CLASSIFICATION_LABEL = {
+    "TEFRA_BOND":      "TEFRA Bond",
+    "LEASE_BOND":      "Revenue Bond",
+    "GO_BOND":         "GO Bond",
+    "BUDGET_AMENDMENT":"Budget Amendment",
+    "BUDGET_ADOPTION": "Budget Adoption",
+}
+
+_POSITION_STYLE = {
+    "yes":     ("#e67e22", "YES",     "Endorsed status quo — voted to authorize"),
+    "no":      ("#27ae60", "NO",      "Dissented — voted against authorization"),
+    "absent":  ("#e74c3c", "ABSENT",  "Absent — missed binding fiscal vote"),
+    "abstain": ("#f39c12", "ABSTAIN", "Chose not to use voting power"),
+    "unknown": ("#95a5a6", "?",       "Position not determinable from record"),
+}
+
+def _render_fiscal_votes_section(s: dict) -> str:
+    records      = s.get("fiscal_vote_records",      []) or []
+    fv_total     = s.get("fiscal_vote_total",         0) or 0
+    fv_absent    = s.get("fiscal_vote_absent",        0) or 0
+    fv_yes       = s.get("fiscal_vote_yes",           0) or 0
+    fv_no        = s.get("fiscal_vote_no",            0) or 0
+    dollars_miss = s.get("fiscal_dollars_absent",     0) or 0
+    dollars_yes  = s.get("fiscal_dollars_voted_yes",  0) or 0
+
+    if not records:
+        return ""
+
+    absent_color = "#e74c3c" if fv_absent >= 3 else "#f39c12" if fv_absent >= 1 else "#27ae60"
+    yes_color    = "#e67e22"   # all budget YES votes are status-quo endorsements
+
+    summary_boxes = (
+        f'<div class="stat-box">'
+        f'<div class="stat-val" style="color:{absent_color}">{fv_absent}/{fv_total}</div>'
+        f'<div class="stat-lbl">Binding fiscal votes<br><b>missed</b></div>'
+        f'</div>'
+        +
+        (f'<div class="stat-box">'
+         f'<div class="stat-val" style="color:{absent_color}">{_fmt_m(dollars_miss)}</div>'
+         f'<div class="stat-lbl">In fiscal authorizations<br>absent for</div>'
+         f'</div>' if dollars_miss else '')
+        +
+        f'<div class="stat-box">'
+        f'<div class="stat-val" style="color:{yes_color}">{fv_yes}</div>'
+        f'<div class="stat-lbl">Endorsed status quo<br>(voted YES)</div>'
+        f'</div>'
+        +
+        (f'<div class="stat-box">'
+         f'<div class="stat-val" style="color:#27ae60">{fv_no}</div>'
+         f'<div class="stat-lbl">Dissented<br>(voted NO)</div>'
+         f'</div>' if fv_no else '')
+    )
+
+    rows = ""
+    for rec in records:
+        pos   = rec.get("position", "unknown")
+        color, badge, _ = _POSITION_STYLE.get(pos, _POSITION_STYLE["unknown"])
+        amt   = rec.get("amount", 0)
+        cls   = _CLASSIFICATION_LABEL.get(rec.get("classification",""), rec.get("classification",""))
+        title = rec.get("title", "")
+        date  = rec.get("date", "")
+        rows += (
+            f"<tr>"
+            f"<td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>{date}</td>"
+            f"<td style='font-size:10px;color:#888;white-space:nowrap'>{cls}</td>"
+            f"<td style='font-size:10.5px;color:#2c3e50'>{title}</td>"
+            f"<td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>{_fmt_m(amt)}</td>"
+            f"<td style='text-align:center;padding-left:8px'>"
+            f"<span style='font-size:10px;font-weight:800;color:{color};white-space:nowrap'>{badge}</span>"
+            f"</td>"
+            f"</tr>"
+        )
+
+    note = (
+        '<div style="margin-top:8px;font-size:10px;color:#7f8c8d;font-style:italic">'
+        'YES = endorsed the spending authorization (budget adoptions = chose not to cut or reprioritize). '
+        'ABSENT = dereliction — items are only on the agenda because the Mayor expects passage.'
+        '</div>'
+    )
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Major Fiscal Votes — {fv_total} Binding Decisions</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+      Curated list of binding fiscal votes Dec 2024–Jul 2025. Source: annotated agenda PDFs.
+    </div>
+    <div class="stat-grid" style="margin-bottom:12px">{summary_boxes}</div>
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr style="background:#f0f2f5">
+          <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px 4px 0;text-transform:uppercase;letter-spacing:.5px">Date</th>
+          <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Type</th>
+          <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Item</th>
+          <th style="text-align:right;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Amount</th>
+          <th style="text-align:center;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Position</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+    {note}
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
 # Render one member scorecard
 # ---------------------------------------------------------------------------
 
@@ -378,13 +859,13 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
           <div class="pillar-pct">{pval*100:.0f}%{badge}</div>
         </div>"""
 
-    # Vote stats
-    vtot = s.get("vote_total") or 0
-    vyes = s.get("vote_yes") or 0
-    vno  = s.get("vote_no") or 0
-    vabs = s.get("vote_abstain") or 0
-    bind = s.get("vote_independent") or 0
-    block_pct = int(council_block_rate * 100)
+    # Vote stats — prefer annotated-agenda data; fall back to transcript extraction
+    ann_total   = s.get("annot_vote_total",   0) or 0
+    ann_no      = s.get("annot_vote_no",      0) or 0
+    ann_abstain = s.get("annot_vote_abstain", 0) or 0
+    ann_absent  = s.get("annot_vote_absent",  0) or 0
+    ann_cont    = s.get("annot_contested_abstain", 0) or 0
+    block_pct   = int(council_block_rate * 100)
 
     # Trend (focus = core_pct, positive = more on-topic = improving)
     ct = s.get("core_trend")
@@ -463,24 +944,32 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     </div>
   </div>
 
+  {_render_attendance_section(s)}
+
+  {_render_fiscal_votes_section(s)}
+
   <div class="section">
-    <div class="section-title">Voting Record</div>
+    <div class="section-title">Voting Record — {ann_total} Items (Annotated Agenda)</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Source: annotated agenda PDFs across all {ann_total} items with a parseable vote.
+      Council block-vote rate: {block_pct}% — individual deviations are high-signal precisely because they are rare.
+    </div>
     <div class="stat-grid">
       <div class="stat-box">
-        <div class="stat-val">{block_pct}%</div>
-        <div class="stat-lbl">Council block-vote rate<br>(all members vote same)</div>
+        <div class="stat-val" style="color:{'#27ae60' if ann_no >= 1 else '#7f8c8d'}">{ann_no}</div>
+        <div class="stat-lbl">NO votes<br>(dissent from bloc)</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">{bind}</div>
-        <div class="stat-lbl">Independent votes<br>(broke from majority)</div>
+        <div class="stat-val" style="color:{'#f39c12' if ann_abstain >= 3 else '#7f8c8d'}">{ann_abstain}</div>
+        <div class="stat-lbl">Abstentions<br><em>(chose not to vote)</em></div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">{vabs}</div>
-        <div class="stat-lbl">Abstentions<br><em>(often an unstated "no")</em></div>
+        <div class="stat-val" style="color:{'#e74c3c' if ann_absent >= 10 else '#f39c12' if ann_absent >= 5 else '#7f8c8d'}">{ann_absent}</div>
+        <div class="stat-lbl">Absent during vote<br>(item-level absences)</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">{vtot}</div>
-        <div class="stat-lbl">Total vote events<br>captured in transcripts</div>
+        <div class="stat-val" style="color:{'#e74c3c' if ann_cont >= 1 else '#95a5a6'}">{ann_cont}</div>
+        <div class="stat-lbl">Contested abstentions<br><em>(others voted no)</em></div>
       </div>
     </div>
   </div>
@@ -507,6 +996,10 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     </div>
   </div>
 
+  {_render_spending_votes(s)}
+
+  {_render_hso_section(s)}
+
   {_render_agenda_section(s)}
 
   <div class="section">
@@ -530,6 +1023,74 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
 # Summary comparison page
 # ---------------------------------------------------------------------------
 
+def _render_procurement_watch() -> str:
+    """
+    Council-level procurement watch box: lists items from staff report cache
+    with waived competitive bids or retroactive contracts.
+    These pass on the consent calendar as a bloc — not individually attributable.
+    """
+    import glob as _glob
+    reports_dir = os.path.join(os.path.dirname(__file__), "agendas", "reports")
+    if not os.path.isdir(reports_dir):
+        return ""
+
+    flagged = []
+    for path in sorted(_glob.glob(os.path.join(reports_dir, "*.json"))):
+        try:
+            r = json.load(open(path))
+        except Exception:
+            continue
+        s = r.get("signals", {})
+        flags = []
+        if s.get("waived_competitive_bid"): flags.append("waived bid")
+        if s.get("backdated"):              flags.append("retroactive")
+        if not flags:
+            continue
+        dollars = s.get("dollar_amounts", [])
+        flagged.append({
+            "date":    r.get("date", ""),
+            "item":    r.get("item_key", str(r.get("item_num", "?"))),
+            "title":   r.get("title", "").lstrip("-").strip(),
+            "flags":   flags,
+            "dollars": dollars[:2],
+            "grant":   s.get("grant_funded", False),
+            "gf":      s.get("general_fund", False),
+        })
+
+    if not flagged:
+        return ""
+
+    rows = ""
+    for it in flagged:
+        flag_str  = " · ".join(f'<span style="color:#c0392b;font-weight:bold">{f}</span>' for f in it["flags"])
+        dollar_str = " &nbsp; ".join(it["dollars"]) if it["dollars"] else ""
+        src = "grant" if it["grant"] else ("gen. fund" if it["gf"] else "")
+        rows += (
+            f"<tr>"
+            f"<td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>{it['date']} #{it['item']}</td>"
+            f"<td style='font-size:11px;color:#333'>{it['title'][:70]}</td>"
+            f"<td style='font-size:11px;padding-left:10px'>{flag_str}</td>"
+            f"<td style='font-size:11px;color:#7f8c8d;padding-left:10px'>{dollar_str}</td>"
+            f"<td style='font-size:11px;color:#7f8c8d;padding-left:6px'>{src}</td>"
+            f"</tr>"
+        )
+
+    return f"""
+<div style="margin:32px 0 0 0;padding:16px 20px;background:#fdf9f0;border-left:4px solid #e67e22;border-radius:4px">
+  <div style="font-size:14px;font-weight:bold;color:#e67e22;margin-bottom:6px">
+    Procurement Watch — {len(flagged)} item{'s' if len(flagged) != 1 else ''} flagged
+  </div>
+  <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+    Items passed on the consent calendar where staff reports show waived competitive bids
+    or retroactive contracts. Consent calendar items are adopted as a bloc — individual
+    member attribution requires transcript vote records (not available for these items).
+  </div>
+  <table style="border-collapse:collapse;width:100%">
+    {rows}
+  </table>
+</div>"""
+
+
 def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: dict) -> str:
     members = sorted(
         [n for n in aggregate if not n.startswith("_") and n != "Ishii"
@@ -552,12 +1113,63 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
         ta = focus_trend_arrow(s.get("core_trend"))
         d  = s.get("_delta", {})
         vd = delta_badge(d.get("voter"), "voter", threshold=0.015) if d else ""
+
+        # Spending vote column
+        yes_total = s.get("spending_yes_total", 0) or 0
+        sv_n      = s.get("spending_votes_n",   0) or 0
+        if yes_total >= 1_000_000:
+            yes_str = f"${yes_total/1_000_000:.0f}M"
+        elif yes_total > 0:
+            yes_str = f"${yes_total/1_000:.0f}K"
+        else:
+            yes_str = "—"
+        spend_cell = (
+            f'<b>{yes_str}</b>'
+            + (f'<br><span class="subdist">{sv_n} votes</span>' if sv_n else "")
+        )
+
+        # Homeless Services Orthodoxy column
+        hic_score = s.get("hso_score")
+        if hic_score is not None:
+            if hic_score >= 70:
+                hic_color, hic_label = "#c0392b", "High"
+            elif hic_score >= 45:
+                hic_color, hic_label = "#e67e22", "Mod"
+            elif hic_score >= 20:
+                hic_color, hic_label = "#7f8c8d", "Mix"
+            else:
+                hic_color, hic_label = "#27ae60", "Low"
+            hic_cell = f'<b style="color:{hic_color}">{hic_score:.0f}</b><br><span class="subdist" style="color:{hic_color}">{hic_label}</span>'
+        else:
+            hic_cell = "—"
+
+        # Procurement integrity column
+        proc_score = s.get("procurement_score")
+        if proc_score is not None:
+            if proc_score >= 70:
+                proc_color = "#c0392b"
+            elif proc_score >= 40:
+                proc_color = "#e67e22"
+            elif proc_score >= 15:
+                proc_color = "#7f8c8d"
+            else:
+                proc_color = "#27ae60"
+            proc_n = s.get("procurement_flagged_yes", 0) or 0
+            proc_cell = (
+                f'<b style="color:{proc_color}">{proc_score:.0f}</b>'
+                + (f'<br><span class="subdist">{proc_n}v</span>' if proc_n else "")
+            )
+        else:
+            proc_cell = "—"
+
         rows += f"""
         <tr>
           <td class="col-rank">#{rank}</td>
           <td class="col-name"><b>{dn}</b><br><span class="subdist">{dist}</span></td>
           <td class="col-grade {vc}">{vg}</td>
           <td class="col-bar">{pct_bar(s.get('voter', 0), 110)}</td>
+          <td class="col-num">{spend_cell}</td>
+          <td class="col-num">{hic_cell}</td>
           <td class="col-num">{atl:.0f}w<br><span class="subdist">#{erank}</span></td>
           <td class="col-num">{refs}</td>
           <td class="col-grade {bc}">{bg}</td>
@@ -724,6 +1336,8 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
       <th>Member</th>
       <th>Overall</th>
       <th>Voter Alignment</th>
+      <th>$ Voted YES</th>
+      <th>HSO</th>
       <th>Words/Turn</th>
       <th>Staff Refs</th>
       <th>Civic Temp.</th>
@@ -738,6 +1352,8 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
 
 <div class="footnote">
   <b>Voter Alignment</b> = LSI 30% + Focus % 35% + Inverse-off-mission % 35% &nbsp;·&nbsp;
+  <b>$ Voted YES</b> = total dollars on agenda items where member's roll-call vote was YES (partial coverage) &nbsp;·&nbsp;
+  <b>HSO</b> = Homeless Services Orthodoxy (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on orthodoxy-aligned vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
   <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Ego &nbsp;·&nbsp;
   <b>Clarity</b> = inverse of ego + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
   <b>Focus %</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
@@ -746,6 +1362,8 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
   <b>Staff Refs</b> ≈ 40–80 hrs each, no opportunity-cost review &nbsp;·&nbsp;
   See page 2 for full methodology &nbsp;·&nbsp; Generated {gen_date}
 </div>
+
+{_render_procurement_watch()}
 
 {about_page}
 

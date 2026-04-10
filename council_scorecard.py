@@ -458,6 +458,42 @@ FISCAL_CONCERN_KW = [
     r"(put\s+)?(a\s+)?(bond|tax|levy|measure|parcel tax).{0,20}(ballot|voters|measure)",
 ]
 
+# ---------------------------------------------------------------------------
+# Homeless Services Orthodoxy (HSO) rhetoric signals
+# ---------------------------------------------------------------------------
+
+# Language that signals ideological alignment with the prevailing homeless services orthodoxy.
+# "Unhoused neighbors" is treated as a shibboleth: council members who adopt this
+# framing are expressing orthodoxy regardless of whether the surrounding sentence
+# is sympathetic or fiscal — the city's own manager has acknowledged the population
+# is largely imported, so calling them "neighbors" is the tell.
+HSO_SYMPATHY_KW = [
+    # "punches/punching above its/our weight" in homeless context
+    # Use [\s\S] instead of . so the pattern crosses line breaks in transcripts.
+    r"\bpunch(?:es|ing)?\b[\s\S]{0,30}\babove[\s\S]{0,15}\bweight\b",
+    r"\bharm.reduction\b",                                    # Harm reduction policy frame
+    r"\btrauma.?informed\b",                                  # Trauma-informed approach
+    r"\blow.barrier\s+(?:shelter|housing|option|bed)\b",      # Low-barrier ideology
+    r"\bwrap.?around\s+serv",                                 # Wrap-around services
+    # "unhoused neighbors" — shibboleth identifying orthodoxy framing (see note above)
+    r"\bunhoused\s+neighbors?\b",
+    r"\bhousing.?first.{0,30}(?:work|effective|success)\b",  # Defending Housing First
+]
+
+# Language that signals skepticism or accountability orientation toward the orthodoxy:
+# questioning costs, demanding enforcement, challenging the mandate.
+HSO_SKEPTIC_KW = [
+    r"\bgrants?\s+pass\b",                                    # Grants Pass SCOTUS ruling
+    r"\bcost\s+per\s+(?:client|person|individual)\b",         # Cost-per-client accountability
+    r"\bare\s+we\s+(?:still\s+)?required\s+to\s+implement",  # Questioning Housing First mandate
+    r"\bhousing\s+first\s+(?:is\s+state\s+law|required|model|mandate)\b",  # Mandate skepticism
+    r"\breinstate\b.{0,15}\b(?:rv|recreational\s+vehicle)\b", # RV ordinance reinstatement
+    r"\bencampment\b.{0,30}\b(?:enforcement|clearanc|sweep|removal)\b",  # Enforcement framing
+    r"\bhomeless(?:ness)?\b.{0,30}\baccountability\b",        # Demanding accountability
+    r"\bfiscal\s+cliff\b.{0,30}\b(?:homeless|shelter|program)\b",  # Fiscal cliff + homeless programs
+    r"\bmetrics?\b.{0,30}\boutcomes?\b|\boutcomes?\b.{0,30}\bmetrics?\b",  # Accountability framing
+]
+
 FISCAL_KW = [
     r"what.s the cost", r"how much (will|does|would|is)\b",
     r"cost.benefit", r"fiscal impact", r"budget impact",

@@ -1,0 +1,236 @@
+# Berkeley City Council Scorecard — Methodology
+
+**Version:** April 2026  
+**Scope:** Dec 2024 – Apr 2026 (51 meeting transcripts, 58 annotated agenda sessions)  
+**Audience:** Insiders briefing document — describes signals, sources, and weightings
+
+---
+
+## Philosophy
+
+This scorecard is explicitly voter-aligned, not neutral. The evaluative framework assumes the voter cares about:
+
+1. **Taxpayer alignment** — Does the member champion taxpayer interests, or treat property owners and residents as a funding source for their agenda? Do they demand alternatives to taxes and bonds, question efficiency, and push back on the status quo? Or do they reach for new revenue as a first resort?
+
+2. **Focus** — Does the member spend the council's time on core city services (public safety, infrastructure, basic city operations), or on performative, ideological, and off-mission items that consume staff bandwidth and budget without delivering core value?
+
+3. **Showing up** — Did the member actually do the job? Attendance at meetings — especially for binding fiscal votes — is the minimum bar.
+
+The scoring **does not** treat budget growth, new programs, or bond issuances as neutral acts. A YES vote on a budget adoption is a choice to endorse the status quo and forgo reprioritization. An absence during a major fiscal vote is dereliction. A referral to study a new tax is the beginning of a political infrastructure campaign, not a neutral process step.
+
+---
+
+## Data Sources
+
+| Source | What it provides |
+|--------|-----------------|
+| **Meeting transcripts** (51 PDFs, txt) | Attributed speech per member: rhetoric, debate style, fiscal language, Homeless Services Orthodoxy (HSO) signals |
+| **Annotated agenda PDFs** (58 sessions) | Authoritative post-meeting record: exact attendance (roll call time, arrivals), per-item vote breakdown (Ayes/Noes/Abstain/Absent) |
+| **Agenda JSONs** (58 sessions) | Pre-meeting agenda items: title, dollar amount, authors, cosponsors, off-mission flag, fiscal flags |
+| **Staff report PDFs** (packet scraper) | Procurement signals: waived competitive bid, backdated contracts, no-alternatives clauses |
+
+Annotated agendas are the authoritative source for **what actually happened** (outcomes, votes, attendance). Transcripts fill the gap between plan and outcome — capturing the deliberation, rhetoric, and interpersonal style that votes alone don't reveal.
+
+---
+
+## Scoring Tiers
+
+### Tier 1 — Letter Grade
+
+A single A–F composite representing overall alignment with taxpayer interests. Computed from weighted sub-scores (see below). Designed to be the one number a busy voter can reference.
+
+**Composite inputs and weights:**
+
+| Component | Weight | Rationale |
+|-----------|--------|-----------|
+| Taxpayer alignment score | 45% | The core question: whose interests does this member champion? |
+| Focus score | 35% | Steve Jobs principle: focus is about what you say no to |
+| Attendance score | 20% | Minimum bar: did they show up to do the job? |
+
+**Grade thresholds:** A+ ≥ 90 · A ≥ 83 · A− ≥ 77 · B+ ≥ 70 · B ≥ 63 · B− ≥ 57 · C+ ≥ 50 · C ≥ 43 · C− ≥ 37 · D+ ≥ 30 · D ≥ 23 · D− ≥ 17 · F < 17
+
+---
+
+### Tier 2 — Key Facts (visible on main scorecard)
+
+Three plain-language facts that explain the grade. No jargon.
+
+#### Showed Up
+- **Source:** Annotated agenda PDFs (authoritative roll call records)
+- **Components:** Sessions fully absent (never arrived) · Sessions late at roll call · Fiscal vote absences
+- **Framing:** "Present for X of Y major budget votes" is the key line — budget votes are the council's most consequential act and absences on them are dereliction regardless of excuse
+
+#### Stayed Focused
+- **Source:** Transcripts + agenda item classification
+- **Metric:** Focus % = (core-service words / total words) − (off-mission words / total words), normalized 0–100
+- **Core services:** public safety, infrastructure (roads, sidewalks, utilities, facilities), permitting, basic city operations, bicycle transportation infrastructure
+- **Off-mission:** foreign policy statements, ideological resolutions, performative oversight theater, fluff programs without measurable outcomes
+- **Borderline / neutral:** Arts programming and cultural events are not scored as off-mission by default — they are a city function, albeit a lower-priority one. They are noted if a specific incident shows them being used to crowd out or distract from more consequential work.
+- **Scope-creep within core items:** Even a core-service measure can be penalized if it is loaded with off-mission additions — e.g., bundling protected cycle tracks in new locations, environmental enhancements, or ideological carve-outs into a streets repair measure converts a straightforward repair obligation into a progressive amenity program. The focus signal captures this at the agenda item and transcript level.
+- **Framing:** The council has limited time and staff bandwidth. Every off-mission item is a choice to not work on something that matters.
+
+#### Taxpayer Alignment
+- **Source:** Transcripts + annotated agenda votes + agenda item authorship
+- **This is the most important dimension.** A member who talks fiscal restraint but authors bond referrals and votes yes on every budget is doing something specific: using taxpayers as ATMs. A member who demands efficiency data, questions alternatives to new revenue, and actually votes no on bloated items is representing the payer.
+- **Key sub-signals** (see Tier 4 for detail):
+  - Fiscal concern rhetoric rate (mentions of cost, efficiency, alternatives per 10k words)
+  - Off-mission items authored (active choice to consume budget on non-core items)
+  - Tax/bond referrals authored or cosponsored (appetite for new taxpayer obligations)
+  - Fiscal hypocrisy: voiced fiscal concern AND voted yes on large spending items
+  - Votes no on spending (rare and high-signal)
+  - Homeless Services Orthodoxy score (inverse: deeper alignment with status quo = less taxpayer-aligned)
+
+---
+
+### Tier 3 — Informed Voter
+
+Metrics that require some familiarity with how city government works, but are explainable in a sentence.
+
+#### Beer Score
+- **Source:** Transcripts
+- **What it measures:** Would you want this person representing you in a negotiation? Captures communication style — directness, clarity, whether they speak to residents or to insiders. Not a popularity contest; Taplin scores well here despite bad outcomes because he is a straight shooter. Tregub scores poorly because his style matches his agenda: ideological, evasive, and contemptuous of fiscal reality.
+- **Computed from:** Turn length distribution, jargon density, directness of responses
+
+#### Recall Risk
+- **Source:** Transcripts + vote record
+- **What it measures:** Composite signal for how out-of-step a member is with a median Berkeley homeowner. High recall risk = consistently anti-taxpayer rhetoric, off-mission agenda, and poor attendance.
+
+#### Homeless Services Orthodoxy (HSO)
+- **Source:** Transcripts + agenda cosponsorship
+- **Scale:** 0 (reform-oriented) → 100 (status-quo aligned)
+- **What it measures:** How invested is the member in the existing homeless services apparatus — $21.7M+/yr across 33+ programs, Housing First mandate, low-barrier ideology — versus demanding accountability, outcomes data, and reform?
+- **Why it matters:** Berkeley's homeless spending has grown for a decade with no measurable reduction in visible homelessness. A member who consistently champions more spending and resists outcome metrics is not representing taxpayers who fund those programs.
+- **Top scorers:** LunaParra (85), Tregub (73), Humbert (62)
+- **Bottom scorers:** Kesarwani (0), Bartlett (2)
+
+#### Block Vote Rate
+- **Source:** Transcripts (roll-call extraction)
+- **Council-wide rate:** ~92% of votes are unanimous
+- **What it means:** The council almost never disagrees in public. This is a council-level finding, not a per-member score. Individual deviations (no votes, abstentions) are tracked separately and are high-signal precisely because they are rare.
+
+---
+
+### Tier 4 — Inside Baseball
+
+Detailed signals for readers who want to understand the methodology or propose changes.
+
+#### Fiscal Hypocrisy Score
+- **Source:** Transcripts cross-referenced with agenda vote/authorship records
+- **Logic:** A member who frequently invokes fiscal discipline language AND authors large spending items or off-mission agenda items is doing something specific. The score measures the gap between rhetoric and action.
+- **Threshold:** Triggered when fiscal concern rate ≥ 0.5 mentions/10k words AND spend authored ≥ $500k
+
+#### Staff Referrals
+- **Source:** Transcripts
+- **What it measures:** How often a member directs staff to study, prepare, or report on something. Each referral consumes staff bandwidth. Classified by whether the referral topic is core-service or off-mission.
+- **Why it's "inside baseball":** The mechanism (staff referrals as a budget and bandwidth tool) is familiar to city-government watchers but opaque to general voters.
+
+#### Sponsorships
+- **Source:** Transcripts (self-identification as author or co-author)
+- **What it measures:** How often a member brings or co-sponsors agenda items. More sponsorships = more active agenda-setting. Combined with off-mission classification to distinguish productive from wasteful.
+
+#### Procurement Signals
+- **Source:** Staff report PDFs (packet scraper)
+- **Signals tracked:** Waived competitive bid · Backdated/retroactive contracts · No alternatives considered
+- **What it measures:** How often does a member vote yes on contracts or spending items with procurement red flags? This is a passive measure (most procurement is staff-driven) but patterns over time reveal whether members ask questions before approving.
+
+#### Annotated Vote Statistics
+- **Source:** Annotated agenda PDFs (all 58 sessions)
+- **Fields:** annot_vote_total · annot_vote_yes · annot_vote_no · annot_vote_abstain · annot_vote_absent · annot_abstain_rate · annot_contested_abstain
+- **Abstention semantics:** "I chose not to use my voting power on this matter." A pattern of abstaining signals disengagement, masked disagreement (fear of voting no), or failure to prepare. The council is elected to vote. Systematic abstention is a failure of the job function — constituents deserve a position, not a pass.
+- **Contested abstentions** (abstaining when ≥1 other member voted no) are the highest-signal variant: the member knew there was a real choice to make and declined to make it. This is the strongest indicator of conflict avoidance over representation.
+- **Current findings:** LunaParra leads with 4 abstentions (2.1% rate). Bartlett absent on 23 of 196 tracked vote items.
+
+#### Fiscal Vote Record (Major Binding Votes)
+- **Source:** Annotated agenda PDFs, cross-referenced with curated vote list
+- **7 binding fiscal votes tracked** (Dec 2024–Apr 2026):
+  1. 2025-01-21 · CMFA Bond – 2001 Ashby Ave · $44.9M
+  2. 2025-05-20 · Lease Revenue Notes – Fire HQ · $11M
+  3. 2025-05-20 · GO Bonds – Measure O Housing · $35M
+  4. 2025-05-20 · FY2025 Budget Amendment (1st reading) · $85.7M
+  5. 2025-06-03 · FY2025 Budget Amendment (2nd reading) · $144M
+  6. 2025-06-24 · FY2026 Budget Adoption (1st reading) · $1.45B
+  7. 2025-07-08 · FY2026 Budget Adoption (2nd reading) · $1.52B
+- **Bartlett:** Absent 5 of 7 ($320.7M in authorizations he skipped)
+- **Budget adoption framing:** A YES vote is not neutral. It is a choice not to cut, not to reprioritize, and not to address Berkeley's structural deficit. Every member present voted yes unanimously on the FY2026 budget at 1am.
+
+---
+
+## Incident Tracking
+
+Transcripts and agenda records capture what happens on the dais and in formal meetings. They do not capture everything that matters.
+
+**Incidents** are documented behaviors or actions observed outside formal council proceedings that reveal something meaningful about a member's disposition toward taxpayers, constituents, or public resources. Examples:
+
+- A constituent interaction that reveals a pattern of evasion or gaslighting
+- A public statement expressing a preference for borrowing over cutting
+- A pattern of scheduling "input meetings" after votes have already occurred
+- An observable disposition (e.g., backing a new institution built on demographic grievance rather than service gaps) that is visible in their agenda record but not explicitly verbalized
+
+### How incidents are documented
+
+Incidents are stored in `incidents.json` with structured fields:
+
+| Field | Contents |
+|-------|----------|
+| `category` | One of seven categories (see below) |
+| `date` | Date or approximate period |
+| `description` | Plain-language description of the behavior |
+| `source` | How the behavior was observed or established |
+| `scoring_impact` | Suggested adjustment to composite score (typically −0.10 to +0.10) |
+
+### Incident categories
+
+| Category | Direction | What it captures |
+|----------|-----------|-----------------|
+| `atm_behavior` | Negative | Reached for new revenue without first asking what can be cut or done more efficiently |
+| `constituent_gaslight` | Negative | Held meetings or sought input after decisions were made; performative not deliberative |
+| `alternatives_dismissed` | Negative | Explicitly closed off alternatives without analysis or evidence |
+| `claimed_ignorance` | Negative | Claimed not to know something they were obligated to know |
+| `union_deference` | Negative | Sided with city unions without requesting productivity data or efficiency tradeoffs |
+| `fiscal_integrity` | **Positive** | Pushed back on spending, demanded cost data, or advocated for cuts |
+| `constituent_service` | **Positive** | Genuinely responsive constituent engagement with demonstrated follow-through |
+
+### How incidents feed into scoring
+
+Incident scoring impacts are summed per member and capped at ±0.30 before being applied as an adjustment to the **Taxpayer Alignment** component of the composite grade. The cap prevents any single member's anecdote record from dominating the overall score.
+
+Incidents supplement — but do not replace — the transcript and agenda signals. A member with no incidents in the log is not assumed clean; it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.
+
+The full incident catalogue is rendered as a separate PDF (`scores/pdfs/incidents.pdf`) for sharing with readers who want to see the underlying evidence behind scores.
+
+---
+
+## Structural Context
+
+These facts are not per-member scores but inform what "taxpayer-aligned" means in Berkeley's specific context. Any member who does not publicly challenge these structural problems is implicitly endorsing them.
+
+- **Staffing level:** Berkeley has more city employees per resident than any other city in California. This is not a measure of service quality — it is a measure of cost structure. The city duplicates services provided by Alameda County (e.g., maintains its own Health Department when every comparable city uses the county Health Department instead). The result is a fixed cost base that is among the highest in the state, with no corresponding premium in outcomes.
+- **COVID precedent:** During COVID-19, then-Mayor Jesse Arreguín declared every city employee an "essential worker" — explicitly exempting all city staff from layoffs even as workloads (e.g., library pages with no books to shelve) collapsed. Other jurisdictions used the pandemic as a forcing function to reprioritize, eliminate redundant positions, and restructure. Berkeley did none of this. No current council member has proposed revisiting that precedent or conducting a post-COVID staffing review.
+- **Duplication of county services:** Berkeley operates a standalone Health Department, mental health division, and homeless response infrastructure that parallel and sometimes conflict with Alameda County services. The City Auditor's 2025 review of the Homeless Response Team documented this fragmentation. No council member has proposed consolidating with county services as an efficiency measure.
+
+---
+
+## Known Limitations and Open Questions
+
+- **Transcript coverage:** Not all meetings have transcripts; some are garbled or poorly formatted. Rhetoric scores are only as good as the transcript quality.
+- **Fiscal concern rhetoric vs. action:** High fiscal concern rhetoric + universal yes votes = the Bartlett problem. The existing `fiscal_hypocrisy_score` partially captures this but could be refined.
+- **"Underbonded" language:** Members who express a preference for borrowing more ("we are underbonded") versus demanding efficiency improvements are signaling a taxpayer-as-ATM disposition. This is currently captured weakly in transcript rhetoric — a dedicated signal is planned.
+- **Tax/bond referral tracking:** Authoring or cosponsoring a referral to study a new tax or bond is the first step in a political infrastructure campaign. Currently tracked as `FISCAL_REFERRAL` and `TAX_SURVEY` in the extended vote list but not yet weighted into the taxpayer alignment score.
+- **Union and labor posture:** Members who consistently side with city unions in labor negotiations (without asking for productivity data or considering service-level tradeoffs) are imposing costs on taxpayers. Currently not scored directly.
+- **Street paving misallocation:** Berkeley's streets are among the worst in Alameda County — and the council's response has been an unbroken cycle of bond measures with no corresponding general fund reprioritization. Key facts from audit and city reporting: the Pavement Condition Index (PCI) was ~57 as of 2024, rated "at risk" by the Metropolitan Transportation Commission — 10 points below the regional average and 3 below the threshold where "deterioration accelerates rapidly." Deferred maintenance backlog exceeds $250M. From 2018–2022 the city paved less than 3 miles/year; in 2018 zero streets were paved because staff failed to get bids out in time. General fund allocation to streets was $4.9–11.3M/year through 2020 — the council had to adopt a formal $15.3M/year commitment by policy in 2022 simply to commit to the minimum baseline. Achieving a PCI of 70 would require $42M/year. Regular maintenance is 5–10x cheaper than rehabilitation (MTC). The council's bond cycle: Measure M (2012) → T1 (2016) → L (failed at 59%, needed 2/3, 2022) → EE/FF (2024, best-case projected to merely hold PCI at 57) → new $300M bond + half-cent sales tax on 2026 ballot. No member has publicly called for the general fund reprioritization that would actually close the gap. Documented partially through incident tracking (Taplin, Tregub); not yet a dedicated pipeline signal.
+- **Measure FF endorsement (2024 ballot):** The pre-2025 City Council endorsed Measure FF over Measure EE in the November 2024 election. Measure EE was the simpler parcel tax focused on street and sidewalk repair. Measure FF was the larger, more expensive version that bundled in protected cycle tracks where none existed, environmental enhancements, and green infrastructure alongside streets. Structurally, this endorsement reveals a standing disposition: even when addressing a core-service crisis (street decay), the council preferred the vehicle that includes progressive amenities. Of current council members, **Taplin, Tregub, Humbert, and Bartlett** were seated at the time and are attributable to this endorsement. Blackaby, O'Keefe, Ishii, and LunaParra were not yet on the council. This is a council-level contextual finding rather than a per-member scored incident. Bicycle transportation infrastructure (bike lanes, bike boulevards, maintenance of existing facilities) is considered core service; new cycle track construction in locations where none existed is scope expansion.
+- **Constituent newsletter as advocacy:** Members occasionally use official constituent communications to mobilize support for county-level spending measures (e.g., Tregub/Measure W, Jul 2025). This is outside a councilmember's jurisdiction and compounds taxpayer burden across city and county levels. County and city measures are additive obligations on the same tax base — members typically avoid cross-advertising to prevent voters from calculating cumulative burden. Documented through incident tracking; not yet a scoring signal.
+- **Composite grade calibration:** The Tier 1 letter grade is implemented and producing results (O'Keefe B+, Blackaby B-, Bartlett B-, Taplin C+, LunaParra D+, Tregub D as of Apr 2026). The weighting formula will continue to be refined as more data accumulates.
+
+---
+
+## Proposing Changes
+
+This document is the authoritative description of the scoring methodology. If you want to propose a new signal, adjusted weight, or different framing:
+
+1. Identify which tier the signal belongs to
+2. Describe the data source (transcript keyword, annotated agenda field, agenda item flag)
+3. Describe the direction of scoring (higher = better or worse for taxpayers?)
+4. Propose a weight relative to existing signals in that tier
+
+Send proposals to the maintainer. The underlying pipeline (`pipeline.py`) is modular — adding a new scoring function is straightforward once the signal is well-defined.

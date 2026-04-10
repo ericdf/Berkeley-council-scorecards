@@ -1,0 +1,127 @@
+{
+  "_schema": {
+    "categories": {
+      "constituent_gaslight":   "Held meetings or sought input after decisions were made; performative not deliberative",
+      "alternatives_dismissed": "Explicitly closed off alternatives without analysis or evidence",
+      "claimed_ignorance":      "Claimed not to know something they were obligated to know",
+      "atm_behavior":           "Specific instance of treating taxpayers as a funding source without considering cuts or alternatives",
+      "union_deference":        "Sided with city unions without requesting productivity data or efficiency tradeoffs",
+      "fiscal_integrity":       "POSITIVE: Pushed back on spending, demanded cost data, or advocated for cuts",
+      "constituent_service":    "POSITIVE: Genuinely responsive constituent engagement with demonstrated follow-through"
+    },
+    "scoring_impact": "Additive adjustment to composite taxpayer-alignment score. Negative = against taxpayer interest. Suggested range: -0.10 to +0.10 per incident. Cap applied in pipeline."
+  },
+  "Taplin": [
+    {
+      "date": "2025-11-18",
+      "category": "atm_behavior",
+      "description": "Authored 'Advanced Fiscal Policies — Bond Schedule' referral directing City Manager to develop a regular predictable bond issuance schedule. Explicit 'we are underbonded' philosophy: preference to borrow more rather than improve efficiency or cut spending.",
+      "source": "Agenda record 2025-11-18 consent item 26",
+      "scoring_impact": -0.08
+    },
+    {
+      "date": "2025-12-02",
+      "category": "atm_behavior",
+      "description": "Led $300M GO bond survey direction at special session — framing potential new taxpayer debt obligations as infrastructure investment without any corresponding efficiency or cut analysis.",
+      "source": "Agenda record 2025-12-02 special meeting",
+      "scoring_impact": -0.07
+    },
+    {
+      "date": "2026-01-27",
+      "category": "atm_behavior",
+      "description": "Supported sales tax poll referral (Kesarwani) — part of ongoing pattern of reaching for new revenue (bonds, taxes) without first asking what can be cut or done more efficiently.",
+      "source": "Agenda record 2026-01-27 consent item 17",
+      "scoring_impact": -0.05
+    },
+    {
+      "date": "2026-02-19",
+      "category": "atm_behavior",
+      "description": "Distributed constituent newsletter promoting a city-launched 0.5% sales tax community survey to address Berkeley's structural deficit. The survey asks residents what services they want funded — not what they would cut. No mention of reprioritization, efficiency review, or spending reductions as alternatives. Berkeley's structural deficit is a spending problem; a survey that only surfaces new revenue preferences is political infrastructure for a tax campaign, not fiscal analysis.",
+      "source": "March 2026 District 2 Newsletter (ttaplin@cityofberkeley.info)",
+      "scoring_impact": -0.06
+    },
+    {
+      "date": "2026-03-01",
+      "category": "atm_behavior",
+      "description": "March 2026 newsletter promoted community input meetings for a potential 2026 infrastructure bond measure, advertising bond as the mechanism for addressing Berkeley's street and facility needs. Context: Berkeley's streets rank among the worst in Alameda County not from lack of bond authority but from chronic underfunding — approximately $2–8M of the general fund is allocated annually toward paving. The Five Year Paving Plan selects streets based on political considerations rather than efficiency-maximizing pavement management metrics. Framing infrastructure need as a bonding opportunity rather than a general fund reprioritization problem obscures the actual cause of decline and compounds taxpayer debt burden.",
+      "source": "March 2026 District 2 Newsletter (ttaplin@cityofberkeley.info); Five Year Paving Plan update presented February 4, 2026",
+      "scoring_impact": -0.06
+    },
+    {
+      "date": "2025-10-28",
+      "category": "alternatives_dismissed",
+      "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was ever introduced. Five months later (March 2026), Taplin and the full council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012 — without any companion motion to address the strategic failures the audit documented. The bond-over-reprioritization choice was made with eyes open.",
+      "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit, 'Rocky Road: Berkeley Streets at Risk and Significantly Underfunded'); agenda record 2026-03-17 Item 1",
+      "scoring_impact": -0.07
+    }
+  ],
+  "Ishii": [
+    {
+      "date": "2025-2026",
+      "category": "constituent_gaslight",
+      "description": "Mayor Ishii's office hours policy explicitly excludes organized groups — only individual constituents may attend. This is not a minor procedural detail: it structurally prevents neighbors with shared concerns from presenting collectively, which is the form of constituent engagement most likely to produce accountability. A group of residents raising a common grievance creates a record, demands a coherent answer, and is harder to dismiss than a series of isolated one-on-ones. Blocking group access is a signal of conflict avoidance, not genuine engagement. For contrast: the mayor of San Francisco maintains a visible daily public presence (business callouts, problem identification, follow-through) that this office does not approach.",
+      "source": "Direct observation by scorecard author; Ishii constituent communications and office hours scheduling policy",
+      "scoring_impact": -0.07
+    }
+  ],
+  "Bartlett": [
+    {
+      "date": "2025",
+      "category": "atm_behavior",
+      "description": "Backed creation of the African American Holistic Resource Center — a new building and staffing for a statistically small share of the population, driven by activist claims of underservice. No measurement of whether existing services were adequate, no alternatives analysis, no performance metrics required. Classic pattern: demographic grievance → new institution, bypassing any efficiency review of the status quo.",
+      "source": "Direct knowledge of scorecard author",
+      "scoring_impact": -0.12
+    },
+    {
+      "date": "2025",
+      "category": "alternatives_dismissed",
+      "description": "AAHRC: no effort made to determine whether existing city services could be reformed, consolidated, or redirected to meet the stated need. The question 'what do we already have and is it working?' was never asked publicly.",
+      "source": "Direct knowledge of scorecard author",
+      "scoring_impact": -0.06
+    }
+  ],
+  "Tregub": [
+    {
+      "date": "2024-12-11",
+      "category": "constituent_gaslight",
+      "description": "Scheduled community meeting on the Howard Johnson Motel interim housing project for December 11, 2024 — three weeks after the City Council had already voted on November 19, 2024 to approve the contract with Dorothy Day House to operate it. The invitation email acknowledged the vote had occurred ('By way of background, at its November 19 meeting, the City Council approved a contract...') while framing the December meeting as a community conversation. This was post-facto notification dressed as engagement.",
+      "source": "Tregub constituent email Dec 11 2024 (ITregub@berkeleyca.gov); agenda record 2024-11-19",
+      "scoring_impact": -0.08
+    },
+    {
+      "date": "2025",
+      "category": "alternatives_dismissed",
+      "description": "Told constituent there was 'no other good use' for the homeless hotel real estate — dismissed alternatives without any analysis, market study, or public process.",
+      "source": "Direct constituent interaction with scorecard author",
+      "scoring_impact": -0.05
+    },
+    {
+      "date": "2025",
+      "category": "claimed_ignorance",
+      "description": "Claimed not to know about the homeless hotel project despite it having been in the city staff pipeline for approximately 6 months and located in his own district.",
+      "source": "Direct constituent interaction with scorecard author",
+      "scoring_impact": -0.07
+    },
+    {
+      "date": "2026-03-17",
+      "category": "atm_behavior",
+      "description": "March 2026 (Part 2) newsletter told constituents that passage of both a $300M infrastructure bond AND a half-cent sales tax was 'a sobering fact...essential to ensure the city's continued ability to deliver on the quality services that you deserve.' This is revenue-first framing to constituents with no mention of reprioritization or efficiency alternatives. The bond and tax are being prepared for the November 2026 ballot — continuing an unbroken cycle of bond measures (Measure M 2012, T1 2016, L failed 2022, EE/FF 2024) with no corresponding general fund reprioritization. At the same time, Tregub voted unanimously with the rest of the council to commission a second poll on both measures.",
+      "source": "Tregub March 2026 Part 2 newsletter (igor@igortregub.com, 2026-03-18)",
+      "scoring_impact": -0.06
+    },
+    {
+      "date": "2025-07-21",
+      "category": "atm_behavior",
+      "description": "Used official District 4 constituent newsletter to mobilize residents to attend an Alameda County Board of Supervisors meeting in support of Measure W homelessness funding — an active lobbying call on behalf of county-level spending. Three compounding problems: (1) City and county measures are additive obligations on the same taxpayer base; drawing constituent attention to county spending campaigns is unusual precisely because it highlights cumulative burden — members typically avoid doing so. (2) Measure W would direct county revenue preferentially to cities that implement Housing First programs — i.e., Berkeley — meaning Tregub was effectively campaigning to route county money into the same Berkeley HSO apparatus whose outcomes he has never publicly questioned. (3) Lobbying for a county measure is outside a city councilmember's jurisdiction; using an official constituent email list for this purpose treats that list as an advocacy tool rather than a public communication channel.",
+      "source": "July 2025 District 4 Newsletter (igor@igortregub.com)",
+      "scoring_impact": -0.09
+    },
+    {
+      "date": "2025-10-28",
+      "category": "alternatives_dismissed",
+      "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was introduced. Five months later (March 2026), Tregub voted unanimously with the council to commission a $300M infrastructure bond survey, and his March 2026 newsletter described the bond as 'essential' — without mentioning the audit's finding that the underlying problem is chronic underfunding of paving in the general fund, not lack of bond authority. The audit was received, filed, and converted into a bond campaign.",
+      "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit); agenda record 2026-03-17 Item 1; Tregub March 2026 Part 2 newsletter",
+      "scoring_impact": -0.07
+    }
+  ]
+}
