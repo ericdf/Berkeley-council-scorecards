@@ -110,11 +110,13 @@ else
     "$VENV_PYTHON" "$SCRIPT_DIR/pipeline.py"
 fi
 
-# ---- Step 3: Always regenerate methodology + incidents PDFs ----
+# ---- Step 3: Always regenerate methodology + incidents + audit findings PDFs ----
 echo "=== Regenerating methodology PDF ==="
 "$VENV_PYTHON" "$SCRIPT_DIR/methodology_pdf.py"
 echo "=== Regenerating incident catalogue PDF ==="
 "$VENV_PYTHON" "$SCRIPT_DIR/incidents_pdf.py"
+echo "=== Regenerating audit findings PDF ==="
+"$VENV_PYTHON" "$SCRIPT_DIR/audit_findings_pdf.py"
 
 echo ""
 echo "Done. Artifacts in $SCRIPT_DIR/scores/"

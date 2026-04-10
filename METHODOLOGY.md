@@ -155,6 +155,27 @@ Detailed signals for readers who want to understand the methodology or propose c
 
 ---
 
+## Audit Findings Stream
+
+City Auditor reports are a separate evidentiary stream from incidents. They are not scored directly — the council's *response* to an audit is what gets scored.
+
+**Why this distinction matters:** Incidents capture specific moments of individual behavior. Auditor reports establish independent, documented ground truth: facts the council is obligated to know, findings that create a duty to act, and a record that removes the ability to claim ignorance. When a council member subsequently acts in a way that contradicts a documented audit finding, that action is now interpretable as a choice — not a gap in knowledge.
+
+**How audits feed into scoring:**
+1. An audit is released and enters the registry (`audit_findings.json`) with key findings, auditor recommendations, and the action a taxpayer-aligned council should take.
+2. When the audit goes on the council agenda, the council's first response is recorded. "Receive and file" without a companion motion is the baseline failure; a substantive motion by any member is the positive signal.
+3. Subsequent council actions that contradict audit findings are scored harder because the ground truth is documented. A vote for a fifth bond cycle *after* receiving an audit that identified GF underfunding as the root cause of street decay is a different act than the same vote without that record.
+4. Incidents that are grounded in an audit cite the registry key via the `audit_ref` field in `incidents.json`.
+
+**Ordinary voters will not read City Auditor reports.** The audit findings registry (`scores/pdfs/audit_findings.pdf`) does that work — it translates what each audit found, what was warranted, and what the council actually did into a readable record. The pattern across audits — findings received, filed, and converted into bond campaigns — is the accountability story the scorecard is designed to tell.
+
+**Audits currently tracked** (see `audit_findings.json`):
+- `streets_rocky_road_2025` — Rocky Road streets audit (Oct 2025): response documented; council received and filed, then directed a $300M bond with no GF reprioritization motion
+- `homeless_response_team_2025` — HRT audit (Jul 2025): pending council action; findings primarily staff-operational
+- `financial_condition_2026` — Financial condition audit (Apr 2026): pending council action; $32–33M structural deficit, 66% pension funded ratio, $1.8B unfunded capital, GFOA policy gap
+
+---
+
 ## Incident Tracking
 
 Transcripts and agenda records capture what happens on the dais and in formal meetings. They do not capture everything that matters.

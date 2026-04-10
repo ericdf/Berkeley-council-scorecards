@@ -81,6 +81,7 @@ scores/
     scorecard_SUMMARY.pdf     — one-page comparison across all members
     methodology.pdf           — insider methodology document
     incidents.pdf             — documented out-of-meeting incident catalogue
+    audit_findings.pdf        — City Auditor report registry: findings, warranted action, council response
 ```
 
 ---
@@ -123,6 +124,7 @@ meetings to pull them.
 | `scorecard_pdf.py` | WeasyPrint HTML→PDF scorecard renderer |
 | `methodology_pdf.py` | Renders `METHODOLOGY.md` → `scores/pdfs/methodology.pdf` |
 | `incidents_pdf.py` | Renders `incidents.json` → `scores/pdfs/incidents.pdf` |
+| `audit_findings_pdf.py` | Renders `audit_findings.json` → `scores/pdfs/audit_findings.pdf` |
 | `annotated_scraper.py` | Downloads annotated agenda PDFs → attendance + vote records |
 | `agenda_scraper.py` | Scrapes eAgenda HTML → agenda item JSON |
 | `packet_scraper.py` | Downloads staff report PDFs → procurement signals |

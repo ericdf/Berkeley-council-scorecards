@@ -1,0 +1,99 @@
+{
+  "_schema": {
+    "purpose": "Registry of City Auditor reports. Each entry documents what the auditor found, what action was warranted, and what the council actually did. The gap between warranted action and actual response is the scored event — not the audit release itself.",
+    "status_values": {
+      "pending_council_action": "Audit released; not yet presented to full council",
+      "received_filed":         "Council voted to receive and file; no substantive follow-up motion",
+      "substantive_response":   "At least one member moved for action addressing a finding",
+      "response_documented":    "Council response complete and follow-up pattern visible"
+    },
+    "fields": {
+      "audit_ref":           "Unique key — used in incidents.json audit_ref field to link incidents to this entry",
+      "title":               "Official report title",
+      "date_released":       "Date audit was published",
+      "key_findings":        "What the auditor documented — the ground truth",
+      "warranted_action":    "What a taxpayer-aligned council should do in response",
+      "council_agenda_date": "Date the report was formally presented to council (null if not yet scheduled)",
+      "council_response":    "What the council actually did at that meeting",
+      "followup_pattern":    "Subsequent actions that reveal how the council internalized (or ignored) the findings",
+      "status":              "One of the status_values above",
+      "scoring_note":        "The pattern the audit-response cycle reveals — what ordinary voters should understand"
+    }
+  },
+
+  "homeless_response_team_2025": {
+    "audit_ref": "homeless_response_team_2025",
+    "title": "Berkeley Homeless Response Team: Coordination, Oversight, and Outcome Tracking",
+    "date_released": "2025-07",
+    "author": "City Auditor",
+    "key_findings": [
+      "HRT coordination was paused for a significant period during the audit window",
+      "No outcome tracking system in place — the city cannot measure whether programs are working",
+      "Fragmentation between city and county homeless services creates duplication and coverage gaps",
+      "Berkeley operates standalone infrastructure parallel to Alameda County services with no consolidation analysis"
+    ],
+    "warranted_action": "Direct staff to implement outcome tracking; commission a consolidation study with Alameda County; require performance benchmarks before renewing program contracts",
+    "council_agenda_date": null,
+    "council_response": null,
+    "followup_pattern": "No council member has publicly requested outcome metrics or proposed consolidation with county services as of April 2026",
+    "status": "pending_council_action",
+    "scoring_note": "Findings are primarily staff-operational — not directly attributable to individual council members. Becomes individually scored when/if a member is asked about outcomes and claims ignorance, or when program contracts are renewed without performance metrics being required."
+  },
+
+  "streets_rocky_road_2025": {
+    "audit_ref": "streets_rocky_road_2025",
+    "title": "Rocky Road: Berkeley Streets at Risk and Significantly Underfunded",
+    "date_released": "2025-10",
+    "author": "City Auditor",
+    "key_findings": [
+      "Pavement Condition Index (PCI) of 57 — rated 'at risk' by MTC, 10 points below regional average and near the threshold where deterioration accelerates rapidly",
+      "$42M/year required to achieve PCI 70; general fund allocates approximately $15M/year",
+      "Structural pattern: council has relied on a cycle of bond measures rather than general fund reprioritization",
+      "Five Year Paving Plan selects streets based on political considerations rather than efficiency-maximizing pavement management metrics",
+      "Bond dependence crowds out pressure to reprioritize the general fund — each bond cycle defers the underlying resource allocation question"
+    ],
+    "recommendations": [
+      "Reform Five Year Paving Plan selection criteria to prioritize by cost-efficiency metrics",
+      "Increase general fund allocation to streets before pursuing additional bond measures",
+      "Address the structural underfunding problem in the operating budget, not solely through debt"
+    ],
+    "council_agenda_date": "2025-10-28",
+    "council_response": "received_filed",
+    "followup_pattern": "2026-03-17: council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012. No companion motion to reform the Five Year Paving Plan, increase general fund allocation, or address any of the audit's structural findings. The audit's root cause diagnosis (GF underfunding, not lack of bond authority) was received, filed, and converted into a bond campaign.",
+    "status": "response_documented",
+    "scoring_note": "The audit established that Berkeley's street problem is a spending prioritization failure, not a revenue shortage. The council's response — a fifth bond cycle — is the opposite of what the audit warranted. Members present on 2025-10-28 who later voted or advocated for the bond without a companion reprioritization motion acted with documented knowledge of the root cause."
+  },
+
+  "financial_condition_2026": {
+    "audit_ref": "financial_condition_2026",
+    "title": "Berkeley's Financial Condition (FY2016–FY2025): Structural Deficit Poses Risk to Financial Sustainability",
+    "date_released": "2026-04-08",
+    "author": "City Auditor",
+    "key_findings": [
+      "General Fund structural deficit of $32M (FY2027) and $33M (FY2028) — not a one-time gap",
+      "Recent budgets balanced using one-time measures: $4.7M from workers' comp reserve (FY2025), $3M withdrawal from Section 115 pension pre-funding trust",
+      "GF expenses grew 33% in real terms over the audit period; largest growth: community development/housing +119%, health/welfare +107%",
+      "FTE count grew 30% (1,336 to 1,747); salaries and benefits are approximately two-thirds of the GF budget",
+      "Net pension liability of $694.8M; funded ratio 66% (high risk, tied 2nd-worst among comparable jurisdictions)",
+      "Annual pension payments rising from $76M (FY2024) to projected $108M by FY2034",
+      "Section 115 pension pre-funding trust: met annual contribution goal in only 2 of 7 years; balance $29.5M after FY2025 withdrawal",
+      "Unfunded capital and deferred maintenance grew from $603.5M (FY2017) to $1.8B (FY2024)",
+      "Required biennial unfunded capital liability report for FY2025 not produced — staff cited 'limited staff time'",
+      "Council's adopted fiscal policies do not require assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice gap",
+      "Proposed $300M GO bond would increase debt service tax rates for approximately 20 years before declining"
+    ],
+    "recommendations": [
+      "Adopt GFOA best practice requiring assessment of recurring revenue/expenditure balance",
+      "Develop a plan to address the structural deficit using recurring measures, not one-time reserves",
+      "Restore Section 115 Trust to adequate funding levels and meet annual contribution goals",
+      "Produce the overdue biennial unfunded capital liability report",
+      "Extend Capital Improvement Plan horizon (currently 5 years, low end of GFOA recommendation)"
+    ],
+    "warranted_action": "Any fiscally responsible council should: (1) adopt the GFOA balance requirement as a formal policy, (2) direct staff to identify recurring expenditure reductions to close the structural gap, (3) pause or condition bond discussions on demonstrating that operating baseline is addressed, (4) require the overdue capital liability report before voting on any capital bond measure",
+    "council_agenda_date": null,
+    "council_response": null,
+    "followup_pattern": "Prior to audit release: council unanimously directed staff (2026-03-17) to develop a $300M infrastructure bond and commission a poll on a half-cent sales tax — both revenue measures that do not address the structural operating deficit. This direction was given with knowledge of the deficit trajectory from prior budget documents.",
+    "status": "pending_council_action",
+    "scoring_note": "This is the highest-priority audit in the registry. The structural deficit, pension risk, and capital collapse are individually serious; together they describe a city whose fiscal trajectory is unsustainable. The council's revealed pre-audit response (bond + sales tax) addresses neither the recurring imbalance nor the pension underfunding. When this audit goes before the council, any member who moves to receive and file without a companion motion for structural reform is making a choice that this audit documents precisely."
+  }
+}

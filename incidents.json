@@ -9,7 +9,8 @@
       "fiscal_integrity":       "POSITIVE: Pushed back on spending, demanded cost data, or advocated for cuts",
       "constituent_service":    "POSITIVE: Genuinely responsive constituent engagement with demonstrated follow-through"
     },
-    "scoring_impact": "Additive adjustment to composite taxpayer-alignment score. Negative = against taxpayer interest. Suggested range: -0.10 to +0.10 per incident. Cap applied in pipeline."
+    "scoring_impact": "Additive adjustment to composite taxpayer-alignment score. Negative = against taxpayer interest. Suggested range: -0.10 to +0.10 per incident. Cap applied in pipeline.",
+    "audit_ref": "Optional. Key into audit_findings.json. Present when the incident is the council's response to — or is illuminated by — a specific City Auditor report. The audit establishes the ground truth; the incident is the member's specific behavior against that backdrop."
   },
   "Taplin": [
     {
@@ -50,6 +51,7 @@
     {
       "date": "2025-10-28",
       "category": "alternatives_dismissed",
+      "audit_ref": "streets_rocky_road_2025",
       "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was ever introduced. Five months later (March 2026), Taplin and the full council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012 — without any companion motion to address the strategic failures the audit documented. The bond-over-reprioritization choice was made with eyes open.",
       "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit, 'Rocky Road: Berkeley Streets at Risk and Significantly Underfunded'); agenda record 2026-03-17 Item 1",
       "scoring_impact": -0.07
@@ -57,6 +59,7 @@
     {
       "date": "2025-11-18",
       "category": "alternatives_dismissed",
+      "audit_ref": "financial_condition_2026",
       "description": "Taplin authored a 'Advanced Fiscal Policies — Bond Schedule' referral directing the City Manager to develop a regular predictable bond issuance schedule — demonstrating detailed engagement with the mechanics of municipal borrowing. Yet Berkeley's council fiscal policies have never required assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice that applies to any government serious about structural balance. This is not a new standard: GFOA has published it for decades. Taplin invested authorship capital in optimizing bond-issuance cadence while never authoring anything that would test whether Berkeley should be borrowing at all. The asymmetry reveals a disposition: the borrowing machinery gets attention; the structural balance test does not.",
       "source": "Agenda record 2025-11-18 consent item 26; GFOA best practice on Debt Management Policy; City Auditor report 'Berkeley's Financial Condition (FY2016–FY2025),' April 2026 (documents the missing policy as a finding)",
       "scoring_impact": -0.05
@@ -126,6 +129,7 @@
     {
       "date": "2025-10-28",
       "category": "alternatives_dismissed",
+      "audit_ref": "streets_rocky_road_2025",
       "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was introduced. Five months later (March 2026), Tregub voted unanimously with the council to commission a $300M infrastructure bond survey, and his March 2026 newsletter described the bond as 'essential' — without mentioning the audit's finding that the underlying problem is chronic underfunding of paving in the general fund, not lack of bond authority. The audit was received, filed, and converted into a bond campaign.",
       "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit); agenda record 2026-03-17 Item 1; Tregub March 2026 Part 2 newsletter",
       "scoring_impact": -0.07
