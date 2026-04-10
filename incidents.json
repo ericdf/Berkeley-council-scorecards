@@ -57,6 +57,13 @@
       "scoring_impact": -0.07
     },
     {
+      "date": "2025-2026",
+      "category": "constituent_service",
+      "description": "Effective and sustained advocate for deploying Automated License Plate Readers (ALPRs) in Berkeley — a data-driven public safety tool that improves police effectiveness at low ongoing cost. Taplin navigated significant political resistance and delivered a concrete result. This is the clearest example in the scorecard period of a member identifying a core-service improvement, doing the work to advance it, and seeing it through. It stands in contrast to the prevailing council pattern of performative process and borrowed credit.",
+      "source": "Direct knowledge of scorecard author; public record of ALPR policy development",
+      "scoring_impact": 0.07
+    },
+    {
       "date": "2025-11-18",
       "category": "alternatives_dismissed",
       "audit_ref": "financial_condition_2026",
@@ -88,6 +95,13 @@
       "description": "AAHRC: no effort made to determine whether existing city services could be reformed, consolidated, or redirected to meet the stated need. The question 'what do we already have and is it working?' was never asked publicly.",
       "source": "Direct knowledge of scorecard author",
       "scoring_impact": -0.06
+    },
+    {
+      "date": "2025-2026",
+      "category": "constituent_gaslight",
+      "description": "Documented pattern of requesting co-author credit on agenda items after the primary authorship work is already complete. Bartlett attaches his name to proposals developed by others — gaining the political visibility of authorship without having shaped the item's analysis, framing, or fiscal structure. Co-authorship in this context is a credit-seeking signal, not a substantive contribution. It inflates the appearance of legislative engagement while the work — and accountability for it — belongs to the actual authors.",
+      "source": "Direct observation; sourced from council colleagues familiar with his working pattern",
+      "scoring_impact": -0.08
     }
   ],
   "Tregub": [
