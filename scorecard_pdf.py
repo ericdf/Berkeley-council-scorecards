@@ -128,6 +128,13 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase;
                  letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
 
+/* Executive summary */
+.exec-archetype { font-size: 11px; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: 1.5px; color: #7f8c8d; margin-bottom: 6px; }
+.exec-archetype span { color: #2c3e50; font-size: 14px; font-weight: 800;
+                       text-transform: none; letter-spacing: 0; }
+.exec-summary { font-size: 12.5px; line-height: 1.65; color: #2c3e50; }
+
 /* Pillar rows */
 .pillar-row { display: flex; align-items: center; margin-bottom: 10px; }
 .pillar-label { width: 170px; font-size: 13px; font-weight: 600; color: #2c3e50; }
@@ -827,7 +834,8 @@ def _render_fiscal_votes_section(s: dict) -> str:
 # Render one member scorecard
 # ---------------------------------------------------------------------------
 
-def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict) -> str:
+def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict,
+                  summary: dict | None = None) -> str:
     name = s.get("display_name", s.get("canonical", "?"))
     dist = DISTRICT.get(s.get("canonical", ""), "")
     earliest = meta.get("earliest_meeting", "Dec 2024")
@@ -916,6 +924,12 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
       {"<div style='font-size:10px;color:#8899bb;margin-top:4px'>as of " + latest + "</div>" if latest else ""}
     </div>
   </div>
+
+  {f'''<div class="section">
+    <div class="section-title">Executive Summary</div>
+    <div class="exec-archetype">Character &nbsp;·&nbsp; <span>{summary.get("archetype", "")}</span></div>
+    <div class="exec-summary">{summary.get("summary", "")}</div>
+  </div>''' if summary and summary.get("summary") else ""}
 
   <div class="section">
     <div class="section-title">Performance Pillars</div>
@@ -1413,13 +1427,21 @@ def generate_all(aggregate: dict = None, council_meta: dict = None):
     os.makedirs(PDF_DIR, exist_ok=True)
     rankings = build_rankings(aggregate)
 
+    # Load hand-authored member summaries (archetype + prose description)
+    summaries_path = os.path.join(os.path.dirname(__file__), "member_summaries.json")
+    summaries: dict = {}
+    if os.path.exists(summaries_path):
+        with open(summaries_path, encoding="utf-8") as f:
+            summaries = json.load(f)
+
     # Individual scorecards
     for name, s in aggregate.items():
         if name.startswith("_") or name == "Ishii":
             continue
         if (s.get("words") or 0) < 1500:
             continue
-        html = render_member(s, rankings, council_meta.get("block_vote_rate", 0), meta)
+        html = render_member(s, rankings, council_meta.get("block_vote_rate", 0), meta,
+                             summary=summaries.get(name, {}))
         out  = os.path.join(PDF_DIR, f"scorecard_{name}.pdf")
         HTML(string=html).write_pdf(out, stylesheets=[CSS(string="@page{margin:0}")])
         print(f"  → {out}", file=sys.stderr)

@@ -1,0 +1,48 @@
+{
+  "_note": "Hand-authored executive summaries for each council member. Displayed on scorecard PDF above Performance Pillars. Update when a member's pattern changes materially. Each entry: archetype (short label) + summary (2-3 sentences, plain language, no acronyms).",
+
+  "OKeefe": {
+    "archetype": "The Pragmatist",
+    "summary": "Shows up, stays on-topic, and asks about costs before voting. In a council that almost never votes no, O'Keefe is the closest thing to a member who consistently puts the taxpayer's question first. No grand gestures; just the work."
+  },
+
+  "Blackaby": {
+    "archetype": "The Steady Hand",
+    "summary": "Competent, present, and focused without being exceptional. Neither champions taxpayer interests aggressively nor undermines them — a reliable vote who stays inside the lines of core city business and avoids the ideological detours that consume colleagues' bandwidth."
+  },
+
+  "Bartlett": {
+    "archetype": "The Rhetorical Skeptic",
+    "summary": "Asks pointed questions about cost and efficiency — genuine ones — but then votes yes alongside everyone else and missed five of seven major fiscal votes including both budget adoptions. The questions are real; the follow-through is not. A fiscal conscience that never converts into a fiscal vote."
+  },
+
+  "Kesarwani": {
+    "archetype": "The Consensus Seeker",
+    "summary": "Focused, present, and effective in chambers — but willing to reach for new revenue when the political path points that way. Authored the sales tax survey referral that launched Berkeley's 2026 tax campaign infrastructure. Not a fiscal champion, not a fiscal vandal."
+  },
+
+  "Taplin": {
+    "archetype": "The Bond Architect",
+    "summary": "Explicitly believes Berkeley is 'underbonded' — a governing philosophy that treats new debt as a primary tool rather than a last resort. Authored the referral to institutionalize a regular bond-issuance cadence. Low fiscal concern in his speech; high fiscal harm in his authorship record."
+  },
+
+  "Humbert": {
+    "archetype": "The Committed Progressive",
+    "summary": "The council's most verbose member (115 words per turn on average), with the highest investment in the existing homeless services apparatus. Shows up and engages substantively — the question is what the engagement is in service of. A Homeless Services Orthodoxy score of 62 puts him firmly in the spending-orthodoxy camp."
+  },
+
+  "Ishii": {
+    "archetype": "The Conflict Avoider",
+    "summary": "The Mayor who has structured constituent access to prevent organized accountability — groups are excluded from his office hours — and whose transcripts contain near-zero fiscal concern language. Agenda-setter for a council that has never adopted the foundational fiscal balance test the City Auditor recommends."
+  },
+
+  "LunaParra": {
+    "archetype": "The Abstainer",
+    "summary": "Highest Homeless Services Orthodoxy score on the council, highest abstention rate, and a Taxpayer Alignment score near the floor. When difficult votes arrive, LunaParra tends to abstain — using the voting mechanism to avoid registering a position rather than to register one."
+  },
+
+  "Tregub": {
+    "archetype": "The Fiscal Hypocrite",
+    "summary": "Third-highest transcript voter alignment score — talks about fiscal concerns constantly in chambers — but a Taxpayer Alignment composite of zero. Authors bond campaigns, lobbied for a county spending measure from his official constituent email list, and scheduled a community input meeting three weeks after voting to approve the project it was nominally about."
+  }
+}

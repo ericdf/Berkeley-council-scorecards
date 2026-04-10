@@ -28,8 +28,10 @@ The scoring **does not** treat budget growth, new programs, or bond issuances as
 | **Annotated agenda PDFs** (58 sessions) | Authoritative post-meeting record: exact attendance (roll call time, arrivals), per-item vote breakdown (Ayes/Noes/Abstain/Absent) |
 | **Agenda JSONs** (58 sessions) | Pre-meeting agenda items: title, dollar amount, authors, cosponsors, off-mission flag, fiscal flags |
 | **Staff report PDFs** (packet scraper) | Procurement signals: waived competitive bid, backdated contracts, no-alternatives clauses |
+| **City Auditor reports** (`audit_findings.json`) | Independent documented findings that establish ground truth: what the city's financial condition actually is, what structural problems exist, and what warranted action looks like. Audits are tracked in a separate registry; the council's response — or non-response — is the scored event. Three reports currently tracked: Rocky Road streets audit (Oct 2025), Homeless Response Team audit (Jul 2025), Financial Condition audit (Apr 2026). |
+| **Incidents** (`incidents.json`) | Out-of-meeting behaviors: constituent interactions, public statements, newsletters, and patterns not captured in formal proceedings. Incidents with an `audit_ref` field are grounded in a specific City Auditor finding. |
 
-Annotated agendas are the authoritative source for **what actually happened** (outcomes, votes, attendance). Transcripts fill the gap between plan and outcome — capturing the deliberation, rhetoric, and interpersonal style that votes alone don't reveal.
+Annotated agendas are the authoritative source for **what actually happened** (outcomes, votes, attendance). Transcripts fill the gap between plan and outcome — capturing the deliberation, rhetoric, and interpersonal style that votes alone don't reveal. City Auditor reports provide the independent factual baseline against which council action is evaluated.
 
 ---
 
