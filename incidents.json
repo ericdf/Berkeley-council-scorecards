@@ -53,6 +53,13 @@
       "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was ever introduced. Five months later (March 2026), Taplin and the full council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012 — without any companion motion to address the strategic failures the audit documented. The bond-over-reprioritization choice was made with eyes open.",
       "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit, 'Rocky Road: Berkeley Streets at Risk and Significantly Underfunded'); agenda record 2026-03-17 Item 1",
       "scoring_impact": -0.07
+    },
+    {
+      "date": "2026-04-08",
+      "category": "alternatives_dismissed",
+      "description": "Taplin authored a 'Advanced Fiscal Policies — Bond Schedule' referral in November 2025 directing the City Manager to develop a regular predictable bond issuance schedule — demonstrating active engagement with the mechanics of municipal borrowing. The City Auditor's April 2026 financial condition report found, in the same policy domain, that the council's fiscal policies do not require assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice. No companion referral was ever introduced to close this gap. The asymmetry is instructive: Taplin authored fiscal policy to optimize the city's bond-issuance cadence but authored nothing to require the council to assess structural balance before reaching for the next bond. The audit also documents: $32–33M structural GF deficit FY2027–2028, unfunded capital of $1.8B, and pension funded ratio of 66% (high risk) — all context available to the council at the time the bond direction was given.",
+      "source": "Agenda record 2025-11-18 consent item 26; City Auditor report 'Berkeley's Financial Condition (FY2016–FY2025),' April 8, 2026",
+      "scoring_impact": -0.06
     }
   ],
   "Ishii": [
@@ -61,6 +68,13 @@
       "category": "constituent_gaslight",
       "description": "Mayor Ishii's office hours policy explicitly excludes organized groups — only individual constituents may attend. This is not a minor procedural detail: it structurally prevents neighbors with shared concerns from presenting collectively, which is the form of constituent engagement most likely to produce accountability. A group of residents raising a common grievance creates a record, demands a coherent answer, and is harder to dismiss than a series of isolated one-on-ones. Blocking group access is a signal of conflict avoidance, not genuine engagement. For contrast: the mayor of San Francisco maintains a visible daily public presence (business callouts, problem identification, follow-through) that this office does not approach.",
       "source": "Direct observation by scorecard author; Ishii constituent communications and office hours scheduling policy",
+      "scoring_impact": -0.07
+    },
+    {
+      "date": "2026-04-08",
+      "category": "alternatives_dismissed",
+      "description": "City Auditor's April 2026 financial condition report (FY2016–FY2025) found that the council's adopted fiscal policies do not require assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice. The auditor explicitly recommends the council adopt this requirement. As Mayor and the agenda-setter for the council's policy direction, Ishii is the member most directly responsible for the absence of this structural safeguard. The same audit documents: $32–33M structural GF deficit projected FY2027–2028; net pension liability of $694.8M at 66% funded ratio (high risk); unfunded capital/deferred maintenance of $1.8B; and a $3M withdrawal from the Section 115 pension pre-funding trust to help balance the FY2025 operating budget. The council's revealed response — unanimous direction to pursue a $300M bond + half-cent sales tax — does not address the recurring structural imbalance the auditor identified.",
+      "source": "City Auditor report 'Berkeley's Financial Condition (FY2016–FY2025): Structural Deficit Poses Risk to Financial Sustainability,' April 8, 2026",
       "scoring_impact": -0.07
     }
   ],
@@ -122,6 +136,13 @@
       "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was introduced. Five months later (March 2026), Tregub voted unanimously with the council to commission a $300M infrastructure bond survey, and his March 2026 newsletter described the bond as 'essential' — without mentioning the audit's finding that the underlying problem is chronic underfunding of paving in the general fund, not lack of bond authority. The audit was received, filed, and converted into a bond campaign.",
       "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit); agenda record 2026-03-17 Item 1; Tregub March 2026 Part 2 newsletter",
       "scoring_impact": -0.07
+    },
+    {
+      "date": "2026-04-08",
+      "category": "atm_behavior",
+      "description": "Tregub's March 2026 newsletter told constituents that a $300M bond plus a half-cent sales tax were 'essential' while framing both as straightforward fiscal necessity. The City Auditor's April 2026 financial condition report — released two days before this scorecard period closed — provides the balance sheet behind that framing: $32–33M structural GF deficit; pension funded ratio 66% (high risk, tied 2nd-worst among comparators); $1.8B unfunded capital; and a $3M withdrawal from the Section 115 pension pre-funding trust used to balance FY2025 operations. The audit explicitly finds that Berkeley's fiscal policies do not require assessing whether recurring revenues match recurring expenditures — the foundational test that would reveal the structural imbalance Tregub's bond+tax combination would not fix. Borrowing $300M to fund capital while simultaneously running a $32M structural operating deficit does not constitute structural repair; it is additive debt load on a broken operating model. Tregub's constituent framing omitted this context entirely.",
+      "source": "Tregub March 2026 Part 2 newsletter (igor@igortregub.com, 2026-03-18); City Auditor report 'Berkeley's Financial Condition (FY2016–FY2025),' April 8, 2026",
+      "scoring_impact": -0.05
     }
   ]
 }
