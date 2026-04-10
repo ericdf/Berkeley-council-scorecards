@@ -168,12 +168,12 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     insights = []
     n = s["canonical"]
 
-    # Voter alignment rank
-    vrank = rankings.get("voter", {}).get(n)
+    # Composite grade rank
+    vrank = rankings.get("composite_grade", {}).get(n)
     if vrank == 1:
-        insights.append(("good", "Most voter-aligned member on the council"))
+        insights.append(("good", "Most taxpayer-aligned member on the council"))
     elif vrank and vrank <= 3:
-        insights.append(("good", f"#{vrank} in voter alignment — consistently focused on core city business"))
+        insights.append(("good", f"#{vrank} in overall rating — among the most taxpayer-aligned members"))
 
     # Waste
     wp = s.get("waste_pct", 0) or 0
@@ -835,16 +835,16 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     as_of    = f"through {latest}" if latest else ""
     period   = f"{earliest} – {latest} · {meta.get('transcripts', 51)} meetings"
 
-    # Overall grade from voter score
-    voter  = s.get("voter",  0) or 0
+    # Overall grade from composite (taxpayer alignment + focus + attendance + incidents)
+    voter  = s.get("composite_grade", 0) or 0
     g_str, g_cls = letter(voter)
 
     # Pillar scores
     delta = s.get("_delta", {})
     pillars = [
-        ("Civic Focus",         1 - (s.get("waste_pct", 0) or 0) * 0.5 + (s.get("core_pct", 0) or 0) * 0.5, "waste_pct"),
+        ("Civic Focus",         min(1.0, 1 - (s.get("waste_pct", 0) or 0) * 0.5 + (s.get("core_pct", 0) or 0) * 0.5), "waste_pct"),
         ("Legislative Skill",   s.get("lsi",      0) or 0,  "lsi"),
-        ("Fiscal Discipline",   s.get("n_fiscal",  0) or 0, "n_fiscal"),
+        ("Taxpayer Alignment",  max(0.0, s.get("composite_taxpayer", 0) or 0), "composite_taxpayer"),
         ("Character & Conduct", s.get("beer",      0) or 0, "beer"),
     ]
     pillar_html = ""
@@ -875,12 +875,12 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
         trend_line = f"Recent focus trend: <b>{direction}</b> {focus_trend_arrow(ct)} (meeting focus {ct:+.1%} vs all-time avg)"
 
     # Rankings
-    vrank = rankings.get("voter", {}).get(s["canonical"], "—")
+    vrank = rankings.get("composite_grade", {}).get(s["canonical"], "—")
     brank = rankings.get("beer",  {}).get(s["canonical"], "—")
     rrank = rankings.get("recall",{}).get(s["canonical"], "—")
     erank = rankings.get("efficiency", {}).get(s["canonical"], "—")
-    total = len([k for k in rankings.get("voter",{})])
-    v_badge = delta_badge(delta.get("voter"),     "voter")
+    total = len([k for k in rankings.get("composite_grade",{})])
+    v_badge = delta_badge(delta.get("composite_grade"), "composite_grade")
     b_badge = delta_badge(delta.get("beer"),      "beer")
     r_badge = delta_badge(delta.get("recall"),    "recall")
     e_badge = delta_badge(delta.get("efficiency"),"efficiency")
@@ -1095,7 +1095,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
     members = sorted(
         [n for n in aggregate if not n.startswith("_") and n != "Ishii"
          and aggregate[n].get("words", 0) >= 1500],
-        key=lambda x: -(aggregate[x].get("voter", 0) or 0)
+        key=lambda x: -(aggregate[x].get("composite_grade", 0) or 0)
     )
 
     rows = ""
@@ -1103,7 +1103,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
         s = aggregate[n]
         dn = s.get("display_name", n)
         dist = DISTRICT.get(n, "")
-        vg, vc = letter(s.get("voter"))
+        vg, vc = letter(s.get("composite_grade"))
         bg, bc = letter(s.get("beer"))
         rg, rc = letter(1 - (s.get("recall", 0) or 0))   # invert: A = most clear
         cp  = s.get("core_pct", 0) or 0
@@ -1112,7 +1112,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
         erank = rankings.get("efficiency", {}).get(n, "—")
         ta = focus_trend_arrow(s.get("core_trend"))
         d  = s.get("_delta", {})
-        vd = delta_badge(d.get("voter"), "voter", threshold=0.015) if d else ""
+        vd = delta_badge(d.get("composite_grade"), "composite_grade", threshold=0.015) if d else ""
 
         # Spending vote column
         yes_total = s.get("spending_yes_total", 0) or 0
@@ -1167,7 +1167,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
           <td class="col-rank">#{rank}</td>
           <td class="col-name"><b>{dn}</b><br><span class="subdist">{dist}</span></td>
           <td class="col-grade {vc}">{vg}</td>
-          <td class="col-bar">{pct_bar(s.get('voter', 0), 110)}</td>
+          <td class="col-bar">{pct_bar(s.get('composite_grade', 0), 110)}</td>
           <td class="col-num">{spend_cell}</td>
           <td class="col-num">{hic_cell}</td>
           <td class="col-num">{atl:.0f}w<br><span class="subdist">#{erank}</span></td>
@@ -1203,7 +1203,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 
     <div class="metric-block">
       <div class="metric-name">Voter Alignment <span class="metric-weight">(Overall grade)</span></div>
-      <div class="metric-desc">The composite score: Legislative Skill (30%), Core-topic focus (35%), and inverse off-mission time (35%). A high score means the member spends meeting time on things Berkeley residents hired them to do.</div>
+      <div class="metric-desc">Composite taxpayer-alignment score: Taxpayer Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Taxpayer Alignment incorporates transcript rhetoric, voting record, HSO score, incidents, fiscal referral authorship, and fiscal hypocrisy signals. This is the correct summary grade — it captures behavior, not just speech.</div>
     </div>
 
     <div class="metric-block">
@@ -1351,7 +1351,7 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
 </table>
 
 <div class="footnote">
-  <b>Voter Alignment</b> = LSI 30% + Focus % 35% + Inverse-off-mission % 35% &nbsp;·&nbsp;
+  <b>Voter Alignment</b> = Taxpayer Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSO, fiscal referrals, hypocrisy) &nbsp;·&nbsp;
   <b>$ Voted YES</b> = total dollars on agenda items where member's roll-call vote was YES (partial coverage) &nbsp;·&nbsp;
   <b>HSO</b> = Homeless Services Orthodoxy (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on orthodoxy-aligned vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
   <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Ego &nbsp;·&nbsp;
@@ -1385,10 +1385,11 @@ def build_rankings(aggregate: dict) -> dict:
         return {n: i+1 for i, n in enumerate(ordered)}
 
     return {
-        "voter":      rank_by("voter",      reverse=True),
-        "beer":       rank_by("beer",       reverse=True),
-        "recall":     rank_by("recall",     reverse=True),   # 1 = highest risk
-        "efficiency": rank_by("efficiency", reverse=True),   # 1 = most efficient (high score)
+        "voter":          rank_by("voter",          reverse=True),
+        "composite_grade":rank_by("composite_grade",reverse=True),
+        "beer":           rank_by("beer",           reverse=True),
+        "recall":         rank_by("recall",         reverse=True),   # 1 = highest risk
+        "efficiency":     rank_by("efficiency",     reverse=True),   # 1 = most efficient (high score)
     }
 
 

@@ -796,7 +796,8 @@ def compute_trends(meetings: list[dict]) -> dict:
 # ---------------------------------------------------------------------------
 
 # Keys where a *higher* value is better (delta > 0 = improvement)
-_DELTA_HIGHER_BETTER = {"voter", "lsi", "beer", "n_fiscal", "efficiency", "core_pct"}
+_DELTA_HIGHER_BETTER = {"voter", "lsi", "beer", "n_fiscal", "efficiency", "core_pct",
+                        "composite_grade", "composite_taxpayer"}
 # Keys where a *lower* value is better (delta > 0 = worsening)
 _DELTA_LOWER_BETTER  = {"waste_pct", "recall"}
 DELTA_KEYS = _DELTA_HIGHER_BETTER | _DELTA_LOWER_BETTER
