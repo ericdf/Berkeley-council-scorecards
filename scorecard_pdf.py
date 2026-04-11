@@ -163,6 +163,25 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
 /* Footer */
 .footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+
+/* Taxpayer alignment breakdown table */
+.ta-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.ta-table td { padding: 5px 8px; vertical-align: top; }
+.ta-table tr.group-header td { font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #7f8c8d; padding-top: 14px; padding-bottom: 4px;
+    border-bottom: 1px solid #ecf0f1; }
+.ta-table tr.data-row td:first-child { color: #2c3e50; font-weight: 600; width: 200px; }
+.ta-table tr.data-row td.note { color: #7f8c8d; font-size: 11px; }
+.ta-table tr.data-row td.contrib { text-align: right; font-weight: 700; width: 70px; }
+.ta-table tr.data-row td.contrib.pos { color: #27ae60; }
+.ta-table tr.data-row td.contrib.neg { color: #e74c3c; }
+.ta-table tr.data-row td.contrib.zero { color: #95a5a6; }
+.ta-table tr.subtotal td { border-top: 1px solid #ecf0f1; padding-top: 7px; font-weight: 700;
+    color: #2c3e50; }
+.ta-table tr.subtotal td.contrib { text-align: right; font-weight: 800; }
+.ta-table tr.total-row td { border-top: 2px solid #2c3e50; padding-top: 8px; font-weight: 800;
+    font-size: 13px; color: #1a1a2e; }
+.ta-table tr.total-row td.contrib { text-align: right; }
 """
 
 
@@ -831,6 +850,106 @@ def _render_fiscal_votes_section(s: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Taxpayer alignment score breakdown
+# ---------------------------------------------------------------------------
+
+def _render_taxpayer_breakdown(s: dict) -> str:
+    """Detailed decomposition of the Taxpayer Alignment score."""
+
+    def _fmt(v: float) -> tuple[str, str]:
+        """Return (formatted string, CSS class) for a contribution value."""
+        if abs(v) < 0.0005:
+            return "—", "zero"
+        sign = "+" if v > 0 else ""
+        return f"{sign}{v:.3f}", ("pos" if v > 0 else "neg")
+
+    hso_raw      = s.get("hso_score") if s.get("hso_score") is not None else 50
+    hso_part     = s.get("composite_hso_part",      0) or 0
+    off_pen      = s.get("composite_off_penalty",   0) or 0
+    raw          = s.get("composite_taxpayer_raw",  0) or 0
+
+    # HSO contribution to raw: hso_part * 0.75 (inverted — high hso_part = low alignment)
+    hso_contrib  =  (1.0 - hso_part) * 0.75    # "HSO alignment" fraction, weighted 75%
+    scope_contrib = (1.0 - off_pen)  * 0.25    # scope discipline, weighted 25%
+
+    inc_adj      = s.get("incident_score_adj",           0.0) or 0.0
+    silence_pen  = -(s.get("composite_audit_silence_pen", 0.0) or 0.0)
+    rhetoric_pen = -(s.get("composite_rhetoric_penalty",  0.0) or 0.0)
+    rev_seek_pen = -(s.get("composite_revenue_seeking_pen", 0.0) or 0.0)
+    fref_pen     = s.get("composite_fiscal_ref_penalty",  0.0) or 0.0
+    final        = s.get("composite_taxpayer",            0.0) or 0.0
+
+    # Labels for audit silence events
+    silence_events = s.get("audit_silence_events") or []
+    if silence_events:
+        silence_label = "; ".join(e.replace("_", " ") for e in silence_events)
+    elif s.get("audit_silence_events") is not None:
+        silence_label = "audits presented — follow-up on record"
+    else:
+        silence_label = "none — behavior already characterized via incidents"
+
+    inc_count  = s.get("incident_count", 0) or 0
+
+    def _row(label: str, note: str, val: float) -> str:
+        fstr, cls = _fmt(val)
+        return (f'<tr class="data-row"><td>{label}</td>'
+                f'<td class="note">{note}</td>'
+                f'<td class="contrib {cls}">{fstr}</td></tr>')
+
+    hso_str, hso_cls = _fmt(hso_contrib)
+    sc_str,  sc_cls  = _fmt(scope_contrib)
+    raw_str, raw_cls = _fmt(raw)
+    fin_str, fin_cls = _fmt(final)
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Taxpayer Alignment — Score Breakdown</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
+      How the {final:.3f} Taxpayer Alignment score is constructed.
+      Components sum to the raw figure; the final score is clamped to [0, 1].
+    </div>
+    <table class="ta-table">
+
+      <tr class="group-header"><td colspan="3">Base — from voting record and agenda behavior</td></tr>
+      <tr class="data-row">
+        <td>HSO alignment</td>
+        <td class="note">HSO score {hso_raw}/100 → inverse {(100-hso_raw):.0f}% → quadratic → {hso_part:.1%} &nbsp;(75% weight)</td>
+        <td class="contrib {hso_cls}">{hso_str}</td>
+      </tr>
+      <tr class="data-row">
+        <td>Scope discipline</td>
+        <td class="note">Off-mission penalty {off_pen:.1%} → discipline {(1-off_pen):.1%} &nbsp;(25% weight)</td>
+        <td class="contrib {sc_cls}">{sc_str}</td>
+      </tr>
+      <tr class="subtotal">
+        <td colspan="2">Raw score</td>
+        <td class="contrib">{raw_str}</td>
+      </tr>
+
+      <tr class="group-header"><td colspan="3">Adjustments — documented behaviors and penalties</td></tr>
+      {_row("Incident record",
+            f"{inc_count} incident{'s' if inc_count != 1 else ''}, tier-weighted, capped ±0.30",
+            inc_adj)}
+      {_row("Audit silence", silence_label, silence_pen)}
+      {_row("Revenue-seeking penalty",
+            "Revenue advocacy without companion cut analysis",
+            rev_seek_pen)}
+      {_row("Fiscal referral penalty",
+            "Bond/tax campaign direction (capped −0.09)",
+            fref_pen)}
+      {_row("Rhetoric penalty",
+            "Fiscal concern rhetoric with no dissent votes (high HSO or serial fiscal-vote absence)",
+            rhetoric_pen)}
+
+      <tr class="total-row">
+        <td colspan="2">Final (clamped to [0, 1])</td>
+        <td class="contrib">{fin_str}</td>
+      </tr>
+    </table>
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
 # Render one member scorecard
 # ---------------------------------------------------------------------------
 
@@ -1015,6 +1134,8 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
   {_render_hso_section(s)}
 
   {_render_agenda_section(s)}
+
+  {_render_taxpayer_breakdown(s)}
 
   <div class="section">
     <div class="section-title">Key Findings</div>

@@ -1990,10 +1990,11 @@ def compute_composite_grade(s: dict) -> dict:
         revenue_seeking_penalty = 0.0
 
     taxpayer_raw  = hso_part * 0.75 + (1.0 - off_penalty) * 0.25
-    taxpayer_alignment = max(0.0, min(1.0,
+    taxpayer_unclamped = (
         taxpayer_raw - rhetoric_penalty - revenue_seeking_penalty
         + incident_adj + fiscal_ref_penalty + audit_silence_adj
-    ))
+    )
+    taxpayer_alignment = max(0.0, min(1.0, taxpayer_unclamped))
 
     # ── Focus ────────────────────────────────────────────────────────────────
     waste_pct = s.get("waste_pct", 0) or 0
@@ -2067,6 +2068,8 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_attendance_ded":     round(attendance_deduction, 4),
         "composite_rhetoric_penalty":   round(rhetoric_penalty, 4),
         "composite_hso_part":           round(hso_part, 4),
+        "composite_off_penalty":        round(off_penalty, 4),
+        "composite_taxpayer_raw":       round(taxpayer_raw, 4),
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
         "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
         "composite_lightweight_pen":    round(lightweight_penalty, 4),
