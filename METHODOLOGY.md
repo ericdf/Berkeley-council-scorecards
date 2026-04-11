@@ -68,32 +68,39 @@ composite = max(0.0,
 
 A+ is not available to a member who is silent or miscalibrated on Berkeley's documented structural crises. The grade requires not just absence of bad behavior but **aspirations set at the level the city's own documents say the problems demand**. Setting sights too low on a documented crisis is a form of complicity — it accepts a trajectory the city's own adopted reports describe as ruinous.
 
-The general test: *Does the member's behavior reflect understanding of what the city's own documents say the problem actually is, and does their standard for acceptable performance match what those documents describe as the required response?*
+### The general principle: outcomes accountability
 
-### Currently scored ceiling conditions
+The core test applies to any domain where significant public money is spent:
 
-**Homeless Services Orthodoxy (HSO) neutrality.** Berkeley spends $21M+/yr across 33+ programs under a Housing First mandate, with no measurable reduction in visible homelessness across a decade of growth. A member who does not demand outcome data, accountability metrics, or reform of the delivery model is implicitly endorsing the status quo. HSO neutrality (score = 50) is not a safe harbor — it is acceptance of a $21M/yr apparatus without asking whether it works. The scoring formula uses a quadratic curve: HSO 50 → taxpayer_alignment contribution capped at 0.25/1.0. A+ requires HSO well below 50.
+> **A serious elected official demands measurable outcomes for significant public expenditures.** This applies equally to street maintenance, homeless services, public health, contracted social services, and staffing. The amount spent and the absence of measurement are what trigger the standard, not the political valence of the program. A member who approves or tolerates large recurring spending in any domain without requiring performance metrics, outcome data, or accountability mechanisms is not doing the job.
 
-### Documented ceiling conditions not yet fully scored
+Silence is not neutrality. A member who does not demand accountability for a major spending program is implicitly endorsing it.
 
-The following are known gaps between what A+ should require and what the algorithm currently detects. Each is grounded in the city's own adopted documents.
+### Currently scored: Homeless Services Orthodoxy
 
-**Infrastructure aspiration floor.** The city's adopted goal is PCI 70. The Rocky Road audit (Oct 2025) found: current PCI ≈ 57; achieving PCI 70 requires $42M/year; the current GF allocation is $2–8M/year; deferred maintenance costs $7 in repairs for every $1 spent early; delays will quadruple costs by 2050. A member who cites PCI 70 as the goal without demanding the GF reprioritization required to fund it has accepted a 5× funding shortfall as normal. PCI 70 is not an aspirational ceiling — it is the floor below which deterioration accelerates rapidly. An A+ member understands the gap between the adopted goal and the funding required and acts on it. *Not yet scored: no transcript signal detecting whether a member accepts or challenges the infrastructure funding gap.*
+HSO is one instance of the general principle — the one with the richest transcript signal and the best-documented evidence of unaccountable spending. Berkeley's homeless services apparatus ($21M+/yr, 33+ programs, Housing First mandate, decade of growth with no measurable reduction in visible homelessness) is where the scoring algorithm is best instrumented, not because homelessness is uniquely important but because the evidence record is clearest. A separate signal would be built for any other major program that shares the same profile: large recurring cost, clear measurable objective, council has not demanded outcome data.
 
-**Structural balance policy gap.** The City Auditor's April 2026 financial condition report explicitly recommended the council adopt a GFOA best-practice policy requiring assessment of whether recurring revenues match recurring expenditures. No current member has moved to adopt this policy. A council that repeatedly receives "not sustainable" findings in budget documents and has not adopted a structural balance requirement is operating without a basic governance guardrail. An A+ member authors or demands this policy. *Not yet scored.*
+HSO measures how invested a member is in the existing apparatus versus demanding accountability, outcome metrics, and reform. Scale: 0 (reform-oriented) → 100 (status-quo aligned). The scoring formula uses a quadratic curve: HSO 50 (neutral/silent) → taxpayer_alignment contribution capped at 0.25 of its maximum. A+ requires HSO well below 50 — not because demanding accountability for homeless services is uniquely virtuous, but because this is the largest unaccountable program in Berkeley's budget and neutrality on it signals a broader tolerance for unaccountable spending.
 
-**Reserve policy backslide.** The original reserve target was 30% of GF revenues by 2027. In July 2025 the council lowered the target to 20–30% — a revision timed to avoid non-compliance rather than achieve the original goal. Combined reserves are currently ~14.5%, below even the revised floor. An A+ member voted against the downward revision or has demanded a plan to reach the original target. *Not yet scored.*
+### Documented ceiling conditions not yet scored
 
-**Investment policy non-compliance.** The city's investment policy requires returns that "regularly meet or exceed" LAIF. City investments have underperformed LAIF for 9 consecutive quarters. The council receives quarterly evidence of this non-compliance and has not acted. An A+ member has demanded corrective action — at minimum a staff response explaining the deviation. *Not yet scored.*
+The following are known gaps where the A+ ceiling should apply but the algorithm does not yet detect it. Each follows the same structure as HSO: significant recurring cost, measurable standard the city's own documents establish, council response that falls short.
 
-**Section 115 Trust trajectory.** The council was contributing $2M/year to the pension pre-funding trust through FY2024. In FY2025 it began withdrawing $3M/year, escalating to $6M/year in FY2026 — depleting a buffer that took years to build, to balance an operating budget that the City Manager calls structurally unsustainable. An A+ member has objected to this depletion on the record. *Not yet scored.*
+**Infrastructure outcomes accountability.** The city's adopted goal is PCI 70. The Rocky Road audit (Oct 2025) found: current PCI ≈ 57; achieving PCI 70 requires $42M/year; the GF allocation is $2–8M/year; deferred maintenance costs $7 in repairs for every $1 spent early; delays will quadruple costs by 2050. PCI 70 is not an aspirational ceiling — it is the floor below which deterioration accelerates rapidly. A member who accepts PCI 70 as the goal without demanding the $42M/year to get there has accepted a 5× funding shortfall as normal. Same structure as HSO: large program, measurable objective, council has not demanded the outcome. *Gap: transcript signal cannot yet distinguish whether a member treats PCI 70 as a ceiling or a floor.*
 
-### The common thread
+**Structural balance policy gap.** The City Auditor explicitly recommended the council adopt a GFOA policy requiring assessment of whether recurring revenues match recurring expenditures. No member has moved to adopt it. Three consecutive budget cycles have included verbatim "not sustainable" findings. A council that receives that language repeatedly without adopting a structural balance requirement is not demanding accountability from its own budget process. *Gap: motion has not yet been made; absence of motion is the finding.*
 
-Each condition above shares the same structure: the city's own adopted documents establish what adequate performance looks like; the council's revealed behavior falls short; and a member who does not publicly challenge the gap has accepted a standard the city's own documents call inadequate. Absence of objection is not neutrality — it is ratification.
+**Reserve policy backslide.** The reserve target was lowered from 30% to 20–30% in July 2025, timed to avoid non-compliance rather than achieve the original goal. Combined reserves are ~14.5%, below even the revised floor. An A+ member voted against the revision or demanded a plan to reach the original target. *Gap: vote is on record; not yet wired into scoring.*
 
-The HSO condition is implemented because it has a rich transcript signal (sympathy/skeptic keyword matching across 51 meetings). The infrastructure and fiscal governance conditions are not yet scored because the transcript signal is weaker and more contested; a member can say "PCI 70" and be using it as a ceiling or a floor, and the algorithm cannot yet distinguish the two. These are planned signals pending better transcript pattern identification.
+**Investment policy non-compliance.** City investments have underperformed LAIF for 9 consecutive quarters. The council receives quarterly evidence and has not acted. An A+ member has demanded corrective action on the record. *Gap: quarterly reports are on the action calendar; member response detectable in transcripts but not yet scored.*
 
+**Section 115 Trust depletion.** The council shifted from contributing $2M/year to the pension pre-funding trust to withdrawing $3–6M/year to balance an operating budget the City Manager calls structurally unsustainable. An A+ member has objected to this trajectory on the record. *Gap: vote-based; not yet wired into scoring.*
+
+### The common structure
+
+Each condition follows the same pattern: significant recurring expenditure or structural obligation; measurable standard the city's own documents establish; council response that falls short; member who does not challenge the gap. Absence of objection is not neutrality — it is ratification.
+
+The HSO condition is implemented because transcript signals are rich (sympathy/skeptic keyword matching across 51 meetings). The others await vote-record wiring (reserve policy, Section 115) or improved transcript pattern detection (infrastructure, structural balance). All are planned.
 ---
 
 ## P1/P2/P3 Priority Framework
@@ -185,7 +192,7 @@ Metrics that require some familiarity with how city government works, but are ex
 - **Source:** Transcripts + agenda cosponsorship
 - **Scale:** 0 (reform-oriented) → 100 (status-quo aligned)
 - **What it measures:** How invested is the member in the existing homeless services apparatus — $21.7M+/yr across 33+ programs, Housing First mandate, low-barrier ideology — versus demanding accountability, outcomes data, and reform?
-- **Why it matters:** Berkeley's homeless spending has grown for a decade with no measurable reduction in visible homelessness. A member who consistently champions more spending and resists outcome metrics is not representing taxpayers who fund those programs.
+- **Why it matters:** HSO is the primary implemented instance of the general outcomes-accountability principle (see A+ Ceiling Conditions). Berkeley's homeless spending has grown for a decade with no measurable reduction in visible homelessness. The same standard — demand metrics, question the model, require accountability for results — applies to any major program, but this is where the evidence record and transcript signal are richest. A member who champions more spending and resists outcome metrics is not representing the taxpayers who fund the program.
 - **Top scorers:** LunaParra (85), Tregub (73), Humbert (62)
 - **Bottom scorers:** Kesarwani (0), Bartlett (2)
 
