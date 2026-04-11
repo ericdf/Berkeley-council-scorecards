@@ -849,6 +849,31 @@ def compute_deltas(current: dict, previous: dict) -> dict:
 # Consent calendar scoring
 # ---------------------------------------------------------------------------
 
+def _load_agenda_classifications() -> dict:
+    """
+    Load the hand-curated agenda item classifications from CSVs.
+    Returns {(date, item_num_str): class_str} e.g. {('2025-04-28', '1'): '9'}.
+    Covers both consent and action calendars.
+    """
+    import csv as _csv
+    result: dict[tuple, str] = {}
+    csv_paths = [
+        os.path.join(AGENDAS_DIR, "classified", "consent_items_classified.csv"),
+        os.path.join(AGENDAS_DIR, "classified", "action_items.csv"),
+    ]
+    for path in csv_paths:
+        if not os.path.exists(path):
+            continue
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in _csv.DictReader(f):
+                date = (row.get("date") or "").strip()
+                item = (row.get("item") or "").strip()
+                cls  = (row.get("classification") or "").strip()
+                if date and item and cls:
+                    result[(date, item)] = cls
+    return result
+
+
 def load_agenda_scores() -> tuple[dict, dict]:
     """
     Read all agendas/*.json and compute per-member scores for both calendars.
@@ -873,6 +898,8 @@ def load_agenda_scores() -> tuple[dict, dict]:
       agenda_off_mission_meetings      — meetings where ≥1 off-mission consent item passed unchallenged
       agenda_off_mission_total         — total off-mission consent items across all meetings
     """
+    classifications = _load_agenda_classifications()
+
     member_scores: dict[str, dict] = defaultdict(lambda: {
         # consent
         "agenda_off_mission_authored":    0,
@@ -886,6 +913,13 @@ def load_agenda_scores() -> tuple[dict, dict]:
         "action_off_mission_cosponsored": 0,
         "action_budget_referral_total":   0,
         "action_budget_referral_items":   0,
+        # P1/P2/P3/9 classification-based counters (consent + action combined)
+        "cls1_authored": 0,   # P1 core — directly addresses a structural crisis
+        "cls2_authored": 0,   # P2 delivery — legitimate function, clear deliverable
+        "cls3_authored": 0,   # P3 discretionary — low-priority / performative
+        "cls9_authored": 0,   # class 9 — questionable scope / city shouldn't be doing this
+        "cls9_action_authored": 0,  # class 9 on action calendar (explicit choice, heavier signal)
+        "cls1_action_authored": 0,  # class 1 on action calendar (heavier positive signal)
     })
 
     meetings_with_off_mission = 0
@@ -899,6 +933,8 @@ def load_agenda_scores() -> tuple[dict, dict]:
         except (json.JSONDecodeError, OSError):
             continue
 
+        date = agenda.get("date", "")
+
         # --- Consent calendar ---
         consent_items = agenda.get("consent_items", [])
         if consent_items:
@@ -911,6 +947,7 @@ def load_agenda_scores() -> tuple[dict, dict]:
                 off_mission   = item.get("off_mission", False)
                 false_fiscal  = item.get("false_fiscal", False)
                 discretionary = item.get("discretionary", {})
+                item_cls = classifications.get((date, str(item.get("number", ""))), "")
 
                 if off_mission:
                     meeting_off_mission   += 1
@@ -935,6 +972,15 @@ def load_agenda_scores() -> tuple[dict, dict]:
                         member_scores[m]["agenda_discretionary_total"] += amt
                         member_scores[m]["agenda_discretionary_items"] += 1
 
+                # Classification-based counters (authors only — cosponsors are passive)
+                if item_cls and authors:
+                    for m in authors:
+                        if m in CANONICAL_MEMBERS:
+                            if   item_cls == "1": member_scores[m]["cls1_authored"] += 1
+                            elif item_cls == "2": member_scores[m]["cls2_authored"] += 1
+                            elif item_cls == "3": member_scores[m]["cls3_authored"] += 1
+                            elif item_cls == "9": member_scores[m]["cls9_authored"] += 1
+
             if meeting_off_mission > 0:
                 meetings_with_off_mission += 1
 
@@ -944,6 +990,7 @@ def load_agenda_scores() -> tuple[dict, dict]:
             cosponsors = item.get("cosponsors", [])
             off_mission  = item.get("off_mission", False)
             dollar_total = item.get("dollar_total", 0) or 0
+            item_cls = classifications.get((date, str(item.get("number", ""))), "")
 
             if off_mission:
                 for m in authors:
@@ -959,6 +1006,21 @@ def load_agenda_scores() -> tuple[dict, dict]:
                     if m in CANONICAL_MEMBERS:
                         member_scores[m]["action_budget_referral_total"] += dollar_total
                         member_scores[m]["action_budget_referral_items"] += 1
+
+            # Classification-based counters — action items are heavier (explicit floor choice)
+            if item_cls and authors:
+                for m in authors:
+                    if m in CANONICAL_MEMBERS:
+                        if item_cls == "1":
+                            member_scores[m]["cls1_authored"] += 1
+                            member_scores[m]["cls1_action_authored"] += 1
+                        elif item_cls == "2":
+                            member_scores[m]["cls2_authored"] += 1
+                        elif item_cls == "3":
+                            member_scores[m]["cls3_authored"] += 1
+                        elif item_cls == "9":
+                            member_scores[m]["cls9_authored"] += 1
+                            member_scores[m]["cls9_action_authored"] += 1
 
     ishii_meta = {
         "agenda_consent_meetings":     total_consent_meetings,
@@ -1781,10 +1843,17 @@ def compute_composite_grade(s: dict) -> dict:
     hso_raw   = s.get("hso_score") if s.get("hso_score") is not None else 50
     hso_part  = ((100 - hso_raw) / 100) ** 2.0   # quadratic — 85→0.022, 62→0.145, 28→0.518
 
-    # Off-mission items authored (active choice to consume budget/staff bandwidth)
-    off_authored  = (s.get("agenda_off_mission_authored",  0) or 0) + \
+    # Off-mission / out-of-scope items authored.
+    # Primary signal: CSV classifications (class 9 = city shouldn't be doing this).
+    # Action items weighted 1.5x consent — floor debate is an explicit choice, not a slip.
+    # Legacy off_mission flag used only when no CSV classification exists (fallback).
+    cls9_authored        = s.get("cls9_authored",        0) or 0
+    cls9_action_authored = s.get("cls9_action_authored", 0) or 0
+    cls9_consent_authored = max(0, cls9_authored - cls9_action_authored)
+    cls9_signal   = cls9_consent_authored * 0.06 + cls9_action_authored * 0.09
+    legacy_off    = (s.get("agenda_off_mission_authored", 0) or 0) + \
                     (s.get("action_off_mission_authored",  0) or 0)
-    off_penalty   = min(0.20, off_authored * 0.07)
+    off_penalty   = min(0.20, max(cls9_signal, legacy_off * 0.07))
 
     # Fiscal rhetoric without dissent — penalise financially literate members who
     # invoke fiscal-concern language while aligned with the status-quo spending apparatus.
@@ -1827,7 +1896,21 @@ def compute_composite_grade(s: dict) -> dict:
     # ── Focus ────────────────────────────────────────────────────────────────
     waste_pct = s.get("waste_pct", 0) or 0
     core_pct  = s.get("core_pct",  0) or 0
-    focus     = max(0.0, min(1.0, (1 - waste_pct) * 0.60 + core_pct * 0.40))
+
+    # Agenda-classification waste: P3 items authored as a share of total policy items.
+    # P3 (discretionary/ceremonial) is within-scope but signals misplaced priorities.
+    # Only penalises when the member has authored enough items to be meaningful (≥3).
+    cls3_authored = s.get("cls3_authored", 0) or 0
+    cls1_authored = s.get("cls1_authored", 0) or 0
+    cls2_authored = s.get("cls2_authored", 0) or 0
+    total_policy  = cls1_authored + cls2_authored + cls3_authored + cls9_authored
+    if total_policy >= 3:
+        p3_share = cls3_authored / total_policy
+        agenda_waste_signal = min(0.10, p3_share * 0.10)
+    else:
+        agenda_waste_signal = 0.0
+
+    focus = max(0.0, min(1.0, (1 - waste_pct) * 0.60 + core_pct * 0.40 - agenda_waste_signal))
 
     # ── Attendance — penalty only ────────────────────────────────────────────
     # Showing up is the minimum bar, not a virtue. Good attendance contributes
@@ -1847,11 +1930,12 @@ def compute_composite_grade(s: dict) -> dict:
 
     # ── Lightweight penalty (P1 tourist test) ───────────────────────────────
     # A member who never originates P1 work is a passenger, not a driver.
-    # Gate: no authored fiscal referral (primary authorship, from agenda data).
-    # If gate fails, measure residual P1 engagement via fiscal-vote presence
-    # and fiscal-concern rhetoric rate. Low on both = tourist penalty.
+    # Gate: no P1 items authored per CSV classification AND no fiscal referral.
+    # Using cls1_authored is more accurate than fiscal_referral_authored alone —
+    # it covers any classified P1 agenda item, not just the curated referral list.
     fiscal_referral_authored = s.get("fiscal_referral_authored", 0) or 0
-    if fiscal_referral_authored == 0:
+    p1_authored = cls1_authored + fiscal_referral_authored
+    if p1_authored == 0:
         concern_rate  = s.get("fiscal_concern_rate", 0.0) or 0.0
         # engagement: weighted average of fiscal-vote presence + fiscal-concern rhetoric
         # both capped at 1.0 to prevent outsized speech volume from masking inaction
@@ -1884,6 +1968,15 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
         "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
         "composite_lightweight_pen":    round(lightweight_penalty, 4),
+        "composite_agenda_waste_signal":round(agenda_waste_signal, 4),
+        "composite_cls9_signal":        round(cls9_signal, 4),
+        # P1/P2/P3/9 authorship counts for display and debugging
+        "cls1_authored":                cls1_authored,
+        "cls2_authored":                cls2_authored,
+        "cls3_authored":                cls3_authored,
+        "cls9_authored":                cls9_authored,
+        "cls9_action_authored":         cls9_action_authored,
+        "p1_authored":                  p1_authored,
     }
 
 
