@@ -901,6 +901,10 @@ def _render_taxpayer_breakdown(s: dict) -> str:
     raw_str, raw_cls = _fmt(raw)
     fin_str, fin_cls = _fmt(final)
 
+    p1_pct       = (s.get("p1_speech_pct", 0) or 0) * 100
+    p1_words_n   = s.get("p1_speech_words", 0) or 0
+    total_words  = s.get("words", 0) or 1
+
     return f"""
   <div class="section">
     <div class="section-title">Taxpayer Alignment — Score Breakdown</div>
@@ -946,6 +950,13 @@ def _render_taxpayer_breakdown(s: dict) -> str:
         <td class="contrib">{fin_str}</td>
       </tr>
     </table>
+    <div style="margin-top:14px;padding:10px 12px;background:#f8f9fa;border-radius:6px;font-size:11.5px;color:#2c3e50">
+      <b>P1 speech share:</b> {p1_pct:.1f}% of words spoken
+      ({p1_words_n:,} of {total_words:,} words) were in turns engaging with a
+      documented structural failure (structural deficit, infrastructure backlog,
+      pension liability, investment non-compliance, reserve policy).
+      This is a diagnostic — not yet incorporated into the composite score.
+    </div>
   </div>"""
 
 

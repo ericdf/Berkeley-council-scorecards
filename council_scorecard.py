@@ -497,6 +497,59 @@ REVENUE_SEEKING_KW = [
 ]
 
 # ---------------------------------------------------------------------------
+# P1 topic keywords — turn-level signal for engagement with documented structural problems
+# ---------------------------------------------------------------------------
+# Intentionally tight: these require the specific vocabulary of each documented failure,
+# not general budget or policy language. A member who says "structural deficit," "CalPERS,"
+# "pavement condition index," or "LAIF" is engaging with a documented structural problem.
+# A member who says "budget" or "roads" generically is not.
+#
+# Used in score_member() to compute p1_speech_pct: share of total words spoken
+# in turns that contain at least one P1 keyword. Display only — not yet scored.
+
+P1_TOPIC_KW = [
+    # ── Structural fiscal deficit ──────────────────────────────────────────
+    # "not sustainable" is exact language from three consecutive City Manager budget messages
+    r"structural.{0,10}deficit",
+    r"structural.{0,10}(?:im)?balance",
+    r"structural\s+gap",
+    r"one.time\s+(?:measure|revenue|source|draw(?:down)?|fund|solution|fix)",
+    r"not\s+sustainable",                    # verbatim from budget messages
+    r"recurring.{0,25}(?:expenditure|cost|revenue|imbalance|gap)",
+    r"\bGFOA\b",                             # Government Finance Officers Association standard
+    r"fiscal\s+sustainability",
+    r"structural(?:ly)?\s+balanced",
+
+    # ── Infrastructure backlog ─────────────────────────────────────────────
+    r"pavement\s+condition\s+index",
+    r"\bPCI\s+\d",                           # "PCI 57" — requires a number to avoid false positives
+    r"deferred\s+maintenance",
+    r"infrastructure\s+backlog",
+    r"five.year\s+paving\s+plan",
+    r"rocky\s+road\s+(?:audit|report|finding)",
+    r"street.{0,15}funding\s+gap",
+
+    # ── Pension and OPEB ───────────────────────────────────────────────────
+    r"\bcalpers\b",
+    r"\bopeb\b",
+    r"pension\s+(?:liability|obligation|unfunded|funding\s+ratio|funded\s+ratio|shortfall)",
+    r"unfunded\s+(?:pension|liability|accrued)",
+    r"section\s+115",                        # pension pre-funding trust (also structural deficit)
+    r"workers.?\s*comp(?:ensation)?\s+(?:reserve|fund|non.fund|underfund|deferred)",
+
+    # ── Investment policy non-compliance ──────────────────────────────────
+    r"\blaif\b",                             # Local Agency Investment Fund benchmark
+    r"investment\s+policy\b",               # the specific policy document
+    r"(?:underperform|benchmark|rate\s+of\s+return).{0,30}(?:investment|portfolio)",
+
+    # ── Reserve policy ────────────────────────────────────────────────────
+    r"reserve\s+(?:target|policy|floor|minimum|requirement|goal)",
+    r"stability\s+reserve",
+    r"catastrophic\s+reserve",
+    r"rainy.day\s+(?:fund|reserve)",
+]
+
+# ---------------------------------------------------------------------------
 # Homeless Services Orthodoxy (HSO) rhetoric signals
 # ---------------------------------------------------------------------------
 
@@ -728,6 +781,12 @@ def score_member(md: MemberData) -> dict:
     waste_pct  = waste_hits / tot_kw
     core_pct   = core_hits / tot_kw
 
+    # --- P1 share of speech (turn-level) ---
+    # A turn is P1 if it contains ≥1 P1_TOPIC_KW hit; all its words count as P1 speech.
+    # Counts engagement with the five documented structural failures, not just topic adjacency.
+    p1_words = sum(len(t.split()) for t in md.turns if hit(t, P1_TOPIC_KW) > 0)
+    p1_speech_pct = p1_words / md.words if md.words > 0 else 0.0
+
     # --- Character ---
     cred_raw  = hit(text, CREDENTIAL_KW) * per1k
     flex_raw  = hit(text, SELF_FLEX_KW) * per1k
@@ -771,6 +830,9 @@ def score_member(md: MemberData) -> dict:
         "fiscal_concern_hits": hit(text, FISCAL_CONCERN_KW),
         # revenue-seeking rhetoric — penalized under P1 Layer 3: new revenue before reprioritization
         "revenue_seeking_hits": hit(text, REVENUE_SEEKING_KW),
+        # P1 share of speech — words in turns engaging with documented structural failures
+        "p1_speech_pct":   round(p1_speech_pct, 4),
+        "p1_speech_words": p1_words,
     }
 
 

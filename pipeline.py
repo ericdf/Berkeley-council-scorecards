@@ -26,7 +26,7 @@ from council_scorecard import (
     TEXT_DIR, CANONICAL_MEMBERS, DISPLAY_NAME,
     load_all, build_scoreboard, score_ishii_facilitator,
     clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, REVENUE_SEEKING_KW,
-    HSO_SYMPATHY_KW, HSO_SKEPTIC_KW,
+    HSO_SYMPATHY_KW, HSO_SKEPTIC_KW, P1_TOPIC_KW,
 )
 
 # Redefine what we need locally (council_scorecard doesn't export these as constants)
@@ -2374,10 +2374,10 @@ def _print_summary(aggregate: dict, council_meta: dict):
                if not n.startswith("_") and n != "Ishii"
                and s.get("words", 0) >= _cs.MIN_WORDS}
 
-    print(f"\n{'='*100}")
+    print(f"\n{'='*110}")
     print(f"  {'MEMBER':<13} {'GRADE':>7} {'RNK':>4} {'TAXPYR':>7} {'FOCUS':>7} {'ATTEND':>8} "
-          f"{'WASTE%':>8} {'EFF':>8} {'REFS':>6} {'SPONS':>7}")
-    print(f"{'='*100}")
+          f"{'WASTE%':>8} {'P1%':>5} {'EFF':>8} {'REFS':>6} {'SPONS':>7}")
+    print(f"{'='*110}")
     for n in sorted(members, key=lambda x: -members[x].get("composite_grade", 0)):
         s = members[n]
         dn = DISPLAY_NAME.get(n, n)
@@ -2394,6 +2394,7 @@ def _print_summary(aggregate: dict, council_meta: dict):
             f"  {s.get('composite_focus',0):>6.3f}"
             f"  {att_disp:>7}"
             f"  {s.get('waste_pct',0)*100:>7.1f}%"
+            f"  {s.get('p1_speech_pct',0)*100:>4.1f}%"
             f"  {s.get('avg_turn_len',0):>7.1f}w"
             f"  {s.get('staff_referrals',0):>5}"
             f"  {s.get('sponsorships',0):>6}"
