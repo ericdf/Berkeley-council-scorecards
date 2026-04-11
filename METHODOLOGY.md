@@ -292,6 +292,20 @@ Incidents are stored in `incidents.json` with structured fields:
 | `description` | Plain-language description of the behavior |
 | `source` | How the behavior was observed or established |
 | `scoring_impact` | Suggested adjustment to composite score (typically −0.10 to +0.10) |
+| `evidence_tier` | A / B / C — see below |
+| `audit_ref` | Optional. Key into the auditor registry when the incident is a response to a specific audit finding |
+
+#### Evidence tiers
+
+The strength of a claim should be proportional to the strength of the evidence behind it. Each incident is assigned a tier that determines its effective weight in scoring:
+
+| Tier | Definition | Weight |
+|------|-----------|--------|
+| A | Primary public record: agenda items, vote records, official city emails, member official statements and farewell letters | 1.00 |
+| B | Reputable reporting or personal newsletters: Berkeleyside, Berkeley Scanner, member personal-domain email | 0.75 |
+| C | Direct observation or author knowledge: scorecard author's firsthand account without contemporaneous documentation | 0.50 |
+
+Incidents with an `audit_ref` receive an additional **0.50× multiplier** on top of their tier weight. The audit mechanism already penalizes the council's failure to act on a finding; the incident captures the specific member's behavior within that context. Applying full incident weight on top of the audit penalty would double-charge the same underlying failure.
 
 ### Incident categories
 
@@ -307,9 +321,17 @@ Incidents are stored in `incidents.json` with structured fields:
 
 ### How incidents feed into scoring
 
-Incident scoring impacts are summed per member and capped at ±0.30 before being applied as an adjustment to the **Taxpayer Alignment** component of the composite grade. The cap prevents any single member's anecdote record from dominating the overall score.
+The strength of a claim should be proportional to the strength of the evidence behind it. Each incident's raw `scoring_impact` is multiplied by its tier weight before being summed (see evidence tier table above). Incidents linked to a City Auditor finding via `audit_ref` receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context. Applying full incident weight on top of the audit penalty would double-charge the same underlying failure.
 
-Incidents supplement — but do not replace — the transcript and agenda signals. A member with no incidents in the log is not assumed clean; it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.
+Weighted incident totals are capped at ±0.30 per member before being applied as an adjustment to the **Taxpayer Alignment** component of the composite grade. The cap prevents any single member's incident record from dominating the overall score.
+
+Members with no incidents in the log are not assumed clean — it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.
+
+#### Audit silence
+
+A separate penalty applies to members who were present at a formal audit presentation, voted to receive and file, and produced no follow-up motion within the response window. This is distinct from an incident: it is an automated signal for undifferentiated silence. Members who have a documented incident with an `audit_ref` matching the audit are exempt — their behavior post-audit is already individually characterized, whether positive or negative. Members in the `follow_up_authored_by` list in `audit_findings.json` are also exempt.
+
+The silence penalty is −0.04 per audit event, applied to Taxpayer Alignment before the composite calculation.
 
 The full incident catalogue is rendered as a separate PDF (`scores/pdfs/incidents.pdf`) for sharing with readers who want to see the underlying evidence behind scores.
 
