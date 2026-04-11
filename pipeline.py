@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from council_scorecard import (
     TEXT_DIR, CANONICAL_MEMBERS, DISPLAY_NAME,
     load_all, build_scoreboard, score_ishii_facilitator,
-    clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW,
+    clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, REVENUE_SEEKING_KW,
     HSO_SYMPATHY_KW, HSO_SKEPTIC_KW,
 )
 
@@ -1038,6 +1038,13 @@ def _flag_fiscal_hypocrisy(aggregate: dict) -> None:
         if details:
             s["fiscal_hypocrisy_detail"] = "; ".join(details)
 
+        # Revenue-seeking rate: new-tax/bond advocacy rhetoric per 10k words.
+        # Computed here so it's available to compute_composite_grade.
+        revenue_seeking = s.get("revenue_seeking_hits", 0) or 0
+        revenue_seeking_rate = revenue_seeking / words * 10_000
+        s["revenue_seeking_hits"] = revenue_seeking
+        s["revenue_seeking_rate"] = round(revenue_seeking_rate, 3)
+
 
 # ---------------------------------------------------------------------------
 # Homeless Services Orthodoxy (HSO) scoring
@@ -1769,7 +1776,9 @@ def compute_composite_grade(s: dict) -> dict:
     # crime, displaced merchants, unaccountable spending, litigation, and
     # the ability of neighboring cities to offload problems onto Berkeley.
     # San Francisco's Lurie-era reversal is the A/B test showing the alternative works.
-    hso_raw   = s.get("hso_score", 50) or 50
+    # Use explicit None check — hso_score = 0.0 is Kesarwani's perfect score, not missing data.
+    # The `or 50` idiom would incorrectly treat 0.0 as falsy and substitute the default.
+    hso_raw   = s.get("hso_score") if s.get("hso_score") is not None else 50
     hso_part  = ((100 - hso_raw) / 100) ** 2.0   # quadratic — 85→0.022, 62→0.145, 28→0.518
 
     # Off-mission items authored (active choice to consume budget/staff bandwidth)
@@ -1796,9 +1805,23 @@ def compute_composite_grade(s: dict) -> dict:
     # Fiscal referral / bond-campaign direction penalty (capped -0.09 in score_fiscal_referral_votes)
     fiscal_ref_penalty = s.get("fiscal_referral_penalty", 0.0) or 0.0
 
+    # Revenue-seeking rhetoric penalty (P1 Layer 3: new revenue before reprioritization).
+    # Penalizes members who propose taxes/bonds without accompanying cut-seeking questions.
+    # Partial credit if they also use FISCAL_KW "what would we cut?" probing language
+    # (fiscal_raw per-1k-words is a proxy for cut-seeking engagement).
+    revenue_seeking_rate = s.get("revenue_seeking_rate", 0.0) or 0.0
+    if revenue_seeking_rate >= 0.3:
+        fiscal_raw   = s.get("fiscal_raw", 0.0) or 0.0   # FISCAL_KW hits per 1k words
+        # If member probes costs AND seeks revenue, partial credit — they at least ask the question.
+        # If they only seek revenue without cost-probing, full penalty applies.
+        cut_credit   = min(1.0, fiscal_raw * 0.4)
+        revenue_seeking_penalty = min(0.10, revenue_seeking_rate * 0.04 * (1.0 - cut_credit * 0.5))
+    else:
+        revenue_seeking_penalty = 0.0
+
     taxpayer_raw  = hso_part * 0.75 + (1.0 - off_penalty) * 0.25
     taxpayer_alignment = max(0.0, min(1.0,
-        taxpayer_raw - rhetoric_penalty + incident_adj + fiscal_ref_penalty
+        taxpayer_raw - rhetoric_penalty - revenue_seeking_penalty + incident_adj + fiscal_ref_penalty
     ))
 
     # ── Focus ────────────────────────────────────────────────────────────────
@@ -1812,16 +1835,44 @@ def compute_composite_grade(s: dict) -> dict:
     fv_pres    = (fv_total - fv_absent) / fv_total if fv_total else 1.0
     punct_rate = s.get("punctuality_rate", 1.0) or 1.0
 
-    # Fiscal vote dereliction: miss the one moment to act on the budget → penalise
-    fv_dereliction  = max(0.0, fv_absent / fv_total) * 0.12   # up to −0.12 for missing all 7
+    # Fiscal vote dereliction: nonlinear — each additional missed vote hurts more than the last.
+    # Missing 1/7 is excusable; missing 5/7 is dereliction of the core duty of the office.
+    # Convex curve (x^1.5): lenient at 1-2 absences, severe at 4+.
+    # 1/7→0.013, 2/7→0.038, 3/7→0.070, 5/7→0.151, 7/7→0.250
+    fv_ratio       = fv_absent / fv_total if fv_total else 0.0
+    fv_dereliction = (fv_ratio ** 1.5) * 0.25
     # Chronic absence: well below 70% on-time rate → penalise
-    punct_penalty   = max(0.0, 0.70 - punct_rate) * 0.15      # up to −0.105 for 0% on-time
-    attendance_deduction = min(0.20, fv_dereliction + punct_penalty)
+    punct_penalty  = max(0.0, 0.70 - punct_rate) * 0.15       # up to −0.105 for 0% on-time
+    attendance_deduction = min(0.30, fv_dereliction + punct_penalty)
+
+    # ── Lightweight penalty (P1 tourist test) ───────────────────────────────
+    # A member who never originates P1 work is a passenger, not a driver.
+    # Gate: no authored fiscal referral (primary authorship, from agenda data).
+    # If gate fails, measure residual P1 engagement via fiscal-vote presence
+    # and fiscal-concern rhetoric rate. Low on both = tourist penalty.
+    fiscal_referral_authored = s.get("fiscal_referral_authored", 0) or 0
+    if fiscal_referral_authored == 0:
+        concern_rate  = s.get("fiscal_concern_rate", 0.0) or 0.0
+        # engagement: weighted average of fiscal-vote presence + fiscal-concern rhetoric
+        # both capped at 1.0 to prevent outsized speech volume from masking inaction
+        engagement = min(1.0, fv_pres * 0.5 + min(concern_rate, 1.0) * 0.5)
+        if engagement < 0.6:
+            # Tapers from 0.10 (pure tourist) to 0 at engagement = 0.6
+            lightweight_penalty = 0.10 * (1.0 - engagement / 0.6)
+        else:
+            lightweight_penalty = 0.0
+    else:
+        lightweight_penalty = 0.0
 
     # ── Composite ────────────────────────────────────────────────────────────
-    # Two pillars: taxpayer alignment dominates, focus captures rhetorical alignment.
-    # Attendance only deducts — showing up is expected, not praiseworthy.
-    composite = max(0.0, taxpayer_alignment * 0.70 + focus * 0.30 - attendance_deduction)
+    # Taxpayer alignment dominates; focus captures rhetorical alignment.
+    # Attendance and lightweight are penalty-only — showing up and doing P1 work
+    # is the minimum bar, not a virtue.
+    composite = max(0.0,
+        taxpayer_alignment * 0.70 + focus * 0.30
+        - attendance_deduction
+        - lightweight_penalty
+    )
 
     return {
         "composite_grade":              round(composite, 4),
@@ -1831,6 +1882,8 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_rhetoric_penalty":   round(rhetoric_penalty, 4),
         "composite_hso_part":           round(hso_part, 4),
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
+        "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
+        "composite_lightweight_pen":    round(lightweight_penalty, 4),
     }
 
 
@@ -2105,23 +2158,26 @@ def _print_summary(aggregate: dict, council_meta: dict):
                if not n.startswith("_") and n != "Ishii"
                and s.get("words", 0) >= _cs.MIN_WORDS}
 
-    print(f"\n{'='*90}")
-    print(f"  {'MEMBER':<13} {'VOTER':>7} {'BEER':>7} {'RECALL':>8} {'WASTE%':>8} "
-          f"{'EFF':>8} {'REFS':>6} {'SPONS':>7} {'ABS%':>7}")
-    print(f"{'='*90}")
-    for n in sorted(members, key=lambda x: -members[x].get("voter", 0)):
+    print(f"\n{'='*95}")
+    print(f"  {'MEMBER':<13} {'GRADE':>7} {'TAXPYR':>7} {'FOCUS':>7} {'ATTEND':>8} {'WASTE%':>8} "
+          f"{'EFF':>8} {'REFS':>6} {'SPONS':>7}")
+    print(f"{'='*95}")
+    for n in sorted(members, key=lambda x: -members[x].get("composite_grade", 0)):
         s = members[n]
         dn = DISPLAY_NAME.get(n, n)
+        att_ded  = s.get("composite_attendance_ded", 0) or 0
+        lw_pen   = s.get("composite_lightweight_pen", 0) or 0
+        att_disp = f"-{(att_ded + lw_pen)*100:.0f}%" if (att_ded + lw_pen) > 0.005 else "  ok"
         print(
             f"  {dn:<13}"
-            f"  {s.get('voter',0):>6.3f}"
-            f"  {s.get('beer',0):>6.3f}"
-            f"  {s.get('recall',0):>7.3f}"
+            f"  {s.get('composite_grade',0):>6.3f}"
+            f"  {s.get('composite_taxpayer',0):>6.3f}"
+            f"  {s.get('composite_focus',0):>6.3f}"
+            f"  {att_disp:>7}"
             f"  {s.get('waste_pct',0)*100:>7.1f}%"
             f"  {s.get('avg_turn_len',0):>7.1f}w"
             f"  {s.get('staff_referrals',0):>5}"
             f"  {s.get('sponsorships',0):>6}"
-            f"  {(s.get('vote_abstain_rate') or 0)*100:>6.1f}%"
         )
     print(f"\n  Council block-vote rate: {council_meta['block_vote_rate']*100:.0f}%  "
           f"({council_meta['block_vote_events']} of {council_meta['total_vote_events']} events)")

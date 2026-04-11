@@ -451,11 +451,49 @@ FISCAL_CONCERN_KW = [
     r"liv(e|ing) within our means",
     r"(un)?sustainable (spending|budget|costs?)",
     r"(scarce|limited)\s+(resources|funds|dollars)",
-    # Tax / bond advocacy signals (concern framing used to justify new revenue)
+]
+
+# Revenue-seeking rhetoric — proposing new taxes or bonds as the mechanism for
+# addressing fiscal problems, without first asking what can be cut or reprioritized.
+# Under the P1 framework (Layer 3), this scores NEGATIVELY: reaching for new revenue
+# before exhausting reprioritization is the wrong methodology regardless of whether
+# the underlying problem is real. Distinguished from FISCAL_CONCERN_KW (which measures
+# genuine fiscal problem awareness) and FISCAL_KW (which measures probing cost questions).
+REVENUE_SEEKING_KW = [
+    # Direct new-revenue proposals — explicit advocacy for new tax or bond instrument
     r"rais(e|ing) (the\s+)?taxes? (to pay|to fund|to cover|for)",
     r"homeowners? (are being|will be|are) (taxed|burdened|asked|hit)",
     r"(need|propose|consider|explore).{0,30}(new|a)\s+(tax|bond|levy|assessment|parcel tax|measure)",
-    r"(put\s+)?(a\s+)?(bond|tax|levy|measure|parcel tax).{0,20}(ballot|voters|measure)",
+    # Requires explicit ballot/voters framing — avoids matching "Measure U1 and Measure M" (two mentions)
+    r"(put|place|bring|consider|explore)\s+.{0,15}(bond|tax|levy|measure|parcel tax).{0,20}(ballot|voters)",
+
+    # Exploring / considering revenue as the solution framing
+    # Reveals that the default mental model is "find more money" — the thinking, not just the vote
+    r"(explore|look at|consider|examine|discuss)\s+(revenue|funding|tax|bond|financing)\s+(option|source|stream|approach|alternative|measure|solution)",
+    r"(additional|new|more|other)\s+revenue\s+(source|stream|option|approach|tool|measure)",
+    r"(revenue|funding)\s+(option|alternative|solution|approach|strategy)\b",
+
+    # Asking voters to approve new revenue — ballot framing
+    # Negative lookahead excludes "go to public comment" (procedural, not revenue advocacy)
+    r"(ask|go to|bring to|take to)\s+(the\s+)?(voters?|taxpayers?|public|community)\b(?!\s+comment)",
+    r"(voters?|taxpayers?|the\s+community|the\s+public)\s+(could|would|might|should|can)\s+(approve|support|pass|fund|weigh in)",
+    r"(go|come|return|back)\s+(to\s+)?the\s+ballot",
+    r"(put|place|bring)\s+.{0,20}\s+(on|before)\s+(the\s+)?ballot",
+
+    # Bond/tax advocacy in soft form — "a bond could help," "we could look at a parcel tax"
+    r"(bond\s+measure|general\s+obligation|revenue\s+bond|parcel\s+tax|sales\s+tax)\s+(could|would|might|should|can|will)\s+(help|provide|fund|address|allow|generate)",
+    r"(consider|explore|look at|discuss|examine)\s+(a\s+)?(bond|parcel\s+tax|sales\s+tax|tax\s+measure|levy)",
+    r"(an?\s+)?(infrastructure|facilities?|capital|general)\s+(bond|measure)\b",
+
+    # "We need more money" as solution framing — without corresponding cut proposal
+    r"(we\s+)?(need|require)\s+(more|additional|new|increased)\s+(money|funding|resources|dollars|revenue)\b",
+    r"(can.t|cannot)\s+(do|address|fund|tackle|fix|solve)\s+.{0,25}\s+without\s+(more|additional|new)\s+(revenue|funding|money|resources)",
+    r"(we\s+)?(need|must|have)\s+to\s+find\s+(the\s+)?(money|funding|resources|revenue)\b",
+
+    # Investment-before-cuts framing
+    r"(we\s+)?(need|must|should|have to)\s+(invest|fund|prioritize).{0,30}(before|instead of).{0,20}cut",
+    # "raise/increase revenue" as council tax-seeking — exclude "without putting a burden" (earned income framing)
+    r"(we\s+)?(can|should|must|need to)\s+(raise|increase|find|generate)\s+(more\s+)?(revenue|money|funding)(?!\s+without\s+putting)",
 ]
 
 # ---------------------------------------------------------------------------
@@ -731,6 +769,8 @@ def score_member(md: MemberData) -> dict:
         "hum_hits":  hit(text, HUMILITY_KW),
         # fiscal concern rhetoric (distinct from fiscal discipline)
         "fiscal_concern_hits": hit(text, FISCAL_CONCERN_KW),
+        # revenue-seeking rhetoric — penalized under P1 Layer 3: new revenue before reprioritization
+        "revenue_seeking_hits": hit(text, REVENUE_SEEKING_KW),
     }
 
 
