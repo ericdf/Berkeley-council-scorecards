@@ -24,6 +24,8 @@
 
   "homeless_response_team_2025": {
     "audit_ref": "homeless_response_team_2025",
+    "follow_up_authored_by": [],
+    "follow_up_window_days": 120,
     "title": "Berkeley Homeless Response Team: Coordination, Oversight, and Outcome Tracking",
     "date_released": "2025-07",
     "author": "City Auditor",
@@ -44,6 +46,8 @@
 
   "streets_rocky_road_2025": {
     "audit_ref": "streets_rocky_road_2025",
+    "follow_up_authored_by": [],
+    "follow_up_window_days": 120,
     "title": "Rocky Road: Berkeley Streets at Risk and Significantly Underfunded",
     "date_released": "2025-10",
     "author": "City Auditor",
@@ -69,6 +73,8 @@
 
   "financial_condition_2026": {
     "audit_ref": "financial_condition_2026",
+    "follow_up_authored_by": [],
+    "follow_up_window_days": 120,
     "title": "Berkeley's Financial Condition (FY2016–FY2025): Structural Deficit Poses Risk to Financial Sustainability",
     "date_released": "2026-04-08",
     "author": "City Auditor",

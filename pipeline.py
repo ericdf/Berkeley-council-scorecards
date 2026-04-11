@@ -1778,7 +1778,8 @@ def score_annotated_votes(annotated_dir: str = ANNOTATED_DIR) -> dict:
 # Incident / anecdote loading
 # ---------------------------------------------------------------------------
 
-INCIDENTS_PATH = os.path.join(os.path.dirname(__file__), "incidents.json")
+INCIDENTS_PATH      = os.path.join(os.path.dirname(__file__), "incidents.json")
+AUDIT_FINDINGS_PATH = os.path.join(os.path.dirname(__file__), "audit_findings.json")
 
 def load_incidents() -> dict:
     """
@@ -1820,6 +1821,94 @@ def load_incidents() -> dict:
             "incident_records":   incidents,
         }
     return result
+
+
+# ---------------------------------------------------------------------------
+# Audit silence penalty
+# ---------------------------------------------------------------------------
+
+def load_audit_silence() -> dict:
+    """
+    For each audit that was formally presented to council and received/filed
+    without substantive follow-up, penalize members who were present but whose
+    response is uncharacterized: no incident with a matching audit_ref, and not
+    listed in follow_up_authored_by.
+
+    Members with an existing audit_ref incident are already individually
+    scored — their behavior (positive or negative) is on record. The silence
+    penalty is for everyone else who sat in the room, voted receive-and-file,
+    and did nothing documentable afterward.
+
+    Returns {canonical_name: {
+        audit_silence_adj:    float — cumulative penalty (negative)
+        audit_silence_events: list  — audit_ref keys that triggered it
+    }}
+    """
+    if not os.path.exists(AUDIT_FINDINGS_PATH) or not os.path.exists(INCIDENTS_PATH):
+        return {}
+    try:
+        with open(AUDIT_FINDINGS_PATH) as f:
+            audits = json.load(f)
+        with open(INCIDENTS_PATH) as f:
+            incidents_raw = json.load(f)
+    except Exception:
+        return {}
+
+    # (member, audit_ref) pairs already covered by an incident
+    characterized: set = set()
+    for member, inc_list in incidents_raw.items():
+        if member.startswith("_") or not isinstance(inc_list, list):
+            continue
+        for inc in inc_list:
+            ar = inc.get("audit_ref", "")
+            if ar:
+                characterized.add((member, ar))
+
+    SILENCE_PENALTY = -0.04
+
+    result: dict = {m: {"audit_silence_adj": 0.0, "audit_silence_events": []}
+                    for m in CANONICAL_MEMBERS}
+
+    for audit_key, audit in audits.items():
+        if audit_key.startswith("_") or not isinstance(audit, dict):
+            continue
+        agenda_date = audit.get("council_agenda_date")
+        status      = audit.get("status", "")
+        if not agenda_date:
+            continue
+        # Only audits that were formally received with no structural follow-up
+        if status not in ("received_filed", "response_documented"):
+            continue
+
+        follow_up_by = set(audit.get("follow_up_authored_by") or [])
+
+        # Load annotated attendance for the presentation meeting
+        ann_path = os.path.join(ANNOTATED_DIR, f"{agenda_date}-regular.json")
+        if not os.path.exists(ann_path):
+            continue
+        try:
+            with open(ann_path) as f:
+                ann = json.load(f)
+        except Exception:
+            continue
+
+        absent_names: set = set()
+        for n in ann.get("absent", []):
+            c = _annot_canonical(n) if isinstance(n, str) else None
+            if c:
+                absent_names.add(c)
+
+        for member in CANONICAL_MEMBERS:
+            if member in absent_names:
+                continue  # wasn't there
+            if member in follow_up_by:
+                continue  # gave a substantive response
+            if (member, audit_key) in characterized:
+                continue  # behavior already individually documented
+            result[member]["audit_silence_adj"]    += SILENCE_PENALTY
+            result[member]["audit_silence_events"].append(audit_key)
+
+    return {m: v for m, v in result.items() if v["audit_silence_events"]}
 
 
 # ---------------------------------------------------------------------------
@@ -1880,6 +1969,9 @@ def compute_composite_grade(s: dict) -> dict:
     # Incident adjustments (capped ±0.30 in load_incidents)
     incident_adj  = s.get("incident_score_adj", 0.0) or 0.0
 
+    # Audit silence: present at audit presentation, no follow-up, no characterized incident
+    audit_silence_adj = s.get("audit_silence_adj", 0.0) or 0.0
+
     # Fiscal referral / bond-campaign direction penalty (capped -0.09 in score_fiscal_referral_votes)
     fiscal_ref_penalty = s.get("fiscal_referral_penalty", 0.0) or 0.0
 
@@ -1899,7 +1991,8 @@ def compute_composite_grade(s: dict) -> dict:
 
     taxpayer_raw  = hso_part * 0.75 + (1.0 - off_penalty) * 0.25
     taxpayer_alignment = max(0.0, min(1.0,
-        taxpayer_raw - rhetoric_penalty - revenue_seeking_penalty + incident_adj + fiscal_ref_penalty
+        taxpayer_raw - rhetoric_penalty - revenue_seeking_penalty
+        + incident_adj + fiscal_ref_penalty + audit_silence_adj
     ))
 
     # ── Focus ────────────────────────────────────────────────────────────────
@@ -1977,6 +2070,7 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
         "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
         "composite_lightweight_pen":    round(lightweight_penalty, 4),
+        "composite_audit_silence_pen":  round(-audit_silence_adj, 4),
         "composite_agenda_waste_signal":round(agenda_waste_signal, 4),
         "composite_cls9_signal":        round(cls9_signal, 4),
         # P1/P2/P3/9 authorship counts for display and debugging
@@ -2199,6 +2293,15 @@ def main():
         print(f"  {sum(v['incident_count'] for v in incidents.values())} incidents across "
               f"{len(incidents)} members", file=sys.stderr)
 
+    # Audit silence penalty
+    audit_silence = load_audit_silence()
+    for name in CANONICAL_MEMBERS:
+        if name in audit_silence:
+            aggregate[name].update(audit_silence[name])
+    if audit_silence:
+        print(f"  Audit silence: {sum(len(v['audit_silence_events']) for v in audit_silence.values())} "
+              f"events across {len(audit_silence)} members", file=sys.stderr)
+
     # Tier 1 composite grade
     print("Computing Tier 1 composite grade...", file=sys.stderr)
     for name in CANONICAL_MEMBERS:
@@ -2211,6 +2314,14 @@ def main():
     print("  Composite grades: " +
           ", ".join(f"{DISPLAY_NAME.get(n,n)} ({v:.3f})" for n, v in grade_summary),
           file=sys.stderr)
+
+    # Cohort percentile rank (1 = best in cohort; 100th percentile = top)
+    ranked = sorted(CANONICAL_MEMBERS, key=lambda n: aggregate[n].get("composite_grade", 0))
+    n_m = len(ranked)
+    for rank_idx, name in enumerate(ranked):
+        pct = round(rank_idx / (n_m - 1) * 100) if n_m > 1 else 50
+        aggregate[name]["cohort_rank"]       = n_m - rank_idx   # 1 = best
+        aggregate[name]["cohort_percentile"] = pct              # 0 = worst, 100 = best
 
     # --- Snapshot + deltas ---
     print("Computing iteration deltas...", file=sys.stderr)
@@ -2260,19 +2371,22 @@ def _print_summary(aggregate: dict, council_meta: dict):
                if not n.startswith("_") and n != "Ishii"
                and s.get("words", 0) >= _cs.MIN_WORDS}
 
-    print(f"\n{'='*95}")
-    print(f"  {'MEMBER':<13} {'GRADE':>7} {'TAXPYR':>7} {'FOCUS':>7} {'ATTEND':>8} {'WASTE%':>8} "
-          f"{'EFF':>8} {'REFS':>6} {'SPONS':>7}")
-    print(f"{'='*95}")
+    print(f"\n{'='*100}")
+    print(f"  {'MEMBER':<13} {'GRADE':>7} {'RNK':>4} {'TAXPYR':>7} {'FOCUS':>7} {'ATTEND':>8} "
+          f"{'WASTE%':>8} {'EFF':>8} {'REFS':>6} {'SPONS':>7}")
+    print(f"{'='*100}")
     for n in sorted(members, key=lambda x: -members[x].get("composite_grade", 0)):
         s = members[n]
         dn = DISPLAY_NAME.get(n, n)
         att_ded  = s.get("composite_attendance_ded", 0) or 0
         lw_pen   = s.get("composite_lightweight_pen", 0) or 0
         att_disp = f"-{(att_ded + lw_pen)*100:.0f}%" if (att_ded + lw_pen) > 0.005 else "  ok"
+        rank     = s.get("cohort_rank", "-")
+        rank_str = f"{rank}/{len(CANONICAL_MEMBERS)}" if isinstance(rank, int) else "-"
         print(
             f"  {dn:<13}"
             f"  {s.get('composite_grade',0):>6.3f}"
+            f"  {rank_str:>5}"
             f"  {s.get('composite_taxpayer',0):>6.3f}"
             f"  {s.get('composite_focus',0):>6.3f}"
             f"  {att_disp:>7}"
