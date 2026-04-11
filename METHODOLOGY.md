@@ -96,7 +96,11 @@ Consent calendar items — passed en bloc without floor debate — are classifie
 
 **Class 9 vs. class 3:** Class 3 items are low-priority but within Berkeley's appropriate scope. Class 9 items represent scope the city arguably should not carry — county service duplication, political advocacy outside city authority, and governance structures that insulate dysfunction from accountability.
 
-Consent calendar classifications are stored in `consent_items_classified.csv` (594 items, Dec 2024–Apr 2026). Distribution: 1=41, 2=268, 3=58, 8=174, 9=53.
+Consent calendar classifications are stored in `agendas/classified/consent_items_classified.csv` (594 items, Dec 2024–Apr 2026). Distribution: 1=41, 2=268, 3=58, 8=174, 9=53.
+
+Action calendar classifications are stored in `agendas/classified/action_items.csv` (175 items, Dec 2024–Apr 2026). Distribution: 1=40, 2=47, 3=17, 8=56, 9=15.
+
+**Classification is topic-tier, not quality-of-response.** A P1 topic handled badly (e.g., a ballot-measures funding discussion that defaults to new taxes without contemplating cuts) is still class 1 — it addresses the right problem. The pipeline scores the quality of the response separately via fiscal concern rhetoric, revenue-seeking signals, and vote record. Classifying it as P3 would undercount the council's P1 engagement; the penalty for the wrong answer belongs in the scoring layer, not the classification layer.
 
 ---
 
