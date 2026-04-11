@@ -64,6 +64,38 @@ composite = max(0.0,
 
 ---
 
+## A+ Ceiling Conditions
+
+A+ is not available to a member who is silent or miscalibrated on Berkeley's documented structural crises. The grade requires not just absence of bad behavior but **aspirations set at the level the city's own documents say the problems demand**. Setting sights too low on a documented crisis is a form of complicity — it accepts a trajectory the city's own adopted reports describe as ruinous.
+
+The general test: *Does the member's behavior reflect understanding of what the city's own documents say the problem actually is, and does their standard for acceptable performance match what those documents describe as the required response?*
+
+### Currently scored ceiling conditions
+
+**Homeless Services Orthodoxy (HSO) neutrality.** Berkeley spends $21M+/yr across 33+ programs under a Housing First mandate, with no measurable reduction in visible homelessness across a decade of growth. A member who does not demand outcome data, accountability metrics, or reform of the delivery model is implicitly endorsing the status quo. HSO neutrality (score = 50) is not a safe harbor — it is acceptance of a $21M/yr apparatus without asking whether it works. The scoring formula uses a quadratic curve: HSO 50 → taxpayer_alignment contribution capped at 0.25/1.0. A+ requires HSO well below 50.
+
+### Documented ceiling conditions not yet fully scored
+
+The following are known gaps between what A+ should require and what the algorithm currently detects. Each is grounded in the city's own adopted documents.
+
+**Infrastructure aspiration floor.** The city's adopted goal is PCI 70. The Rocky Road audit (Oct 2025) found: current PCI ≈ 57; achieving PCI 70 requires $42M/year; the current GF allocation is $2–8M/year; deferred maintenance costs $7 in repairs for every $1 spent early; delays will quadruple costs by 2050. A member who cites PCI 70 as the goal without demanding the GF reprioritization required to fund it has accepted a 5× funding shortfall as normal. PCI 70 is not an aspirational ceiling — it is the floor below which deterioration accelerates rapidly. An A+ member understands the gap between the adopted goal and the funding required and acts on it. *Not yet scored: no transcript signal detecting whether a member accepts or challenges the infrastructure funding gap.*
+
+**Structural balance policy gap.** The City Auditor's April 2026 financial condition report explicitly recommended the council adopt a GFOA best-practice policy requiring assessment of whether recurring revenues match recurring expenditures. No current member has moved to adopt this policy. A council that repeatedly receives "not sustainable" findings in budget documents and has not adopted a structural balance requirement is operating without a basic governance guardrail. An A+ member authors or demands this policy. *Not yet scored.*
+
+**Reserve policy backslide.** The original reserve target was 30% of GF revenues by 2027. In July 2025 the council lowered the target to 20–30% — a revision timed to avoid non-compliance rather than achieve the original goal. Combined reserves are currently ~14.5%, below even the revised floor. An A+ member voted against the downward revision or has demanded a plan to reach the original target. *Not yet scored.*
+
+**Investment policy non-compliance.** The city's investment policy requires returns that "regularly meet or exceed" LAIF. City investments have underperformed LAIF for 9 consecutive quarters. The council receives quarterly evidence of this non-compliance and has not acted. An A+ member has demanded corrective action — at minimum a staff response explaining the deviation. *Not yet scored.*
+
+**Section 115 Trust trajectory.** The council was contributing $2M/year to the pension pre-funding trust through FY2024. In FY2025 it began withdrawing $3M/year, escalating to $6M/year in FY2026 — depleting a buffer that took years to build, to balance an operating budget that the City Manager calls structurally unsustainable. An A+ member has objected to this depletion on the record. *Not yet scored.*
+
+### The common thread
+
+Each condition above shares the same structure: the city's own adopted documents establish what adequate performance looks like; the council's revealed behavior falls short; and a member who does not publicly challenge the gap has accepted a standard the city's own documents call inadequate. Absence of objection is not neutrality — it is ratification.
+
+The HSO condition is implemented because it has a rich transcript signal (sympathy/skeptic keyword matching across 51 meetings). The infrastructure and fiscal governance conditions are not yet scored because the transcript signal is weaker and more contested; a member can say "PCI 70" and be using it as a ceiling or a floor, and the algorithm cannot yet distinguish the two. These are planned signals pending better transcript pattern identification.
+
+---
+
 ## P1/P2/P3 Priority Framework
 
 Council work is tiered by urgency and alignment with Berkeley's documented structural problems.
