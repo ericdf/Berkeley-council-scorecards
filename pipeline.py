@@ -1797,13 +1797,22 @@ def load_incidents() -> dict:
     except Exception:
         return {}
 
+    TIER_WEIGHTS = {"A": 1.00, "B": 0.75, "C": 0.50}
+
     result = {}
     for name, incidents in data.items():
         if name.startswith("_") or not isinstance(incidents, list):
             continue
         if name not in CANONICAL_MEMBERS:
             continue
-        total_adj = sum(inc.get("scoring_impact", 0) for inc in incidents)
+        total_adj = 0.0
+        for inc in incidents:
+            raw = inc.get("scoring_impact", 0)
+            tier = inc.get("evidence_tier", "B")   # default B if field absent
+            weight = TIER_WEIGHTS.get(tier, 0.75)
+            if inc.get("audit_ref"):
+                weight *= 0.50   # audit channel already penalizes this behavior
+            total_adj += raw * weight
         total_adj = max(-0.30, min(0.30, total_adj))   # cap so no single member is dominated
         result[name] = {
             "incident_score_adj": round(total_adj, 4),
