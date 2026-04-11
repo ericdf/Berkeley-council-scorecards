@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "document_ref":      "streets_rocky_road_2025",
+    "title":             "Rocky Road: Berkeley Streets at Risk and Significantly Underfunded",
+    "document_type":     "audit",
+    "author":            "City Auditor",
+    "source_url":        "https://www.cityofberkeley.info/auditor/",
+    "date_released":     "2025-10",
+    "date_extracted":    "2026-04-10",
+    "extraction_method": "manual — source PDF is image-based; text extracted by reading",
+    "registry_ref":      "audit_findings.json#streets_rocky_road_2025",
+    "page_count":        null,
+    "extraction_note":   "Partial extract — document reviewed via agenda record and council discussion; full PDF not directly read for this extraction"
+  },
+
+  "summary": "The City Auditor documented that Berkeley's streets are in significantly worse condition than regional peers, that the funding gap is structural rather than temporary, and that the council's reliance on bond measures rather than general fund reprioritization has not solved — and may have entrenched — the underlying problem. The Five Year Paving Plan, which determines which streets get repaired, uses political rather than efficiency-maximizing criteria.",
+
+  "key_facts": {
+    "pci_current": {
+      "finding": "Pavement Condition Index (PCI) of approximately 57 — rated 'at risk' by the Metropolitan Transportation Commission",
+      "page": null,
+      "note": "10 points below the regional average of ~67; within 3 points of the threshold (PCI 54) where deterioration accelerates rapidly and rehabilitation costs spike"
+    },
+    "funding_gap": {
+      "finding": "$42M per year required to achieve PCI 70 (good condition); general fund allocates approximately $15M per year",
+      "page": null,
+      "note": "The gap is not a rounding error — it is nearly 3x the current allocation. Bonds have not closed it."
+    },
+    "bond_dependence": {
+      "finding": "Structural pattern: Berkeley has relied on a cycle of bond measures rather than general fund reprioritization to address street conditions",
+      "page": null,
+      "note": "Bond cycle: Measure M (2012) → T1 (2016) → L (failed 2022, 59%, needed 2/3) → EE/FF (2024) → $300M proposed (2026). Five cycles with no corresponding GF increase."
+    },
+    "paving_plan_criteria": {
+      "finding": "Five Year Paving Plan selects streets based on political considerations rather than efficiency-maximizing pavement management metrics",
+      "page": null,
+      "note": "Industry standard is to prioritize streets where preventive maintenance is cheapest per PCI-point gained; Berkeley does not use this approach"
+    },
+    "maintenance_vs_rehab": {
+      "finding": "Regular preventive maintenance is 5–10x cheaper per unit than rehabilitation (MTC data)",
+      "page": null,
+      "note": "Deferring maintenance converts cheap work into expensive work — the bond cycle compounds this by making rehabilitation the primary intervention"
+    },
+    "historical_paving_rate": {
+      "finding": "From 2018–2022, Berkeley paved less than 3 miles per year; in 2018, zero streets were paved because staff failed to get bids out in time",
+      "page": null,
+      "note": "Operational failure compounding the structural underfunding"
+    },
+    "gf_commitment": {
+      "finding": "The council had to adopt a formal policy in 2022 committing to $15.3M per year in general fund streets spending simply to establish a minimum baseline",
+      "page": null,
+      "note": "The baseline itself is less than 40% of what is needed to reach PCI 70"
+    }
+  },
+
+  "verbatim_quotes": [],
+
+  "auditor_recommendations": [
+    "Reform Five Year Paving Plan selection criteria to prioritize by cost-efficiency metrics rather than political considerations",
+    "Increase general fund allocation to streets before pursuing additional bond measures",
+    "Address the structural underfunding problem in the operating budget"
+  ]
+}

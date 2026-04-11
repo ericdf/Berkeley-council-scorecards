@@ -1,0 +1,59 @@
+{
+  "_schema": {
+    "purpose": "Registry of Berkeley budget documents. Each entry tracks what the document reveals about spending priorities, structural balance, and the gap between stated policy and actual allocation. Follows the same pattern as audit_findings.json: the document establishes facts; the council's choices against those facts are the scored events.",
+    "status_values": {
+      "pending_review":     "Document obtained but not yet extracted",
+      "extracted":          "Key facts captured in source extract file",
+      "scored":             "Findings incorporated into pipeline scoring or incidents"
+    },
+    "fields": {
+      "document_ref":    "Unique key; matches extract filename in sources/budgets/",
+      "title":           "Official document title",
+      "fiscal_year":     "FY the document covers",
+      "document_type":   "proposed | adopted | amendment | audit_of_budget",
+      "date_released":   "Date published",
+      "source_url":      "Where to obtain the original",
+      "total_gf":        "Total General Fund (dollars) if stated",
+      "structural_gap":  "Documented structural deficit or surplus, if stated",
+      "key_signals":     "What this document reveals about council priorities",
+      "status":          "One of the status_values above",
+      "source_extract":  "Path to detailed extract file, if created"
+    }
+  },
+
+  "fy2026_adopted": {
+    "document_ref":   "fy2026_adopted",
+    "title":          "City of Berkeley Adopted Budget FY2026",
+    "fiscal_year":    "FY2026",
+    "document_type":  "adopted",
+    "date_released":  "2025-07",
+    "source_url":     "https://www.cityofberkeley.info/finance/",
+    "total_gf":       1520000000,
+    "structural_gap": null,
+    "key_signals":    [
+      "Budget adopted unanimously at 1am — no member voted no or moved to reduce any line item",
+      "FTE count and salary/benefit lines reflect the 30% staffing growth documented in the April 2026 financial condition audit",
+      "Community development and housing continue as the fastest-growing categories"
+    ],
+    "status":         "pending_review",
+    "source_extract": null
+  },
+
+  "fy2027_proposed": {
+    "document_ref":   "fy2027_proposed",
+    "title":          "City of Berkeley Proposed Budget FY2027",
+    "fiscal_year":    "FY2027",
+    "document_type":  "proposed",
+    "date_released":  null,
+    "source_url":     "https://www.cityofberkeley.info/finance/",
+    "total_gf":       null,
+    "structural_gap": 32000000,
+    "key_signals":    [
+      "The April 2026 financial condition audit projects a $32M structural deficit for FY2027 — this budget will reveal how the council proposes to address it",
+      "Key question: does the proposed budget include any recurring expenditure reductions, or is the gap addressed through one-time measures again?",
+      "Council response to the structural deficit in this document is the highest-priority scoring event of 2026"
+    ],
+    "status":         "pending_review",
+    "source_extract": null
+  }
+}

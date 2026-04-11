@@ -1,0 +1,57 @@
+{
+  "_schema": {
+    "purpose": "Registry of city labor contracts (MOUs — Memoranda of Understanding) with employee unions. Labor costs are approximately two-thirds of the General Fund budget and the single largest driver of the structural deficit. Each MOU represents a multi-year commitment that the council votes to ratify. The terms reveal whether any member extracted efficiency provisions, productivity benchmarks, or compensation restraint before voting yes.",
+    "status_values": {
+      "pending_review":  "Contract identified but not yet obtained or extracted",
+      "extracted":       "Key terms captured in source extract file",
+      "scored":          "Terms incorporated into union_deference scoring or incidents"
+    },
+    "fields": {
+      "document_ref":       "Unique key; matches extract filename in sources/contracts/",
+      "union":              "Name of the bargaining unit",
+      "unit_description":   "What employees this covers",
+      "contract_period":    "Term of the MOU (e.g., FY2024–FY2027)",
+      "date_ratified":      "Date council voted to approve",
+      "vote_record":        "How each member voted (yes/no/absent/abstain)",
+      "salary_increase":    "Total compensation increase over contract term (% or $)",
+      "productivity_provisions": "Any performance or efficiency requirements included",
+      "key_signals":        "What the terms reveal about council leverage and priorities",
+      "status":             "One of the status_values above",
+      "source_extract":     "Path to detailed extract file, if created"
+    }
+  },
+
+  "seiu_1021_2024": {
+    "document_ref":       "seiu_1021_2024",
+    "union":              "SEIU Local 1021",
+    "unit_description":   "General municipal workers — the largest bargaining unit",
+    "contract_period":    null,
+    "date_ratified":      null,
+    "vote_record":        null,
+    "salary_increase":    null,
+    "productivity_provisions": null,
+    "key_signals":        [
+      "SEIU 1021 represents the broadest category of city employees; their MOU terms set the pattern for other units",
+      "No council member has publicly requested productivity data or efficiency tradeoffs before ratifying a labor contract in the scorecard period"
+    ],
+    "status":             "pending_review",
+    "source_extract":     null
+  },
+
+  "bpoa_2024": {
+    "document_ref":       "bpoa_2024",
+    "union":              "Berkeley Police Officers Association",
+    "unit_description":   "Sworn police officers",
+    "contract_period":    null,
+    "date_ratified":      null,
+    "vote_record":        null,
+    "salary_increase":    null,
+    "productivity_provisions": null,
+    "key_signals":        [
+      "Police overtime has exceeded budget for three consecutive years per the April 2026 financial condition audit — the MOU terms and any overtime provisions are directly relevant",
+      "Council approved a new police staffing plan; the MOU governs compensation for those positions"
+    ],
+    "status":             "pending_review",
+    "source_extract":     null
+  }
+}

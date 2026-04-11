@@ -1,0 +1,130 @@
+{
+  "_meta": {
+    "document_ref":      "financial_condition_2026",
+    "title":             "Berkeley's Financial Condition (FY2016–FY2025): Structural Deficit Poses Risk to Financial Sustainability",
+    "document_type":     "audit",
+    "author":            "City Auditor",
+    "source_url":        "https://www.cityofberkeley.info/auditor/",
+    "date_released":     "2026-04-08",
+    "date_extracted":    "2026-04-10",
+    "extraction_method": "manual — source PDF is image-based (scanned); text extracted by reading",
+    "registry_ref":      "audit_findings.json#financial_condition_2026",
+    "page_count":        40
+  },
+
+  "summary": "A comprehensive ten-year review of Berkeley's financial condition concluding that the city faces a structural General Fund deficit driven by expenditure growth that consistently outpaces revenue. The deficit is being masked by one-time measures — reserve withdrawals, pension trust raids — rather than addressed through structural reform. The council's fiscal policies lack the foundational test (recurring revenues ≥ recurring expenditures) that GFOA identifies as a prerequisite for fiscal sustainability.",
+
+  "key_facts": {
+    "structural_deficit": {
+      "finding": "General Fund structural deficit of $32M (FY2027) and $33M (FY2028)",
+      "page": "p.1, p.18",
+      "note": "Described as 'structural' — meaning it recurs annually absent policy change, not a one-time gap"
+    },
+    "one_time_balancing": {
+      "finding": "FY2025 budget balanced using $4.7M from workers' compensation reserve and $3M withdrawal from Section 115 pension pre-funding trust",
+      "page": "p.19",
+      "note": "One-time measures that do not address the recurring imbalance; Section 115 withdrawal specifically undermines pension pre-funding strategy"
+    },
+    "expense_growth": {
+      "finding": "General Fund expenses grew 33% in real terms over the audit period (FY2016–FY2025)",
+      "page": "p.14",
+      "note": "Government-wide expenses grew 20% in real terms over same period"
+    },
+    "category_growth": {
+      "finding": "Community development and housing: +119% real; health and welfare: +107% real",
+      "page": "p.15",
+      "note": "The two fastest-growing categories are not core infrastructure functions"
+    },
+    "fte_growth": {
+      "finding": "FTE count grew 30%, from 1,336 to 1,747 employees",
+      "page": "p.16",
+      "note": "Salaries and benefits represent approximately two-thirds of the General Fund budget; no productivity analysis accompanies the staffing growth"
+    },
+    "pension_funded_ratio": {
+      "finding": "Net pension liability of $694.8M; funded ratio 66% — categorized as 'high risk'",
+      "page": "p.28",
+      "note": "Tied for 2nd-worst funded ratio among comparable jurisdictions benchmarked in the report"
+    },
+    "pension_payment_trajectory": {
+      "finding": "Annual pension payments rising from $76M (FY2024) to projected $108M by FY2034",
+      "page": "p.29",
+      "note": "A 42% increase in a mandatory cost line over 10 years, with no offsetting efficiency measure identified"
+    },
+    "section_115_trust": {
+      "finding": "Section 115 pension pre-funding trust met its annual contribution goal in only 2 of 7 years; balance $29.5M after FY2025 withdrawal",
+      "page": "p.30",
+      "note": "The trust is designed as a rainy-day buffer for pension volatility; using it to balance operations is a category error"
+    },
+    "unfunded_capital": {
+      "finding": "Unfunded capital and deferred maintenance grew from $603.5M (FY2017) to $1.8B (FY2024)",
+      "page": "p.33",
+      "note": "Nearly tripled in seven years with no capital plan sufficient to arrest the growth"
+    },
+    "biennial_report_missing": {
+      "finding": "Required biennial unfunded capital liability report for FY2025 was not produced; staff cited 'limited staff time'",
+      "page": "p.34",
+      "note": "The council cannot deliberate on what it has not been shown; a mandatory reporting requirement was skipped"
+    },
+    "gfoa_policy_gap": {
+      "finding": "The council's adopted fiscal policies do not require assessing whether recurring revenues match recurring expenditures",
+      "page": "p.22",
+      "note": "GFOA identifies this as a foundational best practice. Its absence means the council has no formal mechanism to detect or respond to structural imbalance."
+    },
+    "go_bond_debt": {
+      "finding": "GO bonds of $205.4M represent 80% of outstanding debt; debt per resident $1,524 (down from peak $1,880 in FY2022)",
+      "page": "p.25",
+      "note": "Proposed $300M bond would substantially increase this figure and raise debt service tax rates for approximately 20 years before declining"
+    },
+    "net_position": {
+      "finding": "Government-wide net position improved from -$152.6M (FY2018) to +$197.8M (FY2025)",
+      "page": "p.12",
+      "note": "The one positive trend in the report — driven largely by asset appreciation and federal COVID relief, not structural reform"
+    },
+    "revenue_vs_expense": {
+      "finding": "Governmental activities revenues exceeded expenses in all years except FY2020 (COVID year)",
+      "page": "p.11",
+      "note": "The government-wide surplus is misleading as a measure of GF health; enterprise funds and restricted funds are included"
+    },
+    "cip_horizon": {
+      "finding": "Capital Improvement Plan covers only 5 years — the low end of GFOA's recommended range",
+      "page": "p.35",
+      "note": "Short planning horizon makes it easier to defer hard capital decisions"
+    }
+  },
+
+  "verbatim_quotes": [
+    {
+      "text": "Berkeley's structural deficit poses a risk to its long-term financial sustainability.",
+      "page": "p.1",
+      "significance": "The auditor's top-line finding — the title of the report is not hyperbole"
+    },
+    {
+      "text": "The City used one-time measures to balance the General Fund budget in FY 2025, including a transfer from the Workers' Compensation Internal Service Fund and a withdrawal from the Section 115 Trust.",
+      "page": "p.19",
+      "significance": "Documents the specific one-time measures used — not general concern but specific actions taken"
+    },
+    {
+      "text": "Berkeley's pension funded ratio of 66% falls in the 'high risk' category.",
+      "page": "p.28",
+      "significance": "The auditor's own characterization, not the scorecard's"
+    },
+    {
+      "text": "The City's fiscal policies do not require Berkeley to assess whether recurring revenues are sufficient to cover recurring expenditures.",
+      "page": "p.22",
+      "significance": "Verbatim statement of the GFOA policy gap — directly attributable to the auditor, not the scorecard"
+    },
+    {
+      "text": "City management did not release the required biennial report on unfunded liabilities for FY 2025 due to limited staff time.",
+      "page": "p.34",
+      "significance": "A mandatory reporting obligation was simply skipped — the council was not informed"
+    }
+  ],
+
+  "auditor_recommendations": [
+    "Adopt a fiscal policy requiring assessment of whether recurring revenues are sufficient to cover recurring expenditures",
+    "Develop a plan to restore the Section 115 Trust to an adequate funding level",
+    "Meet the Section 115 Trust annual contribution goal consistently",
+    "Produce the overdue FY2025 biennial unfunded liability report",
+    "Extend the Capital Improvement Plan to a longer horizon consistent with GFOA guidance"
+  ]
+}

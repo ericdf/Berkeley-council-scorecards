@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "document_ref":      "homeless_response_team_2025",
+    "title":             "Berkeley Homeless Response Team: Coordination, Oversight, and Outcome Tracking",
+    "document_type":     "audit",
+    "author":            "City Auditor",
+    "source_url":        "https://www.cityofberkeley.info/auditor/",
+    "date_released":     "2025-07",
+    "date_extracted":    "2026-04-10",
+    "extraction_method": "manual — source PDF is image-based; text extracted by reading",
+    "registry_ref":      "audit_findings.json#homeless_response_team_2025",
+    "page_count":        null,
+    "extraction_note":   "Partial extract — full PDF read during session but key facts captured from memory; verbatim quotes not preserved"
+  },
+
+  "summary": "The City Auditor reviewed Berkeley's Homeless Response Team and found significant operational gaps: the HRT coordination function was paused for a material period, no outcome tracking system exists to measure whether programs are working, and the city operates a standalone homeless services infrastructure that duplicates Alameda County services without a formal analysis of whether consolidation would be more effective or efficient.",
+
+  "key_facts": {
+    "coordination_pause": {
+      "finding": "HRT coordination was paused for a significant period during the audit window",
+      "page": null,
+      "note": "A core operational function of the team was simply not happening; the audit does not assess how long or what the impact was"
+    },
+    "no_outcome_tracking": {
+      "finding": "No outcome tracking system in place — the city cannot measure whether homeless programs are working",
+      "page": null,
+      "note": "Berkeley spends $21.7M+ annually across 33+ programs with no mechanism to assess return on that spending"
+    },
+    "county_fragmentation": {
+      "finding": "Berkeley operates standalone homeless services infrastructure parallel to Alameda County services, with documented fragmentation and coverage gaps",
+      "page": null,
+      "note": "No formal consolidation analysis has been conducted; the city maintains its own apparatus rather than leveraging county scale"
+    },
+    "attribution_note": {
+      "finding": "Findings are primarily staff-operational — the failures documented are in program management, not in specific council votes",
+      "page": null,
+      "note": "Becomes individually scored when council members are asked about outcomes and claim ignorance, or when contracts are renewed without performance metrics being required"
+    }
+  },
+
+  "verbatim_quotes": [],
+
+  "auditor_recommendations": [
+    "Implement an outcome tracking system for homeless programs before renewing contracts",
+    "Commission a consolidation study comparing Berkeley's standalone infrastructure to Alameda County service delivery",
+    "Require performance benchmarks as a condition of program contract renewal"
+  ]
+}

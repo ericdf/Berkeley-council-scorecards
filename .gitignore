@@ -16,5 +16,9 @@ __pycache__/
 .venv/
 *.egg-info/
 
+# Source documents — PDFs are binary and often image-based; only JSON extracts are committed
+sources/**/*.pdf
+sources/**/*.PDF
+
 # macOS
 .DS_Store

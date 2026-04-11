@@ -1,0 +1,69 @@
+{
+  "_schema": {
+    "purpose": "Registry of council member constituent newsletters reviewed for the scorecard. Newsletters are official communications sent from city email addresses to constituent lists. They are a direct window into how members frame issues for voters — what they emphasize, what they omit, and whether their public framing matches their voting record. Several incidents in incidents.json are sourced from newsletters.",
+    "status_values": {
+      "pending_review":  "Newsletter identified but not yet extracted",
+      "extracted":       "Key content captured in extract file or incident",
+      "scored":          "Content reflected in incidents.json or member scoring"
+    },
+    "fields": {
+      "document_ref":   "Unique key",
+      "member":         "Council member name (canonical)",
+      "date_sent":      "Date of newsletter",
+      "sender_email":   "Official email address used",
+      "subject":        "Newsletter subject line or title",
+      "key_content":    "What the newsletter covers",
+      "scoring_signals":"Specific statements or omissions that are scorecard-relevant",
+      "incident_refs":  "List of incident entries in incidents.json sourced from this newsletter",
+      "status":         "One of the status_values above"
+    }
+  },
+
+  "taplin_march_2026": {
+    "document_ref":   "taplin_march_2026",
+    "member":         "Taplin",
+    "date_sent":      "2026-03-01",
+    "sender_email":   "ttaplin@cityofberkeley.info",
+    "subject":        "March 2026 District 2 Newsletter",
+    "key_content":    "Promoted community input meetings for a potential 2026 infrastructure bond; framed bond as the mechanism for addressing Berkeley's street and facility needs; included 0.5% sales tax community survey promotion",
+    "scoring_signals": [
+      "Bond framed as primary solution to infrastructure needs — no mention of general fund reprioritization",
+      "Sales tax survey asks what residents want funded, not what they would cut",
+      "No reference to the October 2025 City Auditor streets audit finding that GF underfunding, not lack of bond authority, is the root cause"
+    ],
+    "incident_refs":  ["Taplin atm_behavior 2026-03-01", "Taplin atm_behavior 2026-02-19"],
+    "status":         "scored"
+  },
+
+  "tregub_march_2026_part2": {
+    "document_ref":   "tregub_march_2026_part2",
+    "member":         "Tregub",
+    "date_sent":      "2026-03-18",
+    "sender_email":   "igor@igortregub.com",
+    "subject":        "March 2026 Part 2 Newsletter — District 4",
+    "key_content":    "Told constituents that passage of both a $300M infrastructure bond AND a half-cent sales tax was 'a sobering fact...essential to ensure the city's continued ability to deliver on the quality services that you deserve'",
+    "scoring_signals": [
+      "Revenue-first framing with no mention of reprioritization alternatives",
+      "'Essential' characterization presented as fiscal necessity, not as a policy choice",
+      "No acknowledgment that the bond cycle has not improved street conditions over five prior measures"
+    ],
+    "incident_refs":  ["Tregub atm_behavior 2026-03-17"],
+    "status":         "scored"
+  },
+
+  "tregub_july_2025": {
+    "document_ref":   "tregub_july_2025",
+    "member":         "Tregub",
+    "date_sent":      "2025-07-21",
+    "sender_email":   "igor@igortregub.com",
+    "subject":        "July 2025 District 4 Newsletter",
+    "key_content":    "Called on constituents to attend an Alameda County Board of Supervisors meeting in support of Measure W homelessness funding",
+    "scoring_signals": [
+      "Official constituent email list used to lobby for a county-level spending measure",
+      "Measure W would preferentially direct county funds to cities implementing Housing First — i.e., Berkeley",
+      "City and county measures are additive obligations on the same taxpayer base"
+    ],
+    "incident_refs":  ["Tregub atm_behavior 2025-07-21"],
+    "status":         "scored"
+  }
+}

@@ -17,7 +17,8 @@
       "council_response":    "What the council actually did at that meeting",
       "followup_pattern":    "Subsequent actions that reveal how the council internalized (or ignored) the findings",
       "status":              "One of the status_values above",
-      "scoring_note":        "The pattern the audit-response cycle reveals — what ordinary voters should understand"
+      "scoring_note":        "The pattern the audit-response cycle reveals — what ordinary voters should understand",
+      "source_extract":      "Path to structured extract file in sources/audits/ containing verbatim quotes, page references, and detailed key facts"
     }
   },
 
@@ -37,7 +38,8 @@
     "council_response": null,
     "followup_pattern": "No council member has publicly requested outcome metrics or proposed consolidation with county services as of April 2026",
     "status": "pending_council_action",
-    "scoring_note": "Findings are primarily staff-operational — not directly attributable to individual council members. Becomes individually scored when/if a member is asked about outcomes and claims ignorance, or when program contracts are renewed without performance metrics being required."
+    "scoring_note": "Findings are primarily staff-operational — not directly attributable to individual council members. Becomes individually scored when/if a member is asked about outcomes and claims ignorance, or when program contracts are renewed without performance metrics being required.",
+    "source_extract": "sources/audits/homeless_response_team_2025.json"
   },
 
   "streets_rocky_road_2025": {
@@ -61,7 +63,8 @@
     "council_response": "received_filed",
     "followup_pattern": "2026-03-17: council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012. No companion motion to reform the Five Year Paving Plan, increase general fund allocation, or address any of the audit's structural findings. The audit's root cause diagnosis (GF underfunding, not lack of bond authority) was received, filed, and converted into a bond campaign.",
     "status": "response_documented",
-    "scoring_note": "The audit established that Berkeley's street problem is a spending prioritization failure, not a revenue shortage. The council's response — a fifth bond cycle — is the opposite of what the audit warranted. Members present on 2025-10-28 who later voted or advocated for the bond without a companion reprioritization motion acted with documented knowledge of the root cause."
+    "scoring_note": "The audit established that Berkeley's street problem is a spending prioritization failure, not a revenue shortage. The council's response — a fifth bond cycle — is the opposite of what the audit warranted. Members present on 2025-10-28 who later voted or advocated for the bond without a companion reprioritization motion acted with documented knowledge of the root cause.",
+    "source_extract": "sources/audits/streets_rocky_road_2025.json"
   },
 
   "financial_condition_2026": {
@@ -94,6 +97,7 @@
     "council_response": null,
     "followup_pattern": "Prior to audit release: council unanimously directed staff (2026-03-17) to develop a $300M infrastructure bond and commission a poll on a half-cent sales tax — both revenue measures that do not address the structural operating deficit. This direction was given with knowledge of the deficit trajectory from prior budget documents.",
     "status": "pending_council_action",
-    "scoring_note": "This is the highest-priority audit in the registry. The structural deficit, pension risk, and capital collapse are individually serious; together they describe a city whose fiscal trajectory is unsustainable. The council's revealed pre-audit response (bond + sales tax) addresses neither the recurring imbalance nor the pension underfunding. When this audit goes before the council, any member who moves to receive and file without a companion motion for structural reform is making a choice that this audit documents precisely."
+    "scoring_note": "This is the highest-priority audit in the registry. The structural deficit, pension risk, and capital collapse are individually serious; together they describe a city whose fiscal trajectory is unsustainable. The council's revealed pre-audit response (bond + sales tax) addresses neither the recurring imbalance nor the pension underfunding. When this audit goes before the council, any member who moves to receive and file without a companion motion for structural reform is making a choice that this audit documents precisely.",
+    "source_extract": "sources/audits/financial_condition_2026.json"
   }
 }
