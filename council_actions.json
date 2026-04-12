@@ -18,7 +18,7 @@
   "actions": [
     {
       "date": "2026-02-24",
-      "category": ["discretionary_addition", "fund_mission_creep"],
+      "category": ["discretionary_addition"],
       "evidence_tier": "A",
       "title": "African American Holistic Resource Center (AAHRC) groundbreaking — $15.1M capital, $1.5–2M/year ongoing",
       "total_capital_cost": 15100000,
@@ -31,10 +31,10 @@
       "site": "1890 Alcatraz Avenue — existing city-owned building demolished, new 6,000 sq ft facility constructed",
       "property_ownership": "City-owned land; property already off tax rolls. No additional tax base reduction, but city retains all capital and operating obligations.",
       "cost_escalation": "Original 2022 budget was $7.25M for renovation of existing building. Council voted January 2023 to demolish and build new. Final budget more than doubled to $15.1M — during the fiscal crisis period.",
-      "measure_t1_note": "Measure T1 was approved by voters in November 2016 with 86.5% support to 'repair, renovate, replace or reconstruct the City's aging existing infrastructure, including facilities, streets, sidewalks, storm drains, and parks.' $13.85M of T1 funds are being used for a new community services facility. Whether a new programmatic facility constitutes 'repair or replacement of aging infrastructure' under the bond's mandate is at minimum arguable.",
+      "measure_t1_note": "Measure T1 ballot language explicitly includes 'senior and recreation centers' and 'other important City facilities and buildings.' The AAHRC was approved as a Phase 2 T1 project by council in December 2020 (Resolution 69,657-N.S.). Use of T1 funds is within the bond's stated mandate — not mission creep.",
       "feasibility_study": "https://newspack-berkeleyside-cityside.s3.amazonaws.com/wp-content/uploads/2021/12/2019-03-06_Info-Item_AAHRC-Feasibility-Study-Final-2019.pdf",
       "hud_grant_report": "https://berkeleyca.gov/sites/default/files/documents/2024-10-01%20Item%2003%20Grant%20Contract%20%20Housing%20and%20Urban%20Development%20%28HUD%29%20for%20the%20African%20American.pdf",
-      "significance": "The AAHRC is a $15.1M capital project — more than double its original $7.25M budget — approved and built during a documented structural fiscal crisis. $13.85M comes from Measure T1, a bond sold to voters as infrastructure repair; a new programmatic community facility is a stretch of that mandate. The $250K General Fund contribution is the smallest line in the capital stack, but the city bears 100% of the ongoing operating obligation ($1.5–2M/year per the 2019 feasibility study) with no identified funding source. The staff report accepting the HUD grant lists 'Alternative Actions Considered: None' — the council had no presented option to pause, scale back, or redirect funds to P1 infrastructure during a fiscal crisis. The project was promoted in the Mayor's February 2026 newsletter as a community achievement with zero mention of cost, operating obligation, or structural deficit context.",
+      "significance": "The AAHRC is a $15.1M capital project — more than double its original $7.25M budget — with construction proceeding during a documented structural fiscal crisis. The capital cost is largely T1-funded (within the bond's mandate), but the city bears 100% of the ongoing operating obligation ($1.5–2M/year per the 2019 feasibility study) with no identified funding source in any staff report. The cost escalation from renovation to new construction — a decision made January 2023 after the fiscal situation was visible — added ~$7.85M in obligations. The staff report accepting the HUD grant lists 'Alternative Actions Considered: None' — the council was never presented an option to pause, scale back, or defer until the structural deficit was addressed. The project was promoted in the Mayor's February 2026 newsletter as a community achievement with zero mention of cost, operating obligation, or structural deficit context.",
       "notes": "The AAHRC is separate from the MLK Jr. Youth Services Center ($23.7M contract, 2025-06-03) — two major new community facilities built simultaneously during the fiscal crisis. Total new community facility capital across both projects: ~$38.8M."
     },
     {
