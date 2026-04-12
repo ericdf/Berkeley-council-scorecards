@@ -23,26 +23,26 @@
 
   "Taplin": {
     "archetype": "The Bond Architect",
-    "summary": "Explicitly believes Berkeley is 'underbonded' and has built the institutional scaffolding to match — authoring referrals for regular bond issuance and leading infrastructure bond campaigns. A genuine counterpoint: Taplin has been an effective champion for Automated License Plate Readers, navigating real political resistance to deliver a concrete public safety result. The exception doesn't change the governing disposition: new debt is his preferred tool."
+    "summary": "Has built the institutional scaffolding for a systematic bond program — authoring referrals for regular bond issuance and leading infrastructure bond campaigns — on the premise that Berkeley should be borrowing more rather than reprioritizing the general fund. A genuine counterpoint: Taplin has been an effective champion for Automated License Plate Readers, navigating real political resistance to deliver a concrete public safety result. The exception doesn't change the governing disposition: new debt is his preferred tool."
   },
 
   "Humbert": {
     "archetype": "The Committed Progressive",
-    "summary": "The council's most verbose member (115 words per turn on average), with the highest investment in the existing homeless services apparatus. Shows up and engages substantively — the question is what the engagement is in service of. A Homeless Services Orthodoxy score of 62 puts him firmly in the spending-orthodoxy camp."
+    "summary": "The council's most verbose member (115 words per turn on average), with the highest investment in the existing homeless services apparatus. Shows up and engages substantively — the question is what the engagement is in service of. A homeless services special interests alignment score of 62 puts him firmly in the spending-orthodoxy camp."
   },
 
   "Ishii": {
     "archetype": "The Conflict Avoider",
-    "summary": "The Mayor who has structured constituent access to prevent organized accountability — groups are excluded from his office hours — and whose transcripts contain near-zero fiscal concern language. Agenda-setter for a council that has never adopted the foundational fiscal balance test the City Auditor recommends."
+    "summary": "The Mayor who has structured constituent access to prevent organized accountability — groups are excluded from her office hours — and whose transcripts contain near-zero fiscal concern language. Agenda-setter for a council that has never adopted the foundational fiscal balance test the City Auditor recommends."
   },
 
   "LunaParra": {
     "archetype": "The Abstainer",
-    "summary": "Highest Homeless Services Orthodoxy score on the council, highest abstention rate, and a Taxpayer Alignment score near the floor. When difficult votes arrive, LunaParra tends to abstain — using the voting mechanism to avoid registering a position rather than to register one."
+    "summary": "Highest homeless services special interests alignment score on the council, highest abstention rate, and a Taxpayer Alignment score near the floor. When difficult votes arrive, LunaParra tends to abstain — using the voting mechanism to avoid registering a position rather than to register one."
   },
 
   "Tregub": {
-    "archetype": "The Fiscal Hypocrite",
-    "summary": "Third-highest transcript voter alignment score — talks about fiscal concerns constantly in chambers — but a Taxpayer Alignment composite of zero. Authors bond campaigns, lobbied for a county spending measure from his official constituent email list, and scheduled a community input meeting three weeks after voting to approve the project it was nominally about."
+    "archetype": "The Narrative Engineer",
+    "summary": "Third-highest fiscal concern rhetoric score — talks about fiscal challenges constantly in chambers — but a Taxpayer Alignment composite of zero. Champions bond and sales tax campaigns through official constituent communications, lobbied for a county spending measure from his district email list, and scheduled a community input meeting three weeks after voting to approve the project it was nominally about."
   }
 }

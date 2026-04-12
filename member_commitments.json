@@ -1,0 +1,247 @@
+{
+  "_schema": {
+    "_note": "Documents each council member's publicly stated priorities and values as captured in primary sources at the time of their most recent election. Used as the reference standard for newsletter P1 coverage scoring: each newsletter is measured against (a) the city's documented structural fiscal P1 issues and (b) the specific priorities the member told voters they would address.",
+    "sources_used": [
+      "berkeleyca.gov council roster pages (member-authored bios)",
+      "Ballotpedia Candidate Connection survey responses",
+      "Green Party of Berkeley candidate questionnaire responses",
+      "Campaign websites"
+    ],
+    "fiscal_commitment": "Whether the member explicitly committed to fiscal oversight, structural deficit work, or infrastructure funding reform. 'explicit' = named specific fiscal issues. 'vague' = general budget language. 'none' = no fiscal commitment found. 'unknown' = data not collected.",
+    "p1_gaps": "Structural P1 issues the member's stated priorities do NOT address, against which newsletter silence is most significant."
+  },
+  "Ishii": {
+    "role": "Mayor",
+    "elected": "November 2024",
+    "term_ends": "December 2028",
+    "ballotpedia_survey_completed": true,
+    "green_party_questionnaire_completed": true,
+    "oreb_questionnaire_completed": true,
+    "stated_priorities": [
+      "homelessness and affordable housing",
+      "sanctuary city / immigrant protection",
+      "safe streets, sidewalks, and transportation systems",
+      "accountability and transparency in city implementation"
+    ],
+    "fiscal_commitment": "vague",
+    "_fiscal_commitment_note": "Green Party questionnaire includes 'regular progress reports and financial statements, made available to the public' as an accountability commitment. Berkeleyside forum intro: 'priority issues are housing and homelessness, public safety and infrastructure.' No named structural deficit, CalPERS/OPEB, or reserve language in any survey.",
+    "values_claimed": ["accountability", "transparency", "equity"],
+    "values_claimed_quotes": {
+      "accountability": "Regular progress reports and financial statements, made available to the public.",
+      "infrastructure": "Making sure that our streets, sidewalks, and transportation systems are safe for everyone.",
+      "reset": "It's time for a reset at City Hall."
+    },
+    "accountability_commitment_note": "Green Party questionnaire and Ballotpedia both include explicit commitments to financial transparency and public reporting. Track whether she has actually delivered regular financial statements to the public — this is a verifiable promise.",
+    "oreb_positions": {
+      "_note": "Our Revolution East Bay endorsement questionnaire (2024). Reflects the ideological breadth of commitments Ishii made to a specific endorsing organization. Most of these are federal/state policy outside Berkeley city authority.",
+      "bds": "Yes — explicitly supports BDS; 'United States should not be providing the weapons that have killed tens of thousands of innocent civilians'",
+      "cancel_student_debt": "Yes — supports cancellation of all student debt",
+      "social_housing": "Yes — supports social housing, intergenerational models",
+      "decriminalize_all_drugs": "Yes — supports decriminalizing all drug use",
+      "repeal_homeless_criminalization": "Yes — 'repeal all laws that criminalize or punish people experiencing homelessness'; opposes encampment enforcement",
+      "abolish_cash_bail": "Yes",
+      "free_public_transit": "Yes",
+      "public_banking": "Yes",
+      "universal_healthcare_single_payer": "Yes",
+      "voting_rights_incarcerated": "Yes",
+      "charter_schools": "Opposed",
+      "free_public_college": "Yes",
+      "green_new_deal": "Yes",
+      "_fiscal_relevance": "Many OREB positions carry significant fiscal cost (social housing, free transit, public banking infrastructure) or are outside city authority entirely (student debt, BDS). None of the 40 questions address structural deficit, CalPERS/OPEB, or reserve policy. Pattern: endorsement commitments skew toward expanding services and spending, not toward fiscal sustainability."
+    },
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "streets underfunding mechanism", "reserve policy"],
+    "newsletter_archive": "Gmail (mayoradenaishii.com/the-mayors-monthly is the public archive of the same newsletters — use Gmail to ingest)",
+    "oreb_enforcement_contradiction": "OREB questionnaire (Q27): endorsed repealing 'all laws that criminalize or punish homeless persons' and opposed encampment clearance. Berkeleyside forum: opposed 'police raids on the homeless.' Yet her stated priority at the same forum was 'public safety and infrastructure.' San Francisco's experience under this exact policy (documented NYT Apr 2026) resulted in 800+ annual overdose deaths at peak, displacement of residents from walkable spaces, and pharmacy/grocery closures — resolved only after a political course correction in 2024. Ishii endorsed the failed policy framework while running on a public safety mandate.",
+    "sources": [
+      "berkeleyca.gov/roster/adena-ishii",
+      "Ballotpedia Candidate Connection survey (2024)",
+      "Green Party of Berkeley candidate questionnaire (2024)",
+      "Our Revolution East Bay endorsement questionnaire (2024) — full text captured 2026-04-12",
+      "Berkeleyside mayoral candidate forum, July 2024",
+      "mayoradenaishii.com/the-mayors-monthly — monthly newsletter archive"
+    ]
+  },
+  "Tregub": {
+    "role": "Councilmember District 4 / Vice Mayor (until July 2026)",
+    "elected": "May 2024 (special); November 2024 (general)",
+    "term_ends": "November 2026",
+    "ballotpedia_survey_completed": true,
+    "green_party_questionnaire_completed": false,
+    "ballotpedia_campaign_priorities": [
+      "Fight for housing affordability (renter-focused; Measure O oversight; ZAB approvals)",
+      "Prioritize a safe and vibrant downtown (public safety, small businesses)",
+      "Help the unhoused rebuild their lives (housing-first, wraparound services)"
+    ],
+    "ballotpedia_passion_area": "Bold climate leadership — make Berkeley 'the first carbon-free city in the nation'",
+    "ballotpedia_legacy_goal": "Help make Berkeley a home for everyone",
+    "_ballotpedia_fiscal_content": "NONE. The full Ballotpedia survey contains zero mention of: structural deficit, CalPERS, OPEB, pension obligations, infrastructure backlog, reserve policy, or any specific fiscal problem. 'Budget and fiscal oversight' on the city roster page is NOT from the Ballotpedia survey — it was added to the roster bio separately.",
+    "stated_priorities": [
+      "housing affordability",
+      "downtown vibrancy and public safety",
+      "homelessness / housing-first",
+      "climate leadership / clean energy"
+    ],
+    "fiscal_commitment": "none",
+    "_fiscal_commitment_note": "Despite claiming 'budget and fiscal oversight' on the city roster page, the Ballotpedia candidate survey — the most direct primary source of what he told voters — contains no fiscal content. The roster description appears to be a post-election self-description, not a campaign commitment.",
+    "values_claimed": ["transparency", "accountability", "integrity"],
+    "values_claimed_quotes": {
+      "core_characteristics": "Transparency, accountability, and integrity.",
+      "financial_transparency": "I will also ensure that the City is much more transparent with our community – from an accessible website that can clearly point members of the public to important documents, to establishing a participatory budgeting process that involves members of the community. We should notify the community early on around all matters impacting Berkeleyans."
+    },
+    "_values_gap_note": "Claims 'transparency, accountability, and integrity' as core characteristics. Claims he will establish a 'participatory budgeting process.' His newsletters acknowledge fiscal difficulty in openers ('challenging budgetary year', 'one of the most difficult times') but contain zero structural deficit analysis, zero named fiscal problems, and zero P1 keyword content. A participatory budgeting process that never tells participants what the structural problem is — what the specific gaps are, what CalPERS/OPEB obligations are, how much the streets are underfunded — is not transparent. It is directed conversation.",
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "streets/infrastructure underfunding", "reserve policy"],
+    "sources": [
+      "berkeleyca.gov/roster/igor-tregub",
+      "ballotpedia.org/Igor_A._Tregub_(Berkeley_City_Council_District_4,_California,_candidate_2024) — full survey text captured 2026-04-12"
+    ]
+  },
+  "Taplin": {
+    "role": "Councilmember District 2",
+    "elected": "November 2020 (first); November 2024 (re-elected)",
+    "term_ends": "November 2028",
+    "ballotpedia_survey_completed": false,
+    "green_party_questionnaire_completed": false,
+    "_survey_avoidance_note": "Did NOT complete Ballotpedia Candidate Connection survey. Did NOT complete Green Party questionnaire. City roster bio is the only primary source of stated priorities. Most survey-avoidant member of the current council — no structured self-declaration of priorities or values.",
+    "stated_priorities": [
+      "housing development",
+      "green transportation",
+      "climate resilience and environmental sustainability",
+      "environmental justice"
+    ],
+    "fiscal_commitment": "none",
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "streets/infrastructure underfunding", "crime/public safety", "reserve policy"],
+    "values_claimed": [],
+    "sources": ["berkeleyca.gov/roster/terry-taplin"]
+  },
+  "Humbert": {
+    "role": "Councilmember District 8",
+    "elected": "November 2022",
+    "term_ends": "November 2026",
+    "ballotpedia_survey_completed": false,
+    "green_party_questionnaire_completed": false,
+    "stated_priorities": [
+      "ensuring public and pedestrian safety",
+      "addressing homelessness and affordable housing crisis",
+      "supporting small businesses"
+    ],
+    "_stated_priorities_sources": "Campaign website priorities. City roster bio also mentions 'deeply committed to making our streets and public spaces safer.'",
+    "fiscal_commitment": "vague",
+    "_fiscal_commitment_note": "Berkeleyside interview demonstrates working knowledge of streets infrastructure problem — cited '$328 million in paving needs by 2023' and has equity paving policy commissioner background. Supports bond measure for streets. Does not name structural deficit, CalPERS/OPEB, or reserve policy. Infrastructure awareness is positive but framed as 'bond funding' rather than general fund reprioritization.",
+    "infrastructure_background": "Former paving equity policy commissioner. In Berkeleyside interview cited $328M paving backlog figure. Supports infrastructure bond as solution — ATM framing tendency.",
+    "values_claimed": [],
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "reserve policy", "general fund reprioritization vs. bond dependency"],
+    "sources": [
+      "berkeleyca.gov/roster/mark-humbert",
+      "Campaign website priorities",
+      "Berkeleyside interview (equity paving policy background, $328M figure)"
+    ]
+  },
+  "Bartlett": {
+    "role": "Councilmember District 3",
+    "elected": "November 2016; re-elected 2020, 2024",
+    "term_ends": "November 2028",
+    "ballotpedia_survey_completed": false,
+    "green_party_questionnaire_completed": true,
+    "stated_priorities": [
+      "housing and ADU development",
+      "community safety and equity",
+      "economic opportunity for minority-owned businesses",
+      "cannabis industry equity",
+      "environmental sustainability"
+    ],
+    "_green_party_fiscal_content": "Named 'long-term pension liabilities' in budget section — the closest any member comes to CalPERS/OPEB language in primary sources. Also demonstrated detailed knowledge of city revenue figures. Shows fiscal awareness.",
+    "fiscal_commitment": "vague",
+    "_fiscal_commitment_note": "Green Party questionnaire names pension liabilities and shows revenue knowledge. This is more fiscal engagement than most members. However, his council-website-hosted 'American Renewal Plan' — a 5-pillar national economic reform framework — represents scope indiscipline: using a D3 Berkeley council platform to publish national policy advocacy entirely outside Berkeley's P1 problems.",
+    "scope_indiscipline_flag": "Published 'American Renewal Plan' — a national economic policy framework (5 pillars of broad U.S. economic reform) — on his council website/newsletter. Using a D3 seat to author and promote national policy while Berkeley faces documented structural fiscal P1 crisis = potential incident.",
+    "values_claimed": [],
+    "p1_gaps": ["structural deficit explicit language", "CalPERS/OPEB explicit engagement", "reserve policy", "streets/infrastructure underfunding"],
+    "sources": [
+      "berkeleyca.gov/roster/ben-bartlett",
+      "Green Party of Berkeley candidate questionnaire"
+    ]
+  },
+  "Kesarwani": {
+    "role": "Councilmember District 1",
+    "elected": "November 2018; re-elected 2022",
+    "term_ends": "November 2026",
+    "ballotpedia_survey_completed": null,
+    "green_party_questionnaire_completed": null,
+    "stated_priorities": [
+      "addressing homelessness and affordable housing",
+      "keeping public spaces clean",
+      "community safety",
+      "addressing long-term under-investment in street paving and vital infrastructure"
+    ],
+    "fiscal_commitment": "explicit",
+    "_fiscal_commitment_note": "Roster bio explicitly names 'long-term under-investment in street paving and other vital infrastructure' — the only member whose stated priorities directly name a P1 infrastructure failure. Transcript record shows she also raises structural deficit, Section 115 trust, and fiscal sustainability keywords in meetings.",
+    "values_claimed": [],
+    "p1_gaps": ["structural deficit explicit language", "CalPERS/OPEB obligations", "reserve policy"],
+    "sources": ["berkeleyca.gov/roster/rashi-kesarwani"]
+  },
+  "Blackaby": {
+    "role": "Councilmember District 6",
+    "elected": "November 2024",
+    "term_ends": "December 2028",
+    "ballotpedia_survey_completed": false,
+    "green_party_questionnaire_completed": false,
+    "_survey_avoidance_note": "Did NOT complete Ballotpedia 2024 Candidate Connection survey. Did NOT complete Green Party questionnaire. City roster bio is the only structured primary source.",
+    "stated_priorities": [
+      "crime and public safety",
+      "streets and transportation",
+      "affordable housing",
+      "wildfire safety",
+      "school safety",
+      "homelessness"
+    ],
+    "_stated_priorities_source": "City roster bio: 'elected to take action on our most pressing challenges – including crime & public safety, streets & transportation, affordable housing, wildfire safety, school safety, and homelessness.'",
+    "fiscal_commitment": "none",
+    "_fiscal_commitment_note": "Zero fiscal content in any primary source. Streets/transportation is a stated priority but framed as service delivery, not as a structural underfunding problem.",
+    "actual_focus_observed": ["wildfire safety (EMBER initiative, Zone 0)"],
+    "_actual_focus_note": "Substack is comprehensively focused on wildfire/EMBER — banner photo with firefighters and fire truck. Five other stated priorities (crime, streets, housing, school safety, homelessness) not featured in constituent communications. This gap between the 6 roster P1s and single-topic Substack output is documentable scope narrowing relative to stated commitments.",
+    "commitment_vs_practice_gap": "Stated 6 constituent priorities at election; actual Substack output is nearly 100% wildfire/EMBER content. Represents a narrowing of scope post-election — 5 of 6 stated commitments are silent in constituent communications.",
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "reserve policy", "infrastructure funding mechanism (bonds vs. general fund reprioritization)"],
+    "sources": [
+      "berkeleyca.gov/roster/brent-blackaby",
+      "ballotpedia.org/Brent_Blackaby_(Berkeley_City_Council_District_6,_California,_candidate_2024) — did not complete survey",
+      "brentblackaby.substack.com — constituent newsletter; banner photo with firefighters/fire truck; content is comprehensively wildfire/EMBER"
+    ]
+  },
+  "OKeefe": {
+    "role": "Councilmember District 7",
+    "elected": "November 2024",
+    "term_ends": "December 2028",
+    "ballotpedia_survey_completed": false,
+    "green_party_questionnaire_completed": true,
+    "stated_priorities": [
+      "housing (more housing options throughout Berkeley)",
+      "bicycle infrastructure",
+      "school-city relationship and youth programs"
+    ],
+    "_stated_priorities_source": "Green Party questionnaire legislative agenda section.",
+    "fiscal_commitment": "none",
+    "_fiscal_commitment_note": "Green Party questionnaire explicitly states 'I don't have experience with working with city budgets.' Primary budget challenge identified as 'income sources not diverse enough' — revenue framing only, no structural deficit, pension, or reserve language. Supported Measure EE (paving) not FF.",
+    "budget_inexperience_admission": "Primary source admission from Green Party questionnaire: 'I don't have experience with working with city budgets.' This is a sitting council member's own statement of fiscal inexperience, on record before taking office.",
+    "values_claimed": [],
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "streets/infrastructure underfunding mechanism", "reserve policy"],
+    "sources": [
+      "Green Party of Berkeley candidate questionnaire (2024)"
+    ]
+  },
+  "Lunaparra": {
+    "role": "Councilmember District 2 (resigned)",
+    "elected": "November 2020",
+    "term_ends": "resigned before term end",
+    "ballotpedia_survey_completed": null,
+    "green_party_questionnaire_completed": null,
+    "stated_priorities": [
+      "housing and urban planning",
+      "environmental sustainability",
+      "progressive urbanism"
+    ],
+    "fiscal_commitment": "none",
+    "_note": "Resigned from office. Self-described 'progressive urbanist.' No fiscal content in available primary sources. Included for completeness of historical record.",
+    "p1_gaps": ["structural deficit", "CalPERS/OPEB obligations", "streets/infrastructure underfunding", "reserve policy"],
+    "values_claimed": [],
+    "sources": ["berkeleyca.gov roster (archived)"]
+  }
+}

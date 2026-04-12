@@ -1,10 +1,28 @@
 # Berkeley City Council Scorecard Pipeline
 
-Automated analysis of Berkeley City Council meeting transcripts and agenda records,
-producing per-member scorecards evaluated from a taxpayer-aligned perspective.
+## What This Is
 
-See **`METHODOLOGY.md`** (or `scores/pdfs/methodology.pdf`) for a full description of
-signals, sources, scoring philosophy, and tier structure.
+A longitudinal performance scorecard for the Berkeley City Council, evaluated from the perspective of a taxpayer who wants Berkeley's documented structural fiscal problems addressed.
+
+**The reference standard is the city's own documents** — consecutive City Manager budget messages using the phrase "not sustainable," City Auditor findings naming a $32–33M structural deficit, infrastructure audits documenting a $1.8B capital backlog and a streets PCI 13 points below the goal. These are not the scorecard author's opinions. They are the professional staff's documented findings. The question the scorecard answers is: *given what Berkeley's own organization has said is broken, are these elected officials engaging with those problems or not?*
+
+**This is not a promise-keeping scorecard.** A member who campaigned on housing affordability and never mentioned the structural deficit is not evaluated on housing affordability. They are evaluated on whether they engage with the documented P1 fiscal crises — because those crises exist whether or not a member promised to address them, and a representative who ignores them is not serving the taxpayer regardless of their campaign platform.
+
+The scorecard draws on seven independent signal streams, accumulated longitudinally:
+
+| Stream | What it reveals |
+|--------|----------------|
+| **Member commitments** (`member_commitments.json`) | What each member told voters at election — the baseline for observing divergence between stated and actual priorities |
+| **City budgets and audits** (`audit_findings.json`) | Ground truth: what the structural problems are, independently documented |
+| **Incidents** (`incidents.json`) | Discrete behaviors outside formal meetings — constituent interactions, public statements, newsletters — at three evidence tiers (A/B/C) |
+| **Constituent newsletters** (`newsletter_index.json`) | How members communicate Berkeley's fiscal situation to constituents — scored for engagement with P1 problems vs. silence or rhetoric-without-substance |
+| **Meeting transcripts** (`text/`) | How members use their speaking time — fiscal language rate, P1 engagement share, rhetorical style, HSO alignment |
+| **Agendas** (`agendas/`) | Where members focus legislative energy — P1/P2/P3 tier of items authored, consent vs. action calendar distribution |
+| **Votes** (`agendas/annotated/`) | Outcomes — attendance on fiscal votes, amendment behavior, abstention patterns |
+
+These streams are not equally reliable and are not treated as equally reliable. The scoring architecture weights each signal by evidence quality and applies caps to prevent any single stream from dominating.
+
+See **`METHODOLOGY.md`** (or `scores/pdfs/methodology.pdf`) for a full description of signals, sources, scoring philosophy, and tier structure.
 
 ---
 

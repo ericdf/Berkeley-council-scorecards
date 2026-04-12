@@ -1,0 +1,202 @@
+{
+  "_schema": {
+    "_note": "Tracks constituent newsletters and Substack posts from council members. Used to compute a newsletter P1 silence penalty: each newsletter published during the fiscal crisis period (2024-07-01 onward) is checked for substantive engagement with the city's documented structural fiscal P1 issues (using P1_TOPIC_KW from council_scorecard.py). Absence of P1 content — especially when fiscal difficulty is rhetorically acknowledged — is penalized.",
+    "classification_values": {
+      "p1_hit": "Newsletter contains one or more P1_TOPIC_KW matches — structural deficit, CalPERS/OPEB, PCI/streets backlog, reserve policy, etc. No penalty.",
+      "rhetoric_no_substance": "Newsletter acknowledges fiscal difficulty in general terms ('challenging budget year', 'difficult times') but contains zero P1_TOPIC_KW hits. Penalty: -0.025.",
+      "silent": "Newsletter contains no fiscal language of any kind. Penalty: -0.015.",
+      "atm_framing": "Newsletter promotes new revenue (bond, tax) as solution without cut/efficiency alternative. Already scored as an incident — newsletter silence penalty is waived to avoid double-counting.",
+      "skip": "Not a regular constituent newsletter (one-off event email, press release, etc.). No penalty."
+    },
+    "fiscal_crisis_start": "2024-07-01",
+    "_fiscal_crisis_note": "The FY2025-2026 budget was adopted June 25 2024 with City Manager language explicitly calling the structural deficit 'not sustainable.' From this date forward, all council members had documented notice of the P1 fiscal problem. Newsletters after this date are scored for P1 coverage.",
+    "penalty_per_rhetoric_no_substance": -0.025,
+    "penalty_per_silent": -0.015,
+    "penalty_cap_per_member": -0.06
+  },
+  "newsletters": [
+    {
+      "member": "Tregub",
+      "date": "2026-01-16",
+      "source": "igor@igortregub.com",
+      "source_type": "gmail",
+      "gmail_id": "19bc98cfdcac6c6a",
+      "subject": "Councilmember Tregub's District 4 January 2026 Newsletter",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": true,
+      "fiscal_rhetoric_quotes": [
+        "navigating a challenging budgetary year for the city"
+      ],
+      "classification": "rhetoric_no_substance",
+      "existing_incident": false,
+      "notes": "Opens with 'challenging budgetary year' but entire newsletter covers ADU policy, micromobility, community events. Zero structural deficit / CalPERS / streets backlog / reserve content."
+    },
+    {
+      "member": "Tregub",
+      "date": "2026-02-13",
+      "source": "igor@igortregub.com",
+      "source_type": "gmail",
+      "gmail_id": "19c59c6c6c8c3fc3",
+      "subject": "Councilmember Tregub's Berkeley District 4 Newsletter - February 2026",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": true,
+      "fiscal_rhetoric_quotes": [
+        "As we face a challenging budgetary year, I particularly welcome your ideas around how we as a city can retain important programs while balancing our ledger",
+        "Got thoughts about how we can raise revenue as a city or where to focus in cutting expenses?"
+      ],
+      "classification": "rhetoric_no_substance",
+      "existing_incident": false,
+      "notes": "Most substantive fiscal language of any newsletter: asks constituents for ideas on revenue vs. cuts. But no structural deficit analysis, no named fiscal problem (CalPERS, OPEB, PCI, structural gap), no specific proposals. Passes responsibility to constituents rather than taking a position."
+    },
+    {
+      "member": "Tregub",
+      "date": "2026-03-11",
+      "source": "igor@igortregub.com",
+      "source_type": "gmail",
+      "gmail_id": "19cdfc6d5bbb2915",
+      "subject": "Councilmember Tregub's District 4 March 2026 Newsletter",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "Opening paragraph covers Black History Month and Women's History Month. Legislative highlights: infrastructure bond community meeting (framed as 'input on projects that could be funded by a potential bond'), micromobility, AI guidelines. Bond community meeting is ATM framing, not fiscal reform framing — no structural deficit language, no efficiency/cut analysis."
+    },
+    {
+      "member": "Tregub",
+      "date": "2026-03-18",
+      "source": "igor@igortregub.com",
+      "source_type": "gmail",
+      "gmail_id": "19d0331ef4a8ffca",
+      "subject": "Councilmember Tregub's March 2026 Newsletter, Part 2",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": true,
+      "fiscal_rhetoric_quotes": [
+        "it is a sobering fact that the passage of both of these measures is essential to ensure the city's continued ability to deliver on the quality services that you deserve"
+      ],
+      "classification": "atm_framing",
+      "existing_incident": true,
+      "existing_incident_ref": "incidents.json Tregub 2026-03-17 atm_behavior -0.06",
+      "notes": "Bond + sales tax framed as 'essential'. Already scored as incident. Newsletter silence penalty waived."
+    },
+    {
+      "member": "Tregub",
+      "date": "2026-04-11",
+      "source": "igor@igortregub.com",
+      "source_type": "gmail",
+      "gmail_id": "19d7e03691539249",
+      "subject": "Vice Mayor Igor Tregub's April 2026 Berkeley Council District 4 Newsletter",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": true,
+      "fiscal_rhetoric_quotes": [
+        "from a budgetary and staffing perspective, it is undoubtably one of the more difficult times in the city",
+        "I am looking closely at the city as a whole to see how my office and I can partner with my colleagues and our community to advance thoughtful, collaborative solutions"
+      ],
+      "classification": "atm_framing",
+      "existing_incident": true,
+      "existing_incident_ref": "incidents.json Tregub 2026-04-11 constituent_gaslight -0.04",
+      "notes": "Vice Mayor framing + fiscal acknowledgment with zero P1 content. Already scored as incident. Newsletter silence penalty waived."
+    },
+    {
+      "member": "Ishii",
+      "date": "2025-08-21",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "198ce7de88d16f71",
+      "subject": "The Mayor's Monthly: August 2025",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "Berkeley Pride celebration, back-to-school welcome, Planning & Development dept feature, community events, small business spotlight (Bongo Burger), Adopt a Drain. Zero fiscal content of any kind — entirely social/community/event calendar register."
+    },
+    {
+      "member": "Ishii",
+      "date": "2025-10-31",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "19a386c48512b9ae",
+      "subject": "The Mayor's Monthly: October 2025",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "Norman Mineta Diversity Award / Japan Summit trip, State of the City address (linked but not excerpted), new intern cohort, No Kings Day protest participation, federal government shutdown resources. State of the City may have fiscal content but the newsletter itself contains none. 'No Kings Day' political protest (anti-Trump, I-80 pedestrian bridge) documented as community event."
+    },
+    {
+      "member": "Ishii",
+      "date": "2025-11-24",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "19ab8396f2986b00",
+      "subject": "The Mayor's Monthly: November 2025",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "KQED Forum appearance (panel of women of color), holiday events guide, Public Works Transportation Division feature, Giving Tuesday, small business spotlight (Fieldwork Brewing), Know Your Rights immigration workshop. Zero fiscal content. Transport Division feature mentions 'equitable mobility, environmental and financial sustainability' but purely as division values, not fiscal problem engagement."
+    },
+    {
+      "member": "Ishii",
+      "date": "2025-12-08",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "19aff190de592177",
+      "subject": "The Mayor's Monthly: December 2025",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "Vision 2050 infrastructure section: acknowledges 'Berkeley's $1+ billion deficit in infrastructure' and references City Manager's bond survey proposal. Most P1-adjacent content of any Ishii newsletter, but (a) no P1_TOPIC_KW hit (no 'structural deficit', CalPERS/OPEB, PCI, reserve language), (b) solution framing is entirely bond + poll = ATM, not structural reform. Health/Housing dept feature, holiday giving guide, Call for Artists."
+    },
+    {
+      "member": "Ishii",
+      "date": "2026-01-27",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "19c00674b96635cc",
+      "subject": "The Mayor's Monthly: January 2026",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "MLK Day of Service recap, new Poet Laureate (Hanan Masri), Call for Artists, Sweet Adeline Bakeshop, Youth Spirit Artworks, artist/festival grants. Zero fiscal content. Entirely community engagement and arts register — Berkeley's second year in a documented fiscal crisis."
+    },
+    {
+      "member": "Ishii",
+      "date": "2026-02-24",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "19c9151adbdb3349",
+      "subject": "The Mayor's Monthly: February 2026",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": false,
+      "fiscal_rhetoric_quotes": [],
+      "classification": "silent",
+      "existing_incident": false,
+      "notes": "AAHRC groundbreaking promoted without fiscal context (no mention of cost, no connection to structural deficit). D.C. conference: 'navigating fiscal uncertainty' appears as a conference agenda item description, not Ishii's own statement about Berkeley. Instagram series on infrastructure launched. Roast & Toast Cafe, Pacific Center for Human Growth. The DC section is notable: she attended a session on 'navigating fiscal uncertainty' but zero of that framing appears in her Berkeley constituent communications."
+    },
+    {
+      "member": "Ishii",
+      "date": "2026-03-24",
+      "source": "mayor@berkeleyca.gov",
+      "source_type": "gmail",
+      "gmail_id": "19d2094cc89c2daf",
+      "subject": "The Mayor's Monthly: March 2026",
+      "p1_keywords_found": [],
+      "fiscal_rhetoric": true,
+      "fiscal_rhetoric_quotes": [
+        "an increase in our sales tax to help with our budget deficit",
+        "strong support for both [bond and sales tax]... City staff was directed to begin writing language to place the bond and sales tax on the November 2026 ballot"
+      ],
+      "classification": "rhetoric_no_substance",
+      "existing_incident": false,
+      "notes": "RHETORIC_PAT hit: 'budget deficit' in sales tax framing. Bond + sales tax promoted as solutions with topline poll results as the fiscal headline. No structural deficit, CalPERS/OPEB, PCI, or reserve language. Communication compresses survey conclusions in two specific ways: (1) Results come from framed ballot-test questions — asking voters whether they would support a specific measure as described systematically inflates apparent support vs. open-ended opinion questions about taxes or the budget. (2) 'Strong support' conflates hard (definitely yes) and soft (probably yes) support; soft support is the share most likely to erode between poll and election, and is not disclosed. Reporting topline without the hard/soft split overstates committed support. Survey methodology itself is sound; the problem is in what the newsletter reports from it."
+    }
+  ]
+}
