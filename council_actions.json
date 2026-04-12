@@ -1,0 +1,35 @@
+{
+  "_schema": {
+    "_note": "Documents council-level spending and fiscal decisions made during the documented fiscal crisis period (FY2025 onward, when City Manager language explicitly called the structural deficit 'not sustainable'). These are collective actions — unanimous or near-unanimous votes with no individual member as the primary driver. Complements incidents.json (individual member behavior) and audit_findings.json (staff/auditor findings). Used to build the council-as-institution accountability record.",
+    "categories": {
+      "fund_mission_creep": "Designated fund spending redirected to a purpose outside the fund's voter-approved or statutory mandate",
+      "discretionary_addition": "New program, facility, or ongoing obligation approved during the fiscal crisis period without offsetting reduction",
+      "revenue_base_reduction": "Action that removes property from the tax rolls or otherwise reduces the structural revenue base",
+      "deferred_liability": "Decision that pushes a known cost into a future budget cycle without a funding plan"
+    },
+    "evidence_tiers": {
+      "A": "Direct documentation — staff report, ordinance text, or meeting minutes with specific dollar amounts and fund designations",
+      "B": "Strong inference from agenda item title, recommendation language, and financial figures",
+      "C": "Pattern-based — inferred from context without a single dispositive document"
+    },
+    "fiscal_crisis_start": "2024-07-01",
+    "_fiscal_crisis_note": "The FY2025-2026 budget was adopted June 25 2024 with City Manager language explicitly calling the structural deficit 'not sustainable.' Actions after this date are evaluated against that documented context."
+  },
+  "actions": [
+    {
+      "date": "2025-05-20",
+      "category": "fund_mission_creep",
+      "evidence_tier": "A",
+      "title": "Measure M street funds redirected to North Berkeley BART affordable housing predevelopment",
+      "amount": 24500000,
+      "fund_source": "Measure M — Street and Watershed Improvement Fund",
+      "fund_source_mandate": "Voter-approved measure for street and watershed improvements",
+      "redirected_to": "Affordable housing development at North Berkeley BART station",
+      "meeting_item": "2025-05-20 Item 2 — Amendment: FY 2025 Annual Appropriations Ordinance (AAO#2)",
+      "vote": "Ayes: Kesarwani, Taplin, Tregub, O'Keefe, Blackaby, Lunaparra, Humbert, Ishii. Absent: Bartlett.",
+      "source_document": "https://berkeleyca.gov/sites/default/files/documents/2025-05-20%20Item%2002%20Amendment%20%20FY%202025%20Annual%20Appropriations%20Ordinance.pdf",
+      "significance": "Berkeley's streets PCI sits 13 points below the city's own target, with a documented $1.8B infrastructure backlog. Measure M was approved by voters to address street and watershed needs. Redirecting $24.5M of Measure M funds to housing predevelopment at BART — a project with its own dedicated housing funds (Measure O, Affordable Housing Mitigation Fee, state grants) — depletes a designated street repair pool while the underlying P1 infrastructure problem compounds. The redirection was bundled into a consent calendar appropriations amendment with no standalone vote or public deliberation on the fund transfer specifically.",
+      "notes": "The same AAO#2 also includes $3M from Affordable Housing Mitigation Fee and $320K from Measure U1 for North Berkeley BART predevelopment — suggesting multiple fund sources are being layered onto this single project simultaneously."
+    }
+  ]
+}
