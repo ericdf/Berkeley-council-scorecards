@@ -17,6 +17,22 @@
   },
   "actions": [
     {
+      "date": "2026-02-24",
+      "category": ["discretionary_addition", "revenue_base_reduction"],
+      "evidence_tier": "A",
+      "title": "African American Holistic Resource Center (AAHRC) groundbreaking",
+      "construction_cost_estimate_2019": "1200000–1900000",
+      "construction_cost_note": "2019 feasibility study estimates; does not include land acquisition. 2026 construction costs likely $3M–$5M+.",
+      "annual_operating_cost": "1500000–2000000",
+      "site": "People's Bazaar, South Berkeley (recommended in feasibility study; land acquisition cost not in published estimates)",
+      "operating_entity": "Nonprofit operator anticipated; city-funded — specific nonprofit governance structure not documented in feasibility study",
+      "property_tax_note": "2019 feasibility study listed 'annual property tax' as an operating line item, suggesting taxable ownership was assumed. If property is transferred to or operated by a nonprofit on city-owned land, it exits the tax base permanently — a recurring revenue loss on top of capital and operating costs.",
+      "feasibility_study": "https://newspack-berkeleyside-cityside.s3.amazonaws.com/wp-content/uploads/2021/12/2019-03-06_Info-Item_AAHRC-Feasibility-Study-Final-2019.pdf",
+      "feasibility_study_date": "2019",
+      "significance": "The AAHRC groundbreaking occurred in February 2026, seven years after the 2019 feasibility study and during a documented structural fiscal crisis. The project adds $1.5M–$2M/year in ongoing operating obligations to a general fund already running a structural deficit the City Manager called 'not sustainable.' Capital costs (construction + land) were estimated at $1.2M–$1.9M in 2019 dollars before land, now likely $3M–$5M+. If the facility is held by a nonprofit or operated on city-owned land under a nonprofit agreement, the property exits the tax base permanently — compounding Berkeley's revenue problem at the same time the city is advancing a sales tax measure to close the structural gap. The project was promoted in the Mayor's February 2026 newsletter without any mention of cost, operating obligation, or structural deficit context.",
+      "notes": "The AAHRC is separate from the MLK Jr. Youth Services Center ($23.7M contract, 2025-06-03) — two major new community facilities being built simultaneously during the fiscal crisis. The feasibility study was presented to the Planning Commission in March 2019 as an information item, not an action item — the project moved forward over six years without a formal cost-benefit vote on the full life-cycle fiscal impact."
+    },
+    {
       "date": "2025-05-20",
       "category": "fund_mission_creep",
       "evidence_tier": "A",
