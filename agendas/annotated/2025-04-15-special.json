@@ -1,0 +1,690 @@
+{
+  "date": "2025-04-15",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-15%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:41:53.926535",
+  "roll_call_time": "4:06 p.m.",
+  "present": [
+    "OKeefe",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Kesarwani",
+    "Taplin",
+    "Bartlett",
+    "Tregub"
+  ],
+  "arrived_late": [
+    {
+      "name": "Kesarwani",
+      "time": "4:09 p.m."
+    },
+    {
+      "name": "Taplin",
+      "time": "4:09 p.m."
+    },
+    {
+      "name": "Tregub",
+      "time": "4:10 p.m."
+    },
+    {
+      "name": "Bartlett",
+      "time": "4:10 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "Adoption of CALFIRE Map and Additional Areas Designated as the City of",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Adopt first reading of an Ordinance to designate Fire Hazard Severity Zones",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Designate areas not identified as Very High and High Fire Hazard Severity Zones",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Modification and Adoption of Berkeley Fire Code Local Amendments (Reviewed",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Adopt the first reading of an Ordinance which proposes to amend certain portions",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Adopt a Resolution setting forth findings as to local conditions applicable to the",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "In compliance with state law on adopting such codes by reference, hold a public",
+      "action": "M/S/C (Blackaby/Humbert) to accept revised material from the City Manager on Item 1 and Item 2. Vote: Ayes \u2013 Kesarwani, Taplin, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Bartlett, Tregub. Action: 48 speakers. M/S/C (Blackaby/Humbert) to:",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "OKeefe",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "Bartlett",
+          "Tregub"
+        ]
+      }
+    },
+    {
+      "number": 1,
+      "title": "Adopt first reading of Ordinance No. 7,958\u2013N.S. as written in the revised materials",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Designate areas not identified as Very High and High Fire Hazard Severity Zones",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Adopt first reading of Ordinance No. 7,959\u2013N.S. as written in the revised materials",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "Adopt Resolution No. 71,710\u2013N.S. setting forth findings as to local conditions",
+      "action": ""
+    },
+    {
+      "number": 5,
+      "title": "Schedule the second reading and public hearing for May 6, 2025.",
+      "action": "M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:44 p.m. Communications Item #1: Adoption of CALFIRE Map and Additional Areas Designated as the City of Berkeley Fire Hazard Severity Zones (Reviewed by the Public Safety Committee)",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 1,
+      "title": "Scott Murray",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Jason Warriner",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Robert Godes",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "Roger and Zoe Hill",
+      "action": ""
+    },
+    {
+      "number": 5,
+      "title": "Dr Bruce Feingold",
+      "action": ""
+    },
+    {
+      "number": 6,
+      "title": "Robert and Frederica Breuer",
+      "action": ""
+    },
+    {
+      "number": 7,
+      "title": "Ann Hoyer",
+      "action": ""
+    },
+    {
+      "number": 8,
+      "title": "Lisa Titus",
+      "action": ""
+    },
+    {
+      "number": 9,
+      "title": "Patricia and Michael Henry",
+      "action": ""
+    },
+    {
+      "number": 10,
+      "title": "Greg Murphy",
+      "action": ""
+    },
+    {
+      "number": 11,
+      "title": "Miriam Nathanson",
+      "action": ""
+    },
+    {
+      "number": 12,
+      "title": "Kuniko Weltin-Wu and Hung-His Wu",
+      "action": ""
+    },
+    {
+      "number": 13,
+      "title": "Joan MacQuarrie",
+      "action": ""
+    },
+    {
+      "number": 14,
+      "title": "Krista Denton",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "David Cumpton and David Folzenlogen",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Linda Friedman",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Joan Lester",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Ruth Langridge",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "John Hitchen",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Elizabeth Shedd",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "Miki Tal",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Margaret Cullen",
+      "action": ""
+    },
+    {
+      "number": 23,
+      "title": "Pamela Montanaro",
+      "action": ""
+    },
+    {
+      "number": 24,
+      "title": "Shivaom",
+      "action": ""
+    },
+    {
+      "number": 25,
+      "title": "Sheila Krystal",
+      "action": ""
+    },
+    {
+      "number": 26,
+      "title": "Mary-Louise Hansen",
+      "action": ""
+    },
+    {
+      "number": 27,
+      "title": "Jane Terjung",
+      "action": ""
+    },
+    {
+      "number": 28,
+      "title": "Nancy and Daniel Manheim",
+      "action": ""
+    },
+    {
+      "number": 29,
+      "title": "Nancy Yaple",
+      "action": ""
+    },
+    {
+      "number": 30,
+      "title": "Scott Murray",
+      "action": ""
+    },
+    {
+      "number": 31,
+      "title": "Connie Field",
+      "action": ""
+    },
+    {
+      "number": 32,
+      "title": "Katherine Hansen",
+      "action": ""
+    },
+    {
+      "number": 33,
+      "title": "Jane Hausauer",
+      "action": ""
+    },
+    {
+      "number": 34,
+      "title": "Lota and Mac Rygiel",
+      "action": ""
+    },
+    {
+      "number": 35,
+      "title": "Heidi Hartman",
+      "action": ""
+    },
+    {
+      "number": 36,
+      "title": "Janice Thomas",
+      "action": ""
+    },
+    {
+      "number": 37,
+      "title": "Nicole Fouladi",
+      "action": ""
+    },
+    {
+      "number": 38,
+      "title": "Candace Hyde-Wang",
+      "action": ""
+    },
+    {
+      "number": 39,
+      "title": "Randall and Kathleen Gee",
+      "action": ""
+    },
+    {
+      "number": 40,
+      "title": "Ruth Ehrenkrantz",
+      "action": ""
+    },
+    {
+      "number": 41,
+      "title": "Thelma Tajirian",
+      "action": ""
+    },
+    {
+      "number": 42,
+      "title": "Sowmya Swaminathan",
+      "action": ""
+    },
+    {
+      "number": 43,
+      "title": "Leah and John Rosenthal",
+      "action": ""
+    },
+    {
+      "number": 44,
+      "title": "Norman Vance",
+      "action": ""
+    },
+    {
+      "number": 45,
+      "title": "Roger and Zoe Hill",
+      "action": ""
+    },
+    {
+      "number": 46,
+      "title": "Margaret Cullen",
+      "action": ""
+    },
+    {
+      "number": 47,
+      "title": "Ethan Karp and Sue Lynn Thomas",
+      "action": ""
+    },
+    {
+      "number": 48,
+      "title": "Alistair Sinclair and Nataliya Libina",
+      "action": ""
+    },
+    {
+      "number": 49,
+      "title": "Alfred Twu",
+      "action": ""
+    },
+    {
+      "number": 50,
+      "title": "Anil Aswani",
+      "action": ""
+    },
+    {
+      "number": 51,
+      "title": "Karen Eisenstadt",
+      "action": ""
+    },
+    {
+      "number": 52,
+      "title": "Cindy Rosenthal",
+      "action": ""
+    },
+    {
+      "number": 53,
+      "title": "Mike Travis and Linda Skory",
+      "action": ""
+    },
+    {
+      "number": 54,
+      "title": "Revised agenda material submitted by David Sprague",
+      "action": ""
+    },
+    {
+      "number": 55,
+      "title": "Revised agenda material submitted by David Sprague",
+      "action": ""
+    },
+    {
+      "number": 56,
+      "title": "Presentation submitted by the Fire Department",
+      "action": ""
+    },
+    {
+      "number": 57,
+      "title": "Lynne Clenfield and Ellen Pasternack",
+      "action": ""
+    },
+    {
+      "number": 58,
+      "title": "Ian Meyers",
+      "action": ""
+    },
+    {
+      "number": 59,
+      "title": "Krishen Laetsch",
+      "action": ""
+    },
+    {
+      "number": 60,
+      "title": "Johanna Nichols",
+      "action": ""
+    },
+    {
+      "number": 61,
+      "title": "Laura Graham",
+      "action": ""
+    },
+    {
+      "number": 62,
+      "title": "Eric Weaver",
+      "action": ""
+    },
+    {
+      "number": 63,
+      "title": "Phillip Price",
+      "action": ""
+    },
+    {
+      "number": 64,
+      "title": "Jane Terjung (3)",
+      "action": ""
+    },
+    {
+      "number": 65,
+      "title": "Maria Sakovich",
+      "action": ""
+    },
+    {
+      "number": 66,
+      "title": "Vanessa Drake Moraga",
+      "action": ""
+    },
+    {
+      "number": 67,
+      "title": "Joan H Hollinger",
+      "action": ""
+    },
+    {
+      "number": 68,
+      "title": "CV Deering",
+      "action": ""
+    },
+    {
+      "number": 69,
+      "title": "Jeffrey Heller",
+      "action": ""
+    },
+    {
+      "number": 70,
+      "title": "Carol H. Reitan",
+      "action": ""
+    },
+    {
+      "number": 71,
+      "title": "Richard Laden (2)",
+      "action": ""
+    },
+    {
+      "number": 72,
+      "title": "Isabelle Gaston",
+      "action": ""
+    },
+    {
+      "number": 73,
+      "title": "Rebecca Mills",
+      "action": ""
+    },
+    {
+      "number": 74,
+      "title": "Samson",
+      "action": ""
+    },
+    {
+      "number": 75,
+      "title": "William Callow",
+      "action": ""
+    },
+    {
+      "number": 76,
+      "title": "Nancy Gillette",
+      "action": ""
+    },
+    {
+      "number": 77,
+      "title": "Michel Thouati",
+      "action": ""
+    },
+    {
+      "number": 78,
+      "title": "Mary Pat Farrell",
+      "action": ""
+    },
+    {
+      "number": 79,
+      "title": "Shawna Hartman Brotsky",
+      "action": ""
+    },
+    {
+      "number": 80,
+      "title": "Chuck and Martha Cornwall",
+      "action": ""
+    },
+    {
+      "number": 81,
+      "title": "Bob and Irene Byrne",
+      "action": ""
+    },
+    {
+      "number": 82,
+      "title": "Bob Flasher",
+      "action": ""
+    },
+    {
+      "number": 83,
+      "title": "Kathleen Weidner Zoehfeld",
+      "action": ""
+    },
+    {
+      "number": 84,
+      "title": "Katherine Ritter",
+      "action": ""
+    },
+    {
+      "number": 85,
+      "title": "Monika Weis",
+      "action": ""
+    },
+    {
+      "number": 86,
+      "title": "Susan Bailey",
+      "action": ""
+    },
+    {
+      "number": 87,
+      "title": "Jenny Wenk",
+      "action": ""
+    },
+    {
+      "number": 88,
+      "title": "Tim Frederick",
+      "action": ""
+    },
+    {
+      "number": 89,
+      "title": "Joan Diamond",
+      "action": ""
+    },
+    {
+      "number": 90,
+      "title": "Wendy Pulling",
+      "action": ""
+    },
+    {
+      "number": 91,
+      "title": "Dan Lieberman",
+      "action": ""
+    },
+    {
+      "number": 92,
+      "title": "Travis Longcore and John Harte",
+      "action": ""
+    },
+    {
+      "number": 93,
+      "title": "Lisa Brunet",
+      "action": ""
+    },
+    {
+      "number": 94,
+      "title": "David Johnson",
+      "action": ""
+    },
+    {
+      "number": 95,
+      "title": "Schuyler Bailey",
+      "action": ""
+    },
+    {
+      "number": 96,
+      "title": "Nancy Riddle",
+      "action": ""
+    },
+    {
+      "number": 97,
+      "title": "Peter S. Bailey",
+      "action": ""
+    },
+    {
+      "number": 98,
+      "title": "Elizabeth Sharf",
+      "action": ""
+    },
+    {
+      "number": 99,
+      "title": "Brent Blackaby",
+      "action": ""
+    },
+    {
+      "number": 100,
+      "title": "Stephanie Henkle",
+      "action": ""
+    },
+    {
+      "number": 101,
+      "title": "Kester Watters",
+      "action": ""
+    },
+    {
+      "number": 102,
+      "title": "Mary Lee Noonan",
+      "action": ""
+    },
+    {
+      "number": 103,
+      "title": "Yakov Wiegmann",
+      "action": ""
+    },
+    {
+      "number": 104,
+      "title": "Sara Sanderson",
+      "action": ""
+    },
+    {
+      "number": 105,
+      "title": "Sonya Baehr and Tom Jones",
+      "action": ""
+    },
+    {
+      "number": 106,
+      "title": "Sybil Hatch",
+      "action": ""
+    },
+    {
+      "number": 107,
+      "title": "Manuela Albuquerque",
+      "action": ""
+    },
+    {
+      "number": 108,
+      "title": "Michael Walden and Judith Schelly",
+      "action": ""
+    },
+    {
+      "number": 109,
+      "title": "Nenelle Bunnin",
+      "action": ""
+    },
+    {
+      "number": 110,
+      "title": "Jonathan Eden",
+      "action": ""
+    },
+    {
+      "number": 111,
+      "title": "Carly Loveman",
+      "action": ""
+    },
+    {
+      "number": 112,
+      "title": "Barbara Gilbert",
+      "action": ""
+    },
+    {
+      "number": 113,
+      "title": "Phebe Fletcher",
+      "action": ""
+    }
+  ]
+}

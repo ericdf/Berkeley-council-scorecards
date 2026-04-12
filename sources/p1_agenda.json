@@ -1,0 +1,167 @@
+{
+  "_schema": {
+    "purpose": "Canonical statement of what Berkeley's City Council should be focused on and how the scorecard evaluates their response. This document defines the P1 framework: the priority problems the council is responsible for, and the methodology for addressing them that the scorecard rewards or penalizes. It is explicitly opinionated. Readers who disagree with these priorities or this methodology are welcome to write their own scorecard.",
+    "three_layers": {
+      "layer_1": "Documented commitments — findings and goals in the city's own adopted documents that the council voted to receive. Members cannot claim ignorance; they own these.",
+      "layer_2": "Scorecard author priorities — what a taxpayer-focused voter believes the council should be working on, labeled explicitly as a value judgment rather than an objective finding.",
+      "layer_3": "Methodology — how P1 problems should be addressed. This is where the scorecard is most opinionated. The same problem addressed via reprioritization vs. new revenue produces different scores."
+    },
+    "the_core_test": "Given what the city's own documents say the problems are, and given the methodology this scorecard values, is this member's activity directed at those problems in the right way — or away from them?",
+    "on_disagreement": "A member who believes 'protect union jobs at all costs' is P1, or that new revenue should always precede cuts, would score differently under a different scorecard. That scorecard should be written and labeled honestly. This one is."
+  },
+
+  "layer_1_documented_commitments": {
+    "_note": "These are findings and goals in adopted city documents. Citations are to specific documents in sources/. The council voted to receive all of them.",
+
+    "structural_fiscal_deficit": {
+      "finding": "General Fund expenditures exceed revenues on a structural basis. The gap is being bridged by one-time measures that the City Manager explicitly acknowledged are 'not sustainable' in three consecutive budget cycles.",
+      "magnitude": "GF revenues FY25: $280.2M; expenditures: $292.4M. One-time measures (salary savings, workers' comp non-funding, Section 115 Trust drawdown, fund balance) bridge ~$12M annually.",
+      "on_notice_since": "FY2023-2024 adopted budget (June 28, 2022) — identical non-sustainability language appeared then and has repeated verbatim through FY2025-2026.",
+      "sources": ["sources/budgets/operating_fy2025_2026.json", "sources/budgets/operating_fy2023_2024.json", "sources/budgets/operating_fy2024_midbiennial.json"],
+      "audit_corroboration": "City Auditor April 2026 financial condition report explicitly flagged the four one-time measures and the missing GFOA structural balance policy.",
+      "p1_implication": "Every agenda item that adds recurring cost without a corresponding cut worsens this problem. Every vote to receive and file fiscal warnings without follow-up action extends it."
+    },
+
+    "infrastructure_backlog": {
+      "finding": "Unfunded capital needs total approximately $1.65 billion — a figure that has not declined across two full CIP cycles and two bond measures.",
+      "static_backlog_evidence": "FY2023-2027 CIP (adopted June 2022): $1.65B unfunded. FY2025-2029 CIP (adopted June 2024): $1.65B unfunded. Zero net progress despite Measure M, Measure T1, and Measure P1.",
+      "street_pci": "Current PCI approximately 57. Stated goal: PCI 70. Annual funding gap to achieve goal: approximately $42M/year (Rocky Road audit, October 2025). Current GF allocation: approximately $2-8M/year.",
+      "deferred_maintenance_multiplier": "$1 in early maintenance saves $7 in later repair. Delays quadruple cost by 2050. Stated verbatim in FY2025-2029 CIP — a document the council adopted.",
+      "sources": ["sources/budgets/cip_fy2025_2029.json", "sources/budgets/cip_fy2023_2027.json"],
+      "p1_implication": "A fifth bond measure for infrastructure (proposed November 2026) addresses a symptom, not the cause. The cause is chronic underfunding of capital maintenance in the operating budget. The bond treadmill is documented in the city's own CIPs."
+    },
+
+    "pension_and_opeb_liability": {
+      "finding": "Net pension liability increased 53% in a single year (FY2022→FY2023: $442.5M→$678.4M). The council's response was to draw down the Section 115 Trust rather than restructure costs.",
+      "trajectory": "$442.5M (FY2022) → $678.4M (FY2023, +53%) → $723.8M (FY2024) → $686.4M (FY2025)",
+      "section_115_inflection": "City was contributing to Section 115 Trust through FY2024 ($2M/year). Began drawing down $3M/year in FY2025, escalating to $6M/year in FY2026. Trust is being depleted, not replenished.",
+      "workers_comp_non_funding": "Workers' compensation fund received zero allocation in FY2025 and FY2026 — a deferred obligation, not a savings. First diverted in FY2024 to cover Measure T1 cost overruns.",
+      "sources": ["sources/acfr/acfr_fy2023.json", "sources/budgets/operating_fy2025_2026.json"],
+      "p1_implication": "The council approved budgets that deferred pension and workers' comp obligations rather than addressing them. Each year of deferral compounds the eventual cost."
+    },
+
+    "investment_policy_non_compliance": {
+      "finding": "City investment policy requires returns to 'regularly meet or exceed' LAIF. City investments underperformed LAIF for 9 consecutive quarters as of the last available data.",
+      "council_awareness": "Quarterly investment reports are presented to council within 60 days of quarter end and include LAIF comparisons. The non-compliance is in the public record of every quarterly presentation.",
+      "sources": ["sources/policies/investment_policy.json"],
+      "p1_implication": "Council receives quarterly evidence of policy non-compliance and has not acted on it. This is a documented instance of receiving a finding and not following up."
+    },
+
+    "reserve_policy_trajectory": {
+      "finding": "Original reserve target: 30% of GF revenues by 2027. Amended July 2025 to 20-30% — a downward revision timed to prevent non-compliance rather than achieve the original goal.",
+      "current_levels": "Stability Reserve: $23.1M (FY2023 ACFR). Catastrophic Reserve: $17.6M. Combined: ~$40.7M against a GF of ~$280M = ~14.5% — below the revised 20% floor.",
+      "sources": ["sources/policies/reserve_policy.json", "sources/acfr/acfr_fy2023.json"],
+      "p1_implication": "The council lowered the target when it became clear the original target would not be met. This is the reserve policy equivalent of the bond treadmill: the standard adjusts to the performance rather than the performance adjusting to the standard."
+    }
+  },
+
+  "layer_2_scorecard_priorities": {
+    "_note": "These are explicitly the scorecard author's values. Labeled as such. They are grounded in the documented findings above but represent judgments about what should be done — not findings about what is.",
+
+    "core_services_before_new_programs": {
+      "statement": "Streets, public safety staffing, fire prevention, sewer and storm drain maintenance are the city's core obligations. New programs, cultural institutions, and advocacy initiatives should not be funded while core services are deteriorating and the structural deficit is unaddressed.",
+      "test": "When a member votes to create or expand a program, did they first ask whether existing programs could be reformed or consolidated to fund it? Did they require performance metrics as a condition of funding?",
+      "examples": {
+        "positive": "Kesarwani: required constituent-facing process before BART housing development; backed technology (LPRs) to leverage understaffed police rather than adding positions",
+        "negative": "Bartlett: backed AAHRC with no analysis of whether existing services could reach the target population; no performance metrics required",
+        "negative_2": "Taplin: doubled council office staffing without analyzing whether city department responsiveness (the root cause of constituent service demand) could be improved instead"
+      }
+    },
+
+    "reprioritize_before_revenue": {
+      "statement": "When the city faces a structural deficit, the first response should be identifying what to cut or consolidate, not identifying new revenue. New taxes and bonds are appropriate only after the reprioritization case has been made and rejected — not as the default first move.",
+      "test": "When a member proposes or supports new revenue (bond, tax, assessment), did they also propose a corresponding cut or efficiency analysis? Or did they reach for revenue without first asking what could be done differently?",
+      "examples": {
+        "positive": "A member who says 'we should cut the council office staffing increase to fund another mile of streets' is doing this right even if the specific cut is controversial",
+        "negative": "Taplin: authored bond schedule optimization and supported the $300M bond survey without authoring any companion analysis of whether the underlying problem could be addressed through general fund reprioritization",
+        "negative_2": "Tregub newsletter: described bond and sales tax as 'essential' without acknowledging the Rocky Road audit's finding that the infrastructure problem is a chronic GF underfunding issue"
+      }
+    },
+
+    "fix_before_build": {
+      "statement": "Before creating a new institution, program, or staff position, the council should ask: does something that already exists address this need, and if not, why not? New structures add to the permanent cost base and insulate underlying dysfunction from accountability.",
+      "test": "When a member supports a new institution or program, is there documented analysis of why existing alternatives are inadequate?",
+      "examples": {
+        "negative": "AAHRC: built alongside existing city services without asking why those services weren't reaching the target population",
+        "negative_2": "Council office staffing expansion: added staff to handle constituent service demand without asking why city departments weren't responsive to constituents directly",
+        "negative_3": "COB replacing PRC: replaced a nationally-recognized oversight body with one designed by activists without analyzing what specifically the PRC was failing to do"
+      }
+    },
+
+    "outcomes_before_orthodoxy": {
+      "statement": "Programs should be evaluated on measurable outcomes, not ideological alignment. A homeless services program that costs $200k per client per year and produces no measurable housing stability is not a good program regardless of its political framing.",
+      "test": "When a member supports continued or expanded funding for a program, did they ask for outcome data? Did they condition funding on performance metrics?",
+      "examples": {
+        "positive": "Kesarwani: HSO score of 0 (most skeptical); backed encampment enforcement; required evidence-based approach",
+        "negative": "LunaParra: HSO score 85 (most orthodox); no documented request for cost-per-client data on any homeless services program"
+      }
+    },
+
+    "jurisdiction_discipline": {
+      "statement": "The council's time and political capital are finite. Items outside municipal jurisdiction — federal immigration policy, international conflicts, national political statements — consume agenda time that could be spent on P1 problems. They should be treated as opportunity costs, not free goods.",
+      "test": "Did the member author, co-author, or speak extensively on items outside Berkeley's municipal authority? Was that time in a period when P1 problems were unaddressed?",
+      "examples": {
+        "negative": "LunaParra: ICE abolition resolution, Gaza ceasefire advocacy, arms embargo — all federal/international matters with zero operational consequence for Berkeley",
+        "context": "The council that did not pass a ceasefire resolution still spent multiple contentious meetings managing the pressure — with meeting disruptions, back-room sessions that violated open meeting laws, and physical security concerns for members"
+      }
+    }
+  },
+
+  "layer_3_methodology": {
+    "_note": "How P1 problems should be addressed. The most explicitly opinionated layer. Compliance with P1 topics is necessary but not sufficient — the mechanism matters.",
+
+    "revenue_seeking_is_not_fiscal_discipline": {
+      "statement": "A member who says 'we have a structural deficit, we should raise the sales tax' is acknowledging the problem but proposing the wrong mechanism under this scorecard's values. Reaching for new revenue before exhausting reprioritization options is scored negatively.",
+      "algorithm_implication": "FISCAL_CONCERN_KW currently includes new-tax and bond-seeking language as a 'concern' signal. This is a misalignment. Proposing a new revenue measure without a companion cut analysis should score negative, not neutral or positive.",
+      "distinction": "Asking 'what's the cost?' and 'what would we cut?' = positive fiscal probing. Asking 'should we put a bond on the ballot?' without the prior questions = negative."
+    },
+
+    "rhetoric_without_action_is_hypocrisy": {
+      "statement": "A member who talks about fiscal discipline and then votes yes on every spending item is performing fiscal concern, not exercising it. High fiscal concern rhetoric paired with unanimous yes votes on deficit budgets should produce a lower score than silence.",
+      "algorithm_implication": "fiscal_concern_hits is computed but not used in build_scoreboard(). The planned fiscal hypocrisy signal was never implemented. It should cross-reference fiscal concern rhetoric against major fiscal votes.",
+      "the_test": "Did the member vote yes on the FY2025-2026 budget that disclosed four unsustainable one-time measures? Did they ever vote no on a spending item citing the structural deficit? The ratio of these is the hypocrisy signal."
+    },
+
+    "attending_and_voting_is_the_floor": {
+      "statement": "Absence from major fiscal votes is dereliction. A member who misses a budget adoption is not merely inconvenienced — they are absent from the most consequential decision their office makes. The bar for credit is being present and engaged, not just present.",
+      "algorithm_implication": "MAJOR_FISCAL_VOTES in pipeline.py currently has 7 votes. The FY2025-2026 budget adoption (June 25, 2024) — where all present members voted yes on a budget disclosing four unsustainable measures — is not in the list. It should be."
+    },
+
+    "consent_calendar_scrutiny": {
+      "statement": "Items passed on the consent calendar without floor debate warrant scrutiny proportional to their fiscal or structural significance. A recurring $442k/year staffing increase passed on consent during a structural deficit is more concerning than a $50k one-time expenditure debated on the action calendar.",
+      "examples": [
+        "Debt management policy amendment (June 2023): reduced GO bond limit from 15% to 6% of assessed value — on consent",
+        "Council office staffing expansion (November 2023): $442k/year recurring — on consent"
+      ]
+    }
+  },
+
+  "what_does_not_score": {
+    "performative_solidarity": "Resolutions expressing solidarity, naming injustices, or condemning actions by other governments. Zero jurisdictional relevance; negative opportunity cost.",
+    "new_institutions_without_metrics": "Creation of new boards, commissions, offices, or programs without required outcome metrics. These add to permanent cost base without accountability.",
+    "fiscal_concern_rhetoric_alone": "Saying the right things about the deficit without voting differently. The algorithm should penalize this, not reward it."
+  },
+
+  "algorithm_gaps_to_fix": {
+    "priority_1": {
+      "issue": "Tax and bond advocacy miscoded as fiscal concern",
+      "fix": "Create REVENUE_SEEKING_KW separate from FISCAL_CONCERN_KW. Revenue-seeking without companion cut analysis scores negative under Layer 3.",
+      "affected_code": "FISCAL_CONCERN_KW in council_scorecard.py — remove new-tax/bond patterns; add to new negative list"
+    },
+    "priority_2": {
+      "issue": "fiscal_concern_hits computed but not used in scoring",
+      "fix": "Implement fiscal hypocrisy signal: fiscal_concern_hits cross-referenced against major fiscal vote participation. High rhetoric + unanimous yes votes = penalty.",
+      "affected_code": "build_scoreboard() in council_scorecard.py; requires MAJOR_FISCAL_VOTES feed from pipeline.py"
+    },
+    "priority_3": {
+      "issue": "FY2025-2026 budget adoption missing from MAJOR_FISCAL_VOTES",
+      "fix": "Add June 25, 2024 budget adoption. All current members present voted yes on a budget disclosing four unsustainable one-time measures.",
+      "affected_code": "MAJOR_FISCAL_VOTES in pipeline.py"
+    },
+    "priority_4": {
+      "issue": "Relative normalization masks absolute failure",
+      "fix": "Add absolute waste% floor: if member waste% exceeds threshold (e.g., 25% of keyword-matched content is waste), voter score is capped regardless of cohort rank.",
+      "affected_code": "build_scoreboard() in council_scorecard.py"
+    }
+  }
+}

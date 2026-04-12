@@ -1,0 +1,316 @@
+{
+  "_schema": {
+    "purpose": "Registry of City of Berkeley quarterly investment performance reports. The City Treasurer reports on the pooled investment portfolio each quarter, including return vs. the LAIF benchmark. Persistent underperformance relative to LAIF without any council inquiry or direction to staff is a passive oversight failure — the council has the authority to ask staff to review strategy and has not done so.",
+    "benchmark_note": "The City uses the State Local Agency Investment Fund (LAIF) as its benchmark. LAIF is a highly liquid, low-risk pooled fund available to all California public agencies. Consistently earning less than LAIF while taking on more complexity or less liquidity is the defining failure pattern.",
+    "extraction_note": "These PDFs are scanned images and cannot be parsed programmatically. To populate a quarter, open the PDF at source_url and paste the opening summary paragraph here. Typical location: first page, first paragraph after the heading.",
+    "pattern_summary": {
+      "last_above_benchmark": "Q4 FY2023 (quarter ended June 30, 2023): +5 bps",
+      "first_below_benchmark": "Q1 FY2024 (quarter ended September 30, 2023): -38 bps",
+      "consecutive_quarters_below_as_of_q1_fy2026": 9,
+      "widest_gap": "Q2 FY2025 (quarter ended December 31, 2024): -158 bps",
+      "trend": "Gap narrowing slowly since Q2 FY2025 peak: -158, -131, -124, -117 bps. City's pooled return rising ~5-11 bps/quarter while LAIF declines as Fed cuts rates.",
+      "retiree_medical_trust_contrast": "The Retiree Medical Trust — managed under a different strategy — has earned 4.25%-5.08% throughout the same period when the pooled portfolio earned 2.39%-3.31%. The gap between the two city-managed portfolios is itself a signal.",
+      "staff_explanation": "Staff attributes underperformance to longer portfolio duration vs. LAIF's short-maturity structure, and to holding pre-hike investments while current short-term rates are higher. This explanation is accurate but does not address why the portfolio was not repositioned during the 3+ years since the Fed began hiking in March 2022.",
+      "scoring_note": "9 consecutive quarters below benchmark. No council member has publicly asked staff to review the investment strategy or explain the duration mismatch. The investment policy (sources/policies/2026-04-11/investment-policy.pdf) governs the permissible strategy — extract it to determine whether the current approach is within policy parameters or represents a gap."
+    },
+    "status_values": {
+      "pending_review":      "URL recorded but figures not yet extracted",
+      "extracted":           "Quarterly figures captured in registry",
+      "council_asked_staff": "At least one member publicly asked staff to explain or review investment strategy",
+      "no_action":           "Quarter passed; no member inquiry or direction recorded"
+    },
+    "fields": {
+      "report_ref":                    "Unique key — e.g., 'investment_q1_fy2026'",
+      "period_label":                  "Human-readable period label (e.g., 'Q1 FY2026')",
+      "period_ended":                  "Quarter end date (YYYY-MM-DD)",
+      "report_date":                   "Date the report was presented to council or published",
+      "pooled_return_pct":             "City's annualized return on pooled investments for the quarter (%)",
+      "benchmark_pct":                 "LAIF return for the same period (%)",
+      "basis_points_vs_benchmark":     "Difference in basis points (negative = below LAIF)",
+      "retiree_medical_trust_pct":     "Retiree Medical Trust return same quarter — comparison portfolio managed by the city",
+      "portfolio_value":               "Total portfolio value if stated (dollars)",
+      "consecutive_quarters_below":    "Running count of consecutive quarters below LAIF; 0 = at or above",
+      "key_observations":              "Notable language or findings from the report summary",
+      "council_response":              "What (if anything) any council member said or did in response",
+      "scoring_relevance":             "Whether this quarter's data rises to the level of a scoreable oversight failure",
+      "status":                        "One of the status_values above",
+      "source_url":                    "URL to PDF on berkeleyca.gov"
+    }
+  },
+
+  "investment_q1_fy2023": {
+    "report_ref":                 "investment_q1_fy2023",
+    "period_label":               "Q1 FY2023",
+    "period_ended":               "2022-09-30",
+    "report_date":                null,
+    "pooled_return_pct":          1.83,
+    "benchmark_pct":              null,
+    "basis_points_vs_benchmark":  null,
+    "retiree_medical_trust_pct":  null,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": null,
+    "key_observations": [
+      "Pooled return of 1.83% sourced from Q2 FY2023 report. Open Q1 FY2023 report for LAIF benchmark."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Pre-inversion baseline; Fed began hiking March 2022 — this quarter is early in the cycle.",
+    "status":                     "pending_review",
+    "source_url":                 null
+  },
+
+  "investment_q2_fy2023": {
+    "report_ref":                 "investment_q2_fy2023",
+    "period_label":               "Q2 FY2023",
+    "period_ended":               "2022-12-31",
+    "report_date":                null,
+    "pooled_return_pct":          2.39,
+    "benchmark_pct":              1.98,
+    "basis_points_vs_benchmark":  41,
+    "retiree_medical_trust_pct":  4.25,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 0,
+    "key_observations": [
+      "City OUTPERFORMS LAIF by 41 bps — longer-duration portfolio advantaged while Fed is still in early tightening and short rates have not yet exceeded medium/long rates."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "City above benchmark — no concern. Establishes the pre-inversion baseline.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY2023%202nd%20Qtr%20Investment%20Report.pdf"
+  },
+
+  "investment_q3_fy2023": {
+    "report_ref":                 "investment_q3_fy2023",
+    "period_label":               "Q3 FY2023",
+    "period_ended":               "2023-03-31",
+    "report_date":                null,
+    "pooled_return_pct":          2.76,
+    "benchmark_pct":              2.63,
+    "basis_points_vs_benchmark":  13,
+    "retiree_medical_trust_pct":  5.08,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 0,
+    "key_observations": [
+      "City still outperforms LAIF by 13 bps but the gap is closing rapidly — LAIF rose from 1.98% to 2.63% in one quarter as the Fed continued hiking.",
+      "Retiree Medical Trust already at 5.08% — divergence from pooled portfolio already visible."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "City above benchmark — narrowing advantage. Inversion imminent.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY2023%203rd%20Qtr%20Investment%20Report.pdf"
+  },
+
+  "investment_q4_fy2023": {
+    "report_ref":                 "investment_q4_fy2023",
+    "period_label":               "Q4 FY2023",
+    "period_ended":               "2023-06-30",
+    "report_date":                null,
+    "pooled_return_pct":          3.06,
+    "benchmark_pct":              3.01,
+    "basis_points_vs_benchmark":  5,
+    "retiree_medical_trust_pct":  5.08,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 0,
+    "key_observations": [
+      "LAST QUARTER ABOVE BENCHMARK. City outperforms by only 5 bps — essentially at parity. LAIF surged from 2.63% to 3.01% in one quarter.",
+      "After this quarter the city goes persistently below LAIF for at least 9 consecutive quarters."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "The crossover point. After this quarter the portfolio strategy transitions from advantaged to structurally underperforming.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/2023-12-12%20Item%2035%20FY%202023%20Fourth%20Quarter%20Investment.pdf"
+  },
+
+  "investment_q1_fy2024": {
+    "report_ref":                 "investment_q1_fy2024",
+    "period_label":               "Q1 FY2024",
+    "period_ended":               "2023-09-30",
+    "report_date":                null,
+    "pooled_return_pct":          3.00,
+    "benchmark_pct":              3.38,
+    "basis_points_vs_benchmark":  -38,
+    "retiree_medical_trust_pct":  null,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 1,
+    "key_observations": [
+      "FIRST QUARTER BELOW BENCHMARK. -38 bps gap. City's return actually fell slightly (3.06% → 3.00%) while LAIF jumped from 3.01% to 3.38%.",
+      "Staff begins noting 'inverted yield curve' — short-term rates now explicitly higher than medium/long-term rates.",
+      "The Fed had been hiking for 18 months by this point (since March 2022). The city had opportunity to reposition and did not."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "First quarter of underperformance. This is the point at which a council member paying attention might ask staff about strategy.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY%202024%20First%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q2_fy2024": {
+    "report_ref":                 "investment_q2_fy2024",
+    "period_label":               "Q2 FY2024",
+    "period_ended":               "2023-12-31",
+    "report_date":                null,
+    "pooled_return_pct":          2.94,
+    "benchmark_pct":              3.81,
+    "basis_points_vs_benchmark":  -87,
+    "retiree_medical_trust_pct":  5.05,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 2,
+    "key_observations": [
+      "Gap more than doubles in one quarter: -38 to -87 bps. LAIF accelerated to 3.81%; city's return fell to 2.94%.",
+      "Retiree Medical Trust at 5.05% — now earning 211 bps more than the pooled portfolio."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Gap doubling in one quarter should be visible to any member reviewing the report. Second consecutive quarter below — pattern is forming.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY%202024%20Second%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q3_fy2024": {
+    "report_ref":                 "investment_q3_fy2024",
+    "period_label":               "Q3 FY2024",
+    "period_ended":               "2024-03-31",
+    "report_date":                null,
+    "pooled_return_pct":          3.13,
+    "benchmark_pct":              4.13,
+    "basis_points_vs_benchmark":  -100,
+    "retiree_medical_trust_pct":  5.02,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 3,
+    "key_observations": [
+      "Gap reaches -100 bps — a full percentage point below LAIF. Three consecutive quarters of underperformance.",
+      "Staff describes yield curve as 'significantly inverted' — language escalating from prior quarters."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "100 bps below LAIF for 3 consecutive quarters. A reasonable oversight threshold for council inquiry.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY%202024%20Third%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q4_fy2024": {
+    "report_ref":                 "investment_q4_fy2024",
+    "period_label":               "Q4 FY2024",
+    "period_ended":               "2024-06-30",
+    "report_date":                null,
+    "pooled_return_pct":          3.31,
+    "benchmark_pct":              4.36,
+    "basis_points_vs_benchmark":  -105,
+    "retiree_medical_trust_pct":  5.06,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 4,
+    "key_observations": [
+      "Gap holds near -105 bps. Four consecutive quarters below LAIF — one full year of underperformance.",
+      "City's return improved slightly (3.13% → 3.31%) but LAIF also rose (4.13% → 4.36%), keeping the gap near -100 bps."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "One full year (4 quarters) below LAIF with no council inquiry on record. Scoring threshold crossed.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY%202024%20Fourth%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q1_fy2025": {
+    "report_ref":                 "investment_q1_fy2025",
+    "period_label":               "Q1 FY2025",
+    "period_ended":               "2024-09-30",
+    "report_date":                null,
+    "pooled_return_pct":          3.16,
+    "benchmark_pct":              4.56,
+    "basis_points_vs_benchmark":  -140,
+    "retiree_medical_trust_pct":  4.90,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 5,
+    "key_observations": [
+      "Gap widens sharply to -140 bps. City's return FELL from 3.31% to 3.16% while LAIF rose from 4.36% to 4.56%.",
+      "Five consecutive quarters below LAIF. Fed reached peak rate of 5.50%; LAIF tracks short-term rates closely.",
+      "Note: Fed began cutting rates in September 2024 — this is the last quarter before rate cuts take effect on LAIF."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Fifth consecutive quarter below; gap at -140 bps. The city's portfolio return is declining even as LAIF rises — the duration problem is worsening, not stabilizing.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY%202025%20First%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q2_fy2025": {
+    "report_ref":                 "investment_q2_fy2025",
+    "period_label":               "Q2 FY2025",
+    "period_ended":               "2024-12-31",
+    "report_date":                null,
+    "pooled_return_pct":          2.90,
+    "benchmark_pct":              4.48,
+    "basis_points_vs_benchmark":  -158,
+    "retiree_medical_trust_pct":  4.29,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 6,
+    "key_observations": [
+      "WIDEST GAP IN THE DATASET: -158 bps. City's pooled return fell further to 2.90% — a decline of 26 bps from Q1.",
+      "Six consecutive quarters below LAIF. The gap has now grown from -38 bps (first below quarter) to -158 bps.",
+      "Even as the Fed began cutting rates (September 2024), LAIF remained at 4.48% this quarter while the city's portfolio continued declining."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Peak underperformance. Six consecutive quarters below LAIF; gap nearly 1.6 percentage points. The city is now earning less than 3% on its pooled portfolio while LAIF earns 4.48% — on a portfolio likely worth hundreds of millions, the annual opportunity cost is material.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY2025%20Second%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q3_fy2025": {
+    "report_ref":                 "investment_q3_fy2025",
+    "period_label":               "Q3 FY2025",
+    "period_ended":               "2025-03-31",
+    "report_date":                null,
+    "pooled_return_pct":          3.01,
+    "benchmark_pct":              4.32,
+    "basis_points_vs_benchmark":  -131,
+    "retiree_medical_trust_pct":  4.64,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 7,
+    "key_observations": [
+      "Gap narrows to -131 bps as LAIF begins declining (Fed cutting rates) and city's return recovers slightly.",
+      "Seven consecutive quarters below LAIF.",
+      "Staff notes Fed raised rates to 5.50% from 0%-0.25% — confirming the city's portfolio was not repositioned during the full tightening cycle."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Gap beginning to narrow but still at -131 bps. Recovery driven by LAIF declining, not by city strategy improvement.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/documents/FY2025%20Third%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q4_fy2025": {
+    "report_ref":                 "investment_q4_fy2025",
+    "period_label":               "Q4 FY2025",
+    "period_ended":               "2025-06-30",
+    "report_date":                null,
+    "pooled_return_pct":          3.03,
+    "benchmark_pct":              4.27,
+    "basis_points_vs_benchmark":  -124,
+    "retiree_medical_trust_pct":  4.73,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 8,
+    "key_observations": [
+      "Eight consecutive quarters below LAIF. Gap continues narrowing: -131 → -124 bps.",
+      "Retiree Medical Trust at 4.73% — 170 bps above pooled portfolio. The within-city comparison remains stark."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Two full years below LAIF (8 quarters). No council inquiry on record.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/2026-03/FY2025%20Fourth%20Quarter%20Investment%20Report.pdf"
+  },
+
+  "investment_q1_fy2026": {
+    "report_ref":                 "investment_q1_fy2026",
+    "period_label":               "Q1 FY2026",
+    "period_ended":               "2025-09-30",
+    "report_date":                "2026-02-24",
+    "pooled_return_pct":          3.08,
+    "benchmark_pct":              4.25,
+    "basis_points_vs_benchmark":  -117,
+    "retiree_medical_trust_pct":  null,
+    "portfolio_value":            null,
+    "consecutive_quarters_below": 9,
+    "key_observations": [
+      "Nine consecutive quarters below LAIF. Gap continues narrowing: -124 → -117 bps.",
+      "Staff explains underperformance as LAIF having shorter maturity while current rates exceed pre-hike portfolio yields.",
+      "City's return improving slowly: 2.90% trough → 3.08% now, +18 bps over 3 quarters."
+    ],
+    "council_response":           null,
+    "scoring_relevance":          "Most recent quarter. Nine consecutive quarters below LAIF spanning over two years. The portfolio is slowly recovering as old positions mature and are reinvested at current rates — but this is passive normalization, not active strategy correction. No council member has asked staff to review the investment strategy during this entire period.",
+    "status":                     "extracted",
+    "source_url":                 "https://berkeleyca.gov/sites/default/files/2026-02/2026-02-24%20Item%2023%20FY%202026%20First%20Quarter%20Investment.pdf"
+  }
+}

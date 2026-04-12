@@ -1,0 +1,57 @@
+{
+  "document_ref": "retiree_trust_investment_policy",
+  "title": "City of Berkeley Investment Policy for Retiree Medical Plan Trust Funds",
+  "effective_date": "2025-07-01",
+  "effective_date_note": "Labeled 'Attachment 3, Effective July 1, 2025.' The document bundle also contains an earlier version of the same policy with near-identical content.",
+  "scope": "Retiree Medical Plan Trust Funds only — assets held for payment of employee retiree health benefits. Separate from the City's general pooled investment portfolio.",
+
+  "investment_objectives": {
+    "stated_priority": "Capital preservation is paramount; however, prudent risk-taking is regarded as justifiable for higher incremental returns over the long-term.",
+    "contrast_with_pooled_policy": "The pooled investment policy prioritizes Safety > Liquidity > Yield. The retiree trust policy leads with capital preservation but explicitly endorses prudent risk-taking — a meaningfully different risk posture.",
+    "actuarial_return_target": 0.07,
+    "actuarial_return_target_note": "An actuarial study commissioned by the City determined that a 7% average return is required on miscellaneous employees' retiree medical trust assets to fund the retiree health benefit at the desired 70% level.",
+    "current_return_gap": "The policy states returns have been 'significantly below' the 7% target — attributed to the Federal Reserve keeping short-term rates near zero 'for the last 10 years.' This language predates recent rate increases and has not been updated.",
+    "actual_recent_returns": "Investment reports show 4.64-5.08% returns in the most recent periods — well below the 7% actuarial target."
+  },
+
+  "permitted_investments": {
+    "all_standard_gov_code_instruments": true,
+    "additional_retiree_trust_instruments": {
+      "body_text_states": "Up to 100% of the retiree medical plans funds may be invested in equity mutual funds, equity index funds, preferred stock, and bond funds.",
+      "appendix_a_states": "Up to 25% of the retiree medical plans funds may be invested in equity mutual funds, equity index funds, and preferred stock.",
+      "internal_contradiction": "The policy body authorizes 100% equity/bond funds but Appendix A — the operative diversification requirements table — limits equity to 25%. The Appendix controls in practice. This contradiction appears in both the older and the July 1, 2025 versions.",
+      "scoring_significance": "If the trust were fully invested in equity index funds per the body text, it would likely exceed 7% over time. At 25% equity per the Appendix, the portfolio must rely heavily on bonds and fixed income to make up the difference — which explains the 4-5% actual returns. The contradiction in the policy is itself a governance gap: which provision controls?"
+    },
+    "maximum_maturity": "30 years — substantially longer than the pooled portfolio's 10-year maximum. This longer duration is what allows the trust to hold instruments with higher potential returns.",
+    "no_responsible_investing_constraints": "The retiree trust policy contains none of the fossil fuel, weapons, gun, prison, or ESG divestment requirements embedded in the pooled investment policy. The trust can hold a broader range of instruments."
+  },
+
+  "key_contrast_with_pooled_portfolio": {
+    "pooled_portfolio_benchmark": "LAIF (currently ~3.1-3.3%)",
+    "retiree_trust_actuarial_target": "7%",
+    "retiree_trust_actual_recent": "4.64-5.08%",
+    "pooled_portfolio_actual_recent": "2.90-3.31%",
+    "gap_explanation": [
+      "The retiree trust can hold up to 25% equities (per Appendix A) and bonds with 30-year maturities — longer duration means higher yields.",
+      "The pooled portfolio is constrained to 10-year maximum maturity on most instruments, with much stricter diversification limits.",
+      "The pooled portfolio carries responsible investing constraints not present in the trust policy, further limiting the investable universe.",
+      "Different risk postures: the trust explicitly endorses prudent risk-taking; the pooled policy prioritizes capital preservation above yield."
+    ],
+    "scoring_significance": "Both portfolios are managed under City authority but under different governing policies. The 130-180 basis point return gap between them is a policy design choice, not an accident. The question is whether the pooled portfolio's constraints are the right trade-off — and whether that trade-off has ever been explicitly evaluated and disclosed to the public."
+  },
+
+  "no_laif_benchmark": "Unlike the pooled portfolio, the retiree trust policy does not benchmark against LAIF. The actuarial 7% target is the operative standard. No equivalent 'regularly meet or exceed' language.",
+
+  "reporting_requirements": {
+    "annual_policy_submission": "Required to Council annually per Gov Code 53646",
+    "quarterly_report": "Within 30 days after quarter end (stricter than pooled portfolio's 60-day requirement)",
+    "annual_report": "Within 90 days after fiscal year end"
+  },
+
+  "scoring_implications": [
+    "The retiree trust has never met its 7% actuarial target in recent history — the policy itself acknowledges this. At 4.64-5.08%, the trust earns less than needed, meaning either the City must contribute more or future health benefits may be underfunded.",
+    "The internal contradiction between the 100% equity authorization in the body and the 25% limit in Appendix A has not been publicly flagged or resolved. The council has approved this policy annually without correcting it.",
+    "The absence of responsible investing constraints in the trust policy, compared to their presence in the pooled portfolio, shows the council applies different investment philosophies to different portfolios. The pooled portfolio bears political constraints that the retirement trust does not.",
+    "The retiree trust's higher returns (4.64-5.08% vs 2.90-3.31%) despite managing a smaller pool demonstrates that better returns are achievable under city authority — the gap is a policy and mandate choice."
+  ]
+}

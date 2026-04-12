@@ -1,0 +1,69 @@
+{
+  "date": "2025-12-02",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-12-02%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:43:48.399500",
+  "roll_call_time": "4:06 p.m.",
+  "present": [
+    "Kesarwani",
+    "Taplin",
+    "Tregub",
+    "OKeefe",
+    "Blackaby",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Bartlett",
+    "LunaParra"
+  ],
+  "arrived_late": [
+    {
+      "name": "LunaParra",
+      "time": "4:07 p.m."
+    },
+    {
+      "name": "Bartlett",
+      "time": "5:06 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "Sharing the Final Report of the Mayor\u2019s Vision 2050 Task Force, Realize Vision",
+      "action": "2 speakers. The Mayor recognized the members of the Task Force and provided background on the report."
+    },
+    {
+      "number": 2,
+      "title": "Discussion Regarding Potential Ballot Measures for the November 3, 2026,",
+      "action": "M/S/C (Taplin/Blackaby) to accept revised materials from the City Manager on Item 2. Vote: Ayes \u2013 Kesarwani, Taplin, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Bartlett, Lunaparra. Action: 5 speakers. The Council discussed the report and presentation and provide",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Tregub",
+          "OKeefe",
+          "Blackaby",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "Bartlett",
+          "LunaParra"
+        ]
+      }
+    },
+    {
+      "number": 1,
+      "title": "Supplemental agenda material submitted by the City Manager\u2019s Office",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Presentation submitted by the City Manager\u2019s Office",
+      "action": ""
+    }
+  ]
+}

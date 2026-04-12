@@ -29,6 +29,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MINUTES_DIR="$SCRIPT_DIR/minutes"
 TEXT_DIR="$SCRIPT_DIR/text"
+AMENDMENT_CSV="$SCRIPT_DIR/agendas/amendment_review.csv"
+AMENDMENT_SENTINEL="$SCRIPT_DIR/agendas/.amendment_labels_ingested"
 
 # Support both virtualenvwrapper symlink (.venv → ~/.virtualenvs/council) and plain venv
 VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
@@ -101,7 +103,19 @@ else
     echo "Extracted $extracted transcript PDF(s)."
 fi
 
-# ---- Step 2: Score and generate scorecards ----
+# ---- Step 2: Re-ingest amendment labels if CSV has changed ----
+# The sentinel file agendas/.amendment_labels_ingested is touched after each
+# successful ingest.  If the CSV is newer than the sentinel (or the sentinel
+# doesn't exist), re-ingest so that label revisions take effect automatically.
+if [[ -f "$AMENDMENT_CSV" ]]; then
+    if [[ ! -f "$AMENDMENT_SENTINEL" ]] || [[ "$AMENDMENT_CSV" -nt "$AMENDMENT_SENTINEL" ]]; then
+        echo "=== Amendment labels changed — re-ingesting ==="
+        "$VENV_PYTHON" "$SCRIPT_DIR/ingest_amendment_labels.py" "$AMENDMENT_CSV"
+        touch "$AMENDMENT_SENTINEL"
+    fi
+fi
+
+# ---- Step 3: Score and generate scorecards ----
 if [[ "$ARG" == "--scores-only" ]]; then
     echo "=== Running pipeline (scores only, no PDFs) ==="
     "$VENV_PYTHON" "$SCRIPT_DIR/pipeline.py" --no-pdf
@@ -110,7 +124,7 @@ else
     "$VENV_PYTHON" "$SCRIPT_DIR/pipeline.py"
 fi
 
-# ---- Step 3: Always regenerate methodology + incidents + audit findings PDFs ----
+# ---- Step 4: Always regenerate methodology + incidents + audit findings PDFs ----
 echo "=== Regenerating methodology PDF ==="
 "$VENV_PYTHON" "$SCRIPT_DIR/methodology_pdf.py"
 echo "=== Regenerating incident catalogue PDF ==="

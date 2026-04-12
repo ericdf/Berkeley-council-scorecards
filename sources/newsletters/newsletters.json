@@ -15,6 +15,7 @@
       "key_content":    "What the newsletter covers",
       "scoring_signals":"Specific statements or omissions that are scorecard-relevant",
       "incident_refs":  "List of incident entries in incidents.json sourced from this newsletter",
+      "text_cache":     "Path to cached plain-text copy of the newsletter body (sources/newsletters/text/<document_ref>.txt); obtained from email",
       "status":         "One of the status_values above"
     }
   },

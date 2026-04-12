@@ -1,0 +1,55 @@
+{
+  "document_ref": "reserve_policy",
+  "title": "General Fund Reserve Policy",
+  "resolution": "Resolution No. 67,821-N.S.",
+  "adopted_date": "2017-01-24",
+  "adopted_by": "Ayes: Bartlett, Davila, Droste, Hahn, Maio, Wengraf, Worthington and Arreguin. Noes: None. Absent: None.",
+  "last_amended": "2025-07-29",
+  "last_amended_note": "Resolution No. 71-908-N.S. amended the target level from fixed dollar/percentage milestones to 20-30% of GF revenues. See acfr_fy2025.json.",
+
+  "key_provisions": {
+    "purpose": "Prepare for the impact of economic cycles and catastrophic events. Assure fluctuations in revenue do not impede the City's ability to meet expenditure obligations.",
+    "reserve_structure": {
+      "stability_reserve_pct": 55,
+      "catastrophic_reserve_pct": 45,
+      "stability_reserve_purpose": "Mitigate revenue shortfalls during a single fiscal year or prolonged recession. Not for new programs or projects.",
+      "catastrophic_reserve_purpose": "Sustain operations during public emergencies — earthquakes, fires, floods, civil unrest, terrorist attacks. NOT for operational shortfalls or new programs."
+    },
+    "withdrawal_requirement": {
+      "vote_required": "Two-thirds vote of City Council",
+      "verbatim": "General Fund reserves, upon a two-thirds vote of the City Council, may be used in accordance with the standards set forth herein.",
+      "scoring_significance": "The workers' compensation fund transfer ($4.7M FY2025, $5.2M FY2026) and Section 115 Trust drawdowns are not drawn from the Stability or Catastrophic Reserve — they come from separate internal service fund balances. The 2/3 supermajority requirement applies to the named reserves; these other transfers appear to have been authorized through the budget process, not through the reserve withdrawal mechanism."
+    },
+    "original_targets": {
+      "immediate": "13.8% of 2017 Adopted GF revenues",
+      "intermediate": "16.7% by end of FY2020 'if financially feasible'",
+      "long_term": "30% of GF revenues within no more than 10 years (by approximately 2027)",
+      "funding_mechanism": "Starting FY2018, 50% of excess equity above first $1M allocated to reserves; additional excess equity by majority vote"
+    },
+    "replenishment_policy": {
+      "replenishment_schedule": "City Manager must recommend replenishment schedule simultaneous with any withdrawal appropriation (or within 3 months if emergency)",
+      "repayment_start": "No more than 5 years from date of withdrawal",
+      "repayment_complete": "Within 10 years from date of withdrawal"
+    },
+    "prohibited_uses": "Reserve shall NOT be used for ongoing or new programs or services."
+  },
+
+  "july_2025_amendment": {
+    "resolution": "Resolution No. 71-908-N.S.",
+    "date": "2025-07-29",
+    "change": "Target level changed from fixed milestones (30% by 2027) to a range of 20-30% of GF revenues.",
+    "current_reserves": {"stability": 32800000, "catastrophic": 25500000, "total": 58300000},
+    "fy2025_gf_revenues": 285800000,
+    "pct_of_revenues_at_20": 57160000,
+    "pct_of_revenues_at_30": 85740000,
+    "current_pct_of_revenues": 20.4,
+    "scoring_significance": "At $58.3M reserves against $285.8M revenues, the city holds 20.4% — barely above the new 20% floor. The original 2017 policy targeted 30% by 2027 ($85.7M at current revenue). The council is $27M short of the original target but amended the policy so that what they hold is now compliant. The amendment was adopted just after FY2025 ended."
+  },
+
+  "scoring_implications": [
+    "The original 2017 reserve policy set a 30% of GF revenues target by 2027. The council amended it in July 2025 to 20-30%, converting non-compliance into compliance without adding to reserves.",
+    "The 2/3 supermajority requirement for reserve withdrawals is a meaningful governance protection — but it applies to the named Stability and Catastrophic Reserves. The workers' comp and Section 115 transfers that the City Auditor flagged as one-time measures may have been authorized through the budget process under a different mechanism.",
+    "The replenishment policy requires a replenishment schedule at the time of any withdrawal. If the workers' comp and IT fund transfers were treated as reserve withdrawals, a replenishment schedule would be required. If they were treated as budget line items, no replenishment obligation attaches.",
+    "The Catastrophic Reserve policy explicitly prohibits use 'to meet operational shortfalls.' Using any portion of reserves for recurring salary or benefit costs would violate this prohibition."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "document_ref": "operating_fy2023_2024",
+  "title": "City of Berkeley Adopted Biennial Budget FY2023-FY2024",
+  "document_type": "adopted",
+  "adopted_date": "2022-06-28",
+  "city_manager": "Dee Williams-Ridley",
+
+  "structural_balance_acknowledged": true,
+  "verbatim_non_sustainability": {
+    "quote": "the biennial budget is balanced largely due to assumed salary savings and the unanticipated performance of the real estate market in terms of excess property transfer tax revenues generated in FY 22. However, since property transfer tax is tied directly to all real property sales, it is a volatile revenue source.",
+    "location": "Budget Message, Conclusion"
+  },
+  "verbatim_expenditure_risk": {
+    "quote": "On the expenditure-side, maintaining salary savings due to vacancies is not sustainable over the long-term, the City's three pension plans are not 100% funded and personnel costs related to pension are anticipated to increase, inflation is at an all-time high and the City's infrastructure needs are great.",
+    "location": "Budget Message, Conclusion"
+  },
+
+  "key_financial_figures": {
+    "gf_revenues_fy23_adopted": 258650444,
+    "gf_expenditures_fy23_adopted": 280671294,
+    "gf_fund_balance_use_fy23": 12222046,
+    "gf_revenues_fy24_adopted": 261726315,
+    "gf_expenditures_fy24_adopted": 273948362,
+    "all_funds_revenues_fy23": 608069933,
+    "all_funds_expenditures_fy23": 754176626,
+    "all_funds_fund_balance_use_fy23": 146106693,
+    "all_funds_revenues_fy24": 603820083,
+    "all_funds_expenditures_fy24": 725972990,
+    "all_funds_fund_balance_use_fy24": 122152907
+  },
+
+  "one_time_measures_fy23_24": {
+    "measures": [
+      "Assumed salary savings from vacancies: ~$10M FY23, ~$7.5M FY24",
+      "ARPA funds deferred partial use to FY24 (remaining from $66.6M total)",
+      "Excess property transfer tax from FY22 allocated to operational shortfalls",
+      "Fiscal policy revised to increase PTT baseline for operations to $18M (was lower)"
+    ],
+    "note": "These are the earliest documented use of the salary savings mechanism that the City Auditor later flagged. The same language about vacancies not being sustainable appears here as in the FY2025-2026 budget three years later."
+  },
+
+  "section_115_trust": {
+    "balance_as_of_june_2021": 12800000,
+    "annual_contribution_budgeted": 2000000,
+    "note": "Trust was still being contributed to in FY2023-2024. The shift to drawdown didn't begin until FY2025."
+  },
+
+  "infrastructure_unfunded_needs_reference": {
+    "figure_cited": 1100000000,
+    "source": "March 16, 2021 report to City Council on Unfunded Liability Obligations and Unfunded Infrastructure Needs",
+    "years_covered": "FY2022 to FY2026",
+    "note": "This $1.1B figure from 2021 predates the $1.65B figure that appears in both the FY2023-2027 and FY2025-2029 CIPs. The unfunded needs grew from $1.1B (2021) to $1.65B (2022-2024) despite intervening bond measures."
+  },
+
+  "pension_trajectory_warning": "Based on recent actuarial projections, pension costs will dramatically increase beginning in fiscal years 2025-2026 due to the low rate of return on investments made by the State (CalPERS).",
+
+  "scoring_implications": [
+    "The FY2023-2024 budget uses identical non-sustainability language to the FY2025-2026 budget — three years apart. The problem was acknowledged, not solved.",
+    "The $1.1B unfunded infrastructure figure from 2021 grew to $1.65B by the time the CIPs were published — infrastructure needs grew faster than bond capacity.",
+    "Pension cost warning for FY2025-2026 was issued at this budget adoption — the council had two years of advance notice before the 23% jump materialized.",
+    "Salary savings as a balancing mechanism was used in FY2023-2024 AND FY2025-2026 — not a temporary measure but a recurring structural dependence on vacancies."
+  ]
+}

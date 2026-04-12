@@ -1,0 +1,133 @@
+{
+  "acfr_ref": "acfr_fy2023",
+  "fiscal_year": "FY2023",
+  "year_ended": "2023-06-30",
+  "audit_firm": "Badawi & Associates, Certified Public Accountants",
+  "audit_opinion": "unmodified",
+  "audit_opinion_verbatim": "The auditors expressed an opinion that the City's financial statements for the fiscal year ended June 30, 2023 are fairly stated in conformity with generally accepted accounting principles in the United States.",
+  "emphasis_of_matter": null,
+  "going_concern": false,
+  "bond_ratings": {
+    "sp": "AA+",
+    "moodys": "Aa1"
+  },
+
+  "key_financial_figures": {
+    "total_net_position": 394200000,
+    "unrestricted_net_position": -373800000,
+    "unrestricted_net_position_note": "Negative primarily due to recognition of pension and OPEB liabilities per GASB 68/75.",
+    "net_pension_liability": 678400000,
+    "net_pension_liability_prior_year": 442500000,
+    "net_pension_liability_change": 235900000,
+    "net_pension_liability_change_pct": 53.3,
+    "net_pension_liability_change_note": "INCREASED $235.9M (+53.3%) in a single year — the largest single-year jump in the three-year set. This is primarily an actuarial/GASB recognition event driven by the large increase in deferred outflows related to pensions (from $60.4M to $170.9M). Governmental activities: $386.6M → $586.4M (+$199.8M); Business-type: $55.8M → $92.0M (+$36.2M).",
+    "net_opeb_liability": 81800000,
+    "net_opeb_liability_prior_year": 74200000,
+    "net_opeb_liability_change": 7600000,
+    "net_opeb_liability_change_note": "Moderate increase. Contrasts with FY2024's $4.3M decrease and FY2025's unusual 50% drop.",
+    "total_long_term_debt": 288300000,
+    "total_long_term_debt_note": "Down $10.8M from $299.1M — regular principal payments. GO bonds account for $221.4M (77%).",
+    "gf_revenues": 241200000,
+    "gf_revenues_note": "Revenues only (excluding transfers in). Including transfers in: $258.1M per MD&A.",
+    "gf_expenditures": 211300000,
+    "gf_expenditures_note": "Expenditures only (excluding transfers out). Including transfers out and other financing uses: $247.7M.",
+    "gf_fund_balance_total": 158500000,
+    "gf_fund_balance_total_prior_year": 148000000,
+    "gf_fund_balance_change": 10500000,
+    "gf_fund_balance_change_note": "INCREASED $10.5M — the GF balance was growing in FY2023, primarily a strong revenue year.",
+    "gf_fund_balance_unassigned": 69900000,
+    "gf_fund_balance_restricted": 31100000,
+    "gf_fund_balance_committed": 40700000,
+    "gf_fund_balance_assigned": 16800000,
+    "stability_reserve": 23100000,
+    "catastrophic_reserve": 17600000,
+    "section_115_trust_balance": 19100000,
+    "section_115_trust_prior_year": 14400000,
+    "section_115_trust_change": 4700000,
+    "section_115_trust_note": "Trust grew $4.7M in FY2023 — city was actively contributing. FY2022 balance was $14.4M; FY2023 balance $19.1M (after market value changes).",
+    "capital_assets_net": 592200000,
+    "investment_rate_range_fy2023": "1.837% to 3.058%",
+    "investment_rate_range_note": "Up from 0.912%-1.480% in FY2022 as the Fed raised rates 500 bps from March 2022."
+  },
+
+  "five_year_gf_fund_balance_trend": {
+    "description": "Five-year General Fund fund balance trend from the MD&A. Shows the trajectory before the structural deficit became explicit.",
+    "data": {
+      "fy2019": {"revenues": 201089822, "expenditures": 164040069, "other_financing": -27699229, "surplus_deficit": 9350524, "ending_balance": 93235667},
+      "fy2020": {"revenues": 210940719, "expenditures": 188605343, "other_financing": -17501973, "surplus_deficit": 4833403, "ending_balance": 98069069},
+      "fy2021": {"revenues": 213739932, "expenditures": 189313176, "other_financing": -10613695, "surplus_deficit": 13813061, "ending_balance": 111882130},
+      "fy2022": {"revenues": 232594533, "expenditures": 200826851, "other_financing": 4393666, "surplus_deficit": 36161348, "ending_balance": 148043478},
+      "fy2023": {"revenues": 241247508, "expenditures": 211303884, "other_financing": -19519958, "surplus_deficit": 10423666, "ending_balance": 158467144}
+    },
+    "note": "FY2022 was an outlier (+$36M) driven by COVID-era ARPA funds and elevated property transfer taxes. FY2023 returned to a more normal surplus of $10.4M. FY2024 swings negative (-$5.4M). The trend from FY2023 forward is deterioration."
+  },
+
+  "pension_liability_trajectory": {
+    "description": "The FY2023 pension liability jump is the most important single-year data point in the three-year set.",
+    "fy2022_liability": 442500000,
+    "fy2023_liability": 678400000,
+    "fy2023_change": 235900000,
+    "fy2024_liability": 723800000,
+    "fy2024_change": 45400000,
+    "fy2025_liability": 686400000,
+    "fy2025_change": -37400000,
+    "note": "The $236M jump in FY2023 is primarily an actuarial/GASB 68 recognition event (deferred outflows related to pensions grew from $60.4M to $170.9M in one year). The liability did not appear from nowhere — it represents obligations that existed but were not yet recognized on the balance sheet. Council was on notice of the underlying pension cost trajectory even before this recognition."
+  },
+
+  "budget_context_fy2023": {
+    "description": "The FY2023 budget was adopted June 28, 2022 as a biennial budget (FY2023-FY2024). It relied on a mix of ARPA federal funds and specific fiscal policy adjustments.",
+    "arpa_usage": "City received $66.6M total ARPA funds. Used in part to offset revenue losses and balance FY2022 and FY2023 budgets. Remaining ARPA deferred to FY2024.",
+    "fiscal_policy_change": "Reserve policy revised to increase property transfer tax revenue allocated to operations (decreasing capital allocation) — a one-time measure to balance the budget.",
+    "fy2022_deficit_note": "The FY2022 General Fund faced a $25M deficit mitigated by the first ARPA tranche.",
+    "budget_strategies": [
+      "Continue serving the community — preserve public safety and essential services",
+      "Live within our means — long-term sustainability",
+      "Identify expenditures that can be deferred — capital projects, equipment",
+      "Pursue other revenue and assistance — grants, cost recovery",
+      "Manage use of and replenish reserves",
+      "Be data-driven and transparent"
+    ],
+    "gap_note": "FY2023 budget strategies are aspirational — they acknowledge the need to align resources with needs but do not name a specific structural gap. Contrast with FY2024 transmittal's 'not sustainable' language and FY2025's explicit 'structural deficit' language."
+  },
+
+  "fiscal_policies_fy2023": {
+    "description": "12 fiscal policies adopted by Council for the FY2023-2024 biennial budget — more detailed than FY2025 version.",
+    "policies": [
+      "Focusing on long-term fiscal health by adopting two-year budget and multi-year planning",
+      "Building prudent reserve with goal of reaching 30% of GF revenues by 2027",
+      "Developing long-term strategies to reduce unfunded liabilities",
+      "Controlling labor costs while minimizing layoffs and promoting recruitment/retention",
+      "Primarily allocating one-time revenue for one-time expenditures",
+      "Requiring enterprise and grant funds to balance and new programs to pay for themselves",
+      "Any new expenditure requires new revenue or expenditure reductions",
+      "Property transfer tax allocation: baseline set at $18M for FY2023-2024, $16M beginning FY2025",
+      "Revenue from Measure P excluded from policy",
+      "General Fund Safety Members Pension fund subsidy declining — annual decrease funds new Police Retiree Health Plan",
+      "Allocating CalPERS prepayment savings to Section 115 Trust up to $5.5M per fiscal year",
+      "Excess investment earnings over $6M baseline allocated: 1/3 to Section 115 Trust, 1/3 to GF reserves, 1/3 to capital infrastructure"
+    ],
+    "note": "Policy #2 targets 30% of GF revenues by 2027. By FY2025, the council amended this to 20-30% of revenues — a policy retreat that aligned the target with what reserves already hold."
+  },
+
+  "public_safety_overtime": {
+    "description": "Public safety overtime exceeded budget in FY2023 — establishing the start of the multi-year pattern.",
+    "overtime_over_budget": 4100000,
+    "verbatim_quote": "Public Safety was over budget by $4.1 million due to overspending of Police and Fire overtime budgets. This was related to staffing shortages forcing mandatory overtime, and due to mutual aid requests.",
+    "note": "FY2023: $4.1M over; FY2024: $8.2M over; FY2025: $9.3M over. The problem doubled in one year and continued growing. The language is identical across all three years — same root cause, no structural fix."
+  },
+
+  "revenue_risks_identified": {
+    "property_transfer_tax_collapse": "Property Transfer Tax fell from $39.7M (FY2022) to $22.0M (FY2023) — a $17.7M or 44.6% decline due to rising interest rates and fewer property sales. Measure P similarly fell $10.9M. These revenues are highly volatile; the FY2022 peak was used to fund FY2023 capital transfers.",
+    "arpa_cliff": "City used ARPA federal funds to balance FY2022 and FY2023. Remaining ARPA deferred to FY2024, creating a known revenue cliff when those funds expire.",
+    "investment_income_volatility": "Investment income swung from -$10.1M (FY2022) to +$3.3M (FY2023) due to Fed rate movements. Revenue planning that relies on investment income is inherently unstable."
+  },
+
+  "scoring_implications": [
+    "The $236M pension liability jump in FY2023 is the largest single-year increase in the three-year set — council received an ACFR showing pension liability had grown 53% in one year. No corrective action is documented in the record.",
+    "Fund balance grew $10.4M in FY2023 — council may have treated this as a sign of fiscal health, while the pension trajectory told a different story on the same pages.",
+    "Section 115 Trust was growing ($4.7M contribution in FY2023). The transition from contributing to drawing down (which began in FY2025) happened after this point — council cannot claim they were unaware the trust was intended for contributions, not operations.",
+    "Property transfer tax revenue is shown to be highly volatile (FY2022: $39.7M → FY2023: $22.0M). Any budget relying on elevated PTT as a baseline is built on an unstable foundation.",
+    "Public safety overtime over budget by $4.1M — the first year of what became a three-year pattern. No structural staffing model change was proposed.",
+    "The FY2023 ACFR discloses the reserve goal of 30% of GF revenues by 2027. By FY2025, this target was lowered to 20-30% — the council moved the goalposts rather than meeting the original target."
+  ]
+}

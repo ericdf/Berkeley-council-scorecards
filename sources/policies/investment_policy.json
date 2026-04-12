@@ -1,0 +1,69 @@
+{
+  "document_ref": "investment_policy",
+  "title": "City of Berkeley Investment Policy",
+  "effective_date": "FY2026",
+  "effective_date_note": "Policy states it 'will serve as the Investment Policy for the City of Berkeley for fiscal year 2026.' Submitted to Council annually for approval per Gov Code 53646.",
+  "scope": "All financial assets of any non-trust funds — General Fund and other funds. Excludes Retiree Medical Plan Trust (governed by separate policy). Applies to City and Rent Stabilization Board.",
+
+  "investment_objectives_priority_order": [
+    "1. Safety — preservation of capital is foremost. Mitigate credit risk and interest rate risk.",
+    "2. Liquidity — portfolio must remain sufficiently liquid for anticipated operating requirements.",
+    "3. Yield — attain market rate of return given safety and liquidity constraints."
+  ],
+
+  "benchmark": {
+    "stated_benchmark": "LAIF (Local Agency Investment Fund)",
+    "verbatim": "In evaluating the performance of the City's portfolio in achieving this objective, it is expected that yields on City investments will regularly meet or exceed the average return on the State Local Agency Investment Fund (LAIF).",
+    "scoring_significance": "The policy explicitly requires LAIF-matching or better performance. After 9 consecutive quarters below LAIF (Q1 FY2024 through Q1 FY2026), the portfolio is in sustained non-compliance with the policy's stated yield objective. The Treasurer and council are on notice by policy."
+  },
+
+  "responsible_investing_constraints": {
+    "description": "The City's investment policy embeds an extensive list of political divestment requirements that constrain the investable universe beyond what safety/liquidity alone would require. These constraints may contribute to below-LAIF performance.",
+    "restrictions": [
+      "Nuclear-Free Berkeley Act — prefer US Agency securities over Treasuries (nuclear weapons association)",
+      "Divestment from fossil fuel companies — the top 200 by carbon reserves (Carbon Tracker 'Unburnable Carbon' list)",
+      "Divestment from gun manufacturers and tobacco companies",
+      "Divestment from prison and immigration detention companies",
+      "Divestment from companies designing/building/financing the US-Mexico border wall (Executive Order 13767)",
+      "No investment in any entity involved in production/manufacturing of weapons — conventional or nuclear, including civilian arms",
+      "Integrate ESG principles for all investment decisions"
+    ],
+    "gap_note": "None of these restrictions appear in LAIF's investment policy — LAIF is the benchmark, but the City cannot hold instruments LAIF holds. If the responsible investing restrictions cause below-LAIF returns, the council has made an affirmative choice to accept that cost. Whether that cost has ever been quantified or disclosed to the public is unknown."
+  },
+
+  "laif_cap": 40000000,
+  "laif_cap_note": "Maximum $40M in LAIF — constrains how much can be in the benchmark instrument itself.",
+
+  "key_portfolio_limits": {
+    "commercial_paper": "25% of portfolio; max 180 days maturity; highest rating from TWO agencies (stricter than state requirement of one)",
+    "medium_term_corporate_notes": "30% of portfolio; max 10-year maturity; rated A or better",
+    "negotiable_cds": "30% of portfolio",
+    "mortgage_backed_and_structured": "20% of portfolio; rated Aa/AA or better",
+    "callable_agency_securities": "45% maximum",
+    "money_market_accounts": "100% permitted",
+    "maximum_portfolio_maturity": "30% of par value may exceed 5 years; max 30% may have stated maturity up to 10 years",
+    "prohibited": "Floaters, inverse floaters, range notes, interest-only strips, derivatives that could result in zero income"
+  },
+
+  "reporting_requirements": {
+    "quarterly_report": "Within 60 days after quarter end to City Manager and City Council",
+    "annual_report": "Within 90 days after fiscal year end",
+    "required_contents": [
+      "Issuer, type, yield, purchase date, maturity date, book value, market value for each security",
+      "Compliance description — whether activities conformed to investment policy",
+      "Comparison of average returns against LAIF",
+      "Summary of key/unusual events including any exceptions to policy",
+      "Adherence to or deviations from social investment goals"
+    ],
+    "scoring_significance": "The quarterly reports showing 9 consecutive quarters below LAIF are required disclosures to the City Council. No council member appears to have questioned the streak publicly. The policy requires disclosure — the question is whether council engaged with it."
+  },
+
+  "new_investment_notification": "No new types of investments may be purchased for the first time without at least two weeks prior notification to City Council.",
+
+  "scoring_implications": [
+    "The policy's yield objective — 'regularly meet or exceed LAIF' — has not been met for 9 consecutive quarters. This is a policy non-compliance, not just underperformance.",
+    "Responsible investing restrictions constrain the investable universe beyond what safety/liquidity require. The cost of these restrictions in foregone yield has never been publicly quantified.",
+    "LAIF is capped at $40M. A city portfolio of ~$200-300M cannot simply 'go to LAIF' — but the benchmark is LAIF, creating a structural constraint the policy does not address.",
+    "Quarterly reports showing below-LAIF performance are required disclosures to Council. The 9-quarter streak is visible in the public record. No member has publicly asked why."
+  ]
+}

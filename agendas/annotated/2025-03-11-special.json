@@ -1,0 +1,216 @@
+{
+  "date": "2025-03-11",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-03-11%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:41:37.732647",
+  "roll_call_time": "5:07 p.m.",
+  "present": [
+    "Kesarwani",
+    "Taplin",
+    "Tregub",
+    "OKeefe",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Bartlett"
+  ],
+  "arrived_late": [
+    {
+      "name": "Bartlett",
+      "time": "5:09 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "2025 City Council Referral Prioritization Process Using Re-Weighted Range",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Review the City Council raw scores for all outstanding City Council referrals;",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Approve the removal of referrals that have been nominated for removal by the",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Direct the City Manager to run the ranking algorithm and return to Council with a",
+      "action": "11 speakers. M/S/C (Tregub/O\u2019Keefe) to:"
+    },
+    {
+      "number": 1,
+      "title": "Approve the removal of referrals that have been nominated for removal by the",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Direct the City Manager to run the ranking algorithm and return to Council with a",
+      "action": "M/S/C (Taplin/Bartlett) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:10 p.m. Communications Item #1: 2025 City Council Referral Prioritization Process Using Re-Weighted Range Voting (RRV)",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 1,
+      "title": "Anna Cheyette",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Alfred Twu",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Ross Bernet",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "Mike Wilson",
+      "action": ""
+    },
+    {
+      "number": 5,
+      "title": "Julia Moss",
+      "action": ""
+    },
+    {
+      "number": 6,
+      "title": "Grayson Savoie",
+      "action": ""
+    },
+    {
+      "number": 7,
+      "title": "Sunny",
+      "action": ""
+    },
+    {
+      "number": 8,
+      "title": "Sarah Bell",
+      "action": ""
+    },
+    {
+      "number": 9,
+      "title": "Cameron Woo",
+      "action": ""
+    },
+    {
+      "number": 10,
+      "title": "Debbie Potter",
+      "action": ""
+    },
+    {
+      "number": 11,
+      "title": "Liz Ozol",
+      "action": ""
+    },
+    {
+      "number": 12,
+      "title": "Presentation submitted by the City Clerk Department",
+      "action": ""
+    },
+    {
+      "number": 13,
+      "title": "Lydia Lopez",
+      "action": ""
+    },
+    {
+      "number": 14,
+      "title": "Aja Fasah",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "Tahirah Dean",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Regina Mouton",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Arianne Senten",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Wilhelmenia Wilson on behalf of Health Black Families, Inc.",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "Rahel Smith",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Toni Mandara",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "Chris Schildt",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Michael Trujillo on behalf of the East Bay Community Law Center",
+      "action": ""
+    },
+    {
+      "number": 23,
+      "title": "Tracy Parent",
+      "action": ""
+    },
+    {
+      "number": 24,
+      "title": "Jonathan Bachrach",
+      "action": ""
+    },
+    {
+      "number": 25,
+      "title": "Aimee Baldwin",
+      "action": ""
+    },
+    {
+      "number": 26,
+      "title": "Kim Anno",
+      "action": ""
+    },
+    {
+      "number": 27,
+      "title": "Mirah Moriarty and Rodrigo Esteva",
+      "action": ""
+    },
+    {
+      "number": 28,
+      "title": "Rachel Katz",
+      "action": ""
+    },
+    {
+      "number": 29,
+      "title": "Amir Massih",
+      "action": ""
+    },
+    {
+      "number": 30,
+      "title": "Lanny F. DeVuono",
+      "action": ""
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "document_ref": "debt_management_policy",
+  "title": "Debt Management and Disclosure Policy",
+  "original_adoption": "January 2017",
+  "last_amended": "2023-06-27",
+  "last_amended_note": "Adopted via consent calendar on June 27, 2023. The sole substantive change was reducing the GO bond debt limit from 15% to 6% of assessed value.",
+
+  "consent_calendar_governance_flag": {
+    "what_happened": "The June 2023 revision — which changed the operative debt capacity limit — was placed on the consent calendar and adopted without floor discussion.",
+    "staff_rationale": "Staff memo states: 'There are no fiscal impacts from approving the revisions.' Rationale for 6% limit: 'The City developed a more locally appropriate debt limit with the guidance of GFOA, who conducted a debt capacity study, rather than rely on the statutory limit of 15%.'",
+    "scoring_significance": "A change to the city's debt capacity framework — the governing limit on how much GO bond debt Berkeley can issue — was approved without council debate, as part of a consent bundle. The policy now governs the framework under which future bond measures go to voters. Members who voted for that consent calendar without reading the policy may not have understood they were endorsing a debt capacity methodology. The 6% limit is actually more conservative than the 15% statutory default, but the principle of passing structural financial policy on consent is itself a governance concern."
+  },
+
+  "key_provisions": {
+    "purpose": "Provide clear guidelines for issuance and financial management of the City's debt portfolio. Affirm commitment to sound financial practices, timely repayment, and minimizing cost of capital.",
+    "debt_capacity_limit": {
+      "go_bond_limit": "6% of assessed value",
+      "prior_limit": "15% of assessed value (statutory default)",
+      "assessed_value_fy2023": 24700000000,
+      "implied_go_bond_capacity_at_6pct": 1482000000,
+      "current_go_bonds_outstanding": 205400000,
+      "note": "At 6% of $24.7B assessed value, capacity is ~$1.48B. Current GO bonds of ~$205M are well within limit. This limit does not constrain near-term bond issuance — Berkeley has substantial headroom."
+    },
+    "permitted_uses_of_debt": {
+      "long_term_debt": "Capital assets only. May include issuance costs and reserves. NOT for operating costs.",
+      "short_term_debt": "Interim financing and cash flow support. NOT for investment income generation.",
+      "verbatim_prohibition": "Long-term debt shall not be issued to fund operating costs."
+    },
+    "debt_term": "Structured for shortest appropriate period; term not to exceed life of financed asset.",
+    "new_investment_policy": "Official Statements must be reviewed by the Disclosure Working Group and submitted to City Council for approval. This approval is treated as new business — NOT consent.",
+    "annual_review": "Finance Director shall review this policy at least every five years."
+  },
+
+  "disclosure_policy_provisions": {
+    "continuing_disclosure": "Annual reports and event notices filed with MSRB's EMMA system.",
+    "official_statements": "Reviewed by Disclosure Working Group before Council approval — explicitly designated as new business, not consent.",
+    "training": "Disclosure Coordinator ensures training for staff and Council on federal/state securities laws, disclosure obligations, and responsibilities.",
+    "note": "The policy itself distinguishes between official statements (always new business) and policy revisions (apparently treated as consent). This creates an internal inconsistency: bond disclosure documents go through a more rigorous approval process than the policy governing all debt issuance."
+  },
+
+  "taplin_referral_context": {
+    "referral": "November 2025 'Advanced Fiscal Policies — Bond Schedule' referral by Councilmember Taplin",
+    "what_it_would_do": "Direct the City Manager to develop a regular, predictable bond issuance schedule",
+    "intersection_with_this_policy": "The debt management policy governs when and how bonds are issued but does not specify a cadence. If a bond schedule is adopted as an amendment to this policy, it could normalize bond issuance frequency in a way that is decoupled from capital need or fiscal condition.",
+    "scoring_significance": "If the bond schedule referral results in a policy amendment — and that amendment is passed on consent — a structural commitment to regular borrowing would be embedded in governing policy without substantive council debate."
+  },
+
+  "scoring_implications": [
+    "The debt capacity limit (6% of assessed value) gives Berkeley ~$1.28B of remaining GO bond capacity above current outstanding debt. This headroom does not create an obligation to borrow, but it means no capacity constraint exists on near-term bond measures.",
+    "The explicit prohibition on using long-term debt for operating costs is the key guardrail. As the structural deficit grows, pressure to creatively categorize operating expenses as capital may increase.",
+    "The consent calendar adoption of a debt capacity framework revision is a governance pattern to watch. Future policy amendments affecting borrowing authority could follow the same path.",
+    "The distinction between 'new business' (official statements) and 'consent' (policy revisions) in the same document is internally inconsistent — the policy's authors apparently considered disclosure documents more sensitive than the policy itself."
+  ]
+}

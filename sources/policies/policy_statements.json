@@ -1,0 +1,165 @@
+{
+  "_schema": {
+    "purpose": "Registry of official City of Berkeley policy statements — adopted fiscal policies, debt policies, reserve policies, and similar governing documents. Policy statements are a distinct and high-value source class: they represent the council's own stated commitments. When auditors find gaps, or when council behavior contradicts a stated policy, the deviation is attributable at a higher confidence level than deviation from external best practices alone.",
+    "status_values": {
+      "pending_review":  "Policy identified but not yet obtained or extracted",
+      "extracted":       "Key provisions captured in source extract file",
+      "gap_documented":  "A gap between stated policy and council behavior or auditor finding has been formally noted"
+    },
+    "fields": {
+      "document_ref":     "Unique key; matches extract filename in sources/policies/",
+      "title":            "Official policy title",
+      "adopted_date":     "Date the council formally adopted this policy (often unknown — policies are not reliably datestamped)",
+      "last_amended":     "Date of most recent amendment, if known",
+      "downloaded_date":  "Date the source document was obtained; used as subfolder name (sources/policies/YYYY-MM-DD/)",
+      "source_url":       "Where to obtain the document",
+      "scope":            "What the policy governs",
+      "key_provisions":   "What the policy commits the council to",
+      "documented_gaps":  "Gaps identified by the City Auditor or observable from council behavior",
+      "scoring_relevance":"How this policy connects to taxpayer alignment scoring",
+      "status":           "One of the status_values above",
+      "source_extract":   "Path to detailed extract file, if created"
+    }
+  },
+
+  "fiscal_policy": {
+    "document_ref":   "fiscal_policy",
+    "title":          "City of Berkeley Fiscal Policies",
+    "adopted_date":   null,
+    "last_amended":   null,
+    "source_url":     null,
+    "source_url_note": "Not a standalone PDF on berkeleyca.gov. Fiscal policies are disclosed in budget transmittal letters and ACFR transmittal letters — extracted versions are in sources/acfr/acfr_fy2023.json (fiscal_policies_fy2023), sources/acfr/acfr_fy2025.json (fiscal_policies_stated).",
+    "scope":          "Governing framework for budget preparation, reserve management, debt issuance, and long-term financial planning",
+    "key_provisions": null,
+    "documented_gaps": [
+      "Does not require assessing whether recurring revenues are sufficient to cover recurring expenditures — identified as a gap by the City Auditor in the April 2026 financial condition report (p.22). This is a foundational GFOA best practice.",
+      "Policy #5 (one-time revenue for one-time expenditures) violated by Section 115 Trust drawdowns for recurring operating pension expenses in FY2025 and FY2026 — documented in acfr_fy2025.json."
+    ],
+    "scoring_relevance": "The fiscal policy is the council's own rulebook. A gap in the rulebook is the council's responsibility to close — particularly the GFOA recurring balance requirement, which has been flagged by the auditor. No member has moved to amend the policy.",
+    "status":         "extracted",
+    "source_extract": null
+  },
+
+  "debt_management_policy": {
+    "document_ref":   "debt_management_policy",
+    "title":          "Debt Management and Disclosure Policy",
+    "adopted_date":   "2017-01",
+    "last_amended":   "2023-06-27",
+    "last_amended_note": "Revised via consent calendar June 27, 2023. Sole substantive change: GO bond debt limit reduced from 15% to 6% of assessed value. No floor discussion.",
+    "source_url":     "https://berkeleyca.gov/sites/default/files/documents/FY%202024%20Revisions%20to%20the%20Debt%20Mangement%20and%20Disclosure%20Policy-REV.pdf",
+    "scope":          "Governs when and how the city issues debt — GO bonds, lease revenue notes, TEFRA bonds, etc. Also governs continuing disclosure obligations to bondholders.",
+    "key_provisions": [
+      "Long-term debt shall NOT be used for operating costs — only capital assets.",
+      "GO bond debt limit: 6% of assessed value (~$1.48B capacity at FY2023 assessed value; $205M currently outstanding).",
+      "Official Statements require council approval as new business — not consent.",
+      "Policy review at least every 5 years."
+    ],
+    "documented_gaps": [
+      "The debt capacity framework revision was adopted on the consent calendar with no council discussion — a structural financial policy passed without debate.",
+      "Official Statements (bond disclosure docs) are designated new business, but the policy governing all debt issuance was passed on consent — the policy treats disclosure as more significant than the framework itself.",
+      "Taplin's November 2025 'Advanced Fiscal Policies — Bond Schedule' referral could result in a regular borrowing cadence embedded in policy — potentially also passed on consent."
+    ],
+    "scoring_relevance": "The consent calendar adoption of debt capacity policy is a governance pattern. The explicit prohibition on using long-term debt for operating costs is the key guardrail as structural deficits grow.",
+    "status":         "extracted",
+    "source_extract": "sources/policies/debt_management_policy.json"
+  },
+
+  "reserve_policy": {
+    "document_ref":   "reserve_policy",
+    "title":          "General Fund Reserve Policy",
+    "adopted_date":   "2017-01-24",
+    "adopted_note":   "Resolution No. 67,821-N.S. Adopted unanimously.",
+    "last_amended":   "2025-07-29",
+    "last_amended_note": "Resolution No. 71-908-N.S. lowered target from 30% to 20-30% of GF revenues — converting non-compliance into compliance without adding reserves.",
+    "source_url":     "https://berkeleyca.gov/sites/default/files/2022-01/General-Fund-Reserve-Policy.pdf",
+    "source_url_note": "URL is dated 2022-01 — predates the July 2025 amendment. Fetched version reflects pre-amendment policy; amendment is documented in acfr_fy2025.json.",
+    "scope":          "Governs target reserve levels (Stability + Catastrophic), permissible uses, withdrawal process, and replenishment requirements.",
+    "key_provisions": [
+      "Withdrawal requires a 2/3 vote of City Council.",
+      "Stability Reserve (55%): for revenue shortfalls only — NOT for new programs.",
+      "Catastrophic Reserve (45%): for emergencies only — explicitly NOT for operational shortfalls.",
+      "Original long-term target: 30% of GF revenues by 2027 (within 10 years of 2017 adoption).",
+      "Replenishment: schedule required at time of withdrawal; repayment begins within 5 years, complete within 10 years.",
+      "Reserve is NOT for ongoing or new programs or services."
+    ],
+    "documented_gaps": [
+      "2017 target was 30% of GF revenues by 2027. July 2025 amendment lowered to 20-30% — council is ~$27M short of original target but now compliant with amended target.",
+      "Workers' comp and Section 115 transfers cited by City Auditor as one-time measures — these appear to come from internal service fund balances, not the named Reserves, bypassing the 2/3 withdrawal requirement.",
+      "Catastrophic Reserve prohibition on 'operational shortfalls' is categorical — any use of named reserves for recurring expenses would be a policy violation."
+    ],
+    "scoring_relevance": "The July 2025 amendment is itself a scored event — moving the target after failing to reach it. The 2/3 withdrawal requirement creates a meaningful governance protection, but the one-time balancing measures may be structured to avoid triggering it.",
+    "status":         "extracted",
+    "source_extract": "sources/policies/reserve_policy.json"
+  },
+
+  "investment_policy": {
+    "document_ref":   "investment_policy",
+    "title":          "City of Berkeley Investment Policy",
+    "adopted_date":   null,
+    "last_amended":   null,
+    "last_amended_note": "Submitted to Council annually. FY2026 version extracted.",
+    "source_url":     "https://berkeleyca.gov/sites/default/files/documents/investment-policy.pdf",
+    "scope":          "All non-trust funds — General Fund and other pooled funds. City and Rent Stabilization Board.",
+    "key_provisions": [
+      "Priority order: Safety > Liquidity > Yield.",
+      "Benchmark: 'yields on City investments will regularly meet or exceed the average return on LAIF.'",
+      "LAIF cap: $40M.",
+      "Extensive responsible investing restrictions: fossil fuels, weapons, guns, prisons, border wall, ESG — none of which apply to LAIF itself.",
+      "Quarterly reports to Council within 60 days; must include LAIF comparison.",
+      "New investment types require 2 weeks prior Council notification."
+    ],
+    "documented_gaps": [
+      "9 consecutive quarters below LAIF as of Q1 FY2026 — the policy states returns should 'regularly meet or exceed' LAIF. This is sustained non-compliance with the policy's stated yield objective.",
+      "Responsible investing constraints reduce the investable universe below what LAIF can access — the benchmark is achievable by LAIF but not necessarily by a portfolio subject to these restrictions. The cost of this policy choice has never been publicly quantified.",
+      "LAIF cap of $40M means the city cannot simply 'go to LAIF' with a $200M+ portfolio — the benchmark is structurally unachievable in full."
+    ],
+    "scoring_relevance": "The policy explicitly requires LAIF-matching returns. 9 quarters of non-compliance with quarterly reports to Council means the oversight mechanism exists but has not been exercised. The responsible investing restrictions are a council choice with a quantifiable cost.",
+    "status":         "extracted",
+    "source_extract": "sources/policies/investment_policy.json"
+  },
+
+  "retiree_trust_investment_policy": {
+    "document_ref":   "retiree_trust_investment_policy",
+    "title":          "City of Berkeley Investment Policy for Retiree Medical Plan Trust Funds",
+    "adopted_date":   null,
+    "last_amended":   "2025-07-01",
+    "last_amended_note": "Effective July 1, 2025 version extracted (labeled Attachment 3).",
+    "source_url":     "https://berkeleyca.gov/sites/default/files/documents/retiree-trust-investment-policy.pdf",
+    "scope":          "Retiree Medical Plan Trust assets only. Separate from pooled portfolio.",
+    "key_provisions": [
+      "Prudent risk-taking is explicitly endorsed — different from pooled portfolio's safety-first posture.",
+      "Actuarial target return: 7% (policy acknowledges returns are 'significantly below' this target).",
+      "Body text authorizes up to 100% in equity mutual funds, index funds, preferred stock, and bond funds.",
+      "Appendix A (operative table) limits equity to 25% — creating an internal contradiction within the policy.",
+      "Maximum maturity: 30 years (vs. 10 years for pooled portfolio).",
+      "No responsible investing restrictions — broader investable universe than pooled portfolio.",
+      "No LAIF benchmark — actuarial 7% target is the operative standard."
+    ],
+    "documented_gaps": [
+      "Internal contradiction: body text says 100% equity permitted; Appendix A says 25%. Both versions of the policy (pre- and post-July 2025) contain this contradiction. Council has approved this annually without resolving it.",
+      "Actuarial target of 7% is not being met — recent returns of 4.64-5.08% mean the trust is underfunded relative to benefit obligations.",
+      "No responsible investing restrictions — council applies different values-based constraints to the two portfolios without public explanation of the asymmetry."
+    ],
+    "scoring_relevance": "The retiree trust's higher returns vs. the pooled portfolio (4.64-5.08% vs. 2.90-3.31%) show better returns are achievable under city authority. The gap is a policy design choice. The internal 100%/25% contradiction is a governance failure that has persisted through multiple annual approvals.",
+    "status":         "extracted",
+    "source_extract": "sources/policies/retiree_trust_investment_policy.json"
+  },
+
+  "section_115_trust_policy": {
+    "document_ref":   "section_115_trust_policy",
+    "title":          "Section 115 Pension Prefunding Trust Policy",
+    "adopted_date":   null,
+    "last_amended":   null,
+    "source_url":     null,
+    "source_url_note": "Not found as a standalone PDF at berkeleyca.gov/your-government/financial-information/financial-reports-and-policies. Policy terms are partially documented in ACFR transmittal letters — see acfr_fy2023.json (fiscal policy #11: 'Allocating annual CalPERS prepayment savings to Section 115 Trust up to $5.5M per fiscal year') and acfr_fy2025.json.",
+    "scope":          "Governs contributions to and withdrawals from the Section 115 pension pre-funding trust",
+    "key_provisions": null,
+    "documented_gaps": [
+      "The trust met its annual contribution goal in only 2 of 7 years per the April 2026 audit. The $3M FY2025 and $6M FY2026 withdrawals to balance operations may or may not have been within policy parameters.",
+      "If the policy permits operational withdrawals, it is not functioning as a true pension stabilization reserve."
+    ],
+    "scoring_relevance": "A trust that is supposed to pre-fund pension obligations being used to balance operating budgets is a category error. Whether the council authorized this knowingly, or whether it happened under policy language that permitted it without explicit council action, is the key question.",
+    "status":         "pending_review",
+    "source_extract": null
+  }
+}

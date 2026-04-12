@@ -1,0 +1,51 @@
+{
+  "document_ref": "cip_fy2023_2027",
+  "title": "City of Berkeley Adopted Capital Improvement Program FY2023-FY2027",
+  "document_type": "adopted",
+  "adopted_date": "2022-06-28",
+
+  "five_year_totals": {
+    "total": 351000000,
+    "by_year": {
+      "fy2023": 99300000,
+      "fy2024": 80200000,
+      "fy2025": 64600000,
+      "fy2026": 54600000,
+      "fy2027": 52200000
+    }
+  },
+
+  "funding_sources": {
+    "fy2023_from_various_funds": 77900000,
+    "fy2023_from_gf_and_cip_fund": 21400000,
+    "fy2023_tier_1": 15500000,
+    "fy2024_from_various_funds": 62500000,
+    "fy2024_from_gf_and_cip_fund": 17700000,
+    "fy2024_tier_1": 13400000
+  },
+
+  "unfunded_capital_needs": 1650000000,
+  "verbatim_unfunded_needs": {
+    "quote": "Beyond the projects included in this five-year CIP, the unfunded capital needs total approximately $1.65 billion. Long term funding strategies will need to be developed in the future to meet these infrastructure needs and options will be explored with the City Council and the community.",
+    "location": "Challenges and Opportunities section"
+  },
+
+  "capital_funding_context": {
+    "fy2023_gf_baseline": 2100000,
+    "fy2023_with_excess_ptt": 11030000,
+    "fy2024_with_excess_ptt": 15300000,
+    "note": "The FY2023 and FY2024 capital infusions were explicitly driven by elevated property transfer tax from FY2022 — acknowledged as one-time. The baseline was $2.1M; the infusion was $11-15M."
+  },
+
+  "static_unfunded_needs_finding": {
+    "description": "The $1.65B figure in this document is the same as in the FY2025-2029 CIP adopted two years later.",
+    "prior_reference": "The FY2023-2024 operating budget cited a March 2021 report putting unfunded needs at $1.1B for FY2022-2026. The number grew to $1.65B by FY2023 — a $550M increase in unfunded needs in approximately one year.",
+    "scoring_significance": "Unfunded infrastructure needs grew $550M between 2021 and 2022 and then held static at $1.65B through 2024 despite $100M in Measure T1 bonds. Bond capacity is being consumed without reducing the backlog."
+  },
+
+  "scoring_implications": [
+    "Identical $1.65B figure in both the FY2023-2027 and FY2025-2029 CIPs — zero net progress over two full budget cycles.",
+    "The FY2023-2024 capital infusion ($11-15M above baseline) was explicitly PTT-driven and acknowledged as one-time. Declining PTT means the capital funding level cannot be sustained.",
+    "This document was adopted at the same meeting as the FY2023-2024 operating budget — council voted on both the operating deficit concerns and the $1.65B infrastructure gap simultaneously."
+  ]
+}

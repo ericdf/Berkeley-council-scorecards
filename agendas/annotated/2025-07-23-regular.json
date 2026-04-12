@@ -1,0 +1,384 @@
+{
+  "date": "2025-07-23",
+  "meeting_type": "regular",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-07-23%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:42:51.336795",
+  "roll_call_time": "6:07 p.m.",
+  "present": [
+    "Kesarwani",
+    "Taplin",
+    "Tregub",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Bartlett",
+    "OKeefe"
+  ],
+  "arrived_late": [
+    {
+      "name": "Bartlett",
+      "time": "6:10 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "Landmarks Preservation Commission Appeal: 2425 Durant, Landmark",
+      "action": "M/S/C (Kesarwani/Taplin) to adopt Resolution No. 71,904\u2013N.S., including the supplemental material received from the City Manager in the Supplemental Communications Packet 2, upholding the appeal and reversing the Landmarks Preservation Commission (LPC) decision to designate the subject property as a",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Bartlett",
+          "Tregub",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "OKeefe"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "title": "Landmarks Preservation Commission Appeal: 2138 Kittredge, Landmark",
+      "action": "M/S/C (Tregub/Humbert) to adopt Resolution No. 71,905\u2013N.S. upholding the appeal and reversing the Landmarks Preservation Commission (LPC) decision to designate the subject property as a City Landmark. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None;",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Bartlett",
+          "Tregub",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "OKeefe"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "title": "Zoning Adjustment Board Appeal: 2655 Shattuck, Use Permit #ZP2024-0057",
+      "action": "M/S/C (Kesarwani/Humbert) to adopt Resolution No. 71,906\u2013N.S. denying the appeal and affirming the Zoning Adjustment Board (ZAB) decision to approve Use Permit #ZP2024-0057 to demolish a one-story, 8,185-square-foot, non- residential building and construct an eight-story (85 feet), 84,399-square-foo",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Bartlett",
+          "Tregub",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "OKeefe"
+        ]
+      }
+    },
+    {
+      "number": 1,
+      "title": "Marianne Sluis",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Jonathan Streeter",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Elizabeth Ditmars",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "Supplemental agenda material submitted by the Planning & Development",
+      "action": ""
+    },
+    {
+      "number": 5,
+      "title": "Thalia Lubin (2)",
+      "action": ""
+    },
+    {
+      "number": 6,
+      "title": "Ellen Goldblatt",
+      "action": ""
+    },
+    {
+      "number": 7,
+      "title": "Sharon Entwistle",
+      "action": ""
+    },
+    {
+      "number": 8,
+      "title": "Harry Delmer",
+      "action": ""
+    },
+    {
+      "number": 9,
+      "title": "Emily Fox",
+      "action": ""
+    },
+    {
+      "number": 10,
+      "title": "Joan Hart",
+      "action": ""
+    },
+    {
+      "number": 11,
+      "title": "Virginia Jansen",
+      "action": ""
+    },
+    {
+      "number": 12,
+      "title": "Bill Grove",
+      "action": ""
+    },
+    {
+      "number": 13,
+      "title": "Doris Fulder Nassiry",
+      "action": ""
+    },
+    {
+      "number": 14,
+      "title": "Maxine Risley",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "Leah Shelleda",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Deborah Finch",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Jerri Holan",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Tobey M. Wiebe",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "Leila Moncharsh on behalf of the Berkeley Architectural Heritage Association",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Isaac Warshauer on behalf of the Berkeley Architectural Heritage Association (4)",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "John Brennan",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Gillian Bagwell",
+      "action": ""
+    },
+    {
+      "number": 23,
+      "title": "Dahlia Armon",
+      "action": ""
+    },
+    {
+      "number": 24,
+      "title": "Stephanie Manning",
+      "action": ""
+    },
+    {
+      "number": 25,
+      "title": "Dan Slobin",
+      "action": ""
+    },
+    {
+      "number": 26,
+      "title": "Phil Allen",
+      "action": ""
+    },
+    {
+      "number": 27,
+      "title": "John Hitchen",
+      "action": ""
+    },
+    {
+      "number": 28,
+      "title": "Harvey Smith",
+      "action": ""
+    },
+    {
+      "number": 29,
+      "title": "Krishna Shekhawat",
+      "action": ""
+    },
+    {
+      "number": 30,
+      "title": "Michael Barglow",
+      "action": ""
+    },
+    {
+      "number": 31,
+      "title": "Elizabeth Riddle",
+      "action": ""
+    },
+    {
+      "number": 32,
+      "title": "Mark Goudy",
+      "action": ""
+    },
+    {
+      "number": 33,
+      "title": "Charlotte Shimura",
+      "action": ""
+    },
+    {
+      "number": 34,
+      "title": "Sally Bean",
+      "action": ""
+    },
+    {
+      "number": 35,
+      "title": "Presentation submitted by the Planning & Development Department",
+      "action": ""
+    },
+    {
+      "number": 36,
+      "title": "Presentation submitted by the Planning & Development Department",
+      "action": ""
+    },
+    {
+      "number": 37,
+      "title": "Presentation submitted by the Planning & Development Department",
+      "action": ""
+    },
+    {
+      "number": 38,
+      "title": "Charles Kassier",
+      "action": ""
+    },
+    {
+      "number": 39,
+      "title": "Nicholas Eckenwiler on behalf of the California Housing Defense Fund",
+      "action": ""
+    },
+    {
+      "number": 40,
+      "title": "Robert Kehlmann",
+      "action": ""
+    },
+    {
+      "number": 41,
+      "title": "Gale Garcia",
+      "action": ""
+    },
+    {
+      "number": 42,
+      "title": "Gerhard Blendstrup",
+      "action": ""
+    },
+    {
+      "number": 43,
+      "title": "Dan Slobin",
+      "action": ""
+    },
+    {
+      "number": 44,
+      "title": "Ann Pagliaro",
+      "action": ""
+    },
+    {
+      "number": 45,
+      "title": "Judith Thomas",
+      "action": ""
+    },
+    {
+      "number": 46,
+      "title": "Paul T. Roberts",
+      "action": ""
+    },
+    {
+      "number": 47,
+      "title": "Robert Johnson",
+      "action": ""
+    },
+    {
+      "number": 48,
+      "title": "Deborah Green (2)",
+      "action": ""
+    },
+    {
+      "number": 49,
+      "title": "Holly M. Smith",
+      "action": ""
+    },
+    {
+      "number": 50,
+      "title": "Jane McKinne-Mayer",
+      "action": ""
+    },
+    {
+      "number": 51,
+      "title": "Steven Schuyler",
+      "action": ""
+    },
+    {
+      "number": 52,
+      "title": "Lorraine Lerman",
+      "action": ""
+    },
+    {
+      "number": 53,
+      "title": "Amy Di Costanzo",
+      "action": ""
+    },
+    {
+      "number": 54,
+      "title": "Brandon Ice",
+      "action": ""
+    },
+    {
+      "number": 55,
+      "title": "Lynn Zamarra",
+      "action": ""
+    },
+    {
+      "number": 56,
+      "title": "Jane Goodwin",
+      "action": ""
+    },
+    {
+      "number": 57,
+      "title": "Hal and Turi Reynolds",
+      "action": ""
+    },
+    {
+      "number": 58,
+      "title": "Ryan Lau on behalf of AC Transit",
+      "action": ""
+    }
+  ]
+}

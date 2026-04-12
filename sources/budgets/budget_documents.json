@@ -1,59 +1,176 @@
 {
   "_schema": {
-    "purpose": "Registry of Berkeley budget documents. Each entry tracks what the document reveals about spending priorities, structural balance, and the gap between stated policy and actual allocation. Follows the same pattern as audit_findings.json: the document establishes facts; the council's choices against those facts are the scored events.",
+    "purpose": "Registry of City of Berkeley budget documents. Berkeley budgets on a two-year (biennial) cycle, with a mid-biennial adjustment and a separate Capital Improvement Program (CIP) updated each cycle. Each entry tracks what the document reveals about spending priorities, structural balance, and the gap between stated policy and actual allocation.",
+    "budget_cycle_note": "Berkeley's biennial budget covers two fiscal years (e.g., FY2023-FY2024). A mid-biennial adjustment revises the second year. The CIP is a separate 5-year capital plan, updated each budget cycle. Operating budget and CIP together represent the full picture — the CIP's unfunded needs figure is the most politically significant number because it is the justification for every bond measure.",
+    "key_extraction_targets": {
+      "operating_budget": "City Manager's transmittal letter / budget message at the front of the document — the only place where staff officially characterizes the financial picture in plain language. Compare across cycles to track whether language about structural balance or deficit evolves or stays frozen.",
+      "cip": "Total unfunded capital needs figure (usually in the executive summary or opening narrative). If this number does not decline across cycles despite bond measures, that is evidence that bonds are not solving the underlying problem."
+    },
+    "cross_document_finding": {
+      "description": "The FY2023-2027 CIP and the FY2025-2029 CIP both report approximately $1.65 billion in unfunded capital needs. Two bond cycles have passed between these documents and the number has not moved. This directly corroborates the October 2025 streets audit finding that Berkeley's infrastructure problem is a structural underfunding issue, not a lack of bond authority. Each new bond measure consumes debt service capacity without reducing the underlying backlog.",
+      "audit_ref": "streets_rocky_road_2025",
+      "scoring_note": "Any council member who votes for the 2026 infrastructure bond without acknowledging the static unfunded needs figure has access to this data and is choosing to ignore it."
+    },
     "status_values": {
-      "pending_review":     "Document obtained but not yet extracted",
-      "extracted":          "Key facts captured in source extract file",
-      "scored":             "Findings incorporated into pipeline scoring or incidents"
+      "pending_review": "Document obtained but City Manager transmittal and key figures not yet extracted",
+      "extracted":      "Transmittal letter language and key figures captured",
+      "scored":         "Findings incorporated into pipeline scoring or incidents"
     },
     "fields": {
-      "document_ref":    "Unique key; matches extract filename in sources/budgets/",
-      "title":           "Official document title",
-      "fiscal_year":     "FY the document covers",
-      "document_type":   "proposed | adopted | amendment | audit_of_budget",
-      "date_released":   "Date published",
-      "source_url":      "Where to obtain the original",
-      "total_gf":        "Total General Fund (dollars) if stated",
-      "structural_gap":  "Documented structural deficit or surplus, if stated",
-      "key_signals":     "What this document reveals about council priorities",
-      "status":          "One of the status_values above",
-      "source_extract":  "Path to detailed extract file, if created"
+      "document_ref":             "Unique key",
+      "title":                    "Official document title",
+      "component":                "operating | cip — operating budget or Capital Improvement Program",
+      "cycle":                    "Budget cycle this document belongs to (e.g., 'FY2023-2024')",
+      "years_covered":            "Fiscal years this document addresses",
+      "document_type":            "adopted | proposed | mid_biennial | amendment",
+      "date_released":            "Date published",
+      "source_url":               "URL to PDF on berkeleyca.gov",
+      "city_manager_transmittal": "Key language from the City Manager's opening letter — how staff officially characterized the financial picture",
+      "structural_balance_acknowledged": "Boolean — did the City Manager explicitly acknowledge a structural deficit or imbalance",
+      "total_gf_revenues":        "Total General Fund revenues if stated (operating budgets)",
+      "total_gf_expenditures":    "Total General Fund expenditures if stated (operating budgets)",
+      "unfunded_capital_needs":   "Total unfunded capital needs figure (CIPs only)",
+      "unfunded_streets_portion": "Streets-specific unfunded needs if broken out (CIPs only)",
+      "key_signals":              "What this document reveals about council priorities and fiscal trajectory",
+      "status":                   "One of the status_values above",
+      "source_extract":           "Path to JSON extract with verbatim transmittal language and detailed figures"
     }
   },
 
-  "fy2026_adopted": {
-    "document_ref":   "fy2026_adopted",
-    "title":          "City of Berkeley Adopted Budget FY2026",
-    "fiscal_year":    "FY2026",
-    "document_type":  "adopted",
-    "date_released":  "2025-07",
-    "source_url":     "https://www.cityofberkeley.info/finance/",
-    "total_gf":       1520000000,
-    "structural_gap": null,
-    "key_signals":    [
-      "Budget adopted unanimously at 1am — no member voted no or moved to reduce any line item",
-      "FTE count and salary/benefit lines reflect the 30% staffing growth documented in the April 2026 financial condition audit",
-      "Community development and housing continue as the fastest-growing categories"
+  "operating_fy2023_2024": {
+    "document_ref":             "operating_fy2023_2024",
+    "title":                    "City of Berkeley Adopted Biennial Budget FY2023-FY2024",
+    "component":                "operating",
+    "cycle":                    "FY2023-2024",
+    "years_covered":            ["FY2023", "FY2024"],
+    "document_type":            "adopted",
+    "date_released":            "2022-06-28",
+    "source_url":               "https://berkeleyca.gov/sites/default/files/documents/FY-2023-2024-Adopted-Budget-Book.pdf",
+    "city_manager":             "Dee Williams-Ridley",
+    "city_manager_transmittal": "Budget balanced largely due to assumed salary savings and unanticipated excess property transfer tax from FY22. PTT is a volatile revenue source. On the expenditure side, maintaining salary savings from vacancies is not sustainable over the long-term; pension costs anticipated to increase; infrastructure needs are great.",
+    "structural_balance_acknowledged": true,
+    "total_gf_revenues":        258650444,
+    "total_gf_expenditures":    280671294,
+    "gf_fund_balance_use_fy23": 12222046,
+    "unfunded_capital_needs":   null,
+    "unfunded_streets_portion": null,
+    "key_signals": [
+      "Earliest operating budget in the set; non-sustainability language identical to FY2025-2026 budget three years later — problem acknowledged but not solved",
+      "Salary savings as balancing mechanism: ~$10M FY23, ~$7.5M FY24 — same mechanism the City Auditor later flagged",
+      "Pension cost warning for FY2025-2026 was issued here — council had two years advance notice before the 23% jump materialized",
+      "Infrastructure unfunded needs cited at $1.1B from March 2021 report — grew to $1.65B by time CIPs were published"
     ],
-    "status":         "pending_review",
-    "source_extract": null
+    "status":                   "extracted",
+    "source_extract":           "sources/budgets/operating_fy2023_2024.json"
   },
 
-  "fy2027_proposed": {
-    "document_ref":   "fy2027_proposed",
-    "title":          "City of Berkeley Proposed Budget FY2027",
-    "fiscal_year":    "FY2027",
-    "document_type":  "proposed",
-    "date_released":  null,
-    "source_url":     "https://www.cityofberkeley.info/finance/",
-    "total_gf":       null,
-    "structural_gap": 32000000,
-    "key_signals":    [
-      "The April 2026 financial condition audit projects a $32M structural deficit for FY2027 — this budget will reveal how the council proposes to address it",
-      "Key question: does the proposed budget include any recurring expenditure reductions, or is the gap addressed through one-time measures again?",
-      "Council response to the structural deficit in this document is the highest-priority scoring event of 2026"
+  "operating_fy2024_midbiennial": {
+    "document_ref":             "operating_fy2024_midbiennial",
+    "title":                    "City of Berkeley FY2024 Mid-Biennial Adopted Budget Update",
+    "component":                "operating",
+    "cycle":                    "FY2023-2024",
+    "years_covered":            ["FY2024"],
+    "document_type":            "mid_biennial",
+    "date_released":            "2023-06-27",
+    "source_url":               "https://berkeleyca.gov/sites/default/files/documents/FY-2024-Mid-Biennial-Adopted-Budget-Book.pdf",
+    "city_manager":             "Dee Williams-Ridley",
+    "city_manager_transmittal": "Fund balance is approximately 12% of expenditures in FY24 and not sustainable as a budget balancing mechanism in future years. Once used, fund balance is not likely to be replenished quickly as it requires either enhanced revenues or a reduction in costs to align expenses with revenues.",
+    "structural_balance_acknowledged": true,
+    "total_gf_revenues":        266400000,
+    "total_gf_expenditures":    283600000,
+    "all_funds_fund_balance_use": 89054331,
+    "unfunded_capital_needs":   null,
+    "unfunded_streets_portion": null,
+    "key_signals": [
+      "ORIGIN of workers' comp non-funding: FY2024 allocation diverted to cover $9.06M Measure T1 cost overrun — approved June 13, 2023; later became standalone annual 'measure'",
+      "PTT collapsed mid-year: $34.5M projected → $22.9M actual (-33.6%) — first documented PTT volatility event",
+      "Forward warnings for FY2025-2026: pension 'dramatically increasing,' Measure P revenues declining, ARPA exhausting",
+      "Section 115 Trust still receiving contributions ($2M in FY2024) — drawdown had not yet begun"
     ],
-    "status":         "pending_review",
-    "source_extract": null
+    "status":                   "extracted",
+    "source_extract":           "sources/budgets/operating_fy2024_midbiennial.json"
+  },
+
+  "operating_fy2025_2026": {
+    "document_ref":             "operating_fy2025_2026",
+    "title":                    "City of Berkeley Adopted Biennial Budget FY2025-FY2026",
+    "component":                "operating",
+    "cycle":                    "FY2025-2026",
+    "years_covered":            ["FY2025", "FY2026"],
+    "document_type":            "adopted",
+    "date_released":            "2024-06-25",
+    "source_url":               "https://berkeleyca.gov/sites/default/files/documents/FY-2025-2026-Proposed-Biennial-Budget.pdf",
+    "city_manager":             "Dee Williams-Ridley",
+    "council_members_at_adoption": ["Kesarwani", "Taplin", "Bartlett", "Tregub", "Lunaparra", "Humbert", "Arreguin (Mayor)"],
+    "city_manager_transmittal": "As expenditures outpace revenues, the biennial budget required the prioritizing of resources. While these strategies lead to a balanced biennial budget, they are not sustainable and efforts to either increase revenues and/or decrease expenditures beyond the baseline budget will need to be undertaken as part of the FY26 Mid-Biennial Budget Update and as part of the budget development process for fiscal years 2027 and 2028.",
+    "structural_balance_acknowledged": true,
+    "total_gf_revenues":        280177952,
+    "total_gf_expenditures":    292442723,
+    "gf_fund_balance_use_fy25": 2800000,
+    "all_funds_fund_balance_use_fy25": 118368591,
+    "unfunded_capital_needs":   null,
+    "unfunded_streets_portion": null,
+    "key_signals": [
+      "Four one-time balancing measures EXPLICITLY LISTED at adoption: salary savings, no workers' comp funding, $3M Section 115 Trust per year, $2-3M fund balance — same four measures City Auditor later flagged",
+      "City Manager opening: 'As expenditures outpace revenues' — structural deficit named in first paragraph, not buried",
+      "Pension jumped 23% (+$10M) in FY25; response was Section 115 Trust drawdown, not structural reform",
+      "ARPA fully exhausted as of FY25 — no recurring replacement revenue identified at adoption",
+      "All-funds fund balance draw: $118.4M in FY25 alone (15% of expenditures) — called 'not sustainable' in the same document"
+    ],
+    "status":                   "extracted",
+    "source_extract":           "sources/budgets/operating_fy2025_2026.json"
+  },
+
+  "cip_fy2023_2027": {
+    "document_ref":             "cip_fy2023_2027",
+    "title":                    "City of Berkeley Adopted Capital Improvement Program FY2023-FY2027",
+    "component":                "cip",
+    "cycle":                    "FY2023-2024",
+    "years_covered":            ["FY2023", "FY2024", "FY2025", "FY2026", "FY2027"],
+    "document_type":            "adopted",
+    "date_released":            "2022-06-28",
+    "source_url":               "https://berkeleyca.gov/sites/default/files/documents/FY-23-27-Capital-Improvement-Program_0.pdf",
+    "city_manager_transmittal": "Beyond the projects included in this five-year CIP, the unfunded capital needs total approximately $1.65 billion. Long term funding strategies will need to be developed in the future to meet these infrastructure needs and options will be explored with the City Council and the community.",
+    "structural_balance_acknowledged": null,
+    "total_gf_revenues":        null,
+    "total_gf_expenditures":    null,
+    "five_year_total":          351000000,
+    "unfunded_capital_needs":   1650000000,
+    "unfunded_streets_portion": null,
+    "key_signals": [
+      "$1.65B unfunded capital needs — adopted same day as FY2023-2024 operating budget; council voted on both simultaneously",
+      "FY2023-2024 capital infusion ($11-15M above baseline) explicitly one-time from elevated PTT — acknowledged as non-recurring at adoption",
+      "Infrastructure unfunded needs grew $550M between 2021 ($1.1B per March 2021 report) and 2022 ($1.65B) despite active bond measures",
+      "Identical $1.65B figure in FY2025-2029 CIP two years later — zero net progress"
+    ],
+    "status":                   "extracted",
+    "source_extract":           "sources/budgets/cip_fy2023_2027.json"
+  },
+
+  "cip_fy2025_2029": {
+    "document_ref":             "cip_fy2025_2029",
+    "title":                    "City of Berkeley Adopted Capital Improvement Program FY2025-FY2029",
+    "component":                "cip",
+    "cycle":                    "FY2025-2026",
+    "years_covered":            ["FY2025", "FY2026", "FY2027", "FY2028", "FY2029"],
+    "document_type":            "adopted",
+    "date_released":            "2024-06-25",
+    "source_url":               "https://berkeleyca.gov/sites/default/files/documents/FY-2025-2029-Capital-Improvement-Program.pdf",
+    "city_manager_transmittal": "Beyond the projects included in this five-year CIP, the unfunded capital needs total approximately $1.65 billion. Long term funding strategies will need to be developed in the future to meet these infrastructure needs and options will be explored with the City Council and the community.",
+    "structural_balance_acknowledged": null,
+    "total_gf_revenues":        null,
+    "total_gf_expenditures":    null,
+    "five_year_total":          346100000,
+    "unfunded_capital_needs":   1650000000,
+    "unfunded_streets_portion": null,
+    "deferred_maintenance_multiplier": "1:7 — $1 spent in early maintenance saves $7 in later repairs; delays quadruple cost by 2050 (stated verbatim in document)",
+    "key_signals": [
+      "$1.65B unfunded needs — verbatim identical quote to FY2023-2027 CIP; zero net progress despite Measure M, Measure T1, and Measure P1",
+      "Capital funding REDUCED from FY2023-2024 levels due to declining PTT — backlog will grow, not shrink",
+      "1:7 maintenance ratio and 'quadruple cost by 2050' language in a document adopted by same council advancing a new bond measure",
+      "5-year street rehabilitation plan ($92M, 47 miles) addresses only a portion of the $1.65B backlog"
+    ],
+    "status":                   "extracted",
+    "source_extract":           "sources/budgets/cip_fy2025_2029.json"
   }
 }

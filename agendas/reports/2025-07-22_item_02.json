@@ -1,0 +1,23 @@
+{
+  "date": "2025-07-22",
+  "meeting_type": "regular",
+  "item_num": 2,
+  "item_key": "2",
+  "title": "-Lease Amendment with Yoonaco, Inc. (Hana Japan) at 235 University Avenue",
+  "url": "https://berkeleyca.gov/sites/default/files/documents/2025-07-22%20Item%2002%20Lease%20Amendment%20with%20Yoonaco%2C%20Inc.pdf",
+  "word_count": 792,
+  "sections": {},
+  "signals": {
+    "waived_competitive_bid": false,
+    "backdated": false,
+    "alternatives_none": false,
+    "grant_funded": false,
+    "general_fund": false,
+    "dollar_amounts": [],
+    "vendor": null,
+    "cost_per_unit": [
+      "$7,868 per month"
+    ],
+    "funding_source_text": null
+  }
+}

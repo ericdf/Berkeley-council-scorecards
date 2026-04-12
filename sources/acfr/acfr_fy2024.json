@@ -1,0 +1,113 @@
+{
+  "acfr_ref": "acfr_fy2024",
+  "fiscal_year": "FY2024",
+  "year_ended": "2024-06-30",
+  "audit_firm": "Badawi & Associates, Certified Public Accountants",
+  "audit_opinion": "unmodified",
+  "audit_opinion_verbatim": "The auditors expressed an opinion that the City's financial statements for the fiscal year ended June 30, 2024, are fairly stated in conformity with generally accepted accounting principles in the United States.",
+  "emphasis_of_matter": null,
+  "going_concern": false,
+  "bond_ratings": {
+    "sp": "AA+",
+    "moodys": "Aa1",
+    "moodys_note": "Already at Aa1 in FY2024 — the FY2025 transmittal characterized the upgrade as recent, but the FY2024 ACFR shows Aa1 was already in place."
+  },
+
+  "key_financial_figures": {
+    "total_net_position": 424800000,
+    "unrestricted_net_position": -400400000,
+    "unrestricted_net_position_note": "Negative due to recognition of pension and OPEB liabilities per GASB 68/75.",
+    "net_pension_liability": 723800000,
+    "net_pension_liability_prior_year": 678400000,
+    "net_pension_liability_change": 45400000,
+    "net_pension_liability_change_note": "INCREASED $45.4M — pension liability was growing in FY2024. Cross-reference: City Auditor's April 2026 report cited $694.8M; this is the FY2025 figure, not FY2024.",
+    "net_opeb_liability": 77500000,
+    "net_opeb_liability_prior_year": 81800000,
+    "net_opeb_liability_change": -4300000,
+    "net_opeb_liability_change_note": "Modest decrease of $4.3M — normal actuarial movement. Contrast with FY2025's unusual 50% drop.",
+    "total_long_term_debt": 276000000,
+    "total_long_term_debt_prior_year": 285900000,
+    "total_long_term_debt_note": "Down $9.9M — regular principal payments.",
+    "gf_revenues": 261800000,
+    "gf_expenditures": 282900000,
+    "gf_operating_gap": -21100000,
+    "gf_operating_gap_note": "Expenditures exceeded revenues by $21.1M before transfers. This operating gap required draws and transfers to close.",
+    "gf_fund_balance_total": 153000000,
+    "gf_fund_balance_total_prior_year": 158500000,
+    "gf_fund_balance_change": -5400000,
+    "gf_fund_balance_unassigned": null,
+    "stability_reserve": 30600000,
+    "catastrophic_reserve": 23700000,
+    "section_115_trust_balance": 26500000,
+    "section_115_trust_prior_year": 19100000,
+    "section_115_trust_change": 7400000,
+    "section_115_trust_note": "Trust GREW $7.4M in FY2024 — city was still contributing. This is the opposite of FY2025/FY2026, when the trust began being drawn down for operating pension expenses.",
+    "investment_earnings_gf": 22300000,
+    "investment_rate_range_fy2024": "2.84% to 3.44%",
+    "total_assets": null,
+    "capital_assets_net": null
+  },
+
+  "one_time_measures_fy2025_biennial_budget": {
+    "description": "Measures used in the FY2025-2026 biennial budget — disclosed in the transmittal letter under operating factors.",
+    "measures": [
+      "Increased assumed salary savings from vacant positions",
+      "Not making any funding allocations to the workers compensation fund in either fiscal year",
+      "Using $3 million from Section 115 Trust toward pension expenses in each fiscal year (FY2025 and FY2026)",
+      "Using approximately $2-3 million of fund balance (prior years' savings) in FY2025 and FY2026 respectively"
+    ],
+    "note": "These are the same measures that the FY2025 ACFR later described as escalating. The FY2024 ACFR discloses them as the forward plan — confirming the council knew about the one-time measures when they adopted the FY2025-2026 budget."
+  },
+
+  "structural_deficit_language": {
+    "description": "The FY2024 transmittal is less explicit than FY2025 about structural deficits, but acknowledges the forward challenges.",
+    "verbatim_quotes": [
+      {
+        "quote": "The City faces significant challenges ahead that could impact its fiscal position in future years. Among these challenges are pension costs that are on the rise, capital and infrastructure needs that remain underfunded, and other Post-Employment Benefits for medical benefits.",
+        "location": "Transmittal letter, forward-looking section"
+      },
+      {
+        "quote": "these strategies lead to a balanced biennial budget, they are not sustainable and efforts to either increase revenues and/or decrease expenditures beyond the baseline budget will need to be undertaken",
+        "location": "Transmittal letter, Operating Factors and Challenges"
+      },
+      {
+        "quote": "While the budget is balanced, it requires the use of one-time savings and other measures to fund the four pillars of capital projects, Council priorities, personnel and programs.",
+        "location": "Transmittal letter, Operating Factors and Challenges"
+      }
+    ],
+    "contrast_with_fy2025": "FY2024 acknowledges challenges and non-sustainability but does not use the phrase 'structural deficit' explicitly. FY2025 uses that language directly: 'The General Fund faces a structural deficit that cannot be resolved through one-time solutions alone.' The escalation in language mirrors the escalation in one-time measures."
+  },
+
+  "public_safety_overtime": {
+    "description": "Public safety overtime exceeded budget in FY2024 — establishing the multi-year pattern the City Auditor documented.",
+    "gf_public_safety_expenditures_fy2024": 137500000,
+    "gf_public_safety_expenditures_fy2023": null,
+    "overtime_over_budget": 8200000,
+    "verbatim_quote": "Public Safety was over budget by $8.2 million due to overspending of Police and Fire overtime budgets, related to staffing shortages forcing mandatory overtime and mutual aid requests.",
+    "note": "FY2024: $8.2M over; FY2025: $9.3M over. The problem grew 13% year over year with no structural response."
+  },
+
+  "trend_signals_vs_fy2025": {
+    "description": "Key year-over-year comparisons between FY2024 and FY2025 that reveal trajectory.",
+    "signals": [
+      "Pension liability: +$45.4M in FY2024 vs. -$37.4M in FY2025 — improvement in FY2025 may be actuarial timing, not structural fix.",
+      "Section 115 Trust: +$7.4M in FY2024 (growing) vs. being drawn down in FY2025/FY2026 — the transition from contributing to drawing is the key inflection.",
+      "GF fund balance: -$5.4M in FY2024 vs. +$2.1M in FY2025 — FY2025 improvement was achieved through larger one-time measures.",
+      "GF expenditures: $282.9M (FY2024) → $276.9M (FY2025) — expenditures appear to decrease but this includes the effect of holding 44.4 vacant positions unfunded.",
+      "GF revenues: $261.8M (FY2024) → $285.8M (FY2025) — 9.2% revenue growth. Expenditures growing faster than revenue is the structural problem.",
+      "Public safety overtime over budget: $8.2M (FY2024) → $9.3M (FY2025) — 13% year-over-year growth."
+    ]
+  },
+
+  "gfoa_awards": {
+    "note": "City received GFOA Certificate of Achievement for FY2024 ACFR. This is a process and transparency award, not a financial performance award."
+  },
+
+  "scoring_implications": [
+    "The FY2024 ACFR discloses the forward plan of one-time measures (Section 115 draws, salary savings, workers' comp non-funding) that the City Auditor later flagged. Council members received this disclosure when the FY2025-2026 biennial budget was adopted.",
+    "Pension liability increased $45.4M in FY2024 — council was on notice that pension costs were rising, not stabilizing.",
+    "The transition of Section 115 Trust from growth (+$7.4M in FY2024) to drawdown (-$3M in FY2025, -$6M in FY2026) happened under council's watch with full disclosure in both ACFRs.",
+    "GF fund balance declined $5.4M in FY2024 — the structural gap between revenues and expenditures is visible in this year's data before FY2025's one-time measures partially masked it.",
+    "Public safety overtime exceeded budget for at least two consecutive years (FY2024, FY2025) with no structural staffing model change proposed."
+  ]
+}

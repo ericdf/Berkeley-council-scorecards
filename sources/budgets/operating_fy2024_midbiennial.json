@@ -1,0 +1,60 @@
+{
+  "document_ref": "operating_fy2024_midbiennial",
+  "title": "City of Berkeley FY2024 Mid-Biennial Adopted Budget Update",
+  "document_type": "mid_biennial",
+  "adopted_date": "2023-06-27",
+  "city_manager": "Dee Williams-Ridley",
+
+  "structural_balance_acknowledged": true,
+  "verbatim_fund_balance_warning": {
+    "quote": "Fund balance is approximately 12% of expenditures in FY 24, and not sustainable as a budget balancing mechanism in future years. Once used, fund balance is not likely to be replenished quickly as it requires either enhanced revenues (to cover the true cost of services) and/or a reduction in costs to align expenses with revenues.",
+    "location": "FY24 Update Budget Message, p. 2"
+  },
+
+  "key_financial_figures": {
+    "all_funds_revenues_fy24_update": 639576962,
+    "all_funds_expenditures_fy24_update": 728631293,
+    "all_funds_fund_balance_use_fy24": 89054331,
+    "gf_revenues_fy24_update": 266400000,
+    "gf_expenditures_fy24_update": 283600000
+  },
+
+  "measure_t1_funding_gap": {
+    "gap_amount": 9060000,
+    "approved_date": "2023-06-13",
+    "description": "Mid-cycle funding gap discovered in Measure T1 Phase 2 due to construction cost increases.",
+    "gap_items": [
+      {"description": "African American Holistic Resource Center (6,000 sq. ft.)", "amount": 6850000},
+      {"description": "Construction cost increases across eight T1 projects", "amount": 980000},
+      {"description": "Civic Center Upper Plaza Improvement/Turtle Island Monument", "amount": 880000},
+      {"description": "North Berkeley Senior Center final project cost and legal fees", "amount": 350000}
+    ],
+    "funding_source": "FY2024 General Fund allocation initially intended for the Workers' Compensation Fund, plus reallocation from other projects",
+    "scoring_significance": "The workers' comp fund was not funded in FY2024 because the allocation was diverted to cover Measure T1 cost overruns. This is the first documented use of workers' comp non-funding as a budget-balancing tool — it then recurred in FY2025 and FY2026 as part of the 'one-time measures' the City Auditor flagged."
+  },
+
+  "section_115_trust_contribution": {
+    "amount": 2000000,
+    "note": "FY24 Update includes $2M to Section 115 Trust — city was still contributing. This reverses to a $3M drawdown beginning FY2025."
+  },
+
+  "property_transfer_tax_collapse": {
+    "projected_in_adopted_budget": 34500000,
+    "revised_downward_to": 22900000,
+    "decline_pct": 33.6,
+    "cause": "Third quarter FY2023 saw property sales drop 64% from the first half of the year due to rising interest rates and mortgage rates climbing from ~4% to 7%.",
+    "measure_p_impact": {"adopted": 14100000, "revised": 10200000}
+  },
+
+  "forward_warnings_for_fy2025_2026": {
+    "pension": "Pension costs will dramatically increase beginning in FY2025-2026 due to low CalPERS investment returns.",
+    "reserves": "Use of Measure P fund balance 'coupled with projected declining revenues and a looming sunset date' will constrain ongoing program funding.",
+    "competing_priorities": "Pension on the rise, infrastructure underfunded, labor negotiations underway, homeless services dependent on state funding."
+  },
+
+  "scoring_implications": [
+    "The workers' comp non-funding originated here — diverted to cover Measure T1 cost overruns, then repeated as a standalone 'measure' in FY2025 and FY2026. The council approved this origin.",
+    "The explicit statement that fund balance drawdowns are 'not sustainable' and cannot be replenished quickly was made in June 2023 — two years before the City Auditor's April 2026 report said the same thing.",
+    "Property transfer tax showed its volatility dramatically mid-cycle ($34.5M → $22.9M). The council continued to rely on PTT as a major revenue assumption in subsequent budgets."
+  ]
+}

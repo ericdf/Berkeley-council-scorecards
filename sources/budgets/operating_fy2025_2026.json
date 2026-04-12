@@ -1,0 +1,87 @@
+{
+  "document_ref": "operating_fy2025_2026",
+  "title": "City of Berkeley Adopted Biennial Budget FY2025-FY2026",
+  "document_type": "adopted",
+  "adopted_date": "2024-06-25",
+  "city_manager": "Dee Williams-Ridley",
+  "council_members_at_adoption": ["Kesarwani", "Taplin", "Bartlett", "Tregub", "Lunaparra", "Humbert", "Arreguin (Mayor)"],
+  "council_members_note": "All members listed voted for a budget that explicitly disclosed one-time balancing measures and acknowledged they were not sustainable.",
+
+  "structural_balance_acknowledged": true,
+  "verbatim_non_sustainability_admission": {
+    "quote": "While these strategies lead to a balanced biennial budget, they are not sustainable and efforts to either increase revenues and/or decrease expenditures beyond the baseline budget will need to be undertaken as part of the FY26 Mid-Biennial Budget Update and as part of the budget development process for fiscal years 2027 and 2028.",
+    "location": "Budget Message, p. 10",
+    "scoring_significance": "City Manager explicitly told council the FY2025-2026 budget strategies were not sustainable at the time of adoption. All council members who voted yes were on notice."
+  },
+
+  "verbatim_expenditures_outpace_revenues": {
+    "quote": "As expenditures outpace revenues, the biennial budget required the prioritizing of resources...",
+    "location": "Budget Message, p. 8 (opening paragraph)",
+    "scoring_significance": "The revenue-expenditure gap is named in the first paragraph of the budget message — not buried. Every council member received this document before voting."
+  },
+
+  "one_time_measures_disclosed_at_adoption": {
+    "description": "The budget message explicitly lists four one-time balancing measures used to achieve a balanced FY2025-FY2026 budget.",
+    "measures": [
+      "(1) Increase in assumed salary savings materializing from vacant positions",
+      "(2) Not making any funding allocations to the workers compensation fund in either fiscal year",
+      "(3) Utilizing $3 million of funding from the City's Section 115 Trust toward pension expenses in each fiscal year, thereby allowing more General Fund to be redirected toward other expenditures",
+      "(4) The use of approximately $2-3 million of fund balance (prior years' savings) in FY25 and FY26 respectively"
+    ],
+    "scoring_significance": "These are the same four measures the City Auditor flagged in the April 2026 financial condition report as one-time strategies being used to mask a structural deficit. The council approved a budget that disclosed them explicitly and acknowledged they were not sustainable."
+  },
+
+  "key_financial_figures": {
+    "gf_revenues_fy25": 280177952,
+    "gf_expenditures_fy25": 292442723,
+    "gf_fund_balance_use_fy25_apparent": 12264771,
+    "gf_fund_balance_use_fy25_actual": 2800000,
+    "gf_fund_balance_use_note": "Apparent $12.3M shortfall reduced to ~$2.8M actual draw due to salary savings and Section 115 Trust offset.",
+    "gf_revenues_fy26": 290521570,
+    "gf_expenditures_fy26": 302668961,
+    "gf_fund_balance_use_fy26_actual": 2100000,
+    "all_funds_revenues_fy25": 674951126,
+    "all_funds_expenditures_fy25": 793319717,
+    "all_funds_fund_balance_use_fy25": 118368591,
+    "all_funds_revenues_fy26": 698663103,
+    "all_funds_expenditures_fy26": 783017121,
+    "all_funds_fund_balance_use_fy26": 84354018
+  },
+
+  "pension_cost_jump": {
+    "pension_increase_fy25_vs_fy24": 10000000,
+    "pension_increase_pct": 23,
+    "healthcare_increase": 4000000,
+    "healthcare_increase_pct": 20,
+    "verbatim": "The leading drivers of expenditure growth include pension and health insurance, with pension increasing by nearly $10 million, or 23%, in FY25 when compared to FY24 and healthcare up by $4 million, or 20% respectively.",
+    "scoring_significance": "A 23% pension cost jump in a single year was known at budget adoption. The council approved no structural response — instead using the Section 115 Trust drawdown to cushion the impact."
+  },
+
+  "arpa_cliff": {
+    "total_arpa_received": 66000000,
+    "status": "FY25 marked the exhaustion of remaining unspent ARPA funding that had previously been used to balance FY2022-2024.",
+    "scoring_significance": "The ARPA cliff was a known and disclosed revenue removal. No recurring replacement revenue was identified at adoption."
+  },
+
+  "revenue_volatility_disclosed": {
+    "property_transfer_tax": "Volatile and declining — 'significantly declined with decreased home sales, largely attributed to high interest rates.'",
+    "verbatim": "some of our leading, but volatile, General Fund revenue, such as property transfer tax, have significantly declined with decreased home sales, largely attributed to high interest rates."
+  },
+
+  "staffing_and_vacancies": {
+    "fte_fy25": 1747,
+    "salary_benefits_fy25": 187000000,
+    "pct_of_gf_fy25": 49,
+    "vacancy_savings_note": "Budget relies on assumed salary savings from vacancies as a balancing mechanism — explicitly noted as not sustainable in the conclusion."
+  },
+
+  "conclusion_verbatim": "On the expenditure-side, maintaining salary savings due to vacancies is not sustainable over the long-term, the City's three pension plans are not 100% funded and personnel costs related to pension are anticipated to increase, inflation is at an all-time high and the City's infrastructure needs are great.",
+
+  "scoring_implications": [
+    "Every council member who voted for the FY2025-2026 budget received a document stating expenditures outpace revenues, listing four one-time balancing measures, and saying those measures were 'not sustainable.' There is no basis for claiming ignorance of the structural deficit.",
+    "Pension costs jumped 23% in FY25. The council's response was to draw from the Section 115 Trust rather than restructure spending. The drawdown was disclosed at adoption.",
+    "Workers' comp fund received zero allocation in both FY25 and FY26 — a deferred obligation, not a savings. The City Auditor later flagged this as a one-time measure masking structural imbalance.",
+    "ARPA funds ($66M total) were fully exhausted as of FY25 with no recurring revenue replacement identified.",
+    "The all-funds budget draws $118M of fund balance in FY25 alone — 15% of expenditures. The budget message itself calls this 'not sustainable.'"
+  ]
+}

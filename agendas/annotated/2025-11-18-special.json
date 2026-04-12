@@ -1,0 +1,59 @@
+{
+  "date": "2025-11-18",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-11-18%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:43:41.098447",
+  "roll_call_time": "4:01 p.m.",
+  "present": [
+    "Tregub",
+    "OKeefe",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Kesarwani",
+    "Taplin",
+    "Bartlett"
+  ],
+  "arrived_late": [
+    {
+      "name": "Kesarwani",
+      "time": "4:17 p.m."
+    },
+    {
+      "name": "Taplin",
+      "time": "4:30 p.m."
+    },
+    {
+      "name": "Bartlett",
+      "time": "4:43 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "2024 Police Accountability Board (PAB) & Office of the Director of Police",
+      "action": "5 speakers. Presentation made and discussion held, including revised material in Supplemental Communications Packet #2 from Office of the Director of Police Accountability. Adjournment Action: M/S/C (Blackaby/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:10 p.m. Communications \u2022 Non",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 1,
+      "title": "Revised agenda material submitted by the Director of Police Accountability",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Presentation submitted by the Office of the Director of Police Accountability",
+      "action": ""
+    }
+  ]
+}

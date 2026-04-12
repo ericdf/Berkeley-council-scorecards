@@ -1,0 +1,153 @@
+{
+  "acfr_ref": "acfr_fy2025",
+  "fiscal_year": "FY2025",
+  "year_ended": "2025-06-30",
+  "audit_firm": "Badawi & Associates, Certified Public Accountants",
+  "audit_opinion": "unmodified",
+  "audit_opinion_verbatim": "The auditors expressed an opinion that the City's financial statements for the fiscal year ended June 30, 2025, are fairly stated in conformity with generally accepted accounting principles in the United States.",
+  "emphasis_of_matter": null,
+  "going_concern": false,
+  "bond_ratings": {
+    "sp": "AA+",
+    "moodys": "Aa1",
+    "moodys_note": "Upgraded from Aa2 shortly before FY2025 began"
+  },
+  "bond_rating_caveat": "Rating agencies evaluate default risk (ability to service debt), not operational sustainability. A city can have an excellent bond rating while running a structurally unsustainable operating budget — both conditions exist simultaneously here.",
+
+  "key_financial_figures": {
+    "total_net_position": 467900000,
+    "unrestricted_net_position": -415200000,
+    "unrestricted_net_position_note": "Negative unrestricted net position is primarily due to recognition of pension and OPEB liabilities. Net position that may be used to meet the City's ongoing obligations to citizens and creditors.",
+    "net_pension_liability": 686400000,
+    "net_pension_liability_prior_year": 723800000,
+    "net_pension_liability_change": -37400000,
+    "net_pension_liability_change_note": "Decreased 5.2% — an improvement, but liability remains at $686M. Cross-reference: City Auditor's April 2026 report cited $694.8M, likely a different point in time or actuarial methodology.",
+    "net_opeb_liability": 43200000,
+    "net_opeb_liability_prior_year": 83400000,
+    "net_opeb_liability_change": -40200000,
+    "net_opeb_liability_change_note": "50% drop in one year is atypical — likely driven by actuarial assumption changes, not actual benefit reductions. Warrants review of the notes to financial statements.",
+    "total_long_term_debt": 304400000,
+    "total_long_term_debt_note": "Excludes pension, OPEB, workers comp, public liability claims. GO bonds account for $205.4M (67%).",
+    "gf_revenues": 285800000,
+    "gf_expenditures": 276900000,
+    "gf_fund_balance_total": 154900000,
+    "gf_fund_balance_unassigned": 31700000,
+    "gf_fund_balance_restricted": 42200000,
+    "gf_fund_balance_committed": 58300000,
+    "gf_fund_balance_assigned": 22700000,
+    "stability_reserve": 32800000,
+    "catastrophic_reserve": 25500000,
+    "section_115_trust_balance": 30700000,
+    "section_115_trust_note": "After changes in market value. City Auditor's report cited $29.5M — difference is market value timing.",
+    "total_assets": 1649600000,
+    "capital_assets_net": 666200000,
+    "investment_earnings_government_wide": 41300000,
+    "investment_earnings_gf": 27200000,
+    "investment_rate_range_fy2025": "2.92% to 3.32%",
+    "investment_rate_range_note": "Consistent with quarterly investment reports showing pooled portfolio in 3.01-3.16% range during FY2025."
+  },
+
+  "one_time_measures_fy2026": {
+    "description": "Measures used to balance the FY2026 Adopted Budget Update — explicitly listed in the Director of Finance transmittal letter. The pattern mirrors FY2025 one-time measures cited by the City Auditor, but at larger amounts.",
+    "measures": [
+      "Holding 44.4 vacant positions unfunded",
+      "Reallocating 11.8 General Fund positions to alternative funding sources",
+      "Eliminating one provisional temporary position",
+      "Using $6.0 million from the Section 115 Trust Fund to address FY26 pension obligations",
+      "Transferring $5.2 million from Workers' Compensation fund to the General Fund",
+      "Transferring $6.2 million from the IT Cost Allocation Fund balance to the General Fund",
+      "Utilizing $2.5 million in Measure U1 funds"
+    ],
+    "comparison_to_fy2025": "The City Auditor's April 2026 report documented $4.7M workers' comp withdrawal and $3M Section 115 withdrawal for FY2025. FY2026 repeats the same playbook at larger scale: $5.2M workers' comp and $6.0M Section 115. The withdrawals are growing, not stabilizing."
+  },
+
+  "one_time_measures_fy2025_biennial_budget": {
+    "description": "Measures used in the FY2025-2026 biennial budget — disclosed in the 'Economic Factors' section of the transmittal letter.",
+    "measures": [
+      "Increased assumed salary savings from vacant positions",
+      "Not making any funding allocations to the workers compensation fund in either fiscal year",
+      "Using $3 million from Section 115 Trust toward pension expenses in each fiscal year (FY2025 and FY2026)",
+      "Using approximately $2-3 million of fund balance (prior years' savings) in FY2025 and FY2026 respectively"
+    ]
+  },
+
+  "structural_deficit_acknowledgments": {
+    "description": "The Director of Finance explicitly acknowledges the structural deficit and non-sustainability of current measures in the transmittal letter — an externally audited document. This is the highest-confidence version of the same finding the City Auditor made in April 2026.",
+    "verbatim_quotes": [
+      {
+        "quote": "The General Fund faces a structural deficit that cannot be resolved through one-time solutions alone. Long-term fiscal sustainability will require aligning ongoing expenditures with ongoing revenues.",
+        "location": "Transmittal letter, section: Addressing Long-Term Uncertainties and Financial Policies, p. viii"
+      },
+      {
+        "quote": "Although the FY26 Update is balanced, it relies on one-time savings and temporary measures to close the gap between revenues and expenditures.",
+        "location": "Transmittal letter, p. viii"
+      },
+      {
+        "quote": "these strategies lead to a balanced biennial budget, they are not sustainable and efforts to either increase revenues and/or decrease expenditures beyond the baseline budget will need to be undertaken",
+        "location": "Transmittal letter, section: Operating Factors and Challenges, p. 28"
+      },
+      {
+        "quote": "While the budget is balanced, it requires the use of one-time savings and other measures to fund the four pillars of capital projects, Council priorities, personnel and programs.",
+        "location": "Transmittal letter, section: Operating Factors and Challenges, p. 28"
+      },
+      {
+        "quote": "Rising personnel costs, increasing operational expenses, and ongoing economic and political uncertainty continue to strain City resources.",
+        "location": "Transmittal letter, p. viii"
+      }
+    ]
+  },
+
+  "public_safety_overtime": {
+    "description": "Public safety overtime exceeded budget for another year — consistent with City Auditor finding that overtime has exceeded budget for three consecutive years.",
+    "verbatim_quote": "Public Safety was over budget by $9.3 million due to overspending of Police and Fire overtime budgets. This was related to staffing shortages forcing mandatory overtime, and due to mutual aid requests.",
+    "location": "Budgetary Highlights, p. 25",
+    "gf_public_safety_expenditures_fy2025": 147200000,
+    "gf_public_safety_expenditures_fy2024": 137500000,
+    "change": 9700000
+  },
+
+  "expenditure_trends": {
+    "health_and_welfare_fy2025": 21100000,
+    "health_and_welfare_fy2024": 15500000,
+    "health_and_welfare_change_pct": 36.2,
+    "health_and_welfare_note": "36.2% increase in one year — higher personnel, professional services, and $3.83M increase in grants to nonprofits.",
+    "economic_development_fy2025": 4600000,
+    "economic_development_fy2024": 3300000,
+    "economic_development_change_pct": 40.1,
+    "economic_development_note": "40.1% increase — primarily $1.06M increase in grant payments to community agencies."
+  },
+
+  "fiscal_policies_stated": {
+    "description": "Fiscal policies as stated in the transmittal letter — the council's own governing framework. Cross-reference against City Auditor's finding that these policies do not require assessment of recurring revenue/expenditure balance.",
+    "policies": [
+      "Focusing on long-term fiscal health by adopting a two-year budget and conducting multi-year planning",
+      "Building prudent reserves with a target range of between 20 to 30% of General Fund revenues",
+      "Developing long-term strategies to reduce unfunded liabilities",
+      "Controlling labor costs while minimizing layoffs and promoting retention of City staff",
+      "Primarily allocating one-time revenue for one-time expenditures",
+      "Requiring enterprise and grant funds to balance and new programs to pay for themselves",
+      "Any new expenditure requires new revenue or expenditure reductions",
+      "Section 115 Trust contributions: allocating annual CalPERS prepayment savings up to $5.5M per fiscal year"
+    ],
+    "gap_note": "Policy #5 (one-time revenue for one-time expenditures) and the Section 115 Trust contribution policy are both violated by the one-time measures listed in the FY2026 budget update — the Section 115 Trust is being DRAWN DOWN for operating expenses rather than being contributed to. The City Auditor's finding that policies lack a recurring-balance test is independently confirmed here."
+  },
+
+  "reserve_policy_update": {
+    "description": "Reserve policy amended July 29, 2025, after fiscal year end.",
+    "detail": "Via Resolution No. 71-908-N.S., the City Council amended the General Fund Reserve policy to reflect a target range of 20 to 30 percent of revenue and maintain revenue as a baseline.",
+    "reserve_status": "Stability Reserve $32.8M + Catastrophic Reserve $25.5M = $58.3M total. At 20% of $285.8M GF revenues = $57.2M target floor. Reserves are at the bottom of the target range.",
+    "scoring_note": "The council amended the reserve policy in July 2025 to lower the target floor from a fixed dollar amount to 20% of revenue — which at current revenue levels is approximately what they already hold. This could represent prudent recalibration or a policy adjustment to avoid appearing out of compliance."
+  },
+
+  "scoring_implications": [
+    "The Director of Finance — in an externally audited document — explicitly states the structural deficit cannot be resolved through one-time solutions and current strategies are not sustainable. Any council member who claims ignorance of the structural deficit after FY2025 is contradicted by the ACFR they received.",
+    "FY2026 one-time measures are larger than FY2025 (Section 115: $6M vs. $3M; workers' comp: $5.2M vs. $4.7M). The pattern is accelerating.",
+    "Bond rating upgrade (Moody's Aa2 → Aa1) creates a misleading 'financial health' narrative. Ratings assess default probability, not operating sustainability. A balanced budget achieved through reserve draws can maintain ratings while structural problems compound.",
+    "The OPEB liability 50% drop in one year ($77.5M → $38.7M) requires scrutiny — actuarial assumption changes can produce large one-year swings that reverse. If used to claim improved financial health, this needs the underlying assumption change identified.",
+    "Public safety overtime exceeded budget by $9.3M — third or more consecutive year. No council member has proposed a staffing model change to address the structural overtime driver."
+  ],
+
+  "gfoa_awards": {
+    "note": "City received GFOA Certificate of Achievement for FY2024 ACFR and Distinguished Budget Presentation for FY2024-2025 biennial. These are process and transparency awards, not financial performance awards. Receipt does not indicate fiscal health."
+  }
+}

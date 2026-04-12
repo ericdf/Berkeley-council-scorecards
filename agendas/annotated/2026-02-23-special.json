@@ -1,0 +1,156 @@
+{
+  "date": "2026-02-23",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2026-02-23%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:44:09.484452",
+  "roll_call_time": "6:07 p.m.",
+  "present": [
+    "Kesarwani",
+    "Taplin",
+    "Tregub",
+    "OKeefe",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Bartlett"
+  ],
+  "arrived_late": [
+    {
+      "name": "Bartlett",
+      "time": "6:07 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "Zoning Adjustments Board Appeal: 2298 Durant, Use Permit Application",
+      "action": "Item removed from the agenda due to project being withdrawn by the Applicant. (Supplemental material in Supp 2 from Planning & Development Department.) Monday, February 23, 2026 ANNOTATED AGENDA Page 2 Action Calendar \u2013 Public Hearings"
+    },
+    {
+      "number": 2,
+      "title": "Zoning Adjustments Board Appeal: 2425 Durant Avenue, Use Permit",
+      "action": "M/S/C (Kesarwani/Lunaparra) to adopt Resolution No. 72,129\u2013N.S. denying the appeal and affirming the Zoning Adjustments Board (ZAB) decision to approve Use Permit #ZP2024-0162, with amendments to include the correct language for condition #65 and to properly number conditions #66 - #70. Vote: Ayes \u2013",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 14,
+      "title": "Jesse Arreguin",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "Mark Rhoades on behalf of Applicant 2425 Durant LLC",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Mark Rhoades on behalf of Laconia Development, LLC",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Jack Farrell on behalf of YIMBY Law",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Jolene Kramer",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "Jack Farrell on behalf of YIMBY Law",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Jolene Kramer",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "Paul Menzies on behalf of Laconia Development, LLC",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Jolene Kramer",
+      "action": ""
+    },
+    {
+      "number": 23,
+      "title": "Jack Farrell on behalf of YIMBY Law",
+      "action": ""
+    },
+    {
+      "number": 24,
+      "title": "Mark Rhoades on behalf of Laconia Development, LLC",
+      "action": ""
+    },
+    {
+      "number": 25,
+      "title": "Supplemental agenda material submitted by the Planning & Development",
+      "action": ""
+    },
+    {
+      "number": 26,
+      "title": "James Lloyd on behalf of the California Housing Defense Fund",
+      "action": ""
+    },
+    {
+      "number": 27,
+      "title": "Mark Rhoades",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "Ruhama Tereda on behalf of the North Coast States Carpenters Union",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Gregory Kalkanis",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Presentation submitted by the Planning Department",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Bonnie Zhu (2)",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "Presentation submitted by the Planning Department",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Gregory Kalkanis",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "Kelly Hammargren",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Scott Littlehale",
+      "action": ""
+    }
+  ]
+}

@@ -20,5 +20,11 @@ __pycache__/
 sources/**/*.pdf
 sources/**/*.PDF
 
+# Agenda PDF cache — binary, regeneratable via annotated_scraper.py
+agendas/pdf_cache/
+
+# Local Claude settings (machine-specific)
+.claude/settings.local.json
+
 # macOS
 .DS_Store

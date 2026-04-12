@@ -1,0 +1,39 @@
+{
+  "date": "2025-06-03",
+  "meeting_type": "regular",
+  "item_num": 9,
+  "item_key": "9",
+  "title": "9.-AHEAD, Inc (\u201cAHEAD\u201d): Using the California Department of General Services Software Licensing Program (\u201cCDGS SLP\u201d) for Software License Purchases",
+  "url": "https://berkeleyca.gov/sites/default/files/documents/2025-06-03%20Item%2009%20AHEAD%2C%20Inc%20%28%E2%80%9CAHEAD%E2%80%9D%29%20Using%20the%20California.pdf",
+  "word_count": 898,
+  "sections": {
+    "recommendation": "Adopt a resolution authorizing the City Manager to increase spending authority with\nAHEAD, a qualified reseller for the purchase of Varonis subscription software licenses,\nutilizing pricing and contracts, amendments, and extensions from the CDGS SLP,\nincreasing the amount by $971,784.00 for a total amount not-to-exceed $1,945,589.00\nduring the period beginning January 31, 2023 through June 30, 2028.",
+    "fiscal_impacts": "Funding for the Varonis subscription software licenses in the amount of $971,784.00 is\navailable in the Department of Information Technology\u2019s (\u201cIT\u201d) Cost Allocation Fund as\noutlined below:\nDescription Funding Source\n$323,928.00 FY 2026 Subscription Varonis Licenses IT Cost Allocation (Fund 680)\n$323,928.00 FY 2027 Subscription Varonis Licenses IT Cost Allocation (Fund 680)\n$323,928.00 FY 2028 Subscription Varonis Licenses IT Cost Allocation (Fund 680)\n$973,805.00 Previously approved Varonis Subscription\n$1,945,589.00 NTE TOTAL",
+    "current_situation": "The City\u2019s Data Safety Program is designed to support the City\u2019s strategic plan goal of\nproviding state-of-the-art, well-maintained infrastructure, amenities, and facilities. As the\nCity transitions to Microsoft SharePoint and Teams for online document management and\ncollaboration, it intends to purchase the Varonis SaaS (Software as a Service) solution,\nwhich offers advanced capabilities for data classification, access visibility, and threat\ndetection within Microsoft 365 services which includes Sharepoint and Teams. Varonis\nSaaS provides automated insights into data access and usage patterns, helping the City\nmeet legal, regulatory, and data protection obligations while reducing the risk of data\nbreaches and insider threats.\nPage 2 of 3\nAHEAD: Using the California Department of General Services\u2019 SLP Contract CONSENT CALENDAR\nJune 3, 2025",
+    "background": "The City initially implemented Varonis in 2021 to gain visibility into on-premise data\naccess and protection. With the ongoing shift to cloud-based platforms such as\nSharePoint and Teams, the City requires a solution that can deliver the same level of\noversight and control in the cloud as it did on-premise.\nThe City will purchase the Varonis SaaS solution through the CDGS SLP contract number\nSLP-19-70-0151s. AHEAD, a qualified reseller under this contract, will provide the\nnecessary licenses, support, and implementation services for this transition.\nENVIRONMENTAL SUSTAINABILITY AND CLIMATE IMPACTS\nThe transition to cloud-based storage and collaboration tools such as SharePoint and\nTeams reduces the City\u2019s reliance on paper and physical infrastructure. Varonis SaaS\nfurther supports this initiative by enabling secure and efficient electronic file management,\ncontributing to the City\u2019s sustainability goals.",
+    "rationale": "As more City data and services move into Microsoft 365 cloud services, it becomes\nessential to ensure that sensitive and regulated information is properly governed. Varonis\nSaaS enables the City to continuously monitor who is accessing data, identify unusual\nactivity, and automate response to potential threats. Without this solution, the City would\nneed to significantly increase IT staff and manual processes to achieve comparable\nsecurity and compliance standards.",
+    "alternatives": "The alternative to Varonis SaaS would be to manually manage permissions, data\nclassification, and access auditing within Microsoft 365. This approach would require\nextensive staffing and pose significant risks due to potential human error and lack of real-\ntime monitoring capabilities.\nCONTACT PERSON\nKevin Fong, Director, Department of Information Technology, 510-981-6541",
+    "attachments": "1: Resolution\nPage 3 of 3\nAHEAD: Using the California Department of General Services\u2019 SLP Contract CONSENT CALENDAR\nJune 3, 2025\nRESOLUTION NO. ##,###-N.S.\nAHEAD Inc. (\u201cAHEAD\u201d): USING THE CALIFORNIA DEPARTMENT OF GENERAL\nSERVICES SOFTWARE LICENSING PROGRAM (\u201cCDGS SLP\u201d) FOR SOFTWARE\nLICENSE PURCHASES\nWHEREAS, the City of Berkeley (\u201cCity\u201d) Data Safety Program is designed to support the\nCity\u2019s strategic plan goal of providing state-of-the-art, well-maintained infrastructure,\namenities, and facilities; and\nWHEREAS, the City is transitioning to Microsoft SharePoint and Teams for online\ndocument management and collaboration; and\nWHEREAS, the City intends to purchase the Varonis SaaS (Software as a Service)\nsolution, which offers advanced capabilities for data classification, access visibility, and\nthreat detection within Microsoft 365 services which includes Sharepoint and Teams; and\nWHEREAS, Varonis SaaS provides automated insights into data access and usage\npatterns, helping the City meet legal, regulatory, and data protection obligations while\nreducing the risk of data breaches and insider threats; and\nWHEREAS, the City participates in a cooperative purchasing agreement established by\nthe California Department of General Services (\u201cCDGS\u201d) called the Software License\nProgram (\u201cSLP\u201d) that competitively negotiates software discounts that are passed down to\nlocal agencies through a cooperative contract and software reseller; and\nWHEREAS, the City of Berkeley has engaged AHEAD as a reseller for Varonis SaaS\nunder SLP contract number SLP-19-70-0151s; and\nWHEREAS, funding for purchases with AHEAD are funded by the IT Cost Allocation Fund\n(Fund 680), and city-wide purchases will be made as needed by other available funding.\nNOW THEREFORE, BE IT RESOLVED by the Council of the City of Berkeley that the\nCity Manager is authorized to increase spending authority with AHEAD for the purchase\nof professional services and software, and other goods related to the City's Data Safety\nProg",
+    "preamble": "Page 1 of 3\n09\nOffice of the City Manager\nCONSENT CALENDAR\nJune 3, 2025\nTo: Honorable Mayor and Members of the City Council\nFrom: Paul Buddenhagen, City Manager\nSubmitted by: Kevin Fong, Director, Department of Information Technology\nSubject: AHEAD, Inc (\u201cAHEAD\u201d): Using the California Department of General\nServices Software Licensing Program (\u201cCDGS SLP\u201d) for Software License\nPurchases"
+  },
+  "signals": {
+    "waived_competitive_bid": false,
+    "backdated": false,
+    "alternatives_none": false,
+    "grant_funded": false,
+    "general_fund": false,
+    "dollar_amounts": [
+      "$971,784.00",
+      "$323,928.00",
+      "$323,928.00",
+      "$323,928.00",
+      "$973,805.00",
+      "$1,945,589.00",
+      "$971,784.00",
+      "$1,945,589.00"
+    ],
+    "vendor": null,
+    "cost_per_unit": [],
+    "funding_source_text": "Funding for the Varonis subscription software licenses in the amount of $971,784.00 is\navailable in the Department of Information Technology\u2019s (\u201cIT\u201d) Cost Allocation Fund as\noutlined below:\nDescription Funding Source\n$323,928.00 FY 2026 Subscription Varonis Licenses IT Cost Allocation (Fund 680)\n$32"
+  }
+}

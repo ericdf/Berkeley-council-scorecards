@@ -1,0 +1,537 @@
+{
+  "date": "2025-07-29",
+  "meeting_type": "regular",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-07-29%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:42:56.529286",
+  "roll_call_time": "6:06 p.m.",
+  "present": [
+    "Kesarwani",
+    "Taplin",
+    "Tregub",
+    "OKeefe",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Bartlett"
+  ],
+  "arrived_late": [
+    {
+      "name": "Bartlett",
+      "time": "6:11 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "Minutes for Approval",
+      "action": "Approved the minutes as submitted."
+    },
+    {
+      "number": 2,
+      "title": "Amending the City Council\u2019s Policy for the General Fund Reserves",
+      "action": "Adopted Resolution No. 71,908\u2013N.S."
+    },
+    {
+      "number": 3,
+      "title": "Contract No 32400009 Amendment: Stella Courier, LLC. for Mail Services and",
+      "action": "Adopted Resolution No. 71,909\u2013N.S."
+    },
+    {
+      "number": 4,
+      "title": "Formal Bid Solicitations and Request for Proposals Scheduled for Possible",
+      "action": "Approved recommendation. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 3 Consent Calendar"
+    },
+    {
+      "number": 5,
+      "title": "Contract: InfoSend for Bill Printing and Mailing Services",
+      "action": "Adopted Resolution No. 71,910\u2013N.S."
+    },
+    {
+      "number": 6,
+      "title": "Designate the Line of Succession for the Director of Emergency Services",
+      "action": "Adopted Resolution No. 71,911\u2013N.S."
+    },
+    {
+      "number": 7,
+      "title": "Contract with Wildfire Defense to Serve as the Alameda County Coordinator",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Authorizing the City Manager or designee to execute a contract with Wildfire",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Authorizing the City Manager or designee to execute any amendments for not",
+      "action": "Adopted Resolution No. 71,912\u2013N.S. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 4 Consent Calendar"
+    },
+    {
+      "number": 8,
+      "title": "Submitting Application for Permanent Local Housing Allocation Program",
+      "action": "Adopted Resolution No. 71,913\u2013N.S."
+    },
+    {
+      "number": 9,
+      "title": "Mental Health Services Act Fiscal Year 2026 Annual Update",
+      "action": "Adopted Resolution No. 71,914\u2013N.S. as revised in Supplemental Communications Packet #1 by the City Manager."
+    },
+    {
+      "number": 10,
+      "title": "Adopt Resolution Approving Publicly Available Pay Schedule",
+      "action": "Adopted Resolution No. 71,915\u2013N.S."
+    },
+    {
+      "number": 11,
+      "title": "Contract: Infobond Inc. Leveraging the Omnia Partners Cooperative Contract",
+      "action": "Adopted Resolution No. 71,916\u2013N.S. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 5 Consent Calendar"
+    },
+    {
+      "number": 12,
+      "title": "Contract No. 32300096 Amendment: SCS Engineers for Landfill Post-Closure",
+      "action": "Adopted Resolution No. 71,917\u2013N.S."
+    },
+    {
+      "number": 13,
+      "title": "Trillium Compressed Natural Gas (CNG) 5-year Sole Source License and",
+      "action": "Adopted Resolution No. 71,918\u2013N.S."
+    },
+    {
+      "number": 14,
+      "title": "Contract Amendment No. 32100070: Urban Ore, Inc. for Salvage Operations at",
+      "action": "Item removed from the agenda by the City Manager."
+    },
+    {
+      "number": 15,
+      "title": "Authorization to Apply for CalRecycle Waste Reduction, Reuse, Recycling, and",
+      "action": "Adopted Resolution No. 71,919\u2013N.S. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 6 Consent Calendar"
+    },
+    {
+      "number": 16,
+      "title": "Contract: Environmental Logistics, Inc. and Advanced Chemical Transport,",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Execute a three-year contract and any amendments with Environmental Logistics,",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Execute a three-year contract and any amendment with Advanced Chemical",
+      "action": "Adopted Resolution No. 71,920\u2013N.S. (Environmental Logistics), and Resolution No. 71,921\u2013N.S. (Advanced Chemical Transport)."
+    },
+    {
+      "number": 17,
+      "title": "Approval and Levy of 2018 Clean Stormwater Fee in FY 2026",
+      "action": "Adopted Resolution No. 71,922\u2013N.S."
+    },
+    {
+      "number": 18,
+      "title": "Contracts: Matrix HG Inc. and Prime Mechanical Service for Heating,",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Execute a contract with any amendments with Matrix HG Inc. to provide HVAC",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Execute a contract with any amendments with Prime Mechanical Service to",
+      "action": "Adopted Resolution No. 71,923\u2013N.S. (Matrix HG), and Resolution No. 71,924\u2013N.S. (Prime Mechanical). Tuesday, July 29, 2025 ANNOTATED AGENDA Page 7 Consent Calendar"
+    },
+    {
+      "number": 19,
+      "title": "Updated Sewer System Management Plan",
+      "action": "Adopted Resolution No. 71,925\u2013N.S."
+    },
+    {
+      "number": 20,
+      "title": "Project Implementation Staffing for Measure FF, the SAFE STREETS Initiative",
+      "action": "Adopted Resolution No. 71,926\u2013N.S. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 8 Consent Calendar"
+    },
+    {
+      "number": 21,
+      "title": "Contract: Aurora Environmental Services Inc., GSI Environmental Inc.,",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Execute a three-year contract and any amendments with Aurora Environmental",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Execute a three-year contract and any amendments with GSI Environmental Inc.",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Execute a three-year contract and any amendments with Northgate Environmental",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "Execute a three-year contract and any amendments with WSP Global Inc. to",
+      "action": "Adopted Resolution No. 71,927\u2013N.S. (Aurora), Resolution No. 71,928\u2013N.S. (GSI), Resolution No. 71,929\u2013N.S. (Northgate), and Resolution No. 71,930\u2013N.S. (WSP). Tuesday, July 29, 2025 ANNOTATED AGENDA Page 9 Consent Calendar"
+    },
+    {
+      "number": 22,
+      "title": "Contracts: Dream Ride Elevator and Metro Elevator for Maintenance, Repairs",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "Execute a contract with any amendments with Dream Ride Elevator to provide",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Execute a contract with any amendments with Metro Elevator to provide",
+      "action": "Adopted Resolution No. 71,931\u2013N.S. (Dream Ride), and Resolution No. 71,932\u2013N.S. (Metro). 23a. City Compliance with Web Content Accessibility Guidelines (WCAG)"
+    },
+    {
+      "number": 24,
+      "title": "Berkeley Nightlife Council (Reviewed by the Land Use, Housing & Economic",
+      "action": "Councilmember O\u2019Keefe added as a co-sponsor. Adopted Resolution No. 71,933\u2013N.S. as recommended by the Land Use, Housing & Economic Development Committee and as revised in Supplemental Communications Packet #2 by Councilmember Taplin. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 11 Council Consent It"
+    },
+    {
+      "number": 25,
+      "title": "Berkeley Green New Deal: Workforce Development (Reviewed by the Land Use,",
+      "action": "Approved recommendation as recommended by the Land Use, Housing & Economic Development Committee and as revised in Supplemental Communications Packet #1 by Councilmember Taplin."
+    },
+    {
+      "number": 26,
+      "title": "Resolution in Support of California Senate Bill 627 (Wiener, Arregu\u00edn, P\u00e9rez),",
+      "action": "Councilmember Kesarwani added as a co-sponsor. Adopted Resolution No. 71,934\u2013N.S. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 12 Council Consent Items"
+    },
+    {
+      "number": 27,
+      "title": "Berkeley\u2019s First Sun Day Event: Relinquishment of Council Office Budget",
+      "action": "Councilmembers Tregub, O\u2019Keefe, and Lunaparra added as co-sponsors. Adopted Resolution No. 71,935\u2013N.S. revised to include contributions from the following Councilmembers up to the amounts listed: Mayor Ishii - $250; Councilmember Lunaparra - $200; Councilmember O\u2019Keefe - $500; Councilmember Bartlett"
+    },
+    {
+      "number": 28,
+      "title": "Accessory Dwelling Units (ADUs): Amendments to Title 21 (Subdivisions) to",
+      "action": "M/S/C (Kesarwani/Lunaparra) to adopt the first reading of Ordinance No. 7,983\u2013N.S. amending Title 23 of the Berkeley Municipal Code as recommended by the City Manager with the amendments listed below: Tuesday, July 29, 2025 ANNOTATED AGENDA Page 13 Action Calendar \u2013 Public Hearings \u2022 Remove referenc",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 29,
+      "title": "Ordinance Vacating a Portion of Carleton Street from Westerly Terminus",
+      "action": "M/S/C (Taplin/Humbert) to adopt the second reading of Ordinance No. 7,982\u2013N.S. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 Lunaparra. Information Reports",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 30,
+      "title": "Status Report - Berkeley\u2019s Financial Condition (FY 2012 \u2013 FY 2021): Pension",
+      "action": "Received and filed. Tuesday, July 29, 2025 ANNOTATED AGENDA Page 14 Action Calendar \u2013 Public Hearings"
+    },
+    {
+      "number": 31,
+      "title": "Commission on Labor Fiscal Year 2026 Work Plan",
+      "action": "Received and filed."
+    },
+    {
+      "number": 32,
+      "title": "Annual Report on Landmarks Preservation Commission Actions",
+      "action": "Received and filed."
+    },
+    {
+      "number": 33,
+      "title": "Zero Waste Commission Fiscal Year 2025-26 Work Plan",
+      "action": "Received and filed. Public Comment \u2013 Items Not Listed on the Agenda - 6 speakers. Adjournment Action: M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 9:25 p.m. Communications Ingram Letter",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 1,
+      "title": "Richard Pettler",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Susanne Kalter DeWitt",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Robert Borghese (2)",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "Sharon Entwistle",
+      "action": ""
+    },
+    {
+      "number": 5,
+      "title": "Eric Friedman",
+      "action": ""
+    },
+    {
+      "number": 6,
+      "title": "Transition Berkeley Members of the Board: Sylvia Soriano, Linda Currie, Bonnie",
+      "action": ""
+    },
+    {
+      "number": 7,
+      "title": "Lucia Hammond (4)",
+      "action": ""
+    },
+    {
+      "number": 8,
+      "title": "Peter Radu",
+      "action": ""
+    },
+    {
+      "number": 9,
+      "title": "Lj Cranmer",
+      "action": ""
+    },
+    {
+      "number": 10,
+      "title": "Erik Dreher",
+      "action": ""
+    },
+    {
+      "number": 11,
+      "title": "Seth Kimball",
+      "action": ""
+    },
+    {
+      "number": 12,
+      "title": "Allison Bond",
+      "action": ""
+    },
+    {
+      "number": 13,
+      "title": "Melanie Lawrence",
+      "action": ""
+    },
+    {
+      "number": 14,
+      "title": "Mateo Kaiser",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "Jennifer Knight",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Chris Goldin",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Micky Duxbury",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Michael Tompkins",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "Stephanie Allan",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Steve Tracy",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "Alex Merenkov",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Alesia Williams",
+      "action": ""
+    },
+    {
+      "number": 23,
+      "title": "Building & Safety Division, Rental Housing Safety Program",
+      "action": ""
+    },
+    {
+      "number": 24,
+      "title": "Dylan Miley (2)",
+      "action": ""
+    },
+    {
+      "number": 25,
+      "title": "Olivia Burger (2)",
+      "action": ""
+    },
+    {
+      "number": 26,
+      "title": "Sunny",
+      "action": ""
+    },
+    {
+      "number": 27,
+      "title": "Jordan Pierson",
+      "action": ""
+    },
+    {
+      "number": 28,
+      "title": "Ben Gerhardstein on behalf of Walk Bike Berkeley",
+      "action": ""
+    },
+    {
+      "number": 29,
+      "title": "Elise Proulx",
+      "action": ""
+    },
+    {
+      "number": 30,
+      "title": "Todd Andrew (2)",
+      "action": ""
+    },
+    {
+      "number": 31,
+      "title": "Tajai Calip",
+      "action": ""
+    },
+    {
+      "number": 32,
+      "title": "Nikki Kofsky",
+      "action": ""
+    },
+    {
+      "number": 33,
+      "title": "Revised agenda material submitted by the Health, Housing, & Community Services",
+      "action": ""
+    },
+    {
+      "number": 34,
+      "title": "Kat Larrowe on behalf of the Commission on Labor",
+      "action": ""
+    },
+    {
+      "number": 35,
+      "title": "Supplemental agenda material submitted by Councilmember Terry Taplin",
+      "action": ""
+    },
+    {
+      "number": 36,
+      "title": "Supplemental agenda material, submitted by Councilmember Terry Taplin",
+      "action": ""
+    },
+    {
+      "number": 37,
+      "title": "Supplemental agenda material, submitted by Councilmember Rashi Kesarwani",
+      "action": ""
+    },
+    {
+      "number": 38,
+      "title": "Supplemental agenda material, submitted by Councilmember Brent Blackaby",
+      "action": ""
+    },
+    {
+      "number": 39,
+      "title": "Supplemental agenda material, submitted by Councilmember Cecilia Lunaparra",
+      "action": ""
+    },
+    {
+      "number": 40,
+      "title": "Tess Fruge (2)",
+      "action": ""
+    },
+    {
+      "number": 41,
+      "title": "Jeanne Clinton",
+      "action": ""
+    },
+    {
+      "number": 42,
+      "title": "Ben Domingue",
+      "action": ""
+    },
+    {
+      "number": 43,
+      "title": "Eric Johnson",
+      "action": ""
+    },
+    {
+      "number": 44,
+      "title": "Jeffrey Church",
+      "action": ""
+    },
+    {
+      "number": 45,
+      "title": "Presentation submitted by the Planning & Development Department",
+      "action": ""
+    },
+    {
+      "number": 46,
+      "title": "Rent Stabilization Board",
+      "action": ""
+    },
+    {
+      "number": 47,
+      "title": "Janice Schroeder",
+      "action": ""
+    },
+    {
+      "number": 48,
+      "title": "Valerie Knepper",
+      "action": ""
+    },
+    {
+      "number": 49,
+      "title": "Lee Bishop",
+      "action": ""
+    },
+    {
+      "number": 50,
+      "title": "Veronica Tamsitt",
+      "action": ""
+    },
+    {
+      "number": 51,
+      "title": "Beth Roessner",
+      "action": ""
+    },
+    {
+      "number": 52,
+      "title": "David Bowman",
+      "action": ""
+    },
+    {
+      "number": 53,
+      "title": "Gary and Anita Ingram",
+      "action": ""
+    }
+  ]
+}

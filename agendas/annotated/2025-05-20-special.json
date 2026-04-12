@@ -1,0 +1,77 @@
+{
+  "date": "2025-05-20",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-05-20%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:41:02.529069",
+  "roll_call_time": "4:36 p.m.",
+  "present": [
+    "Taplin",
+    "Tregub",
+    "OKeefe",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [
+    "Kesarwani",
+    "Bartlett",
+    "Blackaby"
+  ],
+  "arrived_late": [
+    {
+      "name": "Kesarwani",
+      "time": "4:41 p.m."
+    }
+  ],
+  "items": [
+    {
+      "number": 1,
+      "title": "Authorizing the Execution, Sale, and Delivery of Lease Revenue Notes for the",
+      "action": "M/S/C (Tregub/Humbert) to adopt Resolution No. 71,758\u2013N.S. authorizing the issuance and sale by the Berkeley Joint Powers Financing Authority of federally taxable Lease Revenue Notes in the aggregate principal amount of not to exceed $11,000,000 to provide financing for the construction of improveme",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Tregub",
+          "OKeefe",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "Bartlett",
+          "Blackaby"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "title": "Issuance of $35,000,000 General Obligation Bonds for Measure O \u2013 Affordable",
+      "action": "0 speakers. M/S/C (Tregub/Humbert) to adopt Resolution No. 71,759\u2013N.S. authorizing the issuance and sale of general obligation bonds to finance acquisition and improvement of affordable housing and authorizing actions related thereto. Vote: Ayes \u2013 Kesarwani, Taplin, Tregub, O\u2019Keefe, Lunaparra, Humbe",
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Tregub",
+          "OKeefe",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": [
+          "Bartlett",
+          "Blackaby"
+        ]
+      }
+    },
+    {
+      "number": 1,
+      "title": "Presentation, submitted by the Finance Department",
+      "action": ""
+    }
+  ]
+}

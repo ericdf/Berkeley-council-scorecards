@@ -1,0 +1,59 @@
+{
+  "document_ref": "cip_fy2025_2029",
+  "title": "City of Berkeley Adopted Capital Improvement Program FY2025-FY2029",
+  "document_type": "adopted",
+  "adopted_date": "2024-06-25",
+
+  "five_year_totals": {
+    "total": 346100000,
+    "by_year": {
+      "fy2025": 77500000,
+      "fy2026": 78200000,
+      "fy2027": 64900000,
+      "fy2028": 66100000,
+      "fy2029": 59400000
+    }
+  },
+
+  "funding_sources": {
+    "fy2025_from_various_funds": 62410000,
+    "fy2025_from_gf_and_cip_fund": 15100000,
+    "fy2025_tier_1a": 1500000,
+    "fy2026_from_various_funds": 65700000,
+    "fy2026_from_gf_and_cip_fund": 12600000,
+    "fy2026_tier_1a": 250000
+  },
+
+  "unfunded_capital_needs": 1650000000,
+  "verbatim_unfunded_needs": {
+    "quote": "Beyond the projects included in this five-year CIP, the unfunded capital needs total approximately $1.65 billion. Long term funding strategies will need to be developed in the future to meet these infrastructure needs and options will be explored with the City Council and the community.",
+    "location": "Executive Summary, Challenges and Opportunities, p. 13"
+  },
+
+  "property_transfer_tax_impact": {
+    "description": "Excess PTT projections down for FY2025 and FY2026, reducing capital funding vs. FY2023-2024.",
+    "baseline_cip_fund": 4030000,
+    "fy2023_actual": 11030000,
+    "fy2024_actual": 15300000,
+    "note": "The FY2023-2024 capital infusion was explicitly one-time (driven by elevated PTT). FY2025-2026 reverts toward baseline."
+  },
+
+  "five_year_street_rehabilitation_plan": {
+    "miles": 47,
+    "cost": 92000000,
+    "years": "FY2024-2028",
+    "note": "A $92M, 5-year paving commitment exists — but this addresses only a portion of the $1.65B unfunded backlog."
+  },
+
+  "deferred_maintenance_cost_multiplier": {
+    "ratio": "1:7",
+    "verbatim": "Studies show that $1 spent in early maintenance of infrastructure, such as streets, can save $7 in later, more expensive repairs. This explains why delays in addressing deferred maintenance in the City's streets quadruples the cost of addressing these needs by 2050.",
+    "scoring_significance": "The CIP explicitly states that delaying maintenance quadruples costs by 2050 — yet the unfunded backlog sits at $1.65B unchanged. The council approves CIPs that acknowledge this ratio while not funding the backlog."
+  },
+
+  "scoring_implications": [
+    "The $1.65B unfunded capital needs figure is identical to the FY2023-2027 CIP — zero progress despite two bond measures (Measure M and Measure T1) and one full budget cycle.",
+    "The executive summary explicitly states capital funding is REDUCED in FY2025-2026 vs. FY2023-2024 due to declining PTT — the backlog will grow, not shrink.",
+    "The 1:7 maintenance ratio and '4x cost by 2050' language appear in a document adopted by the same council that is advancing a new bond measure. The council cannot claim ignorance of the backlog's trajectory."
+  ]
+}

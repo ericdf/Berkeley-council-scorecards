@@ -1,0 +1,975 @@
+{
+  "date": "2025-04-28",
+  "meeting_type": "special",
+  "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-28%20Special%20Annotated%20Agenda%20-%20Council.pdf",
+  "fetched": "2026-04-10T09:42:03.848174",
+  "roll_call_time": "5:04 p.m.",
+  "present": [
+    "Kesarwani",
+    "Taplin",
+    "Bartlett",
+    "Tregub",
+    "OKeefe",
+    "Blackaby",
+    "LunaParra",
+    "Humbert",
+    "Ishii"
+  ],
+  "absent": [],
+  "arrived_late": [],
+  "items": [
+    {
+      "number": 1,
+      "title": "Resolution for an Immediate and Permanent Ceasefire in Gaza, and an End to",
+      "action": ""
+    },
+    {
+      "number": 1,
+      "title": "The City of Berkeley Council adopt a resolution for a ceasefire in Gaza, and an",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Send a copy of the resolution to President Joseph R. Biden, Secretary of State",
+      "action": "M/S/C (Ishii/Humbert) to suspend the rules and establish a three-hour public comment period for the agenda item with time for both in-person and online speakers. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 Lunaparra. Action: M/S/C (Luna",
+      "vote": {
+        "ayes": [
+          "all"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
+    },
+    {
+      "number": 1,
+      "title": "Iris Greenberg-Smith",
+      "action": ""
+    },
+    {
+      "number": 2,
+      "title": "Diana Bohn",
+      "action": ""
+    },
+    {
+      "number": 3,
+      "title": "Allen Mayer",
+      "action": ""
+    },
+    {
+      "number": 4,
+      "title": "David Garner",
+      "action": ""
+    },
+    {
+      "number": 5,
+      "title": "John Wolfe",
+      "action": ""
+    },
+    {
+      "number": 6,
+      "title": "Revised agenda material submitted by Mayor Adena Ishii and Councilmember",
+      "action": ""
+    },
+    {
+      "number": 7,
+      "title": "Supplemental agenda material submitted by Councilmember Terry Taplin",
+      "action": ""
+    },
+    {
+      "number": 8,
+      "title": "Robert Bonam (2)",
+      "action": ""
+    },
+    {
+      "number": 9,
+      "title": "Sriram Gopalakrishnan",
+      "action": ""
+    },
+    {
+      "number": 10,
+      "title": "Youval Dar",
+      "action": ""
+    },
+    {
+      "number": 11,
+      "title": "Sara S Ishikawa",
+      "action": ""
+    },
+    {
+      "number": 12,
+      "title": "Jamie Cooney",
+      "action": ""
+    },
+    {
+      "number": 13,
+      "title": "Angie Chang",
+      "action": ""
+    },
+    {
+      "number": 14,
+      "title": "Hali Hammer",
+      "action": ""
+    },
+    {
+      "number": 15,
+      "title": "Pat O\u2019Brien",
+      "action": ""
+    },
+    {
+      "number": 16,
+      "title": "Jan Leuin",
+      "action": ""
+    },
+    {
+      "number": 17,
+      "title": "Cynthia Papermaster and CODEPINK Bay Area Chapter",
+      "action": ""
+    },
+    {
+      "number": 18,
+      "title": "Tam Sababa",
+      "action": ""
+    },
+    {
+      "number": 19,
+      "title": "Tal Garner",
+      "action": ""
+    },
+    {
+      "number": 20,
+      "title": "Kelly Hammergren",
+      "action": ""
+    },
+    {
+      "number": 21,
+      "title": "Stephen M. Lipson",
+      "action": ""
+    },
+    {
+      "number": 22,
+      "title": "Julie Goldobin",
+      "action": ""
+    },
+    {
+      "number": 23,
+      "title": "Gayle McLaughlin",
+      "action": ""
+    },
+    {
+      "number": 24,
+      "title": "Kate Greene",
+      "action": ""
+    },
+    {
+      "number": 25,
+      "title": "Susanne (Sanne) DeWitt",
+      "action": ""
+    },
+    {
+      "number": 26,
+      "title": "Nathan Hunt",
+      "action": ""
+    },
+    {
+      "number": 27,
+      "title": "Fredda Cassidy",
+      "action": ""
+    },
+    {
+      "number": 28,
+      "title": "Laura Lipman",
+      "action": ""
+    },
+    {
+      "number": 29,
+      "title": "Deborah Cohan",
+      "action": ""
+    },
+    {
+      "number": 30,
+      "title": "Jon Jackson",
+      "action": ""
+    },
+    {
+      "number": 31,
+      "title": "Terry Fletcher",
+      "action": ""
+    },
+    {
+      "number": 32,
+      "title": "Ana Tellez-Witrago on behalf of Richmond Mayor Eduardo Martinez",
+      "action": ""
+    },
+    {
+      "number": 33,
+      "title": "Alan Kittner",
+      "action": ""
+    },
+    {
+      "number": 34,
+      "title": "Claudia Jimenez",
+      "action": ""
+    },
+    {
+      "number": 35,
+      "title": "Carl Nelson",
+      "action": ""
+    },
+    {
+      "number": 36,
+      "title": "Esther Brass-Chorin",
+      "action": ""
+    },
+    {
+      "number": 37,
+      "title": "Daren Fields",
+      "action": ""
+    },
+    {
+      "number": 38,
+      "title": "Sari Alper",
+      "action": ""
+    },
+    {
+      "number": 39,
+      "title": "Shifra Pride Raffel (2)",
+      "action": ""
+    },
+    {
+      "number": 40,
+      "title": "Miriam Green",
+      "action": ""
+    },
+    {
+      "number": 41,
+      "title": "Linda Press Wulf and Stanley Wulf",
+      "action": ""
+    },
+    {
+      "number": 42,
+      "title": "Sara Sunstein",
+      "action": ""
+    },
+    {
+      "number": 43,
+      "title": "Ilene Lee",
+      "action": ""
+    },
+    {
+      "number": 44,
+      "title": "Cynthia Papermaster",
+      "action": ""
+    },
+    {
+      "number": 45,
+      "title": "Dorothea Dorenz (3)",
+      "action": ""
+    },
+    {
+      "number": 46,
+      "title": "Naama Sadan",
+      "action": ""
+    },
+    {
+      "number": 47,
+      "title": "Jean Tepperman",
+      "action": ""
+    },
+    {
+      "number": 48,
+      "title": "Tamara Gurin",
+      "action": ""
+    },
+    {
+      "number": 49,
+      "title": "Desmid Lyon",
+      "action": ""
+    },
+    {
+      "number": 50,
+      "title": "Vicki Sommer (2)",
+      "action": ""
+    },
+    {
+      "number": 51,
+      "title": "Ellen Feigenbaum and Peter Schwab",
+      "action": ""
+    },
+    {
+      "number": 52,
+      "title": "John Farnkopf",
+      "action": ""
+    },
+    {
+      "number": 53,
+      "title": "Sally Nelson",
+      "action": ""
+    },
+    {
+      "number": 54,
+      "title": "Madeline Feingold",
+      "action": ""
+    },
+    {
+      "number": 55,
+      "title": "Rachel Schiff",
+      "action": ""
+    },
+    {
+      "number": 56,
+      "title": "Michal Weber",
+      "action": ""
+    },
+    {
+      "number": 57,
+      "title": "Jude Berman",
+      "action": ""
+    },
+    {
+      "number": 58,
+      "title": "Michael Cassidy (2)",
+      "action": ""
+    },
+    {
+      "number": 59,
+      "title": "Larry Hobel",
+      "action": ""
+    },
+    {
+      "number": 60,
+      "title": "Larry Bradshaw",
+      "action": ""
+    },
+    {
+      "number": 61,
+      "title": "Imtiaz Ghori",
+      "action": ""
+    },
+    {
+      "number": 62,
+      "title": "Stephanie Guynn and William Guynn (2)",
+      "action": ""
+    },
+    {
+      "number": 63,
+      "title": "Rosa Harroun",
+      "action": ""
+    },
+    {
+      "number": 64,
+      "title": "Simin Shamji",
+      "action": ""
+    },
+    {
+      "number": 65,
+      "title": "Kara Nelson",
+      "action": ""
+    },
+    {
+      "number": 66,
+      "title": "Marsha Rosenblatt",
+      "action": ""
+    },
+    {
+      "number": 67,
+      "title": "Andrea Cassidy",
+      "action": ""
+    },
+    {
+      "number": 68,
+      "title": "Leah Greenblat",
+      "action": ""
+    },
+    {
+      "number": 69,
+      "title": "Leah Rothman",
+      "action": ""
+    },
+    {
+      "number": 70,
+      "title": "Stevie Schwartz",
+      "action": ""
+    },
+    {
+      "number": 71,
+      "title": "Sarah Lefton",
+      "action": ""
+    },
+    {
+      "number": 72,
+      "title": "Judy and Isaac Lieber",
+      "action": ""
+    },
+    {
+      "number": 73,
+      "title": "Marisa Lin",
+      "action": ""
+    },
+    {
+      "number": 74,
+      "title": "Michelle Mascarenhas",
+      "action": ""
+    },
+    {
+      "number": 75,
+      "title": "Allen Mayer",
+      "action": ""
+    },
+    {
+      "number": 76,
+      "title": "Judd Goodman",
+      "action": ""
+    },
+    {
+      "number": 77,
+      "title": "Janice Schroeder",
+      "action": ""
+    },
+    {
+      "number": 78,
+      "title": "Lori Berlin and Michael Stephens",
+      "action": ""
+    },
+    {
+      "number": 79,
+      "title": "Omowale Fowles",
+      "action": ""
+    },
+    {
+      "number": 80,
+      "title": "Jim Haydel",
+      "action": ""
+    },
+    {
+      "number": 81,
+      "title": "Faith Meltzer",
+      "action": ""
+    },
+    {
+      "number": 82,
+      "title": "Hannah King",
+      "action": ""
+    },
+    {
+      "number": 83,
+      "title": "Rob Wrenn",
+      "action": ""
+    },
+    {
+      "number": 84,
+      "title": "Mary Wrenn",
+      "action": ""
+    },
+    {
+      "number": 85,
+      "title": "Rissa Coplan",
+      "action": ""
+    },
+    {
+      "number": 86,
+      "title": "Zohe Slack",
+      "action": ""
+    },
+    {
+      "number": 87,
+      "title": "Jason Rose",
+      "action": ""
+    },
+    {
+      "number": 88,
+      "title": "Barbara Gilbert",
+      "action": ""
+    },
+    {
+      "number": 89,
+      "title": "Betsy Bigelow-Teller",
+      "action": ""
+    },
+    {
+      "number": 90,
+      "title": "Bruce Feingold",
+      "action": ""
+    },
+    {
+      "number": 91,
+      "title": "Howard Hertz",
+      "action": ""
+    },
+    {
+      "number": 92,
+      "title": "Kyra Subbotin",
+      "action": ""
+    },
+    {
+      "number": 93,
+      "title": "Marc Sapir",
+      "action": ""
+    },
+    {
+      "number": 94,
+      "title": "Monica Renner",
+      "action": ""
+    },
+    {
+      "number": 95,
+      "title": "Friends of Adeline",
+      "action": ""
+    },
+    {
+      "number": 96,
+      "title": "Mary Prophet",
+      "action": ""
+    },
+    {
+      "number": 97,
+      "title": "Mati Teiblum",
+      "action": ""
+    },
+    {
+      "number": 98,
+      "title": "Tarnel Abbott",
+      "action": ""
+    },
+    {
+      "number": 99,
+      "title": "Elsa Tranter",
+      "action": ""
+    },
+    {
+      "number": 100,
+      "title": "Leah Rosenthal",
+      "action": ""
+    },
+    {
+      "number": 101,
+      "title": "Moni T. Law",
+      "action": ""
+    },
+    {
+      "number": 102,
+      "title": "Kathy Kojimoto",
+      "action": ""
+    },
+    {
+      "number": 103,
+      "title": "Scott Sepke",
+      "action": ""
+    },
+    {
+      "number": 104,
+      "title": "Valeria Kaim",
+      "action": ""
+    },
+    {
+      "number": 105,
+      "title": "Jeannine Cohen",
+      "action": ""
+    },
+    {
+      "number": 106,
+      "title": "Khalil Bendib",
+      "action": ""
+    },
+    {
+      "number": 107,
+      "title": "Joel A. Biatch",
+      "action": ""
+    },
+    {
+      "number": 108,
+      "title": "Avi Tsang Jaffe",
+      "action": ""
+    },
+    {
+      "number": 109,
+      "title": "Jonathan Jaffe",
+      "action": ""
+    },
+    {
+      "number": 110,
+      "title": "David Spero",
+      "action": ""
+    },
+    {
+      "number": 111,
+      "title": "Coby Huizenga",
+      "action": ""
+    },
+    {
+      "number": 112,
+      "title": "Tobie Lurie",
+      "action": ""
+    },
+    {
+      "number": 113,
+      "title": "Ednah Beth Friedman",
+      "action": ""
+    },
+    {
+      "number": 114,
+      "title": "Thomas F. Luce",
+      "action": ""
+    },
+    {
+      "number": 115,
+      "title": "Orli Loewenberg",
+      "action": ""
+    },
+    {
+      "number": 116,
+      "title": "Harry Devlin",
+      "action": ""
+    },
+    {
+      "number": 117,
+      "title": "46 Similarly worded form letters \u201cOn behalf of the Berkeley community\u201d",
+      "action": ""
+    },
+    {
+      "number": 118,
+      "title": "15 Similarly worded form letters \u201cI wish to express my concerns\u201d",
+      "action": ""
+    },
+    {
+      "number": 119,
+      "title": "8 Similarly worded form letters \u201cAs a resident of Berkeley\u201d",
+      "action": ""
+    },
+    {
+      "number": 120,
+      "title": "Alan Jencks",
+      "action": ""
+    },
+    {
+      "number": 121,
+      "title": "Sara Sunstein",
+      "action": ""
+    },
+    {
+      "number": 122,
+      "title": "Wendy Patterson",
+      "action": ""
+    },
+    {
+      "number": 123,
+      "title": "Naomi Kincler",
+      "action": ""
+    },
+    {
+      "number": 124,
+      "title": "Barryett Enge (2)",
+      "action": ""
+    },
+    {
+      "number": 125,
+      "title": "Lyra King (2)",
+      "action": ""
+    },
+    {
+      "number": 126,
+      "title": "Monica Renner",
+      "action": ""
+    },
+    {
+      "number": 127,
+      "title": "Idit Minka",
+      "action": ""
+    },
+    {
+      "number": 128,
+      "title": "Malka Weitman",
+      "action": ""
+    },
+    {
+      "number": 129,
+      "title": "Leah Greenblat",
+      "action": ""
+    },
+    {
+      "number": 130,
+      "title": "Vicki Sommer",
+      "action": ""
+    },
+    {
+      "number": 131,
+      "title": "Elana Auerbach",
+      "action": ""
+    },
+    {
+      "number": 132,
+      "title": "Martha Wallner",
+      "action": ""
+    },
+    {
+      "number": 133,
+      "title": "Hassan Fouda",
+      "action": ""
+    },
+    {
+      "number": 134,
+      "title": "Stephania Widger",
+      "action": ""
+    },
+    {
+      "number": 135,
+      "title": "Dorothea Dorenz",
+      "action": ""
+    },
+    {
+      "number": 136,
+      "title": "Eric Friedman",
+      "action": ""
+    },
+    {
+      "number": 137,
+      "title": "Cynthia Papermaster",
+      "action": ""
+    },
+    {
+      "number": 138,
+      "title": "Anna Concepcion",
+      "action": ""
+    },
+    {
+      "number": 139,
+      "title": "William Selig",
+      "action": ""
+    },
+    {
+      "number": 140,
+      "title": "Kelsi Perttula",
+      "action": ""
+    },
+    {
+      "number": 141,
+      "title": "Shirley Kirsten",
+      "action": ""
+    },
+    {
+      "number": 142,
+      "title": "Amanda Berger",
+      "action": ""
+    },
+    {
+      "number": 143,
+      "title": "Dahlia Frydman (2)",
+      "action": ""
+    },
+    {
+      "number": 144,
+      "title": "Anita Barrows (2)",
+      "action": ""
+    },
+    {
+      "number": 145,
+      "title": "Sonja Trauss (2)",
+      "action": ""
+    },
+    {
+      "number": 146,
+      "title": "Gabriela Kipnis (2)",
+      "action": ""
+    },
+    {
+      "number": 147,
+      "title": "JJ Noire (5)",
+      "action": ""
+    },
+    {
+      "number": 148,
+      "title": "Yoshiko I. Wada",
+      "action": ""
+    },
+    {
+      "number": 149,
+      "title": "Karen Roekard",
+      "action": ""
+    },
+    {
+      "number": 150,
+      "title": "Paul Liem",
+      "action": ""
+    },
+    {
+      "number": 151,
+      "title": "Elana Naftalin-Kelman",
+      "action": ""
+    },
+    {
+      "number": 152,
+      "title": "David Sweet-Cordero",
+      "action": ""
+    },
+    {
+      "number": 153,
+      "title": "Elaine Stelton",
+      "action": ""
+    },
+    {
+      "number": 154,
+      "title": "Tarek Milleron",
+      "action": ""
+    },
+    {
+      "number": 155,
+      "title": "Noga Ravid",
+      "action": ""
+    },
+    {
+      "number": 156,
+      "title": "Jean Krois",
+      "action": ""
+    },
+    {
+      "number": 157,
+      "title": "Nitzan Pelman",
+      "action": ""
+    },
+    {
+      "number": 158,
+      "title": "Grace Morizawa on behalf of the Japanese American community",
+      "action": ""
+    },
+    {
+      "number": 159,
+      "title": "John Hagopian",
+      "action": ""
+    },
+    {
+      "number": 160,
+      "title": "Vanessa and Andres Moraga",
+      "action": ""
+    },
+    {
+      "number": 161,
+      "title": "Tony Schmiesing",
+      "action": ""
+    },
+    {
+      "number": 162,
+      "title": "Niloofar Shambayati",
+      "action": ""
+    },
+    {
+      "number": 163,
+      "title": "Robin Wenrick",
+      "action": ""
+    },
+    {
+      "number": 164,
+      "title": "Miriam Ferris",
+      "action": ""
+    },
+    {
+      "number": 165,
+      "title": "Alicia Tan",
+      "action": ""
+    },
+    {
+      "number": 166,
+      "title": "Anne Marx",
+      "action": ""
+    },
+    {
+      "number": 167,
+      "title": "Richard Boubelik",
+      "action": ""
+    },
+    {
+      "number": 168,
+      "title": "Daniel Brownson",
+      "action": ""
+    },
+    {
+      "number": 169,
+      "title": "Robin Milleron",
+      "action": ""
+    },
+    {
+      "number": 170,
+      "title": "David Levinson",
+      "action": ""
+    },
+    {
+      "number": 171,
+      "title": "Lorrie Beth Slonsky",
+      "action": ""
+    },
+    {
+      "number": 172,
+      "title": "Pamela Sawyer",
+      "action": ""
+    },
+    {
+      "number": 173,
+      "title": "Melissa Chapman",
+      "action": ""
+    },
+    {
+      "number": 174,
+      "title": "Barry Rosen",
+      "action": ""
+    },
+    {
+      "number": 175,
+      "title": "Amy Zucker Morgenstern",
+      "action": ""
+    },
+    {
+      "number": 176,
+      "title": "Camille Watts-Zagha",
+      "action": ""
+    },
+    {
+      "number": 177,
+      "title": "Rachel on behalf of the Jewish Coalition of Berkeley",
+      "action": ""
+    },
+    {
+      "number": 178,
+      "title": "Mollie Starr",
+      "action": ""
+    },
+    {
+      "number": 179,
+      "title": "Kelly Segal",
+      "action": ""
+    },
+    {
+      "number": 180,
+      "title": "Tobey M. Wiebe",
+      "action": ""
+    },
+    {
+      "number": 181,
+      "title": "Esther Brass",
+      "action": ""
+    },
+    {
+      "number": 182,
+      "title": "Tamara Gurin",
+      "action": ""
+    },
+    {
+      "number": 183,
+      "title": "Anna Talamo",
+      "action": ""
+    },
+    {
+      "number": 184,
+      "title": "Jim Haydel",
+      "action": ""
+    },
+    {
+      "number": 185,
+      "title": "50 Similarly worded form letters",
+      "action": ""
+    },
+    {
+      "number": 186,
+      "title": "Thomas F. Luce",
+      "action": ""
+    }
+  ]
+}

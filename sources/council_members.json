@@ -1,0 +1,183 @@
+{
+  "_schema": {
+    "purpose": "Professional background profiles for current Berkeley City Council members. The analytical question these profiles address is not comparative ('who is more qualified than whom') — voters cast ballots district by district, not against a field. The question is specific to each member: is this person equipped to engage seriously with the problems that are actually theirs to solve? Berkeley's structural deficit, $1.65B infrastructure backlog, static pension liability, and deteriorating oversight infrastructure are not abstract — they require members who will dig into a CAFR, interrogate a budget assumption, or challenge a staff recommendation on its merits. Members who cannot or will not do that work tend to fill the space with problems they have no authority to solve.",
+    "key_analytical_questions": {
+      "lunaparra": "Is this someone who would open a CAFR and ask hard questions? What does it mean for accountability when the answer is no?",
+      "kesarwani": "She is one of the few members with genuine public finance experience. What does this council lose if she leaves?",
+      "tregub": "He has the quantitative training to read an infrastructure backlog analysis. Why doesn't he apply it?",
+      "humbert": "He can read these documents. His silence is a choice, not a limitation.",
+      "taplin": "Nontraditional background, but has demonstrated genuine ability to learn into domains where his training is not relevant (ALPR advocacy is the clearest example). Growth is real — but a council seat should not come with training wheels given the complexity and stakes of the problems in front of it."
+    },
+    "distraction_cost": "A council that lacks the institutional confidence to confront hard local problems will fill its agenda with problems it has no authority to solve. Time spent on Gaza resolutions, international solidarity declarations, and performative national political statements is time not spent on the structural deficit, the infrastructure backlog, or the police oversight collapse. This is not a coincidence — it is the predictable behavior of a body whose members are more comfortable with advocacy than administration.",
+    "note_on_growth": "Professional background is not destiny. Taplin's ALPR work demonstrates that members can develop real competency in domains where they started without it. The profiles flag starting points and patterns, not permanent limitations. What they measure is whether the pattern of engagement — over time and across the hard problems — reflects the kind of serious inquiry the situation demands.",
+    "source": "Profiles compiled from public records and LinkedIn; provided by scorecard author."
+  },
+
+  "Ishii": {
+    "name": "Adena Ishii",
+    "role": "Mayor",
+    "education": [
+      {"institution": "UC Berkeley", "degree": "BA", "year": 2014},
+      {"institution": "UC Berkeley School of Law", "degree": "JD", "year": 2022}
+    ],
+    "work_history": [
+      {"role": "Independent consulting", "years": "2010–2023", "note": "Not tied to a defined institution or role; overlaps with both undergraduate and law school years, suggesting this is a catch-all description rather than a structured career"},
+      {"role": "Legal internships", "years": "2020–2021", "note": "Short-term, during law school"},
+      {"role": "Electoral campaign / political activity", "years": "2023–2024"}
+    ],
+    "assessment": "Limited post-graduate professional experience. Entry into mayoral office occurred approximately two years after completing law school, with no intervening full-time employment in law, management, or operations. The 'consulting' description spanning 13 years (including years she was in school) suggests limited structured career history rather than sustained independent practice. Manages a ~$300M general fund and a city workforce of ~1,700 FTE with no prior executive or managerial role on record.",
+    "experience_category": "policy_advocacy",
+    "relevant_experience_years": 2,
+    "scoring_relevance": "Ishii confirmed and presided over the Aguilar firing — the destruction of an oversight body voters created at 85% — then issued a statement about the council's commitment to accountability. The gap between stated commitment and institutional action is consistent with a political orientation that has not been tested by the friction of managing real organizations."
+  },
+
+  "Kesarwani": {
+    "name": "Rashi Kesarwani",
+    "role": "District 1",
+    "status": "Not seeking re-election; departing end of current term (November 2026)",
+    "education": [
+      {"institution": "Brown University", "degree": "BA", "field": "English"},
+      {"institution": "UC Berkeley Goldman School of Public Policy", "degree": "MPP (Master of Public Policy)"}
+    ],
+    "work_history": [
+      {"role": "California Legislative Analyst's Office (LAO)", "note": "Nonpartisan state fiscal analysis office; trained in evidence-based policy analysis and budget evaluation — 'trained to think about the right policy, first and always, and the right thing to do based on the data and the evidence' (her words)"},
+      {"role": "San Francisco Human Services Agency", "note": "Budget and policy roles at scale within a large public agency"}
+    ],
+    "assessment": "The council member with the most directly relevant background for Berkeley's actual problems. The LAO is where California's most rigorous nonpartisan budget analysis is done — it is not a political shop; it is an analytical one. That training, combined with SF HSA budget experience, means Kesarwani has done the actual work of reading financial documents, challenging assumptions, and producing analysis that does not bend to political pressure. She has engaged with police overtime as a budget mechanism, vacancy savings as a structural dependency, and fiscal reserves as a finite tool — 'It is sort of a niche thing to understand a public budget,' she said, describing exactly the analysis the City Auditor later formalized. She is leaving.",
+    "key_quotes": {
+      "on_structural_deficit": "We are in this situation where the bills have come due.",
+      "on_reserves": "There's no emergency reason to draw on the reserves. Revenues are just not enough to cover expenditures.",
+      "on_budget_complexity": "It is sort of a niche thing to understand a public budget — from vacancy assumptions to police overtime, and the complex calculations that are made when using savings from open positions to fund other needs.",
+      "on_police_staffing": "We need to empower our police department with technology that can leverage the staff that we have. Because we are in a staffing crisis like a lot of other police departments.",
+      "on_successor": "Someone who is committed to a vibrant, safe and inclusive community. Fiscal oversight. Making decisions using evidence."
+    },
+    "departure_significance": "Kesarwani is the member who spoke 'forcefully about the city's structural deficit long before others on the dais brought up spending cuts' (Berkeley Scanner). Her departure leaves the council without its most analytically grounded fiscal voice at the moment the city faces a $29M+ general fund gap, a bond measure decision, and a sales tax vote. The contrast with her likely successors — and with the members remaining — is the most significant governance transition in the current period.",
+    "experience_category": "public_finance_operations",
+    "scoring_relevance": "Absent from the Aguilar firing vote. Authored the January 2026 sales tax proposal (~$10M/year) — more honest than most of the bond boosterism because she explicitly named the remaining $20M gap and did not pretend the tax solved the structural problem."
+  },
+
+  "Taplin": {
+    "name": "Terry Taplin",
+    "role": "District 2",
+    "education": [
+      {"institution": "UC Berkeley", "degree": "BA", "field": "English"}
+    ],
+    "work_history": [
+      {"role": "Poetry / literary field"},
+      {"role": "Rent Stabilization Board", "note": "Appointed, not elected; local policy role"},
+      {"role": "Local policy engagement and political activity"}
+    ],
+    "assessment": "Nontraditional professional background. Career centered in the arts with transition into housing policy via local appointed boards. No conventional managerial, technical, or financial role prior to elected office. Despite this, Taplin has authored the most technically specific fiscal policy referrals on the council — bond schedule optimization, bond survey design — revealing engagement with the mechanics of municipal finance without apparent background in its fundamentals. The asymmetry between authorship sophistication and the absence of any structural balance analysis in the same period is the defining signal.",
+    "experience_category": "arts_policy",
+    "scoring_relevance": "Detailed bond policy authorship from someone with no finance background. The fluency with borrowing mechanics without apparent understanding of when not to borrow is a recurring pattern."
+  },
+
+  "Bartlett": {
+    "name": "Ben Bartlett",
+    "role": "District 3",
+    "education": [
+      {"institution": "Morehouse College", "degree": "BA"},
+      {"institution": "Harvard Law School", "degree": "JD", "year": 2014}
+    ],
+    "work_history": [
+      {"role": "Legal and policy roles"},
+      {"role": "Nonprofit and technology-related advisory work"}
+    ],
+    "assessment": "Strong formal credential (Harvard Law). Professional experience is primarily advisory, legal, and policy-focused rather than operational or executive. Advisory legal roles typically involve discrete engagements rather than sustained institutional management. The AAHRC initiative — a new building and staffing commitment with no performance metrics required — is consistent with an advisory-oriented background that produces initiatives without operational accountability structures.",
+    "experience_category": "legal_advisory",
+    "scoring_relevance": "Credential without operational accountability experience. Backed the AAHRC without requiring performance metrics; engages as a policy designer rather than an institutional manager."
+  },
+
+  "Tregub": {
+    "name": "Igor Tregub",
+    "role": "District 4",
+    "status": "Running for re-election (November 2026).",
+    "education": [
+      {"institution": "UC Berkeley", "degree": "BS", "field": "Nuclear Engineering"},
+      {"institution": "UC Berkeley", "degree": "MS", "field": "Nuclear Engineering"}
+    ],
+    "work_history": [
+      {"role": "Policy, communications, and environmental advocacy roles", "note": "Career trajectory is largely in policy and advocacy rather than sustained engineering practice or technical industry leadership"}
+    ],
+    "assessment": "Clear STEM credential and analytical training that could provide genuine capacity for infrastructure and fiscal analysis. However, career trajectory moved from engineering education into policy and advocacy — not into sustained technical practice. The result is a credential without the operational discipline that comes from sustained technical accountability (engineering sign-offs, project delivery, cost control). Filled the seat vacated by Kate Harrison's mid-term resignation — a progressive-to-progressive replacement, but Harrison at least had the full tenure of a previous term. Tregub arrived through a special election at taxpayer cost.",
+    "experience_category": "stem_credential_policy_career",
+    "arrival_note": "Won April 2024 special election created by Kate Harrison's mid-term resignation (January 30, 2024)",
+    "scoring_relevance": "The engineering credential creates an expectation of quantitative rigor that his voting record does not reflect — infrastructure bond support without engagement with the static $1.65B backlog finding; no structural balance analysis despite the training to understand one."
+  },
+
+  "OKeefe": {
+    "name": "Shoshana O'Keefe",
+    "role": "District 5",
+    "education": [
+      {"institution": "Harvard University", "degree": "BA"},
+      {"institution": "UC Berkeley School of Law", "degree": "JD"}
+    ],
+    "work_history": [
+      {"role": "Legal practice", "note": "Municipal and regulatory law"}
+    ],
+    "assessment": "Professional legal background with structured analytical and regulatory experience. One of the more traditionally credentialed members, though experience is within legal practice rather than executive management. Municipal law background may give her the most direct exposure to the legal constraints on bond issuance and debt policy of any current member.",
+    "experience_category": "legal_practice",
+    "scoring_relevance": "Insufficient incident data in the current scorecard period to assess."
+  },
+
+  "Blackaby": {
+    "name": "Brent Blackaby",
+    "role": "District 6",
+    "education": [
+      {"institution": "UC Berkeley", "degree": "BA"}
+    ],
+    "work_history": [
+      {"role": "Nonprofit sector roles"},
+      {"role": "Community program management and organizing"}
+    ],
+    "assessment": "Experience in small-to-mid scale nonprofit operations. Background is service-oriented with community program management — more operational than pure policy advocacy, but at a scale considerably below the ~$300M general fund. Nonprofit budget experience does involve real trade-offs and accountability, which distinguishes it from pure political activity.",
+    "experience_category": "nonprofit_operations",
+    "scoring_relevance": "Insufficient incident data in the current scorecard period to assess."
+  },
+
+  "Lunaparra": {
+    "name": "Cecilia Lunaparra",
+    "role": "District 7",
+    "status": "Not seeking re-election; departing end of current term (November 2026). Has endorsed Syrak Micael as successor.",
+    "education": [
+      {"institution": "UC Berkeley", "degree": "BA", "year": 2024}
+    ],
+    "work_history": [
+      {"role": "Internship, California Housing Defense Fund", "years": "2023–2024"},
+      {"role": "Student leadership — Cal Berkeley Democrats; campus advocacy groups"},
+      {"role": "Appointed member, Environment & Climate Commission"},
+      {"role": "Appointed member, Zoning Adjustments Board"}
+    ],
+    "assessment": "Minimal professional experience. Work history consists almost entirely of student leadership, internships, and local political appointments. No full-time career experience prior to election; entered council office immediately after — or concurrent with — college graduation. Seats a member of a body making multi-hundred-million-dollar capital and pension decisions at approximately 22 years old with no managerial, financial, or operational track record of any kind. The local appointed board experience (ZAB) provides some procedural familiarity with Berkeley land use process, but no exposure to institutional finance, workforce management, or operational accountability.",
+    "experience_category": "student_political",
+    "arrival_note": "Won April 2024 special election created by Rigel Robinson's mid-term resignation (January 9, 2024). Robinson was a principal architect of the Measure II ballot initiative that created the PAB/ODPA — the oversight body Lunaparra subsequently voted to destabilize.",
+    "self_described_role": "Organizer first and elected official second — her words, in her farewell letter. This is not an interpretation. Organizers build power for a cause and are accountable to a movement. Administrators are accountable to outcomes. She chose the former orientation in an office that required the latter.",
+    "student_district_argument": "Lunaparra explicitly argues that District 7 — 95% students, median age 19 — 'should always be represented by someone who is currently or was recently a student.' This is a normative claim with real governance consequences: a transient population (most students leave within 4 years) elects members who vote on 30-year general obligation bonds that permanent residents and future generations will repay. The students who voted for her are largely gone by the time the bonds they approved begin maturing. This is not a neutral democratic design — it is a structural bias toward short-term political preferences over long-term fiscal obligations.",
+    "key_positions_from_farewell": {
+      "alpr_opposition": "Explicitly opposed ALPRs, fixed surveillance cameras, and drones — describing them as 'mass surveillance and contracts with harmful and dangerous corporations like Flock.' This is in direct conflict with Taplin's ALPR advocacy, which the scorecard identifies as the clearest example of a member genuinely delivering a core-service improvement. Lunaparra's opposition was ideological, not analytical.",
+      "gaza_and_arms_embargo": "Advocated for a ceasefire resolution 'that clearly named the genocide that Israel is committing against the Palestinian people and endorsed an arms embargo.' This is an international policy position with no connection to Berkeley's municipal authority — textbook agenda displacement.",
+      "ice_abolition": "Claims credit for 'making Berkeley the first city in the United States, to our knowledge, to formally call for ICE to be abolished.' ICE is a federal agency. Berkeley has no authority over it. This is the purest form of jurisdiction-free politics: a resolution that consumes council time and produces a press release with zero operational consequence.",
+      "pab_advocacy_vs_aguilar_vote": "Her farewell letter claims she 'advocated for the Police Accountability Board's authority and independence.' She voted 8-0 to fire the PAB's executive director. These are not compatible positions.",
+      "structural_deficit_mention": "Appears once in the conclusion: 'We have to address a structural budget deficit' — listed alongside 'defeat efforts to increase mass surveillance and police militarization' and 'introduce and move forward many exciting new policies.' No analysis, no acknowledgment of causation, no ownership. The deficit is on the to-do list, not in the rearview mirror."
+    },
+    "successor_profile": "Endorsed Syrak Micael — recent UC Berkeley graduate, lifelong Berkeleyan, member of DSA, Berkeley Tenants Union, and Berkeley Copwatch. The succession signal: the seat continues in the same ideological lineage.",
+    "scoring_relevance": "The farewell letter confirms every analytical inference in the scorecard: organizer identity over administrative accountability; jurisdiction-free political agenda; PAB advocacy contradicted by Aguilar vote; no engagement with the fiscal documents that define Berkeley's actual crisis. The letter does not mention pension liability, infrastructure backlog, or the Section 115 Trust. It mentions ICE abolition, Gaza, and arms embargoes."
+  },
+
+  "Humbert": {
+    "name": "Mark Humbert",
+    "role": "District 8",
+    "status": "Running for re-election (November 2026).",
+    "education": [
+      {"institution": "Unknown", "degree": "BA", "field": "Business / Finance"},
+      {"institution": "Unknown", "degree": "MBA", "field": "Finance"}
+    ],
+    "work_history": [
+      {"role": "Private-sector finance and investment roles"},
+      {"role": "Experience in capital markets and financial analysis"}
+    ],
+    "assessment": "Substantial private-sector experience. Direct exposure to financial systems, capital allocation, and markets. One of two members (with Kesarwani) with directly relevant experience for evaluating Berkeley's structural fiscal situation. An MBA in finance and capital markets background means he is the member most likely to understand what it means that the Section 115 Trust is being drawn down, that workers' comp is unfunded, and that the $1.65B infrastructure backlog is not declining. What he does with that understanding — whether it produces dissent from the bond-and-tax consensus — is the relevant question.",
+    "experience_category": "private_finance",
+    "scoring_relevance": "Voted with the unanimous council on the Aguilar firing. Finance background makes him the member least able to claim ignorance of what the structural deficit documents say. No documented incidents of fiscal dissent in the scorecard period."
+  }
+}

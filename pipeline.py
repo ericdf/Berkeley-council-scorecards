@@ -1912,6 +1912,75 @@ def load_audit_silence() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Newsletter P1 silence penalty
+# ---------------------------------------------------------------------------
+
+NEWSLETTER_INDEX_PATH   = os.path.join(os.path.dirname(__file__), "newsletter_index.json")
+NEWSLETTER_RHETORIC_PEN = -0.025   # acknowledges fiscal difficulty, zero P1 content
+NEWSLETTER_SILENT_PEN   = -0.015   # no fiscal language at all
+NEWSLETTER_SILENCE_CAP  = -0.06    # per-member cap
+FISCAL_CRISIS_START     = "2024-07-01"   # FY25-26 budget adopted; "not sustainable" on record
+
+
+def score_newsletter_p1_silence() -> dict:
+    """
+    For each regular constituent newsletter published on or after FISCAL_CRISIS_START:
+      - p1_hit              → no penalty (member engaged with documented P1 fiscal problems)
+      - rhetoric_no_substance → NEWSLETTER_RHETORIC_PEN (named the crisis, did nothing)
+      - silent              → NEWSLETTER_SILENT_PEN (complete omission)
+      - atm_framing / existing_incident → 0 (already scored as incident; avoid double-count)
+      - skip                → 0
+
+    Returns {member: {newsletter_silence_adj: float, newsletter_events: list}}
+    """
+    if not os.path.exists(NEWSLETTER_INDEX_PATH):
+        return {}
+
+    try:
+        data = json.load(open(NEWSLETTER_INDEX_PATH, encoding="utf-8"))
+    except Exception:
+        return {}
+
+    result: dict = {}
+    for entry in data.get("newsletters", []):
+        member = entry.get("member")
+        if not member or member not in CANONICAL_MEMBERS:
+            continue
+        date = entry.get("date", "")
+        if date < FISCAL_CRISIS_START:
+            continue
+        if entry.get("existing_incident"):
+            continue
+
+        classification = entry.get("classification", "silent")
+        if classification == "rhetoric_no_substance":
+            pen = NEWSLETTER_RHETORIC_PEN
+        elif classification == "silent":
+            pen = NEWSLETTER_SILENT_PEN
+        else:
+            continue   # p1_hit, atm_framing, skip → no penalty here
+
+        if member not in result:
+            result[member] = {"newsletter_silence_adj": 0.0, "newsletter_events": []}
+        result[member]["newsletter_silence_adj"] += pen
+        result[member]["newsletter_events"].append({
+            "date":           date,
+            "subject":        entry.get("subject", ""),
+            "classification": classification,
+            "penalty":        pen,
+        })
+
+    # Apply cap
+    for member, v in result.items():
+        v["newsletter_silence_adj"] = max(
+            NEWSLETTER_SILENCE_CAP,
+            v["newsletter_silence_adj"],
+        )
+
+    return result
+
+
+# ---------------------------------------------------------------------------
 # Taxpayer alignment + Tier 1 composite grade
 # ---------------------------------------------------------------------------
 
@@ -1972,6 +2041,10 @@ def compute_composite_grade(s: dict) -> dict:
     # Audit silence: present at audit presentation, no follow-up, no characterized incident
     audit_silence_adj = s.get("audit_silence_adj", 0.0) or 0.0
 
+    # Newsletter P1 silence: constituent newsletters that acknowledge fiscal difficulty
+    # but contain zero structural deficit / CalPERS / OPEB / streets-backlog content
+    newsletter_silence_adj = s.get("newsletter_silence_adj", 0.0) or 0.0
+
     # Fiscal referral / bond-campaign direction penalty (capped -0.09 in score_fiscal_referral_votes)
     fiscal_ref_penalty = s.get("fiscal_referral_penalty", 0.0) or 0.0
 
@@ -1993,6 +2066,7 @@ def compute_composite_grade(s: dict) -> dict:
     taxpayer_unclamped = (
         taxpayer_raw - rhetoric_penalty - revenue_seeking_penalty
         + incident_adj + fiscal_ref_penalty + audit_silence_adj
+        + newsletter_silence_adj
     )
     taxpayer_alignment = max(0.0, min(1.0, taxpayer_unclamped))
 
@@ -2073,7 +2147,8 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
         "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
         "composite_lightweight_pen":    round(lightweight_penalty, 4),
-        "composite_audit_silence_pen":  round(-audit_silence_adj, 4),
+        "composite_audit_silence_pen":      round(-audit_silence_adj, 4),
+        "composite_newsletter_silence_pen": round(-newsletter_silence_adj, 4),
         "composite_agenda_waste_signal":round(agenda_waste_signal, 4),
         "composite_cls9_signal":        round(cls9_signal, 4),
         # P1/P2/P3/9 authorship counts for display and debugging
@@ -2304,6 +2379,16 @@ def main():
     if audit_silence:
         print(f"  Audit silence: {sum(len(v['audit_silence_events']) for v in audit_silence.values())} "
               f"events across {len(audit_silence)} members", file=sys.stderr)
+
+    # Newsletter P1 silence penalty
+    newsletter_silence = score_newsletter_p1_silence()
+    for name in CANONICAL_MEMBERS:
+        if name in newsletter_silence:
+            aggregate[name].update(newsletter_silence[name])
+    if newsletter_silence:
+        n_newsletters = sum(len(v["newsletter_events"]) for v in newsletter_silence.values())
+        print(f"  Newsletter P1 silence: {n_newsletters} newsletters penalized "
+              f"across {len(newsletter_silence)} members", file=sys.stderr)
 
     # Tier 1 composite grade
     print("Computing Tier 1 composite grade...", file=sys.stderr)

@@ -1,0 +1,203 @@
+{
+  "_schema": {
+    "purpose": "Documents the systemic governance dynamic in which elected council priorities — particularly ideologically-driven ones — impose costs on core city functions that are diffuse, delayed, and structurally hard to attribute. This is not a scored input for individual members but a context document for the narrative sections of the scorecard and for understanding why the fiscal warnings documented elsewhere were acknowledged but not acted on.",
+    "core_dynamic": "Berkeley's council sets the political agenda and culture; professional staff (City Manager, Finance Director, City Attorney) operate within those constraints or are removed. The result is a one-way accountability structure: staff answer to council, but council answers only to constituencies that may not bear the direct costs of ideologically-motivated policy choices. The City Auditor and City Manager both raised fiscal concerns in writing — repeatedly, explicitly — and both were effectively sidelined. The specific costs (understaffing → overtime, oversight dysfunction, deferred maintenance, debt accumulation) are individually attributable to poor management by those who observe only the symptoms.",
+    "note_on_prior_vs_current_council": "The 'defund the police' posture and the creation of the Community Oversight Board were driven primarily by council members in the 2020-2022 period. Current members (Kesarwani, Taplin, Bartlett, Tregub, Lunaparra, Humbert) inherited those structural decisions. However, current members: (a) have not reversed them, (b) have scrutinized police overtime without acknowledging its root cause, and (c) have continued the pattern of prioritizing new initiatives over core service delivery."
+  },
+
+  "causal_chains": {
+    "police_understaffing_cycle": {
+      "description": "The feedback loop from ideological budget posture to fiscal cost",
+      "steps": [
+        "2020-2022: Defund movement; prior council reduces BPD budget, freezes positions, redirects funding to social services and new oversight infrastructure",
+        "Policy effect: BPD becomes a less attractive employer — lower staffing ratios, political climate hostile to policing, morale effects, fewer lateral transfers in",
+        "Structural result: chronic understaffing relative to minimum shift requirements; authorized positions unfilled",
+        "Operational consequence: mandatory overtime triggered whenever minimum staffing is not met; sergeant and officer overtime is the most expensive labor category in the department",
+        "Budget consequence: overtime costs appear as a line-item overrun in the police department budget",
+        "Council response: police chief called before council to explain overtime — scrutiny of the symptom by the actors who created the cause",
+        "Narrative consequence: members can claim fiscal concern (scrutinizing overtime) while avoiding accountability for the structural decision (understaffing policy) that made overtime inevitable"
+      ],
+      "scoring_note": "If council members who voted to reduce BPD staffing subsequently interrogated the police chief about overtime costs, the overtime scrutiny should be scored as a negative — it is cost-of-government accountability theater, not fiscal oversight."
+    },
+
+    "oversight_body_dysfunction": {
+      "description": "The progression from nationally-recognized civilian oversight to a structurally dysfunctional replacement — created by voters, undermined by the same council that oversees it",
+      "steps": [
+        "Berkeley's Police Review Commission (PRC) was for decades one of the most powerful civilian oversight bodies in the country — cited by the Department of Justice as an example of robust civilian oversight",
+        "2020: Defund movement; prior council and activists argued PRC was insufficiently powerful and too deferential to BPD",
+        "November 2020: Voters approved Measure II by 85% — creating the Police Accountability Board (PAB) and the Office of the Director of Police Accountability (ODPA) to replace the PRC, with broader powers and an independent executive arm",
+        "October 2022: Hansel Aguilar hired as Director of Police Accountability — selected from 17 applicants by Williams-Ridley, Brown, and the council",
+        "2022-2025: BPD refused to turn over records; PAB subpoenaed BPD multiple times; PAB declared it could not properly review military equipment use due to insufficient information from BPD; board dropped to 5 members in 2023 before recovering partially",
+        "2023: Former PAB member Cheryl Owens accused then-City Manager Williams-Ridley of deferring to Police Chief Jen Louis and stymying the board's oversight work — the same Williams-Ridley whose budget messages pleaded with council to acknowledge the structural deficit",
+        "September 2025: Aguilar used his charter authority to force two items onto the council agenda — council members including Ishii gave him a public dressing-down",
+        "December 2025: Aguilar sued Police Chief Jen Louis in state court to compel release of records from a homeless encampment sweep in Northwest Berkeley",
+        "January 30, 2026: Last two original PAB commissioners (Calavita and Leftwich) resigned — wrote that the PAB 'has not been permitted to exercise its expanded oversight authority and is even less empowered than its predecessor.' PAB drops to 4 of 9 seats filled.",
+        "February 9, 2026: Council voted 8-0 (Kesarwani absent) to fire Aguilar — 'without cause' under contract terms, triggering mandatory severance"
+      ],
+      "key_quotes": {
+        "calavita_at_pab_meeting": "What is incredibly frustrating for those of us who have been here for a while is that it seems apparent that people want us simply to trust the police to do the right thing. And I have great respect for this department, it's not that I don't. But we are the oversight body and it looks very much like some of the leaders here do not want a real oversight body.",
+        "calavita_leftwich_joint_resignation_letter": "We have seen firsthand that the PAB has not been permitted to exercise its expanded oversight authority and is even less empowered than its predecessor.",
+        "aguilar_statement_after_firing": "Across the country, communities are watching to see whether promises made in the wake of high-profile cases of police violence will be honored or quietly walked back once the spotlight fades.",
+        "aguilar_on_systemic_issues": "His removal — along with the city's ongoing hiring freeze, BPD's 'resistance' to turning over records and the PAB resignations — raised 'serious questions about the city's commitment to independent accountability.'",
+        "lunaparra_after_voting_to_fire": "I remain equally committed to Police accountability work in Berkeley, and equally concerned that the City and City Council does not prioritize or value Police accountability.",
+        "pab_chair_cayetano": "Berkeley as a city faces systemic issues preventing effective independent civilian oversight of law enforcement that will not go away simply because of Aguilar's dismissal.",
+        "mayor_ishii": "The council remained committed to police accountability and was focused on filling the PAB vacancies, finding a new director and restoring credibility, trust and respect for both the accountability process and the people involved in this work."
+      },
+      "lunaparra_contradiction": "Lunaparra voted unanimously with seven colleagues to fire Aguilar and simultaneously issued a statement saying she was 'concerned that the City and City Council does not prioritize or value Police accountability.' She was the City and City Council in the moment she cast that vote. This is the accountability theater structure in its purest form: a council member votes for an outcome and then distances herself from the outcome in the same breath.",
+      "net_result": "The oversight body voters approved 85-15 in 2020 is now down to 4 of 9 seats, has fired its director, has lost all its original commissioners, and its last members stated it is less empowered than the body it replaced. The PRC it replaced was cited by the DOJ as a national model. The council that created this outcome is the same council that will appoint a new director and call the result accountability.",
+      "williams_ridley_connection": "Both the City Manager and the PAB were undermined by the same Police Chief (Louis) and the same council posture — Williams-Ridley was accused of deferring to Louis; Aguilar sued Louis; both were eventually removed. The institutional pressure was consistent and directional.",
+      "scoring_note": "Lunaparra's simultaneous yes vote and condemning statement is a scorable accountability theater incident. Ishii presided over and confirmed the firing. All eight voting members — including all current scorecarded members present — bear joint ownership of this outcome."
+    },
+
+    "staff_capture_and_removal": {
+      "description": "Pattern of professional staff raising fiscal or accountability concerns → being constrained or removed",
+      "episodes": [
+        {
+          "actor": "City Manager Dee Williams-Ridley",
+          "pattern": "Repeated written warnings about structural deficit, unsustainable balancing measures, and opportunity cost of competing initiatives — in three consecutive budget messages (FY2023-2024, FY2024 mid-biennial, FY2025-2026)",
+          "public_statement_before_departure": "I am optimistic that by working with Council...we will find solutions",
+          "departure": "Announced resignation May 6, 2024; left June 10, 2024",
+          "indicator_of_forced_exit": "Two-month interim gap before permanent replacement — atypical for a planned departure; suggests no succession plan was in place, consistent with an unmanaged exit",
+          "additional_connection": "Former PAB member Cheryl Owens also accused Williams-Ridley of deferring to Police Chief Louis and stymying the PAB's oversight work. Williams-Ridley was caught between the council's defund-era political posture (which required maintaining the Police Chief's position) and the oversight body the council had created (which required giving that body real authority). These are structurally incompatible demands; staff in the middle get removed.",
+          "note": "The FY2025-2026 budget (adopted June 25, 2024) was drafted under Williams-Ridley but she was gone before adoption. The 'not sustainable' admission in that document is her last official act on the structural deficit."
+        },
+        {
+          "actor": "Hansel Aguilar, Director of Police Accountability",
+          "pattern": "Hired October 2022 to lead the ODPA, the executive arm of the Police Accountability Board created by 85% voter approval in 2020. Spent three years attempting to exercise the oversight authority voters granted — subpoenaing records, using charter powers, finally suing Police Chief Jen Louis in December 2025. Council voted 8-0 to remove him February 9, 2026.",
+          "departure": "Fired February 9, 2026 — 'without cause' under contract terms; triggers mandatory severance",
+          "note": "The council that fired Aguilar is the same council that oversees the PAB and that could have directed BPD to comply with records requests at any point. It chose instead to fire the person making the requests."
+        },
+        {
+          "actor": "City Auditor (ongoing)",
+          "pattern": "April 2026 financial condition report explicitly flagged four one-time balancing measures, the structural revenue-expenditure gap, and the absence of any GFOA-required policy test for structural balance. The auditor cannot be removed by council; the council's response was 'receive and file.'"
+        }
+      ]
+    },
+
+    "opportunity_cost_blindness": {
+      "description": "Both the City Manager and City Auditor asked council to track opportunity costs of initiatives. Council did not comply.",
+      "documented_requests": [
+        "City Auditor April 2026 report: absence of any policy requiring structural balance assessment — this is the implicit opportunity cost test; the auditor called it a missing best practice",
+        "City Manager budget messages FY2023-2026: repeated language about 'not sustainable' one-time measures — the opportunity cost of not restructuring is named in the transmittal letters that council voted to receive"
+      ],
+      "consequence": "Without opportunity cost tracking, every new initiative is evaluated in isolation. The African American Holistic Resource Center, the expanded homelessness services apparatus, the COB — each was analyzed as a standalone good without a corresponding 'what does this crowd out?' question. The crowding-out is visible in the aggregate: $1.65B infrastructure backlog static across two bond cycles; workers' comp unfunded; pension jump absorbed by trust drawdown rather than structural reform."
+    }
+  },
+
+  "council_genealogy_january_2024": {
+    "description": "Two simultaneous resignations in January 2024 that reshaped the council's composition — each replacement arguably compounding the underlying dysfunction",
+    "robinson_resignation": {
+      "member": "Rigel Robinson, District 7",
+      "date": "January 9, 2024",
+      "stated_reason": "Harassment, stalking, threats — largely related to his support for People's Park housing development",
+      "political_profile": "Defund champion; youngest member ever elected in Berkeley; had endorsed by AG Rob Bonta and broad progressive coalition; abandoned mayoral campaign simultaneously",
+      "replacement": "Lunaparra (won special election)",
+      "significance": "Lunaparra subsequently voted unanimously with colleagues to fire Aguilar while issuing a statement condemning the outcome of her own vote. The 'defund' political inheritance transferred to a member who cannot sustain even the accountability infrastructure the defund movement created."
+    },
+    "harrison_resignation": {
+      "member": "Kate Harrison, District 4",
+      "date": "January 30, 2024 (effective Feb 15)",
+      "stated_reason": "Resigned mid-meeting during a debate over surveillance cameras. 'I've had it with this place. These processes are broken.' Said 'Issues are presented as a morality play with those who disagree cast in the role of villains.'",
+      "political_profile": "Described by Bartlett as 'by far the most progressive person on the council'; documented as the most aggressive interrogator of BPD on overtime costs — scrutinizing the symptom of the understaffing her ideological bloc created",
+      "post_resignation": "Ran for mayor anyway; lost to Adena Ishii",
+      "replacement": "Tregub (won special election)",
+      "colleague_reactions": {
+        "taplin": "It's unfortunate when people choose to no longer do that service. That's why we're all here.",
+        "hahn": "It's absolutely shocking that somebody would step away from a position that they were elected to, and service that they accepted, for no particular reason other than being frustrated that they don't win all the time.",
+        "bartlett": "Her people need a voice. She's by far the most progressive person on the council and without her they don't have a voice. The current climate is introducing a level of rigor and new level of stress to the job."
+      },
+      "significance": "Hahn's observation — 'fiscally irresponsible because it will require Berkeley to hold a special election' — is the clearest statement in the record of the personal cost externalization at work: the political frustration belongs to Harrison; the special election bill goes to taxpayers."
+    },
+    "net_effect": "Both resignations in the same month, both creating special elections at taxpayer expense, both producing successors the council's own members considered problematic — Robinson's departure gave Lunaparra a seat; Harrison's gave Tregub one. The council that will vote on the 2026 bond and sales tax includes two members who arrived through special elections triggered by predecessors who abandoned their posts."
+  },
+
+  "systemic_cost_estimates": {
+    "note": "These are directional, not audited. The point is that diffuse costs from ideological policy choices are real and attributable — they just don't appear on a single budget line.",
+    "police_overtime_incremental": "BPD overtime attributable to understaffing vs. a fully-staffed baseline — requires FOIA for exact figures; likely $3-8M annually above what a fully-staffed department would spend",
+    "cob_vs_prc_cost_delta": "COB operating costs vs. prior PRC operating costs — COB has a larger independent staff budget; exact delta requires budget line comparison",
+    "deferred_maintenance_cost_multiplier": "Explicitly stated in the FY2025-2029 CIP: $1 in early maintenance saves $7 in later repair; delays quadruple cost by 2050. Applied to the static $1.65B backlog: each year of non-action compounds future costs at a documented rate."
+  },
+
+  "governance_overhead": {
+    "council_size": {
+      "description": "Berkeley has 8 council districts plus a separately elected mayor — 9 elected officials total for a city of approximately 120,000 people. Cities of comparable or larger population operate with far fewer seats.",
+      "elected_officials_per_100k": {
+        "san_jose": 1.0,
+        "san_francisco": 1.33,
+        "oakland": 1.82,
+        "berkeley": 6.43,
+        "note": "Excluding mayor in all cases. Berkeley's ratio is 3.5x Oakland's and 6.4x San Jose's. Each district office is a cost center (staff, budget, committee assignments) and an agenda-generation engine. The governance overhead is not proportional to population or problem complexity."
+      },
+      "cost_of_expansion": "The November 2023 Taplin item (passed on consent calendar) doubled authorized council office staffing to 2 FTE per office — $442k/year in new recurring expenditure at a time when the city's structural deficit was already acknowledged in writing. More staff per office produces more legislative output. More legislative output is not inherently better governance; it is more agenda items, more referrals, more commissions, more interagency committees — the machinery that generates ICE abolition declarations alongside infrastructure bonds.",
+      "the_alternative_not_considered": "The item's stated rationale is constituent service demand: residents contact council offices because they cannot get responsive service from city departments. The structural response Taplin chose was to add council staff — a parallel service layer on top of a failing primary layer. The alternative not considered: measure city staff responsiveness to constituent inquiries, set performance targets, and hold department heads accountable for improvement. That approach addresses the root cause. Adding council staff addresses the symptom while insulating the underlying dysfunction from accountability. This is precisely the same logic as the African American Holistic Resource Center: rather than asking why existing city services were not reaching the target population and fixing that, the council built a new institution alongside the old ones. New structures are easier to authorize than existing structures are to reform — and they add to the permanent cost base.",
+      "historical_precedent": "More than a decade ago, a Berkeley councilmember maintained 17 unpaid interns who generated council items including a 'free the nipple' resolution and a proposal to ban raffling small animals (e.g., gerbils). Unpaid interns generating agenda items at a councilmember's direction is the extreme version of a consistent dynamic: staff capacity produces output calibrated to the political identity of the office, not to the city's actual governance needs. Lunaparra's farewell letter mentions 'dozens of interns' across a two-year term. The Taplin staffing expansion institutionalized and paid for that capacity citywide.",
+      "redistricting_opportunity": {
+        "timing": "After the next census (2030), Berkeley will redraw district boundaries. That process is also the natural moment to reconsider the number of seats.",
+        "proposed_structure": "4 geographic districts (north, south, east, west) plus 2 at-large seats = 6 council members. Retaining an independently elected mayor yields 7 total elected officials.",
+        "revised_ratio": "6 council members for ~120,000 residents = 5.0 per 100k — still above Oakland (1.82) but a 22% reduction from the current 6.43, and the structural benefits compound: 2 fewer offices, 4+ fewer FTE, fewer committee slots, less agenda surface area.",
+        "rationale_for_at_large": "At-large seats create a path for candidates with citywide credentials — finance, public administration, legal — who cannot build a neighborhood organizing base in a small district. They also provide a structural counterweight to hyper-local district politics: an at-large member's constituency is the entire city, making it harder to justify spending council time on single-street grievances or non-jurisdictional resolutions.",
+        "district_7_effect": "Under a 4-district model, the UC Berkeley campus and Southside would be absorbed into a larger geographic district rather than constituting a near-majority of one seat. The transient student population would retain representation without being able to elect a single-constituency member optimized entirely for student advocacy. The '95% student' dynamic that Lunaparra explicitly argued should be permanent policy would become structurally impossible.",
+        "political_obstacle": "The council members who would vote on any reduction in council size are the ones whose offices would be eliminated. This is a structural conflict of interest with no obvious resolution through the council itself. A voter-initiated charter amendment via the initiative process would be the mechanism — whether Berkeley's charter permits this independently of council action is worth verifying.",
+        "signal_value": "Whether a post-2030 council proposes, supports, or blocks this reform is a clean test of whether the institution prioritizes governance efficiency over self-preservation."
+      }
+    },
+    "consent_calendar_pattern": {
+      "description": "The consent calendar is intended for non-controversial, administrative, or housekeeping items that require no floor debate. Berkeley's council has used it to pass items with significant structural or fiscal consequences — treating substance as procedure to avoid scrutiny.",
+      "documented_instances": [
+        {
+          "date": "2023-06-27",
+          "item": "Debt Management Policy amendment — reduced GO bond limit from 15% to 6% of assessed value",
+          "significance": "A fundamental change to the city's debt capacity framework, passed without floor discussion. The sole substantive change had bond market and capital planning implications."
+        },
+        {
+          "date": "2023-11-16",
+          "item": "Council office staffing expansion to 2 FTE per office — $442k/year recurring",
+          "significance": "A recurring expenditure increase passed on consent during a period of structural deficit. The item acknowledged that offices had already informally exceeded 1 FTE and formalized the practice rather than questioning it."
+        }
+      ],
+      "pattern": "Items with recurring fiscal implications or structural governance consequences being routed to consent is either (a) a deliberate choice to avoid scrutiny, or (b) a failure of the consent calendar vetting process. Either interpretation is unflattering. The council that scrutinizes police overtime line-by-line is the same council that passes staffing increases and debt policy amendments without debate."
+    }
+  },
+
+  "district_7_democratic_design_problem": {
+    "description": "District 7 (UC Berkeley campus and Southside) is approximately 95% students with a median age of 19. Lunaparra explicitly argues this means the seat 'should always be represented by someone who is currently or was recently a student.' This is a normative position with serious fiscal governance implications that she does not acknowledge.",
+    "the_problem": "General obligation bonds are typically 20-30 year instruments repaid through property taxes. The students who vote in District 7 elections are overwhelmingly gone within 4 years — before the bonds they approved have materially amortized. The elected representative serves 2-year terms; the debt obligations persist for a generation. A district designed to elect student representatives for a student population is structurally biased toward short-term political preferences and against long-term fiscal discipline. The students voting on Berkeley's 2026 $300M infrastructure bond will not be Berkeley residents when most of that debt matures.",
+    "lunaparra_self_awareness": "Her farewell letter acknowledges that many District 7 constituents 'don't know that our office exists' due to 'extremely high turnover as students move in and out of Southside.' She presents this as a constituent outreach challenge, not a democratic representation problem. The transience she describes as a communication obstacle is the same transience that makes her normative argument — that the district should be represented by recent students — fiscally problematic.",
+    "successor_signal": "Endorsed Syrak Micael — recent UC Berkeley graduate, member of DSA, Berkeley Tenants Union, and Berkeley Copwatch. The succession continues an ideological lineage optimized for student constituency politics, not for fiscal stewardship of long-duration obligations.",
+    "scoring_note": "This is a structural issue, not an individual one. But individual members who explicitly advocate for the permanent student-representative norm — as Lunaparra does — are making a normative claim that trades governance accountability for political identity representation."
+  },
+
+  "november_2026_transition": {
+    "description": "The November 2026 election will reshape the council at the moment it is deciding on a $300M infrastructure bond, a half-cent sales tax, and how to close a $29M+ structural general fund deficit. The departures and retentions are asymmetric in their fiscal consequence.",
+    "departing": [
+      {
+        "member": "Kesarwani (District 1)",
+        "loss": "The council's most analytically grounded fiscal voice. LAO-trained, budget-experienced, the member who raised the structural deficit before others did, who understands vacancy savings as a structural dependency and police overtime as a budget mechanism. Her self-description of what to look for in a successor — 'fiscal oversight, making decisions using evidence' — implicitly describes what the current council lacks and what she provided. She has not endorsed a successor.",
+        "open_seat": true
+      },
+      {
+        "member": "Lunaparra (District 7)",
+        "loss": "Minimal. The seat was opened by Robinson's resignation; filled by a new graduate with no professional experience. Has endorsed Syrak Micael. The seat's departure is an opportunity for improvement.",
+        "open_seat": true
+      }
+    ],
+    "running_again": [
+      {"member": "Tregub (District 4)", "note": "The engineering credential that has not produced quantitative engagement with infrastructure or fiscal documents."},
+      {"member": "Humbert (District 8)", "note": "The finance background that has not produced public dissent from the bond-and-tax consensus."}
+    ],
+    "structural_irony": "The council member best equipped to engage with Berkeley's structural fiscal crisis is leaving. The two members most likely to benefit from continued incumbency — Tregub (safe progressive district) and Humbert (moderate district) — are running again. The November 2026 ballot will ask voters to approve borrowing and taxing decisions that the departing member most understood and the remaining members have largely deferred on."
+  },
+
+  "agenda_displacement": {
+    "description": "When a governing body lacks the institutional confidence — or the competence — to confront the hard problems in its jurisdiction, it fills its agenda with problems it has no authority to solve. The displacement is not random: international and national political statements are easier to have opinions about than actuarial projections, and they generate more constituent enthusiasm than infrastructure maintenance ratios.",
+    "berkeley_pattern": "Berkeley's council has passed resolutions on Gaza, international solidarity, and national political matters during the same period in which: the structural deficit was acknowledged in writing and not addressed; the $1.65B infrastructure backlog held static across two bond cycles; the police oversight body collapsed; and the City Manager who wrote the fiscal warnings was removed. These are not unrelated. The agenda reflects priorities; the priorities reflect what the council is comfortable engaging with.",
+    "opportunity_cost": "Council time is finite. Staff preparation time is finite. Every agenda item on a matter outside the city's jurisdiction is an agenda item that is not on pension liability, infrastructure underfunding, or structural balance. The displacement is a form of deferred maintenance applied to governance itself.",
+    "gaza_note": "After October 7, 2023, activists pushed hard — sometimes in disruptive and threatening ways — for the Berkeley City Council to adopt a Gaza ceasefire resolution. The council did not pass one. But the pressure consumed significant council and staff time and energy across multiple difficult meetings; Kesarwani described asking the city manager about metal detector wands and police escorts to her car. The council's response to this external pressure (holding meetings in back rooms to avoid disruption, which courts later found violated open meeting laws) illustrates how the political environment of a progressive city can consume institutional capacity even when the council ultimately resists the specific demand. The threat management and meeting disruption costs were real; the resolution was not passed.",
+    "the_training_wheels_problem": "Members who arrive without relevant operational or financial experience, and who are not compelled by their environment to develop it, tend to remain in the advocacy mode that brought them to office. Advocacy produces confident stances on tractable symbolic problems; it does not produce the friction of confronting a workers' comp fund that hasn't been funded in two years. A council seat should not come with training wheels when the problems it is responsible for are this complex and this consequential."
+  },
+
+  "narrative_frame": {
+    "summary": "Berkeley's council does not experience the full cost of its policy choices. Overtime is the police chief's problem. COB dysfunction is the executive director's problem. Infrastructure backlog is a bonding opportunity. Structural deficit is a revenue problem requiring a new tax. In each case, the council's prior decisions created or compounded the problem — and in each case, the council's proposed solution is a new institution, a new revenue stream, or a new expenditure, rather than a reckoning with what the prior decision cost.",
+    "the_staff_signal": "When professional staff with strong institutional knowledge raise concerns three cycles in a row in official written documents, and one of them leaves under circumstances suggesting an unmanaged exit, the professional accountability infrastructure is not functioning. The budget warnings were heard; they were not acted on. That is a governance failure, not a staff failure."
+  }
+}

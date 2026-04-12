@@ -1,0 +1,38 @@
+{
+  "date": "2025-01-21",
+  "meeting_type": "regular",
+  "item_num": 16,
+  "item_key": "16",
+  "title": "-",
+  "url": "https://berkeleyca.gov/sites/default/files/documents/2025-01-21%20Item%2016%20Contract%20-%20Benchmark%20Analytics%20for%20Early%20Intervention.pdf",
+  "word_count": 886,
+  "sections": {
+    "recommendation": "Adopt a Resolution authorizing the City Manager to execute a contract and any amendments with\nBenchmark Analytics (Contractor) to provide a cloud-based Early Intervention System (EIS) platform\nfrom February 3, 2025 to February 3, 2027, in an amount not to exceed $200,000 with an option to\nextend for two additional years, for a total contract amount not to exceed $400,000.",
+    "fiscal_impacts": "These services will be funded by the General Fund in an amount not to exceed $200,000 with an\noption to extend for two additional years, for a total contract amount not to exceed $400,000. This\nsoftware has existing budget approval for $100,000 per year and there are no new fiscal impacts\nassociated with adopting the attached resolution Funding for the extension for the additional two\nyears is contingent on funding being approved within the forthcoming Fiscal Year 2027 and 2028\nbiennial budget",
+    "current_situation": "The Police Department intends to implement a comprehensive Early Intervention System platform to\nproactively identify potential issues and support officer well-being and professional development. The\ncurrent system lacks automated mechanisms for department management to systematically monitor\nand analyze officer performance data. A modern, data-driven platform will help reduce liability exposure\nthrough early detection and intervention. This system reinforces departmental values, particularly our\ncore value of professionalism- demonstrated through progressive training, positive attitude and superior\nperformance.",
+    "background": "As part of the Department\u2019s commitment to the principles of fair and impartial policing, the\nDepartment revised Policy 1041 governing the Early Warning System in 2021 to incorporate\nindividual officer stop data. In 2022, Council approved $100,000 for a consultant to further improve\nthe system. During the RFP process, the Department, the Police Accountability Board and the\nBerkeley Police Association identified a need to pivot toward a comprehensive cloud-based Early\nIntervention System platform. Council approved funding for this subscription service as part of the\nFY25-26 budget process in June 2024.\nPage 2 of 3\nInternal\nIn September 2024, the City issued a request for proposals for an Early Intervention System platform.\nA panel consisting of representatives from the Berkeley Police Department, the Police Accountability\nBoard, and the Berkeley Police Association selected Benchmark Analytics' proposal as the best\nsolution based on their research-based approach, extensive law enforcement experience, and proven\nplatform capabilities.\nENVIRONMENTAL SUSTAINABILITY AND CLIMATE IMPACTS\nThere are no identifiable environmental effects, climate impacts, or sustainability opportunities\nassociated with the subject of this report.",
+    "rationale": "Benchmark Analytics offers a unique, evidence-based Early Intervention System built on research\npartnerships with the University of Chicago. Their configurable platform will enable BPD to:\n\uf0b7 Analyze officer performance data through advanced analytics\n\uf0b7 Identify potential issues early through a proven risk assessment model\n\uf0b7 Implement targeted interventions and track outcomes\n\uf0b7 Maintain comprehensive documentation and reporting capabilities\nThe platform has proven success in major departments across California and the nation, including the\nSan Jose Police Department, San Francisco Police Department, Baltimore Police Department, and\nCharlotte-Mecklenburg Police Department. The system's track record in these jurisdictions\ndemonstrates its effectiveness in supporting officer development and risk management in diverse\nagency contexts.",
+    "alternatives": "The Department considered both consulting services to improve the current system and early\nintervention platforms from other vendors. After thorough evaluation, Benchmark Analytics' research-\nbased platform offered the most comprehensive and proven solution for BPD's needs.\nCONTACT PERSON\nJen Louis, Chief of Police, (510) 981-5700\nArlo Malmberg, Strategic Planning and Accountability Manager, (510) 981-5747",
+    "attachments": "1. Resolution\nPage 3 of 3\nATTACHMENT 1\nPage 1\nRESOLUTION NO. XX,XXX-N.S.\nBENCHMARK ANALYTICS FOR EARLY INTERVENTION SYSTEM PLATFORM\nWHEREAS, in accordance with the principles of fair and impartial policing, the Berkeley\nPolice Department revised Policy 1041 governing the Early Warning System in 2021 to\nincorporate individual officer stop data; and\nWHEREAS, in 2022, Council approved funding to improve the Department's early\nwarning system capabilities through external consultation; and\nWHEREAS, during the RFP process, and in accordance with the Department's\ncommitment to fair and impartial policing, the Department identified a need for a\ncomprehensive cloud-based Early Intervention System platform to provide automated\ndata analysis and risk assessment capabilities; and\nWHEREAS, Benchmark Analytics offers a unique, research-based Early Intervention\nSystem platform built in partnership with the University of Chicago and supported by the\nNational Police Early Intervention and Outcomes Research Consortium; and\nWHEREAS, the Benchmark Analytics platform will provide BPD with advanced\nanalytics, proven risk assessment models, intervention tracking, and comprehensive\nreporting capabilities; and\nWHEREAS, Council approved ongoing funding for this subscription service as part of\nthe FY25-26 budget process in June 2024; and\nWHEREAS, funds are available in the FY 2025 budget in the General Fund.\nNOW THEREFORE, BE IT RESOLVED by the Council of the City of Berkeley that the\nCity Manager is authorized to execute a contract and any amendments with Benchmark\nAnalytics (Contractor) to provide a cloud-based Early Intervention System platform from\nFebruary 3, 2025 to February 3, 2027, in an amount not to exceed $200,000 with an\noption to extend for two additional years, for a total contract amount not to exceed\n$400,000.",
+    "preamble": "Page 1 of 3\nInternal\nOffice of the City Manager\nCONSENT CALENDAR\nJanuary 21, 2025\nTo: Honorable Mayor and Members of the City Council\nFrom: Paul Buddenhagen, City Manager\nSubmitted by: Jen Louis, Chief of Police\nSubject: Contract - Benchmark Analytics for Early Intervention System Platform"
+  },
+  "signals": {
+    "waived_competitive_bid": false,
+    "backdated": false,
+    "alternatives_none": false,
+    "grant_funded": false,
+    "general_fund": true,
+    "dollar_amounts": [
+      "$200,000",
+      "$400,000",
+      "$100,000",
+      "$200,000",
+      "$400,000"
+    ],
+    "vendor": null,
+    "cost_per_unit": [
+      "$100,000 per year"
+    ],
+    "funding_source_text": "These services will be funded by the General Fund in an amount not to exceed $200,000 with an\noption to extend for two additional years, for a total contract amount not to exceed $400,000. This\nsoftware has existing budget approval for $100,000 per year and there are no new fiscal impacts\nassociated"
+  }
+}
