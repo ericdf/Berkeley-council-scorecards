@@ -1,0 +1,227 @@
+{
+  "_schema": {
+    "_note": "Analytical framework for evaluating Berkeley's General Fund (~$292M) spending against a core/non-core taxonomy. Used to classify agenda items and assess whether council members' legislative output moves toward or away from structural fiscal repair. Dollar estimates derived from FY2025-2026 operating budget. Not a line-item audit — a structural map.",
+    "_reference_standard": "The structural deficit is documented in consecutive City Manager budget messages using the phrase 'not sustainable' and in City Auditor findings naming a $32-33M structural gap. The framework below identifies where the gap could be closed through delivery model changes and non-core program rollbacks — independently of political feasibility.",
+    "carry_cost_principle": "Every in-house employee generates obligations that outlast the service: CalPERS pension accrual, OPEB (retiree health), and a share of the unfunded actuarial accrued liability (UAAL). The true cost of an in-house position is salary + current pension contribution + UAAL share + OPEB — not just salary. When a service is contracted out or transferred, new liability accrual stops, but the existing pension tail for current and former employees persists for decades. This means: (1) the full savings from delivery model changes materialize slowly; (2) each year of inaction adds more employees whose obligations compound; (3) the cost of delay is not linear — it grows.",
+    "classification_values": {
+      "adds_non_core": "Agenda item increases spending in a non-core category — moves away from structural repair",
+      "reduces_non_core": "Agenda item reduces or restructures non-core spending — moves toward structural repair",
+      "addresses_cost_premium": "Agenda item changes delivery model of a core function to reduce cost premium",
+      "entrenches_cost_premium": "Agenda item locks in expensive in-house delivery model (new hires, expanded contracts, new facilities for in-house services)",
+      "p1_direct": "Agenda item directly addresses a documented P1 problem (infrastructure backlog, structural deficit, CalPERS/OPEB, reserve policy)",
+      "neutral": "Core operations, routine maintenance, regulatory compliance — neither adds non-core nor addresses structural problem",
+      "revenue_seeking": "Proposes new tax or bond without accompanying spending reduction — treats revenue as substitute for structural reform"
+    }
+  },
+
+  "categories": [
+    {
+      "id": "1A",
+      "label": "Public health — city-run layer",
+      "type": "non_core_substitutable",
+      "est_annual_gf": "12000000-15000000",
+      "description": "City-run clinics, outreach, and health programming that duplicates Alameda County Public Health Department's statutory mandate.",
+      "alternative": "Transfer staff (not management layers) to county employment; negotiate graduated step-down of city contribution to peer-city levels over 3-5 years. Not a cliff — a ramp.",
+      "carry_cost_note": "City health employees carry full CalPERS + OPEB obligations. Transfer to county stops new city liability accrual but does not eliminate the tail for existing employees. Savings materialize gradually as transferred positions roll off city payroll.",
+      "political_feasibility": "moderate",
+      "political_note": "Requires county agreement and intergovernmental negotiation. Staff transfer (not layoff) reduces union opposition. Management reduction is where resistance concentrates.",
+      "constraint": "Service level depends on county absorbing capacity. County is not currently resourced to absorb without transition funding."
+    },
+    {
+      "id": "1B",
+      "label": "Housing / homeless services — direct service model",
+      "type": "non_core_substitutable",
+      "est_annual_gf": "20000000-25000000",
+      "description": "City-funded outreach, case management, and direct services. Represents one layer of a three-layer problem: (1) direct service delivery cost, (2) nonprofit contract management overhead, (3) outcomes accountability gap. These are separate problems with different reform mechanics.",
+      "sub_components": {
+        "direct_city_staff": "City employees providing services — CalPERS + OPEB tail applies",
+        "nonprofit_pass_through": "Contracts to nonprofits — can be reduced or restructured without pension carry cost, but contract terms and political relationships create friction",
+        "contract_management_overhead": "City staff managing contracts — often grows proportionally with contract volume without proportional outcome improvement"
+      },
+      "alternative": "Shift toward vouchers and county-led programs; restructure nonprofit contracts around outcomes rather than inputs; reduce direct city staffing.",
+      "carry_cost_note": "City employees in HHCS carry full pension tail. Nonprofit contract reductions have no pension carry cost — savings are immediate. This distinction matters for sequencing: nonprofit contract reform is faster and cleaner than staff reductions.",
+      "political_feasibility": "low",
+      "political_note": "Highest political resistance of any category. Nonprofit ecosystem has organized advocacy infrastructure and council relationships. Outcomes data is contested.",
+      "constraint": "Visible service reduction. Demand does not decrease with funding. County and state systems are not substitutes in the short run."
+    },
+    {
+      "id": "1C",
+      "label": "Workforce development / youth programming",
+      "type": "non_core_substitutable",
+      "est_annual_gf": "6000000-8000000",
+      "description": "Job training, youth worker programs, summer employment.",
+      "alternative": "Community colleges, nonprofits, state workforce boards (EDD, regional boards).",
+      "carry_cost_note": "If city-staffed, carries pension tail. If nonprofit-contracted, no carry cost — reductions are immediate.",
+      "political_feasibility": "moderate",
+      "constraint": "Gap between what state/county programs offer and what Berkeley currently funds. Some programs have no direct substitute at current quality level."
+    },
+    {
+      "id": "1D",
+      "label": "Food programs / direct assistance",
+      "type": "non_core_substitutable",
+      "est_annual_gf": "3000000-5000000",
+      "description": "Summer lunch programs, food security grants.",
+      "alternative": "School districts (BUSD), nonprofits, federal programs (SNAP, WIC, CACFP).",
+      "carry_cost_note": "Primarily grant pass-through — minimal pension carry cost. Reductions are relatively clean.",
+      "political_feasibility": "moderate-high",
+      "constraint": "Federal program access requires eligibility compliance. Gap coverage depends on nonprofit capacity."
+    },
+    {
+      "id": "1E",
+      "label": "Cultural / nonprofit grant ecosystem",
+      "type": "non_core_substitutable",
+      "est_annual_gf": "8000000-10000000",
+      "description": "Arts organizations, festivals, program grants.",
+      "alternative": "Philanthropy, ticket revenue, corporate sponsorship.",
+      "carry_cost_note": "Pure grant pass-through — no city pension carry cost. Reductions are immediate and clean.",
+      "political_feasibility": "moderate",
+      "constraint": "Arts organizations dependent on city grants lack alternative revenue infrastructure in the short run. Longer runway is more feasible."
+    },
+    {
+      "id": "1F",
+      "label": "Recreation subsidies — non-maintenance",
+      "type": "non_core_substitutable",
+      "est_annual_gf": "10000000-12000000",
+      "description": "Camps, scholarships, program-heavy recreation subsidies (not facility maintenance).",
+      "alternative": "Fee-for-service model with means-tested subsidy for low-income access.",
+      "carry_cost_note": "City recreation staff carry CalPERS + OPEB. Shifting to fee-for-service doesn't eliminate existing staff obligations — it reduces future hiring and may enable attrition. A hybrid model (partial fee recovery) is more realistic than full cost recovery.",
+      "political_feasibility": "moderate",
+      "constraint": "Equity concern: fee-for-service without subsidy program excludes low-income families. Means-tested subsidy preserves access at lower city cost."
+    },
+    {
+      "id": "2A",
+      "label": "Alternative public safety layers",
+      "type": "non_core_no_substitute",
+      "est_annual_gf": "7000000-9000000",
+      "description": "Violence prevention programs, wellness response layers, non-police crisis response.",
+      "alternative": "No direct substitute. Either absorbed into police response or eliminated.",
+      "carry_cost_note": "If city-staffed, carries pension tail. Program staff added in recent years represent obligations that persist even if programs are restructured.",
+      "political_feasibility": "low",
+      "constraint": "Political framing as public safety alternative makes cuts visible and contested. Some programs have evidence base; others do not — outcomes data is the lever."
+    },
+    {
+      "id": "2B",
+      "label": "Transportation behavior programs",
+      "type": "non_core_no_substitute",
+      "est_annual_gf": "10000000-12000000",
+      "description": "Vision Zero overlays, bike/pedestrian initiatives beyond baseline infrastructure maintenance.",
+      "alternative": "No substitute. Pure policy overlay — removing it means the activity stops.",
+      "carry_cost_note": "Staff in this area carry pension tail. Program reductions don't eliminate existing obligations.",
+      "political_feasibility": "moderate-low",
+      "constraint": "Strong advocacy constituency. Some components (basic signal timing, crosswalk maintenance) are arguably core — the non-core portion is the program overlay, not the infrastructure maintenance."
+    },
+    {
+      "id": "2C",
+      "label": "Climate / sustainability administration",
+      "type": "non_core_no_substitute",
+      "est_annual_gf": "5000000-7000000",
+      "description": "Electrification programs, climate staffing, sustainability overlays not required for baseline operations.",
+      "alternative": "No substitute. Regulatory choice.",
+      "carry_cost_note": "Climate staff added in recent years carry pension tail. Positions added during the fiscal crisis period represent obligations that predate any structural repair.",
+      "political_feasibility": "low",
+      "constraint": "Politically high-salience. State mandates create some non-discretionary compliance floor, but the discretionary overlay above that floor is material."
+    },
+    {
+      "id": "2D",
+      "label": "Expanded governance layer",
+      "type": "non_core_no_substitute",
+      "est_annual_gf": "8000000-10000000",
+      "description": "Legislative aides, commission support staff, community engagement processes.",
+      "alternative": "No substitute. Internal structure choice.",
+      "carry_cost_note": "Every staff position in this layer carries pension tail. Governance expansion during the fiscal crisis compounds the structural problem directly — these are obligations that will outlast the programs they support.",
+      "political_feasibility": "moderate",
+      "constraint": "Council members are direct consumers of this spending — restructuring requires self-imposed restraint."
+    },
+    {
+      "id": "2E",
+      "label": "Equity / targeted program layers",
+      "type": "non_core_no_substitute",
+      "est_annual_gf": "5000000-7000000",
+      "description": "Targeted scholarships, parallel access programs, equity-focused service overlays.",
+      "alternative": "No substitute. Policy-driven parallel services.",
+      "carry_cost_note": "Mix of staff and contract. Staff components carry pension tail; contract components can be reduced more cleanly.",
+      "political_feasibility": "low",
+      "constraint": "High political visibility. Framing as equity programs makes reduction politically costly regardless of evidence base."
+    },
+    {
+      "id": "3A",
+      "label": "Solid waste — municipalized vs. contracted",
+      "type": "core_cost_premium",
+      "est_annual_gf": "0",
+      "est_premium": "8000000-12000000",
+      "description": "Berkeley employs its own trash collectors. No comparable city near Berkeley runs municipal solid waste collection in-house. The premium reflects compensation + pension structure relative to franchised hauler model.",
+      "alternative": "Contracted private haulers (standard model in comparable California cities).",
+      "carry_cost_note": "This is the starkest carry cost case. Each municipal solid waste employee represents decades of CalPERS + OPEB obligation. Contracting out stops new accrual, but the pension tail for existing workers persists. The full savings from outsourcing would not materialize for 15-20 years as current employees retire. However, stopping the accrual of new obligations is still structurally valuable — delay makes the problem larger, not smaller.",
+      "political_feasibility": "very low",
+      "political_note": "High strike risk. SEIU or Teamsters representation means any outsourcing attempt triggers protected labor action. Realistic path is attrition-based: contract out incremental new work rather than existing positions, allow headcount to decline naturally.",
+      "constraint": "Transition requires franchise agreement, RFP process, service continuity planning. 2-3 year lead time minimum."
+    },
+    {
+      "id": "3B",
+      "label": "Public works — in-house vs. contract mix",
+      "type": "core_cost_premium",
+      "est_annual_gf": "0",
+      "est_premium": "5000000-10000000",
+      "description": "Street maintenance, tree work, fleet — partially in-house where contract delivery would be cheaper.",
+      "alternative": "Outsourced project-based delivery for non-routine work.",
+      "carry_cost_note": "In-house public works staff carry full pension tail. Each position added during the fiscal crisis represents obligations that persist for decades.",
+      "political_feasibility": "moderate-low",
+      "constraint": "Some in-house capacity is genuinely cost-effective for routine/recurring work. The premium is in project and specialized work that could be contracted."
+    },
+    {
+      "id": "3C",
+      "label": "Fire staffing model",
+      "type": "core_cost_premium",
+      "est_annual_gf": "0",
+      "est_premium": "5000000-8000000",
+      "description": "Overtime-heavy staffing structure. Fire is a safety member with the highest CalPERS contribution rates (~50%+ of salary).",
+      "alternative": "Staffing model changes to reduce chronic overtime; regionalization is theoretically possible but rare.",
+      "carry_cost_note": "Safety member pension obligations are the most severe carry cost in the city. Each firefighter represents a pension obligation that extends 30-40 years post-retirement. The overtime model compounds this: overtime pay is pensionable, meaning current overtime choices directly increase future unfunded liability.",
+      "political_feasibility": "low",
+      "constraint": "BFFA contract limits operational flexibility. Staffing minimums are contractually bound."
+    },
+    {
+      "id": "3D",
+      "label": "Police cost structure",
+      "type": "core_cost_premium",
+      "est_annual_gf": "0",
+      "est_premium": "8000000-12000000",
+      "description": "Compensation, staffing ratios, specialized units relative to peer city benchmarks.",
+      "alternative": "Limited external options. Primarily internal reform: civilianization of non-sworn roles, unit restructuring.",
+      "carry_cost_note": "Safety member pension at highest CalPERS tier. Same overtime-pensionable problem as fire. Any new sworn officer hired today represents a 30-40 year pension obligation at safety rates.",
+      "political_feasibility": "low",
+      "constraint": "BPA contract limits restructuring. Political environment makes police reduction proposals high-visibility."
+    },
+    {
+      "id": "3E",
+      "label": "Administrative overhead",
+      "type": "core_cost_premium",
+      "est_annual_gf": "0",
+      "est_premium": "5000000-8000000",
+      "description": "Larger organizational footprint than peer cities, driven by program layer complexity. Management ratios above comparable jurisdictions.",
+      "alternative": "Span-of-control review; headcount reduction through attrition as programs consolidate.",
+      "carry_cost_note": "Management staff typically at top of pension accrual. Reducing management headcount is both the highest-value and slowest-to-realize reform — pensions vest and obligations persist regardless of employment status.",
+      "political_feasibility": "moderate",
+      "constraint": "Depends on program consolidation in categories 1 and 2 — overhead shrinks as program layers shrink, not before."
+    }
+  ],
+
+  "summary": {
+    "non_core_substitutable_range": "60000000-75000000",
+    "non_core_no_substitute_range": "35000000-45000000",
+    "core_cost_premium_range": "30000000-50000000",
+    "total_addressable_range": "125000000-170000000",
+    "structural_deficit": "32000000-33000000",
+    "key_insight": "The structural deficit ($32-33M) is fully addressable within the non-core substitutable category alone, without touching core functions or politically explosive delivery model changes. The gap is a policy choice, not a resource constraint."
+  },
+
+  "sequencing": {
+    "fastest_cleanest": ["1D", "1E", "1C"],
+    "note_fastest": "Pure grant pass-through with no city pension tail. Reductions are immediate. Political resistance is moderate.",
+    "medium_term": ["1F", "1A", "2D"],
+    "note_medium": "Staff components require attrition or transfer. 2-4 year horizon. 1A requires intergovernmental negotiation.",
+    "structural_long_term": ["3A", "3B", "1B"],
+    "note_long_term": "Delivery model changes and the largest non-core bucket. 5-10 year horizon. Pension tail means savings materialize slowly even when changes are made.",
+    "political_sequencing_note": "Program consolidation in categories 1 and 2 is a prerequisite for administrative overhead reduction in 3E — the overhead exists because the programs exist. Sequence matters: don't expect administrative savings before program decisions."
+  }
+}
