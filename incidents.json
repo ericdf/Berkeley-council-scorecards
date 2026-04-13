@@ -125,20 +125,12 @@
   ],
   "Ishii": [
     {
-      "date": "2025-2026",
+      "date": "2020-2026",
       "category": "constituent_gaslight",
-      "evidence_tier": "C",
-      "description": "Mayor Ishii’s office hours policy explicitly excludes organized groups — only individual constituents may attend. This is not a minor procedural detail: it structurally prevents neighbors with shared concerns from presenting collectively, which is the form of constituent engagement most likely to produce accountability. A group of residents raising a common grievance creates a record, demands a coherent answer, and is harder to dismiss than a series of isolated one-on-ones. Blocking group access is a signal of conflict avoidance, not genuine engagement. For contrast: the mayor of San Francisco maintains a visible daily public presence (business callouts, problem identification, follow-through) that this office does not approach.",
-      "source": "Direct observation by scorecard author; Ishii constituent communications and office hours scheduling policy",
-      "scoring_impact": -0.07
-    },
-    {
-      "date": "2025-09",
-      "category": "alternatives_dismissed",
       "evidence_tier": "B",
-      "description": "Participated in a public dressing-down of ODPA Director Hansel Aguilar after he used his charter authority to force two items onto the September 2025 council agenda. Aguilar’s charter office was created by 85% of voters specifically to have independent authority over the police accountability agenda. Using that authority is not an abuse of power — it is the design. Penalizing Aguilar for exercising the authority voters granted him is either a failure to understand the charter or a deliberate attempt to subordinate the oversight body to council approval. In either case, the effect is to signal to future oversight directors that exercising charter independence will be met with political retaliation.",
-      "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026",
-      "scoring_impact": -0.07
+      "description": "Ishii ran for mayor on a platform that included police accountability reform — Measure II, which established the PAB and ODPA, passed 85% in November 2020, creating the strongest civilian oversight mandate in Berkeley’s history. Under her mayoralty: all original PAB commissioners departed; the board dropped to 4 of 9 seats; BPD refused records requests and required multiple subpoenas; ODPA Director Aguilar sued the Police Chief to compel records release; and Aguilar was fired by unanimous council vote in February 2026. Immediately after the vote, Ishii issued a prepared statement that ‘the council remained committed to police accountability’ — a recommitment issued in the moment the oversight office’s leadership was eliminated. The institution she was elected in part to protect did not survive her tenure in recognizable form. Voters who supported her based on police accountability commitments were told the commitment was intact at the moment it was most visibly abandoned.",
+      "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026; PAB commissioner departures 2021–2026; Measure II ballot results Nov. 2020",
+      "scoring_impact": -0.09
     },
     {
       "date": "2026-02-09",
@@ -147,6 +139,16 @@
       "description": "Confirmed Aguilar’s dismissal after unanimous 8-0 vote (Kesarwani absent) then issued a prepared statement that the council ‘remained committed to police accountability’ and was focused on ‘restoring credibility, trust and respect for both the accountability process and the people involved in this work.’ The council had just voted to fire the accountability director, leaving the Police Accountability Board at 4 of 9 seats with all original commissioners departed, and BPD in an ongoing records dispute with the office. Issuing a recommitment-to-accountability statement immediately after eliminating the accountability office’s leadership is the definitional form of performative governance: the statement replaces the action it purports to describe.",
       "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026",
       "scoring_impact": -0.08
+    }
+  ],
+  "Humbert": [
+    {
+      "date": "2026-03-05",
+      "category": "alternatives_dismissed",
+      "evidence_tier": "B",
+      "description": "March 2026 newsletter presents the budget problem as a binary: across-the-board cuts of 10–12.5% versus revenue improvement. The full solution space was not surfaced to constituents. Across-the-board cuts are not the default required by a structural deficit; they are a specific political choice that avoids prioritization, preserves relative departmental structure, and minimizes internal political conflict. The alternatives — targeted/priority-based cuts, program exit and consolidation (e.g., functions with scale disadvantages transferred to county), structural service redesign, workforce-driven adjustments, reallocation from lower-value programs — require explicit value judgments that across-the-board cuts defer. When a constituent raised targeted cuts directly, Chief of Staff Panzer explained the obstacles (union reaction, morale, institutional knowledge loss) without acknowledging that those obstacles are addressable through different contracting structures, attrition targeting, or council action on labor agreements. Humbert's response ('I'm not ruling those out — let's see what the budget committee brings') deferred agency to the subcommittee rather than signaling what coalition he was building or what amendments he intended to seek. The newsletter is the most honest fiscal communication in the dataset on the existence of the problem; the alternatives_dismissed penalty reflects the solution framing, not the diagnosis.",
+      "source": "March 2026 District 8 Newsletter (mhumbert@cityofberkeley.info); follow-on exchange with Eric Panzer and constituent, 2026-03-06 (gmail thread 19cc03f317eedf1c)",
+      "scoring_impact": -0.04
     }
   ],
   "Bartlett": [

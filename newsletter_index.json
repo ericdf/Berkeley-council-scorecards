@@ -197,6 +197,24 @@
       "classification": "rhetoric_no_substance",
       "existing_incident": false,
       "notes": "RHETORIC_PAT hit: 'budget deficit' in sales tax framing. Bond + sales tax promoted as solutions with topline poll results as the fiscal headline. No structural deficit, CalPERS/OPEB, PCI, or reserve language. Communication compresses survey conclusions in two specific ways: (1) Results come from framed ballot-test questions — asking voters whether they would support a specific measure as described systematically inflates apparent support vs. open-ended opinion questions about taxes or the budget. (2) 'Strong support' conflates hard (definitely yes) and soft (probably yes) support; soft support is the share most likely to erode between poll and election, and is not disclosed. Reporting topline without the hard/soft split overstates committed support. Survey methodology itself is sound; the problem is in what the newsletter reports from it."
+    },
+    {
+      "member": "Humbert",
+      "date": "2026-03-05",
+      "source": "mhumbert@cityofberkeley.info",
+      "source_type": "city_email",
+      "gmail_id": "19cc03f317eedf1c",
+      "subject": "District 8 March 2026 Newsletter: Corridors Upzoning, Flock Cameras, and the City Budget",
+      "p1_keywords_found": [
+        "one.time\\s+(?:measure|revenue|source|draw(?:down)?|fund|solution|fix)"
+      ],
+      "fiscal_rhetoric": true,
+      "fiscal_rhetoric_quotes": [
+        "the City has run out of one-time solutions to paper over these deficits, and we will need to do the fiscally responsible thing and make cuts"
+      ],
+      "classification": "p1_hit",
+      "existing_incident": false,
+      "notes": "Budget section is the frankest constituent communication in the dataset: 'very dire straits', '10-12.5% across-the-board cuts', 'out of one-time solutions', 'make cuts'. p1_hit via one-time-solutions keyword. Honest about existence of the problem. CRITIQUE: The solution framing presents only two options — across-the-board cuts OR revenue improvement — without surfacing the full decision space: targeted/priority-based cuts, program exit/consolidation, structural redesign, reallocation, workforce-driven adjustments, or hybrid approaches. Across-the-board cuts are not the default required by the deficit; they are a specific political choice that avoids prioritization, preserves relative departmental structure, and minimizes internal conflict. Humbert is more forthright than colleagues but shares the same avoidance pattern at the solution level. Newsletter is also passive about Humbert's own role: everything is deferred to the Budget and Finance subcommittee, with no indication of what coalition he is building or what amendments he might seek. Also contains: (1) Flock ALPR section — balanced, data-grounded, responsive. (2) Housing-as-fiscal-good argument (Prop 13 dynamic). FOLLOW-ON EXCHANGE (2026-03-06, gmail thread 19cc03f317eedf1c): Constituent asked why across-the-board rather than targeted cuts. Humbert: 'I'm not ruling those out. Let's see what the budget committee brings us.' Chief of Staff Eric Panzer replied same day with three explanations for avoiding differential cuts: union reaction, interdepartmental conflict risk, morale/institutional-knowledge costs. Constituent challenged all three: named restaurant inspection team (3-year backlog, audit-documented) as a candidate for wind-down via county partnership; argued labor contracts should not prevent performance-based management; stated 'staff morale is not our product.' Both replied same day — evidence of genuine responsive constituent service. Scored as incident: alternatives_dismissed, -0.04."
     }
   ]
 }

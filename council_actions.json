@@ -17,6 +17,20 @@
   },
   "actions": [
     {
+      "date": "2026-02-09",
+      "category": ["discretionary_addition"],
+      "evidence_tier": "A",
+      "title": "Fired ODPA Director Hansel Aguilar — 8-0 vote (Kesarwani absent), triggering mandatory severance",
+      "vote": "Ayes: Ishii, Taplin, Tregub, O'Keefe, Blackaby, Bartlett, Humbert, LunaParra. Absent: Kesarwani.",
+      "significance": "The Office of the Director of Police Accountability (ODPA) was created by Measure II, approved 85-15% by Berkeley voters in 2020 as the strongest civilian oversight mandate in city history. Council fired Aguilar under 'without cause' contract terms — triggering mandatory severance — after Aguilar sued Police Chief Jen Louis to compel records release and forced agenda items using his charter authority. By the time of the vote: all original PAB commissioners had departed; the board had dropped to 4 of 9 seats; BPD had refused records requests requiring multiple subpoenas. Immediately following the unanimous vote, three council members issued public statements expressing concern about police accountability — they had just voted for the outcome they expressed concern about. The effective result was the elimination of functional civilian oversight less than six years after voters mandated it.",
+      "key_quotes": {
+        "ishii": "The council remained committed to police accountability and was focused on filling the PAB vacancies, finding a new director and restoring credibility.",
+        "lunaparra": "I remain equally committed to Police accountability work in Berkeley, and equally concerned that the City and City Council does not prioritize or value Police accountability. [issued after voting yes to fire Aguilar]",
+        "calavita_leftwich_letter": "We have seen firsthand that the PAB has not been permitted to exercise its expanded oversight authority and is even less empowered than its predecessor."
+      },
+      "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026"
+    },
+    {
       "date": "2026-02-24",
       "category": ["discretionary_addition", "fund_mission_creep"],
       "evidence_tier": "A",

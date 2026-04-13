@@ -125,15 +125,10 @@ else
 fi
 
 # ---- Step 4: Always regenerate methodology + incidents + audit findings PDFs ----
-echo "=== Regenerating methodology PDF ==="
+echo "=== Regenerating supporting PDFs ==="
 "$VENV_PYTHON" "$SCRIPT_DIR/methodology_pdf.py"
-echo "=== Regenerating incident catalogue PDF ==="
 "$VENV_PYTHON" "$SCRIPT_DIR/incidents_pdf.py"
-echo "=== Regenerating audit findings PDF ==="
 "$VENV_PYTHON" "$SCRIPT_DIR/audit_findings_pdf.py"
 
 echo ""
 echo "Done. Artifacts in $SCRIPT_DIR/scores/"
-echo "  PDFs:        scores/pdfs/"
-echo "  Scores:      scores/aggregate.json"
-echo "  Methodology: scores/pdfs/methodology.pdf"

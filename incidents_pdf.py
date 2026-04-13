@@ -345,7 +345,7 @@ def main():
         OUT_PDF,
         stylesheets=[CSS(string=CSS_STYLE)],
     )
-    print(f"Incident catalogue PDF → {OUT_PDF}")
+    print(f"  → {OUT_PDF}", file=sys.stderr)
 
 
 if __name__ == "__main__":

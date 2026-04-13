@@ -1,7 +1,7 @@
 # Berkeley City Council Scorecard — Methodology
 
 **Version:** April 2026  
-**Scope:** Dec 2024 – Apr 2026 (51 meeting transcripts, 58 annotated agenda sessions)  
+**Scope:** Years of city budgets, audited fiscal reports, and audit findings; 51 meeting transcripts (Dec 2024 – Mar 2026); 58 annotated agenda sessions; member campaign records and constituent communications  
 **Audience:** Insiders briefing document — describes signals, sources, and weightings
 
 ---
