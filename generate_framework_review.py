@@ -37,6 +37,20 @@ F = re.IGNORECASE
 
 RULES = [
 
+    # ── entrenches_cost_premium: labor agreements — MUST be first ────────────────
+    # Fire before p1_direct to prevent pension keywords in MOUs from
+    # being misclassified as structural reform.
+    ("entrenches_cost_premium", "3E", re.compile(
+        r"\b(adopt\w*\s+(successor\s+)?(memorandum\s+of\s+(agreement|understanding)|MOU|side\s+letter)"
+        r"|side\s+letter\s+(agreement|between|with)"
+        r"|successor\s+(MOU|memorandum|agreement)"
+        r"|memorandum\s+of\s+(agreement|understanding)\s+(between|with|adopt)"
+        r"|collective\s+bargaining\s+agreement"
+        r"|(SEIU|IBEW|BFFA|BPA|AFSCME|Teamsters|union)\s+(contract|MOU|agreement|side\s+letter)"
+        r"|labor\s+(agreement|contract|MOU)\s+(adopt|approv|ratif)"
+        r"|ratif(y|ication)\s+of\s+(the\s+)?(agreement|MOU|contract))\b", F),
+     "labor agreement/MOU — locks in compensation and pension carry cost"),
+
     # ── revenue_seeking ───────────────────────────────────────────────────────
     # Bond measures, tax measures, ballot language — clearly revenue-seeking
     # unless paired with a cut (hard to detect by keyword, so flag all)
@@ -151,9 +165,9 @@ RULES = [
         r"\b(add\s+(\w+\s+)?FTE|new\s+(permanent|full.?time|part.?time)\s+(position|staff)"
         r"|authorize\s+(\w+\s+)?new\s+(position|hire)"
         r"|establish\s+(\w+\s+)?new\s+(position|class(ification)?)"
-        r"|(\d+\s+)?new\s+position"
+        r"|(\d+\s+)?new\s+(FTE|position)"
         r"|expand\s+(staffing|staff|workforce)\s+by"
-        r"|resolution.*new.*position|new\s+class(ification)?.*resolution)\b", F),
+        r"|new\s+class(ification)?\s+(title|spec|establish))\b", F),
      "authorizes new city employee position(s)"),
 
 ]
@@ -167,7 +181,9 @@ NEUTRAL_OVERRIDE_RE = re.compile(
     r"|minutes\s+for\s+approval|formal\s+bid\s+solicitation"
     r"|adjourn|proclamation|certificate\s+of\s+recognition|in\s+memory\s+of"
     r"|appointment\s+to|reappointment|oath\s+of\s+office"
-    r"|final\s+map|subdivision|use\s+permit|variance|zoning)\b",
+    r"|final\s+map|subdivision|use\s+permit|variance|zoning"
+    r"|publicly\s+available\s+pay\s+schedule"  # CalPERS reporting requirement, not P1 action
+    r"|pay\s+schedule\s+(adopt|approv|establish))\b",
     F
 )
 
