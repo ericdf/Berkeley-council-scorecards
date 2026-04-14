@@ -1984,6 +1984,144 @@ def score_newsletter_p1_silence() -> dict:
 # Taxpayer alignment + Tier 1 composite grade
 # ---------------------------------------------------------------------------
 
+def compute_audit_alignment(s: dict) -> dict:
+    """
+    Compute per-member audit alignment scores grounded in financial_condition_2026.
+
+    Converts raw audit_sig_*_hits and audit_ev_*_hits (from council_scorecard.py
+    score_member) into ten 0-1 sub-scores, then a composite for the 7 core dimensions.
+
+    Normalization:
+      mention_rate: min(1, hits / (words/10_000) * 2)  — 0.5 hits per 10k = 1.0
+      event_rate:   min(1, hits / (words/10_000) * 10) — 0.1 hits per 10k = 1.0
+    These are calibrated so rare but meaningful signals reach a useful signal level.
+    Tune the multipliers (2.0 / 10.0) as real data accumulates.
+    """
+    words = max(s.get("words", 1), 1)
+    per10k = 10_000 / words
+    clamp01 = lambda x: max(0.0, min(1.0, x))
+
+    def mr(sig):
+        return min(1.0, s.get(f"audit_sig_{sig}_hits", 0) * per10k * 2.0)
+
+    def er(evt):
+        return min(1.0, s.get(f"audit_ev_{evt}_hits", 0) * per10k * 10.0)
+
+    # 6.1 Structural balance
+    structural_balance = clamp01(
+        0.45 * mr("structural_balance")
+        + 0.35 * er("acknowledges_structural_deficit")
+        + 0.20 * er("supports_structural_balance_policy")
+    )
+
+    # 6.2 One-time balancing discipline (0.50 baseline — neutral; moves up or down)
+    one_time_balancing = clamp01(
+        0.50
+        + 0.30 * er("opposes_one_time_transfer")
+        - 0.40 * er("supports_one_time_transfer")
+        + 0.20 * mr("one_time_balancing")
+    )
+
+    # 6.3 Cross-subsidy discipline
+    cross_subsidy = clamp01(
+        0.50
+        + 0.25 * er("opposes_cross_fund_transfer")
+        - 0.35 * er("supports_cross_fund_transfer")
+        + 0.20 * er("supports_enterprise_fee_update")
+        + 0.20 * er("supports_enterprise_reserve_policy")
+    )
+
+    # 6.4 Personnel cost engagement
+    personnel_cost_engagement = clamp01(
+        0.60 * mr("personnel_cost")
+        + 0.40 * er("questions_personnel_costs")
+    )
+
+    # 6.5 Program growth scrutiny
+    program_growth_scrutiny = clamp01(
+        0.60 * er("questions_program_growth")
+        + 0.40 * mr("program_growth")
+    )
+
+    # 6.6 Revenue quality
+    # Revenue-seeking without cut-seeking offsets reduces the score.
+    rs_hits = s.get("revenue_seeking_hits", 0) or 0
+    fk_hits = s.get("fiscal_concern_hits",  0) or 0
+    rs_rate = min(1.0, rs_hits * per10k * 2.0)
+    fk_rate = min(1.0, fk_hits * per10k * 2.0)
+    revenue_seeking_without_offsets = max(0.0, rs_rate - fk_rate * 0.5)
+
+    revenue_quality = clamp01(
+        0.55 * mr("revenue_quality")
+        + 0.45 * er("raises_revenue_quality_concern")
+        - revenue_seeking_without_offsets
+    )
+
+    # 6.7 Revenue operations
+    revenue_operations = clamp01(
+        0.50 * mr("revenue_operations")
+        + 0.50 * er("supports_lease_management_fix")
+    )
+
+    # 6.8 Capital planning
+    capital_planning = clamp01(
+        0.30 * mr("capital_planning")
+        + 0.25 * er("supports_cip_extension")
+        + 0.45 * er("supports_capital_financing_plan")
+    )
+
+    # 6.9 Pension funding
+    pension_funding = clamp01(
+        0.30 * mr("pension")
+        + 0.30 * er("supports_115_contribution")
+        + 0.20 * er("opposes_115_withdrawal")
+        - 0.30 * er("supports_115_withdrawal")
+    )
+
+    # 6.10 Policy adoption
+    policy_adoption = clamp01(
+        0.30 * er("supports_structural_balance_policy")
+        + 0.15 * er("supports_enterprise_fee_update")
+        + 0.15 * er("supports_enterprise_reserve_policy")
+        + 0.15 * er("supports_investment_reporting")
+        + 0.10 * er("supports_cip_extension")
+        + 0.15 * er("supports_capital_financing_plan")
+    )
+
+    # 7 core dimensions in composite; personnel, program growth, revenue ops are
+    # visible in output but excluded from composite (lower signal at this stage)
+    audit_alignment_composite = round(
+        (structural_balance + one_time_balancing + cross_subsidy
+         + revenue_quality + capital_planning + pension_funding + policy_adoption) / 7.0,
+        4,
+    )
+
+    return {
+        "audit_alignment": {
+            "structural_balance":        round(structural_balance, 4),
+            "one_time_balancing":        round(one_time_balancing, 4),
+            "cross_subsidy":             round(cross_subsidy, 4),
+            "personnel_cost_engagement": round(personnel_cost_engagement, 4),
+            "program_growth_scrutiny":   round(program_growth_scrutiny, 4),
+            "revenue_quality":           round(revenue_quality, 4),
+            "revenue_operations":        round(revenue_operations, 4),
+            "capital_planning":          round(capital_planning, 4),
+            "pension_funding":           round(pension_funding, 4),
+            "policy_adoption":           round(policy_adoption, 4),
+        },
+        "audit_alignment_composite": audit_alignment_composite,
+        # Condensed summary for display layers
+        "audit_alignment_summary": {
+            "structural_balance": round(structural_balance, 4),
+            "one_time_fixes":     round(one_time_balancing, 4),
+            "cross_subsidy":      round(cross_subsidy, 4),
+            "capital_planning":   round(capital_planning, 4),
+            "pension_discipline": round(pension_funding, 4),
+            "policy_adoption":    round(policy_adoption, 4),
+        },
+    }
+
+
 def compute_composite_grade(s: dict) -> dict:
     """
     Tier 1 letter grade — explicit taxpayer-aligned composite.
@@ -2068,7 +2206,14 @@ def compute_composite_grade(s: dict) -> dict:
         + incident_adj + fiscal_ref_penalty + audit_silence_adj
         + newsletter_silence_adj
     )
-    taxpayer_alignment = max(0.0, min(1.0, taxpayer_unclamped))
+    taxpayer_base = max(0.0, min(1.0, taxpayer_unclamped))
+
+    # Blend with audit alignment composite (financial_condition_2026 grounding).
+    # audit_alignment_composite: 0–1 score across 7 dimensions from the audit.
+    # Weight: 40% audit alignment, 60% existing taxpayer signals.
+    audit_result    = compute_audit_alignment(s)
+    audit_composite = audit_result["audit_alignment_composite"]
+    taxpayer_alignment = taxpayer_base * 0.60 + audit_composite * 0.40
 
     # ── Focus ────────────────────────────────────────────────────────────────
     waste_pct = s.get("waste_pct", 0) or 0
@@ -2125,6 +2270,36 @@ def compute_composite_grade(s: dict) -> dict:
     else:
         lightweight_penalty = 0.0
 
+    # ── Audit-grounded penalties (financial_condition_2026) ─────────────────
+    # Applied after taxpayer_alignment is computed so they reduce the final composite
+    # rather than compounding inside the taxpayer_alignment blend.
+
+    # 8.1 Structural silence: never named the structural deficit in speech
+    structural_silence_pen = (
+        -0.05 if (
+            (s.get("audit_sig_structural_balance_hits", 0) or 0) == 0
+            and (s.get("audit_ev_acknowledges_structural_deficit_hits", 0) or 0) == 0
+        ) else 0.0
+    )
+
+    # 8.2 One-time masking: actively supported one-time transfers
+    one_time_masking_count = s.get("audit_ev_supports_one_time_transfer_hits", 0) or 0
+    if one_time_masking_count >= 2:
+        one_time_masking_pen = -0.10
+    elif one_time_masking_count >= 1:
+        one_time_masking_pen = -0.05
+    else:
+        one_time_masking_pen = 0.0
+
+    # 8.3 Cross-subsidy: repeatedly supported cross-fund transfers
+    cross_fund_count = s.get("audit_ev_supports_cross_fund_transfer_hits", 0) or 0
+    cross_subsidy_pen = -0.05 if cross_fund_count >= 2 else 0.0
+
+    # 8.4 Section 115 depletion: advocated withdrawal without any contribution support
+    pen_115_count = s.get("audit_ev_supports_115_withdrawal_hits",   0) or 0
+    sup_115_count = s.get("audit_ev_supports_115_contribution_hits", 0) or 0
+    depletion_115_pen = -0.05 if pen_115_count > 0 and sup_115_count == 0 else 0.0
+
     # ── Composite ────────────────────────────────────────────────────────────
     # Taxpayer alignment dominates; focus captures rhetorical alignment.
     # Attendance and lightweight are penalty-only — showing up and doing P1 work
@@ -2133,11 +2308,17 @@ def compute_composite_grade(s: dict) -> dict:
         taxpayer_alignment * 0.70 + focus * 0.30
         - attendance_deduction
         - lightweight_penalty
+        + structural_silence_pen
+        + one_time_masking_pen
+        + cross_subsidy_pen
+        + depletion_115_pen
     )
 
     return {
         "composite_grade":              round(composite, 4),
         "composite_taxpayer":           round(taxpayer_alignment, 4),
+        "composite_taxpayer_base":      round(taxpayer_base, 4),
+        "composite_audit_composite":    round(audit_composite, 4),
         "composite_focus":              round(focus, 4),
         "composite_attendance_ded":     round(attendance_deduction, 4),
         "composite_rhetoric_penalty":   round(rhetoric_penalty, 4),
@@ -2147,10 +2328,14 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
         "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
         "composite_lightweight_pen":    round(lightweight_penalty, 4),
-        "composite_audit_silence_pen":      round(-audit_silence_adj, 4),
-        "composite_newsletter_silence_pen": round(-newsletter_silence_adj, 4),
-        "composite_agenda_waste_signal":round(agenda_waste_signal, 4),
-        "composite_cls9_signal":        round(cls9_signal, 4),
+        "composite_audit_silence_pen":          round(-audit_silence_adj, 4),
+        "composite_newsletter_silence_pen":     round(-newsletter_silence_adj, 4),
+        "composite_agenda_waste_signal":        round(agenda_waste_signal, 4),
+        "composite_cls9_signal":                round(cls9_signal, 4),
+        "composite_structural_silence_pen":     round(-structural_silence_pen, 4),
+        "composite_one_time_masking_pen":       round(-one_time_masking_pen, 4),
+        "composite_cross_subsidy_pen":          round(-cross_subsidy_pen, 4),
+        "composite_115_depletion_pen":          round(-depletion_115_pen, 4),
         # P1/P2/P3/9 authorship counts for display and debugging
         "cls1_authored":                cls1_authored,
         "cls2_authored":                cls2_authored,
@@ -2158,6 +2343,8 @@ def compute_composite_grade(s: dict) -> dict:
         "cls9_authored":                cls9_authored,
         "cls9_action_authored":         cls9_action_authored,
         "p1_authored":                  p1_authored,
+        # Audit alignment sub-scores and summary (from financial_condition_2026)
+        **audit_result,
     }
 
 
@@ -2402,6 +2589,20 @@ def main():
     print("  Composite grades: " +
           ", ".join(f"{DISPLAY_NAME.get(n,n)} ({v:.3f})" for n, v in grade_summary),
           file=sys.stderr)
+
+    # Audit rollup facts (financial_condition_2026)
+    def _audit_ev_count(evt):
+        return sum(1 for n in CANONICAL_MEMBERS
+                   if (aggregate[n].get(f"audit_ev_{evt}_hits", 0) or 0) > 0)
+    aggregate["_meta"]["audit_rollups"] = {
+        "members_acknowledging_structural_deficit":   _audit_ev_count("acknowledges_structural_deficit"),
+        "members_supporting_structural_balance_policy": _audit_ev_count("supports_structural_balance_policy"),
+        "members_supporting_one_time_transfers":      _audit_ev_count("supports_one_time_transfer"),
+        "members_supporting_cross_fund_transfers":    _audit_ev_count("supports_cross_fund_transfer"),
+        "members_supporting_cip_extension":           _audit_ev_count("supports_cip_extension"),
+        "members_supporting_capital_financing_plan":  _audit_ev_count("supports_capital_financing_plan"),
+        "members_supporting_115_withdrawals":         _audit_ev_count("supports_115_withdrawal"),
+    }
 
     # Cohort percentile rank (1 = best in cohort; 100th percentile = top)
     ranked = sorted(CANONICAL_MEMBERS, key=lambda n: aggregate[n].get("composite_grade", 0))

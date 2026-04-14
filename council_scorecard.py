@@ -550,6 +550,175 @@ P1_TOPIC_KW = [
 ]
 
 # ---------------------------------------------------------------------------
+# Audit alignment signal keywords (financial_condition_2026)
+# ---------------------------------------------------------------------------
+# AUDIT_SIGNAL_KEYWORDS: vocabulary presence — one list per audit finding category.
+# AUDIT_EVENT_PATTERNS: stance-detection patterns (supports/opposes/acknowledges).
+# score_member() returns raw hit counts; pipeline.py computes rates and sub-scores.
+
+AUDIT_SIGNAL_KEYWORDS = {
+    "structural_balance": [
+        r"structural\s+deficit",
+        r"structural\s+(?:im)?balance",
+        r"recurring\s+revenues?",
+        r"recurring\s+expenditures?",
+        r"baseline\s+budget",
+    ],
+    "one_time_balancing": [
+        r"\bone.time\b",
+        r"(?:inter)?fund\s+transfer\b",
+        r"\bsection\s+115\b",
+        r"workers.?\s*comp(?:ensation)?\s+(?:reserve|fund)",
+        r"plug\s+the\s+gap",
+    ],
+    "cross_subsidy": [
+        r"general\s+fund\s+support\b",
+        r"cross.subsid",
+        r"parking\s+(?:meter|fund|revenue)\b",
+        r"marina\s+fund\b",
+        r"off.street\s+parking\b",
+    ],
+    "personnel_cost": [
+        r"\bheadcount\b",
+        r"\bfte\b",
+        r"overtime\s+(?:cost|rate|spend|budget)",
+        r"benefits?\s+cost",
+        r"healthcare\s+cost",
+        r"pension\s+cost",
+    ],
+    "program_growth": [
+        r"health\s+and\s+welfare\b",
+        r"community\s+development\b",
+        r"housing\s+spending\b",
+        r"program\s+expansion\b",
+        r"service\s+expansion\b",
+    ],
+    "revenue_quality": [
+        r"one.time\s+revenue",
+        r"temporary\s+funding",
+        r"\barpa\b",
+        r"investment\s+earnings?\b",
+        r"volatile\s+revenue",
+    ],
+    "revenue_operations": [
+        r"lease\s+revenue\b",
+        r"city\s+lease\b",
+        r"\bholdover\b",
+        r"rent\s+collection\b",
+        r"city.owned\s+propert",
+    ],
+    "capital_planning": [
+        r"capital\s+improvement\s+program\b",
+        r"\bcip\b",
+        r"deferred\s+maintenance",
+        r"capital\s+financing\s+plan\b",
+        r"infrastructure\s+backlog\b",
+    ],
+    "pension": [
+        r"\bcalpers\b",
+        r"pension\s+(?:liability|obligation|unfunded|funded\s+ratio)\b",
+        r"section\s+115\s+trust\b",
+        r"pension\s+contribution\b",
+        r"\bprefund\b",
+    ],
+    "policy": [
+        r"fiscal\s+polic(?:y|ies)\b",
+        r"budget\s+polic(?:y|ies)\b",
+        r"reserve\s+polic(?:y|ies)\b",
+        r"require\s+recurring\s+revenues?\b",
+        r"annual\s+investment\s+report\b",
+    ],
+}
+
+# Stance patterns for specific events — conservative (high precision over recall).
+# A single match = event count +1.
+AUDIT_EVENT_PATTERNS = {
+    "acknowledges_structural_deficit": [
+        r"(?:we|the city|berkeley)\b.{0,40}\bstructural\s+deficit\b",
+        r"structural\s+deficit.{0,40}(?:serious|real|significant|problem|face)\b",
+        r"not\s+sustainable.{0,30}(?:budget|spending|trajectory)\b",
+        r"(?:budget|spending|trajectory).{0,30}not\s+sustainable\b",
+    ],
+    "supports_structural_balance_policy": [
+        r"(?:adopt|require|implement|establish)\s+.{0,30}structural\s+balance\s+polic",
+        r"(?:adopt|require|implement)\s+.{0,40}recurring\s+revenues?.{0,30}recurring\s+expenditures?",
+        r"\bgfoa\b.{0,40}(?:best\s+practice|recommend|polic|standard)\b",
+        r"require\s+.{0,20}recurring\s+revenues?\s+(?:match|cover|equal|exceed)",
+    ],
+    "supports_one_time_transfer": [
+        r"(?:support|vote|approve|move|favor)\s+.{0,30}one.time\s+(?:transfer|measure|solution)\b",
+        r"use\s+.{0,30}(?:workers.?\s*comp|section\s+115)\s+.{0,20}(?:balance|fund)\s+(?:the\s+)?budget\b",
+    ],
+    "opposes_one_time_transfer": [
+        r"(?:concern|oppos|problem|wrong|bad|caution)\w*\s+.{0,30}one.time\s+(?:transfer|measure|fix)\b",
+        r"(?:shouldn.t|should\s+not|must\s+not)\s+.{0,20}one.time\s+(?:transfer|measure)\b",
+        r"one.time\s+(?:transfer|measure).{0,30}(?:concern|problem|wrong|not\s+address)\b",
+    ],
+    "supports_cross_fund_transfer": [
+        r"(?:support|approve|move|favor)\s+.{0,30}(?:transfer\s+from|cross.?fund|general\s+fund\s+subsid)\b",
+        r"(?:parking|marina|enterprise)\s+fund.{0,30}(?:transfer\s+to|support|subsid).{0,20}general\s+fund\b",
+    ],
+    "opposes_cross_fund_transfer": [
+        r"(?:concern|oppos|problem|wrong)\w*\s+.{0,30}(?:cross.?fund|general\s+fund\s+subsid|transfer\s+from\s+(?:parking|marina))\b",
+        r"(?:parking|marina)\s+fund.{0,30}(?:shouldn.t|should\s+not)\s+.{0,20}(?:subsid|support|transfer\s+to)\s+general\s+fund\b",
+    ],
+    "supports_115_withdrawal": [
+        r"(?:support|approve|vote|move|favor)\s+.{0,30}section\s+115\s+withdrawal\b",
+        r"withdraw\s+(?:from\s+)?(?:the\s+)?section\s+115\b",
+    ],
+    "opposes_115_withdrawal": [
+        r"(?:concern|oppos|problem|wrong)\w*\s+.{0,30}section\s+115\s+withdrawal\b",
+        r"section\s+115.{0,40}(?:shouldn.t|should\s+not)\s+(?:be\s+)?(?:used|raided|drawn)\b",
+    ],
+    "supports_115_contribution": [
+        r"(?:contribute|fund|restore|replenish|build\s+up)\s+.{0,20}section\s+115\b",
+        r"section\s+115.{0,40}(?:contribute|fund|restore|replenish|meet.{0,10}goal)\b",
+    ],
+    "supports_cip_extension": [
+        r"extend\s+.{0,20}(?:cip|capital\s+improvement\s+plan)\b",
+        r"(?:longer|10.year|fifteen.year|20.year)\s+.{0,20}(?:cip|capital\s+plan)\b",
+        r"(?:cip|capital\s+plan).{0,30}(?:longer|extend|horizon|10.year)\b",
+    ],
+    "supports_capital_financing_plan": [
+        r"(?:long.term|comprehensive)\s+capital\s+(?:financing|funding)\s+plan\b",
+        r"capital\s+financing\s+plan.{0,30}(?:adopt|develop|create|need|require)\b",
+        r"(?:need|require|develop)\s+.{0,25}capital\s+financing\s+plan\b",
+    ],
+    "supports_enterprise_fee_update": [
+        r"(?:raise|update|increase|review)\s+.{0,20}(?:parking|marina)\s+fees?\b",
+        r"(?:parking|marina)\s+fees?.{0,25}(?:raise|update|cover|cost)\b",
+        r"fee\s+(?:study|review).{0,25}(?:parking|marina|enterprise)\b",
+    ],
+    "supports_enterprise_reserve_policy": [
+        r"reserve\s+polic.{0,25}(?:parking|marina|enterprise)\b",
+        r"(?:parking|marina|enterprise)\s+fund.{0,25}reserve\s+polic\b",
+    ],
+    "supports_investment_reporting": [
+        r"(?:require|annual|regular|publish)\s+.{0,20}investment\s+report\b",
+        r"investment\s+report.{0,25}(?:annual|require|publish|present|council)\b",
+    ],
+    "supports_lease_management_fix": [
+        r"(?:fix|improve|reform|address)\s+.{0,20}lease\s+(?:management|revenue|collection)\b",
+        r"lease\s+(?:management|collection).{0,25}(?:fix|improve|reform|system)\b",
+        r"city.owned\s+propert.{0,25}(?:lease|revenue|collect|track)\b",
+    ],
+    "questions_personnel_costs": [
+        r"(?:why|what).{0,30}(?:fte|headcount|staffing?)\s+.{0,10}(?:grow|increas|expand)\b",
+        r"(?:how|what).{0,30}productivity.{0,20}(?:staff|fte)\b",
+        r"(?:staff|fte|headcount).{0,25}(?:too\s+many|overstaff|grow)\b",
+    ],
+    "questions_program_growth": [
+        r"(?:why|what).{0,30}(?:housing|health|welfare|community\s+development).{0,20}(?:budget|spending)\s+.{0,10}(?:grow|increas|doubl)\b",
+        r"program\s+growth.{0,25}(?:sustain|afford|concern|why)\b",
+    ],
+    "raises_revenue_quality_concern": [
+        r"\barpa\b.{0,40}(?:expir|end|gone|declin|one.time|what\s+happens)\b",
+        r"one.time\s+revenue.{0,30}(?:expir|end|concern|rely|depend)\b",
+        r"investment\s+(?:earnings?|income|revenue).{0,25}(?:volatile|reliable|concern)\b",
+    ],
+}
+
+# ---------------------------------------------------------------------------
 # Homeless Services Orthodoxy (HSO) rhetoric signals
 # ---------------------------------------------------------------------------
 
@@ -833,6 +1002,12 @@ def score_member(md: MemberData) -> dict:
         # P1 share of speech — words in turns engaging with documented structural failures
         "p1_speech_pct":   round(p1_speech_pct, 4),
         "p1_speech_words": p1_words,
+        # Audit alignment: raw hit counts for financial_condition_2026 signals.
+        # Rates and sub-scores computed in pipeline.py compute_audit_alignment().
+        **{f"audit_sig_{k}_hits": hit(text, patterns)
+           for k, patterns in AUDIT_SIGNAL_KEYWORDS.items()},
+        **{f"audit_ev_{k}_hits": hit(text, patterns)
+           for k, patterns in AUDIT_EVENT_PATTERNS.items()},
     }
 
 
