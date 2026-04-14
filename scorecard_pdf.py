@@ -20,11 +20,11 @@ DISTRICT = {
     "Kesarwani": "District 1",
     "Taplin":    "District 2",
     "Bartlett":  "District 3",
-    "LunaParra": "District 5",
-    "OKeefe":    "District 6 (fmr.)",
-    "Tregub":    "District 7",
-    "Blackaby":  "District 8",
-    "Humbert":   "At-Large",
+    "Tregub":    "District 4",
+    "OKeefe":    "District 5",
+    "Blackaby":  "District 6",
+    "LunaParra": "District 7",
+    "Humbert":   "District 8",
     "Ishii":     "Mayor",
 }
 
