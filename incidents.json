@@ -11,24 +11,25 @@
       "constituent_service": "POSITIVE: Genuinely responsive constituent engagement with demonstrated follow-through"
     },
     "scoring_impact": "Additive adjustment to composite taxpayer-alignment score. Negative = against taxpayer interest. Suggested range: -0.10 to +0.10 per incident. Cap applied in pipeline.",
-    "audit_ref": "Optional. Key into audit_findings.json. Present when the incident is the council’s response to — or is illuminated by — a specific City Auditor report. The audit establishes the ground truth; the incident is the member’s specific behavior against that backdrop.",
-    "evidence_tier": "Required. A = primary public record (agenda items, vote records, official city emails, member official statements/farewell letters); B = reputable reporting or personal newsletters (Berkeleyside, Berkeley Scanner, member personal-domain emails); C = direct observation or author knowledge. Pipeline weights: A=1.0, B=0.75, C=0.50. Audit-linked incidents (audit_ref present) receive an additional 0.50x multiplier to avoid double-penalizing via both the audit and incident channels."
+    "audit_ref": "Optional. Key into audit_findings.json. Present when the incident is the council's response to — or is illuminated by — a specific City Auditor report. The audit establishes the ground truth; the incident is the member's specific behavior against that backdrop.",
+    "evidence_tier": "Required. A = primary public record (agenda items, vote records, official city emails, member official statements/farewell letters); B = reputable reporting or personal newsletters (Berkeleyside, Berkeley Scanner, member personal-domain emails); C = direct observation or author knowledge. Pipeline weights: A=1.0, B=0.75, C=0.50. Audit-linked incidents (audit_ref present) receive an additional 0.50x multiplier to avoid double-penalizing via both the audit and incident channels.",
+    "short_desc": "One sentence (≤140 chars) for display on the public scorecard. Required for evidence_tier A and B. Omit for tier C."
   },
   "_institutional": {
-    "_note": "Episodes not tied to a single current council member — systemic governance failures, staff departures, and institutional dysfunction. Used for narrative context and background; not scored against individual members unless a specific current member’s action is documented.",
+    "_note": "Episodes not tied to a single current council member — systemic governance failures, staff departures, and institutional dysfunction. Used for narrative context and background; not scored against individual members unless a specific current member's action is documented.",
     "episodes": [
       {
         "date": "2024-05-06",
         "category": "staff_removal",
         "actor": "City Manager Dee Williams-Ridley",
-        "description": "Williams-Ridley announced resignation May 6, 2024; departed June 10, 2024. Prior to departure issued public statement: ‘I am optimistic that by working with Council...we will find solutions.’ Two-month interim gap before permanent City Manager appointment — consistent with an unmanaged exit, not a planned succession. Williams-Ridley was the author of three consecutive budget messages (FY2023-2024, FY2024 mid-biennial, FY2025-2026) that explicitly named the structural deficit as ‘not sustainable.’ The FY2025-2026 budget — her final document — was adopted June 25, 2024, after her departure. The ‘not sustainable’ language in that budget is her last official act on the structural deficit.",
+        "description": "Williams-Ridley announced resignation May 6, 2024; departed June 10, 2024. Prior to departure issued public statement: 'I am optimistic that by working with Council...we will find solutions.' Two-month interim gap before permanent City Manager appointment — consistent with an unmanaged exit, not a planned succession. Williams-Ridley was the author of three consecutive budget messages (FY2023-2024, FY2024 mid-biennial, FY2025-2026) that explicitly named the structural deficit as 'not sustainable.' The FY2025-2026 budget — her final document — was adopted June 25, 2024, after her departure. The 'not sustainable' language in that budget is her last official act on the structural deficit.",
         "significance": "When the senior professional who drafted the fiscal warnings is removed before those warnings are acted on, the warnings become organizational CYA rather than governance inputs. The structural deficit she named in writing across three cycles has not been structurally addressed."
       },
       {
         "date": "2026-02-09",
         "category": "oversight_dysfunction",
         "actor": "Police Accountability Board / ODPA — Council vote 8-0 (Kesarwani absent)",
-        "description": "Council voted unanimously to fire Hansel Aguilar, Director of Police Accountability, hired October 2022. The Office of the Director of Police Accountability (ODPA) and the Police Accountability Board (PAB) were created by Measure II, approved by 85% of voters in November 2020 to replace the Police Review Commission — which the DOJ had cited as a national model for civilian oversight. By the time of Aguilar’s firing: all original PAB commissioners had departed (last two resigned January 30, 2026, writing that the PAB was ‘even less empowered than its predecessor’); PAB had dropped to 4 of 9 seats; BPD had refused records requests forcing multiple subpoenas; Aguilar had sued Police Chief Jen Louis in December 2025 to compel records release. Council dismissed him under ‘without cause’ contract terms, triggering mandatory severance. Immediately following the vote, Lunaparra issued a statement saying she was ‘concerned that the City and City Council does not prioritize or value Police accountability’ — she had just voted for the outcome she expressed concern about.",
+        "description": "Council voted unanimously to fire Hansel Aguilar, Director of Police Accountability, hired October 2022. The Office of the Director of Police Accountability (ODPA) and the Police Accountability Board (PAB) were created by Measure II, approved by 85% of voters in November 2020 to replace the Police Review Commission — which the DOJ had cited as a national model for civilian oversight. By the time of Aguilar's firing: all original PAB commissioners had departed (last two resigned January 30, 2026, writing that the PAB was 'even less empowered than its predecessor'); PAB had dropped to 4 of 9 seats; BPD had refused records requests forcing multiple subpoenas; Aguilar had sued Police Chief Jen Louis in December 2025 to compel records release. Council dismissed him under 'without cause' contract terms, triggering mandatory severance. Immediately following the vote, Lunaparra issued a statement saying she was 'concerned that the City and City Council does not prioritize or value Police accountability' — she had just voted for the outcome she expressed concern about.",
         "key_quotes": {
           "calavita": "It looks very much like some of the leaders here do not want a real oversight body.",
           "calavita_leftwich_letter": "We have seen firsthand that the PAB has not been permitted to exercise its expanded oversight authority and is even less empowered than its predecessor.",
@@ -60,7 +61,8 @@
       "date": "2025-11-18",
       "category": "atm_behavior",
       "evidence_tier": "A",
-      "description": "Authored ‘Advanced Fiscal Policies — Bond Schedule’ referral directing City Manager to develop a regular predictable bond issuance schedule. Explicit ‘we are underbonded’ philosophy: preference to borrow more rather than improve efficiency or cut spending.",
+      "short_desc": "Authored a 'predictable bond schedule' referral — explicit 'we are underbonded' philosophy: borrow more, not spend less.",
+      "description": "Authored 'Advanced Fiscal Policies — Bond Schedule' referral directing City Manager to develop a regular predictable bond issuance schedule. Explicit 'we are underbonded' philosophy: preference to borrow more rather than improve efficiency or cut spending.",
       "source": "Agenda record 2025-11-18 consent item 26",
       "scoring_impact": -0.08
     },
@@ -68,6 +70,7 @@
       "date": "2025-12-02",
       "category": "atm_behavior",
       "evidence_tier": "A",
+      "short_desc": "Led $300M GO bond survey direction with no efficiency or cut analysis as counterpart.",
       "description": "Led $300M GO bond survey direction at special session — framing potential new taxpayer debt obligations as infrastructure investment without any corresponding efficiency or cut analysis.",
       "source": "Agenda record 2025-12-02 special meeting",
       "scoring_impact": -0.07
@@ -76,6 +79,7 @@
       "date": "2026-01-27",
       "category": "atm_behavior",
       "evidence_tier": "A",
+      "short_desc": "Supported sales tax poll referral — part of an unbroken revenue-first pattern with no cuts discussion.",
       "description": "Supported sales tax poll referral (Kesarwani) — part of ongoing pattern of reaching for new revenue (bonds, taxes) without first asking what can be cut or done more efficiently.",
       "source": "Agenda record 2026-01-27 consent item 17",
       "scoring_impact": -0.05
@@ -84,7 +88,8 @@
       "date": "2026-02-19",
       "category": "atm_behavior",
       "evidence_tier": "A",
-      "description": "Distributed constituent newsletter promoting a city-launched 0.5% sales tax community survey to address Berkeley’s structural deficit. The survey asks residents what services they want funded — not what they would cut. No mention of reprioritization, efficiency review, or spending reductions as alternatives. Berkeley’s structural deficit is a spending problem; a survey that only surfaces new revenue preferences is political infrastructure for a tax campaign, not fiscal analysis.",
+      "short_desc": "Promoted a budget survey that asks what to fund, not what to cut — political infrastructure for a tax campaign, not fiscal analysis.",
+      "description": "Distributed constituent newsletter promoting a city-launched 0.5% sales tax community survey to address Berkeley's structural deficit. The survey asks residents what services they want funded — not what they would cut. No mention of reprioritization, efficiency review, or spending reductions as alternatives. Berkeley's structural deficit is a spending problem; a survey that only surfaces new revenue preferences is political infrastructure for a tax campaign, not fiscal analysis.",
       "source": "March 2026 District 2 Newsletter (ttaplin@cityofberkeley.info)",
       "scoring_impact": -0.06
     },
@@ -92,7 +97,8 @@
       "date": "2026-03-01",
       "category": "atm_behavior",
       "evidence_tier": "A",
-      "description": "March 2026 newsletter promoted community input meetings for a potential 2026 infrastructure bond measure, advertising bond as the mechanism for addressing Berkeley’s street and facility needs. Context: Berkeley’s streets rank among the worst in Alameda County not from lack of bond authority but from chronic underfunding — approximately $2–8M of the general fund is allocated annually toward paving. The Five Year Paving Plan selects streets based on political considerations rather than efficiency-maximizing pavement management metrics. Framing infrastructure need as a bonding opportunity rather than a general fund reprioritization problem obscures the actual cause of decline and compounds taxpayer debt burden.",
+      "short_desc": "Newsletter framed street maintenance as a bonding opportunity, obscuring the real cause: chronic general fund underfunding.",
+      "description": "March 2026 newsletter promoted community input meetings for a potential 2026 infrastructure bond measure, advertising bond as the mechanism for addressing Berkeley's street and facility needs. Context: Berkeley's streets rank among the worst in Alameda County not from lack of bond authority but from chronic underfunding — approximately $2–8M of the general fund is allocated annually toward paving. The Five Year Paving Plan selects streets based on political considerations rather than efficiency-maximizing pavement management metrics. Framing infrastructure need as a bonding opportunity rather than a general fund reprioritization problem obscures the actual cause of decline and compounds taxpayer debt burden.",
       "source": "March 2026 District 2 Newsletter (ttaplin@cityofberkeley.info); Five Year Paving Plan update presented February 4, 2026",
       "scoring_impact": -0.06
     },
@@ -101,8 +107,9 @@
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
       "audit_ref": "streets_rocky_road_2025",
-      "description": "Present and voted to ‘receive and file’ the City Auditor’s ‘Rocky Road’ streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was ever introduced. Five months later (March 2026), Taplin and the full council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012 — without any companion motion to address the strategic failures the audit documented. The bond-over-reprioritization choice was made with eyes open.",
-      "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit, ‘Rocky Road: Berkeley Streets at Risk and Significantly Underfunded’); agenda record 2026-03-17 Item 1",
+      "short_desc": "Voted to receive and file the Rocky Road streets audit, then five months later backed a $300M bond — the audit's diagnosis converted into a borrowing campaign.",
+      "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was ever introduced. Five months later (March 2026), Taplin and the full council unanimously directed staff to develop a $300M infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012 — without any companion motion to address the strategic failures the audit documented. The bond-over-reprioritization choice was made with eyes open.",
+      "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit, 'Rocky Road: Berkeley Streets at Risk and Significantly Underfunded'); agenda record 2026-03-17 Item 1",
       "scoring_impact": -0.07
     },
     {
@@ -117,7 +124,8 @@
       "date": "2023-11-16",
       "category": "atm_behavior",
       "evidence_tier": "A",
-      "description": "Authored ‘Budget Referral and Updated Guidelines and Procedures for City Council Office Staff Expenditures’ — passed on the consent calendar — doubling authorized council office staffing from 1 FTE to 2 FTE per office. Immediate budget referral: up to $219,080 (AAO process). Full annual cost at 2 FTE per office: approximately $442,000 above prior baseline, recurring. Co-authors: Kate Harrison and Ben Bartlett. Three compounding problems: (1) A recurring $442k/year expenditure passed on the consent calendar during a period of acknowledged structural deficit — no floor debate, no alternatives analysis, no cost-benefit framing relative to competing priorities. (2) More council office staff does not reduce the structural deficit; it increases the ongoing cost of governance and — as the output of unfocused activity historically demonstrates — tends to increase the volume of non-core agenda items rather than their quality. (3) The item explicitly references that ‘half of Council Offices now maintain more than one Legislative Assistant’ as justification for funding that which already existed informally — institutionalizing a practice rather than questioning whether it was appropriate in the first place.",
+      "short_desc": "Authored doubling of council office staffing (1→2 FTE per office, ~$442k/year recurring) on the consent calendar during an acknowledged structural deficit.",
+      "description": "Authored 'Budget Referral and Updated Guidelines and Procedures for City Council Office Staff Expenditures' — passed on the consent calendar — doubling authorized council office staffing from 1 FTE to 2 FTE per office. Immediate budget referral: up to $219,080 (AAO process). Full annual cost at 2 FTE per office: approximately $442,000 above prior baseline, recurring. Co-authors: Kate Harrison and Ben Bartlett. Three compounding problems: (1) A recurring $442k/year expenditure passed on the consent calendar during a period of acknowledged structural deficit — no floor debate, no alternatives analysis, no cost-benefit framing relative to competing priorities. (2) More council office staff does not reduce the structural deficit; it increases the ongoing cost of governance and — as the output of unfocused activity historically demonstrates — tends to increase the volume of non-core agenda items rather than their quality. (3) The item explicitly references that 'half of Council Offices now maintain more than one Legislative Assistant' as justification for funding that which already existed informally — institutionalizing a practice rather than questioning whether it was appropriate in the first place.",
       "source": "Agenda item Nov. 16, 2023, Item 3 (consent calendar); Taplin as author, Harrison (subsequently resigned) and Bartlett co-authors",
       "scoring_impact": -0.07
     },
@@ -126,8 +134,9 @@
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
       "audit_ref": "financial_condition_2026",
-      "description": "Taplin authored a ‘Advanced Fiscal Policies — Bond Schedule’ referral directing the City Manager to develop a regular predictable bond issuance schedule — demonstrating detailed engagement with the mechanics of municipal borrowing. Yet Berkeley’s council fiscal policies have never required assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice that applies to any government serious about structural balance. This is not a new standard: GFOA has published it for decades. Taplin invested authorship capital in optimizing bond-issuance cadence while never authoring anything that would test whether Berkeley should be borrowing at all. The asymmetry reveals a disposition: the borrowing machinery gets attention; the structural balance test does not.",
-      "source": "Agenda record 2025-11-18 consent item 26; GFOA best practice on Debt Management Policy; City Auditor report ‘Berkeley’s Financial Condition (FY2016–FY2025),’ April 2026 (documents the missing policy as a finding)",
+      "short_desc": "Optimized bond-issuance cadence while never authoring a structural balance test — detailed engagement with borrowing machinery, none with whether Berkeley should be borrowing.",
+      "description": "Taplin authored a 'Advanced Fiscal Policies — Bond Schedule' referral directing the City Manager to develop a regular predictable bond issuance schedule — demonstrating detailed engagement with the mechanics of municipal borrowing. Yet Berkeley's council fiscal policies have never required assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice that applies to any government serious about structural balance. This is not a new standard: GFOA has published it for decades. Taplin invested authorship capital in optimizing bond-issuance cadence while never authoring anything that would test whether Berkeley should be borrowing at all. The asymmetry reveals a disposition: the borrowing machinery gets attention; the structural balance test does not.",
+      "source": "Agenda record 2025-11-18 consent item 26; GFOA best practice on Debt Management Policy; City Auditor report 'Berkeley's Financial Condition (FY2016–FY2025),' April 2026 (documents the missing policy as a finding)",
       "scoring_impact": -0.05
     }
   ],
@@ -136,7 +145,8 @@
       "date": "2020-2026",
       "category": "constituent_gaslight",
       "evidence_tier": "B",
-      "description": "Ishii ran for mayor on a platform that included police accountability reform — Measure II, which established the PAB and ODPA, passed 85% in November 2020, creating the strongest civilian oversight mandate in Berkeley’s history. Under her mayoralty: all original PAB commissioners departed; the board dropped to 4 of 9 seats; BPD refused records requests and required multiple subpoenas; ODPA Director Aguilar sued the Police Chief to compel records release; and Aguilar was fired by unanimous council vote in February 2026. Immediately after the vote, Ishii issued a prepared statement that ‘the council remained committed to police accountability’ — a recommitment issued in the moment the oversight office’s leadership was eliminated. The institution she was elected in part to protect did not survive her tenure in recognizable form. Voters who supported her based on police accountability commitments were told the commitment was intact at the moment it was most visibly abandoned.",
+      "short_desc": "Ran on police accountability; under her mayoralty the PAB collapsed and the accountability director was fired — she told voters the commitment was intact as it happened.",
+      "description": "Ishii ran for mayor on a platform that included police accountability reform — Measure II, which established the PAB and ODPA, passed 85% in November 2020, creating the strongest civilian oversight mandate in Berkeley's history. Under her mayoralty: all original PAB commissioners departed; the board dropped to 4 of 9 seats; BPD refused records requests and required multiple subpoenas; ODPA Director Aguilar sued the Police Chief to compel records release; and Aguilar was fired by unanimous council vote in February 2026. Immediately after the vote, Ishii issued a prepared statement that 'the council remained committed to police accountability' — a recommitment issued in the moment the oversight office's leadership was eliminated. The institution she was elected in part to protect did not survive her tenure in recognizable form. Voters who supported her based on police accountability commitments were told the commitment was intact at the moment it was most visibly abandoned.",
       "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026; PAB commissioner departures 2021–2026; Measure II ballot results Nov. 2020",
       "scoring_impact": -0.09
     },
@@ -144,7 +154,8 @@
       "date": "2026-04-14",
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
-      "description": "Co-authored (with Lunaparra) and sent a mass constituent email (April 14, 2026) announcing two special council meetings to vote on the Flock Safety contract, stating: ‘I remain opposed to Berkeley contracting with Flock.’ The supplemental material she introduced on March 24, 2026 calls for the council to ‘reject any renewal, authorization, approval, or execution of a contract with Flock Safety.’ The stated rationale is sanctuary city / immigration data-sharing concerns — citing incidents in Ventura County and Mountain View where Flock’s ‘National Look Up’ feature was activated without local agency consent. The supplemental ignores a material development: Berkeley’s City Attorney had already negotiated a Master Services Agreement with Flock Safety that includes data ownership protections, restrictions on federal access consistent with sanctuary city policy, financial penalties for unauthorized disclosures, security incident notification requirements, and post-termination data protections — and Flock accepted every revision proposed. The negotiated contract directly addresses the cited harms. The supplemental does not engage with this; it treats the contract as if the City Attorney’s work had not occurred. The same day Ishii’s email went out, the Berkeley Scanner published detailed reporting that BPD is at record-low staffing, with 7+ officers already lost to SFPD, and that officers describe the Flock ALPR system as ‘the singular piece of technology the city has approved for police use in decades’ and ‘the one thing keeping a lot of officers engaged.’ Ishii’s email opposes the specific tool that her own department’s officers have publicly identified as a retention anchor — in the middle of a documented attrition crisis driven by Berkeley’s political culture toward policing.",
+      "short_desc": "Declared opposition to the Flock contract — officers' 'singular piece of technology' — the same day BPD reported record-low staffing. City Attorney had already negotiated full sanctuary protections.",
+      "description": "Co-authored (with Lunaparra) and sent a mass constituent email (April 14, 2026) announcing two special council meetings to vote on the Flock Safety contract, stating: 'I remain opposed to Berkeley contracting with Flock.' The supplemental material she introduced on March 24, 2026 calls for the council to 'reject any renewal, authorization, approval, or execution of a contract with Flock Safety.' The stated rationale is sanctuary city / immigration data-sharing concerns — citing incidents in Ventura County and Mountain View where Flock's 'National Look Up' feature was activated without local agency consent. The supplemental ignores a material development: Berkeley's City Attorney had already negotiated a Master Services Agreement with Flock Safety that includes data ownership protections, restrictions on federal access consistent with sanctuary city policy, financial penalties for unauthorized disclosures, security incident notification requirements, and post-termination data protections — and Flock accepted every revision proposed. The negotiated contract directly addresses the cited harms. The supplemental does not engage with this; it treats the contract as if the City Attorney's work had not occurred. The same day Ishii's email went out, the Berkeley Scanner published detailed reporting that BPD is at record-low staffing, with 7+ officers already lost to SFPD, and that officers describe the Flock ALPR system as 'the singular piece of technology the city has approved for police use in decades' and 'the one thing keeping a lot of officers engaged.' Ishii's email opposes the specific tool that her own department's officers have publicly identified as a retention anchor — in the middle of a documented attrition crisis driven by Berkeley's political culture toward policing.",
       "source": "Mayor Adena Ishii constituent email April 14, 2026 (mayor@berkeleyca.gov); 2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Ishii/Lunaparra co-authors, Tregub co-sponsor); Berkeley Scanner, Emilie Raguso, April 14, 2026",
       "scoring_impact": -0.10
     },
@@ -152,7 +163,8 @@
       "date": "2026-02-09",
       "category": "constituent_gaslight",
       "evidence_tier": "B",
-      "description": "Confirmed Aguilar’s dismissal after unanimous 8-0 vote (Kesarwani absent) then issued a prepared statement that the council ‘remained committed to police accountability’ and was focused on ‘restoring credibility, trust and respect for both the accountability process and the people involved in this work.’ The council had just voted to fire the accountability director, leaving the Police Accountability Board at 4 of 9 seats with all original commissioners departed, and BPD in an ongoing records dispute with the office. Issuing a recommitment-to-accountability statement immediately after eliminating the accountability office’s leadership is the definitional form of performative governance: the statement replaces the action it purports to describe.",
+      "short_desc": "After voting to fire the Police Accountability Director, issued a statement that the council 'remained committed to police accountability.'",
+      "description": "Confirmed Aguilar's dismissal after unanimous 8-0 vote (Kesarwani absent) then issued a prepared statement that the council 'remained committed to police accountability' and was focused on 'restoring credibility, trust and respect for both the accountability process and the people involved in this work.' The council had just voted to fire the accountability director, leaving the Police Accountability Board at 4 of 9 seats with all original commissioners departed, and BPD in an ongoing records dispute with the office. Issuing a recommitment-to-accountability statement immediately after eliminating the accountability office's leadership is the definitional form of performative governance: the statement replaces the action it purports to describe.",
       "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026",
       "scoring_impact": -0.08
     }
@@ -162,6 +174,7 @@
       "date": "2026-03-05",
       "category": "alternatives_dismissed",
       "evidence_tier": "B",
+      "short_desc": "March 2026 newsletter framed the budget as cuts vs. revenue — without surfacing targeted reprioritization, program exit, or structural reform as alternatives.",
       "description": "March 2026 newsletter presents the budget problem as a binary: across-the-board cuts of 10–12.5% versus revenue improvement. The full solution space was not surfaced to constituents. Across-the-board cuts are not the default required by a structural deficit; they are a specific political choice that avoids prioritization, preserves relative departmental structure, and minimizes internal political conflict. The alternatives — targeted/priority-based cuts, program exit and consolidation (e.g., functions with scale disadvantages transferred to county), structural service redesign, workforce-driven adjustments, reallocation from lower-value programs — require explicit value judgments that across-the-board cuts defer. When a constituent raised targeted cuts directly, Chief of Staff Panzer explained the obstacles (union reaction, morale, institutional knowledge loss) without acknowledging that those obstacles are addressable through different contracting structures, attrition targeting, or council action on labor agreements. Humbert's response ('I'm not ruling those out — let's see what the budget committee brings') deferred agency to the subcommittee rather than signaling what coalition he was building or what amendments he intended to seek. The newsletter is the most honest fiscal communication in the dataset on the existence of the problem; the alternatives_dismissed penalty reflects the solution framing, not the diagnosis.",
       "source": "March 2026 District 8 Newsletter (mhumbert@cityofberkeley.info); follow-on exchange with Eric Panzer and constituent, 2026-03-06 (gmail thread 19cc03f317eedf1c)",
       "scoring_impact": -0.04
@@ -180,7 +193,7 @@
       "date": "2025",
       "category": "alternatives_dismissed",
       "evidence_tier": "C",
-      "description": "AAHRC: no effort made to determine whether existing city services could be reformed, consolidated, or redirected to meet the stated need. The question ‘what do we already have and is it working?’ was never asked publicly.",
+      "description": "AAHRC: no effort made to determine whether existing city services could be reformed, consolidated, or redirected to meet the stated need. The question 'what do we already have and is it working?' was never asked publicly.",
       "source": "Direct knowledge of scorecard author",
       "scoring_impact": -0.06
     },
@@ -188,7 +201,7 @@
       "date": "2025-2026",
       "category": "constituent_gaslight",
       "evidence_tier": "C",
-      "description": "Documented pattern of requesting co-author credit on agenda items after the primary authorship work is already complete. Bartlett attaches his name to proposals developed by others — gaining the political visibility of authorship without having shaped the item’s analysis, framing, or fiscal structure. Co-authorship in this context is a credit-seeking signal, not a substantive contribution. It inflates the appearance of legislative engagement while the work — and accountability for it — belongs to the actual authors.",
+      "description": "Documented pattern of requesting co-author credit on agenda items after the primary authorship work is already complete. Bartlett attaches his name to proposals developed by others — gaining the political visibility of authorship without having shaped the item's analysis, framing, or fiscal structure. Co-authorship in this context is a credit-seeking signal, not a substantive contribution. It inflates the appearance of legislative engagement while the work — and accountability for it — belongs to the actual authors.",
       "source": "Direct observation; sourced from council colleagues familiar with his working pattern",
       "scoring_impact": -0.08
     },
@@ -196,6 +209,7 @@
       "date": "2026",
       "category": "scope_indiscipline",
       "evidence_tier": "A",
+      "short_desc": "Published a five-pillar federal economic reform framework on his council office platform while Berkeley faces an unresolved structural fiscal crisis and unaddressed P1 failures.",
       "description": "Published the \"American Renewal Plan\" — a 5-pillar national economic reform framework (32-hour workweek mandate, condo-ization of all U.S. public housing, American Resource Dividend, credit-card interest deductibility, Modern Debt Jubilee) — on his council office platform. The document is explicitly addressed to \"Policymakers, Legislative Staff, Economic Advisors\" and addresses federal policy levers entirely outside Berkeley city authority. It was authored and distributed while Berkeley faces a documented structural fiscal crisis (City Manager: \"not sustainable\"), with streets underfunded by hundreds of millions, CalPERS/OPEB obligations unaddressed, and reserves near-depleted. None of the plan's five pillars touches any Berkeley P1 problem. This is the most extreme scope departure in the current council record: a D3 Berkeley council member authoring a comprehensive federal economic reform framework, using the attention and staff capacity of an office whose taxpayers face unresolved local structural failures.",
       "source": "American Renewal Plan — published on Bartlett council office platform (primary document captured 2026-04-12)",
       "scoring_impact": -0.08
@@ -206,7 +220,8 @@
       "date": "2024-12-11",
       "category": "constituent_gaslight",
       "evidence_tier": "A",
-      "description": "Scheduled community meeting on the Howard Johnson Motel interim housing project for December 11, 2024 — three weeks after the City Council had already voted on November 19, 2024 to approve the contract with Dorothy Day House to operate it. The invitation email acknowledged the vote had occurred (‘By way of background, at its November 19 meeting, the City Council approved a contract...’) while framing the December meeting as a community conversation. This was post-facto notification dressed as engagement.",
+      "short_desc": "Held a community meeting on the homeless hotel three weeks after the council had already voted to approve it — post-facto notification dressed as engagement.",
+      "description": "Scheduled community meeting on the Howard Johnson Motel interim housing project for December 11, 2024 — three weeks after the City Council had already voted on November 19, 2024 to approve the contract with Dorothy Day House to operate it. The invitation email acknowledged the vote had occurred ('By way of background, at its November 19 meeting, the City Council approved a contract...') while framing the December meeting as a community conversation. This was post-facto notification dressed as engagement.",
       "source": "Tregub constituent email Dec 11 2024 (ITregub@berkeleyca.gov); agenda record 2024-11-19",
       "scoring_impact": -0.08
     },
@@ -214,7 +229,7 @@
       "date": "2025",
       "category": "alternatives_dismissed",
       "evidence_tier": "C",
-      "description": "Told constituent there was ‘no other good use’ for the homeless hotel real estate — dismissed alternatives without any analysis, market study, or public process.",
+      "description": "Told constituent there was 'no other good use' for the homeless hotel real estate — dismissed alternatives without any analysis, market study, or public process.",
       "source": "Direct constituent interaction with scorecard author",
       "scoring_impact": -0.05
     },
@@ -230,7 +245,8 @@
       "date": "2026-03-17",
       "category": "atm_behavior",
       "evidence_tier": "B",
-      "description": "March 2026 (Part 2) newsletter told constituents that passage of both a $300M infrastructure bond AND a half-cent sales tax was ‘a sobering fact...essential to ensure the city’s continued ability to deliver on the quality services that you deserve.’ This is revenue-first framing to constituents with no mention of reprioritization or efficiency alternatives. The bond and tax are being prepared for the November 2026 ballot — continuing an unbroken cycle of bond measures (Measure M 2012, T1 2016, L failed 2022, EE/FF 2024) with no corresponding general fund reprioritization. At the same time, Tregub voted unanimously with the rest of the council to commission a second poll on both measures.",
+      "short_desc": "Newsletter told constituents a $300M bond and a sales tax were both 'essential' — revenue-first framing with no mention of reprioritization alternatives.",
+      "description": "March 2026 (Part 2) newsletter told constituents that passage of both a $300M infrastructure bond AND a half-cent sales tax was 'a sobering fact...essential to ensure the city's continued ability to deliver on the quality services that you deserve.' This is revenue-first framing to constituents with no mention of reprioritization or efficiency alternatives. The bond and tax are being prepared for the November 2026 ballot — continuing an unbroken cycle of bond measures (Measure M 2012, T1 2016, L failed 2022, EE/FF 2024) with no corresponding general fund reprioritization. At the same time, Tregub voted unanimously with the rest of the council to commission a second poll on both measures.",
       "source": "Tregub March 2026 Part 2 newsletter (igor@igortregub.com, 2026-03-18)",
       "scoring_impact": -0.06
     },
@@ -238,7 +254,8 @@
       "date": "2025-07-21",
       "category": "atm_behavior",
       "evidence_tier": "B",
-      "description": "Used official District 4 constituent newsletter to mobilize residents to attend an Alameda County Board of Supervisors meeting in support of Measure W homelessness funding — an active lobbying call on behalf of county-level spending. Three compounding problems: (1) City and county measures are additive obligations on the same taxpayer base; drawing constituent attention to county spending campaigns is unusual precisely because it highlights cumulative burden — members typically avoid doing so. (2) Measure W would direct county revenue preferentially to cities that implement Housing First programs — i.e., Berkeley — meaning Tregub was effectively campaigning to route county money into the same Berkeley HSO apparatus whose outcomes he has never publicly questioned. (3) Lobbying for a county measure is outside a city councilmember’s jurisdiction; using an official constituent email list for this purpose treats that list as an advocacy tool rather than a public communication channel.",
+      "short_desc": "Used official newsletter to lobby constituents for a county homelessness measure that would preferentially fund Berkeley's Housing First programs.",
+      "description": "Used official District 4 constituent newsletter to mobilize residents to attend an Alameda County Board of Supervisors meeting in support of Measure W homelessness funding — an active lobbying call on behalf of county-level spending. Three compounding problems: (1) City and county measures are additive obligations on the same taxpayer base; drawing constituent attention to county spending campaigns is unusual precisely because it highlights cumulative burden — members typically avoid doing so. (2) Measure W would direct county revenue preferentially to cities that implement Housing First programs — i.e., Berkeley — meaning Tregub was effectively campaigning to route county money into the same Berkeley HSO apparatus whose outcomes he has never publicly questioned. (3) Lobbying for a county measure is outside a city councilmember's jurisdiction; using an official constituent email list for this purpose treats that list as an advocacy tool rather than a public communication channel.",
       "source": "July 2025 District 4 Newsletter (igor@igortregub.com)",
       "scoring_impact": -0.09
     },
@@ -247,7 +264,8 @@
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
       "audit_ref": "streets_rocky_road_2025",
-      "description": "Present and voted to ‘receive and file’ the City Auditor’s ‘Rocky Road’ streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was introduced. Five months later (March 2026), Tregub voted unanimously with the council to commission a $300M infrastructure bond survey, and his March 2026 newsletter described the bond as ‘essential’ — without mentioning the audit’s finding that the underlying problem is chronic underfunding of paving in the general fund, not lack of bond authority. The audit was received, filed, and converted into a bond campaign.",
+      "short_desc": "Voted to receive and file the Rocky Road streets audit, then backed a $300M bond — the audit's findings converted into a borrowing campaign.",
+      "description": "Present and voted to 'receive and file' the City Auditor's 'Rocky Road' streets audit (Item 35), which documented PCI 57, a $42M/year funding gap, and a structural pattern of bond dependence that crowded out general fund reprioritization. No follow-up motion to reform the Five Year Paving Plan or redirect general fund dollars was introduced. Five months later (March 2026), Tregub voted unanimously with the council to commission a $300M infrastructure bond survey, and his March 2026 newsletter described the bond as 'essential' — without mentioning the audit's finding that the underlying problem is chronic underfunding of paving in the general fund, not lack of bond authority. The audit was received, filed, and converted into a bond campaign.",
       "source": "Agenda record 2025-10-28 Item 35 (Rocky Road audit); agenda record 2026-03-17 Item 1; Tregub March 2026 Part 2 newsletter",
       "scoring_impact": -0.07
     },
@@ -255,6 +273,7 @@
       "date": "2026-03-24",
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
+      "short_desc": "Co-sponsored the Flock contract rejection, ignoring the City Attorney's fully negotiated sanctuary protections — extending a consistent anti-policing-tools pattern.",
       "description": "Co-sponsored the Ishii/Lunaparra supplemental (Item 26, March 24, 2026) calling for the council to reject the Flock Safety contract. Tregub's co-sponsorship extends his consistent pattern of opposing policing technology. The supplemental dismisses the alternatives analysis — specifically, that Berkeley's City Attorney had already negotiated a full-protection contract that addresses the sanctuary city concerns used to justify opposition. Flock ALPR is the tool BPD officers name as 'the singular piece of technology' the city has approved in decades and the remaining anchor for retention against SFPD recruitment.",
       "source": "2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Tregub co-sponsor); Berkeley Scanner, Emilie Raguso, April 14, 2026",
       "scoring_impact": -0.06
@@ -263,7 +282,8 @@
       "date": "2026-03-24",
       "category": "atm_behavior",
       "evidence_tier": "A",
-      "description": "Authored a referral to the City Manager to ban the sale and use of glue traps within Berkeley city limits (Item 20, 2026-03-24). Glue trap purchases are trivially circumvented by driving to an adjacent city; the ordinance cannot achieve its stated aim at city scale. The referral is symbolic regulation: it consumes staff time, creates a compliance burden for Berkeley retailers, and produces a press-release outcome with no measurable impact on rodent control practices in Berkeley. Authored during an explicitly acknowledged fiscal crisis (‘one of the most difficult times in the city’) as one of three original items on the March 24 agenda, alongside a transit letter and music event funding. This is scope indiscipline: using a council agenda slot for legislation that cannot work rather than for any of the underfunded P1 functions the same newsletter names as urgent.",
+      "short_desc": "Authored a glue trap ban during a fiscal crisis — symbolic regulation that can't work at city scale, consuming staff time while P1 problems go unaddressed.",
+      "description": "Authored a referral to the City Manager to ban the sale and use of glue traps within Berkeley city limits (Item 20, 2026-03-24). Glue trap purchases are trivially circumvented by driving to an adjacent city; the ordinance cannot achieve its stated aim at city scale. The referral is symbolic regulation: it consumes staff time, creates a compliance burden for Berkeley retailers, and produces a press-release outcome with no measurable impact on rodent control practices in Berkeley. Authored during an explicitly acknowledged fiscal crisis ('one of the most difficult times in the city') as one of three original items on the March 24 agenda, alongside a transit letter and music event funding. This is scope indiscipline: using a council agenda slot for legislation that cannot work rather than for any of the underfunded P1 functions the same newsletter names as urgent.",
       "source": "Agenda record 2026-03-24 Item 20; Tregub April 2026 newsletter (igor@igortregub.com, 2026-04-11)",
       "scoring_impact": -0.04
     },
@@ -271,7 +291,8 @@
       "date": "2026-04-11",
       "category": "constituent_gaslight",
       "evidence_tier": "B",
-      "description": "April 2026 newsletter opens by invoking budget difficulty: ‘from a budgetary and staffing perspective, it is undoubtably one of the more difficult times in the city’ and frames his vice-mayor role as an occasion to advance ‘thoughtful, collaborative solutions.’ The remainder of the newsletter contains zero fiscal content: no structural deficit analysis, no mention of CalPERS/OPEB obligations, no P1 function review, no spending reform proposal. Legislative highlights are glue trap regulation, a transit letter, music event funding, green code permitting, and five state bill support positions. The pattern recurs across all five newsletters from January through April 2026: each opens by naming a fiscal crisis, none contains any P1 fiscal analysis. This directly contradicts Tregub’s 2024 Ballotpedia survey, in which he named ‘transparency, accountability, and integrity’ as his core characteristics and pledged to establish a ‘participatory budgeting process’ that keeps the community informed about all matters impacting Berkeleyans. A participatory budgeting process requires first being transparent about the actual fiscal problems. Newsletters that acknowledge a crisis in one sentence and then discuss glue traps are not that.",
+      "short_desc": "April newsletter named the fiscal crisis in the opening sentence, then devoted the rest to glue traps, a transit letter, and music funding — zero fiscal content.",
+      "description": "April 2026 newsletter opens by invoking budget difficulty: 'from a budgetary and staffing perspective, it is undoubtably one of the more difficult times in the city' and frames his vice-mayor role as an occasion to advance 'thoughtful, collaborative solutions.' The remainder of the newsletter contains zero fiscal content: no structural deficit analysis, no mention of CalPERS/OPEB obligations, no P1 function review, no spending reform proposal. Legislative highlights are glue trap regulation, a transit letter, music event funding, green code permitting, and five state bill support positions. The pattern recurs across all five newsletters from January through April 2026: each opens by naming a fiscal crisis, none contains any P1 fiscal analysis. This directly contradicts Tregub's 2024 Ballotpedia survey, in which he named 'transparency, accountability, and integrity' as his core characteristics and pledged to establish a 'participatory budgeting process' that keeps the community informed about all matters impacting Berkeleyans. A participatory budgeting process requires first being transparent about the actual fiscal problems. Newsletters that acknowledge a crisis in one sentence and then discuss glue traps are not that.",
       "source": "Tregub April 2026 newsletter (igor@igortregub.com, 2026-04-11); Ballotpedia Candidate Connection survey, May 12, 2024",
       "scoring_impact": -0.04
     }
@@ -281,7 +302,8 @@
       "date": "2026-02-09",
       "category": "constituent_gaslight",
       "evidence_tier": "A",
-      "description": "Voted unanimously with seven colleagues to fire Hansel Aguilar, the Director of Police Accountability, then issued a public statement saying she was ‘concerned that the City and City Council does not prioritize or value Police accountability.’ She was the City Council in the moment she cast that vote. Her farewell letter, written weeks later, claims she ‘advocated for the Police Accountability Board’s authority and independence’ — with no acknowledgment that she voted to fire its executive director. Lunaparra won her seat in the special election created by Rigel Robinson’s resignation — Robinson was a principal architect of Measure II, the ballot initiative that created the PAB and ODPA that her vote destabilized.",
+      "short_desc": "Voted to fire the Police Accountability Director, then issued a statement she was 'concerned that the City and City Council does not prioritize or value Police accountability.'",
+      "description": "Voted unanimously with seven colleagues to fire Hansel Aguilar, the Director of Police Accountability, then issued a public statement saying she was 'concerned that the City and City Council does not prioritize or value Police accountability.' She was the City Council in the moment she cast that vote. Her farewell letter, written weeks later, claims she 'advocated for the Police Accountability Board's authority and independence' — with no acknowledgment that she voted to fire its executive director. Lunaparra won her seat in the special election created by Rigel Robinson's resignation — Robinson was a principal architect of Measure II, the ballot initiative that created the PAB and ODPA that her vote destabilized.",
       "source": "Berkeleyside, Feb. 9, 2026; council vote record 2026-02-09; Lunaparra farewell letter, April 2026",
       "scoring_impact": -0.09
     },
@@ -289,6 +311,7 @@
       "date": "2026-03-24",
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
+      "short_desc": "Primary author of the Flock contract rejection — her final policing vote, ignoring City Attorney's negotiated sanctuary protections, amid a documented BPD attrition crisis.",
       "description": "Primary author of the supplemental material (Item 26, March 24, 2026) calling for Berkeley to reject the Flock Safety contract — the document bears her name in its filename, indicating she drove the drafting. The supplemental's primary justification is sanctuary city / immigration data-sharing concerns: Flock had reactivated a 'National Look Up' feature without local agencies' knowledge in Ventura County and Mountain View. But the supplemental omits that Berkeley's City Attorney had negotiated a bespoke Master Services Agreement that addresses exactly these concerns — including federal access restrictions consistent with sanctuary policy, financial penalties for unauthorized disclosures, and security incident notification — and that Flock accepted every revision. Lunaparra's supplemental does not engage with these negotiated protections; it proceeds as if the City Attorney's work did not exist. This is the specific legislative action to which her farewell-letter language about 'mass surveillance and contracts with harmful and dangerous corporations like Flock' corresponds. It is her final policing vote as a council member: a lame-duck action to kill the department's last remaining technology tool, in the middle of a documented attrition crisis she did not act to reverse.",
       "source": "2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Lunaparra co-author, Ishii co-author, Tregub co-sponsor); Lunaparra farewell letter, April 2026; Berkeley Scanner, Emilie Raguso, April 14, 2026",
       "scoring_impact": -0.09
@@ -297,7 +320,8 @@
       "date": "2024-2026",
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
-      "description": "Explicitly opposed Automated License Plate Readers (ALPRs), fixed surveillance cameras, and drones — describing them as ‘mass surveillance and contracts with harmful and dangerous corporations like Flock.’ Taplin’s sustained ALPR advocacy is the scorecard’s clearest example of a member delivering a genuine core-service improvement through a data-driven, cost-effective technology. Lunaparra’s opposition was ideological: no cost-benefit analysis, no crime-reduction data, no engagement with staffing-leverage argument. The framing (‘militarization,’ ‘mass surveillance’) treats a license plate reader as a civil liberties crisis rather than a law enforcement tool with a documented record.",
+      "short_desc": "Opposed ALPRs, cameras, and drones as 'mass surveillance' — ideological framing, no cost-benefit analysis, no engagement with the staffing-leverage argument.",
+      "description": "Explicitly opposed Automated License Plate Readers (ALPRs), fixed surveillance cameras, and drones — describing them as 'mass surveillance and contracts with harmful and dangerous corporations like Flock.' Taplin's sustained ALPR advocacy is the scorecard's clearest example of a member delivering a genuine core-service improvement through a data-driven, cost-effective technology. Lunaparra's opposition was ideological: no cost-benefit analysis, no crime-reduction data, no engagement with staffing-leverage argument. The framing ('militarization,' 'mass surveillance') treats a license plate reader as a civil liberties crisis rather than a law enforcement tool with a documented record.",
       "source": "Lunaparra farewell letter, April 2026",
       "scoring_impact": -0.07
     },
@@ -305,7 +329,8 @@
       "date": "2024-2026",
       "category": "atm_behavior",
       "evidence_tier": "A",
-      "description": "Claims credit for ‘making Berkeley the first city in the United States, to our knowledge, to formally call for ICE to be abolished.’ ICE is a federal agency entirely outside Berkeley’s municipal authority. A resolution calling for its abolition consumes council agenda time, staff preparation, and political capital to produce a press release with zero operational consequence for Berkeley residents. Listed as an accomplishment alongside tenant protections and street safety — items within the council’s actual jurisdiction.",
+      "short_desc": "Claims credit for making Berkeley 'the first city to formally call for ICE to be abolished' — federal jurisdiction, zero operational consequence for Berkeley residents.",
+      "description": "Claims credit for 'making Berkeley the first city in the United States, to our knowledge, to formally call for ICE to be abolished.' ICE is a federal agency entirely outside Berkeley's municipal authority. A resolution calling for its abolition consumes council agenda time, staff preparation, and political capital to produce a press release with zero operational consequence for Berkeley residents. Listed as an accomplishment alongside tenant protections and street safety — items within the council's actual jurisdiction.",
       "source": "Lunaparra farewell letter, April 2026",
       "scoring_impact": -0.06
     },
@@ -313,7 +338,8 @@
       "date": "2024-2026",
       "category": "alternatives_dismissed",
       "evidence_tier": "A",
-      "description": "Advocated for a Gaza ceasefire resolution ‘that clearly named the genocide that Israel is committing against the Palestinian people and endorsed an arms embargo.’ US arms policy is set by the federal government. Berkeley has no authority over it. The council ultimately did not pass a ceasefire resolution — but the pressure campaign, which Lunaparra supported from the dais, consumed multiple difficult council meetings, required security measures, and later resulted in a court finding that the council violated open meeting laws by retreating to back rooms. Lunaparra lists this advocacy as an accomplishment in her farewell letter.",
+      "short_desc": "Advocated for a Gaza ceasefire resolution — outside Berkeley's authority, violated open meeting laws, consumed multiple difficult council meetings.",
+      "description": "Advocated for a Gaza ceasefire resolution 'that clearly named the genocide that Israel is committing against the Palestinian people and endorsed an arms embargo.' US arms policy is set by the federal government. Berkeley has no authority over it. The council ultimately did not pass a ceasefire resolution — but the pressure campaign, which Lunaparra supported from the dais, consumed multiple difficult council meetings, required security measures, and later resulted in a court finding that the council violated open meeting laws by retreating to back rooms. Lunaparra lists this advocacy as an accomplishment in her farewell letter.",
       "source": "Lunaparra farewell letter, April 2026; Berkeleyside reporting on Gaza meeting disruptions; Kesarwani interview (Berkeley Scanner, April 2026)",
       "scoring_impact": -0.06
     }

@@ -29,7 +29,169 @@ if "weasyprint" not in sys.modules:
 import scorecard_pdf as sc
 import mayor_scorecard as ms
 
-PUBLISH_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "publish")
+PUBLISH_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "publish")
+INCIDENTS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "incidents.json")
+
+# Human-readable labels for incident categories
+CATEGORY_LABELS = {
+    "constituent_gaslight":  "Performative engagement",
+    "alternatives_dismissed":"Alternatives dismissed",
+    "claimed_ignorance":     "Claimed ignorance",
+    "atm_behavior":          "Revenue without cuts",
+    "union_deference":       "Union deference",
+    "scope_indiscipline":    "Outside city scope",
+    "fiscal_integrity":      "Fiscal discipline ✓",
+    "constituent_service":   "Constituent service ✓",
+}
+
+def _load_incidents() -> dict:
+    """Return per-member list of incident dicts from incidents.json."""
+    try:
+        with open(INCIDENTS_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    return {k: v for k, v in data.items() if not k.startswith("_") and isinstance(v, list)}
+
+
+def _render_incidents_section(name: str) -> str:
+    """
+    Return an HTML string for the 'Recent behavior' section for a given member.
+    Shows up to 5 most recent A/B-tier incidents with short_desc, sorted newest first.
+    Returns empty string if no displayable incidents.
+    """
+    all_incidents = _load_incidents()
+    incidents = all_incidents.get(name, [])
+
+    # Filter to A/B tier with a short_desc, sort newest first
+    displayable = [
+        i for i in incidents
+        if i.get("evidence_tier") in ("A", "B") and i.get("short_desc")
+    ]
+    # Sort: full dates first (YYYY-MM-DD), then partial (YYYY or YYYY-YYYY) at end
+    def sort_key(i):
+        d = i.get("date", "")
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
+            return d
+        return "0000"  # partial dates sort to end
+    displayable.sort(key=sort_key, reverse=True)
+    displayable = displayable[:5]
+
+    if not displayable:
+        return ""
+
+    rows = ""
+    for inc in displayable:
+        tier  = inc.get("evidence_tier", "")
+        cat   = CATEGORY_LABELS.get(inc.get("category", ""), inc.get("category", ""))
+        date  = inc.get("date", "")
+        desc  = inc.get("short_desc", "")
+        impact = inc.get("scoring_impact", 0) or 0
+        positive = impact > 0
+
+        # Impact dot: scale 0–10 mapped to 1–3 dots
+        abs_impact = abs(impact)
+        if abs_impact >= 0.09:
+            dots = "●●●"
+        elif abs_impact >= 0.06:
+            dots = "●●○"
+        else:
+            dots = "●○○"
+
+        dot_color  = "#2ecc71" if positive else "#e74c3c"
+        tier_color = "#2ecc71" if tier == "A" else "#f39c12"
+
+        rows += f"""
+      <tr class="inc-row">
+        <td class="inc-date">{date}</td>
+        <td class="inc-body">
+          <span class="inc-cat">{cat}</span>
+          <span class="inc-desc">{desc}</span>
+        </td>
+        <td class="inc-meta">
+          <span class="inc-tier" style="color:{tier_color}">Tier {tier}</span>
+          <span class="inc-dots" style="color:{dot_color};letter-spacing:-1px" title="Impact: {impact:+.2f}">{dots}</span>
+        </td>
+      </tr>"""
+
+    return f"""
+<div class="incidents-section">
+  <div class="incidents-header">Recent behavior</div>
+  <table class="incidents-table">
+    <tbody>{rows}
+    </tbody>
+  </table>
+</div>
+<style>
+  .incidents-section {{
+    margin: 16px 24px 8px;
+    border: 1px solid #e8ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 11.5px;
+  }}
+  .incidents-header {{
+    background: #f0f2f5;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: #7f8c8d;
+    border-bottom: 1px solid #e0e4e8;
+  }}
+  .incidents-table {{
+    width: 100%;
+    border-collapse: collapse;
+  }}
+  .inc-row {{
+    border-bottom: 1px solid #f0f2f5;
+  }}
+  .inc-row:last-child {{
+    border-bottom: none;
+  }}
+  .inc-date {{
+    padding: 7px 8px 7px 12px;
+    font-size: 10px;
+    color: #aaa;
+    white-space: nowrap;
+    vertical-align: top;
+    min-width: 72px;
+  }}
+  .inc-body {{
+    padding: 7px 8px;
+    vertical-align: top;
+    line-height: 1.4;
+  }}
+  .inc-cat {{
+    display: block;
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #95a5a6;
+    margin-bottom: 2px;
+  }}
+  .inc-desc {{
+    font-size: 11.5px;
+    color: #34495e;
+  }}
+  .inc-meta {{
+    padding: 7px 12px 7px 4px;
+    vertical-align: top;
+    text-align: right;
+    white-space: nowrap;
+  }}
+  .inc-tier {{
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }}
+  .inc-dots {{
+    font-size: 9px;
+  }}
+</style>"""
 
 
 # ---------------------------------------------------------------------------
@@ -330,6 +492,9 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
             s, rankings, council_meta.get("block_vote_rate", 0), meta,
             summary=summaries.get(name, {})
         )
+        incidents_html = _render_incidents_section(name)
+        if incidents_html:
+            html = html.replace("</body>", f"{incidents_html}\n</body>", 1)
         html = screen_html(html, add_back_link=True)
 
         out = os.path.join(PUBLISH_DIR, f"scorecard_{name}.html")
@@ -351,6 +516,9 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
 
     # Mayor scorecard (Ishii — separate accountability framework)
     mayor_html = ms.render_mayor_scorecard(meta)
+    ishii_incidents = _render_incidents_section("Ishii")
+    if ishii_incidents:
+        mayor_html = mayor_html.replace("</body>", f"{ishii_incidents}\n</body>", 1)
     mayor_html = screen_html(mayor_html, add_back_link=True)
     mayor_out  = os.path.join(PUBLISH_DIR, "scorecard_Ishii.html")
     with open(mayor_out, "w", encoding="utf-8") as f:
