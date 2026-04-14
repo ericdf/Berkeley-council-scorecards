@@ -39,6 +39,14 @@
         "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026"
       },
       {
+        "date": "2026-04-14",
+        "category": "policy_cost_externalized",
+        "actor": "BPD / Council — SFPD lateral exodus",
+        "description": "Berkeley Scanner reporting (April 14, 2026) documents that at least 7 BPD officers have joined SFPD or are expected to do so imminently, with more still considering the switch. The departing group includes a sergeant, two female officers, a Black officer, and the prior year's officer of the year — officers the department has specifically emphasized recruiting. BPD now fields 54 officers on patrol (down from 75-80 in 2016 and 174 sworn in 2020), with 137 total sworn against an authorized strength of 181; 25 additional officers are eligible to retire in 2026; and a proposed budget cut would eliminate 32 open positions. Officers cited: lack of tools (no tasers, limited access to drones, cameras, K-9s), mixed political support, no advancement opportunities, low morale. On lateral hires, officers from other agencies will not apply to Berkeley because they would lose standard safety tools. SFPD's 'aggressive hiring strategy' recorded a 364% increase in lateral applications from other agencies in one year. Berkeley's Flock ALPR license plate readers are described by officers as 'the singular piece of technology the city has approved for police use in decades' and 'the one thing keeping a lot of officers engaged.' An upcoming council vote on the Flock contract (May 7 / June 2, 2026) is generating active fear among officers: 'If we lose it, it's going to be such a blow to morale.'",
+        "significance": "The staffing crisis is no longer a slow bleed — it is actively compounding via a specific, addressable competitor (SFPD) that offers the tools Berkeley's political culture has withheld. The Flock contract vote is now a retention event as much as a technology decision. Council members opposing Flock while citing sanctuary city concerns are doing so against a backdrop in which (a) the City Attorney has already negotiated full data protections and Flock accepted every revision, and (b) BPD officers have named the same contract as the remaining anchor for some of the department's most engaged members.",
+        "source": "Berkeley Scanner, Emilie Raguso, April 14, 2026"
+      },
+      {
         "date": "2020-2026",
         "category": "policy_cost_externalized",
         "actor": "BPD (understaffing / overtime cycle)",
@@ -131,6 +139,14 @@
       "description": "Ishii ran for mayor on a platform that included police accountability reform — Measure II, which established the PAB and ODPA, passed 85% in November 2020, creating the strongest civilian oversight mandate in Berkeley’s history. Under her mayoralty: all original PAB commissioners departed; the board dropped to 4 of 9 seats; BPD refused records requests and required multiple subpoenas; ODPA Director Aguilar sued the Police Chief to compel records release; and Aguilar was fired by unanimous council vote in February 2026. Immediately after the vote, Ishii issued a prepared statement that ‘the council remained committed to police accountability’ — a recommitment issued in the moment the oversight office’s leadership was eliminated. The institution she was elected in part to protect did not survive her tenure in recognizable form. Voters who supported her based on police accountability commitments were told the commitment was intact at the moment it was most visibly abandoned.",
       "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026; PAB commissioner departures 2021–2026; Measure II ballot results Nov. 2020",
       "scoring_impact": -0.09
+    },
+    {
+      "date": "2026-04-14",
+      "category": "alternatives_dismissed",
+      "evidence_tier": "A",
+      "description": "Co-authored (with Lunaparra) and sent a mass constituent email (April 14, 2026) announcing two special council meetings to vote on the Flock Safety contract, stating: ‘I remain opposed to Berkeley contracting with Flock.’ The supplemental material she introduced on March 24, 2026 calls for the council to ‘reject any renewal, authorization, approval, or execution of a contract with Flock Safety.’ The stated rationale is sanctuary city / immigration data-sharing concerns — citing incidents in Ventura County and Mountain View where Flock’s ‘National Look Up’ feature was activated without local agency consent. The supplemental ignores a material development: Berkeley’s City Attorney had already negotiated a Master Services Agreement with Flock Safety that includes data ownership protections, restrictions on federal access consistent with sanctuary city policy, financial penalties for unauthorized disclosures, security incident notification requirements, and post-termination data protections — and Flock accepted every revision proposed. The negotiated contract directly addresses the cited harms. The supplemental does not engage with this; it treats the contract as if the City Attorney’s work had not occurred. The same day Ishii’s email went out, the Berkeley Scanner published detailed reporting that BPD is at record-low staffing, with 7+ officers already lost to SFPD, and that officers describe the Flock ALPR system as ‘the singular piece of technology the city has approved for police use in decades’ and ‘the one thing keeping a lot of officers engaged.’ Ishii’s email opposes the specific tool that her own department’s officers have publicly identified as a retention anchor — in the middle of a documented attrition crisis driven by Berkeley’s political culture toward policing.",
+      "source": "Mayor Adena Ishii constituent email April 14, 2026 (mayor@berkeleyca.gov); 2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Ishii/Lunaparra co-authors, Tregub co-sponsor); Berkeley Scanner, Emilie Raguso, April 14, 2026",
+      "scoring_impact": -0.10
     },
     {
       "date": "2026-02-09",
@@ -237,6 +253,14 @@
     },
     {
       "date": "2026-03-24",
+      "category": "alternatives_dismissed",
+      "evidence_tier": "A",
+      "description": "Co-sponsored the Ishii/Lunaparra supplemental (Item 26, March 24, 2026) calling for the council to reject the Flock Safety contract. Tregub's co-sponsorship extends his consistent pattern of opposing policing technology. The supplemental dismisses the alternatives analysis — specifically, that Berkeley's City Attorney had already negotiated a full-protection contract that addresses the sanctuary city concerns used to justify opposition. Flock ALPR is the tool BPD officers name as 'the singular piece of technology' the city has approved in decades and the remaining anchor for retention against SFPD recruitment.",
+      "source": "2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Tregub co-sponsor); Berkeley Scanner, Emilie Raguso, April 14, 2026",
+      "scoring_impact": -0.06
+    },
+    {
+      "date": "2026-03-24",
       "category": "atm_behavior",
       "evidence_tier": "A",
       "description": "Authored a referral to the City Manager to ban the sale and use of glue traps within Berkeley city limits (Item 20, 2026-03-24). Glue trap purchases are trivially circumvented by driving to an adjacent city; the ordinance cannot achieve its stated aim at city scale. The referral is symbolic regulation: it consumes staff time, creates a compliance burden for Berkeley retailers, and produces a press-release outcome with no measurable impact on rodent control practices in Berkeley. Authored during an explicitly acknowledged fiscal crisis (‘one of the most difficult times in the city’) as one of three original items on the March 24 agenda, alongside a transit letter and music event funding. This is scope indiscipline: using a council agenda slot for legislation that cannot work rather than for any of the underfunded P1 functions the same newsletter names as urgent.",
@@ -259,6 +283,14 @@
       "evidence_tier": "A",
       "description": "Voted unanimously with seven colleagues to fire Hansel Aguilar, the Director of Police Accountability, then issued a public statement saying she was ‘concerned that the City and City Council does not prioritize or value Police accountability.’ She was the City Council in the moment she cast that vote. Her farewell letter, written weeks later, claims she ‘advocated for the Police Accountability Board’s authority and independence’ — with no acknowledgment that she voted to fire its executive director. Lunaparra won her seat in the special election created by Rigel Robinson’s resignation — Robinson was a principal architect of Measure II, the ballot initiative that created the PAB and ODPA that her vote destabilized.",
       "source": "Berkeleyside, Feb. 9, 2026; council vote record 2026-02-09; Lunaparra farewell letter, April 2026",
+      "scoring_impact": -0.09
+    },
+    {
+      "date": "2026-03-24",
+      "category": "alternatives_dismissed",
+      "evidence_tier": "A",
+      "description": "Primary author of the supplemental material (Item 26, March 24, 2026) calling for Berkeley to reject the Flock Safety contract — the document bears her name in its filename, indicating she drove the drafting. The supplemental's primary justification is sanctuary city / immigration data-sharing concerns: Flock had reactivated a 'National Look Up' feature without local agencies' knowledge in Ventura County and Mountain View. But the supplemental omits that Berkeley's City Attorney had negotiated a bespoke Master Services Agreement that addresses exactly these concerns — including federal access restrictions consistent with sanctuary policy, financial penalties for unauthorized disclosures, and security incident notification — and that Flock accepted every revision. Lunaparra's supplemental does not engage with these negotiated protections; it proceeds as if the City Attorney's work did not exist. This is the specific legislative action to which her farewell-letter language about 'mass surveillance and contracts with harmful and dangerous corporations like Flock' corresponds. It is her final policing vote as a council member: a lame-duck action to kill the department's last remaining technology tool, in the middle of a documented attrition crisis she did not act to reverse.",
+      "source": "2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Lunaparra co-author, Ishii co-author, Tregub co-sponsor); Lunaparra farewell letter, April 2026; Berkeley Scanner, Emilie Raguso, April 14, 2026",
       "scoring_impact": -0.09
     },
     {
