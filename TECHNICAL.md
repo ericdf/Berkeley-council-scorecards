@@ -275,6 +275,48 @@ effective_weight = math.exp(-DECAY_LAMBDA * age_in_years)   # DECAY_LAMBDA = 0.7
 
 ---
 
+## Opportunities for Improvement
+
+### Per-Member (`build_opportunities` in scorecard_pdf.py)
+
+Generates up to 5 ranked recommendations per member from `aggregate.json` data. Each opportunity has an `est_impact` (composite grade points on 0–1 scale). Items sorted by descending `est_impact`.
+
+```python
+def build_opportunities(s: dict) -> list[dict]:
+    ...
+    opps.sort(key=lambda x: -x["est_impact"])
+    return opps[:5]
+```
+
+**Opportunity conditions and impact estimates:**
+
+| Condition | Impact formula |
+|---|---|
+| HSA ≥ 45 | `(hsa_raw - 45) / 55 * 0.15 * 0.60 * 0.70` |
+| Rhetoric–action gap (concern_rate ≥ 0.5, ann_no == 0, and HSA ≥ 45 or fv_absent ≥ 3) | `(fv_absent/fv_total) * 0.30 * 0.60 * 0.70` |
+| fv_absent > 0 | `(fv_absent/fv_total) * 0.30 * 0.60 * 0.70` |
+| composite_off_penalty > 0.03 | `off_pen_val * 0.25 * 0.60 * 0.70` |
+| new_revenue_preference_rate ≥ 0.3 | `min(0.10, rate * 0.04 * (1-cut_credit*0.5))` |
+| audit_alignment_composite < 0.35 | `(0.50 - audit_comp) * 0.40 * 0.60 * 0.70` |
+| fiscal_raw < 0.15 (fallback) | `0.005` (minimum nudge) |
+
+Impact formulas mirror the actual penalty they are eliminating, scaled by composite formula weights (TA pillar = 0.60 of FSA; FSA = 0.70 of composite).
+
+### Council-Wide (`build_council_opportunities` in scorecard_pdf.py)
+
+Generates systemic findings from aggregate-level patterns. Not scored — purely informational.
+
+```python
+def build_council_opportunities(aggregate: dict) -> list[dict]:
+    members = [active members with words >= 1500]
+    ...
+    return opps[:6]
+```
+
+Rendered as page 3 of `scorecard_SUMMARY.pdf`. Uses `_meta.block_vote_rate`, member-level `fiscal_raw`, `staff_referrals`, `rhetoric_action_gap_score`, `composite_off_penalty`, and `hsa_score`. Trigger thresholds documented in METHODOLOGY.md.
+
+---
+
 ## Composite Grade Formula
 
 ```

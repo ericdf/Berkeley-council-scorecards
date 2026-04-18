@@ -111,6 +111,45 @@ effective_weight = e^(−λ × age_in_years)    λ = 0.7
 
 ---
 
+## Opportunities for Improvement
+
+Each member scorecard and the summary document include a ranked list of the highest-leverage actions a member could take to improve their composite score. This section explains the logic behind those recommendations.
+
+### Per-Member Opportunities
+
+Five opportunity types are evaluated, ranked by estimated composite impact, and the top five are shown:
+
+| Opportunity | Trigger condition | How it helps |
+|---|---|---|
+| **Demand HSA outcome metrics** | HSA score ≥ 45 | Shifts HSA rhetoric toward accountability-oriented language |
+| **Back fiscal concerns with votes** | High concern rate, zero NO votes, and HSA ≥ 45 or ≥ 3 fiscal vote absences | Closes rhetoric–action gap; strengthens composite_fiscal_ref_penalty |
+| **Attend major fiscal votes** | fiscal_vote_absent > 0 | Eliminates attendance deduction |
+| **Redirect non-core authorship** | composite_off_penalty > 0.03 | Reduces scope penalty in Fiscal Stewardship Alignment |
+| **Pair revenue advocacy with cut-seeking** | new_revenue_preference_rate ≥ 0.3 | Reduces new revenue preference penalty |
+| **Engage with audit findings** | audit_alignment_composite < 0.35 | Improves audit alignment sub-score |
+| **Increase fiscal engagement** | fiscal_raw < 0.15 (fallback) | Improves fiscal discipline component |
+
+Estimated impact is expressed as composite grade points (0.0–1.0 scale). Items are sorted by descending estimated impact; ties are broken by definition order.
+
+These are **directional recommendations** — they identify where the data shows the largest gaps. They do not guarantee a specific grade improvement because other signals could change in the same direction.
+
+### Council-Wide Opportunities
+
+The summary PDF includes a separate page of systemic findings that no single member can fix alone. These reflect council-wide norms, agenda management practices, and collective voting behavior:
+
+| Finding | Trigger |
+|---|---|
+| **Reduce bloc voting** | Block vote rate ≥ 60% |
+| **Fiscal pre-vote questions norm** | ≥ half of members with fiscal_raw < 0.30 |
+| **Triage staff referrals** | Total referrals across all members ≥ 5 |
+| **Rhetoric–action gap** | ≥ 2 members with rhetoric_action_gap_score ≥ 0.15 |
+| **Refocus non-core authorship** | ≥ 3 members with composite_off_penalty > 0.05 |
+| **HSA accountability metrics** | ≥ 55% of members with hsa_score ≥ 55 |
+
+Council-wide findings are not scored — they document structural patterns for voters and elected officials who want to change those patterns.
+
+---
+
 ## A+ Ceiling Conditions
 
 A+ is not available to a member who is silent or miscalibrated on Berkeley's documented structural crises. The grade requires not just absence of bad behavior but **aspirations set at the level the city's own documents say the problems demand**. Setting sights too low on a documented crisis accepts a trajectory the city's own adopted reports describe as ruinous.
