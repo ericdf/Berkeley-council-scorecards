@@ -6,6 +6,16 @@
 
 ---
 
+## Scorecard Structure: Descriptive and Normative Layers
+
+Each member scorecard is divided into two explicit layers:
+
+**Layer A — What the Record Shows:** Objective measures drawn from official records and attributed transcript speech. No weighting or judgment applied. Includes: attendance, major fiscal vote participation, voting record (NO votes, abstentions, absences), items authored/cosponsored, staff direction volume, core/non-core speech share, fiscal concern mentions, new revenue preference mentions, spending votes. These facts are nearly unimpeachable — critics who dispute the overall grade must engage at the layer B level (philosophy and weights), not at this level.
+
+**Layer B — Fiscal Stewardship Assessment:** The scorecard's normative framework applied to the layer A facts. Includes: Homeless Services Status-Quo Alignment score, Taxpayer Alignment breakdown, composite grades and pillar scores, key findings. This layer explicitly encodes the scorecard's values: taxpayer alignment, focus on core services, attendance accountability. Reasonable people can disagree with these weights. The structure makes that disagreement productive — it is a dispute about the normative layer, not about the facts.
+
+---
+
 ## Philosophy
 
 This scorecard is explicitly voter-aligned, not neutral. The evaluative framework assumes the voter cares about:

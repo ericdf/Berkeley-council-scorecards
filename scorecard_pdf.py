@@ -164,6 +164,21 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 /* Footer */
 .footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
 
+/* Descriptive / Normative layer dividers */
+.layer-divider {
+  padding: 10px 32px 8px;
+  background: #f0f2f5;
+  border-top: 2px solid #d5d8dc;
+  border-bottom: 2px solid #d5d8dc;
+}
+.layer-divider-label {
+  font-size: 10px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #5d6d7e;
+}
+.layer-divider-note {
+  font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic;
+}
+
 /* Taxpayer alignment breakdown table */
 .ta-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .ta-table td { padding: 5px 8px; vertical-align: top; }
@@ -961,6 +976,50 @@ def _render_taxpayer_breakdown(s: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Speech metrics (descriptive layer)
+# ---------------------------------------------------------------------------
+
+def _render_speech_stats(s: dict) -> str:
+    """Descriptive speech metrics — no judgment, just what the record shows."""
+    core_pct  = (s.get("core_pct",  0) or 0) * 100
+    waste_pct = (s.get("waste_pct", 0) or 0) * 100
+    fc_hits   = s.get("fiscal_concern_hits", 0) or 0
+    rs_hits   = s.get("new_revenue_preference_hits", 0) or 0
+    words     = s.get("words", 0) or 1
+
+    # decay-weighted hits are already stored under the same key post-pipeline
+    fc_rate = round(fc_hits / words * 10_000, 1)
+    rs_rate = round(rs_hits / words * 10_000, 1)
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Speech Content — What Was Said</div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-val">{core_pct:.0f}%</div>
+        <div class="stat-lbl">Core agenda share<br>(budget, infrastructure, safety, housing)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">{waste_pct:.0f}%</div>
+        <div class="stat-lbl">Non-core speech share<br>(foreign policy, ideological resolutions)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">{fc_hits:.0f}</div>
+        <div class="stat-lbl">Fiscal concern mentions<br>({fc_rate:.1f} per 10k words)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">{rs_hits:.0f}</div>
+        <div class="stat-lbl">New revenue mentions<br>({rs_rate:.1f} per 10k words; tax/bond advocacy)</div>
+      </div>
+    </div>
+    <div style="font-size:10px;color:#7f8c8d;margin-top:8px;font-style:italic">
+      Counts are decay-weighted (recent meetings count more than older ones).
+      Source: attributed transcript speech.
+    </div>
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
 # Render one member scorecard
 # ---------------------------------------------------------------------------
 
@@ -1088,6 +1147,11 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     </div>
   </div>
 
+  <div class="layer-divider">
+    <div class="layer-divider-label">What the Record Shows</div>
+    <div class="layer-divider-note">Objective measures from official records and transcript attribution — no weighting or judgment applied.</div>
+  </div>
+
   {_render_attendance_section(s)}
 
   {_render_fiscal_votes_section(s)}
@@ -1141,6 +1205,13 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
   </div>
 
   {_render_spending_votes(s)}
+
+  {_render_speech_stats(s)}
+
+  <div class="layer-divider">
+    <div class="layer-divider-label">Fiscal Stewardship Assessment</div>
+    <div class="layer-divider-note">The following sections apply this scorecard's fiscal-stewardship framework to the descriptive metrics above. Readers who dispute the weights or philosophy can engage at that level without disputing the factual record above.</div>
+  </div>
 
   {_render_hsa_section(s)}
 
