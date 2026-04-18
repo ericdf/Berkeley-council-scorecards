@@ -927,13 +927,22 @@ COLLEGIALITY_KW = [
 ]
 
 HUMILITY_KW = [
+    # Explicit position change
     r"(you.ve|that.s) convinced me",
     r"i (changed|reconsidered|updated|revised) my (position|view|mind|vote)",
-    r"(fair point|good point|you.re right|that.s a good (point|correction|catch))",
-    r"i (defer|deferred) to (staff|the experts|the city attorney|counsel|the professionals)",
     r"i (was|am) (wrong|mistaken|incorrect)",
     r"i (hadn.t|haven.t|didn.t) (thought about|considered|realized|appreciated)",
     r"(i learned from|i appreciate the correction|thank you for correcting me)",
+    # Peer acknowledgment
+    r"(fair point|good point|you.re right|that.s a good (point|correction|catch))",
+    r"\b(good|great|excellent|fair|valid|important) (question|point|concern|observation)\b",
+    r"i appreciate that (perspective|feedback|concern|point|clarification)",
+    r"thank you for (the|that) (clarification|context|correction|reminder|explanation)",
+    # Open inquiry / deference
+    r"\bhelp me understand\b",
+    r"\bi.m open to\b",
+    r"\bi.ll defer\b",
+    r"i (defer|deferred) to (staff|the experts|the city attorney|counsel|the professionals)",
 ]
 
 WARMTH_KW = [
