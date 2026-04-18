@@ -1502,6 +1502,117 @@ def _render_procurement_watch() -> str:
 </div>"""
 
 
+def build_council_opportunities(aggregate: dict) -> list[dict]:
+    """Identify systemic improvement opportunities across the full council."""
+    members = [n for n in aggregate
+               if not n.startswith("_") and n != "Ishii"
+               and aggregate[n].get("words", 0) >= 1500]
+    opps = []
+
+    meta = aggregate.get("_meta", {})
+    block_rate = meta.get("block_vote_rate", 0) or 0
+    if block_rate >= 0.60:
+        opps.append({
+            "title": "Reduce bloc voting",
+            "finding": (f"The council votes unanimously {block_rate*100:.0f}% of the time, "
+                        "suppressing individual accountability and reducing the incentive for genuine deliberation."),
+            "action": ("Introduce more items with genuinely contested fiscal or policy trade-offs "
+                       "and require on-record position statements before major votes."),
+        })
+
+    low_fiscal = [n for n in members if (aggregate[n].get("fiscal_raw", 0) or 0) < 0.30]
+    if len(low_fiscal) >= max(len(members) // 2, 1):
+        opps.append({
+            "title": "Establish fiscal pre-vote questions as a norm",
+            "finding": (f"{len(low_fiscal)} of {len(members)} members rarely ask about cost, "
+                        "funding sources, or fiscal trade-offs before voting."),
+            "action": ("Council rules or the mayor's agenda management could require cost/impact "
+                       "summaries be presented and acknowledged before major spending votes."),
+        })
+
+    total_refs = sum((aggregate[n].get("staff_referrals", 0) or 0) for n in members)
+    avg_refs   = total_refs / max(len(members), 1)
+    if total_refs >= 5:
+        opps.append({
+            "title": "Triage staff referrals",
+            "finding": (f"Members collectively generated ~{total_refs} staff referrals "
+                        f"(avg {avg_refs:.1f}/member). At 40–80 hrs each, this is significant "
+                        "unreviewed capacity consumption."),
+            "action": ("Implement a referral consent calendar requiring sponsors to affirm fiscal "
+                       "feasibility before an item reaches staff."),
+        })
+
+    gap_members = [n for n in members
+                   if (aggregate[n].get("rhetoric_action_gap_score", 0) or 0) >= 0.15]
+    if len(gap_members) >= 2:
+        names_str = ", ".join(gap_members)
+        opps.append({
+            "title": "Address rhetoric–action gap",
+            "finding": (f"{len(gap_members)} member(s) ({names_str}) frequently raise fiscal "
+                        "concerns in speech but vote YES on the same spending items."),
+            "action": ("Voters should ask directly why stated fiscal concerns did not translate "
+                       "into NO votes or amendment requests."),
+        })
+
+    non_core_heavy = [n for n in members
+                      if (aggregate[n].get("composite_off_penalty", 0) or 0) > 0.05]
+    if len(non_core_heavy) >= 3:
+        opps.append({
+            "title": "Refocus agenda authorship on core city business",
+            "finding": (f"{len(non_core_heavy)} of {len(members)} members carry a non-core "
+                        "authorship penalty, meaning agenda time is regularly consumed by "
+                        "out-of-scope items."),
+            "action": ("The mayor or council president could require items cite a direct city "
+                       "operational impact before being calendared."),
+        })
+
+    high_hsa = [n for n in members if (aggregate[n].get("hsa_score") or 0) >= 55]
+    if len(high_hsa) >= len(members) * 0.55:
+        opps.append({
+            "title": "Demand accountability metrics for homeless services",
+            "finding": (f"{len(high_hsa)} of {len(members)} members score Moderate or High on "
+                        "Homeless Services Status-Quo Alignment — the council broadly defends "
+                        "the existing $21.7M+/yr apparatus without requiring outcome evidence."),
+            "action": ("Adopt measurable success criteria (cost-per-housed, shelter-to-housing "
+                       "conversion rate) and require annual reporting before contract renewal."),
+        })
+
+    return opps[:6]
+
+
+def _render_council_opportunities(aggregate: dict) -> str:
+    opps = build_council_opportunities(aggregate)
+    if not opps:
+        return ""
+
+    items = ""
+    for i, o in enumerate(opps, 1):
+        items += f"""
+    <div class="copp-item">
+      <div class="copp-num">{i}</div>
+      <div>
+        <div class="copp-title">{o['title']}</div>
+        <div class="copp-finding"><b>Finding:</b> {o['finding']}</div>
+        <div class="copp-action"><b>Recommendation:</b> {o['action']}</div>
+      </div>
+    </div>"""
+
+    return f"""
+<div class="copp-page">
+  <div class="copp-header">
+    <h1>Council-Wide Opportunities for Improvement</h1>
+    <p class="copp-sub">Systemic findings derived from aggregate patterns across all active members</p>
+  </div>
+  <div class="copp-grid">
+    {items}
+  </div>
+  <div class="copp-footer">
+    These are structural findings — patterns that no single member can fix alone. They reflect
+    council-wide norms, agenda management practices, and collective voting behavior.
+  </div>
+</div>"""
+
+
 def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: dict) -> str:
     members = sorted(
         [n for n in aggregate if not n.startswith("_") and n != "Ishii"
@@ -1729,6 +1840,31 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
   padding-top: 8px;
 }}
 .about-notes b {{ color: #7f8c8d; }}
+
+/* ---- Council-wide Opportunities page ---- */
+.copp-page {{
+  page-break-before: always;
+  color: #2c3e50;
+}}
+.copp-header {{ margin-bottom: 16px; border-bottom: 3px solid #1a1a2e; padding-bottom: 10px; }}
+.copp-header h1 {{ font-size: 20px; font-weight: 800; color: #1a1a2e; }}
+.copp-sub {{ font-size: 11px; color: #7f8c8d; margin-top: 4px; }}
+.copp-grid {{ column-count: 2; column-gap: 36px; }}
+.copp-item {{ display: flex; gap: 14px; margin-bottom: 18px; break-inside: avoid; align-items: flex-start; }}
+.copp-num {{ flex-shrink: 0; width: 26px; height: 26px; background: #1a1a2e; color: #fff;
+             border-radius: 50%; text-align: center; font-size: 12px; font-weight: 800;
+             line-height: 26px; }}
+.copp-title {{ font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }}
+.copp-finding {{ font-size: 11px; color: #555; line-height: 1.6; margin-bottom: 4px; }}
+.copp-action {{ font-size: 11px; color: #2980b9; line-height: 1.6; }}
+.copp-footer {{
+  margin-top: 20px;
+  font-size: 9.5px;
+  color: #95a5a6;
+  line-height: 1.6;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 8px;
+}}
 </style>
 </head>
 <body>
@@ -1775,6 +1911,8 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
 </div>
 
 {_render_procurement_watch()}
+
+{_render_council_opportunities(aggregate)}
 
 {about_page}
 
