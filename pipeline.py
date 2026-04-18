@@ -26,7 +26,7 @@ from council_scorecard import (
     TEXT_DIR, CANONICAL_MEMBERS, DISPLAY_NAME,
     load_all, build_scoreboard, score_ishii_facilitator,
     clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, REVENUE_SEEKING_KW,
-    HSO_SYMPATHY_KW, HSO_SKEPTIC_KW, P1_TOPIC_KW,
+    HSA_SYMPATHY_KW, HSA_SKEPTIC_KW, P1_TOPIC_KW,
 )
 
 # Redefine what we need locally (council_scorecard doesn't export these as constants)
@@ -1102,18 +1102,18 @@ def _flag_rhetoric_action_gap(aggregate: dict) -> None:
 
         # Revenue-seeking rate: new-tax/bond advocacy rhetoric per 10k words.
         # Computed here so it's available to compute_composite_grade.
-        revenue_seeking = s.get("revenue_seeking_hits", 0) or 0
-        revenue_seeking_rate = revenue_seeking / words * 10_000
-        s["revenue_seeking_hits"] = revenue_seeking
-        s["revenue_seeking_rate"] = round(revenue_seeking_rate, 3)
+        revenue_seeking = s.get("new_revenue_preference_hits", 0) or 0
+        new_revenue_preference_rate = revenue_seeking / words * 10_000
+        s["new_revenue_preference_hits"] = revenue_seeking
+        s["new_revenue_preference_rate"] = round(new_revenue_preference_rate, 3)
 
 
 # ---------------------------------------------------------------------------
-# Homeless Services Orthodoxy (HSO) scoring
+# Homeless Services Status-Quo Alignment (HSA) scoring
 # ---------------------------------------------------------------------------
 
 # Regex to identify agenda items related to the homeless services apparatus
-_HSO_ITEM_RE = re.compile(
+_HSA_ITEM_RE = re.compile(
     r"\bhomeless(?:ness)?\b"
     r"|\bencampment\b"
     r"|\bunhoused\b"
@@ -1128,29 +1128,29 @@ _HSO_ITEM_RE = re.compile(
 )
 
 # Meetings that were primarily about homeless policy/programs
-_HSO_FOCUSED_DATES = {
+_HSA_FOCUSED_DATES = {
     "2025-09-16",   # Special session: HRT audit + homeless response review
 }
 
 
-def score_homeless_orthodoxy(members: dict, linked_votes: list[dict]) -> dict:
+def score_hsa(members: dict, linked_votes: list[dict]) -> dict:
     """
-    Compute per-member Homeless Services Orthodoxy (HSO) signals.
+    Compute per-member Homeless Services Status-Quo Alignment (HSA) signals.
 
     Measures how strongly each member is invested in the prevailing homeless
     services apparatus — $21.7M+/yr across 33 programs, Housing First mandate,
     low-barrier ideology — vs. demanding accountability and reform.
 
     Returns {canonical_name: {
-        hso_sympathy_hits  — raw count of orthodoxy-aligned rhetoric in attributed speech
-        hso_skeptic_hits   — raw count of accountability/reform rhetoric
-        hso_sympathy_rate  — hits per 10k words (normalised for volume)
-        hso_skeptic_rate   — hits per 10k words
-        hso_net_rate       — sympathy_rate − skeptic_rate (+ = more orthodox)
-        hso_items_cosponsored — agenda items related to homeless services that member cosponsored
-        hso_spending_yes   — $ voted YES on homeless-services spending items
-        hso_spending_no    — $ voted NO on homeless-services spending items
-        hso_score          — composite 0–100 (0 = reform-oriented, 100 = status-quo aligned)
+        hsa_sympathy_hits  — raw count of status-quo-aligned rhetoric in attributed speech
+        hsa_skeptic_hits   — raw count of accountability/reform rhetoric
+        hsa_sympathy_rate  — hits per 10k words (normalised for volume)
+        hsa_skeptic_rate   — hits per 10k words
+        hsa_net_rate       — sympathy_rate − skeptic_rate (+ = more status-quo aligned)
+        hsa_items_cosponsored — agenda items related to homeless services that member cosponsored
+        hsa_spending_yes   — $ voted YES on homeless-services spending items
+        hsa_spending_no    — $ voted NO on homeless-services spending items
+        hsa_score          — composite 0–100 (0 = reform-oriented, 100 = status-quo aligned)
     }}
     """
     # --- Rhetoric signals from member-attributed speech ---
@@ -1164,14 +1164,14 @@ def score_homeless_orthodoxy(members: dict, linked_votes: list[dict]) -> dict:
         words = md.words or 1
         # Use DOTALL so .{} and [\s\S]{} cross line breaks in raw transcripts
         _flags = re.IGNORECASE | re.DOTALL
-        sym = sum(len(re.findall(kw, text, _flags)) for kw in HSO_SYMPATHY_KW)
-        ske = sum(len(re.findall(kw, text, _flags)) for kw in HSO_SKEPTIC_KW)
+        sym = sum(len(re.findall(kw, text, _flags)) for kw in HSA_SYMPATHY_KW)
+        ske = sum(len(re.findall(kw, text, _flags)) for kw in HSA_SKEPTIC_KW)
         rhetoric[name] = {
-            "hso_sympathy_hits": sym,
-            "hso_skeptic_hits":  ske,
-            "hso_sympathy_rate": round(sym / words * 10_000, 3),
-            "hso_skeptic_rate":  round(ske / words * 10_000, 3),
-            "hso_net_rate":      round((sym - ske) / words * 10_000, 3),
+            "hsa_sympathy_hits": sym,
+            "hsa_skeptic_hits":  ske,
+            "hsa_sympathy_rate": round(sym / words * 10_000, 3),
+            "hsa_skeptic_rate":  round(ske / words * 10_000, 3),
+            "hsa_net_rate":      round((sym - ske) / words * 10_000, 3),
         }
 
     # --- Agenda cosponsorship of homeless-services items ---
@@ -1183,7 +1183,7 @@ def score_homeless_orthodoxy(members: dict, linked_votes: list[dict]) -> dict:
             continue
         for item in agenda.get("consent_items", []) + agenda.get("action_items", []):
             title = (item.get("title") or "") + " " + (item.get("description") or "")
-            if _HSO_ITEM_RE.search(title):
+            if _HSA_ITEM_RE.search(title):
                 for m in item.get("cosponsors", []):
                     if m in CANONICAL_MEMBERS:
                         cospon_counts[m] += 1
@@ -1192,27 +1192,27 @@ def score_homeless_orthodoxy(members: dict, linked_votes: list[dict]) -> dict:
                         cospon_counts[m] += 1
 
     # --- Vote record on homeless-services spending items ---
-    hso_yes: dict[str, int] = defaultdict(int)
-    hso_no:  dict[str, int] = defaultdict(int)
+    hsa_yes: dict[str, int] = defaultdict(int)
+    hsa_no:  dict[str, int] = defaultdict(int)
     for rec in linked_votes:
         title = rec.get("title", "")
-        if not _HSO_ITEM_RE.search(title):
+        if not _HSA_ITEM_RE.search(title):
             continue
         dollars = rec.get("dollar_total") or 0
         for member, vote in rec["votes"].items():
             if vote == "yes":
-                hso_yes[member] += dollars
+                hsa_yes[member] += dollars
             elif vote == "no":
-                hso_no[member] += dollars
+                hsa_no[member] += dollars
 
     # --- Composite score ---
-    # Primary driver: hso_net_rate (sympathy − skeptic per 10k words).
+    # Primary driver: hsa_net_rate (sympathy − skeptic per 10k words).
     # Normalised min→0 / max→100 across the cohort so the full range is visible.
     # Cosponsorship of homeless-services spending items adds a small bonus (+5/item, max +15)
     # because authoring agenda items reveals active promotion beyond passive speech.
     # Vote record is tracked but NOT added to the score —
     # consent-calendar items dominate and the signal is too sparse to be reliable.
-    net_rates = [rhetoric[n].get("hso_net_rate", 0.0) for n in CANONICAL_MEMBERS if rhetoric.get(n)]
+    net_rates = [rhetoric[n].get("hsa_net_rate", 0.0) for n in CANONICAL_MEMBERS if rhetoric.get(n)]
     if net_rates:
         min_r = min(net_rates)
         max_r = max(net_rates)
@@ -1221,7 +1221,7 @@ def score_homeless_orthodoxy(members: dict, linked_votes: list[dict]) -> dict:
         min_r, span = 0.0, 1.0
 
     # Cosponsorship: only count items that also have dollar_total > 0
-    hso_spend_cospon: dict[str, int] = defaultdict(int)
+    hsa_spend_cospon: dict[str, int] = defaultdict(int)
     for path in sorted(glob.glob(os.path.join(AGENDAS_DIR, "*.json"))):
         try:
             agenda = json.load(open(path))
@@ -1229,26 +1229,26 @@ def score_homeless_orthodoxy(members: dict, linked_votes: list[dict]) -> dict:
             continue
         for item in agenda.get("consent_items", []) + agenda.get("action_items", []):
             title = (item.get("title") or "") + " " + (item.get("description") or "")
-            if _HSO_ITEM_RE.search(title) and (item.get("dollar_total") or 0) > 0:
+            if _HSA_ITEM_RE.search(title) and (item.get("dollar_total") or 0) > 0:
                 for m in item.get("cosponsors", []) + item.get("authors", []):
                     if m in CANONICAL_MEMBERS:
-                        hso_spend_cospon[m] += 1
+                        hsa_spend_cospon[m] += 1
 
     result = {}
     for name in CANONICAL_MEMBERS:
         r = rhetoric.get(name, {})
-        net = r.get("hso_net_rate", 0.0)
+        net = r.get("hsa_net_rate", 0.0)
         rhetoric_score = ((net - min_r) / span) * 85
-        cospon_score = min(hso_spend_cospon.get(name, 0) * 5, 15)
+        cospon_score = min(hsa_spend_cospon.get(name, 0) * 5, 15)
         score = round(rhetoric_score + cospon_score, 1)
 
         result[name] = {
             **r,
-            "hso_items_cosponsored": cospon_counts.get(name, 0),
-            "hso_spend_items_cosponsored": hso_spend_cospon.get(name, 0),
-            "hso_spending_yes":  hso_yes.get(name, 0),
-            "hso_spending_no":   hso_no.get(name, 0),
-            "hso_score":         score,
+            "hsa_items_cosponsored": cospon_counts.get(name, 0),
+            "hsa_spend_items_cosponsored": hsa_spend_cospon.get(name, 0),
+            "hsa_spending_yes":  hsa_yes.get(name, 0),
+            "hsa_spending_no":   hsa_no.get(name, 0),
+            "hsa_score":         score,
         }
 
     return result
@@ -2045,16 +2045,16 @@ def compute_audit_alignment(s: dict) -> dict:
 
     # 6.6 Revenue quality
     # Revenue-seeking without cut-seeking offsets reduces the score.
-    rs_hits = s.get("revenue_seeking_hits", 0) or 0
+    rs_hits = s.get("new_revenue_preference_hits", 0) or 0
     fk_hits = s.get("fiscal_concern_hits",  0) or 0
     rs_rate = min(1.0, rs_hits * per10k * 2.0)
     fk_rate = min(1.0, fk_hits * per10k * 2.0)
-    revenue_seeking_without_offsets = max(0.0, rs_rate - fk_rate * 0.5)
+    new_revenue_preference_without_offsets = max(0.0, rs_rate - fk_rate * 0.5)
 
     revenue_quality = clamp01(
         0.55 * mr("revenue_quality")
         + 0.45 * er("raises_revenue_quality_concern")
-        - revenue_seeking_without_offsets
+        - new_revenue_preference_without_offsets
     )
 
     # 6.7 Revenue operations
@@ -2127,7 +2127,7 @@ def compute_composite_grade(s: dict) -> dict:
     Tier 1 letter grade — explicit taxpayer-aligned composite.
 
     Three pillars:
-      Taxpayer Alignment  45%  — HSO inverse, fiscal rhetoric vs. action, off-mission authorship,
+      Fiscal Stewardship Alignment  45%  — HSA inverse, fiscal rhetoric vs. action, non-core authorship,
                                   bond/tax referral authorship, incident adjustments
       Focus               35%  — waste% and core topic share from transcripts
       Attendance          20%  — on-time rate + presence at major fiscal votes
@@ -2138,15 +2138,15 @@ def compute_composite_grade(s: dict) -> dict:
     fv_absent = s.get("fiscal_vote_absent", 0) or 0
 
     # ── Taxpayer Alignment ──────────────────────────────────────────────────
-    # HSO: 0=reform, 100=status-quo. Invert, then apply steep power curve.
-    # HSO is not a mild preference — it is an active harm multiplier:
+    # HSA: 0=reform, 100=status-quo aligned. Invert, then apply steep power curve.
+    # HSA is not a mild preference — it is an active harm multiplier:
     # crime, displaced merchants, unaccountable spending, litigation, and
     # the ability of neighboring cities to offload problems onto Berkeley.
     # San Francisco's Lurie-era reversal is the A/B test showing the alternative works.
-    # Use explicit None check — hso_score = 0.0 is Kesarwani's perfect score, not missing data.
+    # Use explicit None check — hsa_score = 0.0 is Kesarwani's perfect score, not missing data.
     # The `or 50` idiom would incorrectly treat 0.0 as falsy and substitute the default.
-    hso_raw   = s.get("hso_score") if s.get("hso_score") is not None else 50
-    hso_part  = ((100 - hso_raw) / 100) ** 2.0   # quadratic — 85→0.022, 62→0.145, 28→0.518
+    hsa_raw   = s.get("hsa_score") if s.get("hsa_score") is not None else 50
+    hsa_part  = ((100 - hsa_raw) / 100) ** 2.0   # quadratic — 85→0.022, 62→0.145, 28→0.518
 
     # Off-mission / out-of-scope items authored.
     # Primary signal: CSV classifications (class 9 = city shouldn't be doing this).
@@ -2166,7 +2166,7 @@ def compute_composite_grade(s: dict) -> dict:
     concern_rate = s.get("fiscal_concern_rate", 0) or 0
     ann_no       = s.get("annot_vote_no",      0) or 0
     ann_total    = s.get("annot_vote_total",   0) or 0
-    if concern_rate >= 0.5 and ann_no == 0 and ann_total >= 50 and hso_raw >= 45:
+    if concern_rate >= 0.5 and ann_no == 0 and ann_total >= 50 and hsa_raw >= 45:
         rhetoric_penalty = min(0.25, concern_rate / 5.0)
     elif concern_rate >= 0.5 and ann_no == 0 and ann_total >= 50 and fv_absent >= 3:
         rhetoric_penalty = min(0.20, concern_rate / 6.0)
@@ -2190,19 +2190,19 @@ def compute_composite_grade(s: dict) -> dict:
     # Penalizes members who propose taxes/bonds without accompanying cut-seeking questions.
     # Partial credit if they also use FISCAL_KW "what would we cut?" probing language
     # (fiscal_raw per-1k-words is a proxy for cut-seeking engagement).
-    revenue_seeking_rate = s.get("revenue_seeking_rate", 0.0) or 0.0
-    if revenue_seeking_rate >= 0.3:
+    new_revenue_preference_rate = s.get("new_revenue_preference_rate", 0.0) or 0.0
+    if new_revenue_preference_rate >= 0.3:
         fiscal_raw   = s.get("fiscal_raw", 0.0) or 0.0   # FISCAL_KW hits per 1k words
         # If member probes costs AND seeks revenue, partial credit — they at least ask the question.
         # If they only seek revenue without cost-probing, full penalty applies.
         cut_credit   = min(1.0, fiscal_raw * 0.4)
-        revenue_seeking_penalty = min(0.10, revenue_seeking_rate * 0.04 * (1.0 - cut_credit * 0.5))
+        new_revenue_preference_penalty = min(0.10, new_revenue_preference_rate * 0.04 * (1.0 - cut_credit * 0.5))
     else:
-        revenue_seeking_penalty = 0.0
+        new_revenue_preference_penalty = 0.0
 
-    taxpayer_raw  = hso_part * 0.75 + (1.0 - off_penalty) * 0.25
+    taxpayer_raw  = hsa_part * 0.75 + (1.0 - off_penalty) * 0.25
     taxpayer_unclamped = (
-        taxpayer_raw - rhetoric_penalty - revenue_seeking_penalty
+        taxpayer_raw - rhetoric_penalty - new_revenue_preference_penalty
         + incident_adj + fiscal_ref_penalty + audit_silence_adj
         + newsletter_silence_adj
     )
@@ -2264,11 +2264,11 @@ def compute_composite_grade(s: dict) -> dict:
         engagement = min(1.0, fv_pres * 0.5 + min(concern_rate, 1.0) * 0.5)
         if engagement < 0.6:
             # Tapers from 0.10 (zero P1 engagement) to 0 at engagement = 0.6
-            lightweight_penalty = 0.10 * (1.0 - engagement / 0.6)
+            low_engagement_adj = 0.10 * (1.0 - engagement / 0.6)
         else:
-            lightweight_penalty = 0.0
+            low_engagement_adj = 0.0
     else:
-        lightweight_penalty = 0.0
+        low_engagement_adj = 0.0
 
     # ── Audit-grounded penalties (financial_condition_2026) ─────────────────
     # Applied after taxpayer_alignment is computed so they reduce the final composite
@@ -2307,7 +2307,7 @@ def compute_composite_grade(s: dict) -> dict:
     composite = max(0.0,
         taxpayer_alignment * 0.70 + focus * 0.30
         - attendance_deduction
-        - lightweight_penalty
+        - low_engagement_adj
         + structural_silence_pen
         + one_time_masking_pen
         + cross_subsidy_pen
@@ -2322,12 +2322,12 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_focus":              round(focus, 4),
         "composite_attendance_ded":     round(attendance_deduction, 4),
         "composite_rhetoric_penalty":   round(rhetoric_penalty, 4),
-        "composite_hso_part":           round(hso_part, 4),
+        "composite_hsa_part":           round(hsa_part, 4),
         "composite_off_penalty":        round(off_penalty, 4),
         "composite_taxpayer_raw":       round(taxpayer_raw, 4),
         "composite_fiscal_ref_penalty": round(fiscal_ref_penalty, 4),
-        "composite_revenue_seeking_pen":round(revenue_seeking_penalty, 4),
-        "composite_lightweight_pen":    round(lightweight_penalty, 4),
+        "composite_new_revenue_preference_pen":round(new_revenue_preference_penalty, 4),
+        "composite_low_engagement_adj":    round(low_engagement_adj, 4),
         "composite_audit_silence_pen":          round(-audit_silence_adj, 4),
         "composite_newsletter_silence_pen":     round(-newsletter_silence_adj, 4),
         "composite_agenda_waste_signal":        round(agenda_waste_signal, 4),
@@ -2466,18 +2466,18 @@ def main():
                     incidents, key=lambda x: -x["dollar_total"]
                 )
 
-    # Homeless Services Orthodoxy scoring
-    print("Scoring Homeless Services Orthodoxy...", file=sys.stderr)
-    hso_scores = score_homeless_orthodoxy(members, linked_votes)
+    # Homeless Services Status-Quo Alignment (HSA) scoring
+    print("Scoring Homeless Services Status-Quo Alignment...", file=sys.stderr)
+    hsa_scores = score_hsa(members, linked_votes)
     for name in CANONICAL_MEMBERS:
-        if name in hso_scores:
-            aggregate[name].update(hso_scores[name])
-    hso_sorted = sorted(
-        [(n, hso_scores[n]["hso_score"]) for n in CANONICAL_MEMBERS if n in hso_scores],
+        if name in hsa_scores:
+            aggregate[name].update(hsa_scores[name])
+    hsa_sorted = sorted(
+        [(n, hsa_scores[n]["hsa_score"]) for n in CANONICAL_MEMBERS if n in hsa_scores],
         key=lambda x: -x[1],
     )
-    print(f"  HSO ranking: " +
-          ", ".join(f"{DISPLAY_NAME.get(n,n)} ({s:.0f})" for n, s in hso_sorted),
+    print(f"  HSA ranking: " +
+          ", ".join(f"{DISPLAY_NAME.get(n,n)} ({s:.0f})" for n, s in hsa_sorted),
           file=sys.stderr)
 
     # Attendance scoring (from annotated agenda PDFs)
@@ -2668,7 +2668,7 @@ def _print_summary(aggregate: dict, council_meta: dict):
         s = members[n]
         dn = DISPLAY_NAME.get(n, n)
         att_ded  = s.get("composite_attendance_ded", 0) or 0
-        lw_pen   = s.get("composite_lightweight_pen", 0) or 0
+        lw_pen   = s.get("composite_low_engagement_adj", 0) or 0
         att_disp = f"-{(att_ded + lw_pen)*100:.0f}%" if (att_ded + lw_pen) > 0.005 else "  ok"
         rank     = s.get("cohort_rank", "-")
         rank_str = f"{rank}/{len(CANONICAL_MEMBERS)}" if isinstance(rank, int) else "-"

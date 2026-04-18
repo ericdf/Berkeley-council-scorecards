@@ -7,7 +7,7 @@ by a council member across all transcripts.  Most are procedural or planning-rel
 and will be labeled **neutral**.  A few may show genuine fiscal accountability
 (positive) or budget gaming (negative).
 
-Labeled rows feed directly into member scorecards via the Taxpayer Alignment score.
+Labeled rows feed directly into member scorecards via the Fiscal Stewardship Alignment score.
 
 ---
 

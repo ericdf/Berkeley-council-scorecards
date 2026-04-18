@@ -459,7 +459,7 @@ FISCAL_CONCERN_KW = [
 # before exhausting reprioritization is the wrong methodology regardless of whether
 # the underlying problem is real. Distinguished from FISCAL_CONCERN_KW (which measures
 # genuine fiscal problem awareness) and FISCAL_KW (which measures probing cost questions).
-REVENUE_SEEKING_KW = [
+NEW_REVENUE_PREFERENCE_KW = [
     # Direct new-revenue proposals — explicit advocacy for new tax or bond instrument
     r"rais(e|ing) (the\s+)?taxes? (to pay|to fund|to cover|for)",
     r"homeowners? (are being|will be|are) (taxed|burdened|asked|hit)",
@@ -719,15 +719,15 @@ AUDIT_EVENT_PATTERNS = {
 }
 
 # ---------------------------------------------------------------------------
-# Homeless Services Orthodoxy (HSO) rhetoric signals
+# Homeless Services Status-Quo Alignment (HSA) rhetoric signals
 # ---------------------------------------------------------------------------
 
-# Language that signals ideological alignment with the prevailing homeless services orthodoxy.
-# "Unhoused neighbors" is a reliable orthodoxy marker: council members who adopt this
-# framing are expressing orthodoxy regardless of whether the surrounding sentence
+# Language that signals alignment with the prevailing homeless services apparatus.
+# "Unhoused neighbors" is a reliable status-quo alignment marker: council members who adopt this
+# framing signal alignment regardless of whether the surrounding sentence
 # is sympathetic or fiscal — the city's own manager has acknowledged the population
 # is largely imported, so calling them "neighbors" is a telling framing choice.
-HSO_SYMPATHY_KW = [
+HSA_SYMPATHY_KW = [
     # "punches/punching above its/our weight" in homeless context
     # Use [\s\S] instead of . so the pattern crosses line breaks in transcripts.
     r"\bpunch(?:es|ing)?\b[\s\S]{0,30}\babove[\s\S]{0,15}\bweight\b",
@@ -735,14 +735,14 @@ HSO_SYMPATHY_KW = [
     r"\btrauma.?informed\b",                                  # Trauma-informed approach
     r"\blow.barrier\s+(?:shelter|housing|option|bed)\b",      # Low-barrier ideology
     r"\bwrap.?around\s+serv",                                 # Wrap-around services
-    # "unhoused neighbors" — orthodoxy framing marker (see note above)
+    # "unhoused neighbors" — status-quo alignment framing marker (see note above)
     r"\bunhoused\s+neighbors?\b",
     r"\bhousing.?first.{0,30}(?:work|effective|success)\b",  # Defending Housing First
 ]
 
-# Language that signals skepticism or accountability orientation toward the orthodoxy:
+# Language that signals skepticism or accountability orientation toward the incumbent program:
 # questioning costs, demanding enforcement, challenging the mandate.
-HSO_SKEPTIC_KW = [
+HSA_SKEPTIC_KW = [
     r"\bgrants?\s+pass\b",                                    # Grants Pass SCOTUS ruling
     r"\bcost\s+per\s+(?:client|person|individual)\b",         # Cost-per-client accountability
     r"\bare\s+we\s+(?:still\s+)?required\s+to\s+implement",  # Questioning Housing First mandate
@@ -998,7 +998,7 @@ def score_member(md: MemberData) -> dict:
         # fiscal concern rhetoric (distinct from fiscal discipline)
         "fiscal_concern_hits": hit(text, FISCAL_CONCERN_KW),
         # revenue-seeking rhetoric — penalized under P1 Layer 3: new revenue before reprioritization
-        "revenue_seeking_hits": hit(text, REVENUE_SEEKING_KW),
+        "new_revenue_preference_hits": hit(text, NEW_REVENUE_PREFERENCE_KW),
         # P1 share of speech — words in turns engaging with documented structural failures
         "p1_speech_pct":   round(p1_speech_pct, 4),
         "p1_speech_words": p1_words,

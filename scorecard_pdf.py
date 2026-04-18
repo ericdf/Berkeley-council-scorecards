@@ -204,7 +204,7 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     # Waste
     wp = s.get("waste_pct", 0) or 0
     if wp >= 0.30:
-        insights.append(("bad",  f"{wp*100:.0f}% of speech on off-mission topics (foreign policy, police theater, or tax increases)"))
+        insights.append(("bad",  f"{wp*100:.0f}% of speech on non-core topics (foreign policy, police theater, or tax increases)"))
     elif wp <= 0.10:
         insights.append(("good", f"Only {wp*100:.0f}% waste — among the most on-task members"))
 
@@ -237,7 +237,7 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     if brank == 1:
         insights.append(("good", "Highest Civic Temperament — genuine warmth, acknowledges colleagues, and demonstrates humility"))
     if rrank == 1:
-        insights.append(("bad",  "Highest Voter Disconnect score — self-referential appeals, off-mission speech, staff overreach, and fiscal avoidance combine into the widest gap from constituent interests on the council"))
+        insights.append(("bad",  "Highest Constituency Preference Gap score — self-referential appeals, non-core speech, staff overreach, and fiscal avoidance combine into the widest gap from constituent interests on the council"))
 
     # Credential dropping
     cred = s.get("cred_hits", 0) or 0
@@ -390,7 +390,7 @@ def _render_agenda_section(s: dict) -> str:
             f'border-left:3px solid #e74c3c;border-radius:4px;font-size:12px;line-height:1.6">'
             f'<b style="color:#e74c3c">Fiscal Consistency Flag</b> — '
             f'{concern} fiscal-concern speeches vs. '
-            f'{"$" + f"{a_spend:,.0f}" + " authored in budget referrals" if a_spend else str(a_authored) + " off-mission items on action calendar"}'
+            f'{"$" + f"{a_spend:,.0f}" + " authored in budget referrals" if a_spend else str(a_authored) + " non-core items on action calendar"}'
             + (f'<br><span style="color:#95a5a6;font-size:10.5px">{hyp_detail}</span>' if hyp_detail else '')
             + '</div>'
         )
@@ -489,20 +489,20 @@ def _render_spending_votes(s: dict) -> str:
   </div>"""
 
 
-def _render_hso_section(s: dict) -> str:
+def _render_hsa_section(s: dict) -> str:
     """
-    Section showing the member's Homeless Services Orthodoxy (HSO) score.
+    Section showing the member's Homeless Services Status-Quo Alignment (HSA) score.
     Measures investment in Berkeley's prevailing homeless services apparatus —
     $21.7M+/yr across 33 programs, Housing First mandate, low-barrier ideology —
     vs. demanding accountability, cost-per-client scrutiny, and enforcement.
     """
-    score      = s.get("hso_score")
-    sym_hits   = s.get("hso_sympathy_hits",  0) or 0
-    ske_hits   = s.get("hso_skeptic_hits",   0) or 0
-    net_rate   = s.get("hso_net_rate",       0.0) or 0.0
-    sym_rate   = s.get("hso_sympathy_rate",  0.0) or 0.0
-    ske_rate   = s.get("hso_skeptic_rate",   0.0) or 0.0
-    cospon     = s.get("hso_items_cosponsored", 0) or 0
+    score      = s.get("hsa_score")
+    sym_hits   = s.get("hsa_sympathy_hits",  0) or 0
+    ske_hits   = s.get("hsa_skeptic_hits",   0) or 0
+    net_rate   = s.get("hsa_net_rate",       0.0) or 0.0
+    sym_rate   = s.get("hsa_sympathy_rate",  0.0) or 0.0
+    ske_rate   = s.get("hsa_skeptic_rate",   0.0) or 0.0
+    cospon     = s.get("hsa_items_cosponsored", 0) or 0
 
     if score is None:
         return ""
@@ -510,10 +510,10 @@ def _render_hso_section(s: dict) -> str:
     # Color the score: high = status-quo aligned (red), low = reform-oriented (green)
     if score >= 70:
         score_color = "#c0392b"
-        label = "High Orthodoxy"
+        label = "High Status-Quo Alignment"
     elif score >= 45:
         score_color = "#e67e22"
-        label = "Moderate Orthodoxy"
+        label = "Moderate Status-Quo Alignment"
     elif score >= 20:
         score_color = "#7f8c8d"
         label = "Mixed"
@@ -527,7 +527,7 @@ def _render_hso_section(s: dict) -> str:
     if sym_hits + ske_hits > 0:
         rhetoric_line = (
             f"<div style='margin-top:6px;font-size:11px;color:#555'>"
-            f"Rhetoric: <b>{sym_hits}</b> orthodoxy-aligned signals "
+            f"Rhetoric: <b>{sym_hits}</b> status-quo-aligned signals "
             f"(<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;"
             f"<b>{ske_hits}</b> accountability signals "
             f"(<em>Grants Pass, cost-per-client, metrics&hellip;</em>)"
@@ -536,7 +536,7 @@ def _render_hso_section(s: dict) -> str:
     else:
         rhetoric_line = (
             "<div style='margin-top:6px;font-size:11px;color:#95a5a6;font-style:italic'>"
-            "No orthodoxy-specific rhetoric detected in attributed speech.</div>"
+            "No status-quo-alignment rhetoric detected in attributed speech.</div>"
         )
 
     cospon_line = ""
@@ -548,7 +548,7 @@ def _render_hso_section(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Homeless Services Orthodoxy</div>
+    <div class="section-title">Homeless Services Status-Quo Alignment</div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Berkeley spends $21.7M+/yr across 33 programs; H&amp;W up 65% vs 25% revenue growth.
       Score measures investment in the prevailing homeless services apparatus vs.
@@ -854,7 +854,7 @@ def _render_fiscal_votes_section(s: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def _render_taxpayer_breakdown(s: dict) -> str:
-    """Detailed decomposition of the Taxpayer Alignment score."""
+    """Detailed decomposition of the Fiscal Stewardship Alignment score."""
 
     def _fmt(v: float) -> tuple[str, str]:
         """Return (formatted string, CSS class) for a contribution value."""
@@ -863,8 +863,8 @@ def _render_taxpayer_breakdown(s: dict) -> str:
         sign = "+" if v > 0 else ""
         return f"{sign}{v:.3f}", ("pos" if v > 0 else "neg")
 
-    hso_raw      = s.get("hso_score") if s.get("hso_score") is not None else 50
-    hso_part     = s.get("composite_hso_part",      0) or 0
+    hso_raw      = s.get("hsa_score") if s.get("hsa_score") is not None else 50
+    hso_part     = s.get("composite_hsa_part",      0) or 0
     off_pen      = s.get("composite_off_penalty",   0) or 0
     raw          = s.get("composite_taxpayer_raw",  0) or 0
 
@@ -875,7 +875,7 @@ def _render_taxpayer_breakdown(s: dict) -> str:
     inc_adj      = s.get("incident_score_adj",           0.0) or 0.0
     silence_pen  = -(s.get("composite_audit_silence_pen", 0.0) or 0.0)
     rhetoric_pen = -(s.get("composite_rhetoric_penalty",  0.0) or 0.0)
-    rev_seek_pen = -(s.get("composite_revenue_seeking_pen", 0.0) or 0.0)
+    rev_seek_pen = -(s.get("composite_new_revenue_preference_pen", 0.0) or 0.0)
     fref_pen     = s.get("composite_fiscal_ref_penalty",  0.0) or 0.0
     final        = s.get("composite_taxpayer",            0.0) or 0.0
 
@@ -907,17 +907,17 @@ def _render_taxpayer_breakdown(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Taxpayer Alignment — Score Breakdown</div>
+    <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown</div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
-      How the {final:.3f} Taxpayer Alignment score is constructed.
+      How the {final:.3f} Fiscal Stewardship Alignment score is constructed.
       Components sum to the raw figure; the final score is clamped to [0, 1].
     </div>
     <table class="ta-table">
 
       <tr class="group-header"><td colspan="3">Base — from voting record and agenda behavior</td></tr>
       <tr class="data-row">
-        <td>HSO alignment</td>
-        <td class="note">HSO score {hso_raw}/100 → inverse {(100-hso_raw):.0f}% → quadratic → {hso_part:.1%} &nbsp;(75% weight)</td>
+        <td>HSA alignment</td>
+        <td class="note">HSA score {hso_raw}/100 → inverse {(100-hso_raw):.0f}% → quadratic → {hso_part:.1%} &nbsp;(75% weight)</td>
         <td class="contrib {hso_cls}">{hso_str}</td>
       </tr>
       <tr class="data-row">
@@ -935,14 +935,14 @@ def _render_taxpayer_breakdown(s: dict) -> str:
             f"{inc_count} incident{'s' if inc_count != 1 else ''}, tier-weighted, capped ±0.30",
             inc_adj)}
       {_row("Audit silence", silence_label, silence_pen)}
-      {_row("Revenue-seeking penalty",
+      {_row("New revenue preference penalty",
             "Revenue advocacy without companion cut analysis",
             rev_seek_pen)}
       {_row("Fiscal referral penalty",
             "Bond/tax campaign direction (capped −0.09)",
             fref_pen)}
       {_row("Rhetoric penalty",
-            "Fiscal concern rhetoric with no dissent votes (high HSO or serial fiscal-vote absence)",
+            "Fiscal concern rhetoric with no dissent votes (high HSA or serial fiscal-vote absence)",
             rhetoric_pen)}
 
       <tr class="total-row">
@@ -982,8 +982,8 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     pillars = [
         ("Civic Focus",         min(1.0, 1 - (s.get("waste_pct", 0) or 0) * 0.5 + (s.get("core_pct", 0) or 0) * 0.5), "waste_pct"),
         ("Legislative Skill",   s.get("lsi",      0) or 0,  "lsi"),
-        ("Taxpayer Alignment",  max(0.0, s.get("composite_taxpayer", 0) or 0), "composite_taxpayer"),
-        ("Character & Conduct", s.get("character",      0) or 0, "character"),
+        ("Fiscal Stewardship Alignment",  max(0.0, s.get("composite_taxpayer", 0) or 0), "composite_taxpayer"),
+        ("Collegiality & Conduct", s.get("character",      0) or 0, "character"),
     ]
     pillar_html = ""
     for plabel, pval, dkey in pillars:
@@ -1078,7 +1078,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
         <div class="rank-val">#{brank}{b_badge}</div>
       </div>
       <div class="rank-item">
-        <div class="rank-title">Voter Disconnect</div>
+        <div class="rank-title">Constituency Preference Gap</div>
         <div class="rank-val">#{rrank} <span style="font-size:12px;color:#7f8c8d">(#1=widest)</span>{r_badge}</div>
       </div>
       <div class="rank-item">
@@ -1123,11 +1123,11 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     <div class="stat-grid">
       <div class="stat-box">
         <div class="stat-val">{spons}</div>
-        <div class="stat-lbl">Sponsorship signals<br>(authored or co-authored items)</div>
+        <div class="stat-lbl">Agenda Authorship Activity<br>(authored or co-authored items)</div>
       </div>
       <div class="stat-box">
         <div class="stat-val">{refs}</div>
-        <div class="stat-lbl">Staff referrals<br>(40–80 hrs each, no opp-cost review)</div>
+        <div class="stat-lbl">Staff Direction Volume<br>(40–80 hrs each, no opp-cost review)</div>
       </div>
       <div class="stat-box">
         <div class="stat-val">{atl:.0f}w</div>
@@ -1142,7 +1142,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
 
   {_render_spending_votes(s)}
 
-  {_render_hso_section(s)}
+  {_render_hsa_section(s)}
 
   {_render_agenda_section(s)}
 
@@ -1274,8 +1274,8 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
             + (f'<br><span class="subdist">{sv_n} votes</span>' if sv_n else "")
         )
 
-        # Homeless Services Orthodoxy column
-        hic_score = s.get("hso_score")
+        # Homeless Services Status-Quo Alignment column
+        hic_score = s.get("hsa_score")
         if hic_score is not None:
             if hic_score >= 70:
                 hic_color, hic_label = "#c0392b", "High"
@@ -1341,7 +1341,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
   </div>
 
   <div class="about-intro">
-    <p>These scorecards evaluate council members from the perspective of a Berkeley voter who wants city government focused on Berkeley: lower costs, maintained infrastructure, a police department that is trusted and functional, and housing that ordinary people can afford. Foreign policy statements, police oversight theater, and programs that expand city spending without evidence of impact are treated as off-mission.</p>
+    <p>These scorecards evaluate council members from the perspective of a Berkeley voter who wants city government focused on Berkeley: lower costs, maintained infrastructure, a police department that is trusted and functional, and housing that ordinary people can afford. Foreign policy statements, police oversight theater, and programs that expand city spending without evidence of impact are treated as non-core.</p>
     <p style="margin-top:8px">Scores are derived entirely from captioner transcripts using automated analysis — keyword classification, topic modeling, and state-machine speaker attribution. They measure what members <em>say and do in chambers</em>, not their policy positions or outside activities.</p>
   </div>
 
@@ -1349,7 +1349,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 
     <div class="metric-block">
       <div class="metric-name">Voter Alignment <span class="metric-weight">(Overall grade)</span></div>
-      <div class="metric-desc">Composite taxpayer-alignment score: Taxpayer Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Taxpayer Alignment incorporates transcript rhetoric, voting record, HSO score, incidents, fiscal referral authorship, and rhetoric-action gap signals. This is the correct summary grade — it captures behavior, not just speech.</div>
+      <div class="metric-desc">Composite fiscal stewardship score: Fiscal Stewardship Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Fiscal Stewardship Alignment incorporates transcript rhetoric, voting record, HSA score, incidents, fiscal referral authorship, and rhetoric–action gap signals. This is the correct summary grade — it captures behavior, not just speech.</div>
     </div>
 
     <div class="metric-block">
@@ -1358,8 +1358,8 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Civic Focus &amp; Focus % <span class="metric-weight">(pillar + summary column)</span></div>
-      <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Focus % is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
+      <div class="metric-name">Civic Focus &amp; Core Agenda Share <span class="metric-weight">(pillar + summary column)</span></div>
+      <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Core Agenda Share is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
     </div>
 
     <div class="metric-block">
@@ -1374,7 +1374,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 
     <div class="metric-block">
       <div class="metric-name">Clarity</div>
-      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines self-referential appeals (credential-dropping, debate-closing appeals to personal identity or authority), off-mission speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
+      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines self-referential appeals (credential-dropping, debate-closing appeals to personal identity or authority), non-core speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
     </div>
 
   </div>
@@ -1483,13 +1483,13 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
       <th>Overall</th>
       <th>Voter Alignment</th>
       <th>$ Voted YES</th>
-      <th>HSO</th>
+      <th>HSA</th>
       <th>Words/Turn</th>
       <th>Staff Refs</th>
       <th>Civic Temp.</th>
       <th>Clarity</th>
       <th>Change</th>
-      <th>Focus %</th>
+      <th>Core Agenda Share</th>
       <th>Focus Trend</th>
     </tr>
   </thead>
@@ -1497,12 +1497,12 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
 </table>
 
 <div class="footnote">
-  <b>Voter Alignment</b> = Taxpayer Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSO, fiscal referrals, rhetoric-action gap) &nbsp;·&nbsp;
+  <b>Voter Alignment</b> = Fiscal Stewardship Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSA, fiscal referrals, rhetoric–action gap) &nbsp;·&nbsp;
   <b>$ Voted YES</b> = total dollars on agenda items where member's roll-call vote was YES (partial coverage) &nbsp;·&nbsp;
-  <b>HSO</b> = Homeless Services Orthodoxy (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on orthodoxy-aligned vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
+  <b>HSA</b> = Homeless Services Status-Quo Alignment (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on status-quo vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
   <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Self-Referential Appeals &nbsp;·&nbsp;
-  <b>Clarity</b> = inverse of self-referential appeals + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
-  <b>Focus %</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
+  <b>Clarity</b> = inverse of self-referential appeals + non-core speech + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
+  <b>Core Agenda Share</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
   <b>Focus Trend</b> ▲ improving &nbsp; ▼ declining (recent 90-day meeting focus vs. member's all-time avg) &nbsp;·&nbsp;
   <b>Change</b> = Voter Alignment vs. prior scorecard run &nbsp;·&nbsp;
   <b>Staff Refs</b> ≈ 40–80 hrs each, no opportunity-cost review &nbsp;·&nbsp;

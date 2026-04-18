@@ -22,7 +22,7 @@ OUT_PDF  = os.path.join(PDF_DIR, "incidents.pdf")
 
 # Human-readable labels for each category
 CATEGORY_META = {
-    "performative_engagement": ("Performative Engagement",  False, "Held meetings or sought input after decisions were made; performative not deliberative"),
+    "performative_engagement": ("Symbolic Engagement",  False, "Held meetings or sought input after decisions were made; performative not deliberative"),
     "alternatives_dismissed":  ("Alternatives Dismissed",   False, "Explicitly closed off alternatives without analysis or evidence"),
     "claimed_ignorance":       ("Claimed Ignorance",        False, "Claimed not to know something they were obligated to know"),
     "revenue_without_cuts":    ("Seeks Revenue Without Cuts", False, "Reached for new revenue without first asking what can be cut or done more efficiently"),
@@ -305,7 +305,7 @@ def build_html(data: dict) -> str:
 
 <div class="intro-box">
   <strong>What is an incident?</strong><br>
-  An incident is a documented behavior or action that reveals something meaningful about a council member, but is not captured in meeting transcripts or agenda records. Examples include: constituent interactions, public statements outside formal meetings, patterns of communication, and observable policy dispositions that have not been raised formally on the dais. Incidents are tracked in a structured log and feed directly into the Taxpayer Alignment component of the composite grade. Each incident carries a scoring impact (negative or positive) capped at ±0.30 per member in aggregate. Sources are documented with each entry.
+  An incident is a documented behavior or action that reveals something meaningful about a council member, but is not captured in meeting transcripts or agenda records. Examples include: constituent interactions, public statements outside formal meetings, patterns of communication, and observable policy dispositions that have not been raised formally on the dais. Incidents are tracked in a structured log and feed directly into the Fiscal Stewardship Alignment component of the composite grade. Each incident carries a scoring impact (negative or positive) capped at ±0.30 per member in aggregate. Sources are documented with each entry.
 </div>
 
 {member_html}

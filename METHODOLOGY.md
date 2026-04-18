@@ -12,9 +12,9 @@ This scorecard is explicitly voter-aligned, not neutral. The evaluative framewor
 
 1. **Taxpayer alignment** — Does the member champion taxpayer interests, or treat property owners and residents as a funding source for their agenda? Do they demand alternatives to taxes and bonds, question efficiency, and push back on the status quo? Or do they reach for new revenue as a first resort?
 
-2. **Focus** — Does the member spend the council's time on core city services (public safety, infrastructure, basic city operations), or on performative, ideological, and off-mission items that consume staff bandwidth and budget without delivering core value?
+2. **Focus** — Does the member spend the council's time on core city services (public safety, infrastructure, basic city operations), or on performative, ideological, and non-core items that consume staff bandwidth and budget without delivering core value?
 
-3. **Showing up** — Did the member actually do the job? Attendance at meetings — especially for binding fiscal votes — is the minimum bar.
+3. **Attendance & Vote Presence** — Did the member actually do the job? Attendance at meetings — especially for binding fiscal votes — is the minimum bar.
 
 **This is not a promise-keeping scorecard.** A member who campaigned on housing affordability and never mentioned the structural deficit is not evaluated on housing affordability. They are evaluated on whether they engage with Berkeley's documented P1 fiscal crises — because those crises exist regardless of what any member promised, and a representative who ignores them is not serving the taxpayer regardless of their campaign platform. A voter who wants to build a scorecard measuring housing production or homeless services expansion can do so; this one measures something different.
 
@@ -28,7 +28,7 @@ The scoring **does not** treat budget growth, new programs, or bond issuances as
 |--------|-----------------|
 | **Meeting transcripts** (51 PDFs, txt) | Attributed speech per member: rhetoric, debate style, fiscal language, special interest alignment signals |
 | **Annotated agenda PDFs** (58 sessions) | Authoritative post-meeting record: exact attendance (roll call time, arrivals), per-item vote breakdown (Ayes/Noes/Abstain/Absent) |
-| **Agenda JSONs** (58 sessions) | Pre-meeting agenda items: title, dollar amount, authors, cosponsors, off-mission flag, fiscal flags |
+| **Agenda JSONs** (58 sessions) | Pre-meeting agenda items: title, dollar amount, authors, cosponsors, non-core flag, fiscal flags |
 | **Staff report PDFs** (packet scraper) | Procurement signals: waived competitive bid, backdated contracts, no-alternatives clauses |
 | **Budgets and CAFRs** (Finance Director) | Adopted annual budgets and Comprehensive Annual Financial Reports establish the city's own financial self-description: fund balances, appropriations, staffing levels, debt obligations, and the City Manager's budget message language. Distinct from City Auditor reports in origin and purpose: CAFRs are management-prepared financial statements with an external audit opinion on fair presentation; City Auditor reports are independent performance and operational audits initiated by the auditor, not management. Used to establish factual baseline — revenue trends, expenditure growth, reserve levels — against which council behavior is evaluated. |
 | **City Auditor reports** (`audit_findings.json`) | Independent documented findings that establish ground truth: what the city's financial condition actually is, what structural problems exist, and what warranted action looks like. Audits are tracked in a separate registry; the council's response — or non-response — is the scored event. Three reports currently tracked: Rocky Road streets audit (Oct 2025), Homeless Response Team audit (Jul 2025), Financial Condition audit (Apr 2026). |
@@ -52,7 +52,7 @@ A single A–F composite representing overall alignment with taxpayer interests.
 composite = max(0.0,
     taxpayer_alignment × 0.70 + focus × 0.30
     − attendance_deduction
-    − lightweight_penalty
+    − low_engagement_adj
 )
 ```
 
@@ -63,7 +63,7 @@ composite = max(0.0,
 | Taxpayer alignment | 70% weight | The core question: whose interests does this member champion? |
 | Focus | 30% weight | What did they spend the council's time on? |
 | Attendance deduction | Up to −0.30 | Convex curve: lenient for 1–2 absences, severe for 4–5 (see Fiscal Vote Record) |
-| Lightweight penalty | Up to −0.10 | Triggered when member authors no P1 referrals AND shows low fiscal engagement (see P1/P2/P3 Framework) |
+| Low engagement adjustment | Up to −0.10 | Triggered when member authors no P1 referrals AND shows low fiscal engagement (see P1/P2/P3 Framework) |
 
 **Grade thresholds:** A+ ≥ 90 · A ≥ 83 · A− ≥ 77 · B+ ≥ 70 · B ≥ 63 · B− ≥ 57 · C+ ≥ 50 · C ≥ 43 · C− ≥ 37 · D+ ≥ 30 · D ≥ 23 · D− ≥ 17 · F < 17
 
@@ -81,17 +81,17 @@ The core test applies to any domain where significant public money is spent:
 
 Silence is not neutrality. A member who does not demand accountability for a major spending program is implicitly endorsing it.
 
-### Currently scored: Homeless Services Orthodoxy
+### Currently scored: Homeless Services Status-Quo Alignment (HSA)
 
-HSO is one instance of the general principle — the one with the richest transcript signal and the best-documented evidence of unaccountable spending. Berkeley's homeless services apparatus ($21M+/yr, 33+ programs, Housing First mandate, decade of growth with no measurable reduction in visible homelessness) is where the scoring algorithm is best instrumented, not because homelessness is uniquely important but because the evidence record is clearest. A separate signal would be built for any other major program that shares the same profile: large recurring cost, clear measurable objective, council has not demanded outcome data.
+HSA is one instance of the general principle — the one with the richest transcript signal and the best-documented evidence of unaccountable spending. Berkeley's homeless services apparatus ($21M+/yr, 33+ programs, Housing First mandate, decade of growth with no measurable reduction in visible homelessness) is where the scoring algorithm is best instrumented, not because homelessness is uniquely important but because the evidence record is clearest. A separate signal would be built for any other major program that shares the same profile: large recurring cost, clear measurable objective, council has not demanded outcome data.
 
-HSO measures how invested a member is in the existing apparatus versus demanding accountability, outcome metrics, and reform. Scale: 0 (reform-oriented) → 100 (status-quo aligned). The scoring formula uses a quadratic curve: HSO 50 (neutral/silent) → taxpayer_alignment contribution capped at 0.25 of its maximum. A+ requires HSO well below 50 — not because demanding accountability for homeless services is uniquely virtuous, but because this is the largest unaccountable program in Berkeley's budget and neutrality on it signals a broader tolerance for unaccountable spending.
+HSA measures how invested a member is in the existing apparatus versus demanding accountability, outcome metrics, and reform. Scale: 0 (reform-oriented) → 100 (status-quo aligned). The scoring formula uses a quadratic curve: HSA 50 (neutral/silent) → taxpayer_alignment contribution capped at 0.25 of its maximum. A+ requires HSA well below 50 — not because demanding accountability for homeless services is uniquely virtuous, but because this is the largest unaccountable program in Berkeley's budget and neutrality on it signals a broader tolerance for unaccountable spending.
 
 ### Documented ceiling conditions not yet scored
 
-The following are known gaps where the A+ ceiling should apply but the algorithm does not yet detect it. Each follows the same structure as HSO: significant recurring cost, measurable standard the city's own documents establish, council response that falls short.
+The following are known gaps where the A+ ceiling should apply but the algorithm does not yet detect it. Each follows the same structure as HSA: significant recurring cost, measurable standard the city's own documents establish, council response that falls short.
 
-**Infrastructure outcomes accountability.** The city's adopted goal is PCI 70. The Rocky Road audit (Oct 2025) found: current PCI ≈ 57; achieving PCI 70 requires $42M/year; the GF allocation is $2–8M/year; deferred maintenance costs $7 in repairs for every $1 spent early; delays will quadruple costs by 2050. PCI 70 is not an aspirational ceiling — it is the floor below which deterioration accelerates rapidly. A member who accepts PCI 70 as the goal without demanding the $42M/year to get there has accepted a 5× funding shortfall as normal. Same structure as HSO: large program, measurable objective, council has not demanded the outcome. *Gap: transcript signal cannot yet distinguish whether a member treats PCI 70 as a ceiling or a floor.*
+**Infrastructure outcomes accountability.** The city's adopted goal is PCI 70. The Rocky Road audit (Oct 2025) found: current PCI ≈ 57; achieving PCI 70 requires $42M/year; the GF allocation is $2–8M/year; deferred maintenance costs $7 in repairs for every $1 spent early; delays will quadruple costs by 2050. PCI 70 is not an aspirational ceiling — it is the floor below which deterioration accelerates rapidly. A member who accepts PCI 70 as the goal without demanding the $42M/year to get there has accepted a 5× funding shortfall as normal. Same structure as HSA: large program, measurable objective, council has not demanded the outcome. *Gap: transcript signal cannot yet distinguish whether a member treats PCI 70 as a ceiling or a floor.*
 
 **Structural balance policy gap.** The City Auditor explicitly recommended the council adopt a GFOA policy requiring assessment of whether recurring revenues match recurring expenditures. No member has moved to adopt it. Three consecutive budget cycles have included verbatim "not sustainable" findings. A council that receives that language repeatedly without adopting a structural balance requirement is not demanding accountability from its own budget process. *Gap: motion has not yet been made; absence of motion is the finding.*
 
@@ -105,7 +105,7 @@ The following are known gaps where the A+ ceiling should apply but the algorithm
 
 Each condition follows the same pattern: significant recurring expenditure or structural obligation; measurable standard the city's own documents establish; council response that falls short; member who does not challenge the gap. Absence of objection is not neutrality — it is ratification.
 
-The HSO condition is implemented because transcript signals are rich (sympathy/skeptic keyword matching across 51 meetings). The others await vote-record wiring (reserve policy, Section 115) or improved transcript pattern detection (infrastructure, structural balance). All are planned.
+The HSA condition is implemented because transcript signals are rich (sympathy/skeptic keyword matching across 51 meetings). The others await vote-record wiring (reserve policy, Section 115) or improved transcript pattern detection (infrastructure, structural balance). All are planned.
 ---
 
 ## P1/P2/P3 Priority Framework
@@ -144,7 +144,7 @@ Consent calendar classifications are stored in `agendas/classified/consent_items
 
 Action calendar classifications are stored in `agendas/classified/action_items.csv` (175 items, Dec 2024–Apr 2026). Distribution: 1=40, 2=47, 3=17, 8=56, 9=15.
 
-**Classification is topic-tier, not quality-of-response.** A P1 topic handled badly (e.g., a ballot-measures funding discussion that defaults to new taxes without contemplating cuts) is still class 1 — it addresses the right problem. The pipeline scores the quality of the response separately via fiscal concern rhetoric, revenue-seeking signals, and vote record. Classifying it as P3 would undercount the council's P1 engagement; the penalty for the wrong answer belongs in the scoring layer, not the classification layer.
+**Classification is topic-tier, not quality-of-response.** A P1 topic handled badly (e.g., a ballot-measures funding discussion that defaults to new taxes without contemplating cuts) is still class 1 — it addresses the right problem. The pipeline scores the quality of the response separately via fiscal concern rhetoric, new revenue preference signals, and vote record. Classifying it as P3 would undercount the council's P1 engagement; the penalty for the wrong answer belongs in the scoring layer, not the classification layer.
 
 ---
 
@@ -152,31 +152,31 @@ Action calendar classifications are stored in `agendas/classified/action_items.c
 
 Three plain-language facts that explain the grade. No jargon.
 
-#### Showed Up
+#### Attendance & Vote Presence
 - **Source:** Annotated agenda PDFs (authoritative roll call records)
 - **Components:** Sessions fully absent (never arrived) · Sessions late at roll call · Fiscal vote absences
 - **Framing:** "Present for X of Y major budget votes" is the key line — budget votes are the council's most consequential act and absences on them are the primary attendance signal regardless of excuse
 
 #### Stayed Focused
 - **Source:** Transcripts + agenda item classification
-- **Metric:** Focus % = (core-service words / total words) − (off-mission words / total words), normalized 0–100
+- **Metric:** Core Agenda Share = (core-service words / total words) − (non-core words / total words), normalized 0–100
 - **Core services:** public safety, infrastructure (roads, sidewalks, utilities, facilities), permitting, basic city operations, bicycle transportation infrastructure
-- **Off-mission:** foreign policy statements, ideological resolutions, performative oversight theater, fluff programs without measurable outcomes
-- **Borderline / neutral:** Arts programming and cultural events are not scored as off-mission by default — they are a city function, albeit a lower-priority one. They are noted if a specific incident shows them being used to crowd out or distract from more consequential work.
-- **Scope-creep within core items:** Even a core-service measure can be penalized if it is loaded with off-mission additions — e.g., bundling protected cycle tracks in new locations, environmental enhancements, or ideological carve-outs into a streets repair measure converts a straightforward repair obligation into a progressive amenity program. The focus signal captures this at the agenda item and transcript level.
-- **Framing:** The council has limited time and staff bandwidth. Every off-mission item is a choice to not work on something that matters.
+- **Non-core:** foreign policy statements, ideological resolutions, performative oversight theater, fluff programs without measurable outcomes
+- **Borderline / neutral:** Arts programming and cultural events are not scored as non-core by default — they are a city function, albeit a lower-priority one. They are noted if a specific incident shows them being used to crowd out or distract from more consequential work.
+- **Scope-creep within core items:** Even a core-service measure can be penalized if it is loaded with non-core additions — e.g., bundling protected cycle tracks in new locations, environmental enhancements, or ideological carve-outs into a streets repair measure converts a straightforward repair obligation into a progressive amenity program. The focus signal captures this at the agenda item and transcript level.
+- **Framing:** The council has limited time and staff bandwidth. Every non-core item is a choice to not work on something that matters.
 
-#### Taxpayer Alignment
+#### Fiscal Stewardship Alignment
 - **Source:** Transcripts + annotated agenda votes + agenda item authorship
 - **This is the most important dimension.** A member who talks fiscal restraint but authors bond referrals and votes yes on every budget is doing something specific: treating new revenue as the default rather than the last resort. A member who demands efficiency data, questions alternatives to new revenue, and actually votes no on bloated items is representing the payer.
 - **Key sub-signals** (see Tier 4 for detail):
   - Fiscal concern rhetoric rate (mentions of cost, efficiency, alternatives per 10k words)
-  - Off-mission items authored (active choice to consume budget on non-core items)
-  - Revenue-seeking: authored/supported new tax or bond measures without accompanying cut analysis — scored *negative*, not neutral (see below)
-  - Rhetoric-action gap: voiced fiscal concern AND voted yes on large spending items
+  - Non-core items authored (active choice to consume budget on non-core items)
+  - New revenue preference: authored/supported new tax or bond measures without accompanying cut analysis — scored *negative*, not neutral (see below)
+  - Rhetoric–action gap: voiced fiscal concern AND voted yes on large spending items
   - Votes no on spending (rare and high-signal)
-  - Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; HSO is the primary implemented instance)
-- **Revenue-seeking vs. fiscal concern:** These are not the same signal. Asking "what can we cut?" is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. Revenue-seeking without companion cut analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit).
+  - Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; HSA is the primary implemented instance)
+- **New revenue preference vs. fiscal concern:** These are not the same signal. Asking "what can we cut?" is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. New revenue preference without companion cut analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit).
 
 ---
 
@@ -184,26 +184,26 @@ Three plain-language facts that explain the grade. No jargon.
 
 Metrics that require some familiarity with how city government works, but are explainable in a sentence.
 
-#### Character & Conduct
+#### Collegiality & Conduct
 - **Source:** Transcripts and constituent communications
 - **What it measures:** A measure of the member as a colleague and public servant. Combines four dimensions: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), warmth (treats staff, colleagues, and the public with genuine respect), and self-referential appeals (instances where a member relies on personal identity, credentials, history, or self-positioning as persuasive support in place of substantive argument or evidence — lower is better).
 - **Formula:** `Character = 0.35×collegiality + 0.25×humility + 0.20×warmth + 0.20×(1 − self-referential appeals)`
 - **Evidentiary basis:** Text analysis
 
-#### Voter Disconnect
+#### Constituency Preference Gap
 - **Source:** Transcripts + vote record
-- **What it measures:** Composite signal for how out-of-step a member is with a constituent who expects fiscal accountability. High voter disconnect = high off-mission speech, high self-referential appeals, and low fiscal engagement.
-- **Formula:** `Voter Disconnect = 0.40×waste% + 0.30×self-referential appeals + 0.30×(1 − fiscal engagement)`
+- **What it measures:** Composite signal for how out-of-step a member is with a constituent who expects fiscal accountability. High gap = high non-core speech, high self-referential appeals, and low fiscal engagement.
+- **Formula:** `Constituency Preference Gap = 0.40×non-core speech% + 0.30×self-referential appeals + 0.30×(1 − fiscal engagement)`
 
-#### Homeless Services Orthodoxy (HSO)
+#### Homeless Services Status-Quo Alignment (HSA)
 *The primary implemented example of special interest alignment scoring.*
 - **Source:** Transcripts + agenda cosponsorship
 - **Scale:** 0 (reform-oriented) → 100 (status-quo aligned)
 - **What it measures:** How invested is the member in the existing homeless services apparatus — $21.7M+/yr across 33+ programs, Housing First mandate, low-barrier ideology — versus demanding accountability, outcomes data, and reform?
-- **Why it matters:** HSO is the primary implemented instance of the general outcomes-accountability principle (see A+ Ceiling Conditions). Berkeley's homeless spending has grown for a decade with no measurable reduction in visible homelessness. The same standard — demand metrics, question the model, require accountability for results — applies to any major program, but this is where the evidence record and transcript signal are richest. A member who champions more spending and resists outcome metrics is not representing the taxpayers who fund the program.
+- **Why it matters:** HSA is the primary implemented instance of the general outcomes-accountability principle (see A+ Ceiling Conditions). Berkeley's homeless spending has grown for a decade with no measurable reduction in visible homelessness. The same standard — demand metrics, question the model, require accountability for results — applies to any major program, but this is where the evidence record and transcript signal are richest. A member who champions more spending and resists outcome metrics is not representing the taxpayers who fund the program.
 - **Score distribution:** See current scorecard output. High scores indicate deep alignment with the existing homeless services apparatus and resistance to accountability reform; low scores indicate a reform or outcomes-focused orientation.
 
-#### Block Vote Rate
+#### Unanimity Vote Rate
 - **Source:** Transcripts (roll-call extraction)
 - **Council-wide rate:** ~92% of votes are unanimous
 - **What it means:** The council almost never disagrees in public. This is a council-level finding, not a per-member score. Individual deviations (no votes, abstentions) are tracked separately and are high-signal precisely because they are rare.
@@ -214,21 +214,21 @@ Metrics that require some familiarity with how city government works, but are ex
 
 Detailed signals for readers who want to understand the methodology or propose changes.
 
-#### Rhetoric-Action Gap
+#### Rhetoric–Action Gap
 - **Source:** Transcripts cross-referenced with agenda vote/authorship records
-- **Logic:** A member who frequently invokes fiscal discipline language AND authors large spending items or off-mission agenda items is doing something specific. The score measures the gap between stated fiscal concern and revealed spending behavior. A gap of zero — rhetoric and action aligned — is available to any member who either stops the rhetoric or starts acting on it.
+- **Logic:** A member who frequently invokes fiscal discipline language AND authors large spending items or non-core agenda items is doing something specific. The score measures the gap between stated fiscal concern and revealed spending behavior. A gap of zero — rhetoric and action aligned — is available to any member who either stops the rhetoric or starts acting on it.
 - **Threshold:** Triggered when fiscal concern rate ≥ 0.5 mentions/10k words AND spend authored ≥ $500k
 
-#### Staff Referrals
+#### Staff Direction Volume
 - **Source:** Transcripts
-- **What it measures:** How often a member directs staff to study, prepare, or report on something. Each referral consumes staff bandwidth. Classified by whether the referral topic is core-service or off-mission.
+- **What it measures:** How often a member directs staff to study, prepare, or report on something. Each referral consumes staff bandwidth. Classified by whether the referral topic is core-service or non-core.
 - **Why it's "inside baseball":** The mechanism (staff referrals as a budget and bandwidth tool) is familiar to city-government watchers but opaque to general voters.
 
-#### Sponsorships
+#### Agenda Authorship Activity
 - **Source:** Transcripts (self-identification as author or co-author)
-- **What it measures:** How often a member brings or co-sponsors agenda items. More sponsorships = more active agenda-setting. Combined with off-mission classification to distinguish productive from wasteful.
+- **What it measures:** How often a member brings or co-sponsors agenda items. More sponsorships = more active agenda-setting. Combined with non-core classification to distinguish productive from wasteful.
 
-#### Procurement Signals
+#### Procurement Risk Signals
 - **Source:** Staff report PDFs (packet scraper)
 - **Signals tracked:** Waived competitive bid · Backdated/retroactive contracts · No alternatives considered
 - **What it measures:** How often does a member vote yes on contracts or spending items with procurement red flags? This is a passive measure (most procurement is staff-driven) but patterns over time reveal whether members ask questions before approving.
@@ -318,7 +318,7 @@ Incidents with an `audit_ref` receive an additional **0.50× multiplier** on top
 | Category | Direction | What it captures |
 |----------|-----------|-----------------|
 | `revenue_without_cuts` | Negative | Sought new revenue without first asking what can be cut or done more efficiently |
-| `performative_engagement` | Negative | Held meetings or sought input after decisions were made; performative not deliberative |
+| `performative_engagement` | Negative | Symbolic engagement — held meetings or sought input after decisions were made; performative not deliberative |
 | `alternatives_dismissed` | Negative | Explicitly closed off alternatives without analysis or evidence |
 | `claimed_ignorance` | Negative | Claimed not to know something they were obligated to know |
 | `union_deference` | Negative | Sided with city unions without requesting productivity data or efficiency tradeoffs |
@@ -329,7 +329,7 @@ Incidents with an `audit_ref` receive an additional **0.50× multiplier** on top
 
 The strength of a claim should be proportional to the strength of the evidence behind it. Each incident's raw `scoring_impact` is multiplied by its tier weight before being summed (see evidence tier table above). Incidents linked to a City Auditor finding via `audit_ref` receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context. Applying full incident weight on top of the audit penalty would double-charge the same underlying failure.
 
-Weighted incident totals are capped at ±0.30 per member before being applied as an adjustment to the **Taxpayer Alignment** component of the composite grade. The cap prevents any single member's incident record from dominating the overall score.
+Weighted incident totals are capped at ±0.30 per member before being applied as an adjustment to the **Fiscal Stewardship Alignment** component of the composite grade. The cap prevents any single member's incident record from dominating the overall score.
 
 Members with no incidents in the log are not assumed clean — it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.
 
@@ -337,7 +337,7 @@ Members with no incidents in the log are not assumed clean — it means nothing 
 
 A separate penalty applies to members who were present at a formal audit presentation, voted to receive and file, and produced no follow-up motion within the response window. This is distinct from an incident: it is an automated signal for undifferentiated silence. Members who have a documented incident with an `audit_ref` matching the audit are exempt — their behavior post-audit is already individually characterized, whether positive or negative. Members in the `follow_up_authored_by` list in `audit_findings.json` are also exempt.
 
-The silence penalty is −0.04 per audit event, applied to Taxpayer Alignment before the composite calculation.
+The silence penalty is −0.04 per audit event, applied to Fiscal Stewardship Alignment before the composite calculation.
 
 The full incident catalogue is rendered as a separate PDF (`scores/pdfs/incidents.pdf`) for sharing with readers who want to see the underlying evidence behind scores.
 
@@ -365,7 +365,7 @@ These facts are not per-member scores but inform what "taxpayer-aligned" means i
 ## Known Limitations and Open Questions
 
 - **Transcript coverage:** Not all meetings have transcripts; some are garbled or poorly formatted. Rhetoric scores are only as good as the transcript quality.
-- **Rhetoric-action gap:** A member who frequently invokes fiscal discipline language but authors large spending items and votes yes on every budget is doing something specific: using fiscal rhetoric as cover rather than as a guide to action. The `rhetoric_action_gap_score` pipeline variable partially captures this gap but could be refined.
+- **Rhetoric–action gap:** A member who frequently invokes fiscal discipline language but authors large spending items and votes yes on every budget is doing something specific: using fiscal rhetoric as cover rather than as a guide to action. The `rhetoric_action_gap_score` pipeline variable partially captures this gap but could be refined.
 - **Borrow-first language:** Members who express a preference for systematic bond issuance over general fund reprioritization — framing new debt as the natural response to infrastructure gaps rather than a last resort — are signaling a revenue-first disposition. This is currently captured weakly in transcript rhetoric — a dedicated signal is planned.
 - **Tax/bond referral tracking:** Authoring or cosponsoring a referral to study a new tax or bond is the first step in a political infrastructure campaign. Now tracked as `FISCAL_REFERRAL_VOTES` (a curated list of upstream steps toward bond/tax ballot measures) and scored via `score_fiscal_referral_votes()`: −0.03 per item authored, −0.01 per item supported as cosponsor or aye vote, capped at −0.09. Weighted into taxpayer alignment as of April 2026.
 - **Union and labor posture:** Members who consistently side with city unions in labor negotiations (without asking for productivity data or considering service-level tradeoffs) are imposing costs on taxpayers. Currently not scored directly.
@@ -373,7 +373,7 @@ These facts are not per-member scores but inform what "taxpayer-aligned" means i
 - **Measure FF endorsement (2024 ballot):** The pre-2025 City Council endorsed Measure FF over Measure EE in the November 2024 election. Measure EE was the simpler parcel tax focused on street and sidewalk repair. Measure FF was the larger, more expensive version that bundled in protected cycle tracks where none existed, environmental enhancements, and green infrastructure alongside streets. Structurally, this endorsement reveals a standing disposition: even when addressing a core-service crisis (street decay), the council preferred the vehicle that includes progressive amenities. Council members seated at the time are attributable to this endorsement; members elected in November 2024 are not. This is a council-level contextual finding rather than a per-member scored incident. Bicycle transportation infrastructure (bike lanes, bike boulevards, maintenance of existing facilities) is considered core service; new cycle track construction in locations where none existed is scope expansion.
 - **Constituent newsletter as advocacy:** Members occasionally use official constituent communications to mobilize support for county-level spending measures. This is outside a councilmember's jurisdiction and compounds taxpayer burden across city and county levels. County and city measures are additive obligations on the same tax base — members typically avoid cross-advertising to prevent voters from calculating cumulative burden. Documented through incident tracking; not yet a scoring signal.
 - **Committee participation:** The Finance Committee and Budget & Finance Working Group are where substantive fiscal deliberation often occurs, but their minutes record only votes — not participation, debate, or the questions members asked. A member who does serious fiscal work in committee and is quieter in plenary sessions would be undercounted; a member who performs engagement in plenary while contributing nothing in committee would be overcounted. This gap is unresolvable with publicly available records.
-- **Composite grade calibration:** The Tier 1 letter grade is implemented and producing results (as of Apr 2026). The formula (70% taxpayer, 30% focus, attendance/lightweight deductions) will continue to be refined as more data accumulates.
+- **Composite grade calibration:** The Tier 1 letter grade is implemented and producing results (as of Apr 2026). The formula (70% taxpayer, 30% focus, attendance/low-engagement deductions) will continue to be refined as more data accumulates.
 - **Fiscal referral author-matching:** The agenda JSON parser may not always identify the primary author of a referral item when authorship is attributed informally or through co-sponsorship structures. Members whose referral activity is undercounted via the automated parser should be cross-checked against the manual incident record. A more robust author-matching pass is planned.
 
 ---
