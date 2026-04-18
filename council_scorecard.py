@@ -833,27 +833,89 @@ PROC_KW = [
 
 # --- Character index ---
 
-CREDENTIAL_KW = [
-    # First-person only — avoids false positives from reading tributes or quoting others.
-    # Patterns require "I" or first-person possessive to be nearby.
-    r"\bi.m a nuclear engineer\b",
-    r"\bi am a (nuclear|civil|mechanical|electrical|software|chemical|structural) engineer\b",
-    r"\bas a (nuclear|civil|mechanical|electrical|software|structural) engineer,? i\b",
+# ---------------------------------------------------------------------------
+# SRA detection — turn-level heuristic
+# ---------------------------------------------------------------------------
+#
+# Three rule families, applied per turn. A turn triggers at most once per
+# rule family. The final score counts flagged turns / total_words * 1000 so
+# it stays on the same scale as other per-1k-word rates.
+#
+# Rule A — Professional credential assertion used as argument
+_SRA_RULE_A = [
+    r"\bi.m a (nuclear|civil|mechanical|electrical|software|chemical|structural|licensed) engineer\b",
+    r"\bi am a (nuclear|civil|mechanical|electrical|software|structural) engineer\b",
+    r"\bi am (also )?a (doctor|physician|attorney|lawyer|scientist|professor|academic)\b",
     r"\bi.m (also )?a (doctor|physician|attorney|lawyer|scientist|professor|academic)\b",
-    r"\bmy (own |personal )?(professional |engineering |legal |scientific |technical )?background\b",
-    r"\bmy (training|expertise) as (a|an)\b",
+    r"\bas a (nuclear|civil|mechanical|electrical|software|structural|licensed) engineer,? i\b",
+    r"\bas (a|an) (doctor|physician|attorney|lawyer|scientist|professor|academic),? i\b",
+    r"\bmy (training|expertise|credentials) as (a|an)\b",
+    r"\bmy (own |personal )?(professional |engineering |legal |scientific |technical )background\b",
     r"\bin my (professional |expert )?experience,? i\b",
-    r"\bi have (worked|spent|practiced) (in|as|for) .{0,30} (years|decades)\b",
+    r"\bi have (worked|spent|practiced) (in|as|for) .{0,35} (years|decades)\b",
     r"\bmy \d+ years (of|in|as)\b",
 ]
 
-SELF_POSITION_KW = [
-    r"as i.ve (long |always )?(said|argued|maintained|advocated|believed|known|noted)",
-    r"as i (noted|said|mentioned|argued|advocated) (last|at|in|before|previously)",
-    r"(my (item|proposal|amendment|suggestion|recommendation)|i (wrote|authored|drafted|introduced) this)",
-    r"(i have (long|always|consistently|repeatedly) (said|argued|believed|maintained))",
-    r"(my (years|decade|long) of (experience|service|work|advocacy))",
+# Rule C — Identity / lived-experience anchor invoked as policy basis
+# "lived experience" alone triggers; other patterns require argumentative framing
+_SRA_RULE_C = [
+    r"\blived experience\b",
+    r"\bspeak(ing)? as (a|an|someone who)\b",
+    r"\bas (a|an) (woman|man|person|member|parent|homeowner|tenant|renter) (of|who|with)\b",
+    r"\bmy (community|identity|background)\b.{0,40}\btell(s)? me\b",
+    r"\bbecause (i am|i.m|as) (a|an) \w+ (i|we)\b",
 ]
+
+# Rule D — Self-positioning / debate-closure appeals to own prior record
+_SRA_RULE_D = [
+    r"\bas i.ve (long |always )?(said|argued|maintained|advocated|believed|known|noted)\b",
+    r"\bas i (noted|said|mentioned|argued|advocated) (last|at|in|before|previously)\b",
+    r"\b(i have (long|always|consistently|repeatedly) (said|argued|believed|maintained))\b",
+    r"\b(my (item|proposal|amendment|suggestion|recommendation)|i (wrote|authored|drafted|introduced) this)\b",
+    r"\b(my (years|decade|long) of (experience|service|work|advocacy))\b",
+]
+
+_SRA_RULES: list[tuple[str, list[str]]] = [
+    ("A", _SRA_RULE_A),
+    ("C", _SRA_RULE_C),
+    ("D", _SRA_RULE_D),
+]
+
+
+def detect_sra(turns: list[str]) -> dict:
+    """
+    Turn-level SRA detection.
+    Returns sra_turn_count, rule_counts (A/C/D), and up to 10 snippets.
+    """
+    n_flagged = 0
+    rule_counts: dict[str, int] = {"A": 0, "C": 0, "D": 0}
+    snippets: list[str] = []
+
+    for turn in turns:
+        tl = turn.lower()
+        turn_rules: list[str] = []
+        for rule_id, patterns in _SRA_RULES:
+            for pat in patterns:
+                m = re.search(pat, tl)
+                if m:
+                    turn_rules.append(rule_id)
+                    if len(snippets) < 10:
+                        start = max(0, m.start() - 20)
+                        end   = min(len(tl), m.end() + 20)
+                        snippets.append(f"[{rule_id}] \u2026{tl[start:end]}\u2026")
+                    break  # at most one match per rule family per turn
+        if turn_rules:
+            n_flagged += 1
+            for r in turn_rules:
+                rule_counts[r] += 1
+
+    return {
+        "sra_turn_count": n_flagged,
+        "sra_rule_A":     rule_counts["A"],
+        "sra_rule_C":     rule_counts["C"],
+        "sra_rule_D":     rule_counts["D"],
+        "sra_snippets":   snippets,
+    }
 
 COLLEGIALITY_KW = [
     r"(as|what) (councilmember|my colleague|vice mayor) \w+ (said|noted|mentioned|raised|pointed out|suggested)",
@@ -957,9 +1019,9 @@ def score_member(md: MemberData) -> dict:
     p1_speech_pct = p1_words / md.words if md.words > 0 else 0.0
 
     # --- Character ---
-    cred_raw     = hit(text, CREDENTIAL_KW) * per1k
-    position_raw = hit(text, SELF_POSITION_KW) * per1k
-    sra_raw      = cred_raw + position_raw * 0.5   # combined self-referential appeals score
+    sra_result = detect_sra(md.turns)
+    # sra_raw: flagged-turn rate per 1k words (same scale as other per-1k rates)
+    sra_raw    = sra_result["sra_turn_count"] * per1k
 
     coll_raw  = hit(text, COLLEGIALITY_KW) * per1k
     hum_raw   = hit(text, HUMILITY_KW) * per1k
@@ -990,9 +1052,15 @@ def score_member(md: MemberData) -> dict:
         "hum_raw":   hum_raw,
         "warm_raw":  warm_raw,
         "i_ratio":   i_ratio,
-        # diagnostics
-        "cred_hits":     hit(text, CREDENTIAL_KW),
-        "position_hits": hit(text, SELF_POSITION_KW),
+        # SRA diagnostics (turn-level)
+        "sra_turn_count": sra_result["sra_turn_count"],
+        "sra_rule_A":     sra_result["sra_rule_A"],
+        "sra_rule_C":     sra_result["sra_rule_C"],
+        "sra_rule_D":     sra_result["sra_rule_D"],
+        "sra_snippets":   sra_result["sra_snippets"],
+        # legacy aliases (retained for backward compatibility with per_meeting.json readers)
+        "cred_hits":     sra_result["sra_rule_A"],
+        "position_hits": sra_result["sra_rule_D"],
         "coll_hits": hit(text, COLLEGIALITY_KW),
         "hum_hits":  hit(text, HUMILITY_KW),
         # fiscal concern rhetoric (distinct from fiscal discipline)
