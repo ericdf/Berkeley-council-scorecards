@@ -164,6 +164,14 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 /* Footer */
 .footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
 
+/* Opportunities for Improvement */
+.opp-item { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.opp-num  { flex-shrink: 0; width: 22px; height: 22px; background: #1a1a2e; color: #fff;
+            border-radius: 50%; text-align: center; font-size: 11px; font-weight: 800;
+            line-height: 22px; }
+.opp-action   { font-size: 12.5px; font-weight: 700; color: #2c3e50; margin-bottom: 3px; }
+.opp-rationale{ font-size: 11px; color: #7f8c8d; line-height: 1.55; }
+
 /* Evidentiary basis badges */
 .evid-basis {
   display: inline-block; margin-left: 8px; padding: 1px 5px;
@@ -994,6 +1002,164 @@ def _render_taxpayer_breakdown(s: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Opportunities for Improvement
+# ---------------------------------------------------------------------------
+
+def build_opportunities(s: dict) -> list[dict]:
+    """
+    Identify highest-leverage actions to improve the composite score.
+    Returns list of dicts sorted by estimated score impact (descending), capped at 5.
+    """
+    opps = []
+    hsa_raw      = s.get("hsa_score") if s.get("hsa_score") is not None else 50
+    fv_absent    = s.get("fiscal_vote_absent", 0) or 0
+    fv_total     = s.get("fiscal_vote_total",  7) or 7
+    concern_rate = s.get("fiscal_concern_rate", 0) or 0
+    ann_no       = s.get("annot_vote_no",      0) or 0
+    ann_total    = s.get("annot_vote_total",   0) or 0
+    rs_rate      = s.get("new_revenue_preference_rate", 0) or 0
+    fiscal_raw   = s.get("fiscal_raw",         0) or 0
+    audit_comp   = s.get("audit_alignment_composite", 0.5) if s.get("audit_alignment_composite") is not None else 0.5
+
+    # ── HSA ──────────────────────────────────────────────────────────────────
+    if hsa_raw >= 45:
+        current_part = ((100 - hsa_raw) / 100) ** 2
+        reform_part  = (0.80) ** 2            # HSA=20 = reform-oriented
+        delta = (reform_part - current_part) * 0.75 * 0.60 * 0.70  # hsa in taxpayer, taxpayer 70%
+        opps.append({
+            "action": "Demand outcome metrics from the homeless services apparatus",
+            "rationale": (
+                f"HSA score {hsa_raw:.0f}/100. The prevailing $21.7M+/yr apparatus has operated for "
+                f"a decade with no measurable reduction in visible homelessness. Requesting performance "
+                f"data, questioning Housing First without accountability, or voting against expansion "
+                f"without outcome evidence would lower this score and raise Fiscal Stewardship Alignment "
+                f"by an estimated {delta:.2f} points."
+            ),
+            "est_impact": delta,
+        })
+
+    # ── Rhetoric–action gap ───────────────────────────────────────────────────
+    if concern_rate >= 0.5 and ann_no == 0 and ann_total >= 50 and (hsa_raw >= 45 or fv_absent >= 3):
+        rhetoric_pen = min(0.25, concern_rate / 5.0)
+        opps.append({
+            "action": "Back fiscal concern language with at least one dissent vote",
+            "rationale": (
+                f"A rhetoric–action gap penalty of {rhetoric_pen:.2f} applies: fiscal concern rate is "
+                f"{concern_rate:.1f}/10k words but NO vote count is {ann_no} across {ann_total} recorded "
+                f"items. One meaningful dissent on a large spending item eliminates this penalty entirely."
+            ),
+            "est_impact": rhetoric_pen,
+        })
+
+    # ── Attendance ───────────────────────────────────────────────────────────
+    if fv_absent > 0:
+        delta = min(0.15, (fv_absent / fv_total) ** 1.5 * 0.25)
+        opps.append({
+            "action": f"Attend all major fiscal votes (currently absent for {fv_absent} of {fv_total})",
+            "rationale": (
+                f"The attendance deduction uses a convex curve — each additional absence past one "
+                f"costs more than the last. Being present for all {fv_total} tracked votes would "
+                f"recover an estimated {delta:.2f} composite points."
+            ),
+            "est_impact": delta,
+        })
+
+    # ── Non-core authorship ───────────────────────────────────────────────────
+    cls9          = s.get("cls9_authored",        0) or 0
+    cls9_action   = s.get("cls9_action_authored", 0) or 0
+    cls9_consent  = max(0, cls9 - cls9_action)
+    off_pen_val   = min(0.20, max(
+        cls9_consent * 0.06 + cls9_action * 0.09,
+        ((s.get("agenda_off_mission_authored", 0) or 0) +
+         (s.get("action_off_mission_authored",  0) or 0)) * 0.07,
+    ))
+    if off_pen_val > 0.03:
+        delta = off_pen_val * 0.25 * 0.60 * 0.70
+        opps.append({
+            "action": f"Redirect authorship from out-of-scope items ({cls9} class-9 items)",
+            "rationale": (
+                f"Out-of-scope authorship generates a scope penalty of {off_pen_val:.2f}. "
+                f"Class-9 items are things the city arguably should not be doing — county service "
+                f"duplication, out-of-jurisdiction advocacy, governance structures that insulate "
+                f"dysfunction. Focusing authorship on P1/P2 items would recover ~{delta:.2f} points."
+            ),
+            "est_impact": delta,
+        })
+
+    # ── New revenue preference ────────────────────────────────────────────────
+    if rs_rate >= 0.3:
+        cut_credit = min(1.0, fiscal_raw * 0.4)
+        rs_pen = min(0.10, rs_rate * 0.04 * (1.0 - cut_credit * 0.5))
+        opps.append({
+            "action": "Pair tax and bond advocacy with explicit cut-seeking questions",
+            "rationale": (
+                f"New revenue preference rate is {rs_rate:.1f}/10k words. Revenue advocacy without "
+                f"companion cut analysis generates a penalty of {rs_pen:.3f}. Asking 'what can we cut?' "
+                f"or 'what is the reprioritization alternative?' alongside bond proposals would reduce "
+                f"or eliminate this penalty."
+            ),
+            "est_impact": rs_pen,
+        })
+
+    # ── Audit alignment ───────────────────────────────────────────────────────
+    if audit_comp < 0.35:
+        delta = (0.50 - audit_comp) * 0.40 * 0.60 * 0.70
+        opps.append({
+            "action": "Engage on the record with Financial Condition Audit findings",
+            "rationale": (
+                f"Audit alignment score {audit_comp:.2f}/1.0. The April 2026 audit documented a "
+                f"$32–33M structural deficit, 66% pension funded ratio, and $1.8B capital backlog. "
+                f"On-record statements supporting a structural balance policy, Section 115 Trust "
+                f"contributions, or investment policy compliance would each raise this sub-score "
+                f"and recover an estimated {delta:.2f} composite points."
+            ),
+            "est_impact": delta,
+        })
+
+    # ── Low fiscal engagement ─────────────────────────────────────────────────
+    if concern_rate < 0.3 and ann_total >= 30 and not any(o["est_impact"] > 0.05 for o in opps):
+        opps.append({
+            "action": "Ask about fiscal costs and tradeoffs before voting",
+            "rationale": (
+                f"Fiscal concern rate is {concern_rate:.1f} mentions/10k words — below threshold for "
+                f"meaningful engagement. Probing for cost, funding source, and alternatives improves "
+                f"the LSI fiscal sub-score and signals genuine stewardship rather than passive approval."
+            ),
+            "est_impact": 0.03,
+        })
+
+    opps.sort(key=lambda x: -x["est_impact"])
+    return opps[:5]
+
+
+def _render_opportunities(s: dict) -> str:
+    opps = build_opportunities(s)
+    if not opps:
+        return ""
+
+    items = ""
+    for i, o in enumerate(opps, 1):
+        items += f"""
+    <div class="opp-item">
+      <div class="opp-num">{i}</div>
+      <div class="opp-body">
+        <div class="opp-action">{o['action']}</div>
+        <div class="opp-rationale">{o['rationale']}</div>
+      </div>
+    </div>"""
+
+    return f"""
+  <div class="section">
+    <div class="section-title">Opportunities for Improvement</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
+      Highest-leverage actions this member could take to improve their Fiscal Stewardship score,
+      ordered by estimated score impact. Based on the same methodology as the scorecard.
+    </div>
+    {items}
+  </div>"""
+
+
+# ---------------------------------------------------------------------------
 # Speech metrics (descriptive layer)
 # ---------------------------------------------------------------------------
 
@@ -1242,6 +1408,8 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     {insights_html}
     {"<p style='font-size:12px;color:#7f8c8d;margin-top:10px'>" + trend_line + "</p>" if trend_line else ""}
   </div>
+
+  {_render_opportunities(s)}
 
   <div class="evid-footnote">
     <span class="evid-basis evid-official" style="vertical-align:baseline">Official record</span>
