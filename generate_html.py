@@ -34,10 +34,10 @@ INCIDENTS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "incid
 
 # Human-readable labels for incident categories
 CATEGORY_LABELS = {
-    "constituent_gaslight":  "Performative engagement",
-    "alternatives_dismissed":"Alternatives dismissed",
-    "claimed_ignorance":     "Claimed ignorance",
-    "atm_behavior":          "Revenue without cuts",
+    "performative_engagement": "Performative engagement",
+    "alternatives_dismissed":  "Alternatives dismissed",
+    "claimed_ignorance":       "Claimed ignorance",
+    "revenue_without_cuts":    "Seeks revenue without cuts",
     "union_deference":       "Union deference",
     "scope_indiscipline":    "Outside city scope",
     "fiscal_integrity":      "Fiscal discipline ✓",

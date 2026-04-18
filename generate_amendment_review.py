@@ -18,7 +18,7 @@ Open the CSV in a spreadsheet.  For each row:
                 These will become incidents (fiscal_integrity category).
     negative  — amendment cuts P1 (fire/police/streets) to fund non-P1,
                 or games the budget (unfilled positions, salary lapse tricks).
-                These will become incidents (atm_behavior category).
+                These will become incidents (revenue_without_cuts category).
     neutral   — procedural tweak, language fix, no fiscal/P1 significance.
                 Discarded.
     skip      — context insufficient; opening the agenda URL is required

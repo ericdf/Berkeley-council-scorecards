@@ -76,12 +76,12 @@ def delta_badge(delta, key: str, threshold: float = 0.02) -> str:
     """
     Return a small colored badge like '▲ +4%' or '▼ −2%'.
     Green = improving, red = worsening.
-    Keys where lower is better: waste_pct, recall.
+    Keys where lower is better: waste_pct, voter_disconnect.
     Returns '' if delta is None or below threshold.
     """
     if delta is None or abs(delta) < threshold:
         return ""
-    lower_is_better = key in ("waste_pct", "recall")
+    lower_is_better = key in ("waste_pct", "voter_disconnect")
     went_up = delta > 0
     improving = went_up != lower_is_better   # XOR: up is bad for lower-is-better keys
     color  = "#27ae60" if improving else "#e74c3c"
@@ -231,13 +231,13 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     elif pc == 0:
         insights.append(("warn", "No detected position changes — votes appear predetermined regardless of debate or public input"))
 
-    # Beer / recall
-    brank = rankings.get("beer", {}).get(n)
-    rrank = rankings.get("recall", {}).get(n)
+    # Character & Conduct / Voter Disconnect
+    brank = rankings.get("character", {}).get(n)
+    rrank = rankings.get("voter_disconnect", {}).get(n)
     if brank == 1:
         insights.append(("good", "Highest Civic Temperament — genuine warmth, acknowledges colleagues, and demonstrates humility"))
     if rrank == 1:
-        insights.append(("bad",  "Lowest Clarity score — ego signals, off-mission speech, staff overreach, and fiscal avoidance compound into the council's worst behavioral profile"))
+        insights.append(("bad",  "Highest Voter Disconnect score — self-referential appeals, off-mission speech, staff overreach, and fiscal avoidance combine into the widest gap from constituent interests on the council"))
 
     # Credential dropping
     cred = s.get("cred_hits", 0) or 0
@@ -263,11 +263,11 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
             f"Voted YES on ${yes_m:.0f}M in spending across {sv_n} tracked roll-calls (all block votes, no dissent)"))
 
     # Fiscal consistency (rhetoric-based — lower priority than vote record)
-    hyp  = s.get("fiscal_hypocrisy_score", 0) or 0
+    hyp  = s.get("rhetoric_action_gap_score", 0) or 0
     conc = s.get("fiscal_concern_hits", 0) or 0
     spend = s.get("action_budget_referral_total", 0) or 0
     if hyp >= 0.1 and yes_voted < 10_000_000:   # avoid double-flagging
-        detail = s.get("fiscal_hypocrisy_detail", "")
+        detail = s.get("rhetoric_action_gap_detail", "")
         insights.append(("bad", f"Fiscal consistency flag: {detail}"))
     elif conc == 0 and spend >= 250_000:
         insights.append(("warn", f"Authored ${spend:,.0f} in budget referrals on the action calendar with no fiscal concern rhetoric in speeches"))
@@ -339,8 +339,8 @@ def _render_agenda_section(s: dict) -> str:
     a_items       = s.get("action_budget_referral_items",   0) or 0
 
     # Fiscal hypocrisy
-    hyp_score  = s.get("fiscal_hypocrisy_score", 0) or 0
-    hyp_detail = s.get("fiscal_hypocrisy_detail", "") or ""
+    hyp_score  = s.get("rhetoric_action_gap_score", 0) or 0
+    hyp_detail = s.get("rhetoric_action_gap_detail", "") or ""
     concern    = s.get("fiscal_concern_hits", 0) or 0
 
     if c_authored + c_cosponsored + false_fisc + disc_total + a_authored + a_cosponsored + a_spend == 0:
@@ -822,7 +822,7 @@ def _render_fiscal_votes_section(s: dict) -> str:
     note = (
         '<div style="margin-top:8px;font-size:10px;color:#7f8c8d;font-style:italic">'
         'YES = endorsed the spending authorization (budget adoptions = chose not to cut or reprioritize). '
-        'ABSENT = dereliction — items are only on the agenda because the Mayor expects passage.'
+        'ABSENT = missed a binding vote — items are only on the agenda because the Mayor expects passage.'
         '</div>'
     )
 
@@ -983,7 +983,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
         ("Civic Focus",         min(1.0, 1 - (s.get("waste_pct", 0) or 0) * 0.5 + (s.get("core_pct", 0) or 0) * 0.5), "waste_pct"),
         ("Legislative Skill",   s.get("lsi",      0) or 0,  "lsi"),
         ("Taxpayer Alignment",  max(0.0, s.get("composite_taxpayer", 0) or 0), "composite_taxpayer"),
-        ("Character & Conduct", s.get("beer",      0) or 0, "beer"),
+        ("Character & Conduct", s.get("character",      0) or 0, "character"),
     ]
     pillar_html = ""
     for plabel, pval, dkey in pillars:
@@ -1014,13 +1014,13 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
 
     # Rankings
     vrank = rankings.get("composite_grade", {}).get(s["canonical"], "—")
-    brank = rankings.get("beer",  {}).get(s["canonical"], "—")
-    rrank = rankings.get("recall",{}).get(s["canonical"], "—")
+    brank = rankings.get("character",  {}).get(s["canonical"], "—")
+    rrank = rankings.get("voter_disconnect",{}).get(s["canonical"], "—")
     erank = rankings.get("efficiency", {}).get(s["canonical"], "—")
     total = len([k for k in rankings.get("composite_grade",{})])
     v_badge = delta_badge(delta.get("composite_grade"), "composite_grade")
-    b_badge = delta_badge(delta.get("beer"),      "beer")
-    r_badge = delta_badge(delta.get("recall"),    "recall")
+    b_badge = delta_badge(delta.get("character"),        "character")
+    r_badge = delta_badge(delta.get("voter_disconnect"), "voter_disconnect")
     e_badge = delta_badge(delta.get("efficiency"),"efficiency")
 
     # Insights
@@ -1078,8 +1078,8 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
         <div class="rank-val">#{brank}{b_badge}</div>
       </div>
       <div class="rank-item">
-        <div class="rank-title">Clarity</div>
-        <div class="rank-val">#{rrank} <span style="font-size:12px;color:#7f8c8d">(#1=least)</span>{r_badge}</div>
+        <div class="rank-title">Voter Disconnect</div>
+        <div class="rank-val">#{rrank} <span style="font-size:12px;color:#7f8c8d">(#1=widest)</span>{r_badge}</div>
       </div>
       <div class="rank-item">
         <div class="rank-title">Efficiency</div>
@@ -1250,8 +1250,8 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
         dn = s.get("display_name", n)
         dist = DISTRICT.get(n, "")
         vg, vc = letter(s.get("composite_grade"))
-        bg, bc = letter(s.get("beer"))
-        rg, rc = letter(1 - (s.get("recall", 0) or 0))   # invert: A = most clear
+        bg, bc = letter(s.get("character"))
+        rg, rc = letter(1 - (s.get("voter_disconnect", 0) or 0))   # invert: A = most clear
         cp  = s.get("core_pct", 0) or 0
         atl = s.get("avg_turn_len", 0) or 0
         refs = s.get("staff_referrals", 0) or 0
@@ -1349,7 +1349,7 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 
     <div class="metric-block">
       <div class="metric-name">Voter Alignment <span class="metric-weight">(Overall grade)</span></div>
-      <div class="metric-desc">Composite taxpayer-alignment score: Taxpayer Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Taxpayer Alignment incorporates transcript rhetoric, voting record, HSO score, incidents, fiscal referral authorship, and fiscal hypocrisy signals. This is the correct summary grade — it captures behavior, not just speech.</div>
+      <div class="metric-desc">Composite taxpayer-alignment score: Taxpayer Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Taxpayer Alignment incorporates transcript rhetoric, voting record, HSO score, incidents, fiscal referral authorship, and rhetoric-action gap signals. This is the correct summary grade — it captures behavior, not just speech.</div>
     </div>
 
     <div class="metric-block">
@@ -1369,12 +1369,12 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 
     <div class="metric-block">
       <div class="metric-name">Civic Temperament</div>
-      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), and warmth (treats staff, colleagues, and the public with genuine respect), minus ego signals (credential-dropping, self-referential flexes, and debate-closing appeals to personal authority). High Civic Temperament members make the council function better; low scores mean the member makes it worse.</div>
+      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), and warmth (treats staff, colleagues, and the public with genuine respect), minus self-referential appeals (credential-dropping, self-positioning, and debate-closing appeals to personal identity or authority rather than evidence). High Civic Temperament members make the council function better; low scores mean the member makes it worse.</div>
     </div>
 
     <div class="metric-block">
       <div class="metric-name">Clarity</div>
-      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines ego signals (credential-dropping, debate-closing appeals to personal authority), off-mission speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
+      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines self-referential appeals (credential-dropping, debate-closing appeals to personal identity or authority), off-mission speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
     </div>
 
   </div>
@@ -1497,11 +1497,11 @@ td {{ padding: 10px 10px; vertical-align: middle; }}
 </table>
 
 <div class="footnote">
-  <b>Voter Alignment</b> = Taxpayer Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSO, fiscal referrals, hypocrisy) &nbsp;·&nbsp;
+  <b>Voter Alignment</b> = Taxpayer Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSO, fiscal referrals, rhetoric-action gap) &nbsp;·&nbsp;
   <b>$ Voted YES</b> = total dollars on agenda items where member's roll-call vote was YES (partial coverage) &nbsp;·&nbsp;
   <b>HSO</b> = Homeless Services Orthodoxy (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on orthodoxy-aligned vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
-  <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Ego &nbsp;·&nbsp;
-  <b>Clarity</b> = inverse of ego + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
+  <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Self-Referential Appeals &nbsp;·&nbsp;
+  <b>Clarity</b> = inverse of self-referential appeals + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
   <b>Focus %</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
   <b>Focus Trend</b> ▲ improving &nbsp; ▼ declining (recent 90-day meeting focus vs. member's all-time avg) &nbsp;·&nbsp;
   <b>Change</b> = Voter Alignment vs. prior scorecard run &nbsp;·&nbsp;
@@ -1533,8 +1533,8 @@ def build_rankings(aggregate: dict) -> dict:
     return {
         "voter":          rank_by("voter",          reverse=True),
         "composite_grade":rank_by("composite_grade",reverse=True),
-        "beer":           rank_by("beer",           reverse=True),
-        "recall":         rank_by("recall",         reverse=True),   # 1 = highest risk
+        "character":        rank_by("character",        reverse=True),
+        "voter_disconnect": rank_by("voter_disconnect", reverse=True),   # 1 = widest gap
         "efficiency":     rank_by("efficiency",     reverse=True),   # 1 = most efficient (high score)
     }
 

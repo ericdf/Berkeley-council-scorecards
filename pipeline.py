@@ -536,7 +536,7 @@ def aggregate_spending_votes(linked_votes: list[dict]) -> dict:
     return result
 
 
-def build_vote_hypocrisy_incidents(
+def build_rhetoric_gap_incidents(
     linked_votes: list[dict],
     aggregate: dict,
     min_dollars: int = 100_000,
@@ -796,10 +796,10 @@ def compute_trends(meetings: list[dict]) -> dict:
 # ---------------------------------------------------------------------------
 
 # Keys where a *higher* value is better (delta > 0 = improvement)
-_DELTA_HIGHER_BETTER = {"voter", "lsi", "beer", "n_fiscal", "efficiency", "core_pct",
+_DELTA_HIGHER_BETTER = {"voter", "lsi", "character", "n_fiscal", "efficiency", "core_pct",
                         "composite_grade", "composite_taxpayer"}
 # Keys where a *lower* value is better (delta > 0 = worsening)
-_DELTA_LOWER_BETTER  = {"waste_pct", "recall"}
+_DELTA_LOWER_BETTER  = {"waste_pct", "voter_disconnect"}
 DELTA_KEYS = _DELTA_HIGHER_BETTER | _DELTA_LOWER_BETTER
 
 
@@ -1032,7 +1032,7 @@ def load_agenda_scores() -> tuple[dict, dict]:
 
 
 # ---------------------------------------------------------------------------
-# Fiscal hypocrisy detection
+# Rhetoric-action gap detection
 # ---------------------------------------------------------------------------
 
 # Large action-calendar item titles that indicate the council approved significant spending,
@@ -1049,18 +1049,18 @@ _LARGE_SPEND_TITLE_RE = re.compile(
 )
 
 
-def _flag_fiscal_hypocrisy(aggregate: dict) -> None:
+def _flag_rhetoric_action_gap(aggregate: dict) -> None:
     """
     For each member, compare their fiscal-concern rhetoric (FISCAL_CONCERN_KW hits
     from transcripts) against their budget actions from agendas.
-    Adds fiscal_hypocrisy_score (0–1) and fiscal_hypocrisy_detail to each member.
+    Adds rhetoric_action_gap_score (0–1) and rhetoric_action_gap_detail to each member.
 
     Logic:
       - concern_hits  = how many times member invoked fiscal-concern language in speeches
       - action_spend  = total $ in budget referrals they authored on the action calendar
       - off_action    = off-mission items they brought to the action calendar (explicit choice)
-      - A member scores high on hypocrisy if they frequently voice budget concern BUT
-        also author expensive proposals or off-mission action items.
+      - A member scores high on rhetoric-action gap if they frequently voice budget concern
+        BUT also author expensive proposals or off-mission action items.
     """
     for name, s in aggregate.items():
         if name.startswith("_") or name == "Ishii":
@@ -1075,30 +1075,30 @@ def _flag_fiscal_hypocrisy(aggregate: dict) -> None:
 
         # Score: rhetoric is credible if it comes without large spending actions.
         # We penalise when concern_rate is high AND spend/off_action are also high.
-        hypocrisy = 0.0
-        details   = []
+        gap     = 0.0
+        details = []
         waste_pct = s.get("waste_pct", 0) or 0
 
         if concern_rate >= 0.5 and spend >= 500_000:
-            # Claimed restraint + authored large spending
-            hypocrisy = min(1.0, (concern_rate / 2.0) * (spend / 1_000_000) * 0.1)
+            # Fiscal-concern rhetoric alongside large authored spending
+            gap = min(1.0, (concern_rate / 2.0) * (spend / 1_000_000) * 0.1)
             details.append(f"{concern} fiscal-concern mentions in speeches")
             details.append(f"${spend:,.0f} in budget referrals authored on action calendar")
         elif concern_rate >= 0.5 and off_action >= 1:
-            # Claimed restraint + explicitly brought off-mission items to debate
-            hypocrisy = min(0.5, concern_rate * 0.2)
+            # Fiscal-concern rhetoric alongside off-mission action items
+            gap = min(0.5, concern_rate * 0.2)
             details.append(f"{concern} fiscal-concern mentions")
             details.append(f"{off_action} off-mission items brought to action calendar")
         elif concern == 0 and spend >= 250_000:
-            # Spender with no fiscal acknowledgment (not hypocritical, but notable)
-            hypocrisy = 0.0   # not scored as hypocrisy — flagged separately below
+            # Spender with no fiscal acknowledgment (notable but not a gap — no rhetoric claimed)
+            gap = 0.0
             details.append(f"${spend:,.0f} in budget referrals authored — no fiscal-concern rhetoric detected")
 
-        s["fiscal_concern_hits"]    = concern
-        s["fiscal_concern_rate"]    = round(concern_rate, 3)
-        s["fiscal_hypocrisy_score"] = round(hypocrisy, 3)
+        s["fiscal_concern_hits"]         = concern
+        s["fiscal_concern_rate"]         = round(concern_rate, 3)
+        s["rhetoric_action_gap_score"]   = round(gap, 3)
         if details:
-            s["fiscal_hypocrisy_detail"] = "; ".join(details)
+            s["rhetoric_action_gap_detail"] = "; ".join(details)
 
         # Revenue-seeking rate: new-tax/bond advocacy rhetoric per 10k words.
         # Computed here so it's available to compute_composite_grade.
@@ -1464,7 +1464,7 @@ def score_attendance(annotated_dir: str = ANNOTATED_DIR) -> dict:
 # Curated list of major binding fiscal decisions.
 # Each entry: (date, meeting_type, item_number, classification, dollar_amount, description)
 # attendance source: annotated agenda vote records.
-# Absent at roll + absent on item vote = dereliction.
+# Absent at roll + absent on item vote = counted as fiscal vote absence.
 # Budget adoptions: a YES is endorsement of status quo, not a neutral act.
 MAJOR_FISCAL_VOTES = [
     # date         mtype      item  classification        amount        short_title
@@ -2162,7 +2162,7 @@ def compute_composite_grade(s: dict) -> dict:
 
     # Fiscal rhetoric without dissent — penalise financially literate members who
     # invoke fiscal-concern language while aligned with the status-quo spending apparatus.
-    # Condition: HSO ≥ 45 (complicit) OR serially absent from fiscal votes (derelict).
+    # Condition: HSO ≥ 45 (status-quo aligned) OR serially absent from fiscal votes.
     concern_rate = s.get("fiscal_concern_rate", 0) or 0
     ann_no       = s.get("annot_vote_no",      0) or 0
     ann_total    = s.get("annot_vote_total",   0) or 0
@@ -2236,22 +2236,22 @@ def compute_composite_grade(s: dict) -> dict:
 
     # ── Attendance — penalty only ────────────────────────────────────────────
     # Showing up is the minimum bar, not a virtue. Good attendance contributes
-    # nothing positive. Dereliction (missed fiscal votes, chronic absence) subtracts.
+    # nothing positive. Missed fiscal votes and chronic absence subtract.
     fv_pres    = (fv_total - fv_absent) / fv_total if fv_total else 1.0
     punct_rate = s.get("punctuality_rate", 1.0) or 1.0
 
-    # Fiscal vote dereliction: nonlinear — each additional missed vote hurts more than the last.
-    # Missing 1/7 is excusable; missing 5/7 is dereliction of the core duty of the office.
+    # Fiscal vote absence penalty: nonlinear — each additional missed vote hurts more than the last.
+    # Missing 1/7 is excusable; missing 5/7 signals a different disposition entirely.
     # Convex curve (x^1.5): lenient at 1-2 absences, severe at 4+.
     # 1/7→0.013, 2/7→0.038, 3/7→0.070, 5/7→0.151, 7/7→0.250
-    fv_ratio       = fv_absent / fv_total if fv_total else 0.0
-    fv_dereliction = (fv_ratio ** 1.5) * 0.25
+    fv_ratio          = fv_absent / fv_total if fv_total else 0.0
+    fv_absence_penalty = (fv_ratio ** 1.5) * 0.25
     # Chronic absence: well below 70% on-time rate → penalise
-    punct_penalty  = max(0.0, 0.70 - punct_rate) * 0.15       # up to −0.105 for 0% on-time
-    attendance_deduction = min(0.30, fv_dereliction + punct_penalty)
+    punct_penalty      = max(0.0, 0.70 - punct_rate) * 0.15   # up to −0.105 for 0% on-time
+    attendance_deduction = min(0.30, fv_absence_penalty + punct_penalty)
 
-    # ── Lightweight penalty (P1 tourist test) ───────────────────────────────
-    # A member who never originates P1 work is a passenger, not a driver.
+    # ── Low P1 engagement penalty ────────────────────────────────────────────
+    # A member who never originates P1 work is not engaging with the documented crises.
     # Gate: no P1 items authored per CSV classification AND no fiscal referral.
     # Using cls1_authored is more accurate than fiscal_referral_authored alone —
     # it covers any classified P1 agenda item, not just the curated referral list.
@@ -2263,7 +2263,7 @@ def compute_composite_grade(s: dict) -> dict:
         # both capped at 1.0 to prevent outsized speech volume from masking inaction
         engagement = min(1.0, fv_pres * 0.5 + min(concern_rate, 1.0) * 0.5)
         if engagement < 0.6:
-            # Tapers from 0.10 (pure tourist) to 0 at engagement = 0.6
+            # Tapers from 0.10 (zero P1 engagement) to 0 at engagement = 0.6
             lightweight_penalty = 0.10 * (1.0 - engagement / 0.6)
         else:
             lightweight_penalty = 0.0
@@ -2443,26 +2443,26 @@ def main():
     linked_votes = link_votes_to_agenda()
     print(f"  {len(linked_votes)} votes matched to agenda items", file=sys.stderr)
 
-    # Merge spending vote record into aggregate before hypocrisy scoring
-    # (hypocrisy flag reads fiscal_concern_rate which is already set)
+    # Merge spending vote record into aggregate before rhetoric-action gap scoring
+    # (gap flag reads fiscal_concern_rate which is already set)
     spending_votes = aggregate_spending_votes(linked_votes)
     for name in CANONICAL_MEMBERS:
         if name in spending_votes:
             aggregate[name].update(spending_votes[name])
 
-    _flag_fiscal_hypocrisy(aggregate)
+    _flag_rhetoric_action_gap(aggregate)
 
-    # Enhance hypocrisy with vote-level incidents
-    hypocrisy_incidents = build_vote_hypocrisy_incidents(linked_votes, aggregate)
-    if hypocrisy_incidents:
-        print(f"  {len(hypocrisy_incidents)} vote-level fiscal hypocrisy incidents", file=sys.stderr)
+    # Enhance rhetoric-action gap with vote-level incidents
+    rhetoric_gap_incidents = build_rhetoric_gap_incidents(linked_votes, aggregate)
+    if rhetoric_gap_incidents:
+        print(f"  {len(rhetoric_gap_incidents)} vote-level rhetoric-action gap incidents", file=sys.stderr)
         # Attach per-member incident lists
         by_member: dict[str, list] = defaultdict(list)
-        for inc in hypocrisy_incidents:
+        for inc in rhetoric_gap_incidents:
             by_member[inc["member"]].append({k: v for k, v in inc.items() if k != "member"})
         for name, incidents in by_member.items():
             if name in aggregate:
-                aggregate[name]["fiscal_hypocrisy_votes"] = sorted(
+                aggregate[name]["rhetoric_action_gap_votes"] = sorted(
                     incidents, key=lambda x: -x["dollar_total"]
                 )
 

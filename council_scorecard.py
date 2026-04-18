@@ -723,10 +723,10 @@ AUDIT_EVENT_PATTERNS = {
 # ---------------------------------------------------------------------------
 
 # Language that signals ideological alignment with the prevailing homeless services orthodoxy.
-# "Unhoused neighbors" is treated as a shibboleth: council members who adopt this
+# "Unhoused neighbors" is a reliable orthodoxy marker: council members who adopt this
 # framing are expressing orthodoxy regardless of whether the surrounding sentence
 # is sympathetic or fiscal — the city's own manager has acknowledged the population
-# is largely imported, so calling them "neighbors" is the tell.
+# is largely imported, so calling them "neighbors" is a telling framing choice.
 HSO_SYMPATHY_KW = [
     # "punches/punching above its/our weight" in homeless context
     # Use [\s\S] instead of . so the pattern crosses line breaks in transcripts.
@@ -735,7 +735,7 @@ HSO_SYMPATHY_KW = [
     r"\btrauma.?informed\b",                                  # Trauma-informed approach
     r"\blow.barrier\s+(?:shelter|housing|option|bed)\b",      # Low-barrier ideology
     r"\bwrap.?around\s+serv",                                 # Wrap-around services
-    # "unhoused neighbors" — shibboleth identifying orthodoxy framing (see note above)
+    # "unhoused neighbors" — orthodoxy framing marker (see note above)
     r"\bunhoused\s+neighbors?\b",
     r"\bhousing.?first.{0,30}(?:work|effective|success)\b",  # Defending Housing First
 ]
@@ -847,7 +847,7 @@ CREDENTIAL_KW = [
     r"\bmy \d+ years (of|in|as)\b",
 ]
 
-SELF_FLEX_KW = [
+SELF_POSITION_KW = [
     r"as i.ve (long |always )?(said|argued|maintained|advocated|believed|known|noted)",
     r"as i (noted|said|mentioned|argued|advocated) (last|at|in|before|previously)",
     r"(my (item|proposal|amendment|suggestion|recommendation)|i (wrote|authored|drafted|introduced) this)",
@@ -957,9 +957,9 @@ def score_member(md: MemberData) -> dict:
     p1_speech_pct = p1_words / md.words if md.words > 0 else 0.0
 
     # --- Character ---
-    cred_raw  = hit(text, CREDENTIAL_KW) * per1k
-    flex_raw  = hit(text, SELF_FLEX_KW) * per1k
-    ego_raw   = cred_raw + flex_raw * 0.5   # combined ego proxy
+    cred_raw     = hit(text, CREDENTIAL_KW) * per1k
+    position_raw = hit(text, SELF_POSITION_KW) * per1k
+    sra_raw      = cred_raw + position_raw * 0.5   # combined self-referential appeals score
 
     coll_raw  = hit(text, COLLEGIALITY_KW) * per1k
     hum_raw   = hit(text, HUMILITY_KW) * per1k
@@ -985,14 +985,14 @@ def score_member(md: MemberData) -> dict:
         "waste_pct": waste_pct,
         "core_pct":  core_pct,
         # character
-        "ego_raw":   ego_raw,
+        "sra_raw":   sra_raw,
         "coll_raw":  coll_raw,
         "hum_raw":   hum_raw,
         "warm_raw":  warm_raw,
         "i_ratio":   i_ratio,
         # diagnostics
-        "cred_hits": hit(text, CREDENTIAL_KW),
-        "flex_hits": hit(text, SELF_FLEX_KW),
+        "cred_hits":     hit(text, CREDENTIAL_KW),
+        "position_hits": hit(text, SELF_POSITION_KW),
         "coll_hits": hit(text, COLLEGIALITY_KW),
         "hum_hits":  hit(text, HUMILITY_KW),
         # fiscal concern rhetoric (distinct from fiscal discipline)
@@ -1108,8 +1108,8 @@ def score_ishii_facilitator(md: MemberData) -> dict:
 
 LSI_WEIGHTS   = {"domain": .20, "fiscal": .25, "inquiry": .25, "decisive": .20, "proc": .10}
 VOTER_WEIGHTS = {"lsi": .30, "core": .35, "clean": .35}
-BEER_WEIGHTS  = {"coll": .35, "hum": .25, "warm": .20, "low_ego": .20}
-RECALL_WEIGHTS= {"waste": .40, "ego": .30, "low_fiscal": .30}
+CHARACTER_WEIGHTS         = {"coll": .35, "hum": .25, "warm": .20, "low_sra": .20}
+VOTER_DISCONNECT_WEIGHTS  = {"waste": .40, "sra": .30, "low_fiscal": .30}
 
 def build_scoreboard(members: dict[str, MemberData]) -> dict:
     raw = {n: score_member(m) for n, m in members.items() if m.words >= MIN_WORDS}
@@ -1130,11 +1130,11 @@ def build_scoreboard(members: dict[str, MemberData]) -> dict:
     np_ = norm_dim("proc_raw")
 
     # Normalize character dimensions
-    n_ego  = norm_dim("ego_raw")    # higher = more ego
+    n_sra  = norm_dim("sra_raw")    # higher = more self-referential appeals
     n_coll = norm_dim("coll_raw")
     n_hum  = norm_dim("hum_raw")
     n_warm = norm_dim("warm_raw")
-    n_i    = norm_dim("i_ratio")    # higher = more self-centered
+    n_i    = norm_dim("i_ratio")    # higher = higher first-person ratio
 
     n_waste = norm_dim("waste_pct")
     n_core  = norm_dim("core_pct")
@@ -1152,25 +1152,25 @@ def build_scoreboard(members: dict[str, MemberData]) -> dict:
                  VOTER_WEIGHTS["core"]  * n_core[n] +
                  VOTER_WEIGHTS["clean"] * (1 - n_waste[n]))
 
-        beer  = (BEER_WEIGHTS["coll"]    * n_coll[n] +
-                 BEER_WEIGHTS["hum"]     * n_hum[n]  +
-                 BEER_WEIGHTS["warm"]    * n_warm[n] +
-                 BEER_WEIGHTS["low_ego"] * (1 - (n_ego[n] * 0.7 + n_i[n] * 0.3)))
+        character        = (CHARACTER_WEIGHTS["coll"]    * n_coll[n] +
+                            CHARACTER_WEIGHTS["hum"]     * n_hum[n]  +
+                            CHARACTER_WEIGHTS["warm"]    * n_warm[n] +
+                            CHARACTER_WEIGHTS["low_sra"] * (1 - (n_sra[n] * 0.7 + n_i[n] * 0.3)))
 
-        recall= (RECALL_WEIGHTS["waste"]      * n_waste[n] +
-                 RECALL_WEIGHTS["ego"]        * (n_ego[n] * 0.7 + n_i[n] * 0.3) +
-                 RECALL_WEIGHTS["low_fiscal"] * (1 - n_fiscal[n]))
+        voter_disconnect = (VOTER_DISCONNECT_WEIGHTS["waste"]      * n_waste[n] +
+                            VOTER_DISCONNECT_WEIGHTS["sra"]        * (n_sra[n] * 0.7 + n_i[n] * 0.3) +
+                            VOTER_DISCONNECT_WEIGHTS["low_fiscal"] * (1 - n_fiscal[n]))
 
         scores[n] = {
             **raw[n],
-            "lsi":    lsi,
-            "voter":  voter,
-            "beer":   beer,
-            "recall": recall,
+            "lsi":              lsi,
+            "voter":            voter,
+            "character":        character,
+            "voter_disconnect": voter_disconnect,
             # normalized sub-scores for display
             "n_domain": nd[n],  "n_fiscal": nf[n],
             "n_inq":    ni[n],  "n_dec":    ndc[n], "n_proc": np_[n],
-            "n_ego":    n_ego[n], "n_coll": n_coll[n],
+            "n_sra":    n_sra[n], "n_coll": n_coll[n],
             "n_hum":    n_hum[n], "n_warm": n_warm[n],
         }
 
@@ -1200,16 +1200,16 @@ def print_scorecard(scores: dict, ishii_fac: dict):
               f"  {s['lsi']:>6.3f}")
 
     print("\n" + "=" * 95)
-    print("  CHARACTER INDEX")
-    print(f"  {'Member':<13} {'Ego↓':>7} {'I-ratio↓':>9} {'Collegiality↑':>14} {'Humility↑':>10} {'Warmth↑':>8}  | Credential  SelfFlex  Colleg  Humble")
+    print("  CHARACTER & CONDUCT")
+    print(f"  {'Member':<13} {'SRA↓':>7} {'I-ratio↓':>9} {'Collegiality↑':>14} {'Humility↑':>10} {'Warmth↑':>8}  | Credential  Position  Colleg  Humble")
     print("=" * 95)
-    for n in sorted(scores, key=lambda x: scores[x]["beer"], reverse=True):
+    for n in sorted(scores, key=lambda x: scores[x]["character"], reverse=True):
         s = scores[n]
         dn = DISPLAY_NAME.get(n, n)
         print(f"  {dn:<13}"
-              f"  {s['n_ego']:>6.2f}  {s['i_ratio']:>8.2f}"
+              f"  {s['n_sra']:>6.2f}  {s['i_ratio']:>8.2f}"
               f"  {s['n_coll']:>13.2f}  {s['n_hum']:>9.2f}  {s['n_warm']:>7.2f}"
-              f"  | {s['cred_hits']:>5}       {s['flex_hits']:>5}   {s['coll_hits']:>5}   {s['hum_hits']:>5}")
+              f"  | {s['cred_hits']:>5}       {s['position_hits']:>5}   {s['coll_hits']:>5}   {s['hum_hits']:>5}")
 
     print("\n" + "=" * 85)
     print("  VOTER ALIGNMENT RANKING  (LSI 30% + Core% 35% + Inverse Waste% 35%)")
@@ -1221,22 +1221,22 @@ def print_scorecard(scores: dict, ishii_fac: dict):
               f"  core={s['core_pct']*100:.0f}%  waste={s['waste_pct']*100:.0f}%  lsi={s['lsi']:.2f}")
 
     print("\n" + "=" * 85)
-    print("  BEER TEST  (who would you want to grab a drink with?)")
-    print("  High collegiality, humility, warmth; low ego and self-reference")
+    print("  CHARACTER & CONDUCT")
+    print("  High collegiality, humility, warmth; low self-referential appeals and first-person ratio")
     print("=" * 85)
-    for rank, n in enumerate(sorted(scores, key=lambda x: -scores[x]["beer"]), 1):
+    for rank, n in enumerate(sorted(scores, key=lambda x: -scores[x]["character"]), 1):
         s = scores[n]
         dn = DISPLAY_NAME.get(n, n)
-        print(f"  #{rank}  {dn:<13}  {bar(s['beer'])}  {s['beer']:.3f}")
+        print(f"  #{rank}  {dn:<13}  {bar(s['character'])}  {s['character']:.3f}")
 
     print("\n" + "=" * 85)
-    print("  RECALL RISK  (high waste + high ego + avoids fiscal accountability)")
+    print("  VOTER DISCONNECT  (high waste + high self-referential appeals + avoids fiscal accountability)")
     print("=" * 85)
-    for rank, n in enumerate(sorted(scores, key=lambda x: -scores[x]["recall"]), 1):
+    for rank, n in enumerate(sorted(scores, key=lambda x: -scores[x]["voter_disconnect"]), 1):
         s = scores[n]
         dn = DISPLAY_NAME.get(n, n)
-        print(f"  #{rank}  {dn:<13}  {bar(s['recall'])}  {s['recall']:.3f}"
-              f"  waste={s['waste_pct']*100:.0f}%  ego={s['n_ego']:.2f}  cred_drops={s['cred_hits']}")
+        print(f"  #{rank}  {dn:<13}  {bar(s['voter_disconnect'])}  {s['voter_disconnect']:.3f}"
+              f"  waste={s['waste_pct']*100:.0f}%  sra={s['n_sra']:.2f}  cred_hits={s['cred_hits']}")
 
     # Ishii facilitator summary
     if ishii_fac:
@@ -1278,8 +1278,8 @@ def main():
 
     if args.csv:
         writer = csv.DictWriter(sys.stdout, fieldnames=[
-            "member", "words", "lsi", "voter", "beer", "recall",
-            "waste_pct", "core_pct", "cred_hits", "flex_hits",
+            "member", "words", "lsi", "voter", "character", "voter_disconnect",
+            "waste_pct", "core_pct", "cred_hits", "position_hits",
             "coll_hits", "hum_hits", "op_q", "gs_q",
         ])
         writer.writeheader()

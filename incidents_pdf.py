@@ -22,10 +22,10 @@ OUT_PDF  = os.path.join(PDF_DIR, "incidents.pdf")
 
 # Human-readable labels for each category
 CATEGORY_META = {
-    "constituent_gaslight":   ("Constituent Gaslighting",  False, "Held meetings or sought input after decisions were made; performative not deliberative"),
-    "alternatives_dismissed": ("Alternatives Dismissed",   False, "Explicitly closed off alternatives without analysis or evidence"),
-    "claimed_ignorance":      ("Claimed Ignorance",        False, "Claimed not to know something they were obligated to know"),
-    "atm_behavior":           ("Taxpayer-as-ATM",          False, "Reached for new revenue without first asking what can be cut or done more efficiently"),
+    "performative_engagement": ("Performative Engagement",  False, "Held meetings or sought input after decisions were made; performative not deliberative"),
+    "alternatives_dismissed":  ("Alternatives Dismissed",   False, "Explicitly closed off alternatives without analysis or evidence"),
+    "claimed_ignorance":       ("Claimed Ignorance",        False, "Claimed not to know something they were obligated to know"),
+    "revenue_without_cuts":    ("Seeks Revenue Without Cuts", False, "Reached for new revenue without first asking what can be cut or done more efficiently"),
     "union_deference":        ("Union Deference",          False, "Sided with city unions without requesting productivity data or efficiency tradeoffs"),
     "fiscal_integrity":       ("Fiscal Integrity",         True,  "Pushed back on spending, demanded cost data, or advocated for cuts"),
     "constituent_service":    ("Constituent Service",      True,  "Genuinely responsive constituent engagement with demonstrated follow-through"),

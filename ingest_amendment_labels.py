@@ -14,7 +14,7 @@ Rows with label "neutral" or "skip" are silently skipped.
 Incident format written:
   {
     "date":           "YYYY-MM-DD",
-    "category":       "fiscal_integrity"  (positive) | "atm_behavior" (negative),
+    "category":       "fiscal_integrity"  (positive) | "revenue_without_cuts" (negative),
     "evidence_tier":  "A",                # vote-record level: amendment is on-record
     "description":    "<notes field>  [Amendment text: <first 300 chars of amendment_turn>]",
     "source":         "Amendment motion — <meeting_type> meeting <date>; item <n>: <title>",
@@ -39,7 +39,7 @@ SENTINEL = "_from_amendment_review"
 
 LABEL_CATEGORY = {
     "positive": "fiscal_integrity",
-    "negative": "atm_behavior",
+    "negative": "revenue_without_cuts",
 }
 
 # Members as stored in DISPLAY_NAME → key used in incidents.json
