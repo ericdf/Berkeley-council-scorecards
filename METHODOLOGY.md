@@ -69,6 +69,38 @@ composite = max(0.0,
 
 ---
 
+## Longitudinal Decay
+
+Rhetoric and behavior are time-sensitive. A member who said concerning things two years ago but has since moderated should not carry that signal at full weight indefinitely. Conversely, a member who has been consistent over the entire period should score the same as one who is only recently reform-oriented.
+
+**Formula:** Each time-sensitive signal is weighted by:
+
+```
+effective_weight = e^(−λ × age_in_years)    λ = 0.7
+```
+
+| Age | Weight |
+|-----|--------|
+| Current | 1.00 |
+| 1 year | ~0.50 |
+| 2 years | ~0.25 |
+| 3 years | ~0.12 |
+
+**Applies to:**
+- Incident scoring (each incident's `scoring_impact × tier_weight` is multiplied by the decay factor before summing)
+- Rhetoric signals: fiscal concern rate, new revenue preference rate, self-referential appeals, collegiality, humility, warmth (via per-meeting decay-weighted aggregation)
+- Newsletter P1 silence events
+
+**Does NOT apply to:**
+- Bond/tax referral votes (durable official acts — authoring a ballot measure is a permanent record)
+- Annotated agenda votes (YES/NO/absent on spending items)
+- Major fiscal votes
+- HSA score (full-text aggregation without per-meeting dates; planned for future update)
+
+**Opt-out:** Individual incidents can carry `"no_decay": true` to exempt them from decay (e.g., a member who authored a bond measure that is still active).
+
+---
+
 ## A+ Ceiling Conditions
 
 A+ is not available to a member who is silent or miscalibrated on Berkeley's documented structural crises. The grade requires not just absence of bad behavior but **aspirations set at the level the city's own documents say the problems demand**. Setting sights too low on a documented crisis accepts a trajectory the city's own adopted reports describe as ruinous.

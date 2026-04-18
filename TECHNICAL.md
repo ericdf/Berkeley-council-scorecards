@@ -250,6 +250,31 @@ Audit-linked incidents carry an additional 0.50× multiplier to prevent double-p
 
 ---
 
+## Longitudinal Decay
+
+Rhetoric and behavioral signals decay over time. Per-meeting contributions are weighted before aggregation:
+
+```python
+effective_weight = math.exp(-DECAY_LAMBDA * age_in_years)   # DECAY_LAMBDA = 0.7
+```
+
+| Age | Weight |
+|-----|--------|
+| 0 (current) | 1.00 |
+| 1 year | ~0.50 |
+| 2 years | ~0.25 |
+| 3 years | ~0.12 |
+
+**Applied in `compute_decay_rhetoric(meetings)`** (pipeline.py): iterates per-meeting scores with dates, accumulates decay-weighted totals for `fiscal_concern_hits`, `new_revenue_preference_hits`, `sra_raw` (stored as `ego_raw` in per-meeting data), `coll_raw`, `hum_raw`, `warm_raw`. Results override flat aggregates in the scoring pipeline.
+
+**Applied in `load_incidents()`** (pipeline.py): each incident's `raw × tier_weight` is multiplied by `decay_weight(inc["date"])` before summing. Incidents with `"no_decay": true` are exempt.
+
+**NOT decayed:** annotated agenda votes, major fiscal votes, fiscal referral authorship, HSA score (full-text aggregation — per-meeting HSA signals not yet tracked), audit silence penalty.
+
+**`recompute_character_decay(aggregate)`** (pipeline.py): after decay-weighted raw values are merged, re-normalizes `sra_raw`, `coll_raw`, `hum_raw`, `warm_raw` across the cohort and recomputes `character` and `voter_disconnect` scores. Mirrors `build_scoreboard()` normalization logic using decay values.
+
+---
+
 ## Composite Grade Formula
 
 ```
@@ -257,7 +282,7 @@ composite_raw = max(0.0,
     taxpayer_alignment × 0.70
     + focus × 0.30
     − attendance_deduction
-    − lightweight_penalty
+    − low_engagement_adj
 )
 ```
 
@@ -268,7 +293,7 @@ composite_raw = max(0.0,
 - 4 absences: −0.25
 - 5+ absences: −0.30 (cap)
 
-**Lightweight penalty** — 0 to −0.10, based on very low word counts and high abstain rates.
+**Low engagement adjustment** — 0 to −0.10, triggered when member authors no P1 referrals AND shows low fiscal engagement.
 
 **Letter grade thresholds:**
 

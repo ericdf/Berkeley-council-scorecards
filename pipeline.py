@@ -13,6 +13,7 @@ Usage:
 import argparse
 import glob
 import json
+import math
 import os
 import re
 import shutil
@@ -20,12 +21,29 @@ import sys
 from collections import defaultdict
 from datetime import date, datetime
 
+# ---------------------------------------------------------------------------
+# Longitudinal decay
+# ---------------------------------------------------------------------------
+
+DECAY_LAMBDA = 0.7   # half-life ≈ 1 year (weight 0.50 at 12 months, 0.25 at 24)
+
+def decay_weight(date_str: str) -> float:
+    """e^(-lambda * age_in_years). Returns 1.0 for undated or future events."""
+    if not date_str:
+        return 1.0
+    try:
+        d = date.fromisoformat(str(date_str)[:10])
+    except ValueError:
+        return 1.0
+    age_years = (date.today() - d).days / 365.25
+    return math.exp(-DECAY_LAMBDA * max(0.0, age_years))
+
 # -- local modules --
 sys.path.insert(0, os.path.dirname(__file__))
 from council_scorecard import (
     TEXT_DIR, CANONICAL_MEMBERS, DISPLAY_NAME,
     load_all, build_scoreboard, score_ishii_facilitator,
-    clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, REVENUE_SEEKING_KW,
+    clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, NEW_REVENUE_PREFERENCE_KW,
     HSA_SYMPATHY_KW, HSA_SKEPTIC_KW, P1_TOPIC_KW,
 )
 
@@ -744,6 +762,110 @@ def load_per_file() -> dict:
 
         result[fname] = dict(file_turns)
     return result
+
+
+# ---------------------------------------------------------------------------
+# Decay-weighted rhetoric aggregation
+# ---------------------------------------------------------------------------
+
+def compute_decay_rhetoric(meetings: list[dict]) -> dict:
+    """
+    Return per-member decay-weighted rhetoric signal totals using per-meeting data.
+
+    Per-meeting scores carry a date; each meeting's contribution is weighted by
+    e^(-DECAY_LAMBDA * age_in_years).  This means rhetoric from two years ago
+    counts for roughly 25% of an equivalent statement made today.
+
+    Signals decayed: fiscal_concern_hits, new_revenue_preference_hits, sra/ego,
+    coll, hum, warm.  HSA uses full-text aggregation without per-meeting dates
+    and is NOT decayed here (future work: add HSA per-meeting signals).
+
+    Bond votes, annotated agenda votes, and authored legislation are scored
+    separately and are not touched by this function.
+    """
+    totals: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for m in meetings:
+        w = decay_weight(m.get("date", ""))
+        for name, s in m["members"].items():
+            if name not in CANONICAL_MEMBERS:
+                continue
+            t = totals[name]
+            t["words"]    += (s.get("words",    0) or 0) * w
+            t["fc_hits"]  += (s.get("fiscal_concern_hits", 0) or 0) * w
+            # per_meeting key may be old (revenue_seeking_hits) or new (new_revenue_preference_hits)
+            t["rs_hits"]  += (s.get("new_revenue_preference_hits") or
+                              s.get("revenue_seeking_hits") or 0) * w
+            t["sra_raw"]  += (s.get("ego_raw",  0) or 0) * w   # old key; ego_raw = sra_raw
+            t["coll_raw"] += (s.get("coll_raw", 0) or 0) * w
+            t["hum_raw"]  += (s.get("hum_raw",  0) or 0) * w
+            t["warm_raw"] += (s.get("warm_raw", 0) or 0) * w
+
+    result = {}
+    for name, t in totals.items():
+        dw = t["words"] or 1
+        result[name] = {
+            "decay_fiscal_concern_hits":         round(t["fc_hits"], 2),
+            "decay_fiscal_concern_rate":         round(t["fc_hits"] / dw * 10_000, 3),
+            "decay_new_revenue_preference_hits": round(t["rs_hits"], 2),
+            "decay_new_revenue_preference_rate": round(t["rs_hits"] / dw * 10_000, 3),
+            "decay_sra_raw":  round(t["sra_raw"],  4),
+            "decay_coll_raw": round(t["coll_raw"], 4),
+            "decay_hum_raw":  round(t["hum_raw"],  4),
+            "decay_warm_raw": round(t["warm_raw"], 4),
+            "decay_words":    round(t["words"],    1),
+        }
+    return result
+
+
+def recompute_character_decay(aggregate: dict) -> None:
+    """
+    Recompute character and voter_disconnect scores in-place using decay-weighted
+    raw signals stored under decay_* keys.  Mirrors the normalization logic in
+    council_scorecard.build_scoreboard() but operates on the already-merged
+    aggregate dict so per-meeting decay values are used instead of flat totals.
+    """
+    from council_scorecard import CHARACTER_WEIGHTS, VOTER_DISCONNECT_WEIGHTS, normalize
+
+    names = [n for n in CANONICAL_MEMBERS
+             if n in aggregate and aggregate[n].get("decay_sra_raw") is not None]
+    if not names:
+        return
+
+    def norm(key: str) -> dict[str, float]:
+        vals = [aggregate[n][key] for n in names]
+        nv   = normalize(vals)
+        return dict(zip(names, nv))
+
+    n_sra  = norm("decay_sra_raw")
+    n_coll = norm("decay_coll_raw")
+    n_hum  = norm("decay_hum_raw")
+    n_warm = norm("decay_warm_raw")
+
+    # i_ratio and fiscal_raw are structural / LSI signals; not decayed
+    i_vals = [aggregate[n].get("i_ratio",   0) or 0 for n in names]
+    f_vals = [aggregate[n].get("fiscal_raw", 0) or 0 for n in names]
+    n_i      = dict(zip(names, normalize(i_vals)))
+    n_fiscal = dict(zip(names, normalize(f_vals)))
+
+    waste_vals = [aggregate[n].get("waste_pct", 0) or 0 for n in names]
+    n_waste    = dict(zip(names, normalize(waste_vals)))
+
+    for n in names:
+        sra_comp = n_sra[n] * 0.7 + n_i[n] * 0.3
+        character = (CHARACTER_WEIGHTS["coll"]    * n_coll[n] +
+                     CHARACTER_WEIGHTS["hum"]     * n_hum[n]  +
+                     CHARACTER_WEIGHTS["warm"]    * n_warm[n] +
+                     CHARACTER_WEIGHTS["low_sra"] * (1 - sra_comp))
+        voter_disconnect = (VOTER_DISCONNECT_WEIGHTS["waste"]      * n_waste[n] +
+                            VOTER_DISCONNECT_WEIGHTS["sra"]        * sra_comp +
+                            VOTER_DISCONNECT_WEIGHTS["low_fiscal"] * (1 - n_fiscal[n]))
+        aggregate[n]["character"]        = round(character, 4)
+        aggregate[n]["voter_disconnect"] = round(voter_disconnect, 4)
+        # Update normalized sub-scores for display consistency
+        aggregate[n]["n_sra"]  = n_sra[n]
+        aggregate[n]["n_coll"] = n_coll[n]
+        aggregate[n]["n_hum"]  = n_hum[n]
+        aggregate[n]["n_warm"] = n_warm[n]
 
 
 # ---------------------------------------------------------------------------
@@ -1813,6 +1935,10 @@ def load_incidents() -> dict:
             weight = TIER_WEIGHTS.get(tier, 0.75)
             if inc.get("audit_ref"):
                 weight *= 0.50   # audit channel already penalizes this behavior
+            # Durable official acts (votes, authored legislation) do not decay.
+            # Behavioral signals (rhetoric patterns, constituent interactions) do.
+            if not inc.get("no_decay"):
+                weight *= decay_weight(inc.get("date", ""))
             total_adj += raw * weight
         total_adj = max(-0.30, min(0.30, total_adj))   # cap so no single member is dominated
         result[name] = {
@@ -2438,6 +2564,30 @@ def main():
     }
 
     add_efficiency_ranks(aggregate)
+
+    # Apply longitudinal decay to rhetoric signals.
+    # Override flat aggregate totals with decay-weighted per-meeting sums so that
+    # older speech contributes less than recent speech to scores.
+    # Bond/budget/authored-legislation votes are scored separately and unaffected.
+    print("Applying longitudinal decay to rhetoric signals...", file=sys.stderr)
+    decay_rhetoric = compute_decay_rhetoric(meetings)
+    for name in CANONICAL_MEMBERS:
+        dr = decay_rhetoric.get(name)
+        if not dr:
+            continue
+        aggregate[name].update(dr)
+        # Override the scoring-relevant flat rates with decay-weighted equivalents
+        aggregate[name]["fiscal_concern_hits"]         = dr["decay_fiscal_concern_hits"]
+        aggregate[name]["fiscal_concern_rate"]         = dr["decay_fiscal_concern_rate"]
+        aggregate[name]["new_revenue_preference_hits"] = dr["decay_new_revenue_preference_hits"]
+        aggregate[name]["new_revenue_preference_rate"] = dr["decay_new_revenue_preference_rate"]
+        aggregate[name]["sra_raw"]  = dr["decay_sra_raw"]
+        aggregate[name]["coll_raw"] = dr["decay_coll_raw"]
+        aggregate[name]["hum_raw"]  = dr["decay_hum_raw"]
+        aggregate[name]["warm_raw"] = dr["decay_warm_raw"]
+    recompute_character_decay(aggregate)
+    print(f"  Decay λ={DECAY_LAMBDA} applied; 1-yr weight {math.exp(-DECAY_LAMBDA):.2f}, "
+          f"2-yr weight {math.exp(-2*DECAY_LAMBDA):.2f}", file=sys.stderr)
 
     print("Linking vote roll-calls to agenda items...", file=sys.stderr)
     linked_votes = link_votes_to_agenda()
