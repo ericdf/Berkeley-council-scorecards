@@ -185,10 +185,28 @@ Five components, each 0–1, composited to a single LSI score:
 
 ### Character Assessment
 
-- **Ego** (negative) — self-reference frequency, "I did," "my initiative"
+Character is measured across four dimensions in `score_member()` (council_scorecard.py):
+- **Self-Referential Appeals / SRA** (negative) — turn-level heuristic; see SRA Detection below
 - **Collegiality** (positive) — direct peer address, credit-sharing language
-- **Intellectual humility** (positive) — "I'm learning," "we should study," acknowledgment of complexity
+- **Intellectual humility** (positive) — position updates, deference to evidence
 - **Warmth** (positive) — appreciation language, collaborative framing
+
+#### SRA Detection — Turn-Level Heuristic
+
+`detect_sra(turns)` in council_scorecard.py evaluates each attributed speaker turn against three rule families, returning at most one match per rule family per turn:
+
+| Rule | Description | Example triggers |
+|---|---|---|
+| **A** — Credential assertion | Professional credential or background invoked as argument | "as a nuclear engineer, I…", "my training as an attorney…" |
+| **C** — Identity anchor | Personal identity or lived experience as policy basis | "lived experience" (standalone), "speaking as a renter…" |
+| **D** — Self-positioning | Prior record, authored items, or stated positions used to close debate | "as I've long said…", "my item", "as I mentioned before the break" |
+
+**Output fields:**
+- `sra_turn_count` — total flagged turns (any rule)
+- `sra_rule_A`, `sra_rule_C`, `sra_rule_D` — per-rule turn counts
+- `sra_snippets` — up to 10 matched text excerpts (25-char context window)
+
+**Scoring:** `sra_raw = sra_turn_count * (1000 / words)` — same per-1k-word scale as other rates, so cohort normalization in `build_scoreboard()` is unchanged. Legacy `cred_hits` maps to `sra_rule_A`; `position_hits` maps to `sra_rule_D`.
 
 ### Voter Alignment
 
