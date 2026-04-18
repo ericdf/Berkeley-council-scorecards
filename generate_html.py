@@ -227,9 +227,59 @@ def _add_index_link(html: str) -> str:
     return html.replace('<body>\n', f'<body>\n{nav}', 1)
 
 
+_TOOLTIP_CSS = """
+<style>
+/* Evidentiary basis tooltip enhancement (HTML only) */
+.evid-basis {
+  cursor: help;
+  position: relative;
+}
+.evid-basis:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0; top: 120%;
+  background: #2c3e50; color: #fff;
+  font-size: 10px; font-weight: 400; text-transform: none;
+  letter-spacing: 0; line-height: 1.5;
+  white-space: normal; width: 240px;
+  padding: 6px 10px; border-radius: 4px;
+  z-index: 999; pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+</style>"""
+
+_OFFICIAL_TIP  = ("Drawn from annotated agenda PDFs and official city records. "
+                  "Not subject to interpretation — these are the facts as recorded.")
+_TEXT_TIP      = ("Derived from keyword classification of attributed meeting transcripts, "
+                  "constituent communications, and member public statements. "
+                  "Full methodology at METHODOLOGY.md.")
+_MIXED_TIP     = ("Combines official record data (votes, authorship) with text analysis "
+                  "(rhetoric signals). See METHODOLOGY.md for component weights.")
+
+
+def _add_tooltip_attrs(html: str) -> str:
+    """Inject data-tip attributes on evid-basis badges for hover tooltips."""
+    html = html.replace(
+        'class="evid-basis evid-official"',
+        f'class="evid-basis evid-official" data-tip="{_OFFICIAL_TIP}"',
+    )
+    html = html.replace(
+        'class="evid-basis evid-text"',
+        f'class="evid-basis evid-text" data-tip="{_TEXT_TIP}"',
+    )
+    html = html.replace(
+        'class="evid-basis evid-text">Text analysis + official record',
+        f'class="evid-basis evid-text" data-tip="{_MIXED_TIP}">Text analysis + official record',
+    )
+    # Inject tooltip CSS before </head>
+    html = html.replace('</head>', _TOOLTIP_CSS + '\n</head>', 1)
+    return html
+
+
 def screen_html(html: str, add_back_link: bool = False) -> str:
     html = _strip_print_css(html)
     html = _add_viewport(html)
+    html = _add_tooltip_attrs(html)
     if add_back_link:
         html = _add_index_link(html)
     return html

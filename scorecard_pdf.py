@@ -164,6 +164,24 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 /* Footer */
 .footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
 
+/* Evidentiary basis badges */
+.evid-basis {
+  display: inline-block; margin-left: 8px; padding: 1px 5px;
+  font-size: 8px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.8px; border-radius: 3px; vertical-align: middle;
+}
+.evid-official {
+  background: #d5e8d4; color: #2d6a2d;
+}
+.evid-text {
+  background: #dae8fc; color: #1a4a7a;
+}
+.evid-footnote {
+  padding: 10px 32px 14px;
+  font-size: 9px; color: #aaa; line-height: 1.7;
+  border-top: 1px solid #ecf0f1;
+}
+
 /* Descriptive / Normative layer dividers */
 .layer-divider {
   padding: 10px 32px 8px;
@@ -412,7 +430,7 @@ def _render_agenda_section(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars</div>
+    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars<span class="evid-basis evid-official">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Consent = block votes on buried items &nbsp;·&nbsp; Action = explicitly debated (heavier signal)
     </div>
@@ -494,7 +512,7 @@ def _render_spending_votes(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Spending Votes — Roll-Call Record</div>
+    <div class="section-title">Spending Votes — Roll-Call Record<span class="evid-basis evid-official">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Dollar amounts from agenda items matched to extracted roll-calls.
       Coverage is partial: unanimous voice votes and some formats not captured.
@@ -563,7 +581,7 @@ def _render_hsa_section(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Homeless Services Status-Quo Alignment</div>
+    <div class="section-title">Homeless Services Status-Quo Alignment<span class="evid-basis evid-text">Text analysis</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Berkeley spends $21.7M+/yr across 33 programs; H&amp;W up 65% vs 25% revenue growth.
       Score measures investment in the prevailing homeless services apparatus vs.
@@ -708,7 +726,7 @@ def _render_attendance_section(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Attendance — {total} Sessions (Annotated Agenda Record)</div>
+    <div class="section-title">Attendance — {total} Sessions (Annotated Agenda Record)<span class="evid-basis evid-official">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
       Source: post-meeting annotated agenda PDFs — the authoritative attendance record.
       "Fully absent" = listed absent at roll call and never arrived.
@@ -843,7 +861,7 @@ def _render_fiscal_votes_section(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Major Fiscal Votes — {fv_total} Binding Decisions</div>
+    <div class="section-title">Major Fiscal Votes — {fv_total} Binding Decisions<span class="evid-basis evid-official">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
       Curated list of binding fiscal votes Dec 2024–Jul 2025. Source: annotated agenda PDFs.
     </div>
@@ -922,7 +940,7 @@ def _render_taxpayer_breakdown(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown</div>
+    <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown<span class="evid-basis evid-text">Text analysis + official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
       How the {final:.3f} Fiscal Stewardship Alignment score is constructed.
       Components sum to the raw figure; the final score is clamped to [0, 1].
@@ -993,7 +1011,7 @@ def _render_speech_stats(s: dict) -> str:
 
     return f"""
   <div class="section">
-    <div class="section-title">Speech Content — What Was Said</div>
+    <div class="section-title">Speech Content — What Was Said<span class="evid-basis evid-text">Text analysis</span></div>
     <div class="stat-grid">
       <div class="stat-box">
         <div class="stat-val">{core_pct:.0f}%</div>
@@ -1157,7 +1175,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
   {_render_fiscal_votes_section(s)}
 
   <div class="section">
-    <div class="section-title">Voting Record — {ann_total} Items (Annotated Agenda)</div>
+    <div class="section-title">Voting Record — {ann_total} Items (Annotated Agenda)<span class="evid-basis evid-official">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Source: annotated agenda PDFs across all {ann_total} items with a parseable vote.
       Council block-vote rate: {block_pct}% — individual deviations are high-signal precisely because they are rare.
@@ -1183,7 +1201,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
   </div>
 
   <div class="section">
-    <div class="section-title">Agenda Impact &amp; Efficiency</div>
+    <div class="section-title">Agenda Impact &amp; Efficiency<span class="evid-basis evid-official">Official record</span></div>
     <div class="stat-grid">
       <div class="stat-box">
         <div class="stat-val">{spons}</div>
@@ -1223,6 +1241,14 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     <div class="section-title">Key Findings</div>
     {insights_html}
     {"<p style='font-size:12px;color:#7f8c8d;margin-top:10px'>" + trend_line + "</p>" if trend_line else ""}
+  </div>
+
+  <div class="evid-footnote">
+    <span class="evid-basis evid-official" style="vertical-align:baseline">Official record</span>
+    &nbsp;Attendance, votes, and authorship drawn from annotated agenda PDFs and agenda item JSONs — primary public record, not subject to interpretation.
+    &nbsp;&nbsp;
+    <span class="evid-basis evid-text" style="vertical-align:baseline">Text analysis</span>
+    &nbsp;Rhetoric signals derived from keyword classification of attributed meeting transcripts, constituent communications, and member statements. Full methodology at <em>METHODOLOGY.md</em>.
   </div>
 
   <div class="footer">
