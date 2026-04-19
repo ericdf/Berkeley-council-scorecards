@@ -136,8 +136,9 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .exec-summary { font-size: 12.5px; line-height: 1.65; color: #2c3e50; }
 
 /* Pillar rows */
-.pillar-row { display: flex; align-items: center; margin-bottom: 10px; }
-.pillar-label { width: 170px; font-size: 13px; font-weight: 600; color: #2c3e50; }
+.pillar-row { display: flex; align-items: center; margin-bottom: 12px; }
+.pillar-label { width: 190px; font-size: 13px; font-weight: 600; color: #2c3e50; line-height: 1.3; }
+.pillar-desc  { font-size: 10px; font-weight: 400; color: #95a5a6; margin-top: 1px; }
 .pillar-grade { width: 36px; font-size: 16px; font-weight: 800; margin-right: 10px; }
 .pillar-bar   { flex: 1; }
 .pillar-pct   { width: 50px; text-align: right; font-size: 12px; color: #7f8c8d; }
@@ -153,6 +154,7 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .rank-item { background: #f8f9fa; border-radius: 6px; padding: 10px 14px; flex: 1; }
 .rank-title { font-size: 10px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
 .rank-val   { font-size: 18px; font-weight: 800; color: #2c3e50; margin-top: 2px; }
+.rank-desc  { font-size: 10px; color: #aab; margin-top: 4px; line-height: 1.3; }
 
 /* Insights */
 .insight { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #444; }
@@ -1216,25 +1218,31 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     as_of    = f"through {latest}" if latest else ""
     period   = f"{earliest} – {latest} · {meta.get('transcripts', 51)} meetings"
 
-    # Overall grade from composite (taxpayer alignment + focus + attendance + incidents)
+    # Overall grade from composite (FSA 55% + Civic Focus 25% + LSI 10% + Character 10% − penalties)
     voter  = s.get("composite_grade", 0) or 0
     g_str, g_cls = letter(voter)
 
     # Pillar scores
     delta = s.get("_delta", {})
     pillars = [
-        ("Civic Focus",         min(1.0, 1 - (s.get("waste_pct", 0) or 0) * 0.5 + (s.get("core_pct", 0) or 0) * 0.5), "waste_pct"),
-        ("Legislative Skill",   s.get("lsi",      0) or 0,  "lsi"),
-        ("Fiscal Stewardship Alignment",  max(0.0, s.get("composite_taxpayer", 0) or 0), "composite_taxpayer"),
-        ("Collegiality & Conduct", s.get("character",      0) or 0, "character"),
+        ("Fiscal Stewardship", "55%", "Votes, bills &amp; rhetoric on fiscal discipline",
+         max(0.0, s.get("composite_taxpayer", 0) or 0), "composite_taxpayer"),
+        ("Civic Focus", "25%", "Share of speech on core city business",
+         min(1.0, 1 - (s.get("waste_pct", 0) or 0) * 0.5 + (s.get("core_pct", 0) or 0) * 0.5), "waste_pct"),
+        ("Legislative Skill", "10%", "Can this member move the needle?",
+         s.get("lsi", 0) or 0, "lsi"),
+        ("Character", "10%", "Collegiality, humility &amp; restraint",
+         s.get("character", 0) or 0, "character"),
     ]
     pillar_html = ""
-    for plabel, pval, dkey in pillars:
+    for plabel, pweight, pdesc, pval, dkey in pillars:
         pg, pc = letter(pval)
         badge = delta_badge(delta.get(dkey), dkey)
         pillar_html += f"""
         <div class="pillar-row">
-          <div class="pillar-label">{plabel}</div>
+          <div class="pillar-label">{plabel} <span style="font-size:10px;color:#aab;font-weight:400">{pweight}</span>
+            <div class="pillar-desc">{pdesc}</div>
+          </div>
           <div class="pillar-grade {pc}">{pg}</div>
           <div class="pillar-bar">{pct_bar(pval)}</div>
           <div class="pillar-pct">{pval*100:.0f}%{badge}</div>
@@ -1315,18 +1323,22 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
       <div class="rank-item">
         <div class="rank-title">Voter Alignment</div>
         <div class="rank-val">#{vrank}{v_badge}</div>
+        <div class="rank-desc">Champions fiscal stewardship in votes &amp; bills</div>
       </div>
       <div class="rank-item">
-        <div class="rank-title">Civic Temperament</div>
+        <div class="rank-title">Character</div>
         <div class="rank-val">#{brank}{b_badge}</div>
+        <div class="rank-desc">Collegiality, humility &amp; restraint as a colleague</div>
       </div>
       <div class="rank-item">
         <div class="rank-title">Constituency Preference Gap</div>
         <div class="rank-val">#{rrank}{r_badge}</div>
+        <div class="rank-desc">#1 = narrowest gap between member and voter priorities</div>
       </div>
       <div class="rank-item">
-        <div class="rank-title">Efficiency</div>
-        <div class="rank-val">#{erank} <span style="font-size:12px;color:#7f8c8d">({atl:.0f} w/turn)</span>{e_badge}</div>
+        <div class="rank-title">Discursive Discipline</div>
+        <div class="rank-val">#{erank}{e_badge}</div>
+        <div class="rank-desc">Brief, focused turns vs. extended floor time</div>
       </div>
     </div>
   </div>
@@ -1725,32 +1737,32 @@ def render_summary(aggregate: dict, rankings: dict, council_meta: dict, meta: di
 
     <div class="metric-block">
       <div class="metric-name">Voter Alignment <span class="metric-weight">(Overall grade)</span></div>
-      <div class="metric-desc">Composite fiscal stewardship score: Fiscal Stewardship Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Fiscal Stewardship Alignment incorporates transcript rhetoric, voting record, HSA score, incidents, fiscal referral authorship, and rhetoric–action gap signals. This is the correct summary grade — it captures behavior, not just speech.</div>
+      <div class="metric-desc">Championship score for fiscal stewardship: Fiscal Stewardship (55%) + Civic Focus (25%) + Legislative Skill (10%) + Character (10%) − attendance deduction. Champions don't just talk about fiscal discipline — they write and vote for things that matter: budget reform, capital maintenance, pension accountability. Fiscal Stewardship incorporates transcript rhetoric, voting record, HSA score, incidents, fiscal referral authorship, and rhetoric–action gap signals. Speech alone is not enough; the grade rewards members who move the needle.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Legislative Skill <span class="metric-weight">(LSI)</span></div>
-      <div class="metric-desc">Legislative Sophistication Index — five components: domain fluency (knowing the subject matter), fiscal discipline (probing costs and trade-offs), inquiry quality (the precision of questions asked), decisiveness (moving items forward without endless hedging), and procedural efficiency (using council process correctly). High LSI members add signal; low LSI members add noise.</div>
+      <div class="metric-name">Legislative Skill <span class="metric-weight">(LSI · 10% of grade)</span></div>
+      <div class="metric-desc">Legislative Sophistication Index — five components: domain fluency (knowing the subject matter), fiscal discipline (probing costs and trade-offs), inquiry quality (the precision of questions asked), decisiveness (moving items forward without endless hedging), and procedural efficiency (using council process correctly). Can this member move the needle? High LSI members add signal; low LSI members add noise. Cohort-normalized: scores reflect standing relative to this council.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Civic Focus &amp; Core Agenda Share <span class="metric-weight">(pillar + summary column)</span></div>
+      <div class="metric-name">Civic Focus &amp; Core Agenda Share <span class="metric-weight">(25% of grade)</span></div>
       <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Core Agenda Share is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Fiscal Discipline</div>
-      <div class="metric-desc">How often the member asks about cost, funding sources, or fiscal trade-offs before voting. The council rarely considers the opportunity cost of staff referrals (~40–80 hours each) or unfunded mandates. Members who routinely probe finances before committing the city earn higher scores here.</div>
+      <div class="metric-name">Character <span class="metric-weight">(10% of grade)</span></div>
+      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), warmth (treats staff, colleagues, and the public with genuine respect), minus self-referential appeals (credential-dropping, self-positioning, and debate-closing appeals to personal identity or authority rather than evidence). High character members make the council function better. Cohort-normalized: scores reflect standing relative to this council.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Civic Temperament</div>
-      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), and warmth (treats staff, colleagues, and the public with genuine respect), minus self-referential appeals (credential-dropping, self-positioning, and debate-closing appeals to personal identity or authority rather than evidence). High Civic Temperament members make the council function better; low scores mean the member makes it worse.</div>
+      <div class="metric-name">Discursive Discipline <span class="metric-weight">(ranking only)</span></div>
+      <div class="metric-desc">Brief, targeted remarks are harder to bury. Measures the balance of concise, focused turns vs. extended floor time — the discipline to make a point and stop. Ranked but not included in the composite grade.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Clarity</div>
-      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines self-referential appeals (credential-dropping, debate-closing appeals to personal identity or authority), non-core speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
+      <div class="metric-name">Constituency Preference Gap <span class="metric-weight">(ranking only)</span></div>
+      <div class="metric-desc">How far is this member's behavior from what Berkeley voters demonstrably want? Combines waste speech, self-referential appeals, and low fiscal engagement. A narrow gap (#1) means the member's priorities track voter priorities closely. Ranked but not included in the composite grade.</div>
     </div>
 
   </div>

@@ -2252,12 +2252,14 @@ def compute_composite_grade(s: dict) -> dict:
     """
     Tier 1 letter grade — explicit taxpayer-aligned composite.
 
-    Three pillars:
-      Fiscal Stewardship Alignment  45%  — HSA inverse, fiscal rhetoric vs. action, non-core authorship,
-                                  bond/tax referral authorship, incident adjustments
-      Focus               35%  — waste% and core topic share from transcripts
-      Attendance          20%  — on-time rate + presence at major fiscal votes
+    Four pillars:
+      Fiscal Stewardship Alignment  55%  — HSA inverse, fiscal rhetoric vs. action, non-core authorship,
+                                           bond/tax referral authorship, incident adjustments
+      Civic Focus                   25%  — waste% and core topic share from transcripts
+      Legislative Skill (LSI)       10%  — cohort-normalized 5-component LSI
+      Character                     10%  — cohort-normalized collegiality, humility, warmth, low-SRA
 
+    Attendance and low P1 engagement are penalty-only (not pillars).
     Returns dict with composite score (0-1) and pillar breakdown.
     """
     fv_total  = s.get("fiscal_vote_total",  7) or 7
@@ -2427,11 +2429,15 @@ def compute_composite_grade(s: dict) -> dict:
     depletion_115_pen = -0.05 if pen_115_count > 0 and sup_115_count == 0 else 0.0
 
     # ── Composite ────────────────────────────────────────────────────────────
-    # Taxpayer alignment dominates; focus captures rhetorical alignment.
-    # Attendance and lightweight are penalty-only — showing up and doing P1 work
-    # is the minimum bar, not a virtue.
+    # Four pillars: FSA (55%) + Civic Focus (25%) + LSI (10%) + Character (10%)
+    # Attendance and low-engagement are penalty-only — showing up is the
+    # minimum bar, not a virtue.
+    lsi_score       = max(0.0, min(1.0, s.get("lsi",       0) or 0))
+    character_score = max(0.0, min(1.0, s.get("character", 0) or 0))
     composite = max(0.0,
-        taxpayer_alignment * 0.70 + focus * 0.30
+        taxpayer_alignment * 0.55 + focus * 0.25
+        + lsi_score       * 0.10
+        + character_score * 0.10
         - attendance_deduction
         - low_engagement_adj
         + structural_silence_pen

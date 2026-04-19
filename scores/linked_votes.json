@@ -526,6 +526,25 @@
     "votes": {
       "Taplin": "yes",
       "Tregub": "yes",
+      "LunaParra": "yes",
+      "Humbert": "yes",
+      "Ishii": "yes"
+    }
+  },
+  {
+    "date": "2025-05-20",
+    "meeting_type": "Special",
+    "item_number": 2,
+    "section": "action",
+    "title": "Issuance of $35,000,000 General Obligation Bonds for Measure O \u2013 Affordable Housing",
+    "dollar_total": 0,
+    "off_mission": false,
+    "false_fiscal": false,
+    "authors": [],
+    "cosponsors": [],
+    "votes": {
+      "Taplin": "yes",
+      "Tregub": "yes",
       "OKeefe": "yes",
       "LunaParra": "yes",
       "Humbert": "yes",
@@ -573,8 +592,7 @@
       "Kesarwani": "yes",
       "Taplin": "yes",
       "Bartlett": "yes",
-      "Tregub": "yes",
-      "OKeefe": "yes"
+      "Tregub": "yes"
     }
   },
   {
@@ -1055,6 +1073,27 @@
   {
     "date": "2025-07-23",
     "meeting_type": "Special",
+    "item_number": 1,
+    "section": "action",
+    "title": "Landmarks Preservation Commission Appeal: 2425 Durant, Landmark application #LMIN2024-0008",
+    "dollar_total": 0,
+    "off_mission": false,
+    "false_fiscal": false,
+    "authors": [],
+    "cosponsors": [],
+    "votes": {
+      "Kesarwani": "yes",
+      "Taplin": "yes",
+      "Bartlett": "yes",
+      "Tregub": "yes",
+      "LunaParra": "yes",
+      "Humbert": "yes",
+      "Ishii": "yes"
+    }
+  },
+  {
+    "date": "2025-07-23",
+    "meeting_type": "Special",
     "item_number": 2,
     "section": "action",
     "title": "Landmarks Preservation Commission Appeal: 2138 Kittredge, Landmark application #LMIN2024-0006",
@@ -1073,6 +1112,26 @@
   {
     "date": "2025-07-23",
     "meeting_type": "Special",
+    "item_number": 2,
+    "section": "action",
+    "title": "Landmarks Preservation Commission Appeal: 2138 Kittredge, Landmark application #LMIN2024-0006",
+    "dollar_total": 0,
+    "off_mission": false,
+    "false_fiscal": false,
+    "authors": [],
+    "cosponsors": [],
+    "votes": {
+      "Kesarwani": "yes",
+      "Taplin": "yes",
+      "Blackaby": "yes",
+      "LunaParra": "yes",
+      "Humbert": "yes",
+      "Ishii": "yes"
+    }
+  },
+  {
+    "date": "2025-07-23",
+    "meeting_type": "Special",
     "item_number": 3,
     "section": "action",
     "title": "Zoning Adjustment Board Appeal: 2655 Shattuck, Use Permit #ZP2024-0057",
@@ -1082,8 +1141,49 @@
     "authors": [],
     "cosponsors": [],
     "votes": {
+      "Kesarwani": "yes",
       "Taplin": "yes",
       "Bartlett": "yes",
+      "Humbert": "yes",
+      "Ishii": "yes"
+    }
+  },
+  {
+    "date": "2025-07-23",
+    "meeting_type": "Special",
+    "item_number": 1,
+    "section": "action",
+    "title": "Landmarks Preservation Commission Appeal: 2425 Durant, Landmark application #LMIN2024-0008",
+    "dollar_total": 0,
+    "off_mission": false,
+    "false_fiscal": false,
+    "authors": [],
+    "cosponsors": [],
+    "votes": {
+      "Kesarwani": "yes",
+      "LunaParra": "yes",
+      "Humbert": "yes",
+      "Ishii": "yes"
+    }
+  },
+  {
+    "date": "2025-07-23",
+    "meeting_type": "Special",
+    "item_number": 1,
+    "section": "action",
+    "title": "Landmarks Preservation Commission Appeal: 2425 Durant, Landmark application #LMIN2024-0008",
+    "dollar_total": 0,
+    "off_mission": false,
+    "false_fiscal": false,
+    "authors": [],
+    "cosponsors": [],
+    "votes": {
+      "Kesarwani": "yes",
+      "Taplin": "yes",
+      "Bartlett": "yes",
+      "Tregub": "yes",
+      "LunaParra": "yes",
+      "Humbert": "yes",
       "Ishii": "yes"
     }
   },
