@@ -277,8 +277,8 @@ def build_insights(s: dict, rankings: dict, council_block_rate: float) -> list[t
     rrank = rankings.get("voter_disconnect", {}).get(n)
     if brank == 1:
         insights.append(("good", "Highest Civic Temperament — genuine warmth, acknowledges colleagues, and demonstrates humility"))
-    if rrank == 1:
-        insights.append(("bad",  "Highest Constituency Preference Gap score — self-referential appeals, non-core speech, staff overreach, and fiscal avoidance combine into the widest gap from constituent interests on the council"))
+    if rrank and rrank >= 7:
+        insights.append(("bad",  "Widest Constituency Preference Gap on the council — self-referential appeals, non-core speech, staff overreach, and fiscal avoidance combine into the largest gap from constituent interests"))
 
     # Credential dropping
     cred = s.get("cred_hits", 0) or 0
@@ -1322,7 +1322,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
       </div>
       <div class="rank-item">
         <div class="rank-title">Constituency Preference Gap</div>
-        <div class="rank-val">#{rrank} <span style="font-size:12px;color:#7f8c8d">(#1=widest)</span>{r_badge}</div>
+        <div class="rank-val">#{rrank}{r_badge}</div>
       </div>
       <div class="rank-item">
         <div class="rank-title">Efficiency</div>
@@ -1937,7 +1937,7 @@ def build_rankings(aggregate: dict) -> dict:
         "voter":          rank_by("voter",          reverse=True),
         "composite_grade":rank_by("composite_grade",reverse=True),
         "character":        rank_by("character",        reverse=True),
-        "voter_disconnect": rank_by("voter_disconnect", reverse=True),   # 1 = widest gap
+        "voter_disconnect": rank_by("voter_disconnect", reverse=False),  # 1 = narrowest gap (best)
         "efficiency":     rank_by("efficiency",     reverse=True),   # 1 = most efficient (high score)
     }
 
