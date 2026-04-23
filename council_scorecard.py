@@ -186,7 +186,15 @@ _NOT_CALLON_CTX = re.compile(
 # Roll-call context — suppress attribution during attendance
 _ROLLCALL_RE = re.compile(
     r"(?:call(?:ing)?\s+the\s+roll|take\s+the\s+roll|calling\s+roll"
-    r"|present|here|absent)\b",
+    r"|\bpresent\b|\bhere\b|\babsent\b"
+    # bare "Councilmember X?" at end of string = clerk calling roll, not a floor pass
+    r"|(?:Council\s*[Mm]ember|Vice\s*[Mm]ayor)\s+[A-Z][A-Za-z''\-]{2,15}\s*\?\s*$)",
+    re.IGNORECASE | re.MULTILINE,
+)
+
+# Short roll-call responses from named speakers — don't let these persist state
+_ROLLCALL_RESPONSE_RE = re.compile(
+    r"^\s*(?:yes|here|present|no|absent|yea|nay)[.,]?\s*$",
     re.IGNORECASE,
 )
 
@@ -228,16 +236,22 @@ def _find_callon(body: str) -> Optional[str]:
         matches = list(pattern.finditer(body))
         for m in reversed(matches):
             name_token = m.group(1)
-            # Grab 60 chars of context before the match to check for reference signals
-            ctx_start = max(0, m.start() - 60)
-            ctx = body[ctx_start:m.end()]
-            if _NOT_CALLON_CTX.search(ctx):
-                continue
+            # INVITE_RE is already high-confidence ("did you want to" etc.) —
+            # skip NOT_CALLON suppression which fires on preceding "thank you"
+            if pattern is not _INVITE_RE:
+                ctx_start = max(0, m.start() - 60)
+                ctx = body[ctx_start:m.end()]
+                if _NOT_CALLON_CTX.search(ctx):
+                    continue
             candidate = resolve_name(name_token)
             if candidate:
                 return candidate
 
     return None
+
+
+_ROOM_LABELS = {"boardroom", "board room", "redwoodroom", "redwood room",
+                "conferenceroom", "zoomroom"}
 
 
 def attribute_blocks(lines: list[str]) -> list[tuple[str, str]]:
@@ -253,11 +267,13 @@ def attribute_blocks(lines: list[str]) -> list[tuple[str, str]]:
         spkr_norm = raw_spkr.lower().replace(" ", "").replace("'", "")
 
         # Named (non-boardroom) speaker — direct attribution
-        if spkr_norm not in ("boardroom", "boardroom"):
+        if spkr_norm not in _ROOM_LABELS:
             resolved = resolve_name(raw_spkr)
             if resolved:
                 results.append((resolved, body))
-                current = resolved
+                # Don't let roll-call responses ("Here.", "Yes.") persist as room speaker
+                if not _ROLLCALL_RESPONSE_RE.match(body):
+                    current = resolved
             else:
                 results.append((None, body))  # public / staff
             continue
@@ -444,6 +460,10 @@ FISCAL_CONCERN_KW = [
     r"we (have|are facing|face|are in) a (budget\s+)?deficit",
     r"fiscal (cliff|crisis|emergency|pressure|strain|sustainability)",
     r"\$\s*\d[\d,.]+\s*(million|billion|M)\s+(structural\s+)?deficit",
+    # Shortfall without "budget" prefix — e.g. "severe shortfall of about $29 million"
+    r"\b(severe|serious|significant|substantial|major)\s+(shortfall|deficit|gap)\b",
+    r"shortfall\s+of\s+(about\s+)?\$?\s*\d",
+    r"\$\s*\d[\d,.]+\s*(million|billion|M|B)\s+(per\s+year\s+)?(shortfall|gap)\b",
     # Restraint claims
     r"(can.t|cannot|can not|don.t|do not) afford (to\b|this\b|it\b|these\b|more\b)",
     r"we.re (spending|borrowing) (too much|more than)",
@@ -479,6 +499,10 @@ NEW_REVENUE_PREFERENCE_KW = [
     r"(voters?|taxpayers?|the\s+community|the\s+public)\s+(could|would|might|should|can)\s+(approve|support|pass|fund|weigh in)",
     r"(go|come|return|back)\s+(to\s+)?the\s+ballot",
     r"(put|place|bring)\s+.{0,20}\s+(on|before)\s+(the\s+)?ballot",
+    # Passive ballot framing — "voters decide whether to approve" / "whether to approve a tax"
+    # More sophisticated form: positions the revenue ask as already decided, just awaiting ratification
+    r"voters?\s+(decide|will\s+decide|are\s+deciding).{0,60}(approve|pass|adopt)\b",
+    r"whether\s+to\s+approve\s+(a\s+)?(tax|measure|levy|bond|sales|parcel)\b",
 
     # Bond/tax advocacy in soft form — "a bond could help," "we could look at a parcel tax"
     r"(bond\s+measure|general\s+obligation|revenue\s+bond|parcel\s+tax|sales\s+tax)\s+(could|would|might|should|can|will)\s+(help|provide|fund|address|allow|generate)",
@@ -494,6 +518,23 @@ NEW_REVENUE_PREFERENCE_KW = [
     r"(we\s+)?(need|must|should|have to)\s+(invest|fund|prioritize).{0,30}(before|instead of).{0,20}cut",
     # "raise/increase revenue" as council tax-seeking — exclude "without putting a burden" (earned income framing)
     r"(we\s+)?(can|should|must|need to)\s+(raise|increase|find|generate)\s+(more\s+)?(revenue|money|funding)(?!\s+without\s+putting)",
+]
+
+# Minimization language on tax/revenue proposals — adjective-softened descriptions that understate
+# cost to constituents. Scored negatively alongside NEW_REVENUE_PREFERENCE_KW.
+# Key case: "half-cent sales tax" describes a percentage tax (0.5%) as if it were a flat
+# half-penny — understates the actual dollar impact on large purchases.
+MINIMIZE_REVENUE_KW = [
+    # "small/modest/minor" directly modifying a tax or levy
+    r"\b(small|modest|minor|tiny|marginal|incremental)\s+(half.cent|sales tax|parcel tax|levy|fee|rate increase|tax increase|tax)\b",
+    # "half-cent" as a descriptor of a sales/use tax — technically should be "half-percent"
+    r"\bhalf.cent\s+(sales|use|local|city|and use)\s+tax\b",
+    # "just a small/modest X" framing ahead of a fiscal ask
+    r"\bjust\s+(a\s+)?(small|modest|minor|fraction|half)\b.{0,30}(tax|percent|levy|cent|increase)\b",
+    # "won't cost much / barely notice" minimization
+    r"\b(barely|hardly|won.t (cost|impact|affect)|won.t (even )?notice)\b.{0,40}(tax|cost|rate|increase)\b",
+    # "small investment" framing for a tax measure
+    r"\bsmall\s+investment\b.{0,50}(tax|levy|bond|measure|parcel)\b",
 ]
 
 # ---------------------------------------------------------------------------
@@ -513,7 +554,8 @@ P1_TOPIC_KW = [
     r"structural.{0,10}deficit",
     r"structural.{0,10}(?:im)?balance",
     r"structural\s+gap",
-    r"one.time\s+(?:measure|revenue|source|draw(?:down)?|fund|solution|fix)",
+    # "fund" excluded — too ambiguous ("use one-time fund" vs. "relying on one-time fund")
+    r"one.time\s+(?:measure|revenue|source|draw(?:down)?|solution|fix)",
     r"not\s+sustainable",                    # verbatim from budget messages
     r"recurring.{0,25}(?:expenditure|cost|revenue|imbalance|gap)",
     r"\bGFOA\b",                             # Government Finance Officers Association standard
@@ -648,6 +690,9 @@ AUDIT_EVENT_PATTERNS = {
     "supports_one_time_transfer": [
         r"(?:support|vote|approve|move|favor)\s+.{0,30}one.time\s+(?:transfer|measure|solution)\b",
         r"use\s+.{0,30}(?:workers.?\s*comp|section\s+115)\s+.{0,20}(?:balance|fund)\s+(?:the\s+)?budget\b",
+        # Proposing one-time reserve drawdown as a bridge (newsletter / budget-message form)
+        r"(?:use|draw\s+on|tap|rely\s+on)\s+(?:the\s+)?one.time\s+(?:reserve\s+)?(?:funds?|transfer|draw)\b",
+        r"one.time\s+(?:reserve\s+)?funds?\s+.{0,40}(?:keep|maintain|protect|cover|bridge|while)\b",
     ],
     "opposes_one_time_transfer": [
         r"(?:concern|oppos|problem|wrong|bad|caution)\w*\s+.{0,30}one.time\s+(?:transfer|measure|fix)\b",
@@ -864,6 +909,10 @@ _SRA_RULE_C = [
     r"\bas (a|an) (woman|man|person|member|parent|homeowner|tenant|renter) (of|who|with)\b",
     r"\bmy (community|identity|background)\b.{0,40}\btell(s)? me\b",
     r"\bbecause (i am|i.m|as) (a|an) \w+ (i|we)\b",
+    # Upbringing/geography anchor: "I grew up there → I know → trust my judgment"
+    r"\bi grew up\b.{0,80}(i know|i understand|i.ve seen|what it means)\b",
+    r"\bwhat it (means|meant) when\b.{0,80}(help|service|response|support|arrive)\b",
+    r"\b(the community|neighborhood|place) (i|we) (grew up in|came from|was raised in)\b",
 ]
 
 # Rule D — Self-positioning / debate-closure appeals to own prior record
@@ -873,6 +922,10 @@ _SRA_RULE_D = [
     r"\b(i have (long|always|consistently|repeatedly) (said|argued|believed|maintained))\b",
     r"\b(my (item|proposal|amendment|suggestion|recommendation)|i (wrote|authored|drafted|introduced) this)\b",
     r"\b(my (years|decade|long) of (experience|service|work|advocacy))\b",
+    # Legacy/record-claim positioning: "here's my track record → trust me on this"
+    r"\bpart of my work\b.{0,60}(has been|is|includes?)\b",
+    r"\bi.ve been (pushing|advocating|working|championing|fighting) (for|toward|on)\b",
+    r"\bmy (record|history|accomplishments?)\b.{0,40}(on|shows?|includes?|demonstrates?)\b",
 ]
 
 _SRA_RULES: list[tuple[str, list[str]]] = [
@@ -1076,6 +1129,8 @@ def score_member(md: MemberData) -> dict:
         "fiscal_concern_hits": hit(text, FISCAL_CONCERN_KW),
         # revenue-seeking rhetoric — penalized under P1 Layer 3: new revenue before reprioritization
         "new_revenue_preference_hits": hit(text, NEW_REVENUE_PREFERENCE_KW),
+        # minimization language on tax proposals — understates cost to constituents
+        "minimize_revenue_hits": hit(text, MINIMIZE_REVENUE_KW),
         # P1 share of speech — words in turns engaging with documented structural failures
         "p1_speech_pct":   round(p1_speech_pct, 4),
         "p1_speech_words": p1_words,
