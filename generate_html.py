@@ -32,105 +32,154 @@ import mayor_scorecard as ms
 PUBLISH_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "publish")
 INCIDENTS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "incidents.json")
 
-# Human-readable labels for incident categories
-CATEGORY_LABELS = {
-    "performative_engagement": "Symbolic engagement",
-    "alternatives_dismissed":  "Alternatives dismissed",
-    "claimed_ignorance":       "Claimed ignorance",
-    "revenue_without_cuts":    "Seeks revenue without cuts",
-    "union_deference":       "Union deference",
-    "scope_indiscipline":    "Outside city scope",
-    "fiscal_integrity":      "Fiscal discipline ✓",
-    "constituent_service":   "Constituent service ✓",
-}
+# Canonical incident list. Each entry is one incident with all implicated parties.
+# members: list of canonical names implicated; "Full Council" = all current council members.
+# scores: net score for each implicated party (member-specific composite of all dimensions).
+# pillars: pillars implicated across all dimensions (for display; scoring by pillar TBD).
+# pending: whether scores are subject to revision pending verification.
+# Update this alongside incidents/YYYY-mm/ HTML files.
+ALL_EDITORIAL_INCIDENTS: list[dict] = [
+    {
+        "title":   "American Renewal Plan — Federal Policy Framework on District Platform",
+        "date":    "2026-04-12",
+        "url":     "incidents/2026-04/incident_Bartlett_Renewal.html",
+        "summary": "Bartlett published a five-pillar national economic reform framework on his "
+                   "council office platform — addressed to federal policymakers — while Berkeley "
+                   "faces an unresolved structural fiscal crisis and unaddressed local failures. "
+                   "None of the plan's pillars touches any Berkeley P1 problem.",
+        "members": ["Bartlett"],
+        "scores":  {"Bartlett": -10},
+        "pillars": ["Character & Conduct"],
+        "pending": False,
+    },
+    {
+        "title":   "Flock Safety Contract — Negotiated Protections Dismissed",
+        "date":    "2026-03-24",
+        "url":     "incidents/2026-03/incident_Flock_Rejection.html",
+        "summary": "LunaParra and Ishii authored a supplemental to reject the Flock ALPR "
+                   "contract; Tregub co-sponsored. Their sanctuary-city rationale ignored "
+                   "that Berkeley's City Attorney had already negotiated full protections. "
+                   "Officers identified Flock as 'the singular piece of technology' keeping "
+                   "them engaged, amid a documented BPD attrition crisis.",
+        "members": ["LunaParra", "Ishii", "Tregub"],
+        "scores":  {"LunaParra": -9, "Ishii": -8, "Tregub": -6},
+        "pillars": ["Fiscal Stewardship"],
+        "pending": False,
+    },
+    {
+        "title":   "Police Accountability Board Collapse — Aguilar Firing",
+        "date":    "2026-02-09",
+        "url":     "incidents/2026-02/incident_PAB_Aguilar.html",
+        "summary": "Council voted 8–0 to fire ODPA Director Aguilar while the PAB was at "
+                   "4 of 9 seats with all original commissioners gone. LunaParra voted yes "
+                   "then issued a statement she was 'concerned the Council does not value "
+                   "Police accountability.' Ishii declared the council 'remained committed' "
+                   "immediately after eliminating the office's leadership.",
+        "members": ["Full Council", "LunaParra", "Ishii"],
+        "scores":  {"Full Council": -7, "LunaParra": -12, "Ishii": -10},
+        "pillars": ["Character & Conduct"],
+        "pending": False,
+    },
+    {
+        "title":   "Household Entanglement with City Subcontractor",
+        "date":    "2026-04-22",
+        "url":     "incidents/2026-04/incident_Bartlett_Upline.html",
+        "summary": "Bartlett's wife co-incorporated Upline Solutions, a city subcontractor "
+                   "on a $607K cannabis education contract that failed to deliver. No public "
+                   "disclosure or recusal from related votes was identified.",
+        "members": ["Bartlett"],
+        "scores":  {"Bartlett": -18},
+        "pillars": ["Character & Conduct"],
+        "pending": False,
+    },
+    {
+        "title":   "BYA Cannabis Contract — Institutional Accountability Failure",
+        "date":    "2026-04-22",
+        "url":     "incidents/2026-04/incident_BYA_Institutional.html",
+        "summary": "Despite a county evaluation documenting BYA contract failures, the council "
+                   "reauthorized a $106K soda tax grant with no documented review. Bartlett "
+                   "additionally deflected accountability in public remarks.",
+        "members": ["Full Council", "Bartlett"],
+        "scores":  {"Full Council": -3, "Bartlett": -7},
+        "pillars": ["Fiscal Stewardship", "Character & Conduct"],
+        "pending": True,
+    },
+    {
+        "title":   "Sugar Tax Panel — Credential Misrepresentation and Duty of Care",
+        "date":    "2026-04-22",
+        "url":     "incidents/2026-04/incident_Ishii_Panel.html",
+        "summary": "Ishii was appointed to the Sugar Tax Panel despite lacking required "
+                   "credentials, then cited the appointment in her mayoral campaign. The "
+                   "panel's performance verification record during her tenure is unconfirmed.",
+        "members": ["Ishii"],
+        "scores":  {"Ishii": -11},
+        "pillars": ["Character & Conduct", "Fiscal Stewardship"],
+        "pending": True,
+    },
+    {
+        "title":   "Rocky Road Streets Audit — Findings Received, Lessons Ignored",
+        "date":    "2025-10-28",
+        "url":     "incidents/2025-10/incident_Rocky_Road_Bond.html",
+        "summary": "Council filed the City Auditor's Rocky Road streets audit (PCI 57; $42M/year "
+                   "gap; bond dependence as root cause), then five months later unanimously "
+                   "directed a fifth bond cycle — the exact pattern the audit had documented "
+                   "as the cause of failure. Taplin authored the bond schedule concurrent with "
+                   "the audit filing; Tregub called the bond 'essential' with no mention of "
+                   "the audit's structural findings.",
+        "members": ["Full Council", "Taplin", "Tregub"],
+        "scores":  {"Full Council": -5, "Taplin": -10, "Tregub": -9},
+        "pillars": ["Fiscal Stewardship"],
+        "pending": False,
+    },
+    {
+        "title":   "Howard Johnson Motel — Community Meeting Three Weeks After Council Vote",
+        "date":    "2024-12-11",
+        "url":     "incidents/2024-12/incident_Tregub_Hotel.html",
+        "summary": "Tregub held a community meeting on the Howard Johnson interim housing "
+                   "project three weeks after the council had already voted to approve the "
+                   "operating contract — framing a notification meeting as a community "
+                   "conversation after the outcome was already determined.",
+        "members": ["Tregub"],
+        "scores":  {"Tregub": -8},
+        "pillars": ["Character & Conduct"],
+        "pending": False,
+    },
+    {
+        "title":   "Council Office Staffing Doubled on Consent Calendar During Structural Deficit",
+        "date":    "2023-11-16",
+        "url":     "incidents/2023-11/incident_Taplin_Staffing.html",
+        "summary": "Taplin authored and Bartlett co-authored a consent calendar item doubling "
+                   "authorized council office staffing (1→2 FTEs per office; ~$442K/year "
+                   "recurring) during an acknowledged structural deficit — no floor debate, "
+                   "no alternatives analysis, justified by citing informal over-staffing that "
+                   "already existed.",
+        "members": ["Taplin", "Bartlett"],
+        "scores":  {"Taplin": -8, "Bartlett": -4},
+        "pillars": ["Fiscal Stewardship"],
+        "pending": False,
+    },
+]
 
-def _load_incidents() -> dict:
-    """Return per-member list of incident dicts from incidents.json."""
-    try:
-        with open(INCIDENTS_PATH, encoding="utf-8") as f:
-            data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {}
-    return {k: v for k, v in data.items() if not k.startswith("_") and isinstance(v, list)}
+def _member_incidents(name: str) -> list[dict]:
+    """Return incidents implicating a member, including Full Council incidents."""
+    return [i for i in ALL_EDITORIAL_INCIDENTS
+            if name in i["members"] or "Full Council" in i["members"]]
+
+def _has_named_incidents(name: str) -> bool:
+    """True if the member is specifically named (not just via Full Council) in any incident."""
+    return any(name in i["members"] for i in ALL_EDITORIAL_INCIDENTS)
 
 
-def _render_incidents_section(name: str) -> str:
-    """
-    Return an HTML string for the 'Recent behavior' section for a given member.
-    Shows up to 5 most recent A/B-tier incidents with short_desc, sorted newest first.
-    Returns empty string if no displayable incidents.
-    """
-    all_incidents = _load_incidents()
-    incidents = all_incidents.get(name, [])
-
-    # Filter to A/B tier with a short_desc, sort newest first
-    displayable = [
-        i for i in incidents
-        if i.get("evidence_tier") in ("A", "B") and i.get("short_desc")
-    ]
-    # Sort: full dates first (YYYY-MM-DD), then partial (YYYY or YYYY-YYYY) at end
-    def sort_key(i):
-        d = i.get("date", "")
-        if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
-            return d
-        return "0000"  # partial dates sort to end
-    displayable.sort(key=sort_key, reverse=True)
-    displayable = displayable[:5]
-
-    if not displayable:
-        return ""
-
-    rows = ""
-    for inc in displayable:
-        tier  = inc.get("evidence_tier", "")
-        cat   = CATEGORY_LABELS.get(inc.get("category", ""), inc.get("category", ""))
-        date  = inc.get("date", "")
-        desc  = inc.get("short_desc", "")
-        impact = inc.get("scoring_impact", 0) or 0
-        positive = impact > 0
-
-        # Impact dot: scale 0–10 mapped to 1–3 dots
-        abs_impact = abs(impact)
-        if abs_impact >= 0.09:
-            dots = "●●●"
-        elif abs_impact >= 0.06:
-            dots = "●●○"
-        else:
-            dots = "●○○"
-
-        dot_color  = "#2ecc71" if positive else "#e74c3c"
-        tier_color = "#2ecc71" if tier == "A" else "#f39c12"
-
-        rows += f"""
-      <tr class="inc-row">
-        <td class="inc-date">{date}</td>
-        <td class="inc-body">
-          <span class="inc-cat">{cat}</span>
-          <span class="inc-desc">{desc}</span>
-        </td>
-        <td class="inc-meta">
-          <span class="inc-tier" style="color:{tier_color}">Tier {tier}</span>
-          <span class="inc-dots" style="color:{dot_color};letter-spacing:-1px" title="Impact: {impact:+.2f}">{dots}</span>
-        </td>
-      </tr>"""
-
-    return f"""
-<div class="incidents-section">
-  <div class="incidents-header">Recent behavior</div>
-  <table class="incidents-table">
-    <tbody>{rows}
-    </tbody>
-  </table>
-</div>
+_INC_CSS = """
 <style>
-  .incidents-section {{
-    margin: 16px 24px 8px;
+  .inc-record-section {
+    margin: 0 24px 16px;
     border: 1px solid #e8ecef;
     border-radius: 6px;
     overflow: hidden;
-    font-size: 11.5px;
-  }}
-  .incidents-header {{
+    font-size: 12px;
+  }
+  .inc-record-header {
     background: #f0f2f5;
     padding: 7px 12px;
     font-size: 10px;
@@ -139,59 +188,187 @@ def _render_incidents_section(name: str) -> str:
     letter-spacing: .8px;
     color: #7f8c8d;
     border-bottom: 1px solid #e0e4e8;
-  }}
-  .incidents-table {{
-    width: 100%;
-    border-collapse: collapse;
-  }}
-  .inc-row {{
-    border-bottom: 1px solid #f0f2f5;
-  }}
-  .inc-row:last-child {{
-    border-bottom: none;
-  }}
-  .inc-date {{
-    padding: 7px 8px 7px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .inc-record-all {
     font-size: 10px;
+    font-weight: 600;
+    color: #2980b9;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .inc-record-all:hover { text-decoration: underline; }
+  .inc-none {
+    padding: 10px 14px;
     color: #aaa;
-    white-space: nowrap;
-    vertical-align: top;
-    min-width: 72px;
-  }}
-  .inc-body {{
-    padding: 7px 8px;
-    vertical-align: top;
+    font-size: 11.5px;
+    font-style: italic;
+  }
+  .inc-pages { padding: 4px 0; }
+  .inc-page-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 7px 14px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .inc-page-row:last-child { border-bottom: none; }
+  .inc-alert { color: #e74c3c; font-size: 13px; flex-shrink: 0; }
+  .inc-page-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 12px;
     line-height: 1.4;
-  }}
-  .inc-cat {{
-    display: block;
-    font-size: 9.5px;
+    flex: 1;
+  }
+  .inc-page-link:hover { color: #2980b9; text-decoration: underline; }
+  .inc-score-chip {
+    font-size: 13px;
+    font-weight: 900;
+    color: #e74c3c;
+    white-space: nowrap;
+  }
+  .inc-pillars { font-size: 9px; color: #7f8c8d; margin-top: 2px; }
+
+  /* Recent incidents section (card top, replacing Rankings) */
+  .recent-inc-section {
+    margin: 0;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  .recent-inc-header {
+    background: #fdf5f5;
+    padding: 8px 24px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .5px;
-    color: #95a5a6;
-    margin-bottom: 2px;
-  }}
-  .inc-desc {{
-    font-size: 11.5px;
-    color: #34495e;
-  }}
-  .inc-meta {{
-    padding: 7px 12px 7px 4px;
-    vertical-align: top;
+    letter-spacing: .8px;
+    color: #c0392b;
+    border-bottom: 1px solid #fde8e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .recent-inc-header a {
+    font-size: 10px;
+    font-weight: 600;
+    color: #c0392b;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .recent-inc-header a:hover { text-decoration: underline; }
+  .recent-inc-none {
+    padding: 10px 24px;
+    color: #aaa;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .recent-inc-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #fde8e8;
+    text-decoration: none;
+    color: inherit;
+  }
+  .recent-inc-row:last-child { border-bottom: none; }
+  .recent-inc-row:hover { background: #fdf5f5; }
+  .rir-score {
+    font-size: 20px;
+    font-weight: 900;
+    color: #e74c3c;
+    min-width: 36px;
     text-align: right;
-    white-space: nowrap;
-  }}
-  .inc-tier {{
-    display: block;
-    font-size: 9px;
-    font-weight: 700;
-    margin-bottom: 3px;
-  }}
-  .inc-dots {{
-    font-size: 9px;
-  }}
+  }
+  .rir-body { flex: 1; }
+  .rir-title { font-size: 12px; font-weight: 700; color: #1a1a2e; line-height: 1.3; }
+  .rir-pillars { font-size: 10px; color: #7f8c8d; margin-top: 2px; }
+  .rir-arrow { font-size: 11px; color: #aaa; }
 </style>"""
+
+
+def _render_recent_incidents(name: str) -> str:
+    """
+    Recent Incidents section for top of scorecard, replacing Rankings.
+    Shows up to 3 most recent incidents implicating the member.
+    Always rendered — shows 'No incidents on record' if clean.
+    Injected via RECENT_INCIDENTS_PLACEHOLDER sentinel.
+    """
+    incidents = _member_incidents(name)
+    # Sort newest-first, take up to 3
+    incidents = sorted(incidents, key=lambda i: i["date"], reverse=True)[:3]
+    log_url = f"incidents/index.html#{name.lower()}"
+
+    if not incidents:
+        body = f'<div class="recent-inc-none">No incidents on record.</div>'
+    else:
+        rows = ""
+        for inc in incidents:
+            score = inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
+            score_str = f"{score:+d}" if score else "—"
+            pillars = " · ".join(inc["pillars"])
+            rows += f"""
+    <a class="recent-inc-row" href="{inc['url']}">
+      <div class="rir-score">{score_str}</div>
+      <div class="rir-body">
+        <div class="rir-title">{inc['title']}</div>
+        <div class="rir-pillars">{pillars}</div>
+      </div>
+      <div class="rir-arrow">→</div>
+    </a>"""
+        body = rows
+
+    return f"""
+  <div class="recent-inc-section">
+    <div class="recent-inc-header">
+      Incident Record
+      <a href="{log_url}">Full incident log →</a>
+    </div>
+    {body}
+  </div>
+{_INC_CSS}"""
+
+
+def _render_incident_record(name: str) -> str:
+    """
+    Incident Record section for bottom of scorecard card.
+    Shows all incidents implicating the member with links.
+    Always rendered. Injected via INCIDENTS_PLACEHOLDER sentinel.
+    """
+    incidents = _member_incidents(name)
+
+    if incidents:
+        rows = ""
+        for inc in incidents:
+            score = inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
+            score_str = f"{score:+d}" if score else "—"
+            pillars = " · ".join(inc["pillars"])
+            rows += f"""
+      <div class="inc-page-row">
+        <span class="inc-alert">&#9888;</span>
+        <a href="{inc['url']}" class="inc-page-link">
+          {inc['title']}
+          <div class="inc-pillars">{pillars}</div>
+        </a>
+        <span class="inc-score-chip">{score_str}</span>
+      </div>"""
+        body = f'<div class="inc-pages">{rows}\n    </div>'
+    else:
+        body = '<div class="inc-none">No incidents on record.</div>'
+
+    log_url = f"incidents/index.html#{name.lower()}"
+    return f"""
+  <div class="inc-record-section">
+    <div class="inc-record-header">
+      Full Incident Record
+      <a href="{log_url}" class="inc-record-all">Incident log →</a>
+    </div>
+    {body}
+  </div>"""
 
 
 # ---------------------------------------------------------------------------
@@ -300,15 +477,18 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
     rows = ""
     for m in members_meta:
         filename = f"scorecard_{m['name']}.html"
+        has_incidents = _has_named_incidents(m['name'])
+        alert = (f'<a href="incidents/index.html#{m["name"].lower()}" class="inc-badge" '
+                 f'title="Active incident record — click for details">'
+                 f'&#9888;&nbsp;Incident record</a> '
+                 if has_incidents else "")
         rows += f"""
       <tr>
-        <td class="rank">{m['rank']}</td>
         <td class="name">
-          <a href="{filename}">{m['display_name']}</a><br>
+          {alert}<a href="{filename}">{m['display_name']}</a><br>
           <span class="sub">{m['district']}</span>
         </td>
         <td class="grade {m['grade_cls']}">{m['grade_str']}</td>
-        <td class="score">{m['score']*100:.0f}%</td>
       </tr>"""
 
     return f"""<!DOCTYPE html>
@@ -338,13 +518,15 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
     tbody tr {{ border-bottom: 1px solid #ecf0f1; }}
     tbody tr:hover {{ background: #f8f9fa; }}
     td {{ padding: 12px 16px; vertical-align: middle; }}
-    .rank  {{ width: 32px; font-size: 11px; color: #aaa; text-align: center; }}
     .name  {{ font-size: 14px; font-weight: 600; }}
     .name a {{ color: #2c3e50; text-decoration: none; }}
     .name a:hover {{ color: #3498db; }}
     .sub   {{ font-size: 11px; color: #999; font-weight: 400; }}
     .grade {{ width: 52px; font-size: 22px; font-weight: 900; text-align: center; }}
-    .score {{ width: 56px; text-align: right; font-size: 13px; color: #7f8c8d; }}
+    .inc-badge {{ display: inline-block; background: #e74c3c; color: #fff;
+                  font-size: 9px; font-weight: 700; text-decoration: none;
+                  padding: 2px 7px; border-radius: 10px; margin-bottom: 3px;
+                  letter-spacing: .3px; }}
     .grade-a  {{ color: #2ecc71; }}
     .grade-b  {{ color: #3498db; }}
     .grade-c  {{ color: #f39c12; }}
@@ -362,7 +544,7 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
   <div class="header">
     <h1>Berkeley City Council Scorecards</h1>
     <p>
-      Ranked by Voter Alignment &nbsp;·&nbsp; {n_meetings} meetings analyzed<br>
+      {n_meetings} meetings analyzed &nbsp;·&nbsp; &#9888; = active incident record<br>
       {"As of " + latest_mtg + " &nbsp;·&nbsp; " if latest_mtg else ""}Generated {gen_date}
     </p>
   </div>
@@ -379,10 +561,8 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
   <table>
     <thead>
       <tr>
-        <th></th>
         <th>Member</th>
         <th>Grade</th>
-        <th>Score</th>
       </tr>
     </thead>
     <tbody>{rows}
@@ -542,9 +722,10 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
             s, rankings, council_meta.get("block_vote_rate", 0), meta,
             summary=summaries.get(name, {})
         )
-        incidents_html = _render_incidents_section(name)
-        if incidents_html:
-            html = html.replace("</body>", f"{incidents_html}\n</body>", 1)
+        html = html.replace("<!-- RECENT_INCIDENTS_PLACEHOLDER -->",
+                            _render_recent_incidents(name), 1)
+        html = html.replace("<!-- INCIDENTS_PLACEHOLDER -->",
+                            _render_incident_record(name), 1)
         html = screen_html(html, add_back_link=True)
 
         out = os.path.join(PUBLISH_DIR, f"scorecard_{name}.html")
@@ -566,9 +747,10 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
 
     # Mayor scorecard (Ishii — separate accountability framework)
     mayor_html = ms.render_mayor_scorecard(meta)
-    ishii_incidents = _render_incidents_section("Ishii")
-    if ishii_incidents:
-        mayor_html = mayor_html.replace("</body>", f"{ishii_incidents}\n</body>", 1)
+    mayor_html = mayor_html.replace("<!-- RECENT_INCIDENTS_PLACEHOLDER -->",
+                                    _render_recent_incidents("Ishii"), 1)
+    mayor_html = mayor_html.replace("<!-- INCIDENTS_PLACEHOLDER -->",
+                                    _render_incident_record("Ishii"), 1)
     mayor_html = screen_html(mayor_html, add_back_link=True)
     mayor_out  = os.path.join(PUBLISH_DIR, "scorecard_Ishii.html")
     with open(mayor_out, "w", encoding="utf-8") as f:
