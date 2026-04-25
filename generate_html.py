@@ -101,7 +101,7 @@ ALL_EDITORIAL_INCIDENTS: list[dict] = [
                    "additionally deflected accountability in public remarks.",
         "members": ["Full Council", "Bartlett"],
         "scores":  {"Full Council": -3, "Bartlett": -7},
-        "pillars": ["Fiscal Stewardship", "Character & Conduct"],
+        "pillars": ["Character & Conduct", "Fiscal Stewardship"],
         "pending": True,
     },
     {
@@ -310,7 +310,7 @@ def _render_recent_incidents(name: str) -> str:
         for inc in incidents:
             score = inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
             score_str = f"{score:+d}" if score else "—"
-            pillars = " · ".join(inc["pillars"])
+            pillars = " · ".join(sorted(inc["pillars"]))
             rows += f"""
     <a class="recent-inc-row" href="{inc['url']}">
       <div class="rir-score">{score_str}</div>
@@ -346,7 +346,7 @@ def _render_incident_record(name: str) -> str:
         for inc in incidents:
             score = inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
             score_str = f"{score:+d}" if score else "—"
-            pillars = " · ".join(inc["pillars"])
+            pillars = " · ".join(sorted(inc["pillars"]))
             rows += f"""
       <div class="inc-page-row">
         <span class="inc-alert">&#9888;</span>
