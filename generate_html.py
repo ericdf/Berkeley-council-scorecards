@@ -394,14 +394,40 @@ def _add_viewport(html: str) -> str:
     )
 
 
+_NAV_CSS = """<style>
+body { flex-direction: column !important; align-items: center !important; }
+.site-nav {
+  width: 760px; max-width: 100%;
+  background: #1a1a2e;
+  padding: 9px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+  margin-top: 20px;
+}
+.site-nav-home {
+  font-size: 11px; font-weight: 700;
+  color: #8899bb; text-decoration: none; letter-spacing: .3px;
+}
+.site-nav-home:hover { color: #fff; }
+.site-nav-label {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.4px; color: #555e7a;
+}
+</style>"""
+
+_NAV_HTML = (
+    '<div class="site-nav">'
+    '<a href="index.html" class="site-nav-home">&#8592; Scorecards</a>'
+    '<span class="site-nav-label">Berkeley City Council</span>'
+    '</div>\n'
+)
+
 def _add_index_link(html: str) -> str:
-    """Inject a small nav link back to the index after <body>."""
-    nav = (
-        '<div style="text-align:center;padding:8px 0 0;font-size:11px;color:#7f8c8d">'
-        '<a href="index.html" style="color:#3498db;text-decoration:none">← All scorecards</a>'
-        '</div>\n'
-    )
-    return html.replace('<body>\n', f'<body>\n{nav}', 1)
+    """Inject nav bar above the card and fix body to column flex."""
+    html = html.replace('</head>', _NAV_CSS + '\n</head>', 1)
+    return html.replace('<body>\n', f'<body>\n{_NAV_HTML}', 1)
 
 
 _TOOLTIP_CSS = """
@@ -759,14 +785,7 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
 
     # Summary page
     summary_html = sc.render_summary(aggregate, rankings, council_meta, meta)
-    summary_html = screen_html(summary_html, add_back_link=False)
-    # Make the summary scrollable horizontally on small screens
-    summary_html = summary_html.replace(
-        '<body>',
-        '<body>\n<div style="text-align:center;padding:8px 0 0;font-size:11px;color:#7f8c8d">'
-        '<a href="index.html" style="color:#3498db;text-decoration:none">← All scorecards</a>'
-        '</div>'
-    )
+    summary_html = screen_html(summary_html, add_back_link=True)
     summary_out = os.path.join(PUBLISH_DIR, "scorecard_SUMMARY.html")
     with open(summary_out, "w", encoding="utf-8") as f:
         f.write(summary_html)
