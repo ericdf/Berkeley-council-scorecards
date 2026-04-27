@@ -49,7 +49,9 @@ ALL_DATES = [
     "2025-12-02",
     "2026-01-20", "2026-01-27",
     "2026-02-10", "2026-02-23", "2026-02-24",
-    "2026-03-10", "2026-03-24",
+    "2026-03-10", "2026-03-17", "2026-03-24",
+    "2026-04-14", "2026-04-21", "2026-04-28",
+    "2026-06-02",
 ]
 
 # Canonical name mapping for names as they appear in annotated agendas
@@ -155,37 +157,51 @@ def parse_attendance(text: str) -> dict:
 # Vote line parsing
 # ---------------------------------------------------------------------------
 
-# Matches: "Ayes – Name, Name; Noes – None; Abstain – None; Absent – Name."
+# Matches: "Ayes – Name, Name; Noes – None; Abstain – Name."
+# "Absent –" is optional: Berkeley omits it when nobody is absent.
 VOTE_BLOCK_RE = re.compile(
     r"(?:Vote:|First\s+Reading\s+Vote:)\s*"
     r"Ayes?\s*[–\-]\s*(.+?)\s*;\s*"
     r"Noes?\s*[–\-]\s*(.+?)\s*;\s*"
-    r"Abstain\s*[–\-]\s*(.+?)\s*;\s*"
-    r"Absent\s*[–\-]\s*(.+?)(?:\.|$)",
+    r"Abstain\s*[–\-]\s*(.+?)"
+    r"(?:\s*;\s*Absent\s*[–\-]\s*(.+?))?(?:\.|;|$)",
     re.IGNORECASE | re.DOTALL,
 )
 
 # Simpler "All Ayes" pattern
 ALL_AYES_RE = re.compile(r"Vote:\s*All\s+Ayes", re.IGNORECASE)
 
+# Speaker/correspondence counts in action text
+SPEAKERS_RE = re.compile(r"\b(\d+)\s+speakers?\b", re.IGNORECASE)
+LETTERS_RE  = re.compile(
+    r"\b(\d+)\s+(?:form\s+)?(?:letters?|written\s+communications?|similarly\s+worded)",
+    re.IGNORECASE,
+)
+# Late-night meeting extension votes
+EXTENSION_RE = re.compile(r"extend\s+the\s+meeting|suspend\s+the\s+rules", re.IGNORECASE)
+
+
+def _parse_names(raw: str) -> list[str]:
+    raw = raw.replace("\n", " ").strip()
+    if raw.lower() in ("none", "none.", ""):
+        return []
+    return resolve_list(raw)
+
 
 def parse_vote_block(text: str) -> dict | None:
-    """Parse an explicit vote block into {ayes, noes, abstain, absent}."""
+    """
+    Parse vote blocks from text, returning the first one found.
+    For multi-motion items, the first vote is the primary policy vote;
+    subsequent votes tend to be procedural (extend meeting, continue item).
+    """
     m = VOTE_BLOCK_RE.search(text)
     if not m:
         return None
-
-    def _names(raw):
-        raw = raw.replace("\n", " ").strip()
-        if raw.lower() in ("none", "none.", ""):
-            return []
-        return resolve_list(raw)
-
     return {
-        "ayes":    _names(m.group(1)),
-        "noes":    _names(m.group(2)),
-        "abstain": _names(m.group(3)),
-        "absent":  _names(m.group(4)),
+        "ayes":    _parse_names(m.group(1)),
+        "noes":    _parse_names(m.group(2)),
+        "abstain": _parse_names(m.group(3)),
+        "absent":  _parse_names(m.group(4)) if m.group(4) else [],
     }
 
 
@@ -204,7 +220,6 @@ def parse_items(text: str) -> list[dict]:
     """Parse per-item action and vote records from full agenda text."""
     items = []
 
-    # Split on item number boundaries
     for m in ITEM_SPLIT_RE.finditer(text):
         number = int(m.group(1))
         chunk  = m.group(0)
@@ -213,35 +228,46 @@ def parse_items(text: str) -> list[dict]:
         title_m = re.match(r"^\d+\s*[.\u00b7]\s*(.+?)$", chunk, re.MULTILINE)
         title = title_m.group(1).strip() if title_m else ""
 
-        # Action text
+        # Action text \u2014 no length limit; votes may appear deep in multi-motion items
         action_text = ""
         action_m = ACTION_RE.search(chunk)
         if action_m:
             action_text = action_m.group(1).replace("\n", " ").strip()
 
-        # Vote (explicit breakdown)
+        # Vote: last explicit breakdown wins (final disposition for multi-motion items)
         vote = parse_vote_block(chunk)
-
-        # Fall back to "All Ayes" if no breakdown found
         if vote is None and ALL_AYES_RE.search(chunk):
             vote = {"ayes": ["all"], "noes": [], "abstain": [], "absent": []}
 
+        # Constituent engagement signals
+        speakers = 0
+        sm = SPEAKERS_RE.search(chunk)
+        if sm:
+            speakers = int(sm.group(1))
+
+        letters = 0
+        lm = LETTERS_RE.search(chunk)
+        if lm:
+            letters = int(lm.group(1))
+
         item = {
-            "number": number,
-            "title":  title[:120],
-            "action": action_text[:300] if action_text else "",
+            "number":   number,
+            "title":    title[:120],
+            "action":   action_text,
+            "speakers": speakers,
+            "letters":  letters,
         }
         if vote:
             item["vote"] = vote
+        if EXTENSION_RE.search(chunk):
+            item["extension_vote"] = True
 
-        # Also capture first-reading votes separately
-        fr_vote = None
+        # First-reading vote (ordinances that pass in two readings)
         fr_m = re.search(r"First\s+Reading\s+Vote:\s*Ayes", chunk, re.IGNORECASE)
         if fr_m:
-            fr_chunk = chunk[fr_m.start():]
-            fr_vote = parse_vote_block("Vote: " + fr_chunk[fr_m.start() - fr_m.start():])
-            # Re-search on just the first reading portion
-            fr_vote = parse_vote_block(fr_chunk.replace("First Reading Vote:", "Vote:"))
+            fr_vote = parse_vote_block(
+                chunk[fr_m.start():].replace("First Reading Vote:", "Vote:")
+            )
             if fr_vote:
                 item["first_reading_vote"] = fr_vote
 

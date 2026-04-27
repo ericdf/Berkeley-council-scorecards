@@ -1,18 +1,84 @@
 # Berkeley City Council Scorecard — Methodology
 
-**Version:** April 2026  
-**Scope:** Years of city budgets, audited fiscal reports, and audit findings; 51 meeting transcripts (Dec 2024 – Mar 2026); 58 annotated agenda sessions; member campaign records and constituent communications  
-**Audience:** Insiders briefing document — describes signals, sources, and weightings
+**Version:** April 2026
 
 ---
 
-## Scorecard Structure: Descriptive and Normative Layers
+> Berkeley faces real governing problems: fiscal strain, infrastructure backlog, pension costs, and public safety pressure. City Council has limited time and resources. These scorecards evaluate whether members use them to deliver real results for Berkeley residents.
 
-Each member scorecard is divided into two explicit layers:
+---
 
-**Layer A — What the Record Shows:** Objective measures drawn from official records and attributed transcript speech. No weighting or judgment applied. Includes: attendance, major fiscal vote participation, voting record (NO votes, abstentions, absences), items authored/cosponsored, staff direction volume, core/non-core speech share, fiscal concern mentions, new revenue preference mentions, spending votes. These facts are nearly unimpeachable — critics who dispute the overall grade must engage at the layer B level (philosophy and weights), not at this level.
+## What This Is and Why It Exists
 
-**Layer B — Fiscal Stewardship Assessment:** The scorecard's normative framework applied to the layer A facts. Includes: Homeless Services Status-Quo Alignment score, Taxpayer Alignment breakdown, composite grades and pillar scores, key findings. This layer explicitly encodes the scorecard's values: taxpayer alignment, focus on core services, attendance accountability. Reasonable people can disagree with these weights. The structure makes that disagreement productive — it is a dispute about the normative layer, not about the facts.
+Berkeley faces real governing problems. The City Council oversees a mid-sized city with a $630M budget, a structural fiscal deficit city staff has described as unsustainable, $1.8B in unfunded capital obligations and deferred maintenance, $695M in net pension liability, persistent pressure on public safety, and labor agreements that constrain what any of those problems can look like as policy. Managing those realities requires discipline, prioritization, and sustained attention.
+
+But the incentives of local politics do not always reward those qualities.
+
+Berkeley residents also live under real financial constraints of their own. Housing costs are high. Everyday expenses are high. Many households have limited tolerance for continual tax increases, new parcel taxes, higher fees, or additional debt layered onto an already expensive city. Responsible governance must account for the fiscal capacity of residents as well as the fiscal needs of government.
+
+Council members are often rewarded for highly visible constituent casework, ideological signaling, symbolic resolutions, and commentary on issues beyond the council's practical authority. Those activities may generate attention or political goodwill, but they do not necessarily address Berkeley's core fiscal, operational, and governance challenges.
+
+That tension is the reason these scorecards exist.
+
+---
+
+## The Information Problem
+
+Berkeley residents are asked to evaluate elected officials in an environment that is difficult for any ordinary voter to track. Council meetings often run four to five hours. Agendas can span hundreds of pages. Staff reports, audits, budget documents, commission materials, newsletters, and public statements accumulate continuously.
+
+No resident with a normal life can reasonably monitor all of it.
+
+The common substitutes are also limited:
+
+- Politicians' own communications are curated narratives designed, understandably, to build support.
+- News coverage focuses on the controversy or headline of the week, not long-running patterns of conduct.
+- Campaign messaging is designed to sell, not to be audited against what was actually delivered.
+
+What is often missing is a sustained evaluation of how officials actually use the office over time — whether their words and deeds part company, how much time goes to matters that don't address Berkeley's documented problems, and whether they take ownership of hard issues or deflect.
+
+---
+
+## What These Scorecards Measure
+
+These scorecards are an attempt to provide that evaluation. They examine the public record, including:
+
+- votes and policy positions
+- attendance and participation
+- budget and fiscal choices
+- issue selection and prioritization
+- consistency between rhetoric and conduct
+- demonstrated ownership of difficult city problems
+- communications with constituents
+
+The purpose is not to reward charisma, popularity, or ideological alignment. It is to assess governing performance.
+
+---
+
+## The Standard Being Applied
+
+These scorecards use an explicit and transparent governing standard: elected officials should devote the council's limited time and the city's finite resources to Berkeley's most pressing documented problems.
+
+That includes matters such as: fiscal sustainability, infrastructure and maintenance backlogs, public safety performance, housing and land-use execution within city authority, service delivery and administrative competence, and long-term stewardship.
+
+Officials who focus on those responsibilities, make tradeoffs honestly, and help move solutions forward receive credit. The scoring cuts both ways: time and votes directed at matters outside Berkeley's jurisdiction count against the score, and documented local crises that go unaddressed count against it too. Being excellent at things a city council cannot change does not offset failing at things it can.
+
+---
+
+## Not Neutral — Transparent
+
+These scorecards do not claim to be value-free. Every political evaluation rests on assumptions, whether disclosed or hidden.
+
+The assumptions here are stated openly: municipal office should primarily be used to govern the municipality well.
+
+Reasonable people may disagree with that framework, the weighting of criteria, or specific judgments. That is legitimate. The methodology is published so those disagreements can be concrete and substantive rather than implicit.
+
+---
+
+## Why Publish This
+
+Healthy democratic accountability requires more than elections every few years. It requires understandable records, coherent standards, and public argument about performance.
+
+These scorecards are offered in that spirit — not as the final word, but as a serious attempt to ask and answer an important question: how well is Berkeley governed, and who is helping govern it well?
 
 ---
 
@@ -26,9 +92,19 @@ This scorecard is explicitly voter-aligned, not neutral. The evaluative framewor
 
 3. **Attendance & Vote Presence** — Did the member actually do the job? Attendance at meetings — especially for binding fiscal votes — is the minimum bar.
 
-**This is not a promise-keeping scorecard.** A member who campaigned on housing affordability and never mentioned the structural deficit is not evaluated on housing affordability. They are evaluated on whether they engage with Berkeley's documented P1 fiscal crises — because those crises exist regardless of what any member promised, and a representative who ignores them is not serving the taxpayer regardless of their campaign platform. A voter who wants to build a scorecard measuring housing production or homeless services expansion can do so; this one measures something different.
+**This is not a promise-keeping scorecard.** A member who campaigned on housing affordability and never mentioned the structural deficit is not evaluated on housing affordability. They are evaluated on whether they engage with Berkeley's documented Priority 1 (P1) fiscal crises — because those crises exist regardless of what any member promised, and a representative who ignores them is not serving the taxpayer regardless of their campaign platform. A voter who wants to build a scorecard measuring housing production or homeless services expansion can do so; this one measures something different.
 
 The scoring **does not** treat budget growth, new programs, or bond issuances as neutral acts. A YES vote on a budget adoption is a choice to endorse the status quo and forgo reprioritization. An absence during a major fiscal vote is a failure of the core duty of the office. A referral to study a new tax is the beginning of a political infrastructure campaign, not a neutral process step.
+
+---
+
+## Scorecard Structure: Descriptive and Normative Layers
+
+Each member scorecard is divided into two explicit layers:
+
+**Layer A — What the Record Shows:** Objective measures drawn from official records and attributed transcript speech. No weighting or judgment applied. Includes: attendance, major fiscal vote participation, voting record (NO votes, abstentions, absences), items authored/cosponsored, staff direction volume, core/non-core speech share, fiscal concern mentions, new revenue preference mentions, spending votes. These facts are nearly unimpeachable — critics who dispute the overall grade must engage at the layer B level (philosophy and weights), not at this level.
+
+**Layer B — Fiscal Stewardship Assessment:** The scorecard's normative framework applied to the layer A facts. Includes: Homeless Services Status-Quo Alignment (HSA) score, Taxpayer Alignment breakdown, composite grades and pillar scores, key findings. This layer explicitly encodes the scorecard's values: taxpayer alignment, focus on core services, attendance accountability. Reasonable people can disagree with these weights. The structure makes that disagreement productive — it is a dispute about the normative layer, not about the facts.
 
 ---
 
@@ -46,7 +122,7 @@ The scoring **does not** treat budget growth, new programs, or bond issuances as
 
 Annotated agendas are the authoritative source for **what actually happened** (outcomes, votes, attendance). Transcripts fill the gap between plan and outcome — capturing the deliberation, rhetoric, and interpersonal style that votes alone don't reveal. City Auditor reports provide the independent factual baseline against which council action is evaluated.
 
-**Why this reference standard matters:** The P1 problems scored here are grounded in the city's own professional documents — consecutive City Manager budget messages, City Auditor findings, infrastructure condition reports — not in the scorecard author's political preferences. A member who disagrees with the evaluation cannot simply claim it is ideological; they must dispute the City Manager's finding that the structural deficit is "not sustainable," or the Auditor's finding of a 66% pension funded ratio, or the MTC's finding of PCI 57. The city's own organization has documented what is broken. The scorecard asks whether elected officials are engaging with those findings.
+**Why this reference standard matters:** The Priority 1 (P1) problems scored here are grounded in the city's own professional documents — consecutive City Manager budget messages, City Auditor findings, infrastructure condition reports — not in the scorecard author's political preferences. A member who disagrees with the evaluation cannot simply claim it is ideological; they must dispute the City Manager's finding that the structural deficit is "not sustainable," or the Auditor's finding of a 66% pension funded ratio, or the MTC's finding of PCI 57. The city's own organization has documented what is broken. The scorecard asks whether elected officials are engaging with those findings.
 
 ---
 
@@ -60,20 +136,27 @@ A single A–F composite representing overall alignment with taxpayer interests.
 
 ```
 composite = max(0.0,
-    taxpayer_alignment × 0.70 + focus × 0.30
+    taxpayer_alignment × 0.55 + focus × 0.25
+    + lsi × 0.10 + character × 0.10
     − attendance_deduction
     − low_engagement_adj
+    + audit_penalties
 )
 ```
+
+Where `taxpayer_alignment = taxpayer_base × 0.60 + audit_composite × 0.40`.
 
 **Component weights and deductions:**
 
 | Component | Role | Notes |
 |-----------|------|-------|
-| Taxpayer alignment | 70% weight | The core question: whose interests does this member champion? |
-| Focus | 30% weight | What did they spend the council's time on? |
+| Taxpayer alignment | 55% weight | The core question: whose interests does this member champion? (blended with audit alignment at 60/40) |
+| Focus | 25% weight | What did they spend the council's time on? |
+| LSI | 10% weight | Legislative sophistication (domain knowledge, fiscal literacy, inquiry rate, decisiveness, process) |
+| Character | 10% weight | Collegiality, humility, warmth, low self-referential appeals |
 | Attendance deduction | Up to −0.30 | Convex curve: lenient for 1–2 absences, severe for 4–5 (see Fiscal Vote Record) |
-| Low engagement adjustment | Up to −0.10 | Triggered when member authors no P1 referrals AND shows low fiscal engagement (see P1/P2/P3 Framework) |
+| Low engagement adjustment | Up to −0.10 | Triggered when member authors no Priority 1 (P1) referrals AND shows low fiscal engagement (see P1/P2/P3 Framework) |
+| Audit-grounded penalties | −0.05 to −0.20 | Applied after composite blend: structural silence, one-time masking, cross-fund transfers, Section 115 depletion |
 
 **Grade thresholds:** A+ ≥ 90 · A ≥ 83 · A− ≥ 77 · B+ ≥ 70 · B ≥ 63 · B− ≥ 57 · C+ ≥ 50 · C ≥ 43 · C− ≥ 37 · D+ ≥ 30 · D ≥ 23 · D− ≥ 17 · F < 17
 
@@ -99,13 +182,13 @@ effective_weight = e^(−λ × age_in_years)    λ = 0.7
 **Applies to:**
 - Incident scoring (each incident's `scoring_impact × tier_weight` is multiplied by the decay factor before summing)
 - Rhetoric signals: fiscal concern rate, new revenue preference rate, self-referential appeals, collegiality, humility, warmth (via per-meeting decay-weighted aggregation)
-- Newsletter P1 silence events
+- Newsletter Priority 1 (P1) silence events
 
 **Does NOT apply to:**
 - Bond/tax referral votes (durable official acts — authoring a ballot measure is a permanent record)
 - Annotated agenda votes (YES/NO/absent on spending items)
 - Major fiscal votes
-- HSA score (full-text aggregation without per-meeting dates; planned for future update)
+- Homeless Services Status-Quo Alignment (HSA) score (full-text aggregation without per-meeting dates; planned for future update)
 
 **Opt-out:** Individual incidents can carry `"no_decay": true` to exempt them from decay (e.g., a member who authored a bond measure that is still active).
 
@@ -121,7 +204,7 @@ Five opportunity types are evaluated, ranked by estimated composite impact, and 
 
 | Opportunity | Trigger condition | How it helps |
 |---|---|---|
-| **Demand HSA outcome metrics** | HSA score ≥ 45 | Shifts HSA rhetoric toward accountability-oriented language |
+| **Demand HSA outcome metrics** | Homeless Services Status-Quo Alignment (HSA) score ≥ 45 | Shifts HSA rhetoric toward accountability-oriented language |
 | **Back fiscal concerns with votes** | High concern rate, zero NO votes, and HSA ≥ 45 or ≥ 3 fiscal vote absences | Closes rhetoric–action gap; strengthens composite_fiscal_ref_penalty |
 | **Attend major fiscal votes** | fiscal_vote_absent > 0 | Eliminates attendance deduction |
 | **Redirect non-core authorship** | composite_off_penalty > 0.03 | Reduces scope penalty in Fiscal Stewardship Alignment |
@@ -199,7 +282,7 @@ Council work is tiered by urgency and alignment with Berkeley's documented struc
 | **P2** | Beneficial delivery | Legitimate city function with a clear, measurable objective — not in crisis, but real | Housing project approvals, specific public art commissions, parks maintenance, public safety equipment |
 | **P3** | Discretionary / ceremonial | Within Berkeley's general authority but low-priority, unaccountable, or purely performative | Cultural festivals, proclamations, arts grant programs, out-of-jurisdiction resolutions |
 
-**The P1 engagement test:** A member who generates only P2 activity — approves contracts, shows up for votes, stays out of trouble — but never engages with the P1 crises documented in the city's own reports is not doing the full job. A member who generates P3 activity while P1 problems go unaddressed is actively substituting low-priority work for the high-priority work the city's own documents say is urgent.
+**The Priority 1 (P1) engagement test:** A member who generates only P2 activity — approves contracts, shows up for votes, stays out of trouble — but never engages with the P1 crises documented in the city's own reports is not doing the full job. A member who generates P3 activity while P1 problems go unaddressed is actively substituting low-priority work for the high-priority work the city's own documents say is urgent.
 
 **Scoring implication:** Members with zero P1 referrals authored and low fiscal engagement (fiscal vote presence + fiscal concern rate) receive a low P1 engagement penalty of up to −0.10 applied to the composite grade. The penalty scales with the engagement gap — a member with no P1 referrals but high fiscal concern rhetoric and consistent vote attendance receives no penalty; a member with no referrals, low rhetoric, and frequent absences receives the full penalty.
 
@@ -207,7 +290,7 @@ Council work is tiered by urgency and alignment with Berkeley's documented struc
 
 ## Consent Calendar Classification
 
-Consent calendar items — passed en bloc without floor debate — are classified into five tiers that feed into the agenda scoring and P1/P2/P3 analysis.
+Consent calendar items — passed en bloc without floor debate — are classified into five tiers that feed into the agenda scoring and Priority 1/2/3 (P1/P2/P3) analysis.
 
 | Class | Label | What it means | Examples |
 |-------|-------|--------------|---------|
@@ -225,7 +308,7 @@ Consent calendar classifications are stored in `agendas/classified/consent_items
 
 Action calendar classifications are stored in `agendas/classified/action_items.csv` (175 items, Dec 2024–Apr 2026). Distribution: 1=40, 2=47, 3=17, 8=56, 9=15.
 
-**Classification is topic-tier, not quality-of-response.** A P1 topic handled badly (e.g., a ballot-measures funding discussion that defaults to new taxes without contemplating cuts) is still class 1 — it addresses the right problem. The pipeline scores the quality of the response separately via fiscal concern rhetoric, new revenue preference signals, and vote record. Classifying it as P3 would undercount the council's P1 engagement; the penalty for the wrong answer belongs in the scoring layer, not the classification layer.
+**Classification is topic-tier, not quality-of-response.** A Priority 1 (P1) topic handled badly (e.g., a ballot-measures funding discussion that defaults to new taxes without contemplating cuts) is still class 1 — it addresses the right problem. The pipeline scores the quality of the response separately via fiscal concern rhetoric, new revenue preference signals, and vote record. Classifying it as P3 would undercount the council's P1 engagement; the penalty for the wrong answer belongs in the scoring layer, not the classification layer.
 
 ---
 
@@ -256,7 +339,8 @@ Three plain-language facts that explain the grade. No jargon.
   - New revenue preference: authored/supported new tax or bond measures without accompanying cut analysis — scored *negative*, not neutral (see below)
   - Rhetoric–action gap: voiced fiscal concern AND voted yes on large spending items
   - Votes no on spending (rare and high-signal)
-  - Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; HSA is the primary implemented instance)
+  - False fiscal claims: council-authored items claiming "None" or "Staff time" fiscal impact when the scope clearly incurs real obligations — new permit regimes, bans, citywide policy frameworks. Detected via `check_false_fiscal()` in `agenda_scraper.py`; scored −0.015/item authored, −0.007/item cosponsored, capped at −0.04. "None" is outright false when the recommendation directs significant staff work; "Staff time" is honest but understates the cost when the scope implies months of staff capacity for new programs, ordinances, or enforcement regimes.
+  - Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; Homeless Services Status-Quo Alignment (HSA) is the primary implemented instance)
 - **New revenue preference vs. fiscal concern:** These are not the same signal. Asking "what can we cut?" is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. New revenue preference without companion cut analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit).
 
 ---
@@ -361,12 +445,27 @@ City Auditor reports are a separate evidentiary stream from incidents. They are 
 
 Transcripts and agenda records capture what happens on the dais and in formal meetings. They do not capture everything that matters.
 
-**Incidents** are documented behaviors or actions observed outside formal council proceedings that reveal something meaningful about a member's disposition toward taxpayers, constituents, or public resources. Examples:
+**Incidents** are documented accountability events that cannot be measured by transcript keyword analysis or voting records alone. An incident can arise from any verifiable source: meeting transcripts, constituent communications, news coverage, court filings, public records requests, auditor reports, or other public documents. Incidents are not limited to behavior inside formal proceedings — a newspaper article, a court filing, or a public records violation can all be the basis for an incident.
+
+Incidents are scored on named **dimensions**, each of which carries a **pillar tag** indicating which aspect of a council member's performance is implicated:
+
+- **Character & Conduct** — conflicts of interest, disclosure and recusal failures, public misrepresentation, abuse of office, quality of response to documented wrongdoing
+- **Fiscal Stewardship** — contractor oversight failures, spending decisions made without available performance evidence, use of public funds without accountability mechanisms
+
+A single incident can implicate multiple pillars: a conflict-of-interest failure affects Character & Conduct; if that conflict also caused public funds to flow to a contractor without proper oversight, it affects Fiscal Stewardship as well. Each dimension is scored and pillar-tagged independently, and its score rolls into its tagged pillar at full weight — there is no splitting or dilution across pillars.
+
+Incidents can be **positive** as well as negative. A member who proactively surfaces a conflict of interest, demands a performance review, or votes no on a contractor reauthorization pending an audit earns points here.
+
+Members with no incidents on record are not assumed clean — it means nothing has been documented yet.
+
+### Behavioral incidents (automated pipeline)
+
+A separate, automated incident system (`incidents.json`) tracks behavioral patterns observable in transcripts and agenda records:
 
 - A constituent interaction that reveals a pattern of evasion or performative engagement
 - A public statement expressing a preference for borrowing over cutting
 - A pattern of scheduling "input meetings" after votes have already occurred
-- An observable disposition (e.g., backing a new institution built on demographic grievance rather than service gaps) that is visible in their agenda record but not explicitly verbalized
+- An observable disposition visible in the agenda record but not explicitly verbalized
 
 ### How incidents are documented
 
@@ -408,9 +507,11 @@ Incidents with an `audit_ref` receive an additional **0.50× multiplier** on top
 
 ### How incidents feed into scoring
 
-The strength of a claim should be proportional to the strength of the evidence behind it. Each incident's raw `scoring_impact` is multiplied by its tier weight before being summed (see evidence tier table above). Incidents linked to a City Auditor finding via `audit_ref` receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context. Applying full incident weight on top of the audit penalty would double-charge the same underlying failure.
+**Editorial incidents** (the publicly documented incident pages) carry dimension-level pillar tags. Each dimension's score rolls into its tagged pillar at full weight. A dimension tagged Character & Conduct affects the Character pillar; a dimension tagged Fiscal Stewardship affects the Fiscal Stewardship pillar. If a single incident has dimensions in two pillars, both pillars are affected independently — there is no dilution. A per-pillar cap of ±0.30 prevents any single incident from zeroing out any one pillar.
 
-Weighted incident totals are capped at ±0.30 per member before being applied as an adjustment to the **Fiscal Stewardship Alignment** component of the composite grade. The cap prevents any single member's incident record from dominating the overall score.
+**Behavioral incidents** (`incidents.json`) feed into the automated composite via the Fiscal Stewardship Alignment component. Each incident's raw `scoring_impact` is multiplied by its tier weight before being summed. Incidents linked to a City Auditor finding via `audit_ref` receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context.
+
+Weighted behavioral incident totals are capped at ±0.30 before being applied to Fiscal Stewardship Alignment. The cap prevents any single member's incident record from dominating the overall score.
 
 Members with no incidents in the log are not assumed clean — it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.
 

@@ -2,7 +2,7 @@
   "date": "2026-01-27",
   "meeting_type": "regular",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2026-01-27%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:56.953115",
+  "fetched": "2026-04-27T08:46:38.545660",
   "roll_call_time": "6:00 p.m.",
   "present": [
     "Kesarwani",
@@ -21,22 +21,30 @@
     {
       "number": 1,
       "title": "Adjourn in Memory of Marty Lorber, Local Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adjourn in Memory of Barbara Lubin, Local Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Adjourn in Memory of Renee Nicole Good and Alex Jeffrey Pretti, Killed by Federal Agents in",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Recognition of Holocaust Remembrance Day",
       "action": "M/S/C (Tregub/Blackaby) to adopt the Consent Calendar in one motion except as indicated. Vote: All Ayes. Urgent Item: Decrying Violent Actions by ICE and Calling on Congress to Ensure Guardrails",
+      "speakers": 6,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -49,137 +57,191 @@
     {
       "number": 1,
       "title": "Contract: West Coast Drilling, Inc. for 2709 Hilgard Avenue Retaining Wall",
-      "action": "Adopted Resolution No. 72,096\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 3 Consent Calendar"
+      "action": "Adopted Resolution No. 72,096\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 3 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Minutes for Approval",
-      "action": "Approved recommendation."
+      "action": "Approved recommendation.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "2025 Annual Commission Attendance and Meeting Frequency Report",
-      "action": "Adopted Resolution No. 72,097\u2013N.S."
+      "action": "Adopted Resolution No. 72,097\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Formal Bid Solicitations and Request for Proposals Scheduled for Possible",
-      "action": "Approved recommendation."
+      "action": "Approved recommendation.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Contract: Carone and Company, Inc. for the Santa Fe Trackbed to Park",
-      "action": "Adopted Resolution No. 72,098\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 4 Consent Calendar"
+      "action": "Adopted Resolution No. 72,098\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 4 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Option Agreement with TSA Holding Group, LLC for 199 Seawall Drive",
-      "action": "Adopted Resolution No. 72,099\u2013N.S."
+      "action": "Adopted Resolution No. 72,099\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Contracts: On-Call Equitable Community Engagement Services",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "360 Total Concept Consulting",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Be the Change Consulting",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Community Planning Collaborative",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "D & A Communications, Inc.",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Denaya Shorter Consulting",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "The Ecology Center",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Equity First Consulting",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Moore Iacofano Goltsman, Incorporated (MIG)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Plan to Place",
-      "action": "Adopted Resolution No. 72,100\u2013N.S. (360 Total Concept Consulting), Resolution No. 72,101\u2013N.S. (Be the Change Consulting), Resolution No. 72,102\u2013 N.S. (Community Planning Collaborative), Resolution No. 72,103\u2013N.S. (D & A Communications, Inc.), Resolution No. 72,104\u2013N.S. (Denaya Shorter Consulting), R"
+      "action": "Adopted Resolution No. 72,100\u2013N.S. (360 Total Concept Consulting), Resolution No. 72,101\u2013N.S. (Be the Change Consulting), Resolution No. 72,102\u2013 N.S. (Community Planning Collaborative), Resolution No. 72,103\u2013N.S. (D & A Communications, Inc.), Resolution No. 72,104\u2013N.S. (Denaya Shorter Consulting), Resolution No. 72,105\u2013N.S. (The Ecology Center), Resolution No. 72,106\u2013N.S. (Equity First Consulting), Resolution No. 72,107\u2013N.S. (Moore Iacofano Goltsman, Incorporated), and Resolution No. 72,108\u2013N.S. (Plan to Place). Tuesday, January 27, 2026 ANNOTATED AGENDA Page 5 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Contract: B Bros Construction, Inc. for Fire Station #6 Remodel",
-      "action": "Adopted Resolution No. 72,109\u2013N.S."
+      "action": "Adopted Resolution No. 72,109\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Contract: St. Francis Electric for On-Call Electrical Services",
-      "action": "Adopted Resolution No. 72,110\u2013N.S."
+      "action": "Adopted Resolution No. 72,110\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Contract: Siemens Industry, Inc. dba SIEMENS for Inspection, Testing, and",
-      "action": "Adopted Resolution No. 72,111\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 6 Consent Calendar"
+      "action": "Adopted Resolution No. 72,111\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 6 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Contract No. 32100070 Amendment: Urban Ore, Inc. for Salvage Operations at",
-      "action": "Adopted Resolution No. 72,112\u2013N.S."
+      "action": "Adopted Resolution No. 72,112\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Contract No.101280-1 Amendment: On-Call Traffic Engineering Services with",
-      "action": "Adopted Resolution No. 72,113\u2013N.S."
+      "action": "Adopted Resolution No. 72,113\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Contract No. 108037-1 Amendment: MSR Mechanical, LLC for On-Call Heating,",
-      "action": "Adopted Resolution No. 72,114\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 7 Consent Calendar"
+      "action": "Adopted Resolution No. 72,114\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 7 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Contract No. 32500124 Amendment: Buhler Commercial for FY 2023 Retaining",
-      "action": "Adopted Resolution No. 72,115\u2013N.S."
+      "action": "Adopted Resolution No. 72,115\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "goBerkeley Parking Management Program Recommended Adjustments to",
-      "action": "Adopted Resolution No. 72,116\u2013N.S. Council Consent Items"
+      "action": "Adopted Resolution No. 72,116\u2013N.S. Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "AC Transit Berkeley Emeryville Inter-Agency Liaison Committee Appointments",
-      "action": "Adopted Resolution No. 72,117\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 8 Council Consent Items"
+      "action": "Adopted Resolution No. 72,117\u2013N.S. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 8 Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Refer to the City Manager to include in the Community Survey a Poll Question",
-      "action": "Approved recommendation. Action Calendar \u2013 Public Hearing"
+      "action": "Approved recommendation. Action Calendar \u2013 Public Hearing",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Implement Residential Preferential Parking (RPP) Program on the 1700 Block",
       "action": "M/S/C (O\u2019Keefe/Ishii) to adopt Resolution No. 72,118\u2013N.S. Vote: All Ayes.",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -193,6 +255,8 @@
       "number": 19,
       "title": "Selected Marina Fee Increases",
       "action": "M/S/C (Humbert/Bartlett) to adopt Resolution No. 72,119\u2013N.S. Vote: All Ayes. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 9 Action Calendar \u2013 Public Hearings",
+      "speakers": 1,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -205,17 +269,23 @@
     {
       "number": 20,
       "title": "Zoning Adjustment Board Appeal: 2109 Virginia, Use Permit #ZP2024-0066",
-      "action": "Item removed from the agenda by the City Manager. The public hearing for Zoning Adjustment Board Appeal: 2109 Virginia, Use Permit #ZP2024-0066 is scheduled for the meeting of February 10, 2026. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 10 Council Action Items"
+      "action": "Item removed from the agenda by the City Manager. The public hearing for Zoning Adjustment Board Appeal: 2109 Virginia, Use Permit #ZP2024-0066 is scheduled for the meeting of February 10, 2026. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 10 Council Action Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Rescission and replacement of the Police Equipment and Community Safety",
-      "action": "13 speakers. M/S/C (Humbert/Blackaby) to adopt the first reading of Ordinance No. 8,001\u2013N.S. from the item submitted by Councilmember Humbert including the revisions as submitted by Councilmember Blackaby in Supplemental Communications Packet #2 and further revised at the meeting as noted below. Sec"
+      "action": "13 speakers. M/S/C (Humbert/Blackaby) to adopt the first reading of Ordinance No. 8,001\u2013N.S. from the item submitted by Councilmember Humbert including the revisions as submitted by Councilmember Blackaby in Supplemental Communications Packet #2 and further revised at the meeting as noted below. Second reading scheduled for February 10, 2026. \u2022 Paragraph numbering in Section 2.100.080 changed to A) and B) \u2022 Correct the numbering for the Severability section \u2022 The effective date is amended to be 30 days after the second reading \u2022 Remove Section 2.100.040(A)(2) \u2022 Amend Sections 2.100.050(B)(1) and 2.100.050(F)(1) to change 15 days to 12 days \u2022 Amend Section 2.100.050(C)(1) \u2022 Rename Section 2.100.050(D) \u2022 Change 30 days to 45 days in Sections 2.100.050(D)(3) and 2.100.060(B)(4) \u2022 Remove Section 2.100.070(A) Vote: Ayes \u2013 Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 Kesarwani, Taplin. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 11 Council Action Items",
+      "speakers": 13,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Creating Accessible Routes For Riders, Equity, and the Environment (CAR",
-      "action": "Moved to Consent Calendar. Mayor Ishii, Councilmember Humbert, and Councilmember Blackaby added as co-sponsors. Approved recommendation. Public Comment \u2013 Items Not Listed on the Agenda - 3 speakers. Adjournment Action: M/S/C (Tregub/Lunaparra) to adjourn the meeting. Vote: Ayes \u2013 Kesarwani, Taplin, ",
+      "action": "Moved to Consent Calendar. Mayor Ishii, Councilmember Humbert, and Councilmember Blackaby added as co-sponsors. Approved recommendation. Public Comment \u2013 Items Not Listed on the Agenda - 3 speakers. Adjournment Action: M/S/C (Tregub/Lunaparra) to adjourn the meeting. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Humbert. Adjourned at 9:18 p.m. Communications Tear Gas Concern",
+      "speakers": 3,
+      "letters": 0,
       "vote": {
         "ayes": [
           "Kesarwani",
@@ -237,257 +307,359 @@
     {
       "number": 1,
       "title": "Ruth Shorer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Krista Kleczewski",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "George Perezvelez",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Michael Bauce",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Dana Prichard",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Harvey Smith on behalf of the Berkeley Community Latino Exhibit",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "John G. Aronovici",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Larry Reyna",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Maxwell Davis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Susan R Martin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Leonard Pitt",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Moni T. Law",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "M. Rivka Polatnick",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Boona Cheema",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Todd Andrew",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Isaac Nicholson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Elaina",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Jeffrey Church on behalf of Visit Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Kiara Gonzalez Garcia on behalf of the PETS team",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Carolyn Cox",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Jacob Cohen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Eric Friedman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Eric Friedman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "R. Valentine",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Stephen Alpert (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Ruby Chen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Daveed Mandell",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Emily Kenyon",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Melanie Lawrence (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Mike Vandeman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "Grant L Hough",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Yasmin Jenkins (6)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Berkeley Art Center",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Russbumper (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Aaryaman Singhal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "Jim McGrath",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "Barbara Gilbert",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "Supplemental agenda material submitted by Councilmember Brent Blackaby",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Hansel Alejandro Aguilar on behalf of the Office of the Director of Police",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Gregory Kalkanis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Urgent item agenda material submitted by Councilmember Brent Blackaby,",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Presentation submitted by the Public Works Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "Wendy Alfsen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Dan Leaverton",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "Charles Siegel on behalf of Walk Bike Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 49,
       "title": "Gregory Kalkanis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "Robert Prinz on behalf of Bike East Bay",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Tom Miller",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

@@ -2,7 +2,7 @@
   "date": "2025-04-22",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-22%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:41:58.432242",
+  "fetched": "2026-04-27T08:44:45.446885",
   "roll_call_time": "6:04 p.m.",
   "present": [
     "Kesarwani",
@@ -25,482 +25,689 @@
     {
       "number": 1,
       "title": "ZAB Appeal: 2274 Shattuck Avenue, Use Permit #ZP2023-0079",
-      "action": "M/S/C (Blackaby/Humbert) to close the public hearing. Vote: Ayes \u2013 Kesarwani, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Recused \u2013 Taplin (Recused for Potential Conflict of Interest). Action: M/S/C (O\u2019Keefe/Humbert) to adopt Resolution No. 71,725-N.S"
+      "action": "M/S/C (Blackaby/Humbert) to close the public hearing. Vote: Ayes \u2013 Kesarwani, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Recused \u2013 Taplin (Recused for Potential Conflict of Interest). Action: M/S/C (O\u2019Keefe/Humbert) to adopt Resolution No. 71,725-N.S. affirming the Zoning Adjustments Board decision to approve Use Permit #ZP2023-0079 to demolish the commercial building (preserving and renovating the front fa\u00e7ade and lobby), and construct a 17-story (183 feet, plus 5-foot parapet), 214,032-square-foot, mixed-use residential building with 227 dwelling units (including 23 Very Low-Income Density Bonus qualifying units), and one ADA parking space, and dismiss the appeal. Vote: Ayes \u2013 Kesarwani, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Recused \u2013 Taplin (Recused for Potential C onflict of Interest). Tuesday, April 22, 2025 ANNOTATED AGENDA Page 2 Adjournment Action: M/S/C (Blackaby/Humbert) to adjourn the meeting. Vote: Ayes \u2013 Kesarwani, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Recused \u2013 Taplin (Recused for Potential Conflict of Interest). Adjourned at 8:51 p.m. Communications Item #1: ZAB Appeal: 2274 Shattuck Avenue, Use Permit #ZP2023-0079",
+      "speakers": 54,
+      "letters": 0,
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Bartlett",
+          "Tregub",
+          "OKeefe",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [],
+        "absent": []
+      }
     },
     {
       "number": 1,
       "title": "Laura Fujii",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Frances Wilson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Constance Rivemale",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Summer Brenner (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Sharon Gong",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Neil Goldstein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Laura and Rose",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Laura Linden (6)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "R. Kowalski",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Lisa Lewis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "East Bay for Everyone",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Greg King and Gary Parks",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Anjali Devi",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Allen Michaan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Barbara Hadenfeldt",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Jane White",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Gretta Goldenman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Gale Garcia",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Todd Jersey",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Mary Ann Gallagher",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Sara Sunstein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "James Angus, Liz Linden, Eve Angus, and Lucy Angus",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Jjbrogan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Mollie Starr",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Kathi Pugh and Josh Maddox",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Lisa Titus",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Barbara Kloehn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Rose Ellis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Dan Ondrasek",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Kyle Miller",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Harvey Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "Madeleine Roberts (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Tom Lippe on behalf of Save the UA Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Scott Selmanoff",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "283 Similarly worded form letters",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 283
     },
     {
       "number": 36,
       "title": "Paula Aiello",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Elana Auerbach",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Mary Ann Gallagher",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "Connie Oliphant",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "Maxwell Davis on behalf of the Sierra Club",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "Lindsay Mugglestone",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Dorothy Lubliner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Laura Linden",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Rose",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Rose Thomsen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "James Bondi on behalf of Caitlin Hibma",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Laura Fujii",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "51 Similarly worded form letters",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 51
     },
     {
       "number": 49,
       "title": "Gregory Kalkanis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "Kelly McHan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Mary Takemoto",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 52,
       "title": "Clifford Fred",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 53,
       "title": "John Coveney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 54,
       "title": "Kathleen M. Crandall",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 55,
       "title": "Pat Schwinn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 56,
       "title": "Molly Miller",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 57,
       "title": "Alexa Chipman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 58,
       "title": "Ross Bernet",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 59,
       "title": "Tom Lippe on behalf of Save the UA Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 60,
       "title": "Rose",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 61,
       "title": "Elana Auerbach",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 62,
       "title": "Anjali Rojas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 63,
       "title": "Donna West",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 64,
       "title": "Gary Parks",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 65,
       "title": "Christine U\u2019Ren",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 66,
       "title": "Ken Walker",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 67,
       "title": "Cindy Shamban",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 68,
       "title": "Rachel Rosen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 69,
       "title": "David Mendelsohn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 70,
       "title": "Laura Linden",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 71,
       "title": "12 Similarly worded form letters \u201cStop the demolition\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 12
     },
     {
       "number": 72,
       "title": "46 Similarly worded form letters \u201cSupport the use permit\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 46
     },
     {
       "number": 73,
       "title": "Presentation submitted by the Planning Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 74,
       "title": "James M. Lloyd",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 75,
       "title": "Julia Robertson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 76,
       "title": "Todd Darling",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 77,
       "title": "Gretta Goldenman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 78,
       "title": "Lee Bishop",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 79,
       "title": "Laura Morland",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 80,
       "title": "Madeleine Roberts Rich (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 81,
       "title": "John Carnahan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 82,
       "title": "Paul Bickmore",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 83,
       "title": "Michael Fullerton",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 84,
       "title": "Rafa Sonnefeld",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 85,
       "title": "Robin R. Baral",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 86,
       "title": "Jack Farrell",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 87,
       "title": "Nancy D. Kates",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 88,
       "title": "Eileen Adams",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 89,
       "title": "Robin R. Baral on behalf of Hanson Bridgett LLP",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 90,
       "title": "James Hendry",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 91,
       "title": "Annie Wormhoudt",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 92,
       "title": "8 Similarly worded form letters \u201cPlease reject the appeal\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 8
     },
     {
       "number": 93,
       "title": "10 Similarly worded form letters \u201cStop the demolition\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 10
     },
     {
       "number": 94,
       "title": "Unknown",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 95,
       "title": "Unknown",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

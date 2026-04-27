@@ -2,7 +2,7 @@
   "date": "2025-03-18",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-03-18%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:41:43.050602",
+  "fetched": "2026-04-27T08:44:30.928611",
   "roll_call_time": "4:07 p.m.",
   "present": [
     "Taplin",
@@ -31,7 +31,9 @@
     {
       "number": 1,
       "title": "2024 Berkeley Police Department Annual Report",
-      "action": "2 speakers. Presentation made and discussion held. Adjournment Action: M/S/C (Taplin/Kesarwani) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:01 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communic",
+      "action": "2 speakers. Presentation made and discussion held. Adjournment Action: M/S/C (Taplin/Kesarwani) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:01 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 Item #1: 2024 Berkeley Police Department Annual Report",
+      "speakers": 2,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -44,12 +46,16 @@
     {
       "number": 1,
       "title": "Presentation submitted by the Police Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Report submitted by the Police Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

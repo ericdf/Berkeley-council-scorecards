@@ -2,7 +2,7 @@
   "date": "2024-12-10",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2024-12-10%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:41:16.467721",
+  "fetched": "2026-04-27T08:44:04.724494",
   "roll_call_time": "5:39 p.m.",
   "present": [
     "Kesarwani",
@@ -21,37 +21,51 @@
     {
       "number": 1,
       "title": "Confirming the Results of the November 5, 2024, General Municipal Election",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Adopt a Resolution:",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adopt seven Ordinances amending the Berkeley Municipal Code to incorporate",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Adopt a Resolution codifying the text of Measure AA \u2013 Article XIIIB GANN",
-      "action": "Adopted:"
+      "action": "Adopted:",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Resolution No. 71,609\u2013N.S. (Confirm Results).",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adopted Ordinance No. 7,946-N.S. (Measure W \u2013 Real Property Transfer Tax",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Resolution No. 71,610\u2013N.S. (Measure AA \u2013 Article XIIIB GANN Appropriations",
       "action": "M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 5:43 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 \u2022 None Tuesday, December 10, 2024 AGENDA Page 3",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"

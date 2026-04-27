@@ -2,7 +2,7 @@
   "date": "2025-07-29",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-07-29%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:42:58.901740",
+  "fetched": "2026-04-27T08:45:45.073641",
   "roll_call_time": "4:14 p.m.",
   "present": [
     "Kesarwani",
@@ -21,6 +21,8 @@
       "number": 1,
       "title": "Grant Award: Byrne State Crisis Intervention Program (SCIP) Cohort 2 Funding",
       "action": "Adopted Resolution No. 71,907\u2013N.S. Action Calendar \u2013 New Business 2 a. Presentation: Comprehensive Summary of Berkeley\u2019s Homeless Response",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "Kesarwani",
@@ -42,17 +44,23 @@
     {
       "number": 1,
       "title": "Presentation submitted by the City Manager\u2019s Office",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Presentation submitted by the City Auditor\u2019s Office",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Fran Haselsteiner (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

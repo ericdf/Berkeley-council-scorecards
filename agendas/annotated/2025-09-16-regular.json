@@ -2,7 +2,7 @@
   "date": "2025-09-16",
   "meeting_type": "regular",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-09-16%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:06.906469",
+  "fetched": "2026-04-27T08:45:53.040789",
   "roll_call_time": "6:42 p.m.",
   "present": [
     "Taplin",
@@ -27,22 +27,30 @@
     {
       "number": 1,
       "title": "Anthony \u201cTony\u201d Mejia, Small Business Owner and Community Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Recognition of Steve Moros, Bancroft Community Garden Organizer and Community Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Adjourn in memory of Malcolm Margolin, Writer, Publisher, and Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Adjourn in memory of Ann Fagan Ginger, Attorney and Civil Rights Activist",
-      "action": "M/S/C (Blackaby/Tregub) to accept an urgency item from Councilmember Blackaby pursuant to Government Code Section 54954.2(b)(2) entitled Letter of Support to Governor\u2013 SB-326, AB-1143, AB-888. Vote: All Ayes. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 2 Consent Calendar Public Comment on Cons",
+      "action": "M/S/C (Blackaby/Tregub) to accept an urgency item from Councilmember Blackaby pursuant to Government Code Section 54954.2(b)(2) entitled Letter of Support to Governor\u2013 SB-326, AB-1143, AB-888. Vote: All Ayes. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 2 Consent Calendar Public Comment on Consent Calendar and Information Items Only: 2 speakers. Action: M/S/C (Humbert/Blackaby) to adopt the Consent Calendar in one motion except as indicated. Vote: All Ayes. Urgent Item: Letter of Support to Governor\u2013 SB-326, AB-1143, AB-888",
+      "speakers": 10,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -55,62 +63,86 @@
     {
       "number": 1,
       "title": "Contract: Sorell Raino-Tsui for Public Artwork Commission for Martin Luther",
-      "action": "Adopted Resolution No. 71,953\u2013N.S."
+      "action": "Adopted Resolution No. 71,953\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Contract No. 32000060 Amendment: Toshiba Business Solutions Inc for",
-      "action": "Adopted Resolution No. 71,954\u2013N.S. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 3 Consent Calendar"
+      "action": "Adopted Resolution No. 71,954\u2013N.S. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 3 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Purchase Order: Blaisdell\u2019s Business Products for Office Supplies, Printing",
-      "action": "Adopted Resolution No. 71,955\u2013N.S."
+      "action": "Adopted Resolution No. 71,955\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Contract No. 32000164 Amendment: CGB Enterprise, LLC (purchased from",
-      "action": "Adopted Resolution No. 71,956\u2013N.S."
+      "action": "Adopted Resolution No. 71,956\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Formal Bid Solicitations and Request for Proposals Scheduled for Possible",
-      "action": "Approved recommendation. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 4 Consent Calendar"
+      "action": "Approved recommendation. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 4 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Contract: Swifthawk Consulting, LLC for Professional Services",
-      "action": "Adopted Resolution No. 71,957\u2013N.S."
+      "action": "Adopted Resolution No. 71,957\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Updated Findings of Facts Associated with Berkeley Fire Code",
-      "action": "Adopted Resolution No. 71,958\u2013N.S."
+      "action": "Adopted Resolution No. 71,958\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Contract No. 32300108 Amendment: Street Level Advisors, LLC for Housing",
-      "action": "Adopted Resolution No. 71,959\u2013N.S."
+      "action": "Adopted Resolution No. 71,959\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Purchase Orders: CDW-G for using Omnia Partners Cooperative Purchasing",
-      "action": "Adopted Resolution No. 71,960\u2013N.S. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 5 Consent Calendar"
+      "action": "Adopted Resolution No. 71,960\u2013N.S. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 5 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Updates to the Measure T1 Project List",
-      "action": "Adopted Resolution No. 71,961\u2013N.S. Council Consent Items"
+      "action": "Adopted Resolution No. 71,961\u2013N.S. Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "The Parent Writing Circles Initiative- Relinquishment of Council Office Budget",
-      "action": "Councilmember Taplin added as a co-sponsor. Adopted Resolution No. 71,962\u2013N.S. amended to include contributions from the following Councilmembers up to the amounts listed: Councilmember Taplin - $500; Councilmember Lunaparra - $200; Councilmember Blackaby - $250; Councilmember Tregub - $150; Council"
+      "action": "Councilmember Taplin added as a co-sponsor. Adopted Resolution No. 71,962\u2013N.S. amended to include contributions from the following Councilmembers up to the amounts listed: Councilmember Taplin - $500; Councilmember Lunaparra - $200; Councilmember Blackaby - $250; Councilmember Tregub - $150; Councilmember Humbert - $200; Councilmember Kesarwani - $100; Councilmember O\u2019Keefe - $250; Mayor Ishii - $250.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Zoning Ordinance Modification for Telegraph Avenue Commercial District",
-      "action": "Mayor Ishii and Councilmember Tregub added as co-sponsors. Approved recommendation. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 6 Public Comment \u2013 Items Not Listed on the Agenda - 5 speakers. Adjournment Action: M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 7:55 p.",
+      "action": "Mayor Ishii and Councilmember Tregub added as co-sponsors. Approved recommendation. Tuesday, September 16, 2025 ANNOTATED AGENDA Page 6 Public Comment \u2013 Items Not Listed on the Agenda - 5 speakers. Adjournment Action: M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 7:55 p.m. Communications Global Warming & Homelessness Solution",
+      "speakers": 5,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -123,182 +155,254 @@
     {
       "number": 1,
       "title": "Mike Vandeman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Paul Roberts",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Lori Pottinger",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Rod Richardson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Lance Montauk",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Aaron Lobo",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Imraan Mohammed (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Etienne Yang",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Summer Brenner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Susan Nunes Fadley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Mona VScott",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Robbie Steinhart",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Debbie LeVeen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Alice Chuang",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Nori Hudson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Joaquin R Carbonell IV",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Mira Stein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Kelly Zito",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Gina Rieger",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Abhijit Bhat",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Colin Arnold",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Steven Donaldson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Margot Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Lori Pottinger",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Carol Denney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Kelly Zito",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Betsy Morris on behalf of the Gray Panthers Berkeley East Bay",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Robert Borghese Byler (9)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Crystyrusty",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "Russbumper (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Candace Hyde-Wang",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Submitted by Councilmember Brent Blackaby",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Alex Knox on behalf of Telegraph Business Improvement District",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Beth Roessner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

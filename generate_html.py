@@ -11,6 +11,7 @@ Usage:
 """
 
 import json
+import math
 import os
 import re
 import sys
@@ -29,8 +30,7 @@ if "weasyprint" not in sys.modules:
 import scorecard_pdf as sc
 import mayor_scorecard as ms
 
-PUBLISH_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "publish")
-INCIDENTS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "incidents.json")
+PUBLISH_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "publish")
 
 # Canonical incident list. Each entry is one incident with all implicated parties.
 # members: list of canonical names implicated; "Full Council" = all current council members.
@@ -40,13 +40,27 @@ INCIDENTS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "incid
 # Update this alongside incidents/YYYY-mm/ HTML files.
 ALL_EDITORIAL_INCIDENTS: list[dict] = [
     {
+        "title":   "Zone Zero Fire Ordinance — Proactive Public Safety Leadership",
+        "date":    "2026-01-01",
+        "url":     "incidents/2026-01/incident_Blackaby_ZoneZero.html",
+        "summary": "Blackaby initiated and built unanimous council support for a Zone Zero "
+                   "ember-resistant barrier ordinance covering ~1,200 Berkeley hills homes — "
+                   "moving ahead of repeated state delays. Secured a $1M CalFire grant for "
+                   "low-income compliance and structured additional private and tax-credit "
+                   "funding mechanisms. Cited nationally as a model by wildfire experts.",
+        "members": ["Blackaby"],
+        "scores":  {"Blackaby": 8},
+        "pillars": ["Character & Conduct", "Fiscal Stewardship"],
+        "pending": False,
+    },
+    {
         "title":   "American Renewal Plan — Federal Policy Framework on District Platform",
         "date":    "2026-04-12",
         "url":     "incidents/2026-04/incident_Bartlett_Renewal.html",
         "summary": "Bartlett published a five-pillar national economic reform framework on his "
                    "council office platform — addressed to federal policymakers — while Berkeley "
                    "faces an unresolved structural fiscal crisis and unaddressed local failures. "
-                   "None of the plan's pillars touches any Berkeley P1 problem.",
+                   "None of the plan's pillars touches any Berkeley Priority 1 (P1) problem.",
         "members": ["Bartlett"],
         "scores":  {"Bartlett": -10},
         "pillars": ["Character & Conduct"],
@@ -59,8 +73,8 @@ ALL_EDITORIAL_INCIDENTS: list[dict] = [
         "summary": "LunaParra and Ishii authored a supplemental to reject the Flock ALPR "
                    "contract; Tregub co-sponsored. Their sanctuary-city rationale ignored "
                    "that Berkeley's City Attorney had already negotiated full protections. "
-                   "Officers identified Flock as 'the singular piece of technology' keeping "
-                   "them engaged, amid a documented BPD attrition crisis.",
+                   "After 132 public speakers and debate past 1 a.m., the item was continued "
+                   "unanimously to a June 2 special meeting. Final vote pending.",
         "members": ["LunaParra", "Ishii", "Tregub"],
         "scores":  {"LunaParra": -9, "Ishii": -8, "Tregub": -6},
         "pillars": ["Fiscal Stewardship"],
@@ -169,6 +183,25 @@ def _has_named_incidents(name: str) -> bool:
     """True if the member is specifically named (not just via Full Council) in any incident."""
     return any(name in i["members"] for i in ALL_EDITORIAL_INCIDENTS)
 
+def _incident_score(inc: dict, name: str) -> int:
+    return inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
+
+def _incident_alert(name: str) -> str:
+    """Badge HTML for members with a named incident record; empty string otherwise."""
+    if not _has_named_incidents(name):
+        return ""
+    return (f'<a href="incidents/index.html#{name.lower()}" class="inc-badge" '
+            f'title="Active incident record — click for details">'
+            f'&#9888;&nbsp;Incident record</a> ')
+
+def _inject_incidents(html: str, name: str) -> str:
+    """Inject both incident sections into a scorecard page."""
+    html = html.replace("<!-- RECENT_INCIDENTS_PLACEHOLDER -->",
+                        _render_recent_incidents(name), 1)
+    html = html.replace("<!-- INCIDENTS_PLACEHOLDER -->",
+                        _render_incident_record(name), 1)
+    return html
+
 
 _INC_CSS = """
 <style>
@@ -231,9 +264,10 @@ _INC_CSS = """
     color: #e74c3c;
     white-space: nowrap;
   }
+  .inc-score-chip.positive { color: #27ae60; }
   .inc-pillars { font-size: 9px; color: #7f8c8d; margin-top: 2px; }
 
-  /* Recent incidents section (card top, replacing Rankings) */
+  /* Recent incidents section (card top) */
   .recent-inc-section {
     margin: 0;
     border-bottom: 1px solid #ecf0f1;
@@ -284,6 +318,7 @@ _INC_CSS = """
     min-width: 36px;
     text-align: right;
   }
+  .rir-score.positive { color: #27ae60; }
   .rir-body { flex: 1; }
   .rir-title { font-size: 12px; font-weight: 700; color: #1a1a2e; line-height: 1.3; }
   .rir-pillars { font-size: 10px; color: #7f8c8d; margin-top: 2px; }
@@ -308,12 +343,13 @@ def _render_recent_incidents(name: str) -> str:
     else:
         rows = ""
         for inc in incidents:
-            score = inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
+            score = _incident_score(inc, name)
             score_str = f"{score:+d}" if score else "—"
+            score_class = " positive" if score > 0 else ""
             pillars = " · ".join(sorted(inc["pillars"]))
             rows += f"""
     <a class="recent-inc-row" href="{inc['url']}">
-      <div class="rir-score">{score_str}</div>
+      <div class="rir-score{score_class}">{score_str}</div>
       <div class="rir-body">
         <div class="rir-title">{inc['title']}</div>
         <div class="rir-pillars">{pillars}</div>
@@ -344,8 +380,9 @@ def _render_incident_record(name: str) -> str:
     if incidents:
         rows = ""
         for inc in incidents:
-            score = inc["scores"].get(name) or inc["scores"].get("Full Council", 0)
+            score = _incident_score(inc, name)
             score_str = f"{score:+d}" if score else "—"
+            score_class = " positive" if score > 0 else ""
             pillars = " · ".join(sorted(inc["pillars"]))
             rows += f"""
       <div class="inc-page-row">
@@ -354,7 +391,7 @@ def _render_incident_record(name: str) -> str:
           {inc['title']}
           <div class="inc-pillars">{pillars}</div>
         </a>
-        <span class="inc-score-chip">{score_str}</span>
+        <span class="inc-score-chip{score_class}">{score_str}</span>
       </div>"""
         body = f'<div class="inc-pages">{rows}\n    </div>'
     else:
@@ -396,38 +433,28 @@ def _add_viewport(html: str) -> str:
 
 _NAV_CSS = """<style>
 body { flex-direction: column !important; align-items: center !important; }
-.site-nav {
-  width: 760px; max-width: 100%;
-  background: #1a1a2e;
-  padding: 9px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px 8px 0 0;
-  margin-top: 20px;
-}
-.site-nav-home {
-  font-size: 11px; font-weight: 700;
-  color: #8899bb; text-decoration: none; letter-spacing: .3px;
-}
-.site-nav-home:hover { color: #fff; }
-.site-nav-label {
-  font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 1.4px; color: #555e7a;
-}
+.top-bar-nav { width: 100%; background: #1a1a2e; padding: 10px 40px; }
+.top-bar-nav a { text-decoration: none; display: block; }
+.top-bar-nav .brand-title { font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; }
+.top-bar-nav .brand-sub { font-size: 11px; color: #8899bb; margin-top: 3px; }
+.top-bar-nav a:hover .brand-title { color: #4e8ecb; }
 </style>"""
 
-_NAV_HTML = (
-    '<div class="site-nav">'
-    '<a href="index.html" class="site-nav-home">&#8592; Scorecards</a>'
-    '<span class="site-nav-label">Berkeley City Council</span>'
-    '</div>\n'
-)
+def _nav_html(home_href: str = "index.html") -> str:
+    return (
+        f'<div class="top-bar-nav">'
+        f'<a href="{home_href}">'
+        f'<div class="brand-title">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div>'
+        f'<div class="brand-sub">Independent analysis. Informed voters. Better government.</div>'
+        f'</a></div>\n'
+    )
 
-def _add_index_link(html: str) -> str:
-    """Inject nav bar above the card and fix body to column flex."""
+def _add_index_link(html: str, home_href: str = "index.html") -> str:
+    """Inject top nav bar above the card and fix body to column flex."""
+    if "top-bar-nav" in html:
+        return html  # already patched
     html = html.replace('</head>', _NAV_CSS + '\n</head>', 1)
-    return html.replace('<body>\n', f'<body>\n{_NAV_HTML}', 1)
+    return html.replace('<body>\n', f'<body>\n{_nav_html(home_href)}', 1)
 
 
 _TOOLTIP_CSS = """
@@ -466,13 +493,16 @@ def _add_tooltip_attrs(html: str) -> str:
         'class="evid-basis evid-official"',
         f'class="evid-basis evid-official" data-tip="{_OFFICIAL_TIP}"',
     )
-    html = html.replace(
-        'class="evid-basis evid-text"',
-        f'class="evid-basis evid-text" data-tip="{_TEXT_TIP}"',
-    )
+    # Specific match first: mixed tooltip for "Text analysis + official record" label
     html = html.replace(
         'class="evid-basis evid-text">Text analysis + official record',
         f'class="evid-basis evid-text" data-tip="{_MIXED_TIP}">Text analysis + official record',
+    )
+    # Generic text-only tooltip — skip elements already tagged by the specific match above
+    html = re.sub(
+        r'class="evid-basis evid-text"(?! data-tip)',
+        f'class="evid-basis evid-text" data-tip="{_TEXT_TIP}"',
+        html,
     )
     # Inject tooltip CSS before </head>
     html = html.replace('</head>', _TOOLTIP_CSS + '\n</head>', 1)
@@ -489,6 +519,85 @@ def screen_html(html: str, add_back_link: bool = False) -> str:
 
 
 # ---------------------------------------------------------------------------
+# District map SVG
+# ---------------------------------------------------------------------------
+
+_DIST_MEMBER = {
+    1: "Kesarwani", 2: "Taplin",   3: "Bartlett", 4: "Tregub",
+    5: "OKeefe",    6: "Blackaby", 7: "LunaParra", 8: "Humbert",
+}
+_DIST_COLORS = {
+    1: "#4e8ecb", 2: "#5a9e6f", 3: "#b8954a", 4: "#8e6bbf",
+    5: "#3aada3", 6: "#c96f3a", 7: "#4ab8c8", 8: "#6b7ecf",
+}
+
+def _generate_district_svg() -> str:
+    geojson_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                "council_districts.geojson")
+    if not os.path.exists(geojson_path):
+        return '<svg viewBox="0 0 600 490" xmlns="http://www.w3.org/2000/svg"></svg>'
+
+    with open(geojson_path) as f:
+        gj = json.load(f)
+
+    all_x, all_y = [], []
+    for feat in gj["features"]:
+        g = feat["geometry"]
+        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        for poly in polys:
+            for ring in poly:
+                for pt in ring:
+                    all_x.append(pt[0]); all_y.append(pt[1])
+
+    min_lon, max_lon = min(all_x), max(all_x)
+    min_lat, max_lat = min(all_y), max(all_y)
+    lon_scale = math.cos(math.radians((min_lat + max_lat) / 2))
+    W = 600
+    H = int(W * (max_lat - min_lat) / ((max_lon - min_lon) * lon_scale))
+
+    def proj(lon, lat):
+        return (
+            (lon - min_lon) / (max_lon - min_lon) * W,
+            H - (lat - min_lat) / (max_lat - min_lat) * H,
+        )
+
+    parts = []
+    for feat in sorted(gj["features"], key=lambda f: f["properties"]["District"]):
+        dist = feat["properties"]["District"]
+        member = _DIST_MEMBER.get(dist)
+        if not member:
+            continue
+        color = _DIST_COLORS.get(dist, "#888")
+        g = feat["geometry"]
+        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+
+        d_parts, px, py = [], [], []
+        for poly in polys:
+            for ring in poly:
+                pts = [proj(p[0], p[1]) for p in ring]
+                px += [p[0] for p in pts]; py += [p[1] for p in pts]
+                d_parts.append("M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts) + " Z")
+
+        cx, cy = sum(px) / len(px), sum(py) / len(py)
+        d_str = " ".join(d_parts)
+        href = f"scorecard_{member}.html"
+        parts.append(
+            f'  <a href="{href}" title="District {dist} — {member}">'
+            f'<path d="{d_str}" fill="{color}" fill-opacity="0.72" '
+            f'stroke="#1a1a2e" stroke-width="1.5" class="dp"/>'
+            f'<text x="{cx:.0f}" y="{cy:.0f}" text-anchor="middle" '
+            f'dominant-baseline="middle" font-family="Helvetica Neue,Arial,sans-serif" '
+            f'font-size="12" font-weight="700" fill="#fff" '
+            f'stroke="#1a1a2e" stroke-width="3" paint-order="stroke">D{dist}</text>'
+            f'</a>'
+        )
+
+    return (f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" '
+            f'style="width:100%;height:100%;display:block">\n'
+            + "\n".join(parts) + "\n</svg>")
+
+
+# ---------------------------------------------------------------------------
 # Index page
 # ---------------------------------------------------------------------------
 
@@ -500,22 +609,31 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
     latest_mtg = meta.get("latest_meeting", "")
     n_meetings = meta.get("transcripts", 0)
 
+    # Total individual member-votes across all recorded vote events
+    _lv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "scores", "linked_votes.json")
+    total_member_votes = 0
+    if os.path.exists(_lv_path):
+        with open(_lv_path) as _f:
+            _lv = json.load(_f)
+        total_member_votes = sum(len(v.get("votes", {})) for v in _lv)
+
+    svg = _generate_district_svg()
+
     rows = ""
     for m in members_meta:
         filename = f"scorecard_{m['name']}.html"
-        has_incidents = _has_named_incidents(m['name'])
-        alert = (f'<a href="incidents/index.html#{m["name"].lower()}" class="inc-badge" '
-                 f'title="Active incident record — click for details">'
-                 f'&#9888;&nbsp;Incident record</a> '
-                 if has_incidents else "")
+        alert = _incident_alert(m['name'])
         rows += f"""
       <tr>
         <td class="name">
-          {alert}<a href="{filename}">{m['display_name']}</a><br>
+          <a href="{filename}">{m['display_name']}</a> {alert}<br>
           <span class="sub">{m['district']}</span>
         </td>
         <td class="grade {m['grade_cls']}">{m['grade_str']}</td>
       </tr>"""
+
+    ishii_alert = _incident_alert("Ishii")
 
     return f"""<!DOCTYPE html>
 <html>
@@ -526,17 +644,64 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
   <style>
     * {{ box-sizing: border-box; margin: 0; padding: 0;
          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }}
-    body {{ background: #f0f2f5; padding: 32px 16px; color: #2c3e50; }}
+    body {{ background: #f0f2f5; color: #2c3e50; }}
+
+    /* ── Top bar ── */
+    .top-bar {{ background: #1a1a2e; padding: 10px 40px;
+                display: flex; justify-content: space-between; align-items: center; }}
+    .brand-title {{ font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; }}
+    .brand-sub   {{ font-size: 11px; color: #8899bb; margin-top: 3px; }}
+
+    /* ── Hero ── */
+    .hero-outer {{ background: #1a1a2e; }}
+    .hero-inner {{ max-width: 1100px; margin: 0 auto;
+                   padding: 52px 40px 0; display: flex; gap: 40px; align-items: flex-end; }}
+    .hero-text  {{ flex: 0 0 360px; padding-bottom: 52px; }}
+    .hero-q     {{ font-size: 50px; font-weight: 900; color: #fff; line-height: 1.08; }}
+    .hero-ans   {{ font-size: 32px; font-weight: 800; color: #4e8ecb; margin-top: 14px; }}
+    .hero-rule  {{ border: none; border-top: 2px solid #4e8ecb; width: 56px; margin: 22px 0; }}
+    .hero-tag-link {{ text-decoration: none; display: block; }}
+    .hero-tag   {{ font-size: 14px; color: #aab4cc; line-height: 1.8; }}
+    .hero-tag strong {{ color: #fff; }}
+    .hero-tag-link:hover .hero-tag {{ color: #c8d0e0; }}
+    .hero-tag-link:hover .hero-tag strong {{ color: #e8edf5; }}
+    .hero-map   {{ flex: 1; min-width: 0; }}
+    .hero-map svg {{ display: block; width: 100%; }}
+    .dp {{ transition: fill-opacity .15s; cursor: pointer; }}
+    a:hover .dp {{ fill-opacity: 1 !important; }}
+
+    /* ── Stats bar ── */
+    .stats-bar   {{ background: #fff; border-top: 1px solid #dde2e8; }}
+    .stats-inner {{ max-width: 1100px; margin: 0 auto; padding: 18px 40px;
+                    display: flex; align-items: center; }}
+    .stat        {{ flex: 1; display: flex; align-items: center; gap: 13px;
+                    padding: 0 28px; border-right: 1px solid #e4e8ed; }}
+    .stat:first-child {{ padding-left: 0; }}
+    .stat:last-child   {{ border-right: none; }}
+    .stat-icon   {{ width: 36px; height: 36px; border: 2px solid #4e8ecb; border-radius: 50%;
+                    display: flex; align-items: center; justify-content: center;
+                    color: #4e8ecb; font-size: 15px; flex-shrink: 0; }}
+    .stat-val    {{ font-size: 22px; font-weight: 900; color: #1a1a2e; line-height: 1; }}
+    .stat-lbl    {{ font-size: 9px; font-weight: 700; text-transform: uppercase;
+                    letter-spacing: 1px; color: #7f8c8d; margin-top: 3px; }}
+    .stat-src    {{ font-size: 11px; color: #2c3e50; line-height: 1.55; font-weight: 500; }}
+
+    /* ── Method strip ── */
+    .method-strip {{ background: #f4f5f7; border-top: 1px solid #dde2e8;
+                     border-bottom: 3px solid #dde2e8; }}
+    .method-inner {{ max-width: 1100px; margin: 0 auto; padding: 9px 40px;
+                     display: flex; align-items: center; font-size: 11px; color: #7f8c8d; }}
+    .method-inner a {{ color: #4e8ecb; text-decoration: none; font-weight: 600; margin-left: 14px; }}
+    .method-inner a:hover {{ text-decoration: underline; }}
+
+    /* ── Scorecards section ── */
+    .sc-section {{ padding: 32px 16px 48px; }}
     .card {{ max-width: 540px; margin: 0 auto; background: #fff;
              border-radius: 8px; overflow: hidden;
              box-shadow: 0 4px 20px rgba(0,0,0,.12); }}
-    .header {{ background: #1a1a2e; color: #fff; padding: 28px 32px 20px; }}
-    .header h1 {{ font-size: 22px; font-weight: 800; }}
-    .header p  {{ font-size: 12px; color: #8899bb; margin-top: 6px; line-height: 1.6; }}
-    .intro {{ padding: 20px 24px; font-size: 12.5px; line-height: 1.7; color: #444;
-              border-bottom: 1px solid #ecf0f1; }}
-    .intro a {{ color: #3498db; text-decoration: none; }}
-    .intro a:hover {{ text-decoration: underline; }}
+    .card-head {{ background: #1a1a2e; color: #fff; padding: 20px 24px 16px; }}
+    .card-head h2 {{ font-size: 14px; font-weight: 700; letter-spacing: .3px; }}
+    .card-head p  {{ font-size: 10px; color: #8899bb; margin-top: 4px; line-height: 1.6; }}
     table {{ width: 100%; border-collapse: collapse; }}
     thead tr {{ background: #f0f2f5; }}
     th {{ font-size: 10px; text-transform: uppercase; letter-spacing: .8px;
@@ -551,14 +716,14 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
     .grade {{ width: 52px; font-size: 22px; font-weight: 900; text-align: center; }}
     .inc-badge {{ display: inline-block; background: #e74c3c; color: #fff;
                   font-size: 9px; font-weight: 700; text-decoration: none;
-                  padding: 2px 7px; border-radius: 10px; margin-bottom: 3px;
-                  letter-spacing: .3px; }}
+                  padding: 2px 7px; border-radius: 10px; margin-left: 4px;
+                  letter-spacing: .3px; vertical-align: middle; }}
     .grade-a  {{ color: #2ecc71; }}
     .grade-b  {{ color: #3498db; }}
     .grade-c  {{ color: #f39c12; }}
     .grade-d  {{ color: #e67e22; }}
     .grade-f  {{ color: #e74c3c; }}
-    .footer {{ padding: 12px 20px; font-size: 10px; color: #aaa; text-align: center; }}
+    .card-footer {{ padding: 12px 20px; font-size: 10px; color: #aaa; text-align: center; }}
     .summary-link {{ display: block; text-align: center; padding: 14px;
                      background: #f8f9fa; border-top: 1px solid #ecf0f1;
                      font-size: 12px; color: #3498db; text-decoration: none; }}
@@ -566,63 +731,120 @@ def render_index(members_meta: list[dict], meta: dict) -> str:
   </style>
 </head>
 <body>
-<div class="card">
-  <div class="header">
-    <h1>Berkeley City Council Scorecards</h1>
-    <p>
-      {n_meetings} meetings analyzed &nbsp;·&nbsp; &#9888; = active incident record<br>
-      {"As of " + latest_mtg + " &nbsp;·&nbsp; " if latest_mtg else ""}Generated {gen_date}
-    </p>
+
+<!-- ── Top bar ── -->
+<div class="top-bar">
+  <div>
+    <div class="brand-title">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div>
+    <div class="brand-sub">Independent analysis. Informed voters. Better government.</div>
   </div>
-  <div class="intro">
-    Berkeley&rsquo;s nine-member City Council governs ~125,000 residents, directs ~$292M in General
-    Fund spending and ~$630M across all city funds, and oversees an organization of ~1,600 budgeted
-    positions and ~2,700 employees. The city&rsquo;s own documents describe the fiscal trajectory as
-    &ldquo;not sustainable&rdquo;: a ~$32M annual structural deficit and ~$1.8B in deferred
-    infrastructure investment. These scorecards ask how each member is performing against that
-    backdrop &mdash; drawn from years of city budgets, audited fiscal reports, and audit findings,
-    alongside meeting transcripts, voting records, and member communications.
-    <a href="methodology.html">Methodology &rarr;</a>
+</div>
+
+<!-- ── Hero ── -->
+<div class="hero-outer">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-q">How well is Berkeley governed?</h1>
+      <div class="hero-ans">We&rsquo;re keeping score.</div>
+      <hr class="hero-rule">
+      <a href="methodology.html" class="hero-tag-link">
+        <p class="hero-tag">
+          <strong>Facts</strong> where possible.
+          <strong>Judgment</strong> where necessary.
+          <strong>Transparency</strong> always.
+        </p>
+      </a>
+    </div>
+    <div class="hero-map">{svg}</div>
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Member</th>
-        <th>Grade</th>
-      </tr>
-    </thead>
-    <tbody>{rows}
-    </tbody>
-  </table>
-  <a class="summary-link" href="scorecard_SUMMARY.html">View full comparison table →</a>
-  <div style="border-top: 3px solid #c0392b; margin: 0; padding: 16px 24px 8px;
-              background: #fdf5f5;">
-    <div style="font-size: 10px; font-weight: 700; text-transform: uppercase;
-                letter-spacing: 1.2px; color: #c0392b; margin-bottom: 10px;">
-      Mayor — Evaluated Separately
+
+  <!-- ── Stats bar ── -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-icon">&#9776;</div>
+        <div>
+          <div class="stat-val">{n_meetings}</div>
+          <div class="stat-lbl">Meetings analyzed</div>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">&#10003;</div>
+        <div>
+          <div class="stat-val">{total_member_votes}</div>
+          <div class="stat-lbl">Votes recorded</div>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">$</div>
+        <div>
+          <div class="stat-val">$630M</div>
+          <div class="stat-lbl">City funds overseen</div>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">&#9432;</div>
+        <div>
+          <div class="stat-src">Council meetings &middot; Newsletters<br>Campaign statements &middot; Press coverage</div>
+          <div class="stat-lbl">Sources analyzed</div>
+        </div>
+      </div>
     </div>
-    <div style="font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 12px;">
-      The mayor sets the agenda, chairs meetings, and holds unique powers unavailable to
-      district council members. She is graded on <em>Mayoral Accountability</em> —
-      agenda curation, constituent communications, meeting management, and accountability
-      gap — not the same Voter Alignment metric used for district members.
+  </div>
+
+  <!-- ── Method strip ── -->
+  <div class="method-strip">
+    <div class="method-inner">
+      &#9670; Methodology published. Data sources documented. Analysis you can trust.
+      <a href="methodology.html">See our methodology &rarr;</a>
     </div>
-    <table style="width:100%;border-collapse:collapse">
-      <tbody>
-        <tr style="border-bottom: none;">
-          <td style="width:32px;font-size:11px;color:#aaa;text-align:center">★</td>
-          <td style="font-size:14px;font-weight:600;padding:10px 16px">
-            <a href="scorecard_Ishii.html" style="color:#2c3e50;text-decoration:none">Ishii</a><br>
-            <span style="font-size:11px;color:#999;font-weight:400">Mayor · At-Large</span>
-          </td>
-          <td style="width:52px;font-size:22px;font-weight:900;text-align:center;color:#e67e22">{ms._letter(ms.MAYORAL_SCORE)[0]}</td>
-          <td style="width:56px;text-align:right;font-size:13px;color:#7f8c8d">{ms.MAYORAL_SCORE*100:.0f}%</td>
-        </tr>
+  </div>
+</div>
+
+<!-- ── Scorecards ── -->
+<div class="sc-section">
+  <div class="card">
+    <div class="card-head">
+      <h2>Member Scorecards</h2>
+      <p>&#9888; = active incident record &nbsp;·&nbsp; Grades reflect all scored dimensions</p>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Member</th><th>Grade</th></tr>
+      </thead>
+      <tbody>{rows}
       </tbody>
     </table>
+    <a class="summary-link" href="scorecard_SUMMARY.html">View full comparison table &rarr;</a>
+    <div style="border-top: 3px solid #c0392b; padding: 16px 24px 8px; background: #fdf5f5;">
+      <div style="font-size: 10px; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: 1.2px; color: #c0392b; margin-bottom: 10px;">
+        Mayor — Evaluated Separately
+      </div>
+      <div style="font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 12px;">
+        The mayor sets the agenda, chairs meetings, and holds unique powers unavailable to
+        district council members. She is graded on <em>Mayoral Accountability</em> —
+        agenda curation, constituent communications, meeting management, and accountability
+        gap — not the same Voter Alignment metric used for district members.
+      </div>
+      <table style="width:100%;border-collapse:collapse">
+        <tbody>
+          <tr style="border-bottom:none">
+            <td style="width:32px;font-size:11px;color:#aaa;text-align:center">&#9733;</td>
+            <td style="font-size:14px;font-weight:600;padding:10px 16px">
+              <a href="scorecard_Ishii.html" style="color:#2c3e50;text-decoration:none">Ishii</a> {ishii_alert}<br>
+              <span style="font-size:11px;color:#999;font-weight:400">Mayor &middot; At-Large</span>
+            </td>
+            <td style="width:52px;font-size:22px;font-weight:900;text-align:center;color:#e67e22">{ms._letter(ms.MAYORAL_SCORE)[0]}</td>
+            <td style="width:56px;text-align:right;font-size:13px;color:#7f8c8d">{ms.MAYORAL_SCORE*100:.0f}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">Berkeley City Council Analysis &nbsp;·&nbsp; Generated {gen_date}</div>
   </div>
-  <div class="footer">Berkeley City Council Analysis &nbsp;·&nbsp; Generated {gen_date}</div>
 </div>
+
 </body>
 </html>"""
 
@@ -677,6 +899,10 @@ hr { border: none; border-top: 1px solid #ecf0f1; margin: 28px 0; }
 blockquote { border-left: 3px solid #c0392b; margin: 10px 0;
              padding: 6px 16px; background: #fdf5f5;
              color: #555; font-style: italic; }
+.lede { background: #1a1a2e; color: #e8eaf0; font-size: 20px; font-weight: 600;
+        line-height: 1.55; font-style: normal; border-left: none;
+        padding: 28px 48px; margin: -40px -48px 36px -48px; border-radius: 8px 8px 0 0; }
+.lede p { margin: 0; color: #e8eaf0; }
 strong { color: #1a1a2e; }
 """
 
@@ -693,6 +919,7 @@ def _render_methodology_html() -> str:
     with open(src, encoding="utf-8") as f:
         md_text = f.read()
     body = _md.markdown(md_text, extensions=["tables", "fenced_code", "nl2br"])
+    body = body.replace("<blockquote>", '<blockquote class="lede">', 1)
     return f"""<!DOCTYPE html>
 <html>
 <head>
@@ -748,10 +975,7 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
             s, rankings, council_meta.get("block_vote_rate", 0), meta,
             summary=summaries.get(name, {})
         )
-        html = html.replace("<!-- RECENT_INCIDENTS_PLACEHOLDER -->",
-                            _render_recent_incidents(name), 1)
-        html = html.replace("<!-- INCIDENTS_PLACEHOLDER -->",
-                            _render_incident_record(name), 1)
+        html = _inject_incidents(html, name)
         html = screen_html(html, add_back_link=True)
 
         out = os.path.join(PUBLISH_DIR, f"scorecard_{name}.html")
@@ -773,10 +997,7 @@ def generate_html(aggregate: dict = None, council_meta: dict = None):
 
     # Mayor scorecard (Ishii — separate accountability framework)
     mayor_html = ms.render_mayor_scorecard(meta)
-    mayor_html = mayor_html.replace("<!-- RECENT_INCIDENTS_PLACEHOLDER -->",
-                                    _render_recent_incidents("Ishii"), 1)
-    mayor_html = mayor_html.replace("<!-- INCIDENTS_PLACEHOLDER -->",
-                                    _render_incident_record("Ishii"), 1)
+    mayor_html = _inject_incidents(mayor_html, "Ishii")
     mayor_html = screen_html(mayor_html, add_back_link=True)
     mayor_out  = os.path.join(PUBLISH_DIR, "scorecard_Ishii.html")
     with open(mayor_out, "w", encoding="utf-8") as f:

@@ -2,7 +2,7 @@
   "date": "2025-03-25",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-03-25%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:41:48.208049",
+  "fetched": "2026-04-27T08:44:35.723480",
   "roll_call_time": "4:09 p.m.",
   "present": [
     "Taplin",
@@ -31,17 +31,23 @@
     {
       "number": 1,
       "title": "Amend Memorandums of Understanding for Represented Employee Groups to",
-      "action": "Adopted Resolution No. 71,699\u2013N.S. Action Calendar \u2013 New Business"
+      "action": "Adopted Resolution No. 71,699\u2013N.S. Action Calendar \u2013 New Business",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Pavement Management & Infrastructure Planning Presentation",
-      "action": "9 speakers. Presentation made and discussion held. Tuesday, March 25, 2025 ANNOTATED AGENDA Page 2 Action Calendar \u2013 New Business"
+      "action": "9 speakers. Presentation made and discussion held. Tuesday, March 25, 2025 ANNOTATED AGENDA Page 2 Action Calendar \u2013 New Business",
+      "speakers": 9,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "2025 City Council Referral Prioritization Results Using Re-Weighted Range",
-      "action": "1 speaker. M/S/C (Taplin/Tregub) to adopt Resolution No. 71,700\u2013N.S. approving the list of prioritized referrals to city staff. Vote: All Ayes. Adjournment Action: M/S/C (Tregub/Humbert) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:29 p.m. Communications \u2022 None Supplemental Communications ",
+      "action": "1 speaker. M/S/C (Taplin/Tregub) to adopt Resolution No. 71,700\u2013N.S. approving the list of prioritized referrals to city staff. Vote: All Ayes. Adjournment Action: M/S/C (Tregub/Humbert) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:29 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 Item #2: Pavement Management & Infrastructure Planning Presentation",
+      "speakers": 1,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -54,12 +60,16 @@
     {
       "number": 1,
       "title": "Presentation submitted by the Public Works Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Presentation submitted by the City Clerk Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

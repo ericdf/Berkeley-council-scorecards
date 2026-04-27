@@ -2,7 +2,7 @@
   "date": "2025-02-11",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-02-11%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:41:26.824584",
+  "fetched": "2026-04-27T08:44:14.710915",
   "roll_call_time": "4:08 p.m.",
   "present": [
     "Taplin",
@@ -31,22 +31,30 @@
     {
       "number": 1,
       "title": "Refer Items 1a, 1b, and 1c to the City Manager for 1) additional public outreach;",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Refer Item 1d to the City Manager as written in the recommendation.",
-      "action": "See action listed under Item 1a. 1 c. Effective Mitigations for Berkeley\u2019s Ember Resilience (EMBER): Leave Early and Fire Department Staffing"
+      "action": "See action listed under Item 1a. 1 c. Effective Mitigations for Berkeley\u2019s Ember Resilience (EMBER): Leave Early and Fire Department Staffing",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Proposal 1: Evaluate the thresholds for the City\u2019s Extreme Fire Weather",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Proposal 2: Affirm City Council support for Fire Department staffing",
       "action": "See action listed under Item 1a. Tuesday, February 11, 2025 ANNOTATED AGENDA Page 3 Action Calendar \u2013 New Business 1 d. Request Inter-Departmental Collaboration and Implementation of Safe Passages",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -59,122 +67,170 @@
     {
       "number": 1,
       "title": "Yen Trac",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Gail Machlis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Janice Thomas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "John E. Rosenthal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Leah Rosenthal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Sara Sanderson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Alfred Twu",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Michel G. Thouati",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Revised agenda material submitted by Councilmember Brent Blackaby",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Presentation submitted by the Berkeley Fire Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "John S. Robey",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Patrick Buechner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Caroline Winnett (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Susan and Roy Bogas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Frederique Wynberg and Thomas Hutcheson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Isabelle Gaston",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Ruth Ehrenkrantz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Katie Johnson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Daniel Levine",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Residents on Berkeley Hills",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Marcus von Engel",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Robin Kibby",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

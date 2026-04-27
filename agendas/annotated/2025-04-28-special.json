@@ -2,7 +2,7 @@
   "date": "2025-04-28",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-04-28%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:42:03.848174",
+  "fetched": "2026-04-27T08:44:49.844699",
   "roll_call_time": "5:04 p.m.",
   "present": [
     "Kesarwani",
@@ -21,955 +21,1343 @@
     {
       "number": 1,
       "title": "Resolution for an Immediate and Permanent Ceasefire in Gaza, and an End to",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "The City of Berkeley Council adopt a resolution for a ceasefire in Gaza, and an",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Send a copy of the resolution to President Joseph R. Biden, Secretary of State",
-      "action": "M/S/C (Ishii/Humbert) to suspend the rules and establish a three-hour public comment period for the agenda item with time for both in-person and online speakers. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 Lunaparra. Action: M/S/C (Luna",
+      "action": "M/S/C (Ishii/Humbert) to suspend the rules and establish a three-hour public comment period for the agenda item with time for both in-person and online speakers. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 Lunaparra. Action: M/S/C (Lunaparra/Ishii) to suspend the rules and extend the public comment period for an additional hour. Vote: Ayes \u2013 Kesarwani, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Ishii; Noes \u2013 Taplin; Abstain \u2013 Humbert. Action: M/S/C (Ishii/Lunaparra) to suspend the rules and extend the meeting to 12:00 a.m. Vote: All Ayes. Monday, April 28, 2025 ANNOTATED AGENDA Page 2 Action Calendar \u2013 New Business Action: M/S/Failed (Ishii/Blackaby) to adopt the resolution submitted by Mayor Ishii and Councilmember Bartlett in Supplemental Communications Packet #2 titled \u201cResolution Reaffirming the City of Berkeley\u2019s Commitment to Combatting Hate, Supporting a Lasting Peace Between Israel and Gaza, Opposing a U.S. Occupation of Gaza and Respecting Freedom \u2018f Speech.\u201d Vote: Ayes \u2013 Bartlett, Tregub, Lunaparra, Ishii; Noes \u2013 Blackaby; Abstain \u2013 Kesarwani, Taplin, O\u2019Keefe, Humbert. Action: 197 speakers. M/S/Carried (Lunaparra/Ishii) to adopt Resolution No. 71,726\u2013N.S. submitted by Councilmember Taplin in Supplemental Communications Packet #2 titled \u201cReaffirming Berkeley\u2019s Commitment to Peace, at Home and Abroad.\u201d Vote: Ayes \u2013 Kesarwani, Taplin, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 L unaparra; Abstain \u2013 Bartlett. Adjournment Action: M/S/C (Humbert/O\u2019Keefe) to adjourn the meeting. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 Lunaparra. Adjourned at 11:48 p.m. Communications Item #1: Resolution for an Immediate and Permanent Ceasefire in Gaza, and an End to U.S. Military Aid to Israel, and Support for Palestinian Self-Determination",
+      "speakers": 197,
+      "letters": 0,
       "vote": {
         "ayes": [
-          "all"
+          "Kesarwani",
+          "Taplin",
+          "Bartlett",
+          "Tregub",
+          "OKeefe",
+          "Blackaby",
+          "Humbert",
+          "Ishii"
         ],
         "noes": [],
-        "abstain": [],
+        "abstain": [
+          "LunaParra"
+        ],
         "absent": []
-      }
+      },
+      "extension_vote": true
     },
     {
       "number": 1,
       "title": "Iris Greenberg-Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Diana Bohn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Allen Mayer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "David Garner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "John Wolfe",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Revised agenda material submitted by Mayor Adena Ishii and Councilmember",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Supplemental agenda material submitted by Councilmember Terry Taplin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Robert Bonam (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Sriram Gopalakrishnan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Youval Dar",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Sara S Ishikawa",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Jamie Cooney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Angie Chang",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Hali Hammer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Pat O\u2019Brien",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Jan Leuin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Cynthia Papermaster and CODEPINK Bay Area Chapter",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Tam Sababa",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Tal Garner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Kelly Hammergren",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Stephen M. Lipson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Julie Goldobin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Gayle McLaughlin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Kate Greene",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Susanne (Sanne) DeWitt",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Nathan Hunt",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Fredda Cassidy",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Laura Lipman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Deborah Cohan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Jon Jackson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Terry Fletcher",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "Ana Tellez-Witrago on behalf of Richmond Mayor Eduardo Martinez",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Alan Kittner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Claudia Jimenez",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Carl Nelson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Esther Brass-Chorin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Daren Fields",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Sari Alper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "Shifra Pride Raffel (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "Miriam Green",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "Linda Press Wulf and Stanley Wulf",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Sara Sunstein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Ilene Lee",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Cynthia Papermaster",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Dorothea Dorenz (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "Naama Sadan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Jean Tepperman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "Tamara Gurin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 49,
       "title": "Desmid Lyon",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "Vicki Sommer (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Ellen Feigenbaum and Peter Schwab",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 52,
       "title": "John Farnkopf",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 53,
       "title": "Sally Nelson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 54,
       "title": "Madeline Feingold",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 55,
       "title": "Rachel Schiff",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 56,
       "title": "Michal Weber",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 57,
       "title": "Jude Berman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 58,
       "title": "Michael Cassidy (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 59,
       "title": "Larry Hobel",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 60,
       "title": "Larry Bradshaw",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 61,
       "title": "Imtiaz Ghori",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 62,
       "title": "Stephanie Guynn and William Guynn (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 63,
       "title": "Rosa Harroun",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 64,
       "title": "Simin Shamji",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 65,
       "title": "Kara Nelson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 66,
       "title": "Marsha Rosenblatt",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 67,
       "title": "Andrea Cassidy",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 68,
       "title": "Leah Greenblat",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 69,
       "title": "Leah Rothman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 70,
       "title": "Stevie Schwartz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 71,
       "title": "Sarah Lefton",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 72,
       "title": "Judy and Isaac Lieber",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 73,
       "title": "Marisa Lin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 74,
       "title": "Michelle Mascarenhas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 75,
       "title": "Allen Mayer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 76,
       "title": "Judd Goodman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 77,
       "title": "Janice Schroeder",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 78,
       "title": "Lori Berlin and Michael Stephens",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 79,
       "title": "Omowale Fowles",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 80,
       "title": "Jim Haydel",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 81,
       "title": "Faith Meltzer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 82,
       "title": "Hannah King",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 83,
       "title": "Rob Wrenn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 84,
       "title": "Mary Wrenn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 85,
       "title": "Rissa Coplan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 86,
       "title": "Zohe Slack",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 87,
       "title": "Jason Rose",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 88,
       "title": "Barbara Gilbert",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 89,
       "title": "Betsy Bigelow-Teller",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 90,
       "title": "Bruce Feingold",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 91,
       "title": "Howard Hertz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 92,
       "title": "Kyra Subbotin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 93,
       "title": "Marc Sapir",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 94,
       "title": "Monica Renner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 95,
       "title": "Friends of Adeline",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 96,
       "title": "Mary Prophet",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 97,
       "title": "Mati Teiblum",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 98,
       "title": "Tarnel Abbott",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 99,
       "title": "Elsa Tranter",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 100,
       "title": "Leah Rosenthal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 101,
       "title": "Moni T. Law",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 102,
       "title": "Kathy Kojimoto",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 103,
       "title": "Scott Sepke",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 104,
       "title": "Valeria Kaim",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 105,
       "title": "Jeannine Cohen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 106,
       "title": "Khalil Bendib",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 107,
       "title": "Joel A. Biatch",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 108,
       "title": "Avi Tsang Jaffe",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 109,
       "title": "Jonathan Jaffe",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 110,
       "title": "David Spero",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 111,
       "title": "Coby Huizenga",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 112,
       "title": "Tobie Lurie",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 113,
       "title": "Ednah Beth Friedman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 114,
       "title": "Thomas F. Luce",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 115,
       "title": "Orli Loewenberg",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 116,
       "title": "Harry Devlin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 117,
       "title": "46 Similarly worded form letters \u201cOn behalf of the Berkeley community\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 46
     },
     {
       "number": 118,
       "title": "15 Similarly worded form letters \u201cI wish to express my concerns\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 15
     },
     {
       "number": 119,
       "title": "8 Similarly worded form letters \u201cAs a resident of Berkeley\u201d",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 8
     },
     {
       "number": 120,
       "title": "Alan Jencks",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 121,
       "title": "Sara Sunstein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 122,
       "title": "Wendy Patterson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 123,
       "title": "Naomi Kincler",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 124,
       "title": "Barryett Enge (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 125,
       "title": "Lyra King (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 126,
       "title": "Monica Renner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 127,
       "title": "Idit Minka",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 128,
       "title": "Malka Weitman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 129,
       "title": "Leah Greenblat",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 130,
       "title": "Vicki Sommer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 131,
       "title": "Elana Auerbach",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 132,
       "title": "Martha Wallner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 133,
       "title": "Hassan Fouda",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 134,
       "title": "Stephania Widger",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 135,
       "title": "Dorothea Dorenz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 136,
       "title": "Eric Friedman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 137,
       "title": "Cynthia Papermaster",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 138,
       "title": "Anna Concepcion",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 139,
       "title": "William Selig",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 140,
       "title": "Kelsi Perttula",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 141,
       "title": "Shirley Kirsten",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 142,
       "title": "Amanda Berger",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 143,
       "title": "Dahlia Frydman (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 144,
       "title": "Anita Barrows (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 145,
       "title": "Sonja Trauss (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 146,
       "title": "Gabriela Kipnis (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 147,
       "title": "JJ Noire (5)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 148,
       "title": "Yoshiko I. Wada",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 149,
       "title": "Karen Roekard",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 150,
       "title": "Paul Liem",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 151,
       "title": "Elana Naftalin-Kelman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 152,
       "title": "David Sweet-Cordero",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 153,
       "title": "Elaine Stelton",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 154,
       "title": "Tarek Milleron",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 155,
       "title": "Noga Ravid",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 156,
       "title": "Jean Krois",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 157,
       "title": "Nitzan Pelman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 158,
       "title": "Grace Morizawa on behalf of the Japanese American community",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 159,
       "title": "John Hagopian",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 160,
       "title": "Vanessa and Andres Moraga",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 161,
       "title": "Tony Schmiesing",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 162,
       "title": "Niloofar Shambayati",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 163,
       "title": "Robin Wenrick",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 164,
       "title": "Miriam Ferris",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 165,
       "title": "Alicia Tan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 166,
       "title": "Anne Marx",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 167,
       "title": "Richard Boubelik",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 168,
       "title": "Daniel Brownson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 169,
       "title": "Robin Milleron",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 170,
       "title": "David Levinson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 171,
       "title": "Lorrie Beth Slonsky",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 172,
       "title": "Pamela Sawyer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 173,
       "title": "Melissa Chapman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 174,
       "title": "Barry Rosen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 175,
       "title": "Amy Zucker Morgenstern",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 176,
       "title": "Camille Watts-Zagha",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 177,
       "title": "Rachel on behalf of the Jewish Coalition of Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 178,
       "title": "Mollie Starr",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 179,
       "title": "Kelly Segal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 180,
       "title": "Tobey M. Wiebe",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 181,
       "title": "Esther Brass",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 182,
       "title": "Tamara Gurin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 183,
       "title": "Anna Talamo",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 184,
       "title": "Jim Haydel",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 185,
       "title": "50 Similarly worded form letters",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 50
     },
     {
       "number": 186,
       "title": "Thomas F. Luce",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

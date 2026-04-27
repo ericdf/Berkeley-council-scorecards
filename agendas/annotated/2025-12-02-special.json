@@ -2,7 +2,7 @@
   "date": "2025-12-02",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-12-02%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:48.399500",
+  "fetched": "2026-04-27T08:46:30.938281",
   "roll_call_time": "4:06 p.m.",
   "present": [
     "Kesarwani",
@@ -31,12 +31,16 @@
     {
       "number": 1,
       "title": "Sharing the Final Report of the Mayor\u2019s Vision 2050 Task Force, Realize Vision",
-      "action": "2 speakers. The Mayor recognized the members of the Task Force and provided background on the report."
+      "action": "2 speakers. The Mayor recognized the members of the Task Force and provided background on the report.",
+      "speakers": 2,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Discussion Regarding Potential Ballot Measures for the November 3, 2026,",
-      "action": "M/S/C (Taplin/Blackaby) to accept revised materials from the City Manager on Item 2. Vote: Ayes \u2013 Kesarwani, Taplin, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Bartlett, Lunaparra. Action: 5 speakers. The Council discussed the report and presentation and provide",
+      "action": "M/S/C (Taplin/Blackaby) to accept revised materials from the City Manager on Item 2. Vote: Ayes \u2013 Kesarwani, Taplin, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Bartlett, Lunaparra. Action: 5 speakers. The Council discussed the report and presentation and provided direction to the City Manager regarding the community survey. Tuesday, December 2, 2025 ANNOTATED AGENDA Page 2 Adjournment Action: M/S/C (Taplin/Blackaby) to adjourn the meeting. Vote: All Ayes. Adjourned at 6:17 p.m. Communications Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 Item #2: Discussion Regarding Potential Ballot Measures for the November 3, 2026, General Municipal Election",
+      "speakers": 5,
+      "letters": 0,
       "vote": {
         "ayes": [
           "Kesarwani",
@@ -58,12 +62,16 @@
     {
       "number": 1,
       "title": "Supplemental agenda material submitted by the City Manager\u2019s Office",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Presentation submitted by the City Manager\u2019s Office",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

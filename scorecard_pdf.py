@@ -441,8 +441,14 @@ def _render_agenda_section(s: dict) -> str:
     return f"""
   <div class="section">
     <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars<span class="evid-basis evid-official">Official record</span></div>
-    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
-      Consent = block votes on buried items &nbsp;·&nbsp; Action = explicitly debated (heavier signal)
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;line-height:1.6">
+      Berkeley&rsquo;s council agenda is divided into two calendars. The <b>consent calendar</b>
+      is a list of items voted on together as a single block, with no individual debate — a
+      routine mechanism for non-controversial matters. The <b>action calendar</b> contains items
+      debated and voted on individually. Any councilmember can request that a consent item be
+      moved to the action calendar, forcing a real discussion before a vote. This score tracks
+      whether members use that power — and whether they sponsor items on the consent calendar
+      that deserve more scrutiny than a block vote allows.
     </div>
     <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
                 letter-spacing:.8px;margin-bottom:6px">Consent Calendar</div>
@@ -593,10 +599,13 @@ def _render_hsa_section(s: dict) -> str:
   <div class="section">
     <div class="section-title">Homeless Services Status-Quo Alignment<span class="evid-basis evid-text">Text analysis</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
-      Berkeley spends $21.7M+/yr across 33 programs; H&amp;W up 65% vs 25% revenue growth.
-      Score measures investment in the prevailing homeless services apparatus vs.
-      accountability and reform orientation. Lower is better.
+      According to the City Manager&rsquo;s Office, Berkeley spent $35M on homelessness-related
+      activities in fiscal year 2024 (operating costs only; capital expenditures directed by the
+      council add substantially to the total). Score measures investment in the prevailing
+      homeless services apparatus vs. accountability and reform orientation. Lower is better.
       Based on attributed transcript speech; coverage partial.
+      <a href="https://ericdf.github.io/berkeley-corridor-index/" style="color:#3498db;text-decoration:none"
+         target="_blank">Full homeless spending analysis &rarr;</a>
     </div>
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px">
       <div style="font-size:28px;font-weight:bold;color:{score_color}">{score:.0f}</div>
@@ -951,9 +960,12 @@ def _render_taxpayer_breakdown(s: dict) -> str:
     return f"""
   <div class="section">
     <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown<span class="evid-basis evid-text">Text analysis + official record</span></div>
-    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
-      How the {final:.3f} Fiscal Stewardship Alignment score is constructed.
-      Components sum to the raw figure; the final score is clamped to [0, 1].
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;line-height:1.6">
+      How the Fiscal Stewardship score is built. Each row below adds or subtracts from a
+      running total. The result is kept within a 0&ndash;100% range because the score is a
+      percentage-style rating: below zero or above 100% would be meaningless. Individual
+      component values are shown in the table; the grade shown at the top of the scorecard
+      reflects the final result.
     </div>
     <table class="ta-table">
 
@@ -989,7 +1001,7 @@ def _render_taxpayer_breakdown(s: dict) -> str:
             rhetoric_pen)}
 
       <tr class="total-row">
-        <td colspan="2">Final (clamped to [0, 1])</td>
+        <td colspan="2">Final score (kept within 0–100% range)</td>
         <td class="contrib">{fin_str}</td>
       </tr>
     </table>
@@ -1317,31 +1329,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     {pillar_html}
   </div>
 
-  <div class="section">
-    <div class="section-title">Rankings  (of {total} scored members)</div>
-    <div class="rank-row">
-      <div class="rank-item">
-        <div class="rank-title">Voter Alignment</div>
-        <div class="rank-val">#{vrank}{v_badge}</div>
-        <div class="rank-desc">Champions fiscal stewardship in votes &amp; bills</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Character</div>
-        <div class="rank-val">#{brank}{b_badge}</div>
-        <div class="rank-desc">Collegiality, humility &amp; restraint as a colleague</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Constituency Preference Gap</div>
-        <div class="rank-val">#{rrank}{r_badge}</div>
-        <div class="rank-desc">#1 = narrowest gap between member and voter priorities</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Discursive Discipline</div>
-        <div class="rank-val">#{erank}{e_badge}</div>
-        <div class="rank-desc">Brief, focused turns vs. extended floor time</div>
-      </div>
-    </div>
-  </div>
+<!-- RECENT_INCIDENTS_PLACEHOLDER -->
 
   <div class="layer-divider">
     <div class="layer-divider-label">What the Record Shows</div>
@@ -1436,6 +1424,7 @@ def render_member(s: dict, rankings: dict, council_block_rate: float, meta: dict
     <span>Generated {gen_date}</span>
   </div>
 
+<!-- INCIDENTS_PLACEHOLDER -->
 </div>
 </body>
 </html>"""

@@ -2,7 +2,7 @@
   "date": "2025-05-06",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-05-06%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:42:14.701211",
+  "fetched": "2026-04-27T08:45:00.171782",
   "roll_call_time": "4:37 p.m.",
   "present": [
     "Tregub",
@@ -31,7 +31,9 @@
     {
       "number": 1,
       "title": "Presentation and Discussion: Brown Act Training",
-      "action": "1 speaker. Presentation made and discussion held. Adjournment Action: M/S/C (Lunaparra/Blackaby) to adjourn the meeting. Vote: Ayes \u2013 Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Kesarwani, Humbert. Adjourned at 5:31 p.m. Communications \u2022 None ",
+      "action": "1 speaker. Presentation made and discussion held. Adjournment Action: M/S/C (Lunaparra/Blackaby) to adjourn the meeting. Vote: Ayes \u2013 Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Lunaparra, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Kesarwani, Humbert. Adjourned at 5:31 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 Item #1: Presentation and Discussion: Brown Act Training",
+      "speakers": 1,
+      "letters": 0,
       "vote": {
         "ayes": [
           "Taplin",
@@ -53,7 +55,9 @@
     {
       "number": 1,
       "title": "Presentation, submitted by City Attorney\u2019s Office",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

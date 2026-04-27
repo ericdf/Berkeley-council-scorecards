@@ -2,7 +2,7 @@
   "date": "2025-10-28",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-10-28%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:25.246005",
+  "fetched": "2026-04-27T08:46:10.976256",
   "roll_call_time": "4:08 p.m.",
   "present": [
     "Kesarwani",
@@ -27,17 +27,23 @@
     {
       "number": 1,
       "title": "Ashby BART East Lot Transit Oriented Development Request for Proposal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Review and provide feedback on the Request for Proposal (RFP) Framework and",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adopt a Resolution authorizing the City Manager, or designee, to expend Housing",
-      "action": "18 speakers. Presentation made and discussion held. M/S/C (Bartlett/Kesarwani) to adopt Resolution No. 71,984\u2013N.S. Vote: All Ayes. Adjournment Action: M/S/C (Blackaby/Humbert) to adjourn the meeting. Vote: All Ayes. Adjourned at 5:52 p.m. Communications \u2022 None Supplemental Communications and Reports",
+      "action": "18 speakers. Presentation made and discussion held. M/S/C (Bartlett/Kesarwani) to adopt Resolution No. 71,984\u2013N.S. Vote: All Ayes. Adjournment Action: M/S/C (Blackaby/Humbert) to adjourn the meeting. Vote: All Ayes. Adjourned at 5:52 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 Tuesday, October 28, 2025 ANNOTATED AGENDA Page 2 Action Calendar Item #1: Ashby BART East Lot Transit Oriented Development Request for Proposal Framework",
+      "speakers": 18,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -50,17 +56,23 @@
     {
       "number": 1,
       "title": "Presentation submitted by Department of Health, Housing, and Community",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Presentation submitted by Center for Independent Living",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Center for Independent Living",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

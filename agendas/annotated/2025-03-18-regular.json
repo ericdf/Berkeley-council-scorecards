@@ -2,7 +2,7 @@
   "date": "2025-03-18",
   "meeting_type": "regular",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-03-18%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:41:40.739063",
+  "fetched": "2026-04-27T08:44:28.424504",
   "roll_call_time": "6:19 p.m.",
   "present": [
     "Kesarwani",
@@ -28,6 +28,8 @@
       "number": 1,
       "title": "Adjourned in Memory of Sarah Reynoso, Former City Employee",
       "action": "M/S/C (Blackaby/Lunaparra) to adopt the Consent Calendar in one motion except as indicated. Vote: All Ayes. Tuesday, March 18, 2025 ANNOTATED AGENDA Page 2 Consent Calendar",
+      "speakers": 6,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -40,47 +42,65 @@
     {
       "number": 1,
       "title": "Contract No. 31900122-1 Amendment: Rolling Orange, Inc. for Website",
-      "action": "Adopted Resolution No. 71,688\u2013N.S."
+      "action": "Adopted Resolution No. 71,688\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Contract: Pride Industries for Citywide Custodial Services",
-      "action": "Adopted Resolution No. 71,689\u2013N.S."
+      "action": "Adopted Resolution No. 71,689\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Contract: SubTerra Construction, Inc. for Adeline St, Shattuck Ave., Oxford St.,",
-      "action": "Adopted Resolution No. 71,690\u2013N.S. Tuesday, March 18, 2025 ANNOTATED AGENDA Page 3 Consent Calendar"
+      "action": "Adopted Resolution No. 71,690\u2013N.S. Tuesday, March 18, 2025 ANNOTATED AGENDA Page 3 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Contract No. 32400141 Amendment: Mercury Associates, Inc. for Fleet",
-      "action": "Adopted Resolution No. 71,691\u2013N.S."
+      "action": "Adopted Resolution No. 71,691\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Contract: APB General Engineering for Urgent Sewer Repair FY2025 Project",
-      "action": "Adopted Resolution No. 71,692\u2013N.S."
+      "action": "Adopted Resolution No. 71,692\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Fiscal Year 2026 Street Lighting Assessments \u2013 Initiating Proceedings",
-      "action": "Adopted Resolution No. 71,693\u2013N.S. (District No. 1982-1), and Resolution No. 71,694\u2013N.S. (District No. 2018). Tuesday, March 18, 2025 ANNOTATED AGENDA Page 4 Consent Calendar"
+      "action": "Adopted Resolution No. 71,693\u2013N.S. (District No. 1982-1), and Resolution No. 71,694\u2013N.S. (District No. 2018). Tuesday, March 18, 2025 ANNOTATED AGENDA Page 4 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Establishing a Measure FF SAFE STREETS Citizen Oversight Committee",
-      "action": "Adopted Resolution No. 71,695\u2013N.S. Council Consent Items"
+      "action": "Adopted Resolution No. 71,695\u2013N.S. Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "California Triathlon Club: Relinquishment of Council Office Budget Funds to",
-      "action": "Adopted Resolution No. 71,696\u2013N.S. amended to include contributions from the following Councilmembers up to the amounts listed: Councilmember Humbert - $250; Councilmember Tregub - $100; Councilmember Taplin - $500; Councilmember Blackaby - $250; Councilmember Bartlett - $250; Councilmember Kesarwan"
+      "action": "Adopted Resolution No. 71,696\u2013N.S. amended to include contributions from the following Councilmembers up to the amounts listed: Councilmember Humbert - $250; Councilmember Tregub - $100; Councilmember Taplin - $500; Councilmember Blackaby - $250; Councilmember Bartlett - $250; Councilmember Kesarwani - $100; Councilmember O\u2019Keefe - $100; Mayor Ishii - $500. Tuesday, March 18, 2025 ANNOTATED AGENDA Page 5 Action Calendar \u2013 Public Hearings",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "2024 Local Hazard Mitigation Plan (LHMP)",
       "action": "M/S/C (Taplin/Tregub) to adopt Resolution No. 71,697\u2013N.S. adopting the 2024 Local Hazard Mitigation Plan (LHMP) and amending the General Plan to incorporate the 2024 LHMP. Vote: All Ayes. R ecess 7:33 p.m. \u2013 7:45 p.m. Tuesday, March 18, 2025 ANNOTATED AGENDA Page 6 Action Calander \u2013 New Business",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -93,440 +113,639 @@
     {
       "number": 10,
       "title": "Formation of a Sex Trafficking Task Force to Address Current Sex Trafficking",
-      "action": "Moved to Consent Calendar. Referred the item back to the Commission on the Status of Women to develop a subcommittee to identify recommendations for sex trafficking prevention strategies and supports for women and girls seeking to exit sex trafficking. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, O\u2019Kee"
+      "action": "Moved to Consent Calendar. Referred the item back to the Commission on the Status of Women to develop a subcommittee to identify recommendations for sex trafficking prevention strategies and supports for women and girls seeking to exit sex trafficking. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 Tregub.",
+      "speakers": 0,
+      "letters": 0,
+      "vote": {
+        "ayes": [
+          "Kesarwani",
+          "Taplin",
+          "Bartlett",
+          "OKeefe",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
+        ],
+        "noes": [],
+        "abstain": [
+          "Tregub"
+        ],
+        "absent": []
+      }
     },
     {
       "number": 11,
       "title": "Revised External Fixed Surveillance Camera Locations and Vendor Transition",
-      "action": "M/S/Failed (Lunaparra/Tregub) to:"
+      "action": "M/S/Failed (Lunaparra/Tregub) to:",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Adopt a Resolution with the addition from the City Manager to cite Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Refer to the City Manager to consider as part of the contracting process the",
-      "action": "30 speakers. M/S/Carried (Humbert/Blackaby) to adopt Resolution No. 71,698\u2013N.S. with the addition from the City Manager to cite Berkeley Municipal Code Chapter 2.99 in the first resolved clause, and addition of the following resolved clause: BE IT FURTHER RESOLVED THAT Flock Safety will be directed ",
+      "action": "30 speakers. M/S/Carried (Humbert/Blackaby) to adopt Resolution No. 71,698\u2013N.S. with the addition from the City Manager to cite Berkeley Municipal Code Chapter 2.99 in the first resolved clause, and addition of the following resolved clause: BE IT FURTHER RESOLVED THAT Flock Safety will be directed to not share information, data, or other assets from the External Fixed Video Surveillance Camera program with any personnel or agencies outside of the City of Berkeley, including in response to an administrative subpoena or other request from another government agency, unless compliance is required by court order, or other appropriate directive. Violation of this provision shall be considered grounds for termination of the contract. Flock Safety will inform the City of Berkeley immediately upon receiving any legal or other orders from other jurisdictions. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, O\u2019Keefe, Blackaby, Humbert, Ishii; Noes \u2013 Lunaparra; Abstain \u2013 None. Public Comment \u2013 Items Not Listed on the Agenda - 2 speakers. Adjournment Action: M/S/C (Blackaby/Taplin) to adjourn the meeting. Vote: All Ayes. Adjourned at 10:05 p.m. Communications Bicycle Plan",
+      "speakers": 30,
+      "letters": 0,
       "vote": {
         "ayes": [
-          "all"
+          "Bartlett",
+          "Tregub"
         ],
-        "noes": [],
-        "abstain": [],
+        "noes": [
+          "Kesarwani",
+          "Taplin",
+          "OKeefe",
+          "Blackaby",
+          "Humbert",
+          "Ishii"
+        ],
+        "abstain": [
+          "LunaParra"
+        ],
         "absent": []
       }
     },
     {
       "number": 1,
       "title": "Marc Hedlund, with Libby Lee-Egan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Marla Wilson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Joshua Sopher",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "John Craner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Simone Arpaio (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Javier F. Suazo",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Eduardo D (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Gordon Meyer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Hansel Alejandro Aguilar",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Shirley Kirsten (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Martin Bourque (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "David Lerman (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Berkeley Network for Palestine (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Summer Brenner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Elsa Tranter",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Kirsten Mahoney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Steven Donaldson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Joann Driscoll",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "John Craner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Bingo Fantasy Football (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Jack Kurzweil",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Summer Brenner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Florence Reinisch",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Edward Brent (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Sharon Gong",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Walton Li",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Martha Stackawicz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Moni T. Law",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Del and Kathy Totten",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Jill Korte",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "John Rice",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Jason McGatlin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Holly Scheider",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Peggy Scott",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Michael O\u2019Heaney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Maria Schell Hassid",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Cara Delacroix",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "Enrique Marisol",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "Rev. Niels Teunis and Rev. Angela Jernigan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "Angela Isaacs",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Dan Weinberg",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Wahid Amiri",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Jesse Sheehan (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Victoria Cole on behalf of SafeBears (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "Sherry Perez",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 49,
       "title": "Markus Feyh",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "Enrique Marisol",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Lisa Teague",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 52,
       "title": "Sheridan Eggers",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 53,
       "title": "Sarah Freedman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 54,
       "title": "Mark Rhoades",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 55,
       "title": "Beth Roessner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 56,
       "title": "David Shiver",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 57,
       "title": "Suzan Steinberg",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 58,
       "title": "38 Similarly worded form letters",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 38
     },
     {
       "number": 59,
       "title": "Tom Parrish",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 60,
       "title": "Gary E.",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 61,
       "title": "Sylvia",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 62,
       "title": "Truce Hansen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 63,
       "title": "Nigel",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 64,
       "title": "Laksh Lakireddy",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 65,
       "title": "Fern Wildtruth",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 66,
       "title": "Jovi Vidal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 67,
       "title": "Tobey Wiebe",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 68,
       "title": "Anthony Iacono",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 69,
       "title": "Janice Schroeder",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 70,
       "title": "Lily Simonson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 71,
       "title": "Saanvi Arora",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 72,
       "title": "Frankie Cunningham",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 73,
       "title": "Caitlin Chan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 74,
       "title": "Sulakshana",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 75,
       "title": "Tracy Rosenberg on behalf of Oakland Privacy",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 76,
       "title": "Simone Arpaio",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 77,
       "title": "Alberto Malvestio",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 78,
       "title": "Gregory Kalkanis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 79,
       "title": "Amy Murray",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 80,
       "title": "Marc Steyer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 81,
       "title": "30 Similarly worded form letters to support",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 30
     },
     {
       "number": 82,
       "title": "60 Similarly worded form letter to oppose",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 60
     }
   ]
 }

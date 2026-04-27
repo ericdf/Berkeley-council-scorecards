@@ -2,7 +2,7 @@
   "date": "2026-02-24",
   "meeting_type": "regular",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2026-02-24%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:44:12.653710",
+  "fetched": "2026-04-27T08:46:53.603908",
   "roll_call_time": "6:03 p.m.",
   "present": [
     "Taplin",
@@ -27,12 +27,16 @@
     {
       "number": 1,
       "title": "Recognition of February 2026 as National Heart Month",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adjourned in Memory of Gianna Ranuzzi, Local Artist and Activist",
       "action": "M/S/C (Taplin/Tregub) to adopt the Consent Calendar in one motion except as indicated. Vote: All Ayes. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 2 Consent Calendar",
+      "speakers": 7,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -45,175 +49,250 @@
     {
       "number": 1,
       "title": "Minutes for Approval",
-      "action": "Approved the minutes as submitted."
+      "action": "Approved the minutes as submitted.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Formal Bid Solicitations and Request for Proposals Scheduled for Possible",
-      "action": "Approved recommendation."
+      "action": "Approved recommendation.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Contract: California Association of Environmental Health Administrators for",
-      "action": "Adopted Resolution No. 72,130\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 3 Consent Calendar"
+      "action": "Adopted Resolution No. 72,130\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 3 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Accept Grant Funds from the California Ocean Protection Council\u2019s Senate Bill",
-      "action": "Adopted Resolution No. 72,131\u2013N.S."
+      "action": "Adopted Resolution No. 72,131\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Contracts: Future Ford of Concord, Michael Stead Hilltop Ford and Nicholas K",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Execute a contract with Future Ford of Concord, to provide service, parts, and",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Execute a contract with Michael Stead Hilltop Ford, to provide service, parts, and",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Execute a contract order with Nicholas K Corporation dba The Ford Store, to",
-      "action": "Adopted Resolution No. 72,132\u2013N.S. (Future Ford), Resolution No. 72,133\u2013 N.S. (Michael Stead), Resolution No. 72,134\u2013N.S. (Nicholas K). Tuesday, February 24, 2026 ANNOTATED AGENDA Page 4 Consent Calendar"
+      "action": "Adopted Resolution No. 72,132\u2013N.S. (Future Ford), Resolution No. 72,133\u2013 N.S. (Michael Stead), Resolution No. 72,134\u2013N.S. (Nicholas K). Tuesday, February 24, 2026 ANNOTATED AGENDA Page 4 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Contract Awards: Du-All Safety LLC, Safe Business Solutions, and Safety",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 1,
       "title": "Execute a Contract and subsequent amendments with Du-All Safety, LLC dba Du-",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Execute a contract and subsequent amendments with Safe Business Solutions",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Execute a Contract and subsequent amendments with Safety Center for safety",
-      "action": "Adopted Resolution No. 72,135\u2013N.S. (Du-All Safety), Resolution No. 72,136\u2013N.S. (Safe Business), Resolution No. 72,137\u2013N.S. (Safety Center)."
+      "action": "Adopted Resolution No. 72,135\u2013N.S. (Du-All Safety), Resolution No. 72,136\u2013N.S. (Safe Business), Resolution No. 72,137\u2013N.S. (Safety Center).",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Contract: Northern Recycling, LLC for Hauling and Processing of Compostable",
-      "action": "Adopted Resolution No. 72,138\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 5 Consent Calendar"
+      "action": "Adopted Resolution No. 72,138\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 5 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Contract: Koios Engineering, Inc. for Adeline Street, Woolsey Street, et al.",
-      "action": "Adopted Resolution No. 72,139\u2013N.S."
+      "action": "Adopted Resolution No. 72,139\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Contract: Koios Engineering, Inc. for San Pablo Avenue, Sacramento Street, et",
-      "action": "Adopted Resolution No. 72,140\u2013N.S."
+      "action": "Adopted Resolution No. 72,140\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Contract with Chargepoint, Inc. for City-Owned Electric Vehicle Charger",
-      "action": "Adopted Resolution No. 72,141\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 6 Consent Calendar"
+      "action": "Adopted Resolution No. 72,141\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 6 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Contract No. 32500221 Amendment: Stommel Inc. dba Lehr for Hybrid Police",
-      "action": "Adopted Resolution No. 72,142\u2013N.S."
+      "action": "Adopted Resolution No. 72,142\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Contract No. 32600081 Amendment: Metro Elevator for Maintenance, Repairs",
-      "action": "Adopted Resolution No. 72,143\u2013N.S."
+      "action": "Adopted Resolution No. 72,143\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Contract No. 107431-1 (10095B) Amendment: Green Halo Systems, Inc.",
-      "action": "Adopted Resolution No. 72,144\u2013N.S."
+      "action": "Adopted Resolution No. 72,144\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Purchase Order: Turf Star Incorporated for one 2026 Model Toro",
-      "action": "Adopted Resolution No. 72,145\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 7 Consent Calendar"
+      "action": "Adopted Resolution No. 72,145\u2013N.S. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 7 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "2026 Traffic Circle Vegetation Policy and Maintenance Plan",
-      "action": "Adopted Resolution No. 72,146\u2013N.S. Council Consent Items"
+      "action": "Adopted Resolution No. 72,146\u2013N.S. Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Waterside Workshops Community Spring Fling: Relinquishment of Council",
-      "action": "Adopted Resolution No. 72,147\u2013N.S. revised to include contributions from the following Councilmembers up to the amounts listed: Councilmember Lunaparra - $200; Councilmember Blackaby - $200; Councilmember Tregub - $250; Councilmember Bartlett - $250; Councilmember O\u2019Keefe - $250; Councilmember Humbe"
+      "action": "Adopted Resolution No. 72,147\u2013N.S. revised to include contributions from the following Councilmembers up to the amounts listed: Councilmember Lunaparra - $200; Councilmember Blackaby - $200; Councilmember Tregub - $250; Councilmember Bartlett - $250; Councilmember O\u2019Keefe - $250; Councilmember Humbert - $250. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 8 Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Relinquishment of Council Office Budget Funds to Support the Berkeley",
-      "action": "Councilmembers Taplin and Tregub added as co-sponsors. Adopted Resolution No. 72,148\u2013N.S. revised to include contributions from the following Councilmembers up to the amounts listed: Councilmember Lunaparra - $500; Councilmember Blackaby - $250; Councilmember Taplin - $500; Councilmember Tregub - $2"
+      "action": "Councilmembers Taplin and Tregub added as co-sponsors. Adopted Resolution No. 72,148\u2013N.S. revised to include contributions from the following Councilmembers up to the amounts listed: Councilmember Lunaparra - $500; Councilmember Blackaby - $250; Councilmember Taplin - $500; Councilmember Tregub - $250; Councilmember O\u2019Keefe - $250; Councilmember Humbert - $250; Mayor Ishii - $250. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 9 Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Referral to City Manager and City Attorney: Removing On-Site Manager",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Clarify that the Rent Board\u2019s administration of the program is unchanged from the",
-      "action": "Approved recommendation as recommended by the Land Use, Housing & Economic Development Committee with revised material in Supplemental Communications Packet #2 to remove the 4x4 Committee from the recommendation. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 10 Council Consent Items"
+      "action": "Approved recommendation as recommended by the Land Use, Housing & Economic Development Committee with revised material in Supplemental Communications Packet #2 to remove the 4x4 Committee from the recommendation. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 10 Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Resolution Urging Minnesota Governor Tim Walz to Enact an Eviction",
-      "action": "Adopted Resolution No. 72,149\u2013N.S. Action Calendar \u2013 Public Hearings"
+      "action": "Adopted Resolution No. 72,149\u2013N.S. Action Calendar \u2013 Public Hearings",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Amendments to Title 21 (Subdivisions Ordinance) and Title 23 (Zoning",
-      "action": "M/S/C (Tregub/Humbert) to accept revised materials from the City Manager. Vote: All Ayes. Public Testimony: The Mayor opened the public hearing. 3 speakers. M/S/C (Tregub/Humbert) to close the public hearing. Vote: All Ayes. Action: M/S/C (Kesarwani/Humbert) to adopt the first reading of Ordinance N",
+      "action": "M/S/C (Tregub/Humbert) to accept revised materials from the City Manager. Vote: All Ayes. Public Testimony: The Mayor opened the public hearing. 3 speakers. M/S/C (Tregub/Humbert) to close the public hearing. Vote: All Ayes. Action: M/S/C (Kesarwani/Humbert) to adopt the first reading of Ordinance No. 8,002\u2013N.S. as amended in the revised materials from staff relating to \u201cProtected Units\u201d and further amended to set the minimum lot size for vacant single-family lots at 600 square feet and the minimum useable open space at 150 square feet. Second reading scheduled for March 10, 2026. Vote: Ayes \u2013 Kesarwani, Taplin, Bartlett, Tregub, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 O\u2019Keefe. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 11 Council Action Items",
+      "speakers": 3,
+      "letters": 0,
       "vote": {
         "ayes": [
-          "all"
+          "Kesarwani",
+          "Taplin",
+          "Bartlett",
+          "Tregub",
+          "Blackaby",
+          "LunaParra",
+          "Humbert",
+          "Ishii"
         ],
         "noes": [],
-        "abstain": [],
+        "abstain": [
+          "OKeefe"
+        ],
         "absent": []
       }
     },
     {
       "number": 21,
       "title": "City of Berkeley\u2019s 2026 State and Federal Legislative Platform",
-      "action": ""
+      "action": "",
+      "speakers": 1,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "FY 2025 Fourth Quarter Investment Report: Ended June 30, 2025",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "FY 2026 First Quarter Investment Report: Ended September 30, 2025",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Restaurant Inspection Audit Status Report",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "A Guide to Measuring Performance in the City of Berkeley",
-      "action": "Moved to Action Calendar. Presentation made and discussion held. 2 speakers."
+      "action": "Moved to Action Calendar. Presentation made and discussion held. 2 speakers.",
+      "speakers": 2,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Safe Streets Citizen Oversight Committee (SSCOC) Workplan for FY25-26",
-      "action": "Received and filed. Public Comment \u2013 Items Not Listed on the Agenda - 2 speakers. Adjournment Action: M/S/C (Tregub/Humbert) to adjourn the meeting. Vote: All Ayes. Adjourned at 9:04 p.m. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 12 Communications Item #21: City of Berkeley\u2019s 2026 State and F",
+      "action": "Received and filed. Public Comment \u2013 Items Not Listed on the Agenda - 2 speakers. Adjournment Action: M/S/C (Tregub/Humbert) to adjourn the meeting. Vote: All Ayes. Adjourned at 9:04 p.m. Tuesday, February 24, 2026 ANNOTATED AGENDA Page 12 Communications Item #21: City of Berkeley\u2019s 2026 State and Federal Legislative Platform",
+      "speakers": 2,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -226,487 +305,681 @@
     {
       "number": 1,
       "title": "Ariella Granett",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Shirley Kirsten (4)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Transportation",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Bruce Wicinas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Anne Boersma",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Barbara Thompson (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Isaac Warshauer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Peter Allen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Emilie Strauss",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Jonny Ruel Holder II",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Blair Bleekman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Nadine Takvorian",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Jodi Lomask",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Victor Ichioka",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Lisa Titus",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Parsa Shabani",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Kelly Burkett",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Becky Leyser",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "David Burkett",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Cati Johnson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Margot Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Phoebe Thomas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Dirk Neyhart",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Susan Moon",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Rose Berryessa",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Josh Cayetano",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Sheila Goldmacher",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Barryett Enge",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Anna de Leon",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Aya de Leon",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "Barb Scheifler",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Cati Johnson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Deborah Cohan",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Rainbow Rubin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Riti Dhesi",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Janice Schroeder",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Anne-Lise Francois",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "Sasha Futran",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "George Perezvelez",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "Melanie and John",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Maria Yates (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Jane Welford",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Jean Day",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Annie Alcott",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "Gabby Le",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Scott Sacherer",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "Jacqui VanLiew",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 49,
       "title": "Lisa Teague",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "Whitney Sparks",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Anne Lenon",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 52,
       "title": "Jason Martens",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 53,
       "title": "Diana Bohn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 54,
       "title": "Aryn Faur",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 55,
       "title": "Maris Arnold",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 56,
       "title": "Steven Alpert",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 57,
       "title": "Michelle Baird",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 58,
       "title": "Deborah Matthews",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 59,
       "title": "Arezou Bakhtjou",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 60,
       "title": "Jonny Ruel Holder II",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 61,
       "title": "Kathryn Ruiz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 62,
       "title": "Tasha Tervalon on behalf of the Peace and Justice Commission",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 63,
       "title": "Margot Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 64,
       "title": "Gordon Stout (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 65,
       "title": "Lindsay Martien",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 66,
       "title": "Margots999",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 67,
       "title": "Getting it Right from the Start",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 68,
       "title": "Stephen Alpert (4)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 69,
       "title": "Mandeep Kaur (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 70,
       "title": "Adrienne McInnis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 71,
       "title": "Wendy Hillis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 72,
       "title": "Darlene Percoats (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 73,
       "title": "Ntsikelelo Bonga",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 74,
       "title": "Jane Fink",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 75,
       "title": "Jonny Ruel Holder II (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 76,
       "title": "Hector91 Phuentes (17)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 77,
       "title": "Frank Darling",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 78,
       "title": "David Glasser (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 79,
       "title": "Rebecca (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 80,
       "title": "Paul Hoekstra (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 81,
       "title": "Elizabeth",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 82,
       "title": "Mindy Stein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 83,
       "title": "Robert Borghese (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 84,
       "title": "Carson Lepre",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 85,
       "title": "Downtown Berkeley Association",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 86,
       "title": "Jeffrey Church",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 87,
       "title": "Visit Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 88,
       "title": "Berkeley Chamber of Commerce",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 89,
       "title": "Russbumper (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 90,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 91,
       "title": "Yasmin Jenkins (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 92,
       "title": "Ross Graham",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 93,
       "title": "Revised agenda material submitted by Councilmember Igor Tregub",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 94,
       "title": "Snow Zhu on behalf of the Housing Advisory Commission",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 95,
       "title": "Revised agenda material submitted by the Planning and Development",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 96,
       "title": "Presentation submitted by the Planning and Development Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 97,
       "title": "Presentation submitted by the City Auditor",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

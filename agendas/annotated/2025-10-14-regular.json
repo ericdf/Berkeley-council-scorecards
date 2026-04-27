@@ -2,7 +2,7 @@
   "date": "2025-10-14",
   "meeting_type": "regular",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-10-14%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:17.232146",
+  "fetched": "2026-04-27T08:46:03.289220",
   "roll_call_time": "6:07 p.m.",
   "present": [
     "Kesarwani",
@@ -27,17 +27,23 @@
     {
       "number": 1,
       "title": "Recognition of Berkeley Residents Esai Santos and Noah Millikan playing for the Oakland Ballers",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adjourned in Memory of Berkeley Resident Joanna Macy, Author, Teacher, and Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Adjourned in Memory of Berkeley Resident Professor Geroge Smoot, Nobel Laureate",
       "action": "M/S/C (Taplin/Tregub) to adopt the Consent Calendar in one motion except as indicated. Vote: All Ayes. Recess Items",
+      "speakers": 7,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -50,12 +56,16 @@
     {
       "number": 1,
       "title": "Contract No. 32400122 Amendment: Buhler Commercial for Willard Park",
-      "action": "Adopted Resolution No. 71,974\u2013N.S. Consent Calendar"
+      "action": "Adopted Resolution No. 71,974\u2013N.S. Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "2026 Tax Rate: Transportation Network Company User Tax",
       "action": "Adopted second reading of Ordinance No. 7,985\u2013N.S.",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -68,87 +78,121 @@
     {
       "number": 3,
       "title": "Adopt Revisions to the 2025 City Council Meeting Schedule",
-      "action": "Adopted Resolution No. 71,975\u2013N.S. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 3 Consent Calendar"
+      "action": "Adopted Resolution No. 71,975\u2013N.S. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 3 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Contract: Healthy Black Families for the African American Holistic Resource",
-      "action": "Adopted Resolution No. 71,976\u2013N.S."
+      "action": "Adopted Resolution No. 71,976\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Revenue Grant: FEMA Seismic Hazard Mitigation Grant Program",
-      "action": "Adopted Resolution No. 71,977\u2013N.S."
+      "action": "Adopted Resolution No. 71,977\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Revenue Grant: FEMA Fire Hazard Mitigation Grant Program",
-      "action": "Adopted Resolution No. 71,978\u2013N.S. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 4 Consent Calendar"
+      "action": "Adopted Resolution No. 71,978\u2013N.S. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 4 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Formal Bid Solicitations and Request for Proposals Scheduled for Possible",
-      "action": "Approved recommendation."
+      "action": "Approved recommendation.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Contract No. 10271 Amendment: Lease of 1521-1535 University Avenue",
-      "action": "Adopted Resolution No. 71,979\u2013N.S."
+      "action": "Adopted Resolution No. 71,979\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Contract No. 31900009 Amendment: McKinley House (2111 McKinley Avenue,",
-      "action": "Adopted Resolution No. 71,980\u2013N.S."
+      "action": "Adopted Resolution No. 71,980\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Contract: Preferred Alliance, Inc. for Drug and Alcohol Testing Services",
-      "action": "Adopted Resolution No. 71,981\u2013N.S. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 5 Consent Calendar"
+      "action": "Adopted Resolution No. 71,981\u2013N.S. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 5 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Contract: ESI Group for IBM Hardware, Software, and related Services",
-      "action": "Adopted Resolution No. 71,982\u2013N.S. Council Consent Items"
+      "action": "Adopted Resolution No. 71,982\u2013N.S. Council Consent Items",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Residents Oppose Broadcasting Obnoxious Cacophony Out in Public",
-      "action": "Councilmembers Humbert, Tregub, and Lunaparra added as co-sponsors. Approved recommendation as recommended by the Public Safety Committee."
+      "action": "Councilmembers Humbert, Tregub, and Lunaparra added as co-sponsors. Approved recommendation as recommended by the Public Safety Committee.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Urging Police Accountability Board Regulations Completion",
-      "action": "Adopted Resolution No. 71,983\u2013N.S. with co-sponsors added in S upplemental Communications Packet #1 Tuesday, October 14, 2025 ANNOTATED AGENDA Page 6 Information Reports"
+      "action": "Adopted Resolution No. 71,983\u2013N.S. with co-sponsors added in S upplemental Communications Packet #1 Tuesday, October 14, 2025 ANNOTATED AGENDA Page 6 Information Reports",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Changes to Special Events Permitting Fees and Requirements",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Referral Response Alternative Housing Options for People Experiencing",
-      "action": "Received and filed. Future update to be submitted through agenda process."
+      "action": "Received and filed. Future update to be submitted through agenda process.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Staff Shortages: City Services Constrained by Staff Retention Challenges and",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Civic Arts Grant Awards: Fiscal Year 2026",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Update: HR Response: Audit Directive(s) for Comprehensive Domestic",
-      "action": "Received and filed."
+      "action": "Received and filed.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Landmark Preservation Ordinance Notice of Decision: 2000 Blake Street",
       "action": "Received and filed. Public Comment \u2013 Items Not Listed on the Agenda - 0 speakers. Adjournment Action: M/S/C (Taplin/O\u2019Keefe) to adjourn the meeting. Vote: All Ayes. Adjourned at 7:25 p.m. Tuesday, October 14, 2025 ANNOTATED AGENDA Page 7 Communications Road Repair",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -161,347 +205,485 @@
     {
       "number": 1,
       "title": "Gene Hendrix",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Phil Ardery",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Margot Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Suzanne Sattergren",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Nathaniel Kane on behalf of parents of children ay Sylvia Mendez Elementary",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Kelly Hammargren",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Evan Lovett-Harris",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Megan R. Schwarzman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Cindi Goldberg",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Save Hopkins",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Marguerite Lee",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Tom Lent",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Margaret Leventhal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Ben Gerhardstein on behalf of Walk Bike Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Noah Budnick on behalf of the Transportation and Infrastructure Commission",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "Rod Richardson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Dorothea Dorenz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Tony Boyle",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "John J. Parman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Fran Haselsteiner",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Walk Bike Berkeley",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "Transition Berkeley Board Members",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Anson Chau",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Louise Booth",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Phoebe Thomas Sorgen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "Vivian Pisano",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Anne Boersma",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Cybersailor",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Margots999",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Charlene M. Woodcock",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Anastasia Gomes",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "Neel Shetty",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "Jen Corn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "Cassandra Tesch",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Kera Binns",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Rose A. Davila",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Nicoletta Karam",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Nenelle Bunnin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "Cynthia Murdough",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "Angela Patterson Briscoe",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "Ed Iskander",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Angela Beggs (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Marriane Riddle",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Natasha Ravnik",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Nicolas Nagle",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "Scott Artis",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Hector91 Phuentes",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "Beatriz Quinones",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 49,
       "title": "Jo Ann Driscoll",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "John Waters",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Scott Stewart",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 52,
       "title": "Prabhjot Singh",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 53,
       "title": "Negeene Mosead",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 54,
       "title": "Alexander Merenkov",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 55,
       "title": "Alexander Merenkov (6)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 56,
       "title": "Manreet Gill",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 57,
       "title": "HCI",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 58,
       "title": "K Street Flats",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 59,
       "title": "Robert Borghese (8)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 60,
       "title": "Devin Dollinger (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 61,
       "title": "Nicolas Nagle (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 62,
       "title": "Wahid Amiri",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 63,
       "title": "Eid",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 64,
       "title": "2,989 Similarly worded form letters",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 989
     },
     {
       "number": 65,
       "title": "Richard Schwartz",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 66,
       "title": "Todd Jersey",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 67,
       "title": "Russbumper",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 68,
       "title": "Russbumper (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 69,
       "title": "Supplemental agenda material submitted by Councilmember Brent Blackaby",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

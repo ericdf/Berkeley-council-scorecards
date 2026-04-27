@@ -46,6 +46,7 @@ from council_scorecard import (
     clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, NEW_REVENUE_PREFERENCE_KW,
     HSA_SYMPATHY_KW, HSA_SKEPTIC_KW, P1_TOPIC_KW,
 )
+from agenda_scraper import check_false_fiscal
 
 # Redefine what we need locally (council_scorecard doesn't export these as constants)
 import council_scorecard as _cs
@@ -448,48 +449,79 @@ def _build_agenda_index() -> dict:
 
 def link_votes_to_agenda() -> list[dict]:
     """
-    Parse every transcript, extract vote roll-calls, and join each to its
-    agenda item using the meeting date + item number found in surrounding text.
+    Build linked vote records from annotated agenda JSONs (the authoritative source).
 
-    Returns a list of dicts, one per matched vote event:
+    Transcripts record what was said; annotated agendas record what happened.
+    Each returned dict:
       date, meeting_type, item_number, section, title,
       dollar_total, off_mission, false_fiscal, authors, cosponsors,
-      votes  {canonical_name: 'yes'|'no'|'abstain'}
+      votes  {canonical_name: 'yes'|'no'|'abstain'},
+      speakers, letters, extension_vote
     """
-    from council_scorecard import detect_format
     agenda_index = _build_agenda_index()
     linked: list[dict] = []
 
-    for path in sorted(glob.glob(os.path.join(TEXT_DIR, "*.txt"))):
-        raw = clean(open(path, encoding="utf-8", errors="replace").read())
-        meta = parse_filename(os.path.basename(path))
-        date = meta.get("date")
+    for path in sorted(glob.glob(os.path.join(ANNOTATED_DIR, "*.json"))):
+        try:
+            with open(path) as f:
+                d = json.load(f)
+        except Exception:
+            continue
+
+        date  = d.get("date")
+        mtype = d.get("meeting_type", "regular")
         if not date:
             continue
+
+        # Build fully-absent set for expanding "all ayes" to member names
+        absent_raw   = [_annot_canonical(n) for n in d.get("absent", []) if isinstance(n, str)]
+        late_set     = {_annot_canonical(e["name"])
+                        for e in d.get("arrived_late", [])
+                        if isinstance(e.get("name"), str)}
+        fully_absent = {n for n in absent_raw if n and n not in late_set}
+
+        def _expand(lst: list) -> list[str]:
+            if lst == ["all"]:
+                return [m for m in CANONICAL_MEMBERS if m not in fully_absent]
+            return [c for c in (_annot_canonical(n) for n in lst if isinstance(n, str)) if c]
+
         day_items = agenda_index.get(date, {})
-        if not day_items:
-            continue
 
-        fmt = detect_format(raw)
-        vote_events = extract_votes_with_context(raw, fmt=fmt)
-
-        for ev in vote_events:
-            n = ev["item_number"]
-            if n is None or n not in day_items:
+        for item in d.get("items", []):
+            raw_vote = item.get("vote")
+            if not raw_vote:
                 continue
-            item = day_items[n]
+
+            ayes    = _expand(raw_vote.get("ayes",    []))
+            noes    = _expand(raw_vote.get("noes",    []))
+            abstain = _expand(raw_vote.get("abstain", []))
+
+            votes: dict[str, str] = {}
+            for member in ayes:    votes[member] = "yes"
+            for member in noes:    votes[member] = "no"
+            for member in abstain: votes[member] = "abstain"
+
+            if len(votes) < 3:
+                continue
+
+            item_num    = item.get("number")
+            agenda_item = day_items.get(item_num, {}) if item_num is not None else {}
+
             linked.append({
-                "date":         date,
-                "meeting_type": meta["type"],
-                "item_number":  n,
-                "section":      item.get("section"),
-                "title":        item.get("title", ""),
-                "dollar_total": item.get("dollar_total") or 0,
-                "off_mission":  item.get("off_mission", False),
-                "false_fiscal": item.get("false_fiscal", False),
-                "authors":      item.get("authors", []),
-                "cosponsors":   item.get("cosponsors", []),
-                "votes":        ev["votes"],
+                "date":           date,
+                "meeting_type":   mtype,
+                "item_number":    item_num,
+                "section":        agenda_item.get("section"),
+                "title":          item.get("title") or agenda_item.get("title", ""),
+                "dollar_total":   agenda_item.get("dollar_total") or 0,
+                "off_mission":    agenda_item.get("off_mission", False),
+                "false_fiscal":   agenda_item.get("false_fiscal", False),
+                "authors":        agenda_item.get("authors", []),
+                "cosponsors":     agenda_item.get("cosponsors", []),
+                "votes":          votes,
+                "speakers":       item.get("speakers", 0),
+                "letters":        item.get("letters", 0),
+                "extension_vote": item.get("extension_vote", False),
             })
 
     return linked
@@ -1067,7 +1099,12 @@ def load_agenda_scores() -> tuple[dict, dict]:
                 authors    = item.get("authors", [])
                 cosponsors = item.get("cosponsors", [])
                 off_mission   = item.get("off_mission", False)
-                false_fiscal  = item.get("false_fiscal", False)
+                # Recompute false_fiscal from raw fields: cached JSONs may predate the
+                # "staff time" + obligation detection added to check_false_fiscal.
+                false_fiscal = check_false_fiscal(
+                    item.get("financial_raw", ""),
+                    item.get("recommendation", ""),
+                )
                 discretionary = item.get("discretionary", {})
                 item_cls = classifications.get((date, str(item.get("number", ""))), "")
 
@@ -1113,6 +1150,10 @@ def load_agenda_scores() -> tuple[dict, dict]:
             off_mission  = item.get("off_mission", False)
             dollar_total = item.get("dollar_total", 0) or 0
             item_cls = classifications.get((date, str(item.get("number", ""))), "")
+            false_fiscal = check_false_fiscal(
+                item.get("financial_raw", ""),
+                item.get("recommendation", ""),
+            )
 
             if off_mission:
                 for m in authors:
@@ -1121,6 +1162,14 @@ def load_agenda_scores() -> tuple[dict, dict]:
                 for m in cosponsors:
                     if m in CANONICAL_MEMBERS:
                         member_scores[m]["action_off_mission_cosponsored"] += 1
+
+            if false_fiscal:
+                for m in authors:
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_false_fiscal_authored"] += 1
+                for m in cosponsors:
+                    if m in CANONICAL_MEMBERS:
+                        member_scores[m]["agenda_false_fiscal_cosponsored"] += 1
 
             # Track budget referrals authored on action calendar (reveals spending priorities)
             if dollar_total > 0 and authors:
@@ -2328,9 +2377,17 @@ def compute_composite_grade(s: dict) -> dict:
     else:
         new_revenue_preference_penalty = 0.0
 
+    # False fiscal claims: council-authored items claiming "None" or "Staff time"
+    # fiscal impact when the scope clearly incurs real obligations or costs.
+    # Capped at 0.04; cosponsorship is half-weight (less culpable than authorship).
+    ff_authored    = s.get("agenda_false_fiscal_authored",    0) or 0
+    ff_cosponsored = s.get("agenda_false_fiscal_cosponsored", 0) or 0
+    false_fiscal_penalty = min(0.04, ff_authored * 0.015 + ff_cosponsored * 0.007)
+
     taxpayer_raw  = hsa_part * 0.75 + (1.0 - off_penalty) * 0.25
     taxpayer_unclamped = (
         taxpayer_raw - rhetoric_penalty - new_revenue_preference_penalty
+        - false_fiscal_penalty
         + incident_adj + fiscal_ref_penalty + audit_silence_adj
         + newsletter_silence_adj
     )
@@ -2464,6 +2521,7 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_newsletter_silence_pen":     round(-newsletter_silence_adj, 4),
         "composite_agenda_waste_signal":        round(agenda_waste_signal, 4),
         "composite_cls9_signal":                round(cls9_signal, 4),
+        "composite_false_fiscal_penalty":       round(false_fiscal_penalty, 4),
         "composite_structural_silence_pen":     round(-structural_silence_pen, 4),
         "composite_one_time_masking_pen":       round(-one_time_masking_pen, 4),
         "composite_cross_subsidy_pen":          round(-cross_subsidy_pen, 4),

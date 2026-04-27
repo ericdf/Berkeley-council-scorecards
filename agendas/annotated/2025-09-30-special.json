@@ -2,7 +2,7 @@
   "date": "2025-09-30",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2025-09-30%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:14.378476",
+  "fetched": "2026-04-27T08:46:00.112792",
   "roll_call_time": "4:06 p.m.",
   "present": [
     "Kesarwani",
@@ -26,7 +26,9 @@
     {
       "number": 1,
       "title": "Social Housing Study and Recommendations",
-      "action": "7 speakers. Presentation made and discussion held. Adjournment Action: M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 5:34 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communicati",
+      "action": "7 speakers. Presentation made and discussion held. Adjournment Action: M/S/C (Taplin/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 5:34 p.m. Communications \u2022 None Supplemental Communications and Reports 1 \u2022 None Supplemental Communications and Reports 2 \u2022 None Supplemental Communications and Reports 3 Item #1: Social Housing Study and Recommendations",
+      "speakers": 7,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -39,7 +41,9 @@
     {
       "number": 1,
       "title": "Presentation submitted by the Health, Housing, and Community Services",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

@@ -102,7 +102,7 @@ generate.sh [--all | --scrape | --scores-only | --methodology | --scrape-only]
 │      │    ├─ LSI (5 components: domain, fiscal, inquiry, decisiveness, process)
 │      │    ├─ Character (ego / collegiality / intellectual humility / warmth)
 │      │    ├─ Voter alignment (fiscal concern, revenue-seeking, waste % vs. core %)
-│      │    ├─ HSO (Homeless Services Orthodoxy, 0–100 scale)
+│      │    ├─ HSA (Homeless Services Status-Quo Alignment, 0–100 scale)
 │      │    ├─ Mayor facilitator scoring (call-ons, thanks, agenda pace)
 │      │    └─ Per-meeting per-member scores
 │      ├─ Extract votes from transcript text
@@ -216,11 +216,11 @@ Character is measured across four dimensions in `score_member()` (council_scorec
 - **Core %** — fraction on core fiscal/infrastructure/public safety topics
 - **P1 speech %** — rate of language on the documented P1 crisis topics
 
-### Homeless Services Orthodoxy (HSO)
+### Homeless Services Status-Quo Alignment (HSA)
 
 Scale 0–100, where 0 = reform-oriented and 100 = status-quo aligned. Computed from sympathy vs. skeptic keyword ratios in transcript turns about homeless services, shelter, encampments, and related programs.
 
-An HSO score ≥ 50 applies a quadratic penalty and blocks the A+ ceiling grade.
+An HSA score ≥ 50 applies a quadratic penalty and blocks the A+ ceiling grade.
 
 ### Agenda Authorship and Sponsorship
 
@@ -234,6 +234,18 @@ Framework tags applied to items:
 - `reduces_non_core` — reduces non-core service footprint
 - `entrenches_cost_premium` — locks in above-market labor or procurement costs
 - `revenue_seeking` — proposes new taxes or bonds without structural reprioritization
+
+#### False Fiscal Claim Detection
+
+`check_false_fiscal(financial_raw, recommendation)` in `agenda_scraper.py` flags items where the stated fiscal impact understates or misrepresents the actual cost. Two patterns are caught:
+
+1. **"None" claims** — `financial_raw` is exactly `"None"` or `"None."` AND the recommendation contains a staff referral (`STAFF_REF_RECOM_RE`) or creates a new formal obligation (`NEW_OBLIGATION_RE`). Catches items that claim zero cost while directing significant staff work.
+
+2. **"Staff time" claims** — `financial_raw` contains `"staff time"` AND the recommendation matches `BROAD_OBLIGATION_RE` (creating permits/processes, enacting bans, developing official citywide policies/frameworks). "Staff time" is technically honest — it acknowledges a cost — but understates the real resource commitment when the scope implies months of staff capacity.
+
+The pipeline imports `check_false_fiscal` and recomputes the flag inline from raw JSON fields (so cached agendas benefit without a scraper re-run). Detection applies to both consent and action calendar items.
+
+Current council-authored hits (as of Apr 2026): Kesarwani (Tiny Homes on Wheels permitting), OKeefe (AI citywide guidelines), Tregub/Taplin (glue traps ban). Each is a council consent item directing staff to create a new permit regime, policy framework, or ordinance while claiming "Staff time" as the full fiscal impact.
 
 ### Facilitator Scoring (Mayor only)
 
@@ -257,14 +269,38 @@ Signals extracted from staff report PDFs:
 - "No alternatives" clauses
 - Sole-source justifications without documented necessity
 
-### Incidents (Out-of-Meeting Behavior)
+### Incidents — Two Systems
 
-Evidence tiers:
+The scorecard maintains two distinct incident systems:
+
+#### 1. Behavioral incidents (`incidents.json`) — automated pipeline
+
+Structured records of observable behaviors not captured in transcripts or votes. Evidence tiers determine scoring weight:
 - **Tier A** — primary public record (agenda items, votes, official emails, official statements) → weight 1.0
 - **Tier B** — reputable reporting (Berkeleyside, Berkeley Scanner, member newsletters) → weight 0.75
 - **Tier C** — direct observation or author knowledge → weight 0.50
 
 Audit-linked incidents carry an additional 0.50× multiplier to prevent double-penalizing via both the audit registry and the incident catalog.
+
+Behavioral incident totals feed into **Fiscal Stewardship Alignment**, capped at ±0.30 per member.
+
+#### 2. Editorial incidents (`incidents/YYYY-mm/*.html`) — accountability record
+
+Manually documented accountability events requiring editorial judgment. Sources can include news coverage, court filings, public records, or any verifiable external source — not limited to transcripts or formal proceedings.
+
+Each editorial incident has named **dimensions**, each with a **pillar tag**:
+- `Character & Conduct` — conflicts of interest, recusal failures, misrepresentation, quality of public response
+- `Fiscal Stewardship` — contractor oversight failures, spending without performance evidence
+
+Each dimension's score rolls into its tagged pillar at **full weight** — no splitting across pillars. A dimension that implicates both pillars hits both at full weight. A per-pillar cap of ±0.30 prevents any single incident from zeroing out a pillar.
+
+Editorial incidents are registered in `generate_html.py` (`ALL_EDITORIAL_INCIDENTS` list) and injected into scorecards via two sentinels:
+- `<!-- RECENT_INCIDENTS_PLACEHOLDER -->` — top of card (last 3 incidents, replaces Rankings section)
+- `<!-- INCIDENTS_PLACEHOLDER -->` — bottom of card (full list with pillar tags and scores)
+
+The public incident log (`incidents/index.html`) is filterable by member via URL hash (`#bartlett`, `#ishii`, `#full-council`). Individual member filters include Full Council incidents. The filter uses client-side JS with `data-members` attributes on each incident row.
+
+**Decay:** Editorial incident scores decay 20% per year in the absence of similar incidents. If the same pattern recurs, the score resets. Three or more similar incidents trigger a pattern multiplier.
 
 ---
 
@@ -338,13 +374,36 @@ Rendered as page 3 of `scorecard_SUMMARY.pdf`. Uses `_meta.block_vote_rate`, mem
 ## Composite Grade Formula
 
 ```
-composite_raw = max(0.0,
-    taxpayer_alignment × 0.70
-    + focus × 0.30
+composite = max(0.0,
+    taxpayer_alignment × 0.55
+    + focus × 0.25
+    + lsi_score × 0.10
+    + character_score × 0.10
     − attendance_deduction
     − low_engagement_adj
+    + structural_silence_pen
+    + one_time_masking_pen
+    + cross_subsidy_pen
+    + depletion_115_pen
 )
 ```
+
+Where `taxpayer_alignment = taxpayer_base × 0.60 + audit_composite × 0.40`, and:
+
+```
+taxpayer_base = hsa_part × 0.75 + (1 − off_penalty) × 0.25
+    − rhetoric_penalty
+    − new_revenue_preference_penalty
+    − false_fiscal_penalty
+    + incident_adj
+    + fiscal_ref_penalty
+    + audit_silence_adj
+    + newsletter_silence_adj
+```
+
+**false_fiscal_penalty** — up to −0.04:
+- `−0.015 × items_authored` + `−0.007 × items_cosponsored`
+- Triggered when a council member claims "None" or "Staff time" fiscal impact on an item that clearly creates new obligations (new programs, bans, permit regimes, citywide policy frameworks). See `check_false_fiscal()` in `agenda_scraper.py`.
 
 **Attendance deduction** — convex curve:
 - 0 absences: 0.00
@@ -374,7 +433,7 @@ composite_raw = max(0.0,
 | F  | < 0.17 |
 
 **A+ ceiling conditions** (not all currently automated):
-- HSO < 50 (required; quadratic curve penalizes neutrality — currently wired)
+- HSA < 50 (required; quadratic curve penalizes neutrality — currently wired)
 - Infrastructure outcomes accountability (not yet wired)
 - Structural balance policy adoption (not yet wired)
 - Reserve policy restoration (not yet wired; reserve target lowered 2025-07)
@@ -393,7 +452,7 @@ All scoring uses regex pattern matching on lowercase, punctuation-normalized tex
 - OCR override table for captioning artifacts (e.g., "kisserwine" → "Kesarwani")
 
 Key keyword sets (defined in the top ~140 lines of `council_scorecard.py`):
-`WASTE_KW`, `CORE_KW`, `FISCAL_CONCERN_KW`, `REVENUE_SEEKING_KW`, `HSO_SYMPATHY_KW`, `HSO_SKEPTIC_KW`, `P1_TOPIC_KW`, `DOMAIN_KW`, `FISCAL_KW`, `OP_QUESTION_KW`
+`WASTE_KW`, `CORE_KW`, `FISCAL_CONCERN_KW`, `REVENUE_SEEKING_KW`, `HSA_SYMPATHY_KW`, `HSA_SKEPTIC_KW`, `P1_TOPIC_KW`, `DOMAIN_KW`, `FISCAL_KW`, `OP_QUESTION_KW`
 
 ---
 
@@ -465,8 +524,8 @@ One entry per council member. Key fields:
     "cls3_authored": 6,
     "cls9_authored": 4,
 
-    // Homeless Services Orthodoxy (0–100)
-    "hso": 65,
+    // Homeless Services Status-Quo Alignment (0–100)
+    "hsa": 65,
 
     // Composite
     "taxpayer_alignment": 0.156,

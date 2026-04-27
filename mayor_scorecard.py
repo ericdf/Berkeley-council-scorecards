@@ -521,6 +521,8 @@ def render_mayor_scorecard(meta: dict) -> str:
 
   {_render_role_box(meta)}
 
+<!-- RECENT_INCIDENTS_PLACEHOLDER -->
+
   {_render_dimensions()}
 
   {_render_agenda_section()}
@@ -538,6 +540,7 @@ def render_mayor_scorecard(meta: dict) -> str:
     <span>Generated {gen_date}</span>
   </div>
 
+<!-- INCIDENTS_PLACEHOLDER -->
 </div>
 </body>
 </html>"""

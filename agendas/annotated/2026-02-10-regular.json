@@ -2,7 +2,7 @@
   "date": "2026-02-10",
   "meeting_type": "regular",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2026-02-10%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:44:02.418530",
+  "fetched": "2026-04-27T08:46:44.101096",
   "roll_call_time": "6:09 p.m.",
   "present": [
     "Kesarwani",
@@ -21,17 +21,23 @@
     {
       "number": 1,
       "title": "Recognition of Domestic Partnership Pioneers Tom Brougham and Barry Warren",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Adjourned in Memory of Todd Walker, Community Activist",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Mayor Ishii Reported on the Activities and Programs at the National Conference of Mayors",
-      "action": "M/S/C (Taplin/Humbert) to adopt Item 3 on the Consent Calendar. Vote: Ayes \u2013 Taplin, Bartlett, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Kesarwani (recused for conflict of interest \u2013 ADU owner), Tregub (recused for conflict of interest \u2013 ADU tenant). Action:",
+      "action": "M/S/C (Taplin/Humbert) to adopt Item 3 on the Consent Calendar. Vote: Ayes \u2013 Taplin, Bartlett, O\u2019Keefe, Blackaby, Lunaparra, Humbert, Ishii; Noes \u2013 None; Abstain \u2013 None; Absent \u2013 Kesarwani (recused for conflict of interest \u2013 ADU owner), Tregub (recused for conflict of interest \u2013 ADU tenant). Action: M/S/C (Bartlett/Humbert) to adopt the Consent Calendar (except Item 3) in one motion except as indicated. Vote: All Ayes. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 2",
+      "speakers": 10,
+      "letters": 0,
       "vote": {
         "ayes": [
           "Taplin",
@@ -51,6 +57,8 @@
       "number": 1,
       "title": "Amend Berkeley Municipal Code Chapter 14.68 \u2013 Bicycle Registration and",
       "action": "Adopted second reading of Ordinance No. 7,997\u2013N.S.",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -64,6 +72,8 @@
       "number": 2,
       "title": "Amend Berkeley Municipal Code 14.40.100 \u2013 Disability Parking Standards and",
       "action": "Adopted second reading of Ordinance No. 7,998\u2013N.S.",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -77,6 +87,8 @@
       "number": 3,
       "title": "Amendments to Title 21 (Subdivisions) to Allow Separate Sale of ADUs",
       "action": "Adopted second reading of Ordinance No. 7,999\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 3 Consent Calendar",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "Taplin",
@@ -112,6 +124,8 @@
       "number": 4,
       "title": "Amendments to Title 23 (Zoning) to permit by-right approval of qualifying",
       "action": "Adopted second reading of Ordinance No. 8,000\u2013N.S.",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -124,52 +138,72 @@
     {
       "number": 5,
       "title": "Rescission and replacement of the Police Equipment and Community Safety",
-      "action": "Adopted second reading of Ordinance No. 8,001\u2013N.S."
+      "action": "Adopted second reading of Ordinance No. 8,001\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Establish Job Class Specification and Salary Range \u2013 Risk Manager",
-      "action": "Adopted Resolution No. 72,121\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 4 Consent Calendar"
+      "action": "Adopted Resolution No. 72,121\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 4 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Formal Bid Solicitations and Request for Proposals Scheduled for Possible",
-      "action": "Approved recommendation."
+      "action": "Approved recommendation.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Contract: Scotts PPE Recon, Inc. for Firefighter Personal Protective Equipment",
-      "action": "Adopted Resolution No. 72,122\u2013N.S."
+      "action": "Adopted Resolution No. 72,122\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Application for Prohousing Incentive Program Funds",
-      "action": "Adopted Resolution No. 72,123\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 5 Consent Calendar"
+      "action": "Adopted Resolution No. 72,123\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 5 Consent Calendar",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Extending Reservations for Housing Trust Fund Projects",
-      "action": "Adopted Resolution No. 72,124\u2013N.S."
+      "action": "Adopted Resolution No. 72,124\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Donation: Memorial Bench at Codornices Park in Memory of Samuel Reitan",
-      "action": "Adopted Resolution No. 72,125\u2013N.S."
+      "action": "Adopted Resolution No. 72,125\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Donation: Memorial Bench at Strawberry Creek Park in Memory of Luke",
-      "action": "Adopted Resolution No. 72,126\u2013N.S."
+      "action": "Adopted Resolution No. 72,126\u2013N.S.",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Contract No. 32600085 Amendment: Cordoba Corporation for On-site Traffic",
-      "action": "Adopted Resolution No. 72,127\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 6 Action Calendar \u2013 Public Hearings"
+      "action": "Adopted Resolution No. 72,127\u2013N.S. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 6 Action Calendar \u2013 Public Hearings",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Zoning Adjustments Board Appeal: 2109 Virginia, Use Permit #ZP2024-0066",
       "action": "M/S/C (Taplin/Lunaparra) to adopt Resolution No. 72,128\u2013N.S. denying the appeal and affirming the Zoning Adjustments Board (ZAB) decision to approve Use Permit #ZP2024-0066. Vote: All Ayes. Information Reports",
+      "speakers": 28,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -182,7 +216,9 @@
     {
       "number": 15,
       "title": "Fiscal Year 2027 Operational Changes to Berkeley Rides for Seniors and the",
-      "action": "Received and filed. Public Comment \u2013 Items Not Listed on the Agenda - 4 speakers. Adjournment Action: M/S/C (Humbert/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 9:19 p.m. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 7 Communications Item #14: Zoning Adjustments Board Appeal: 210",
+      "action": "Received and filed. Public Comment \u2013 Items Not Listed on the Agenda - 4 speakers. Adjournment Action: M/S/C (Humbert/Tregub) to adjourn the meeting. Vote: All Ayes. Adjourned at 9:19 p.m. Tuesday, February 10, 2026 ANNOTATED AGENDA Page 7 Communications Item #14: Zoning Adjustments Board Appeal: 2109 Virginia, Use Permit #ZP2024- 0066",
+      "speakers": 4,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -195,387 +231,541 @@
     {
       "number": 1,
       "title": "Aaryaman Singhal",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "James M. Lloyd on behalf of The California Housing Defense Fund",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Okeya Vance-Dozier on behalf of the Commission on the Status of Women",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Ross Knight",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Karen Parolek and Ben Gerhardstein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Patrick Golier",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 7,
       "title": "Darell Owens",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 8,
       "title": "Michai Freeman on behalf of Friends of Adeline",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "Christine Wenrich (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 10,
       "title": "Boona Cheema",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 11,
       "title": "Moni Law (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 12,
       "title": "Shirley Kirsten",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 13,
       "title": "Areli Balderrrama",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 14,
       "title": "Yasmin Jenkins (5)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 15,
       "title": "Jane White (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 16,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 17,
       "title": "Frank Price",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 18,
       "title": "Dolores Martinez (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 19,
       "title": "Margot Smith",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 20,
       "title": "Suzanne Pettigrew",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 21,
       "title": "Marianne Riddle",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 22,
       "title": "David Epstein",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "Boona Cheema",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 24,
       "title": "Jennifer Ito",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 25,
       "title": "Susan Greef and Maureen Prochaska",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 26,
       "title": "David Shiretzki",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 27,
       "title": "Jonathan White",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 28,
       "title": "Steven Donaldson",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 29,
       "title": "Ashley Denney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 30,
       "title": "Kasey Harboe Guentert",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 31,
       "title": "Martin Bourque (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 32,
       "title": "David White (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 33,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 34,
       "title": "David Glasser (4)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 35,
       "title": "Rebecca Rodriguez (4)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 36,
       "title": "Lily Liao",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 37,
       "title": "Jane Tierney",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 38,
       "title": "Diana Bohn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 39,
       "title": "George Woodward",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 40,
       "title": "Leslie Sakai",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 41,
       "title": "David Lerman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 42,
       "title": "Octavio Raygoza",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 43,
       "title": "Diana Bohn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 44,
       "title": "Rischa S. Cole",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 45,
       "title": "Madeleine Roberts Rich (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 46,
       "title": "Ghawar Camij Toschian",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 47,
       "title": "Maria Yates (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 48,
       "title": "Nicole Powell",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 49,
       "title": "Nora Shourd",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 50,
       "title": "Bobby Jean",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 51,
       "title": "Jeffrey Church",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 52,
       "title": "Shallon L. Allen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 53,
       "title": "Jacob Cohen",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 54,
       "title": "Blair Beekman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 55,
       "title": "Stephen Alpert (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 56,
       "title": "Hector91 Phuentes (4)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 57,
       "title": "John Dunlap",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 58,
       "title": "Downtown Berkeley Association",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 59,
       "title": "Russbumper (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 60,
       "title": "Jane White (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 61,
       "title": "Russbumper (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 62,
       "title": "Diana Bohn",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 63,
       "title": "Robert Borghese (3)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 64,
       "title": "Carson Lepre (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 65,
       "title": "Jon Ruel Holder II",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 66,
       "title": "Mark Loper on behalf of the Applicant for the 2109 Virginia Street Project",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 67,
       "title": "Geoff Lomax",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 68,
       "title": "Marguerite & Guthrie Dolin",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 69,
       "title": "Roger Hallsten",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 70,
       "title": "John Parman",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 71,
       "title": "Marilyn Simons",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 72,
       "title": "Presentation submitted by the Planning and Development Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 73,
       "title": "Michael Apte (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 74,
       "title": "James Lloyd on behalf of the California Housing Defense Fund",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 75,
       "title": "Steve Ratcliff",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 76,
       "title": "Neighbors and residents of North Shattuck Avenue (2)",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 77,
       "title": "James Hendry",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

@@ -2,7 +2,7 @@
   "date": "2026-01-27",
   "meeting_type": "special",
   "url": "https://berkeleyca.gov/sites/default/files/city-council-meetings/2026-01-27%20Special%20Annotated%20Agenda%20-%20Council.pdf",
-  "fetched": "2026-04-10T09:43:59.480152",
+  "fetched": "2026-04-27T08:46:41.177795",
   "roll_call_time": "4:09 p.m.",
   "present": [
     "Taplin",
@@ -31,17 +31,23 @@
     {
       "number": 1,
       "title": "2026 City Council Referral Prioritization Process Using Re-Weighted Range",
-      "action": "0 speakers. Presentation made and discussion held. M/S/C (Kesarwani/Humbert) to 1) remove the referrals listed below from the list of referrals, and 2) direct staff to run the RRV algorithm and return to Council on February 10 with the prioritized list of referrals. DMND0004241 Companion Report: Aff"
+      "action": "0 speakers. Presentation made and discussion held. M/S/C (Kesarwani/Humbert) to 1) remove the referrals listed below from the list of referrals, and 2) direct staff to run the RRV algorithm and return to Council on February 10 with the prioritized list of referrals. DMND0004241 Companion Report: Affordable Housing for Artists Report (Rec #4) DMND0004129 Amendments to Title 23 Relating to Accessory Dwelling Units (ADUs) DMND0004101 Development of Artists Affordable Housing Certification Program DMND0004063 Referral: Establishing an Electric Bike Rebate Program DMND0004009 Referring to the City Manager to Establish a Policy of Reducing or Waiving Park Fees for Free, Permitted Outdoor Theater, Arts Events, and Other Events DMND0003997 Referral to the City Manager to Establish a Marina Master Plan for Parking with a Consideration for Establishing a Waterfront Parking Benefits District DMND0003975 Referral to Strengthen Public Health and Environmental Impact Mitigation for Industrial Facilities in the Manufacturing Zone DMND0004242 Companion Report: Affordable Housing for Artists Report (Rec #5) DMND0004135 Southside Zoning Amendments DMND0004111 Conduct a Study on the City's History of Discriminatory Actions in Housing Policies/Programs DMND0004110 Adopting a temporary exemption from the collection of taxes under BMC Chapter",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 9,
       "title": "04.136(D): Tax Rate for Non-Medical and Medical Cannabis Businesses",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 23,
       "title": "304.150",
       "action": "M/S/C (Humbert/Ishii) to adjourn the meeting. Vote: All Ayes. Adjourned at 4:54 p.m. Tuesday, January 27, 2026 ANNOTATED AGENDA Page 3 Communications Item #1: 2026 City Council Referral Prioritization Process Using Re-Weighted Range Voting (RRV)",
+      "speakers": 0,
+      "letters": 0,
       "vote": {
         "ayes": [
           "all"
@@ -54,32 +60,44 @@
     {
       "number": 1,
       "title": "Elizabeth Thomas",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 2,
       "title": "Marty Lynch",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 3,
       "title": "Steve Lustig",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 4,
       "title": "Jasmine Durr on behalf of Steve Lustig",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 5,
       "title": "Presentation submitted by the City Clerk Department",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     },
     {
       "number": 6,
       "title": "Linda Maio",
-      "action": ""
+      "action": "",
+      "speakers": 0,
+      "letters": 0
     }
   ]
 }

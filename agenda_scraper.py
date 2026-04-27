@@ -275,17 +275,42 @@ def classify_off_mission(title: str, recommendation: str, from_commission: str) 
 
 SECOND_READING_RE = re.compile(r"adopt\s+the\s+second\s+reading\b", re.IGNORECASE)
 
+# Broader obligation signals for "staff time" understatement detection
+# (NEW_OBLIGATION_RE catches formal legal changes; this catches policy directives too)
+# "implement.*" excluded — too broad; matches descriptions of what external agencies do.
+# Use "to ban|prohibit" to require a directive form, not a description.
+BROAD_OBLIGATION_RE = re.compile(
+    r"establish(?:ing)?\s+(?:a\s+)?(?:new\s+)?(?:commission|program|fund\b|position|department|office\b)|"
+    r"creat(?:e|ing)\s+(?:a\s+)?(?:new\s+)?(?:commission|program|fund\b|position|permit|process)|"
+    r"amend(?:ing)?\s+(?:the\s+)?(?:municipal\s+code|berkeley\s+municipal|bmc)\b|"
+    r"\bto\s+(?:ban|prohibit)\b|"
+    r"develop.*(?:guidelines?|policy|policies|framework|ordinance|protocol)",
+    re.IGNORECASE,
+)
+
 def check_false_fiscal(financial_raw: str, recommendation: str) -> bool:
-    """True if item claims no fiscal impact but clearly has one."""
+    """
+    True if item claims no fiscal impact but clearly has one.
+
+    Two patterns:
+    1. "None" claim + staff referral or formal obligation — outright false
+    2. "Staff time" claim + broad obligation signal — understates real cost of
+       directing staff to create new programs, bans, permitting processes, etc.
+    """
     fin = financial_raw.strip().lower()
-    if fin not in ("none", "none."):
-        return False  # doesn't claim zero — not a false claim
     # Second readings were already analysed at first reading — not a false claim
     if SECOND_READING_RE.search(recommendation):
         return False
-    has_staff_ref = bool(STAFF_REF_RECOM_RE.search(recommendation))
-    has_obligation = bool(NEW_OBLIGATION_RE.search(recommendation))
-    return has_staff_ref or has_obligation
+
+    if fin in ("none", "none."):
+        has_staff_ref = bool(STAFF_REF_RECOM_RE.search(recommendation))
+        has_obligation = bool(NEW_OBLIGATION_RE.search(recommendation))
+        return has_staff_ref or has_obligation
+
+    if "staff time" in fin:
+        return bool(BROAD_OBLIGATION_RE.search(recommendation))
+
+    return False
 
 
 def extract_dollar_total(text: str) -> int:
