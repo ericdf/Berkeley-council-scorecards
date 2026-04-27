@@ -7,7 +7,7 @@
     "title": "Swearing in of newly elected and re-elected officials",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -33,7 +33,7 @@
     "title": "Contract: Stommel Inc., dba Lehr for Hybrid Police Patrol Vehicles Supplies,",
     "dollar_total": 400000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -59,7 +59,7 @@
     "title": "Audit Status Reports: Fleet Replacement Fund Short Millions and Rocky Road:",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -85,7 +85,7 @@
     "title": "Resolution No. 71,610\u2013N.S. (Measure AA \u2013 Article XIIIB GANN Appropriations",
     "dollar_total": 50000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -111,7 +111,7 @@
     "title": "Seating Arrangement for the Council, Vice Mayor Term Revision, Mayoral",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Ishii"
     ],
@@ -138,7 +138,7 @@
     "title": "California Municipal Finance Authority Bond Financing for 2001 Ashby Avenue",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -163,7 +163,7 @@
     "title": "Changes to Select Recreation Facilities and Camps Program Fees",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -188,7 +188,7 @@
     "title": "Audit Follow-up Status Update",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -213,7 +213,7 @@
     "title": "Adjourn in Memory of Michael Burawoy, Retired UC Berkeley Professor",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -239,7 +239,7 @@
     "title": "2009 Leases Audit Follow-Up: Berkeley Faces the Same Risks 16 Years Later",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -265,7 +265,7 @@
     "title": "Proposed Amendments to the Building Emissions Saving Ordinance (BESO)",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -291,7 +291,7 @@
     "title": "Proposal 2: Affirm City Council support for Fire Department staffing",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -317,7 +317,7 @@
     "title": "Adopt first reading of an Ordinance amending Berkeley Municipal Code (BMC)",
     "dollar_total": 150000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -343,7 +343,7 @@
     "title": "Conduct an economic feasibility study within three years of Middle Housing zoning",
     "dollar_total": 1400000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -369,7 +369,7 @@
     "title": "Zoning Ordinance Amendments to Title 23 of the Berkeley Municipal Code for",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -395,7 +395,7 @@
     "title": "Community Health Assessment Report",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -421,7 +421,7 @@
     "title": "Berkeley Economic Dashboards Update",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -446,7 +446,7 @@
     "title": "Adjourned in Memory of Mel Vapour, Berkeley Resident",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -472,7 +472,7 @@
     "title": "Inclusionary Housing Ordinance In-Lieu Fee; Amending Berkeley Municipal",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -498,7 +498,7 @@
     "title": "Zoning Ordinance Amendments to Title 23 of the Berkeley Municipal Code for",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -524,7 +524,7 @@
     "title": "Appeal of Special Assessment Tax Lien \u2013 1806 Walnut St",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -550,7 +550,7 @@
     "title": "Adopt an Ordinance to Prohibit the Sale or Use of Algorithmic Devices to Set",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -576,7 +576,7 @@
     "title": "FY 2025 First Quarter Investment Report: Ended September 30, 2024",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -602,7 +602,7 @@
     "title": "Direct the City Manager to run the ranking algorithm and return to Council with a",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -628,7 +628,7 @@
     "title": "Adjourned in Memory of Sarah Reynoso, Former City Employee",
     "dollar_total": 914300,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -654,7 +654,7 @@
     "title": "2024 Local Hazard Mitigation Plan (LHMP)",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -680,7 +680,7 @@
     "title": "Formation of a Sex Trafficking Task Force to Address Current Sex Trafficking",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -706,7 +706,7 @@
     "title": "Refer to the City Manager to consider as part of the contracting process the",
     "dollar_total": 5500000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -732,7 +732,7 @@
     "title": "2024 Berkeley Police Department Annual Report",
     "dollar_total": 914300,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -758,7 +758,7 @@
     "title": "Adjourned in Memory of Marty Schiffenbauer, Rent Control Pioneer and Community Activist",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -784,7 +784,7 @@
     "title": "Adopt an Ordinance to Prohibit the Sale or Use of Pricing Algorithms to Set",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -810,7 +810,7 @@
     "title": "Adopt a Resolution:",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -836,7 +836,7 @@
     "title": "ZAB Appeal: 3000 Shattuck Avenue, Use Permit #ZP2022-0046",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -859,7 +859,7 @@
     "title": "Landmarks Preservation Ordinance Notice of Decision (LPO NOD):",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -882,7 +882,7 @@
     "title": "2025 City Council Referral Prioritization Results Using Re-Weighted Range",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -908,7 +908,7 @@
     "title": "Adjourn in Memory of Mrs. Willie Ann Bullock, Berkeley Resident",
     "dollar_total": 200000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -934,7 +934,7 @@
     "title": "Proposed Amendments to the Building Emissions Saving Ordinance (BESO);",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -960,7 +960,7 @@
     "title": "Establishment of M-RD Zoning District, Associated General Plan and West",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -986,7 +986,7 @@
     "title": "City Auditor\u2019s Office 2024 Peer Review Results",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1012,7 +1012,7 @@
     "title": "In compliance with state law on adopting such codes by reference, hold a public",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1036,7 +1036,7 @@
     "title": "Schedule the second reading and public hearing for May 6, 2025.",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1062,7 +1062,7 @@
     "title": "ZAB Appeal: 2274 Shattuck Avenue, Use Permit #ZP2023-0079",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1087,7 +1087,7 @@
     "title": "Send a copy of the resolution to President Joseph R. Biden, Secretary of State",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1113,7 +1113,7 @@
     "title": "Adjourn in memory of Bill Chapman, League of Women Voters",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1139,7 +1139,7 @@
     "title": "Adjustment to Police Accountability Board Stipend Cap Following AAO #1",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1164,7 +1164,7 @@
     "title": "Resolution: Opposition to Police Brutality and Use of Force on Nonviolent",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1190,7 +1190,7 @@
     "title": "Adding ADA expertise to the SAFE STREETS Citizen Oversight Committee",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Blackaby"
     ],
@@ -1219,7 +1219,7 @@
     "title": "Finalize the 2025-2030 Consolidated Plan, including the PY 2025 Annual Action",
     "dollar_total": 171323,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1245,7 +1245,7 @@
     "title": "Implement Residential Preferential Parking (RPP) Program on the 1500 Block",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1270,7 +1270,7 @@
     "title": "Restaurant Inspections Audit Report Wins National Recognition",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1295,7 +1295,7 @@
     "title": "Words of Remembrance for David \u201cChicken\u201d Nesmith",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1321,7 +1321,7 @@
     "title": "Adoption of CALFIRE Map and Additional Areas Designated as the City of",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1347,7 +1347,7 @@
     "title": "Modification and Adoption of Berkeley Fire Code Local Amendments",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1373,7 +1373,7 @@
     "title": "ZAB Appeal: 1048 Keith Avenue, Use Permit ZP2024-0014",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1398,7 +1398,7 @@
     "title": "Presentation and Discussion: Brown Act Training",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1422,7 +1422,7 @@
     "title": "Adjourned in memory of Christina Murphy, City of Berkeley Employee and former Rent Board",
     "dollar_total": 108000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1447,7 +1447,7 @@
     "title": "Adding an additional qualifying skillset for appointment to Measure FF Safe",
     "dollar_total": 11000000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1472,7 +1472,7 @@
     "title": "2024 Police Equipment and Community Safety Ordinance Annual Report",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1497,7 +1497,7 @@
     "title": "Letter in Support of California State Senate Bill 692 (Arregu\u00edn) Relating to",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Taplin"
     ],
@@ -1527,7 +1527,7 @@
     "title": "FY 2026 Proposed Mid-Biennial Budget Update and Public Hearing #1",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1552,7 +1552,7 @@
     "title": "LPC Appeal: 2500-2512 San Pablo Avenue, Landmark Application #LMIN2024-",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1577,7 +1577,7 @@
     "title": "Appointment of Four Berkeley Residents to the SAFE STREETS Citizen",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1602,7 +1602,7 @@
     "title": "Authorizing the Execution, Sale, and Delivery of Lease Revenue Notes for the",
     "dollar_total": 11000000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1626,7 +1626,7 @@
     "title": "Issuance of $35,000,000 General Obligation Bonds for Measure O \u2013 Affordable",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1650,7 +1650,7 @@
     "title": "Recognition of Berkeley Pride Day, August 16, 2025",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1674,7 +1674,7 @@
     "title": "Amendment: FY 2025 Annual Appropriations Ordinance",
     "dollar_total": 143999781,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1699,7 +1699,7 @@
     "title": "Conduct a Public Hearing in Compliance with Assembly Bill 2561 / Government",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1724,7 +1724,7 @@
     "title": "Zoning Adjustments Board Appeal: 1950-1998 Shattuck Avenue, Use Permit",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1749,7 +1749,7 @@
     "title": "Section 115 Trust Investment Report from Inception to Period Ended June 30,",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1774,7 +1774,7 @@
     "title": "Ambulance Transport and First Responder Fee Increase",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1800,7 +1800,7 @@
     "title": "Fees: Public Health: Berkeley High School Health Center Services",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1826,7 +1826,7 @@
     "title": "Housing Trust Fund and Small Sites Program Fees",
     "dollar_total": 4330,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1852,7 +1852,7 @@
     "title": "Affordable Housing Compliance Review Fee",
     "dollar_total": 130,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1878,7 +1878,7 @@
     "title": "Changes to Selected Recreation Facilities and Camps Program Fees",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1904,7 +1904,7 @@
     "title": "Changes to the Planning & Development Fee Schedule",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1930,7 +1930,7 @@
     "title": "Levy and Collection of Fiscal Year 2026 Street Lighting Assessments",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1955,7 +1955,7 @@
     "title": "goBerkeley Parking Management Program - Recommended Adjustments for",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -1981,7 +1981,7 @@
     "title": "Adjourn in memory of John George Leitmann, UC Berkeley Professor",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2007,7 +2007,7 @@
     "title": "Conduct a public hearing on the modification of the existing BTBID to end on June",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2032,7 +2032,7 @@
     "title": "FY 2026 Proposed Budget Update Adoption",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2058,7 +2058,7 @@
     "title": "FY 2026 Annual Appropriations Ordinance",
     "dollar_total": 1452682310,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2084,7 +2084,7 @@
     "title": "Borrowing of Funds and the Sale and Issuance of FY 2025-26 Tax and Revenue",
     "dollar_total": 61000000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2110,7 +2110,7 @@
     "title": "State of Public Health in Berkeley Summary Report",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2136,7 +2136,7 @@
     "title": "Fire Permit and Inspection Fee Schedule (Continued from June 17, 2025)",
     "dollar_total": 892,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2162,7 +2162,7 @@
     "title": "New Fee Schedule for Carry Concealed Weapon Permits (Continued from June",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2188,7 +2188,7 @@
     "title": "Changes to Select Public Works Transportation Permit Fees (Continued from",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2214,7 +2214,7 @@
     "title": "Selected Marina Fee Increases (Continued from June 17, 2025)",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2240,7 +2240,7 @@
     "title": "Adopt a Resolution amending the General Plan for the same purpose.",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2266,7 +2266,7 @@
     "title": "Adopt Resolution No. 71,863\u2013N.S. amending the General Plan for the same",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2292,7 +2292,7 @@
     "title": "The City Manager requested that as part of the action on Item 20, an item be added to the July",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2318,7 +2318,7 @@
     "title": "63) to suspend the effective date until March 1, 2026.",
     "dollar_total": 4500000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2344,7 +2344,7 @@
     "title": "FY 2026 Tax Rate: Fund Fire Protection and Emergency Response and",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2370,7 +2370,7 @@
     "title": "FY 2026 Tax Rate: Fund Firefighting, Emergency Medical Response and",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2396,7 +2396,7 @@
     "title": "FY 2026 Annual Appropriations Ordinance",
     "dollar_total": 1516977821,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2422,7 +2422,7 @@
     "title": "326.070 Demolition of Non-Residential Buildings",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2448,7 +2448,7 @@
     "title": "***Removed from the Agenda by the City Manager*** Approval and Levy of",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2474,7 +2474,7 @@
     "title": "Adjourn in memory of Rita Maran, former Peace & Justice Commissioner",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2500,7 +2500,7 @@
     "title": "At-Will Designation: Assistant City Attorney",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": true,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2526,7 +2526,7 @@
     "title": "Lease Amendment with Yoonaco, Inc. (Hana Japan) at 235 University Avenue",
     "dollar_total": 7868,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2552,7 +2552,7 @@
     "title": "326.070 Demolition of Non-Residential Buildings",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2578,7 +2578,7 @@
     "title": "Surveillance Technology Ordinance Submission for Berkeley City Jail",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2604,7 +2604,7 @@
     "title": "Upon conclusion of the second reading of the Ordinance, authorize the City",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2630,7 +2630,7 @@
     "title": "Accepting the attached Mutual Aid requests and responses report as submitted in",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2656,7 +2656,7 @@
     "title": "Re-affirming the associated Berkeley Police Department (BPD) Use Policies (BPD",
     "dollar_total": 7868,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2682,7 +2682,7 @@
     "title": "City Auditor Fiscal Year 2026 Audit Plan",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2708,7 +2708,7 @@
     "title": "Landmarks Preservation Commission Appeal: 2425 Durant, Landmark",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2733,7 +2733,7 @@
     "title": "Landmarks Preservation Commission Appeal: 2138 Kittredge, Landmark",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2758,7 +2758,7 @@
     "title": "Zoning Adjustment Board Appeal: 2655 Shattuck, Use Permit #ZP2024-0057",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2783,7 +2783,7 @@
     "title": "Accessory Dwelling Units (ADUs): Amendments to Title 21 (Subdivisions) to",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2809,7 +2809,7 @@
     "title": "Ordinance Vacating a Portion of Carleton Street from Westerly Terminus",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2835,7 +2835,7 @@
     "title": "Zero Waste Commission Fiscal Year 2025-26 Work Plan",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2861,7 +2861,7 @@
     "title": "Grant Award: Byrne State Crisis Intervention Program (SCIP) Cohort 2 Funding",
     "dollar_total": 1000000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2886,7 +2886,7 @@
     "title": "Adjourn in memory of John Beaulaurier, Community Advocate",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2912,7 +2912,7 @@
     "title": "Accessory Dwelling Units (ADUs): Amendments to Title 23 (Zoning) to Comply",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2938,7 +2938,7 @@
     "title": "Proposed Sanctuary City Ordinance \u2013 Council Referral; Adding Berkeley",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2964,7 +2964,7 @@
     "title": "Open Government Commission FY 2025-2026 Work Plan",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -2990,7 +2990,7 @@
     "title": "Adjourn in memory of Ann Fagan Ginger, Attorney and Civil Rights Activist",
     "dollar_total": 1775000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3016,7 +3016,7 @@
     "title": "Zoning Ordinance Modification for Telegraph Avenue Commercial District",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "LunaParra"
     ],
@@ -3046,7 +3046,7 @@
     "title": "Adjourned in Memory of Dinh Le, Berkeley Resident and Pedestrian Fatality",
     "dollar_total": 8000000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3072,7 +3072,7 @@
     "title": "Proposed Sanctuary City Ordinance \u2013 Council Referral; Adding Berkeley",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3098,7 +3098,7 @@
     "title": "Changes to the Planning and Development Fee Schedule",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3124,7 +3124,7 @@
     "title": "Resolution Calling on the California State Legislature to Amend Government",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3150,7 +3150,7 @@
     "title": "Resolution Directing the City Manager to Work with the City Attorney\u2019s Office",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3176,7 +3176,7 @@
     "title": "Audit Recommendation Status - Berkeley Police: Improvements Needed to",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3202,7 +3202,7 @@
     "title": "Social Housing Study and Recommendations",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3228,7 +3228,7 @@
     "title": "Adjourned in Memory of Berkeley Resident Professor Geroge Smoot, Nobel Laureate",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3254,7 +3254,7 @@
     "title": "2026 Tax Rate: Transportation Network Company User Tax",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3280,7 +3280,7 @@
     "title": "Landmark Preservation Ordinance Notice of Decision: 2000 Blake Street",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3306,7 +3306,7 @@
     "title": "Recognition of the Women\u2019s Cancer Resource Center and Breast Cancer Awareness Month",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3332,7 +3332,7 @@
     "title": "52.060, to encourage early mitigation efforts.",
     "dollar_total": 260000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3357,7 +3357,7 @@
     "title": "Telegraph Multimodal Corridor Project Conceptual Design",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3383,7 +3383,7 @@
     "title": "Adopt a Resolution authorizing the City Manager, or designee, to expend Housing",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3409,7 +3409,7 @@
     "title": "Corridors Zoning Update",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3435,7 +3435,7 @@
     "title": "San Pablo Avenue Specific Plan",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3461,7 +3461,7 @@
     "title": "In compliance with state law on adopting such codes by reference, hold a public",
     "dollar_total": 9500000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3487,7 +3487,7 @@
     "title": "Adopt Resolution No. 72,024\u2013N.S. (Establishing Fees)",
     "dollar_total": 892000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3513,7 +3513,7 @@
     "title": "Within 60 days of the State Board of Forestry\u2019s Zone Zero recommendation",
     "dollar_total": 1000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3539,7 +3539,7 @@
     "title": "Annual Surveillance Technology Report for Body Worn Cameras, GPS",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3565,7 +3565,7 @@
     "title": "24.300 to Improve Procedure for Designating Landmarks, Historic Districts",
     "dollar_total": 892000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3591,7 +3591,7 @@
     "title": "Amending Berkeley Municipal Code Chapter 7.54 The Empty Homes Tax",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3617,7 +3617,7 @@
     "title": "Amendment to Ground Lease with East Bay Regional Park District at 400",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3643,7 +3643,7 @@
     "title": "Remove Pre-Transfer Eligibility Restriction of the Transfer Tax Rebate for",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3669,7 +3669,7 @@
     "title": "37, and adopting related procedural and stricter provisions where the",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3695,7 +3695,7 @@
     "title": "Zoning Ordinance Amendments to Title 23 of the Berkeley Municipal Code for",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3721,7 +3721,7 @@
     "title": "Pausing City of Berkeley Authorization for Mills Act Agreements",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Humbert"
     ],
@@ -3753,7 +3753,7 @@
     "title": "Independent Third-Party Audit of the Payroll Audit Division",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3779,7 +3779,7 @@
     "title": "2024 Police Accountability Board (PAB) & Office of the Director of Police",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3805,7 +3805,7 @@
     "title": "Adjourn in memory of Berkeley Fire Captain Scott Hall",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "LunaParra"
     ],
@@ -3837,7 +3837,7 @@
     "title": "63).",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3862,7 +3862,7 @@
     "title": "Amendment: FY 2026 Annual Appropriations Ordinance",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3887,7 +3887,7 @@
     "title": "Sanctuary City Contracting Ordinance Updates",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "LunaParra"
     ],
@@ -3918,7 +3918,7 @@
     "title": "Zoning Ordinance Amendments to Title 23 of the Berkeley Municipal Code for",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3944,7 +3944,7 @@
     "title": "Renewal of the Elmwood Avenue BID for Calendar Year 2026",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3970,7 +3970,7 @@
     "title": "Renewal of the Solano Avenue BID for Calendar Year 2026",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -3996,7 +3996,7 @@
     "title": "Adoption of the 2025 California Fire Code with Local Amendments \u2013 Second",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4021,7 +4021,7 @@
     "title": "Adoption of and Amendments to the California Wildland-Urban Interface (WUI)",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4046,7 +4046,7 @@
     "title": "Amendments to Title 23 (Zoning) to Allow the Retail Sale of Alcohol in the",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4072,7 +4072,7 @@
     "title": "Amendments to Title 21 (Subdivisions) to Allow Separate Sale of ADUs",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": true,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4097,7 +4097,7 @@
     "title": "Housing Advisory Commission Fiscal Year 2026 Work Plan",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4122,7 +4122,7 @@
     "title": "Discussion Regarding Potential Ballot Measures for the November 3, 2026,",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4146,7 +4146,7 @@
     "title": "Recognition of New Berkeley Poet Laureate Hanan Masri, and Outgoing Poet Laureate Aya de",
     "dollar_total": 318000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4172,7 +4172,7 @@
     "title": "Amendments to Title 23 (Zoning) to Allow the Retail Sale of Alcohol in the",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4198,7 +4198,7 @@
     "title": "Amendments to Title 21 (Subdivisions) to Allow Separate Sale of ADUs",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": true,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4222,7 +4222,7 @@
     "title": "Fees: Public Health Vital Statistics Vital Records",
     "dollar_total": 2,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4248,7 +4248,7 @@
     "title": "Changes to Selected Recreation and Camps Facilities and Program Fees",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4274,7 +4274,7 @@
     "title": "Amendments to Title 23 (Zoning) to permit by-right approval of qualifying",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4300,7 +4300,7 @@
     "title": "Staff-level design review conducted under this section shall not be subject",
     "dollar_total": 100000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4326,7 +4326,7 @@
     "title": "Surveillance Technology Ordinance Report Update",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4352,7 +4352,7 @@
     "title": "Recognition of Holocaust Remembrance Day",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4378,7 +4378,7 @@
     "title": "Implement Residential Preferential Parking (RPP) Program on the 1700 Block",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4404,7 +4404,7 @@
     "title": "Selected Marina Fee Increases",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4430,7 +4430,7 @@
     "title": "Creating Accessible Routes For Riders, Equity, and the Environment (CAR",
     "dollar_total": 1325000,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "LunaParra"
     ],
@@ -4457,7 +4457,7 @@
     "title": "304.150",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4483,7 +4483,7 @@
     "title": "Mayor Ishii Reported on the Activities and Programs at the National Conference of Mayors",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": true,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4507,7 +4507,7 @@
     "title": "Amend Berkeley Municipal Code Chapter 14.68 \u2013 Bicycle Registration and",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4533,7 +4533,7 @@
     "title": "Amend Berkeley Municipal Code 14.40.100 \u2013 Disability Parking Standards and",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4559,7 +4559,7 @@
     "title": "Amendments to Title 21 (Subdivisions) to Allow Separate Sale of ADUs",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": true,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4583,7 +4583,7 @@
     "title": "Amendments to Title 23 (Zoning) to permit by-right approval of qualifying",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4609,7 +4609,7 @@
     "title": "Zoning Adjustments Board Appeal: 2109 Virginia, Use Permit #ZP2024-0066",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4635,7 +4635,7 @@
     "title": "Fiscal Year 2027 Operational Changes to Berkeley Rides for Seniors and the",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4661,7 +4661,7 @@
     "title": "2026 City Council Referral Prioritization Results Using Re-Weighted Range",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4684,7 +4684,7 @@
     "title": "Zoning Adjustments Board Appeal: 2425 Durant Avenue, Use Permit",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4710,7 +4710,7 @@
     "title": "Adjourned in Memory of Gianna Ranuzzi, Local Artist and Activist",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4736,7 +4736,7 @@
     "title": "Amendments to Title 21 (Subdivisions Ordinance) and Title 23 (Zoning",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4762,7 +4762,7 @@
     "title": "Safe Streets Citizen Oversight Committee (SSCOC) Workplan for FY25-26",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4788,7 +4788,7 @@
     "title": "Community Health Improvement Plan",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4813,7 +4813,7 @@
     "title": "Recognition of Poet Devorah Major for Lifetime Achievement Award",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4839,7 +4839,7 @@
     "title": "Amendments to Title 21 (Subdivisions Ordinance) and Title 23 (Zoning",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4865,7 +4865,7 @@
     "title": "Amendments to BMC Title 23 (Zoning) to Update the Regulation of",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": true,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4891,7 +4891,7 @@
     "title": "Amendments to the Berkeley Election Reform Act Regarding the Return of",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4917,7 +4917,7 @@
     "title": "Appeal of Special Assessment Tax Lien and of the Need for Abatement Action",
     "dollar_total": 24831,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4943,7 +4943,7 @@
     "title": "Resolution Rescinding Berkeley Police Department\u2019s Pepper Spray Reporting",
     "dollar_total": 0,
     "off_mission": true,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Kesarwani"
     ],
@@ -4971,7 +4971,7 @@
     "title": "Refer to the City Manager to present an amendment to BMC Chapter 2.100 to the City",
     "dollar_total": 258546,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -4997,7 +4997,7 @@
     "title": "City of Berkeley\u2019s 2026 State and Federal Legislative Platform (Continued from",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Ishii"
     ],
@@ -5025,7 +5025,7 @@
     "title": "Berkeley Economic Dashboards Update",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5050,7 +5050,7 @@
     "title": "Authorize the City Manager to conduct a second community survey of likely",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5076,7 +5076,7 @@
     "title": "The City Manager requested that Item 16 be adopted as a budget referral due to cost",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5102,7 +5102,7 @@
     "title": "Amendments to BMC Title 23 (Zoning) to Update the Regulation of",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5128,7 +5128,7 @@
     "title": "Amendments to the Berkeley Election Reform Act Regarding the Return of",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5154,7 +5154,7 @@
     "title": "Mills Act Contract \u2013 2845 Woolsey Street",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5180,7 +5180,7 @@
     "title": "Berkeley Public Schools Fund Spring Luncheon 2026: Relinquishment of",
     "dollar_total": 1500,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Blackaby"
     ],
@@ -5210,7 +5210,7 @@
     "title": "Adopt a Resolution Authorizing Temporary Employment of Retired Annuitant",
     "dollar_total": 122,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [
       "Ishii"
     ],
@@ -5238,7 +5238,7 @@
     "title": "Authorize the City Manager to amend the existing contract with Flock Safety to",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5264,7 +5264,7 @@
     "title": "Settlement Agreement \u2013 Berkeley People\u2019s Alliance et. al. v. City of Berkeley et.",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5290,7 +5290,7 @@
     "title": "2025 Berkeley Police Department Annual Report",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5316,7 +5316,7 @@
     "title": "Adjourned in Memory of Winston Burton, Berkeley Commissioner and Community Activist",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5342,7 +5342,7 @@
     "title": "Proposed Resolution Limiting Use of City Property to Authorized Uses That",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5368,7 +5368,7 @@
     "title": "Amendments to BMC Title 3.24 (Landmarks Preservation Commission) to",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5394,7 +5394,7 @@
     "title": "24.120(C) to read \u201cIf the property owner submits a formal zoning application",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5420,7 +5420,7 @@
     "title": "Bond Measure Subcommittee \u2014 Final Report",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {
@@ -5446,7 +5446,7 @@
     "title": "Conduct Public Hearing in Compliance with Assembly Bill 2561 / Government",
     "dollar_total": 0,
     "off_mission": false,
-    "false_fiscal": false,
+    "fiscal_understatement": false,
     "authors": [],
     "cosponsors": [],
     "votes": {

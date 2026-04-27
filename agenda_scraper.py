@@ -4,7 +4,7 @@ agenda_scraper.py
 Fetches Berkeley City Council eAgenda pages and extracts:
   - Consent calendar items: title, authors, sponsors, fiscal claim, dollar amounts
   - Council consent items: discretionary spending with per-member amounts
-  - Classification: off-mission, false fiscal impact flag
+  - Classification: off-mission, fiscal understatement flag
   - Action calendar items (for cross-reference)
 
 Saves per-meeting JSON to agendas/YYYY-MM-DD-[regular|special].json
@@ -162,7 +162,7 @@ CORE_AGENDA_KW = [
     r"\bcontract\b.*\$",  # contracts with dollar amounts = core operations
 ]
 
-# Staff referral signals (for false fiscal impact detection)
+# Staff referral signals (for fiscal understatement detection)
 STAFF_REF_RECOM_RE = re.compile(
     r"refer\s+to\s+the\s+(?:city\s+)?(?:manager|attorney)|"
     r"direct(?:ing)?\s+(?:the\s+)?(?:city\s+)?(?:manager|staff|attorney)|"
@@ -288,17 +288,19 @@ BROAD_OBLIGATION_RE = re.compile(
     re.IGNORECASE,
 )
 
-def check_false_fiscal(financial_raw: str, recommendation: str) -> bool:
+def check_fiscal_understatement(financial_raw: str, recommendation: str) -> bool:
     """
-    True if item claims no fiscal impact but clearly has one.
+    True if a council-authored item understates or omits its real fiscal cost.
 
     Two patterns:
-    1. "None" claim + staff referral or formal obligation — outright false
-    2. "Staff time" claim + broad obligation signal — understates real cost of
-       directing staff to create new programs, bans, permitting processes, etc.
+    1. "None" claim + staff referral or formal obligation — stated cost is zero
+       when the recommendation clearly creates work.
+    2. "Staff time" claim + broad obligation signal — technically honest but
+       understates cost of directing staff to create new programs, bans,
+       permitting processes, or official policy frameworks.
     """
     fin = financial_raw.strip().lower()
-    # Second readings were already analysed at first reading — not a false claim
+    # Second readings were already analysed at first reading — not an understatement
     if SECOND_READING_RE.search(recommendation):
         return False
 
@@ -502,7 +504,7 @@ def parse_items_from_section(section_text: str, section_name: str) -> list[dict]
 
         # Classification
         off_mission, reasons = classify_off_mission(title, recommendation, commission)
-        false_fiscal = check_false_fiscal(financial_raw, recommendation)
+        fiscal_understatement = check_fiscal_understatement(financial_raw, recommendation)
 
         items.append({
             "number":           number,
@@ -520,7 +522,7 @@ def parse_items_from_section(section_text: str, section_name: str) -> list[dict]
             "discretionary":    discretionary,
             "off_mission":      off_mission,
             "off_mission_reasons": reasons,
-            "false_fiscal":     false_fiscal,
+            "fiscal_understatement":     fiscal_understatement,
         })
 
     return items
@@ -565,7 +567,7 @@ def parse_agenda(html: str, date: str, meeting_type: str, url: str) -> dict:
         "action_items":  action_items,
         "n_consent":     len(consent_items),
         "n_off_mission": sum(1 for i in consent_items if i["off_mission"]),
-        "n_false_fiscal": sum(1 for i in consent_items if i["false_fiscal"]),
+        "n_fiscal_understatement": sum(1 for i in consent_items if i["fiscal_understatement"]),
     }
 
 
@@ -637,7 +639,7 @@ def run(refresh: bool = False, target_date: str | None = None):
 
         n_items = data["n_consent"]
         n_om    = data["n_off_mission"]
-        n_ff    = data["n_false_fiscal"]
+        n_ff    = data["n_fiscal_understatement"]
         print(f"    → {n_items} consent items, {n_om} off-mission, {n_ff} false fiscal", file=sys.stderr)
 
         fetched += 1

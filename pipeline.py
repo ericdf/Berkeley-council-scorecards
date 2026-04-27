@@ -46,7 +46,7 @@ from council_scorecard import (
     clean, resolve_name, WASTE_KW, CORE_KW, FISCAL_CONCERN_KW, NEW_REVENUE_PREFERENCE_KW,
     HSA_SYMPATHY_KW, HSA_SKEPTIC_KW, P1_TOPIC_KW,
 )
-from agenda_scraper import check_false_fiscal
+from agenda_scraper import check_fiscal_understatement
 
 # Redefine what we need locally (council_scorecard doesn't export these as constants)
 import council_scorecard as _cs
@@ -454,7 +454,7 @@ def link_votes_to_agenda() -> list[dict]:
     Transcripts record what was said; annotated agendas record what happened.
     Each returned dict:
       date, meeting_type, item_number, section, title,
-      dollar_total, off_mission, false_fiscal, authors, cosponsors,
+      dollar_total, off_mission, fiscal_understatement, authors, cosponsors,
       votes  {canonical_name: 'yes'|'no'|'abstain'},
       speakers, letters, extension_vote
     """
@@ -515,7 +515,7 @@ def link_votes_to_agenda() -> list[dict]:
                 "title":          item.get("title") or agenda_item.get("title", ""),
                 "dollar_total":   agenda_item.get("dollar_total") or 0,
                 "off_mission":    agenda_item.get("off_mission", False),
-                "false_fiscal":   agenda_item.get("false_fiscal", False),
+                "fiscal_understatement":   agenda_item.get("fiscal_understatement", False),
                 "authors":        agenda_item.get("authors", []),
                 "cosponsors":     agenda_item.get("cosponsors", []),
                 "votes":          votes,
@@ -1036,8 +1036,8 @@ def load_agenda_scores() -> tuple[dict, dict]:
     Consent calendar keys:
       agenda_off_mission_authored      — off-mission consent items authored
       agenda_off_mission_cosponsored   — off-mission consent items co-sponsored
-      agenda_false_fiscal_authored     — items claiming "None" fiscal when obligations exist (authored)
-      agenda_false_fiscal_cosponsored  — same, co-sponsored
+      fiscal_understatement_authored     — items claiming "None" fiscal when obligations exist (authored)
+      fiscal_understatement_cosponsored  — same, co-sponsored
       agenda_discretionary_total       — total $ relinquished from council office budget
       agenda_discretionary_items       — count of discretionary spending items
 
@@ -1058,8 +1058,8 @@ def load_agenda_scores() -> tuple[dict, dict]:
         # consent
         "agenda_off_mission_authored":    0,
         "agenda_off_mission_cosponsored": 0,
-        "agenda_false_fiscal_authored":   0,
-        "agenda_false_fiscal_cosponsored":0,
+        "fiscal_understatement_authored":   0,
+        "fiscal_understatement_cosponsored":0,
         "agenda_discretionary_total":     0,
         "agenda_discretionary_items":     0,
         # action calendar
@@ -1099,9 +1099,9 @@ def load_agenda_scores() -> tuple[dict, dict]:
                 authors    = item.get("authors", [])
                 cosponsors = item.get("cosponsors", [])
                 off_mission   = item.get("off_mission", False)
-                # Recompute false_fiscal from raw fields: cached JSONs may predate the
-                # "staff time" + obligation detection added to check_false_fiscal.
-                false_fiscal = check_false_fiscal(
+                # Recompute fiscal_understatement from raw fields: cached JSONs may predate the
+                # "staff time" + obligation detection added to check_fiscal_understatement.
+                fiscal_understatement = check_fiscal_understatement(
                     item.get("financial_raw", ""),
                     item.get("recommendation", ""),
                 )
@@ -1118,13 +1118,13 @@ def load_agenda_scores() -> tuple[dict, dict]:
                         if m in CANONICAL_MEMBERS:
                             member_scores[m]["agenda_off_mission_cosponsored"] += 1
 
-                if false_fiscal:
+                if fiscal_understatement:
                     for m in authors:
                         if m in CANONICAL_MEMBERS:
-                            member_scores[m]["agenda_false_fiscal_authored"] += 1
+                            member_scores[m]["fiscal_understatement_authored"] += 1
                     for m in cosponsors:
                         if m in CANONICAL_MEMBERS:
-                            member_scores[m]["agenda_false_fiscal_cosponsored"] += 1
+                            member_scores[m]["fiscal_understatement_cosponsored"] += 1
 
                 for m, amt in discretionary.items():
                     if m in CANONICAL_MEMBERS:
@@ -1150,7 +1150,7 @@ def load_agenda_scores() -> tuple[dict, dict]:
             off_mission  = item.get("off_mission", False)
             dollar_total = item.get("dollar_total", 0) or 0
             item_cls = classifications.get((date, str(item.get("number", ""))), "")
-            false_fiscal = check_false_fiscal(
+            fiscal_understatement = check_fiscal_understatement(
                 item.get("financial_raw", ""),
                 item.get("recommendation", ""),
             )
@@ -1163,13 +1163,13 @@ def load_agenda_scores() -> tuple[dict, dict]:
                     if m in CANONICAL_MEMBERS:
                         member_scores[m]["action_off_mission_cosponsored"] += 1
 
-            if false_fiscal:
+            if fiscal_understatement:
                 for m in authors:
                     if m in CANONICAL_MEMBERS:
-                        member_scores[m]["agenda_false_fiscal_authored"] += 1
+                        member_scores[m]["fiscal_understatement_authored"] += 1
                 for m in cosponsors:
                     if m in CANONICAL_MEMBERS:
-                        member_scores[m]["agenda_false_fiscal_cosponsored"] += 1
+                        member_scores[m]["fiscal_understatement_cosponsored"] += 1
 
             # Track budget referrals authored on action calendar (reveals spending priorities)
             if dollar_total > 0 and authors:
@@ -2380,14 +2380,14 @@ def compute_composite_grade(s: dict) -> dict:
     # False fiscal claims: council-authored items claiming "None" or "Staff time"
     # fiscal impact when the scope clearly incurs real obligations or costs.
     # Capped at 0.04; cosponsorship is half-weight (less culpable than authorship).
-    ff_authored    = s.get("agenda_false_fiscal_authored",    0) or 0
-    ff_cosponsored = s.get("agenda_false_fiscal_cosponsored", 0) or 0
-    false_fiscal_penalty = min(0.04, ff_authored * 0.015 + ff_cosponsored * 0.007)
+    ff_authored    = s.get("fiscal_understatement_authored",    0) or 0
+    ff_cosponsored = s.get("fiscal_understatement_cosponsored", 0) or 0
+    fiscal_understatement_penalty = min(0.04, ff_authored * 0.015 + ff_cosponsored * 0.007)
 
     taxpayer_raw  = hsa_part * 0.75 + (1.0 - off_penalty) * 0.25
     taxpayer_unclamped = (
         taxpayer_raw - rhetoric_penalty - new_revenue_preference_penalty
-        - false_fiscal_penalty
+        - fiscal_understatement_penalty
         + incident_adj + fiscal_ref_penalty + audit_silence_adj
         + newsletter_silence_adj
     )
@@ -2521,7 +2521,7 @@ def compute_composite_grade(s: dict) -> dict:
         "composite_newsletter_silence_pen":     round(-newsletter_silence_adj, 4),
         "composite_agenda_waste_signal":        round(agenda_waste_signal, 4),
         "composite_cls9_signal":                round(cls9_signal, 4),
-        "composite_false_fiscal_penalty":       round(false_fiscal_penalty, 4),
+        "composite_fiscal_understatement_penalty":       round(fiscal_understatement_penalty, 4),
         "composite_structural_silence_pen":     round(-structural_silence_pen, 4),
         "composite_one_time_masking_pen":       round(-one_time_masking_pen, 4),
         "composite_cross_subsidy_pen":          round(-cross_subsidy_pen, 4),

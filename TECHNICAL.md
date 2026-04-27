@@ -235,15 +235,15 @@ Framework tags applied to items:
 - `entrenches_cost_premium` — locks in above-market labor or procurement costs
 - `revenue_seeking` — proposes new taxes or bonds without structural reprioritization
 
-#### False Fiscal Claim Detection
+#### Fiscal Understatement Detection
 
-`check_false_fiscal(financial_raw, recommendation)` in `agenda_scraper.py` flags items where the stated fiscal impact understates or misrepresents the actual cost. Two patterns are caught:
+`check_fiscal_understatement(financial_raw, recommendation)` in `agenda_scraper.py` flags items where the stated fiscal impact understates or misrepresents the actual cost. Two patterns are caught:
 
 1. **"None" claims** — `financial_raw` is exactly `"None"` or `"None."` AND the recommendation contains a staff referral (`STAFF_REF_RECOM_RE`) or creates a new formal obligation (`NEW_OBLIGATION_RE`). Catches items that claim zero cost while directing significant staff work.
 
 2. **"Staff time" claims** — `financial_raw` contains `"staff time"` AND the recommendation matches `BROAD_OBLIGATION_RE` (creating permits/processes, enacting bans, developing official citywide policies/frameworks). "Staff time" is technically honest — it acknowledges a cost — but understates the real resource commitment when the scope implies months of staff capacity.
 
-The pipeline imports `check_false_fiscal` and recomputes the flag inline from raw JSON fields (so cached agendas benefit without a scraper re-run). Detection applies to both consent and action calendar items.
+The pipeline imports `check_fiscal_understatement` and recomputes the flag inline from raw JSON fields (so cached agendas benefit without a scraper re-run). Detection applies to both consent and action calendar items.
 
 Current council-authored hits (as of Apr 2026): Kesarwani (Tiny Homes on Wheels permitting), OKeefe (AI citywide guidelines), Tregub/Taplin (glue traps ban). Each is a council consent item directing staff to create a new permit regime, policy framework, or ordinance while claiming "Staff time" as the full fiscal impact.
 
@@ -394,16 +394,16 @@ Where `taxpayer_alignment = taxpayer_base × 0.60 + audit_composite × 0.40`, an
 taxpayer_base = hsa_part × 0.75 + (1 − off_penalty) × 0.25
     − rhetoric_penalty
     − new_revenue_preference_penalty
-    − false_fiscal_penalty
+    − fiscal_understatement_penalty
     + incident_adj
     + fiscal_ref_penalty
     + audit_silence_adj
     + newsletter_silence_adj
 ```
 
-**false_fiscal_penalty** — up to −0.04:
+**fiscal_understatement_penalty** — up to −0.04:
 - `−0.015 × items_authored` + `−0.007 × items_cosponsored`
-- Triggered when a council member claims "None" or "Staff time" fiscal impact on an item that clearly creates new obligations (new programs, bans, permit regimes, citywide policy frameworks). See `check_false_fiscal()` in `agenda_scraper.py`.
+- Triggered when a council member claims "None" or "Staff time" fiscal impact on an item that clearly creates new obligations (new programs, bans, permit regimes, citywide policy frameworks). The failure may reflect naivete, weak effort, or disregard for transparency — the penalty applies regardless of motive because the result is the same: the item arrives without a realistic cost picture. See `check_fiscal_understatement()` in `agenda_scraper.py`.
 
 **Attendance deduction** — convex curve:
 - 0 absences: 0.00
