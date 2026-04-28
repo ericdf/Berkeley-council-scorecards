@@ -157,7 +157,7 @@
       "short_desc": "Declared opposition to the Flock contract — officers' 'singular piece of technology' — the same day BPD reported record-low staffing. City Attorney had already negotiated full sanctuary protections.",
       "description": "Co-authored (with Lunaparra) and sent a mass constituent email (April 14, 2026) announcing two special council meetings to vote on the Flock Safety contract, stating: 'I remain opposed to Berkeley contracting with Flock.' The supplemental material she introduced on March 24, 2026 calls for the council to 'reject any renewal, authorization, approval, or execution of a contract with Flock Safety.' The stated rationale is sanctuary city / immigration data-sharing concerns — citing incidents in Ventura County and Mountain View where Flock's 'National Look Up' feature was activated without local agency consent. The supplemental ignores a material development: Berkeley's City Attorney had already negotiated a Master Services Agreement with Flock Safety that includes data ownership protections, restrictions on federal access consistent with sanctuary city policy, financial penalties for unauthorized disclosures, security incident notification requirements, and post-termination data protections — and Flock accepted every revision proposed. The negotiated contract directly addresses the cited harms. The supplemental does not engage with this; it treats the contract as if the City Attorney's work had not occurred. The same day Ishii's email went out, the Berkeley Scanner published detailed reporting that BPD is at record-low staffing, with 7+ officers already lost to SFPD, and that officers describe the Flock ALPR system as 'the singular piece of technology the city has approved for police use in decades' and 'the one thing keeping a lot of officers engaged.' Ishii's email opposes the specific tool that her own department's officers have publicly identified as a retention anchor — in the middle of a documented attrition crisis driven by Berkeley's political culture toward policing.",
       "source": "Mayor Adena Ishii constituent email April 14, 2026 (mayor@berkeleyca.gov); 2026-03-24 Revised Agenda Material Supplemental #2, Item 26 (Ishii/Lunaparra co-authors, Tregub co-sponsor); Berkeley Scanner, Emilie Raguso, April 14, 2026",
-      "scoring_impact": -0.10
+      "scoring_impact": -0.1
     },
     {
       "date": "2026-02-09",
@@ -167,6 +167,24 @@
       "description": "Confirmed Aguilar's dismissal after unanimous 8-0 vote (Kesarwani absent) then issued a prepared statement that the council 'remained committed to police accountability' and was focused on 'restoring credibility, trust and respect for both the accountability process and the people involved in this work.' The council had just voted to fire the accountability director, leaving the Police Accountability Board at 4 of 9 seats with all original commissioners departed, and BPD in an ongoing records dispute with the office. Issuing a recommitment-to-accountability statement immediately after eliminating the accountability office's leadership is the definitional form of performative governance: the statement replaces the action it purports to describe.",
       "source": "Berkeleyside, Alex N. Gecan, Feb. 9, 2026",
       "scoring_impact": -0.08
+    },
+    {
+      "date": "2026-04-27",
+      "category": "performative_engagement",
+      "evidence_tier": "A",
+      "short_desc": "April newsletter opens with Instagram-style Easter Bunny photo and backward-looking attendance reports; budget statement unchanged after public input sessions.",
+      "description": "The April 2026 newsletter opens with a staged photo of the mayor with an Easter Bunny pop-up — the kind of content that functions as social media self-promotion rather than civic communication. The photo contributes nothing to residents: no local business being celebrated, no children being served, no community partner being recognized, no clergy or civic leader whose work the mayor is amplifying. It is a picture of the mayor existing in public, dressed up as a community moment. The rest of the newsletter follows the same pattern: every item reports something Ishii attended rather than something she drove. The wildfire vegetation cleanup is real and important, but the newsletter does not invite readers to the next one, link to BerkeleyCorps, or name what residents should do before fire season. The World Cup viewing questionnaire asks businesses to self-identify as potential game venues — implying Visit Berkeley lacks an existing business network to recruit from directly, a structural gap the newsletter normalizes rather than addresses. The budget section reprints substantially the same statement issued before the community input meetings, with no acknowledgment of what she heard or how her thinking evolved. Public input is implicitly a formality the mayor attended, not a source of information that changed anything.",
+      "source": "Mayor Adena Ishii newsletter “The Mayor’s Monthly: April 2026,” April 27, 2026 (mayor@berkeleyca.gov)",
+      "scoring_impact": -0.06
+    },
+    {
+      "date": "2026-04-27",
+      "category": "performative_engagement",
+      "evidence_tier": "A",
+      "short_desc": "Hosted art reception for works selected for her own office, framed as community arts support — a private venue that helps the mayor more than the artists.",
+      "description": "Ishii’s April newsletter leads with an art reception for works selected for display in her own office. The intent toward local artists may be genuine, but the venue choice reveals the absence of strategic thinking about what artists actually need: visibility, foot traffic, and sales. Her office is accessible to almost no one. Two blocks away, Berkeley has a stretch of vacant storefronts — a popup gallery there would have served the same artists to a real public audience while activating dead retail space and generating a legitimate economic-development story. The mayor’s office version does none of that. It produces pleasant walls for the mayor and a newsletter item. Framing a personal workspace amenity as community arts support is the specific form of self-deception this newsletter embodies throughout: the benefit flows to Ishii, the framing claims it flows to the community.",
+      "source": "Mayor Adena Ishii newsletter “The Mayor’s Monthly: April 2026,” April 27, 2026 (mayor@berkeleyca.gov)",
+      "scoring_impact": -0.06
     }
   ],
   "Humbert": [

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# generate.sh — Full artifact generation for the Berkeley City Council Scorecard pipeline
+# generate.sh — Scoring pipeline for the Berkeley City Council Scorecard
 #
 # Usage:
-#   ./generate.sh                   # incremental: new transcripts only → scores + all PDFs
+#   ./generate.sh                   # incremental: new transcripts only → scores (HTML is primary via publish.sh)
 #   ./generate.sh --all             # re-extract all transcript PDFs, then full pipeline
-#   ./generate.sh --scores-only     # re-score without generating PDFs (fast iteration)
-#   ./generate.sh --scrape          # refresh annotated agendas + agenda JSONs, then full pipeline
+#   ./generate.sh --scrape          # refresh annotated agendas + agenda JSONs, then score
 #   ./generate.sh --scrape-only     # refresh data sources only, no scoring
+#   ./generate.sh --pdf             # scores + generate all PDFs (scorecard, methodology, incidents, audit)
 #   ./generate.sh --methodology     # regenerate methodology PDF only
 #   ./generate.sh --help            # show this message
 #
@@ -15,6 +15,8 @@
 #   scores/per_meeting.json         — per-meeting scores for trend tracking
 #   scores/linked_votes.json        — roll-call votes linked to agenda items
 #   scores/snapshots/               — timestamped aggregate snapshots for delta tracking
+#
+# PDF outputs (--pdf only):
 #   scores/pdfs/scorecard_*.pdf     — individual member scorecards
 #   scores/pdfs/scorecard_SUMMARY.pdf — one-page comparison across all members
 #   scores/pdfs/methodology.pdf     — insider methodology document
@@ -37,7 +39,7 @@ VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
 
 # ---- Help ----
 if [[ "${1:-}" == "--help" ]]; then
-    sed -n '2,20p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '2,22p' "$0" | sed 's/^# \{0,1\}//'
     exit 0
 fi
 
@@ -64,7 +66,7 @@ if [[ "$ARG" == "--scrape-only" ]]; then
     "$VENV_PYTHON" "$SCRIPT_DIR/annotated_scraper.py"
     echo "=== Refreshing agenda JSONs ==="
     "$VENV_PYTHON" "$SCRIPT_DIR/agenda_scraper.py"
-    echo "Done. Run ./generate.sh to score and regenerate PDFs."
+    echo "Done. Run ./generate.sh to score, then ./publish.sh to publish HTML."
     exit 0
 fi
 
@@ -115,20 +117,19 @@ if [[ -f "$AMENDMENT_CSV" ]]; then
     fi
 fi
 
-# ---- Step 3: Score and generate scorecards ----
-if [[ "$ARG" == "--scores-only" ]]; then
-    echo "=== Running pipeline (scores only, no PDFs) ==="
-    "$VENV_PYTHON" "$SCRIPT_DIR/pipeline.py" --no-pdf
-else
-    echo "=== Running pipeline (scores + scorecards) ==="
+# ---- Step 3: Score ----
+if [[ "$ARG" == "--pdf" ]]; then
+    echo "=== Running pipeline (scores + PDF scorecards) ==="
     "$VENV_PYTHON" "$SCRIPT_DIR/pipeline.py"
+    echo "=== Regenerating supporting PDFs ==="
+    "$VENV_PYTHON" "$SCRIPT_DIR/methodology_pdf.py"
+    "$VENV_PYTHON" "$SCRIPT_DIR/incidents_pdf.py"
+    "$VENV_PYTHON" "$SCRIPT_DIR/audit_findings_pdf.py"
+else
+    echo "=== Running pipeline (scores only) ==="
+    "$VENV_PYTHON" "$SCRIPT_DIR/pipeline.py" --no-pdf
 fi
-
-# ---- Step 4: Always regenerate methodology + incidents + audit findings PDFs ----
-echo "=== Regenerating supporting PDFs ==="
-"$VENV_PYTHON" "$SCRIPT_DIR/methodology_pdf.py"
-"$VENV_PYTHON" "$SCRIPT_DIR/incidents_pdf.py"
-"$VENV_PYTHON" "$SCRIPT_DIR/audit_findings_pdf.py"
 
 echo ""
 echo "Done. Artifacts in $SCRIPT_DIR/scores/"
+echo "Run ./publish.sh to generate HTML and publish to GitHub Pages."
