@@ -119,6 +119,32 @@ ALL_EDITORIAL_INCIDENTS: list[dict] = [
         "pending": True,
     },
     {
+        "title":   "Mayor's Monthly April 2026 — Attendance Log, Not Leadership",
+        "date":    "2026-04-27",
+        "url":     "incidents/2026-04/incident_Ishii_Newsletter.html",
+        "summary": "Ishii's April newsletter opens with an Easter Bunny photo and reports "
+                   "events she attended rather than initiatives she drove. The budget section "
+                   "reprints her pre-input-meeting statement unchanged — no signal that public "
+                   "participation altered her thinking.",
+        "members": ["Ishii"],
+        "scores":  {"Ishii": -6},
+        "pillars": ["Character & Conduct"],
+        "pending": False,
+    },
+    {
+        "title":   "Office Art Reception — Public Benefit Framing for a Private Amenity",
+        "date":    "2026-04-27",
+        "url":     "incidents/2026-04/incident_Ishii_OfficeArt.html",
+        "summary": "Ishii hosted an art reception for works selected for her own office — "
+                   "a space accessible to almost no one — and framed it as support for "
+                   "Berkeley artists. A popup gallery in nearby vacant storefronts would "
+                   "have provided real visibility and foot traffic at equivalent cost.",
+        "members": ["Ishii"],
+        "scores":  {"Ishii": -6},
+        "pillars": ["Character & Conduct"],
+        "pending": False,
+    },
+    {
         "title":   "Sugar Tax Panel — Credential Misrepresentation and Duty of Care",
         "date":    "2026-04-22",
         "url":     "incidents/2026-04/incident_Ishii_Panel.html",
