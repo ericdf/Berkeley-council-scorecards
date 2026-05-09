@@ -27,5 +27,7 @@ agendas/pdf_cache/
 # Local Claude settings (machine-specific)
 .claude/settings.local.json
 
+publish/
+
 # macOS
 .DS_Store
