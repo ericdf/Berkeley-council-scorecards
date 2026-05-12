@@ -48,6 +48,13 @@
         "source": "Berkeley Scanner, Emilie Raguso, April 14, 2026"
       },
       {
+        "date": "2026-05-07",
+        "category": "oversight_dysfunction",
+        "actor": "BPD / PAB",
+        "description": "PAB Chair Josh Cayetano stated at public comment: 'BPD buried their audit on the last pages of a report, but they had identified Berkeley's own data with search for ICE and DHS. They didn't bring that to the Council's attention. We did.' BPD found evidence of a potential sanctuary policy violation — Berkeley's Flock data queried using ICE and DHS search terms — in its own audit logs, and did not surface it to the Council or the public. The PAB, operating with 4 of 9 seats filled after its director was fired in February 2026, discovered and disclosed it independently. This is the pattern the PAB collapse enables: the accountability body that was supposed to surface exactly this kind of information is structurally weakened; the department that should have disclosed it did not; the finding reached the Council only through the remnant volunteer board.",
+        "source": "BCC Special Meeting transcript May 7, 2026 (unofficial Zoom captions); PAB Chair Cayetano public comment segments 1365-1381"
+      },
+      {
         "date": "2020-2026",
         "category": "policy_cost_externalized",
         "actor": "BPD (understaffing / overtime cycle)",
@@ -56,6 +63,17 @@
       }
     ]
   },
+  "Blackaby": [
+    {
+      "date": "2026-05-07",
+      "category": "fiscal_integrity",
+      "evidence_tier": "A",
+      "short_desc": "Authored the Flock compromise: reject MSA expansion, require competitive RFP, extend ALPR 12 months. Publicly confronted Flock rep on data-sharing failures by name.",
+      "description": "At the May 7 BCC Special Meeting, Blackaby authored the motion that resolved the Flock impasse: adopt use policies, reject the full Master Services Agreement expansion, require a competitive RFP for all surveillance technology components, and extend the existing ALPR contract up to 12 months during the RFP period. This is careful legislative engineering under heavy political pressure — it rejected the contract expansion critics opposed while preserving the investigative tool officers identified as the department's remaining technology anchor. Earlier in the meeting, he directly confronted Flock Senior Director Trevor Chandler: 'I've felt...disappointed and frustrated to watch how Flock has handled this sort of drip, drip, drip of complaints and reports about unauthorized data sharing...one error is a user error, but multiple errors is a product flaw. That's a Flock issue.' He extracted an on-record acknowledgment from Chandler that Flock 'could have and should have done many things better.' He also cited specific case evidence from D6: Flock ALPRs helped solve home invasion robberies, recover stolen vehicles, apprehend a roofing scam ring, and get justice for a sexual assault victim. The use policy / RFP portion passed unanimously; the ALPR extension passed 5-4.",
+      "source": "BCC Special Meeting transcript May 7, 2026 (unofficial Zoom captions); segments 236-271, 1709-1750; vote record segments 2010-2032",
+      "scoring_impact": 0.09
+    }
+  ],
   "Taplin": [
     {
       "date": "2025-11-18",
@@ -242,6 +260,15 @@
       "scoring_impact": -0.08
     },
     {
+      "date": "2026-05-07",
+      "category": "constituent_service",
+      "evidence_tier": "A",
+      "short_desc": "Voted NO on both Flock motions, consistent with unanimous constituent input — 'to a person, every single person admonished me not to approve this deal.'",
+      "description": "At the May 7 BCC Special Meeting, Bartlett voted NO on both the use policy / RFP adoption and the ALPR extension — the only council member to vote against both portions. He stated: 'to a person, every single person admonished me not to approve this deal,' consistent with constituent contacts from across D3's diverse constituency. He also disclosed that years earlier he had introduced an 'air gap' motion to isolate Berkeley's Flock data from the broader network — a motion that failed. These votes are the clearest documented instance of Bartlett following through on constituent input rather than deferring to the majority. It stands in contrast to his documented pattern of attaching co-author credit without shaping agenda items substantively, and to the existing scorecard characterization that he votes yes alongside colleagues on major items.",
+      "source": "BCC Special Meeting transcript May 7, 2026 (unofficial Zoom captions); segments 1907-1934, vote records 2013, 2027",
+      "scoring_impact": 0.04
+    },
+    {
       "date": "2026",
       "category": "scope_indiscipline",
       "evidence_tier": "A",
@@ -324,6 +351,15 @@
       "scoring_impact": -0.04
     },
     {
+      "date": "2026-05-07",
+      "category": "alternatives_dismissed",
+      "evidence_tier": "A",
+      "short_desc": "Acknowledged ALPR's investigative value in speech, then voted against the 12-month extension required to run the competitive RFP he also endorsed.",
+      "description": "At the May 7 BCC Special Meeting, Tregub stated: 'providing our hardworking police officers with effective tools is critically important' and acknowledged that BPD officers are being lost to SFPD partly because that department offers more tools \u2014 then voted NO on extending the existing ALPR contract for the 12-month period the RFP process his motion endorsed requires. He cited 95% of 150+ constituent contacts opposing Flock, but contacts to a council office are self-selected and 150 contacts represent roughly 1% of his 15,000 D4 constituents. The ALPR extension was not a decision about Flock specifically \u2014 it was a bridge to the competitive bidding process Tregub had also supported. Voting against the bridge while endorsing the process is the Tregub pattern in its clearest form: identifying the correct institutional answer, then voting in a direction that undermines it.",
+      "source": "BCC Special Meeting transcript May 7, 2026 (unofficial Zoom captions); segments 1763-1793, vote record segments 2024-2031",
+      "scoring_impact": -0.06
+    },
+    {
       "date": "2026-04-11",
       "category": "performative_engagement",
       "evidence_tier": "B",
@@ -369,6 +405,15 @@
       "description": "Claims credit for 'making Berkeley the first city in the United States, to our knowledge, to formally call for ICE to be abolished.' ICE is a federal agency entirely outside Berkeley's municipal authority. A resolution calling for its abolition consumes council agenda time, staff preparation, and political capital to produce a press release with zero operational consequence for Berkeley residents. Listed as an accomplishment alongside tenant protections and street safety \u2014 items within the council's actual jurisdiction.",
       "source": "Lunaparra farewell letter, April 2026",
       "scoring_impact": -0.06
+    },
+    {
+      "date": "2026-05-07",
+      "category": "alternatives_dismissed",
+      "evidence_tier": "A",
+      "short_desc": "Voted NO on ALPR extension; dismissed competing poll with 'when a poll isn't released, it usually means it didn't go your way' \u2014 evidence standard she would not apply symmetrically.",
+      "description": "At the May 7 BCC Special Meeting, LunaParra voted YES on adopting use policies and initiating a competitive RFP (the non-expansion portion) but NO on the 12-month ALPR extension needed to bridge the RFP period. Her speech invoked Trump's new counterterrorism strategy naming Antifa and called it 'truly naive' to think contract language would protect against a government 'openly telling us that they think they are above the law.' During deliberations, she dismissed a Berkeley-area poll said to support Flock by claiming: 'when a survey, a poll isn't released, it usually means it didn't go your way' \u2014 an unfalsifiable inference she used to discard contrary evidence. A council member applying that standard would also have to discount every uncited survey that supports her position. She voted to terminate the tool BPD's chief described as essential to officer retention amid a documented staffing crisis she did not act to reverse.",
+      "source": "BCC Special Meeting transcript May 7, 2026 (unofficial Zoom captions); segments 1822-1834, vote records 2016, 2030",
+      "scoring_impact": -0.05
     },
     {
       "date": "2024-2026",

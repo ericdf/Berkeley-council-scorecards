@@ -7,13 +7,13 @@
   },
 
   "Blackaby": {
-    "archetype": "The Steady Hand",
-    "summary": "Competent, present, and focused without being exceptional. Neither champions taxpayer interests aggressively nor undermines them — a reliable vote who stays inside the lines of core city business and avoids the ideological detours that consume colleagues' bandwidth."
+    "archetype": "The Pragmatic Compromiser",
+    "summary": "More than a reliable vote. At the May 2026 Flock special meeting he engineered the compromise that broke a politically deadlocked issue: reject the full contract expansion, require competitive bidding, preserve the existing investigative tool. He cited concrete case evidence from his own district, publicly confronted the vendor on accountability failures, and extracted an on-record acknowledgment of past mistakes. Not a fiscal champion in the broader sense, but when a hard problem arrives he does actual work."
   },
 
   "Bartlett": {
-    "archetype": "The Rhetorical Skeptic",
-    "summary": "Asks pointed fiscal questions in chambers but votes yes alongside everyone else and missed five of seven major fiscal votes including both budget adoptions. Has a documented pattern of attaching himself as co-author to proposals after the primary work is done — gaining the visibility of authorship without the accountability of having shaped the item. The skepticism is real; the follow-through is not."
+    "archetype": "The Constituent Vessel",
+    "summary": "Asks pointed fiscal questions in chambers and has a documented pattern of attaching co-author credit to proposals after the primary work is done. On issues where his constituents speak loudly and clearly — notably Flock, where he stated every constituent told him to vote no and he did — he follows through. Missed major fiscal votes including both budget adoptions. The constituent-following is real; whether it scales to structural fiscal problems his constituents can't easily organize around remains the open question."
   },
 
   "Kesarwani": {
@@ -38,11 +38,11 @@
 
   "LunaParra": {
     "archetype": "The Abstainer",
-    "summary": "Highest homeless services special interests alignment score on the council, highest abstention rate, and a Taxpayer Alignment score near the floor. When difficult votes arrive, LunaParra tends to abstain — using the voting mechanism to avoid registering a position rather than to register one."
+    "summary": "Highest homeless services special interests alignment score on the council, highest abstention rate, and a Taxpayer Alignment score near the floor. On the May 2026 Flock vote she split — YES on use policies and competitive RFP, NO on the existing contract extension — but dismissed a competing poll with 'when a poll isn't released, it usually means it didn't go your way,' applying an evidence standard she would not apply symmetrically. The abstention pattern and the selective evidence standards are consistent."
   },
 
   "Tregub": {
     "archetype": "The Narrative Engineer",
-    "summary": "Third-highest fiscal concern rhetoric score — talks about fiscal challenges constantly in chambers — but a Taxpayer Alignment composite of zero. Champions bond and sales tax campaigns through official constituent communications, lobbied for a county spending measure from his district email list, and scheduled a community input meeting three weeks after voting to approve the project it was nominally about."
+    "summary": "Third-highest fiscal concern rhetoric score — talks about fiscal challenges constantly in chambers — but a Taxpayer Alignment composite of zero. At the May 2026 Flock hearing, acknowledged that 'providing officers with effective tools is critically important' and then voted against the 12-month ALPR extension the competitive RFP process he endorsed required. Champions bond and sales tax campaigns through official constituent communications, lobbied for a county spending measure from his district email list, and scheduled a community input meeting three weeks after voting to approve the project it was nominally about."
   }
 }
